@@ -1,0 +1,31 @@
+/* ----------------------------------------------------------------------------- *\
+ * Set the margins and paddings of elements explicitly to 0.
+\* ----------------------------------------------------------------------------- */
+
+/* stylelint-disable selector-no-type, selector-max-type */
+
+
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+pre,
+form,
+figure {
+    margin: 0;
+    padding: 0;
+}
+/* stylelint-enable selector-no-type, selector-max-type */

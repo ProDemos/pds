@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// #HELPERS icons
+// Icons in buttons should get their own specific classname from the component so the styling can be targeted.
+// For example: 'c-button__icon--arrow--circled--left'
+// -----------------------------------------------------------------------------
+
+
+.c-button__icon {
+    display: block;
+    margin-top: -1px;
+}
+
+.c-button__icon--left {
+    margin-right: nth($spacing-scale, 5);
+
+    .c-btn--transparent & {
+        margin-right: nth($spacing-scale, 3);
+    }
+}
+
+.c-button__icon--right {
+    margin-left: nth($spacing-scale, 5);
+
+    .c-btn--transparent & {
+        margin-left: nth($spacing-scale, 3);
+    }
+}

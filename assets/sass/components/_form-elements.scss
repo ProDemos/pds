@@ -1,0 +1,269 @@
+
+// Input wrapper, used for combined elements, like the radio's and checkboxes, but can be used for all elements
+.c-input--container {
+    margin-bottom: nth($spacing-scale, 5);
+}
+
+
+// The default label styling
+.c-input-label {
+    margin-bottom: nth($spacing-scale, 5);
+    color: get-color(black);
+    font-family: $font--fira-sans;
+    font-size: nth($type-scale, 7);
+    font-weight: 500;
+}
+
+
+
+// Basic input styling, shared by all inputs
+.c-input {
+    color: get-color(black);
+    font-family: $font--fira-sans;
+    font-size: nth($type-scale, 7);
+    line-height: nth($line-height-scale, 5);
+    border-radius: 0;
+    background-color: get-color(grey--romance);
+
+    /* stylelint-disable property-no-vendor-prefix */
+    -webkit-appearance: none;
+    /* stylelint-enable property-no-vendor-prefix */
+
+    &.c-input--disabled {
+        color: lighten(get-color(black), nth($color-lighten-scale, 5));
+        background-color: lighten((get-color(grey--romance)), nth($color-lighten-scale, 1));
+        cursor: not-allowed;
+    }
+}
+
+
+
+// Text input
+.c-input--text {
+    padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 3) nth($spacing-scale, 6);
+    border: none;
+    border-bottom: 3px solid get-color(grey--romance);
+    transition: border-bottom-color 150ms ease-in-out;
+
+    // Themeing
+    @each $theme in $prodemos-themes {
+        &.t-#{nth($theme,1)} {
+            &:focus {
+                border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+            }
+        }
+    }
+
+    // When the user added valid input
+    &.c-input--text--valid {
+        background-image: url("~@design-system/images/icons/24px/check--green.svg");
+        background-position: top 13px right 15px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        border-bottom-color: get-color(green--vida-loca);
+    }
+
+    // When the user added invalid input
+    &.c-input--text--invalid {
+        background-image: url("~@design-system/images/icons/24px/error--red.svg");
+        background-position: top 13px right 15px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        border-bottom-color: get-color(red--crimson);
+    }
+}
+
+
+
+// Selectbox
+.c-input--dropdown {
+    padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
+    border: none;
+    border-bottom: 2px solid get-color(transparent);
+    background-image: url("~@design-system/images/icons/24px/arrows--dropdown.svg");
+    background-position: top 13px right 15px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    cursor: pointer;
+    transition: border-bottom-color 150ms ease-in-out;
+
+    // When full width is required
+    &.c-input--dropdown--full-width {
+        width: 100%;
+    }
+
+    // Themeing
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+
+    @each $theme in $prodemos-themes {
+        &.t-#{nth($theme,1)} {
+            &:focus,
+            &:hover {
+                border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+            }
+        }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+}
+
+
+
+// Radiobutton
+.c-input--container--radio {
+
+    // Themeing
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+    @include hover {
+        @each $theme in $prodemos-themes {
+            &.t-#{nth($theme,1)} {
+                .c-input--radio__check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+
+    // The label
+    .c-input-label {
+        display: block;
+        position: relative;
+        padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
+        margin: nth($spacing-scale, 4) auto;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.25s linear;
+    }
+
+    // The checkable element (replaces the invisible radio-input)
+    .c-input--radio__check {
+        display: block;
+        position: absolute;
+        border: 1px solid get-color(grey--gainsboro);
+        border-radius: 100%;
+        background-color: get-color(grey--romance);
+        height: nth($spacing-scale, 6);
+        width: nth($spacing-scale, 6);
+        top: nth($spacing-scale, 7);
+        left: nth($spacing-scale, 5);
+        z-index: 5;
+        transition: border 0.25s linear;
+        cursor: pointer;
+
+        // The radio tick
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            border-radius: 100%;
+            height: nth($spacing-scale, 4);
+            width: nth($spacing-scale, 4);
+            top: 3px;
+            left: 3px;
+            margin: auto;
+            transition: background 0.25s linear;
+        }
+    }
+}
+
+// The radio input itself
+.c-input--radio {
+    position: absolute;
+    visibility: hidden;
+
+    // And some styling to control the adjecent elements when checked
+    // Themeing
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+    &:checked ~ .c-input--radio__check {
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} & {
+                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                &::before {
+                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+}
+
+
+
+// Checkbox (basically the same as the radiobutton, but separated to make it easier to edit the styles
+.c-input--container--checkbox {
+
+    // Themeing
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+    @include hover {
+        @each $theme in $prodemos-themes {
+            &.t-#{nth($theme,1)} {
+                .c-input--checkbox__check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+
+    // The label
+    .c-input-label {
+        display: block;
+        position: relative;
+        padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
+        margin: nth($spacing-scale, 4) auto;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.25s linear;
+    }
+
+    // The checkable element (replaces the invisible checkbox)
+    .c-input--checkbox__check {
+        display: block;
+        position: absolute;
+        border: 1px solid get-color(grey--gainsboro);
+        background-color: get-color(grey--romance);
+        height: nth($spacing-scale, 6);
+        width: nth($spacing-scale, 6);
+        top: nth($spacing-scale, 7);
+        left: nth($spacing-scale, 5);
+        z-index: 5;
+        transition: border 0.25s linear;
+        cursor: pointer;
+
+        // The checkbox tick
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            height: nth($spacing-scale, 4);
+            width: nth($spacing-scale, 4);
+            top: 3px;
+            left: 3px;
+            margin: auto;
+            transition: background 0.25s linear;
+        }
+    }
+}
+
+// The radio input itself
+.c-input--checkbox {
+    position: absolute;
+    visibility: hidden;
+
+    // And some styling to control the adjecent elements when checked
+    // Themeing
+    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+    &:checked ~ .c-input--checkbox__check {
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} & {
+                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                &::before {
+                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+}

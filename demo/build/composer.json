@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "scripts": {
+    	"post-install-cmd": [
+			"npm install"
+		],
+		"compile-sass" : [
+			"node_modules/node-sass/bin/node-sass --output-style compressed ../../assets/sass/main.scss ../../assets/css/main.css"
+		]
+    }
+}

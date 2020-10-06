@@ -1,0 +1,113 @@
+
+// Tab navigational elements
+.c-tab-navigation__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include media-from(md) {
+        display: flex;
+        border-bottom: 1px solid get-color(grey--gainsboro);
+    }
+}
+
+.c-tab-navigation__list-item {
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid get-color(grey--gainsboro);
+
+    @include media-from(md) {
+        margin: 0 nth($spacing-scale, 3);
+        border: none;
+    }
+
+    @include media-from(lg) {
+        margin: 0 nth($spacing-scale, 5);
+    }
+
+    &.c-tab-navigation__list-item--first {
+        margin-left: 0;
+    }
+
+    &.c-tab-navigation__list-item--last {
+        margin-right: 0;
+    }
+}
+
+.c-tab-navigation__link {
+    display: inline-block;
+    padding: nth($spacing-scale, 3) 0 nth($spacing-scale, 3);
+    color: get-color(black);
+    font-family: $font--fira-sans;
+    font-size: nth($type-scale, 8);
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    background-color: get-color(white);
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+
+    @include media-from(md) {
+        position: relative;
+        padding: nth($spacing-scale, 2) 0 nth($spacing-scale, 5);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: get-color(transparent);
+        opacity: 1;
+        transition: all 250ms ease-in-out;
+    }
+
+
+    // Themeing
+    /* stylelint-disable  max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+
+    // Hover and focus states
+    @each $theme in $prodemos-themes {
+        .t-#{nth($theme,1)} & {
+            @include media-from(md) {
+                &:hover,
+                &:focus {
+                    color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                    &::after {
+                        opacity: 1;
+                        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    }
+                }
+            }
+        }
+    }
+
+    // Active state
+    &.c-tab-navigation__link--active {
+        &::after {
+            opacity: 1;
+        }
+
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} & {
+                color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                &::after {
+                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    /* stylelint-enable  max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
+}
+
+// Tab content panels
+.c-tab-panel {
+    padding: nth($spacing-scale, 5) 0;
+}

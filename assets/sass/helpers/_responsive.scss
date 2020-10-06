@@ -1,0 +1,45 @@
+
+@mixin media-until($name, $breakpoints: $prodemos--breakpoints) {
+    @if map-has-key($breakpoints, $name) == false {
+        @error
+            "There is no breakpoint defined by the name `#{$name}`";
+    }
+
+    @media (max-width: map-get($breakpoints, $name)) {
+        @content;
+    }
+}
+
+
+
+@mixin media-between($min-name, $max-name, $breakpoints: $prodemos--breakpoints) {
+    @if map-has-key($breakpoints, $min-name) == false {
+        @error
+            "There is no breakpoint defined by the name `#{$min-name}`";
+    }
+
+    @if map-has-key($breakpoints, $max-name) == false {
+        @error
+            "There is no breakpoint defined by the name `#{$max-name}`";
+    }
+
+    $min: map-get($breakpoints, $min-name);
+    $max: map-get($breakpoints, $max-name);
+
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+
+
+@mixin media-from($name, $breakpoints: $prodemos--breakpoints) {
+    @if map-has-key($breakpoints, $name) == false {
+        @error
+            "There is no breakpoint defined by the name `#{$name}`";
+    }
+
+    @media (min-width: map-get($breakpoints, $name)) {
+        @content;
+    }
+}

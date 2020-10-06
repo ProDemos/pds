@@ -1,0 +1,82 @@
+{#
+    This macro facilitates the easy embedding of component views.
+    These component views can be used in both the app's views and the styleguide, to prevent
+    HTML duplication.
+
+    Considerations:
+    1. Another solution is to let the developer create macros for each component, but that could
+    become tedious when all you want is to do is include a bit of HTML in your view.
+    Also, the current solution forces each component to have it's own file, which improves clarity.
+    2. The include uses the `only` keyword to make sure no other data from parent views leaks into
+    the components view, and all data is sent through the `properties` parameter.
+
+    Example call:
+    `{{ ui.component('buttons/button', { 'title': 'Melp' }) }}`
+
+    @param string slug The name of the component, which corresponds with the name of the file.
+    @param object properties The properties of the component.
+#}
+{% macro component(slug, properties) %}
+    {% strict false %}
+        {% include '@htmldev/components/%s.html.twig'|format(slug) with properties only %}
+    {% endstrict %}
+{% endmacro %}
+
+
+
+{#
+    This method does exactly the same as the `component()` macro, except it's intended
+    for rendering inside the style guide, with code examples et cetera.
+
+    @param string slug The name of the component, which corresponds with the name of the file.
+    @param object properties The properties of the component.
+#}
+{% macro styleguide_component(slug, properties, outputs = ['example', 'twig']) %}
+    {% import 'ZichtHtmldevBundle:macros:components.html.twig' as component %}
+
+    {% set cx = {
+        container: classes({
+            'c-component--full': properties.styleguide_component_width|default == 'full',
+        }),
+        view: classes({
+            'c-component__view--full': properties.styleguide_component_width|default == 'full',
+            'c-component__view--dark': properties.styleguide_dark|default == true
+        }),
+        meta: classes({
+            'c-component__meta--full': properties.styleguide_component_width|default == 'full' or 'example' not in outputs
+        })
+    } %}
+
+    <div class="c-component  {{ cx.container }}" {% if properties.styleguide_component_width|default != '' and properties.styleguide_component_width|default != 'full' %}style="grid-template-columns: {{ properties.styleguide_component_width }} minmax(0, 1fr)"{% endif %}>
+        {% set component_properties = properties|delete(
+            'styleguide_title',
+            'styleguide_type',
+            'styleguide_dark',
+            'styleguide_component_width'
+        ) %}
+
+        {% if 'example' in outputs %}
+            <div class="c-component__view  {{ cx.view }}">
+                {{ component.component(slug, component_properties) }}
+            </div>
+        {% endif %}
+
+        <div class="c-component__meta  {{ cx.meta }}">
+            {% if properties.styleguide_title|default %}
+                <h2 class="c-component-list__title">{{ properties.styleguide_title }}</h2>
+            {% endif %}
+
+            {% if properties.styleguide_description|default %}
+                <p class="c-component__description">{{ properties.styleguide_description }}</p>
+            {% endif %}
+
+            {% if 'twig' in outputs %}
+                {% set json = component_properties|ui_printable_arguments %}
+                <pre class="c-component__code">{{ '{{ ' }}ui.component('{{ slug }}', {{ json }}{{ ') }}' }}</pre>
+            {% endif %}
+            {% if 'html' in outputs %}
+                <pre class="c-component__code">{{ component.component(slug, component_properties)|trim|escape }}</pre>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
