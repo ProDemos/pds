@@ -1,0 +1,16 @@
+<div class="c-tab-navigation  {{ theme }}" role="navigation">
+    <div class="c-tab-navigation__list">
+        {% for tab in tabs %}
+            <div class="c-tab-navigation__list-item{% if loop.first %}  c-tab-navigation__list-item--first{% endif %}{% if loop.last %}  c-tab-navigation__list-item--last{% endif %}">
+                <button class="c-tab-navigation__link{% if tab.is_current %}  c-tab-navigation__link--active{% endif %}" role="tab" aria-controls="tab-content_{{ loop.index }}" id="{{ tab.label|replace({' ': '_'}) }}">{{ tab.label }}</button>
+            </div>
+        {% endfor %}
+    </div>
+    {% for tab in tabs %}
+    <div class="c-tab-panel" tabindex="0" role="tabpanel" id="{{ tab.label|replace({' ': '_'}) }}-tab" aria-labelledby="{{ tab.label }}">
+        <p>
+            {{ tab.body }}
+        </p>
+    </div>
+    {% endfor %}
+</div>

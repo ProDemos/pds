@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="s-no-javascript  not-loaded  " >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Navigations - Styleguide - 1</title>
+
+            <!--
+            Copyright (c) Zicht Online 2020 All rights reserved
+            Developed by: Zicht Online
+            Contact: info@zicht.nl
+            Version: 1
+            -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../css/styleguide.css">
+                    <link rel="stylesheet" href="../assets/css/main.css">
+                    <link rel="stylesheet" href="../css/prodemos.css">
+                    
+        <script>
+            'use strict';
+            var html = document.getElementsByTagName('html')[0];
+            html.className = html.className.replace('s-no-javascript', 's-javascript');
+        </script>
+    </head>
+
+    <body class="" >
+                    
+<header class="c-page-header">
+    <h1 class="c-page-header__title"><a class="c-page-header__link" href="../index.html">Prodemos Design System</a></h1>
+
+            <h2 class="c-page-header__subtitle">Zicht</h2>
+    </header>
+    
+    <main class="c-content">
+                    
+
+
+    <input type="checkbox" id="navToggle" class="c-content__toggle__checkbox">
+    <div class="c-content__nav__overlay"></div>
+
+    <aside class="c-content__aside">
+
+        <label class="c-content__toggle__trigger" for="navToggle"></label>
+
+        <nav class="c-navigation  c-page-header__navigation">
+            <ul class="c-navigation__list">
+                                    <li class="c-navigation__item  c-navigation__item--current">
+                        <a class="c-navigation__link  c-navigation__link--current" 
+                            href="../components/brand.html">Components</a>
+                                                                                                                                                        <ul class="c-sub-navigation__list">
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../components/brand.html">Brand</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../components/buttons.html">Buttons</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../components/forms.html">Forms</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
+                                                    href="../components/navigations.html">Navigations</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../components/tables.html">Tables</a>
+                                            </li>
+                                                                            </ul>
+                                                                                                        </li>
+                                    <li class="c-navigation__item  ">
+                        <a class="c-navigation__link  " 
+                            href="../design-elements/colors.html">Design Elements</a>
+                                            </li>
+                                    <li class="c-navigation__item  ">
+                        <a class="c-navigation__link  " 
+                            href="../source-files/design.html">Source files</a>
+                                            </li>
+                            </ul>
+        </nav>
+    </aside>
+
+        
+        <div class="c-content__main">
+               <h1 class="c-copy--h1">Navigations</h1>
+                                
+        
+        
+
+    <div class="c-component  c-component--full" >
+        
+        
+                    <div class="c-component__view  c-component__view--full">
+                            <nav class="c-tab-navigation  t-corporate" role="navigation">
+    <ol class="c-tab-navigation__list">
+                    <li class="c-tab-navigation__list-item  c-tab-navigation__list-item--first">
+                <a href="" class="c-tab-navigation__link  c-tab-navigation__link--active">Thema&#039;s en topics</a>
+            </li>
+                    <li class="c-tab-navigation__list-item">
+                <a href="" class="c-tab-navigation__link">onderwijsniveau&#039;s</a>
+            </li>
+                    <li class="c-tab-navigation__list-item">
+                <a href="" class="c-tab-navigation__link">Praktische informatie</a>
+            </li>
+                    <li class="c-tab-navigation__list-item">
+                <a href="" class="c-tab-navigation__link">Reviews</a>
+            </li>
+                    <li class="c-tab-navigation__list-item  c-tab-navigation__list-item--last">
+                <a href="" class="c-tab-navigation__link">Contact</a>
+            </li>
+            </ol>
+</nav>    
+            </div>
+        
+        <div class="c-component__meta  c-component__meta--full">
+                            <h2 class="c-component-list__title">Tabs as single navigational element</h2>
+            
+            
+                                            <pre class="c-component__code">{{ ui.component('navigations/tab-nav', {
+    &quot;theme&quot;: &quot;t-corporate&quot;,
+    &quot;tabs&quot;: [
+        {
+            &quot;label&quot;: &quot;Thema&#039;s en topics&quot;,
+            &quot;url&quot;: null,
+            &quot;is_current&quot;: true
+        },
+        {
+            &quot;label&quot;: &quot;onderwijsniveau&#039;s&quot;,
+            &quot;url&quot;: null
+        },
+        {
+            &quot;label&quot;: &quot;Praktische informatie&quot;,
+            &quot;url&quot;: null
+        },
+        {
+            &quot;label&quot;: &quot;Reviews&quot;,
+            &quot;url&quot;: null
+        },
+        {
+            &quot;label&quot;: &quot;Contact&quot;,
+            &quot;url&quot;: null
+        }
+    ]
+}) }}</pre>
+            
+                            <pre class="c-component__code">&lt;nav class=&quot;c-tab-navigation  t-corporate&quot; role=&quot;navigation&quot;&gt;
+    &lt;ol class=&quot;c-tab-navigation__list&quot;&gt;
+                    &lt;li class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--first&quot;&gt;
+                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link  c-tab-navigation__link--active&quot;&gt;Thema&amp;#039;s en topics&lt;/a&gt;
+            &lt;/li&gt;
+                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;onderwijsniveau&amp;#039;s&lt;/a&gt;
+            &lt;/li&gt;
+                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Praktische informatie&lt;/a&gt;
+            &lt;/li&gt;
+                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Reviews&lt;/a&gt;
+            &lt;/li&gt;
+                    &lt;li class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--last&quot;&gt;
+                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Contact&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;/ol&gt;
+&lt;/nav&gt;</pre>
+                    </div>
+    </div>
+
+                    
+        
+        
+
+    <div class="c-component  c-component--full" >
+        
+        
+                    <div class="c-component__view  c-component__view--full">
+                            <div class="c-tab-navigation  t-corporate" role="navigation">
+    <div class="c-tab-navigation__list">
+                    <div class="c-tab-navigation__list-item  c-tab-navigation__list-item--first">
+                <button class="c-tab-navigation__link  c-tab-navigation__link--active" role="tab" aria-controls="tab-content_1" id="Thema&#039;s_en_topics">Thema&#039;s en topics</button>
+            </div>
+                    <div class="c-tab-navigation__list-item">
+                <button class="c-tab-navigation__link" role="tab" aria-controls="tab-content_2" id="onderwijsniveau&#039;s">onderwijsniveau&#039;s</button>
+            </div>
+                    <div class="c-tab-navigation__list-item">
+                <button class="c-tab-navigation__link" role="tab" aria-controls="tab-content_3" id="Praktische_informatie">Praktische informatie</button>
+            </div>
+                    <div class="c-tab-navigation__list-item">
+                <button class="c-tab-navigation__link" role="tab" aria-controls="tab-content_4" id="Reviews">Reviews</button>
+            </div>
+                    <div class="c-tab-navigation__list-item  c-tab-navigation__list-item--last">
+                <button class="c-tab-navigation__link" role="tab" aria-controls="tab-content_5" id="Contact">Contact</button>
+            </div>
+            </div>
+        <div class="c-tab-panel" tabindex="0" role="tabpanel" id="Thema&#039;s_en_topics-tab" aria-labelledby="Thema&#039;s en topics">
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+    </div>
+        <div class="c-tab-panel" tabindex="0" role="tabpanel" id="onderwijsniveau&#039;s-tab" aria-labelledby="onderwijsniveau&#039;s">
+        <p>
+            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.
+        </p>
+    </div>
+        <div class="c-tab-panel" tabindex="0" role="tabpanel" id="Praktische_informatie-tab" aria-labelledby="Praktische informatie">
+        <p>
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+    </div>
+        <div class="c-tab-panel" tabindex="0" role="tabpanel" id="Reviews-tab" aria-labelledby="Reviews">
+        <p>
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+        </p>
+    </div>
+        <div class="c-tab-panel" tabindex="0" role="tabpanel" id="Contact-tab" aria-labelledby="Contact">
+        <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+        </p>
+    </div>
+    </div>    
+            </div>
+        
+        <div class="c-component__meta  c-component__meta--full">
+                            <h2 class="c-component-list__title">Tabs with content panels</h2>
+            
+            
+                                            <pre class="c-component__code">{{ ui.component('navigations/tab-content', {
+    &quot;theme&quot;: &quot;t-corporate&quot;,
+    &quot;tabs&quot;: [
+        {
+            &quot;label&quot;: &quot;Thema&#039;s en topics&quot;,
+            &quot;url&quot;: null,
+            &quot;is_current&quot;: true,
+            &quot;body&quot;: &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&quot;
+        },
+        {
+            &quot;label&quot;: &quot;onderwijsniveau&#039;s&quot;,
+            &quot;url&quot;: null,
+            &quot;body&quot;: &quot;Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.&quot;
+        },
+        {
+            &quot;label&quot;: &quot;Praktische informatie&quot;,
+            &quot;url&quot;: null,
+            &quot;body&quot;: &quot;Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.&quot;
+        },
+        {
+            &quot;label&quot;: &quot;Reviews&quot;,
+            &quot;url&quot;: null,
+            &quot;body&quot;: &quot;Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur&quot;
+        },
+        {
+            &quot;label&quot;: &quot;Contact&quot;,
+            &quot;url&quot;: null,
+            &quot;body&quot;: &quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident&quot;
+        }
+    ]
+}) }}</pre>
+            
+                            <pre class="c-component__code">&lt;div class=&quot;c-tab-navigation  t-corporate&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;c-tab-navigation__list&quot;&gt;
+                    &lt;div class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--first&quot;&gt;
+                &lt;button class=&quot;c-tab-navigation__link  c-tab-navigation__link--active&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_1&quot; id=&quot;Thema&amp;#039;s_en_topics&quot;&gt;Thema&amp;#039;s en topics&lt;/button&gt;
+            &lt;/div&gt;
+                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_2&quot; id=&quot;onderwijsniveau&amp;#039;s&quot;&gt;onderwijsniveau&amp;#039;s&lt;/button&gt;
+            &lt;/div&gt;
+                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_3&quot; id=&quot;Praktische_informatie&quot;&gt;Praktische informatie&lt;/button&gt;
+            &lt;/div&gt;
+                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_4&quot; id=&quot;Reviews&quot;&gt;Reviews&lt;/button&gt;
+            &lt;/div&gt;
+                    &lt;div class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--last&quot;&gt;
+                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_5&quot; id=&quot;Contact&quot;&gt;Contact&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Thema&amp;#039;s_en_topics-tab&quot; aria-labelledby=&quot;Thema&amp;#039;s en topics&quot;&gt;
+        &lt;p&gt;
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        &lt;/p&gt;
+    &lt;/div&gt;
+        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;onderwijsniveau&amp;#039;s-tab&quot; aria-labelledby=&quot;onderwijsniveau&amp;#039;s&quot;&gt;
+        &lt;p&gt;
+            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.
+        &lt;/p&gt;
+    &lt;/div&gt;
+        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Praktische_informatie-tab&quot; aria-labelledby=&quot;Praktische informatie&quot;&gt;
+        &lt;p&gt;
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        &lt;/p&gt;
+    &lt;/div&gt;
+        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Reviews-tab&quot; aria-labelledby=&quot;Reviews&quot;&gt;
+        &lt;p&gt;
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+        &lt;/p&gt;
+    &lt;/div&gt;
+        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Contact-tab&quot; aria-labelledby=&quot;Contact&quot;&gt;
+        &lt;p&gt;
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;</pre>
+                    </div>
+    </div>
+
+            </div>
+    </main>
+    </body>
+</html>

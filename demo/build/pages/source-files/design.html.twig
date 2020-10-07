@@ -1,0 +1,23 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Design - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Design</h2>
+{% endblock %}
+
+{% block component_list %}
+    <div class="s-styleguide-content">
+        <h2>Sketch files</h2>
+        <p>The Sketch files can be found at:</br>
+        <a href="{{ rooturi }}files/Design System.sketch">Design System.sketch</a></p>
+
+        <h2>CSS</h2>
+        <p>The compiled CSS can be found here:<br>
+        <a href="{{ rooturi }}assets/css/main.css">CSS-file</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+
+{% if errors|length %}
+    <ul class="o-list-reset  u-size--6  u-margin--l1  u-margin--t1">
+        {% for e in errors %}
+            <li class="o-list-reset__item  u-red--cranberry  u-weight--600">{{ e.message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}

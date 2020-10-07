@@ -1,0 +1,15 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Colors - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Colors</h2>
+{% endblock %}
+
+
+{% block component_list %}
+    {# colorgroups are defined in config/styleguide.yml #}
+    {{ styleguide.colors(colorgroups) }}
+{% endblock %}

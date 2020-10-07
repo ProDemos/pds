@@ -1,0 +1,16 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Navigations - Styleguide' %}
+
+
+{% block component_intro %}
+   <h1 class="c-copy--h1">Navigations</h1>
+{% endblock %}
+
+{% block component_list %}
+    {% for component in components.navigations %}
+        {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+    {% endfor %}
+{% endblock %}

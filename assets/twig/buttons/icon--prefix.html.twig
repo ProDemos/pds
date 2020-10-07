@@ -1,0 +1,21 @@
+{% extends 'buttons/_button.html.twig' %}
+{% import 'macros.twig' as ui %}
+
+
+{% block button_content %}
+    <span class="c-button__icon-container">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+        {{ ui.svg(icon.name, {
+            width: icon.width|default(10),
+            height: icon.height|default(10),
+            directory: icon.directory|default('images/icons/24px'),
+            css_classes: ['c-button__icon', 'c-button__icon--left', 'c-button__icon--' ~ icon.name]
+        }) }}
+
+        <span class="c-button__icon-container__label  c-button__icon-container__label--right  {{ js_hook_text }}">
+            {% if text %}
+                {{ text }}
+            {% endif %}
+        </span>
+    </span>
+{% endblock %}

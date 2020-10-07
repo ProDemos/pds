@@ -1,0 +1,17 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Icons - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Icons</h2>
+{% endblock %}
+
+
+{% block component_list %}
+    <div>
+        {# icons are read from directory by build script #}
+        {{ styleguide.icons(icons,rooturi) }}
+    </div>
+{% endblock %}

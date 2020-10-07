@@ -1,0 +1,41 @@
+-
+    title: Components
+    uri: components/brand.html
+    items:
+        -
+            title: Brand
+            uri: components/brand.html
+        -
+            title: Buttons
+            uri: components/buttons.html
+        -
+            title: Forms
+            uri: components/forms.html
+        -
+            title: Navigations
+            uri: components/navigations.html
+        -
+            title: Tables
+            uri: components/tables.html
+
+-
+    title: Design Elements
+    uri: design-elements/colors.html
+    items:
+        -
+            title: Colors
+            uri: design-elements/colors.html
+        -
+            title: Icons
+            uri: design-elements/icons.html
+        -
+            title: Typography
+            uri: design-elements/typography.html
+
+-
+    title: Source files
+    uri: source-files/design.html
+    items:
+        -
+            title: Design
+            uri: source-files/design.html

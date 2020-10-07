@@ -1,0 +1,182 @@
+-
+    styleguide_title: Text button, large (=default)
+    styleguide_description: Large is the default style of a button if no other properties are given
+    styleguide_type: buttons/text
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+
+-
+    styleguide_title: Text button, large, accent
+    styleguide_description: Accent is always the opposite color of the theme
+    styleguide_type: buttons/text
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+    accent: true
+
+-
+    styleguide_title: Text button, large, disabled
+    styleguide_description: A class can be added to disable the button
+    styleguide_type: buttons/text
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+    disabled: true
+
+-
+    styleguide_title: Text button, large, with icon
+    styleguide_description: Icon in front of the text
+    styleguide_type: buttons/icon--prefix
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+    icon:
+        name: arrow--circled--left
+        width: 22
+        height: 22
+
+-
+    styleguide_title: Text button, large, with icon
+    styleguide_description: Icon behind the text
+    styleguide_type: buttons/icon--suffix
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+    icon:
+        name: arrow--circled--right
+        width: 22
+        height: 22
+
+-
+    styleguide_title: Text button, large, with icons
+    styleguide_description: Icon both in front of and behind the text
+    styleguide_type: buttons/icon--prefix-suffix
+    text: Button
+    url: '#'
+    theme: corporate
+    level: primary
+    size: large
+    icon_left:
+        name: arrow--circled--left
+        width: 22
+        height: 22
+    icon_right:
+        name: arrow--circled--right
+        width: 22
+        height: 22
+
+-
+    styleguide_title: Text button, regular, with 3D-effect
+    styleguide_type: buttons/text
+    text: Submit
+    url: '#'
+    theme: theme4
+    level: primary
+    size: regular
+
+-
+    styleguide_title: Text button, regular
+    styleguide_type: buttons/text
+    text: Submit
+    url: '#'
+    theme: theme4
+    level: secondary
+    size: regular
+
+-
+    styleguide_title: Text button, regular, with icon
+    styleguide_description: Icon in front of the text
+    styleguide_type: buttons/icon--prefix
+    text: Button
+    url: '#'
+    theme: theme4
+    level: primary
+    size: regular
+    icon:
+        name: arrow--circled--left
+        width: 20
+        height: 20
+
+-
+    styleguide_title: Text button, small.
+    styleguide_description: Note; a small button can't have the 3D-effect of the 'primary', so it defaults to 'secondary' when given this property
+    styleguide_type: buttons/text
+    text: Submit
+    url: '#'
+    theme: theme3
+    level: secondary
+    size: small
+
+-
+    styleguide_title: Text button, small, with icon
+    styleguide_description: Icon in front of the text
+    styleguide_type: buttons/icon--prefix
+    text: Button
+    url: '#'
+    theme: theme3
+    level: primary
+    size: small
+    icon:
+        name: arrow--circled--left
+        width: 20
+        height: 20
+
+-
+    styleguide_title: Text button, small, disabled
+    styleguide_type: buttons/text
+    text: Submit
+    url: '#'
+    theme: theme3
+    level: secondary
+    size: small
+    disabled: true
+
+
+-
+    styleguide_title: Toggle button
+    styleguide_type: buttons/text
+    text: Toggle
+    url: '#'
+    theme: corporate
+    level: toggle
+
+-
+    styleguide_title: Toggle button, disabled
+    styleguide_type: buttons/text
+    text: Toggle
+    url: '#'
+    theme: corporate
+    level: toggle
+    disabled: true
+
+
+-
+    styleguide_title: Link button
+    styleguide_type: buttons/text
+    text: Button
+    url: '#'
+    theme: corporate
+    level: transparent
+
+-
+    styleguide_title: Link button
+    styleguide_type: buttons/icon--prefix
+    text: Button
+    url: '#'
+    theme: corporate
+    level: transparent
+    icon:
+        name: arrow--right
+        width: 26
+        height: 26

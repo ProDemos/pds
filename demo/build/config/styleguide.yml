@@ -1,0 +1,33 @@
+version : 1.0
+styleguide:
+    title : Prodemos Design System
+    brand: Zicht
+    outputs: 
+        - example
+        - twig
+        - html
+    assets: 
+        -
+            type: 'stylesheet'
+            path: 'assets/css/main.css'
+        -
+            type: 'stylesheet'
+            path: 'css/prodemos.css'
+colorgroups:
+    # should be defined in assets/sass/variables/zss-overrides
+    ZSS--COLORS:
+        black: { color: '#000', dark: true }
+        white: { color: '#fff', dark: false }
+        blue--deep-sky: { color: '#00b4e6', dark: true }
+        green--vida-loca: { color: '#58a333', dark: true }
+        grey--gainsboro: { color: '#dbdbdb', dark: false }
+        grey--romance: { color: '#f5f0e9', dark: false }
+        grey--romance--light: { color: '#fbf9f6', dark: false }
+        orange--cinnabar: { color: '#eb5b25', dark: true }
+        red--crimson: { color: '#d60d41', dark: true }
+        red--hollywood-cerise: { color: '#d7007e', dark: true }
+        violet--purple-dark: { color: '#98177c', dark: true }
+        yellow--my-sin: { color: '#fcc243', dark: false }
+    
+icons:
+    # will be read from the directory

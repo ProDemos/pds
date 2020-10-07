@@ -1,0 +1,26 @@
+{#
+    Locates the given SVG file and returns its XML with the given options as its attributes.
+
+    @param string symbol The name of the SVG to load, without .svg extension.
+    @param object options
+#}
+{% macro svg(name, options) %}
+    {% set default_options = {
+        width: '',
+        height: '',
+        viewbox_x: '',
+        viewbox_y: '',
+        css_classes: [],
+        attributes: {
+            'aria-hidden': 'true',
+            role: 'img'
+        },
+        title: '',
+        directory: 'images'
+    } %}
+    {% set options = default_options|merge(options|default([])) %}
+    <img src="{{ options.directory }}/{{ name }}" title="{{ options.title }}" width="{{ options.width }}" height="{{ options.height }}" 
+        {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}"{% endfor %}
+        class="{{ options.css_classes | join(" ") }}">
+    {#{ embed_svg(name, options.width, options.height, options.viewbox_x, options.viewbox_y, options.css_classes, options.attributes, options.title, options.directory)|raw }#}
+{% endmacro %}
