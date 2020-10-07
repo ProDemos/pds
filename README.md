@@ -48,22 +48,22 @@ the twig files defined there.
 If you want to make changes, check the demo/build directory. 
 You'll need Composer and Node. You should first run
 
-``
+```
 composer install
-``
+```
 
 to install a twig- and sass-compiler and a yaml parser. 
 After that you can run
 
-``
+```
 composer compile-sass
-``
+```
 to compile assets/sass/main.scss to assets/css/main.css
 
 and
-``
+```
 composer compile-twig
-``
+```
 to generate new demo files in demo/html
 
 To create new elements, 
