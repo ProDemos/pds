@@ -40,7 +40,7 @@
     level: primary
     size: large
     icon:
-        name: arrow--circled--left
+        name: 24px/arrow--circled--left.svg
         width: 22
         height: 22
 
@@ -54,7 +54,7 @@
     level: primary
     size: large
     icon:
-        name: arrow--circled--right
+        name: 24px/arrow--circled--right.svg
         width: 22
         height: 22
 
@@ -68,11 +68,11 @@
     level: primary
     size: large
     icon_left:
-        name: arrow--circled--left
+        name: 24px/arrow--circled--left.svg
         width: 22
         height: 22
     icon_right:
-        name: arrow--circled--right
+        name: 24px/arrow--circled--right.svg
         width: 22
         height: 22
 
@@ -104,7 +104,7 @@
     level: primary
     size: regular
     icon:
-        name: arrow--circled--left
+        name: 24px/arrow--circled--left.svg
         width: 20
         height: 20
 
@@ -128,7 +128,7 @@
     level: primary
     size: small
     icon:
-        name: arrow--circled--left
+        name: 24px/arrow--circled--left.svg
         width: 20
         height: 20
 
@@ -177,6 +177,6 @@
     theme: corporate
     level: transparent
     icon:
-        name: arrow--right
+        name: 24px/arrow--right.svg
         width: 26
         height: 26

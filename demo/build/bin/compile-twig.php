@@ -5,7 +5,7 @@ chdir(__DIR__);
 require_once('../vendor/autoload.php');
 
 $paths = [
-    'views'     => '../sources/views',
+    'views'     => '../resources/twig',
     'pages'     => '../pages',
     'config'    => '../config',
     'assets'    => '../../../assets',
@@ -41,7 +41,7 @@ foreach(scandir($paths['assets'].'/twig') as $dirname) {
     }
 }
 
-// icons
+// generate list of icons
 $data['icons'] = array();
 $iconrit = new RecursiveDirectoryIterator($paths['assets'].'/images/icons');
 $iconritit = new RecursiveIteratorIterator($iconrit);
@@ -53,8 +53,9 @@ foreach ($iconritit as $path) {
 }
 sort($data['icons']);
 
-// now render all pages defined in sources/pages
-// the pages defined which widgets it displays (if any)
+// now render all pages defined in 'pages' to html
+// the pages define which widgets it will display (if any)
+// using the _styleguide.yml defintions in the assets/twig folder
 renderTemplates($paths['pages'],$paths['output']);
 
 chdir($cwd);

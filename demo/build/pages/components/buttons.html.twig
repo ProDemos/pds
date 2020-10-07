@@ -11,6 +11,18 @@
 
 {% block component_list %}
     {% for component in components.buttons %}
+        {% if component.icon %}
+            {% set icon = component.icon|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
+            {% set component = component|merge({'icon': icon}) %}
+        {% endif %}
+        {% if component.icon_right %}
+            {% set icon_right = component.icon_right|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
+            {% set component = component|merge({'icon_right': icon_right}) %}
+        {% endif %}
+        {% if component.icon_left %}
+            {% set icon_left = component.icon_left|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
+            {% set component = component|merge({'icon_left': icon_left}) %}
+        {% endif %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}
 {% endblock %}
