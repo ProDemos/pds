@@ -1,0 +1,8 @@
+{
+    "name": "@prodemos/pds",
+    "version": "0.0.1",
+    "repository": "git@github.com:ProDemos/pds.git",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}
