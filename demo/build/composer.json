@@ -4,7 +4,11 @@
         "symfony/yaml": "^5.1",
         "twig/html-extra": "^3.0"
 	},
-	
+	"autoload": {
+		"psr-4": {
+			"Prodemos\\PDS\\": "src/Prodemos/PDS"
+		}
+	},	
     "scripts": {
     	"post-install-cmd": [
 			"npm install"
@@ -19,7 +23,7 @@
 			"node_modules/node-sass/bin/node-sass --output-style compressed resources/sass/prodemos.scss ../html/css/prodemos.css"
 		],
 		"compile-twig" : [
-			"@php bin/compile-twig.php"
+			"Prodemos\\PDS\\TwigCompiler::run"
 		]
     }
 }
