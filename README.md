@@ -6,7 +6,12 @@ Prodemos Design System [PDS]
 To install, you can pull this repo into your project
 as a git submodule 
 
-(link)
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+```
+git submodule add https://github.com/prodemos/pds
+git submodule init
+```
 
 or install it as a node submodule using npm
 
@@ -18,8 +23,7 @@ or a composer package
 
 or just fetch it as a zip 
 
-(link)
-
+https://github.com/ProDemos/pds/archive/master.zip
 
 # Usage
 
@@ -43,7 +47,7 @@ You can view the PDS in action in demo/html. This html uses
 the assets from the assets folder, and was generated using 
 the twig files defined there. 
 
-# Build/Expand 
+# Build / compile
 
 If you want to make changes, check the demo/build directory. 
 You'll need Composer and Node. You should first run
@@ -65,6 +69,12 @@ and
 composer compile-twig
 ```
 to generate new demo files in demo/html
+
+You can also just call
+``composer compile``
+to do both.
+
+# Expand - adding new elements
 
 To create new elements, 
   - write your sass in assets/sass
