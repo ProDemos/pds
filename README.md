@@ -3,8 +3,10 @@ Prodemos Design System [PDS]
 
 # Install
 
+
+## git submodule
 To install, you can pull this repo into your project
-as a git submodule 
+as a __git submodule__ 
 
 https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
@@ -13,14 +15,34 @@ git submodule add https://github.com/prodemos/pds
 git submodule init
 ```
 
-or install it as a node submodule using npm
+## npm
+Since this is a private repository, you will need to [authenticate with GitHub Packages](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages), to install the module. Start by [creating a personal access token](https://github.com/settings/tokens). It needs only `read:packages` permissions.
 
+In your project's root folder, create or edit `.npmrc` to include the following:
+
+```
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@prodemos:registry=https://npm.pkg.github.com/
+```
+
+Now copy your personal access token, and export it to the command line environment:   
+
+```
+export GITHUB_TOKEN=[your GitHub access token from step 1] 
+# on Windows:
+set GITHUB_TOKEN=[your GitHub access token from step 1]
+```
+
+Now you can install the package:
+
+```
+npm install @prodemos/pds
+```
+
+## Composer
 (link)
 
-or a composer package
-
-(link)
-
+## Download
 or just fetch it as a zip 
 
 https://github.com/ProDemos/pds/archive/master.zip
@@ -85,3 +107,6 @@ Your element should now appear in the styleguide in demo/html
 
 Create a pull request of your changes in your own branch.
 
+# Publishing
+
+More information on how to publish a new version of the package can be found in the [wiki](https://github.com/ProDemos/pds/wiki/Publishing)
