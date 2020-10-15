@@ -1,5 +1,5 @@
 {#
-    Locates the given SVG file and returns its XML with the given options as its attributes.
+    Embed the SVG using <svg><use>, so css can cascade into the svg.
 
     @param string symbol The name of the SVG to load, without .svg extension.
     @param object options
@@ -19,8 +19,22 @@
         directory: 'images'
     } %}
     {% set options = default_options|merge(options|default([])) %}
-    <img src="{{ options.directory }}/{{ name }}" title="{{ options.title }}" width="{{ options.width }}" height="{{ options.height }}" 
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="{{ options.width }}px" height="{{ options.height }}px" 
         {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}"{% endfor %}
-        class="{{ options.css_classes | join(" ") }}">
+        {% if options.css_classes|length %}class="{{ options.css_classes | join(" ") }}"{% endif %} 
+        aria-hidden="true" role="img">
+        <use xlink:href='{{ options.directory }}/{{ name }}#root'></use>
+    </svg>
+    {# <figure>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="{{ options.width }}px" height="{{ options.height }}px" 
+            viewBox="0 0 {{ options.width }} {{ options.height }}" preserveAspectRatio="xMidYMid meet" 
+            class="" aria-hidden="true" role="img">
+            <use xlink:href='{{ options.directory }}/{{ name }}#root'></use>
+        </svg>
+    </figure> #}
+    {#<img src="{{ options.directory }}/{{ name }}" title="{{ options.title }}" width="{{ options.width }}" height="{{ options.height }}" 
+        {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}"{% endfor %}
+        class="{{ options.css_classes | join(" ") }}">#}
     {#{ embed_svg(name, options.width, options.height, options.viewbox_x, options.viewbox_y, options.css_classes, options.attributes, options.title, options.directory)|raw }#}
 {% endmacro %}
