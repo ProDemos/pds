@@ -123,51 +123,25 @@
                             <h2 class="c-component-list__title">Tabs as single navigational element</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('navigations/tab-nav', {
-    &quot;theme&quot;: &quot;t-corporate&quot;,
-    &quot;tabs&quot;: [
-        {
-            &quot;label&quot;: &quot;Thema&#039;s en topics&quot;,
-            &quot;url&quot;: null,
-            &quot;is_current&quot;: true
-        },
-        {
-            &quot;label&quot;: &quot;onderwijsniveau&#039;s&quot;,
-            &quot;url&quot;: null
-        },
-        {
-            &quot;label&quot;: &quot;Praktische informatie&quot;,
-            &quot;url&quot;: null
-        },
-        {
-            &quot;label&quot;: &quot;Reviews&quot;,
-            &quot;url&quot;: null
-        },
-        {
-            &quot;label&quot;: &quot;Contact&quot;,
-            &quot;url&quot;: null
-        }
-    ]
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;nav class=&quot;c-tab-navigation  t-corporate&quot; role=&quot;navigation&quot;&gt;
-    &lt;ol class=&quot;c-tab-navigation__list&quot;&gt;
-                    &lt;li class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--first&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link  c-tab-navigation__link--active&quot;&gt;Thema&amp;#039;s en topics&lt;/a&gt;
-            &lt;/li&gt;
-                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;onderwijsniveau&amp;#039;s&lt;/a&gt;
-            &lt;/li&gt;
-                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Praktische informatie&lt;/a&gt;
-            &lt;/li&gt;
-                    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Reviews&lt;/a&gt;
-            &lt;/li&gt;
-                    &lt;li class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--last&quot;&gt;
-                &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Contact&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;/ol&gt;
+                                            <pre class="c-component__code">&lt;nav class=&quot;c-tab-navigation t-corporate&quot; role=&quot;navigation&quot;&gt;
+  &lt;ol class=&quot;c-tab-navigation__list&quot;&gt;
+    &lt;li class=&quot;c-tab-navigation__list-item c-tab-navigation__list-item--first&quot;&gt;
+      &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link c-tab-navigation__link--active&quot;&gt;Thema&#039;s en topics&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;onderwijsniveau&#039;s&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Praktische informatie&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Reviews&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-tab-navigation__list-item c-tab-navigation__list-item--last&quot;&gt;
+      &lt;a href=&quot;&quot; class=&quot;c-tab-navigation__link&quot;&gt;Contact&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/nav&gt;</pre>
                     </div>
     </div>
@@ -230,82 +204,41 @@
                             <h2 class="c-component-list__title">Tabs with content panels</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('navigations/tab-content', {
-    &quot;theme&quot;: &quot;t-corporate&quot;,
-    &quot;tabs&quot;: [
-        {
-            &quot;label&quot;: &quot;Thema&#039;s en topics&quot;,
-            &quot;url&quot;: null,
-            &quot;is_current&quot;: true,
-            &quot;body&quot;: &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&quot;
-        },
-        {
-            &quot;label&quot;: &quot;onderwijsniveau&#039;s&quot;,
-            &quot;url&quot;: null,
-            &quot;body&quot;: &quot;Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.&quot;
-        },
-        {
-            &quot;label&quot;: &quot;Praktische informatie&quot;,
-            &quot;url&quot;: null,
-            &quot;body&quot;: &quot;Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.&quot;
-        },
-        {
-            &quot;label&quot;: &quot;Reviews&quot;,
-            &quot;url&quot;: null,
-            &quot;body&quot;: &quot;Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur&quot;
-        },
-        {
-            &quot;label&quot;: &quot;Contact&quot;,
-            &quot;url&quot;: null,
-            &quot;body&quot;: &quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident&quot;
-        }
-    ]
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;div class=&quot;c-tab-navigation  t-corporate&quot; role=&quot;navigation&quot;&gt;
-    &lt;div class=&quot;c-tab-navigation__list&quot;&gt;
-                    &lt;div class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--first&quot;&gt;
-                &lt;button class=&quot;c-tab-navigation__link  c-tab-navigation__link--active&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_1&quot; id=&quot;Thema&amp;#039;s_en_topics&quot;&gt;Thema&amp;#039;s en topics&lt;/button&gt;
-            &lt;/div&gt;
-                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_2&quot; id=&quot;onderwijsniveau&amp;#039;s&quot;&gt;onderwijsniveau&amp;#039;s&lt;/button&gt;
-            &lt;/div&gt;
-                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_3&quot; id=&quot;Praktische_informatie&quot;&gt;Praktische informatie&lt;/button&gt;
-            &lt;/div&gt;
-                    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
-                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_4&quot; id=&quot;Reviews&quot;&gt;Reviews&lt;/button&gt;
-            &lt;/div&gt;
-                    &lt;div class=&quot;c-tab-navigation__list-item  c-tab-navigation__list-item--last&quot;&gt;
-                &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_5&quot; id=&quot;Contact&quot;&gt;Contact&lt;/button&gt;
-            &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Thema&amp;#039;s_en_topics-tab&quot; aria-labelledby=&quot;Thema&amp;#039;s en topics&quot;&gt;
-        &lt;p&gt;
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        &lt;/p&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;c-tab-navigation t-corporate&quot; role=&quot;navigation&quot;&gt;
+  &lt;div class=&quot;c-tab-navigation__list&quot;&gt;
+    &lt;div class=&quot;c-tab-navigation__list-item c-tab-navigation__list-item--first&quot;&gt;
+      &lt;button class=&quot;c-tab-navigation__link c-tab-navigation__link--active&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_1&quot; id=&quot;Thema&#039;s_en_topics&quot;&gt;Thema&#039;s en topics&lt;/button&gt;
     &lt;/div&gt;
-        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;onderwijsniveau&amp;#039;s-tab&quot; aria-labelledby=&quot;onderwijsniveau&amp;#039;s&quot;&gt;
-        &lt;p&gt;
-            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.
-        &lt;/p&gt;
+    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_2&quot; id=&quot;onderwijsniveau&#039;s&quot;&gt;onderwijsniveau&#039;s&lt;/button&gt;
     &lt;/div&gt;
-        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Praktische_informatie-tab&quot; aria-labelledby=&quot;Praktische informatie&quot;&gt;
-        &lt;p&gt;
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-        &lt;/p&gt;
+    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_3&quot; id=&quot;Praktische_informatie&quot;&gt;Praktische informatie&lt;/button&gt;
     &lt;/div&gt;
-        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Reviews-tab&quot; aria-labelledby=&quot;Reviews&quot;&gt;
-        &lt;p&gt;
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-        &lt;/p&gt;
+    &lt;div class=&quot;c-tab-navigation__list-item&quot;&gt;
+      &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_4&quot; id=&quot;Reviews&quot;&gt;Reviews&lt;/button&gt;
     &lt;/div&gt;
-        &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Contact-tab&quot; aria-labelledby=&quot;Contact&quot;&gt;
-        &lt;p&gt;
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
-        &lt;/p&gt;
+    &lt;div class=&quot;c-tab-navigation__list-item c-tab-navigation__list-item--last&quot;&gt;
+      &lt;button class=&quot;c-tab-navigation__link&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_5&quot; id=&quot;Contact&quot;&gt;Contact&lt;/button&gt;
     &lt;/div&gt;
-    &lt;/div&gt;</pre>
+  &lt;/div&gt;
+  &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Thema&#039;s_en_topics-tab&quot; aria-labelledby=&quot;Thema&#039;s en topics&quot;&gt;
+    &lt;p&gt; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;onderwijsniveau&#039;s-tab&quot; aria-labelledby=&quot;onderwijsniveau&#039;s&quot;&gt;
+    &lt;p&gt; Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Praktische_informatie-tab&quot; aria-labelledby=&quot;Praktische informatie&quot;&gt;
+    &lt;p&gt; Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Reviews-tab&quot; aria-labelledby=&quot;Reviews&quot;&gt;
+    &lt;p&gt; Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-tab-panel&quot; tabindex=&quot;0&quot; role=&quot;tabpanel&quot; id=&quot;Contact-tab&quot; aria-labelledby=&quot;Contact&quot;&gt;
+    &lt;p&gt; At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
                     </div>
     </div>
 

@@ -28,16 +28,16 @@
             }) }}
         </span>
     {% else %}
-        <span class="c-button-content">
+        <span class="c-btn-content">
             <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
             {{ ui.svg(icon_left.name, {
                 width: icon_left.width|default(10),
                 height: icon_left.height|default(10),
                 directory: icon_left.directory|default('assets/images/icons/24px'),
-                css_classes: ['c-button-icon', 'left', 'icon--' ~ icon_left.name|basename]
+                css_classes: ['c-btn-icon', 'left', 'icon--' ~ icon_left.name|basename]
             }) }}
 
-            <span class="c-button-label right">
+            <span class="c-btn-label right">
                 {% if text %}
                     {{ text }}
                 {% endif %}
@@ -48,7 +48,7 @@
                 width: icon_right.width|default(10),
                 height: icon_right.height|default(10),
                 directory: icon_right.directory|default('assets/images/icons/24px'),
-                css_classes: ['c-button-icon', 'right', 'icon--' ~ icon_right.name|basename]
+                css_classes: ['c-btn-icon', 'right', 'icon--' ~ icon_right.name|basename]
             }) }}
         </span>
 

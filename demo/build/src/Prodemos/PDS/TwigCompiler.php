@@ -94,6 +94,25 @@ class TwigCompiler
             return pathinfo($path, PATHINFO_FILENAME);
         }));
 
+        $this->twig->addFilter(new TwigFilter('tidy', function ($html) {
+            $html = preg_replace('/\s+/',' ',$html);
+            $dom = new \DOMDocument();
+            $dom->preserveWhiteSpace = false;
+            $dom->formatOutput = true;
+            try {
+                //libxml_use_internal_errors(true);
+                $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED | LIBXML_NOERROR | LIBXML_ERR_NONE |  LIBXML_NOWARNING );
+                $tidy = $dom->saveXML($dom->documentElement);
+                // play it again sam
+                $dom->loadXML($tidy);
+                $tidy = $dom->saveXML($dom->documentElement);
+                $html = $tidy;
+            } catch (ErrorException $x) {
+                // oops
+            }
+            return $html;
+        }));
+
         // now render all pages defined in 'pages' to html
         // the pages define which widgets it will display (if any)
         // using the _styleguide.yml defintions in the assets/twig folder

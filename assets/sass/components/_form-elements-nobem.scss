@@ -1,0 +1,129 @@
+
+// Input wrapper, used for combined elements, like the radio's and checkboxes, but can be used for all elements
+.c-input--container {
+    @extend .c-input--container;
+}
+
+
+// The default label styling
+.c-input-label {
+    // is good
+}
+
+
+
+// Basic input styling, shared by all inputs
+.c-input {
+    &.disabled {
+        @extend .c-input.c-input--disabled;
+    }
+}
+
+
+
+// Text input
+.c-input.text {
+    @extend .c-input--text;
+    &.valid {
+        @extend .c-input--text.c-input--text--valid;
+    }
+    &.invalid {
+        @extend .c-input--text.c-input--text--invalid;
+    }
+}
+
+@each $theme in $prodemos-themes {
+    &.t-#{nth($theme,1)} {
+        .c-input.text {
+            @extend .c-input--dropdown.t-#{nth($theme,1)}
+        }
+    }
+}
+
+.c-input.dropdown {
+    @extend .c-input--dropdown;
+    &.full-width {
+        @extend .c-input--dropdown.c-input--dropdown--full-width;
+    }
+}
+
+@each $theme in $prodemos-themes {
+    &.t-#{nth($theme,1)} {
+        .c-input.dropdown {
+            @extend .c-input--dropdown.t-#{nth($theme,1)}
+        }
+    }
+}
+
+
+.c-input-container.radio {
+    @extend .c-input--container--radio;
+    @include hover {
+        @each $theme in $prodemos-themes {
+            &.t-#{nth($theme,1)} {
+                .c-input-check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    .c-input-label {
+        // good 
+    }
+    .c-input-check {
+        @extend %c-input--radio__check; 
+    }
+}
+
+.c-input.radio {
+    @extend .c-input--radio;
+    &:checked ~ .c-input-check {
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} & {
+                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                &::before {
+                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+
+}
+
+.c-input-container.checkbox {
+    @extend .c-input--container--checkbox;
+    @include hover {
+        @each $theme in $prodemos-themes {
+            &.t-#{nth($theme,1)} {
+                .c-input-check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+    .c-input-label {
+        // good
+    }
+    .c-input-check {
+        @extend %c-input--checkbox__check; 
+    }
+
+}
+
+.c-input.checkbox {
+    @extend .c-input--checkbox;
+    &:checked ~ .c-input-check {
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} & {
+                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                &::before {
+                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+    }
+}
+
+

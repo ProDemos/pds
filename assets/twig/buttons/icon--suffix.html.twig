@@ -19,13 +19,12 @@
             }) }}
         </span>
     {% else %}
-        <span class="c-btn-container">
+        <span class="c-btn-content">
             <span class="c-btn-label left">
                 {% if text %}
                     {{ text }}
                 {% endif %}
             </span>
-
             <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
             {{ ui.svg(icon.name, {
                 width: icon.width|default(10),
