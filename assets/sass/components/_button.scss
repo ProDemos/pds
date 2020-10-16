@@ -49,10 +49,13 @@
 
     // Hover styles, but only when the button is not disabled
     /* stylelint-disable max-nesting-depth */
+    
+    // libsass<3.6 has a regression issue with this:
+    // https://github.com/sass/node-sass/issues/2330
+    // @include hover:not(.c-btn-disabled) {
     &:not(.c-btn--disabled) {
         @include hover {
             transform: translate(-2px, 2px);
-
             &::before {
                 width: 8px;
                 height: 100%;
@@ -68,8 +71,10 @@
             }
         }
     }
-
+    
+    
     &:active:not(.c-btn--disabled) {
+
         transform: translate(-5px, 5px);
 
         &::before {
@@ -85,7 +90,9 @@
             bottom: -6px;
             left: -3px;
         }
+        
     }
+
     /* stylelint-enable max-nesting-depth */
 }
 
@@ -279,4 +286,11 @@
 .c-button__icon-container__label--left {
     text-align: left;
 }
+
+
+
+
+
+
+
 

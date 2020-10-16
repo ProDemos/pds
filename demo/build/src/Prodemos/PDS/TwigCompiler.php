@@ -10,6 +10,7 @@ use Symfony\Component\Yaml\Parser;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
+use Twig\TwigFilter;
 use Twig\Extra\Html\HtmlExtension;
 
 class TwigCompiler
@@ -49,10 +50,8 @@ class TwigCompiler
             $this->paths['assets'].'/twig'
         ]);
         
-        $this->twig = new Environment($loader);
-        $this->twig->addExtension(new HtmlExtension());
         
-        
+
         // read lots of yaml
         $yaml = new Parser();
         
@@ -84,6 +83,17 @@ class TwigCompiler
         }
         sort($this->data['icons']);
         
+        // create a twigparser
+        $this->twig = new Environment($loader);
+
+        // load some extensions
+        $this->twig->addExtension(new HtmlExtension());
+        
+        // an anonymous function
+        $this->twig->addFilter(new TwigFilter('basename', function ($path) {
+            return pathinfo($path, PATHINFO_FILENAME);
+        }));
+
         // now render all pages defined in 'pages' to html
         // the pages define which widgets it will display (if any)
         // using the _styleguide.yml defintions in the assets/twig folder
