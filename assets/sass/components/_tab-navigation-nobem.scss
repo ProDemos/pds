@@ -38,3 +38,19 @@
     }
 
 }
+
+@each $theme in $prodemos-themes {
+    .t-#{nth($theme,1)} .c-tabs-container,
+    .c-tabs-container.t-#{nth($theme,1)} {
+        ul, ol, .c-tabs {
+            a, .c-tabs-link {
+                &.active {
+                    color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    &::after {
+                        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    }
+                }
+            }
+        }
+    } 
+}
