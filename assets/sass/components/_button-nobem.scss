@@ -23,7 +23,7 @@
         @extend .c-btn--toggle;
     }
     &.transparent {
-        @extend .c-btn--toggle;
+        @extend .c-btn--transparent;
     }
     
     &.disabled {
@@ -96,7 +96,7 @@
                 @extend .c-btn--#{nth($theme,1)}.c-btn--toggle.c-btn--disabled;
             }
         }
-        .transparent {
+        &.transparent {
             @extend .c-btn--#{nth($theme,1)}.c-btn--transparent;
         }
     }

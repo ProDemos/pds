@@ -1,6 +1,6 @@
 
 // Input wrapper, used for combined elements, like the radio's and checkboxes, but can be used for all elements
-.c-input--container {
+.c-input-container {
     @extend .c-input--container;
 }
 
@@ -72,6 +72,8 @@
     }
     .c-input-check {
         @extend %c-input--radio__check; 
+        // i moved the check inside the label so you can click it
+        top: nth($spacing-scale, 4);
     }
 }
 
@@ -107,6 +109,8 @@
     }
     .c-input-check {
         @extend %c-input--checkbox__check; 
+        // i moved the check inside the label so you can click it
+        top: nth($spacing-scale, 4);
     }
 
 }

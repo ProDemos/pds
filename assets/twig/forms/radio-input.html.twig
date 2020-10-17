@@ -30,8 +30,10 @@
 </div>
 {% else %}
 <div class="c-input-container radio  has-hover-propagation  {{ cx.container }}">
-    <input class="c-input  radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
-    <label class="c-input-label" for="{{ id }}">{{ label }}</label>
-    <div class="c-input-check"></div>
+    <label class="c-input-label" for="{{ id }}">
+        <input class="c-input  radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
+        <div class="c-input-check"></div>
+        {{ label }}
+    </label>
 </div>
 {% endif %}

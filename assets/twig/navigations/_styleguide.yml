@@ -1,28 +1,27 @@
 -
-    styleguide_title: Tabs as single navigational element
+    styleguide_title: Tabs as single navigational element (with lists)
     styleguide_type: navigations/tab-nav
     styleguide_component_width: true
     theme: t-corporate
     tabs:
         -
             label: Thema's en topics
-            url: #
+            url: "#test"
             is_current: true
         -
             label: onderwijsniveau's
-            url: #
+            url: "#test2"
         -
             label: Praktische informatie
-            url: #
+            url: "#test3"
         -
             label: Reviews
-            url: #
         -
             label: Contact
-            url: #
+            url: "#test5"
 
 -
-    styleguide_title: Tabs with content panels
+    styleguide_title: Tabs with content panels (with divs)
     styleguide_type: navigations/tab-content
     styleguide_component_width: true
     theme: t-corporate

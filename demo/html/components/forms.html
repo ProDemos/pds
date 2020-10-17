@@ -88,9 +88,22 @@
         <div class="c-content__main">
             <div class="c-content__intro">
                     <h2 class="c-copy--h2">Form elements</h2>
+
     <p>Input components are a bit simpler than buttons. Just add the default input class (c-input), 
     add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
     Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
+
+    <div class="s-default">
+        <h4>Elements and modifiers</h4>
+        <ul>
+            <li> .c-input[.disabled]</li>
+            <li> .c-input.text[.valid|.invalid]</li>
+            <li> .c-input.dropdown[.fullwidth]</li>
+            <li> .c-input.container[.radio|.checkbox]</li>
+            <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
+            <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
+        </ul>
+    </div>
 
             </div>
 
@@ -253,9 +266,11 @@
                     <div class="c-component__view  ">
                             
 <div class="c-input-container radio  has-hover-propagation  t-corporate">
-    <input class="c-input  radio" type="radio" id="radio_1" name="radio_name" value="yes" >
-    <label class="c-input-label" for="radio_1">Choose me</label>
-    <div class="c-input-check"></div>
+    <label class="c-input-label" for="radio_1">
+        <input class="c-input  radio" type="radio" id="radio_1" name="radio_name" value="yes" >
+        <div class="c-input-check"></div>
+        Choose me
+    </label>
 </div>
     
             </div>
@@ -266,9 +281,7 @@
             
             
                                             <pre class="c-component__code">&lt;div class=&quot;c-input-container radio has-hover-propagation t-corporate&quot;&gt;
-  &lt;input class=&quot;c-input radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot;/&gt;
-  &lt;label class=&quot;c-input-label&quot; for=&quot;radio_1&quot;&gt;Choose me&lt;/label&gt;
-  &lt;div class=&quot;c-input-check&quot;/&gt;
+  &lt;label class=&quot;c-input-label&quot; for=&quot;radio_1&quot;&gt;&lt;input class=&quot;c-input radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Choose me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>
@@ -283,9 +296,11 @@
                     <div class="c-component__view  ">
                             
 <div class="c-input-container checkbox  has-hover-propagation  t-corporate">
-    <input class="c-input  checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
-    <label class="c-input-label" for="checkbox_1">Check me</label>
-    <div class="c-input-check"></div>
+    <label class="c-input-label" for="checkbox_1">
+        <input class="c-input  checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
+        <div class="c-input-check"></div>
+        Check me
+    </label>
 </div>
     
             </div>
@@ -296,9 +311,7 @@
             
             
                                             <pre class="c-component__code">&lt;div class=&quot;c-input-container checkbox has-hover-propagation t-corporate&quot;&gt;
-  &lt;input class=&quot;c-input checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot;/&gt;
-  &lt;label class=&quot;c-input-label&quot; for=&quot;checkbox_1&quot;&gt;Check me&lt;/label&gt;
-  &lt;div class=&quot;c-input-check&quot;/&gt;
+  &lt;label class=&quot;c-input-label&quot; for=&quot;checkbox_1&quot;&gt;&lt;input class=&quot;c-input checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Check me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>

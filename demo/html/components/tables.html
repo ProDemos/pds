@@ -88,139 +88,254 @@
         <div class="c-content__main">
             <div class="c-content__intro">
                     <h2 class="c-copy--h2">Tables</h2>
-     <p>There are two types of tables styled: responsive and non responsive. It's up to the layout of the page and the 
-     use of the table to decide which one to use.
-            Because tables are far to complex to catch them in a component, you should inspect the 
-            table and gather it's classnames. Take a good look at the role- and data-attributes,
-             they are an important part of the responsive behaviour, so don't forget them.
+     <p>
+        There are two types of tables styled: responsive and non responsive. It's up to the layout of the page and the 
+        use of the table to decide which one to use.
+        <br><br>
+        Take a good look at the role- and data-attributes,
+        they are an important part of the responsive and accessible behaviour, so don't forget them.
+        The cells data-label is printed as table headers on each row on mobile.
     </p>
 
             </div>
 
             
-    <div class="c-component  c-component--full">
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Table, default, not responsive</h2>
-            <p class="c-component__description"></p>
-        </div>
-        <div class="c-component__view  c-component__view--full">
-            <table class="c-table" role="table">
-                <thead class="c-table__head" role="rowgroup">
-                    <tr class="c-table__row  c-table__row--header" role="row">
-                        <th class="c-table__header" role="columnheader">First name</th>
-                        <th class="c-table__header" role="columnheader">Last name</th>
-                        <th class="c-table__header" role="columnheader">Job title</th>
-                        <th class="c-table__header" role="columnheader">Date of birth</th>
-                    </tr>
-                </thead>
-                <tbody class="c-table__body">
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First name">James</td>
-                        <td class="c-table__value" role="cell" data-label="Last name">Matman</td>
-                        <td class="c-table__value" role="cell" data-label="Job title">Chief Sandwich Eater</td>
-                        <td class="c-table__value" role="cell" data-label="Date of birth">January 13, 1979</td>
-                    </tr>
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First name">James</td>
-                        <td class="c-table__value" role="cell" data-label="Last name">Matman</td>
-                        <td class="c-table__value" role="cell" data-label="Job title">Chief Sandwich Eater</td>
-                        <td class="c-table__value" role="cell" data-label="Date of birth">January 13, 1979</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    
         
+        
+
+    <div class="c-component  c-component--full" >
+        
+        
+                    <div class="c-component__view  c-component__view--full">
+                                <table class="c-table" role="table">
+        <thead role="rowgroup">
+            <tr role="row">
+                                    <th role="columnheader">First name</th>
+                                    <th role="columnheader">Last name</th>
+                                    <th role="columnheader">Job title</th>
+                                    <th role="columnheader">Date of birth</th>
+                            </tr>
+        </thead>
+        <tbody>
+                            <tr role="row">
+                                    <td role="cell" data-label="First name">James</td>
+                                    <td role="cell" data-label="Last name">Matman</td>
+                                    <td role="cell" data-label="Job title">Chief sandwich Eater</td>
+                                    <td role="cell" data-label="Date of birth">January 13th 1979</td>
+                                            <tr role="row">
+                                    <td role="cell" data-label="First name">James</td>
+                                    <td role="cell" data-label="Last name">Matman</td>
+                                    <td role="cell" data-label="Job title">Chief sandwich Eater</td>
+                                    <td role="cell" data-label="Date of birth">January 13th 1979</td>
+                                    </tbody>
+    </table>
+    
+            </div>
+        
+        <div class="c-component__meta  c-component__meta--full">
+                            <h2 class="c-component-list__title">Table, default, not responsive</h2>
+            
+            
+            
+                                            <pre class="c-component__code">&lt;table class=&quot;c-table&quot; role=&quot;table&quot;&gt;
+  &lt;thead role=&quot;rowgroup&quot;&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;First name&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Last name&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Job title&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Date of birth&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;James&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Matman&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Chief sandwich Eater&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of birth&quot;&gt;January 13th 1979&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;James&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Matman&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Chief sandwich Eater&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of birth&quot;&gt;January 13th 1979&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                    </div>
     </div>
 
-
-    <div class="c-component  c-component--full">
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Table, default, responsive</h2>
-            <p class="c-component__description"></p>
-        </div>
-        <div class="c-component__view  c-component__view--full">
-            <table class="c-table  c-table--responsive" role="table">
-                <thead class="c-table__head" role="rowgroup">
-                    <tr class="c-table__row  c-table__row--header" role="row">
-                        <th class="c-table__header" role="columnheader">First Name</th>
-                        <th class="c-table__header" role="columnheader">Last Name</th>
-                        <th class="c-table__header" role="columnheader">Job Title</th>
-                        <th class="c-table__header" role="columnheader">Favorite Color</th>
-                        <th class="c-table__header" role="columnheader">Wars or Trek?</th>
-                        <th class="c-table__header" role="columnheader">Secret Alias</th>
-                        <th class="c-table__header" role="columnheader">Date of Birth</th>
-                        <th class="c-table__header" role="columnheader">Dream Vacation City</th>
-                        <th class="c-table__header" role="columnheader">GPA</th>
-                        <th class="c-table__header" role="columnheader">Arbitrary Data</th>
-                    </tr>
-                </thead>
-                <tbody class="c-table__body" role="rowgroup">
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First Name">James</td>
-                        <td class="c-table__value" role="cell" data-label="Last Name">Matman</td>
-                        <td class="c-table__value" role="cell" data-label="Job Title">Chief Sandwich Eater</td>
-                        <td class="c-table__value" role="cell" data-label="Favorite Color">Lettuce Green</td>
-                        <td class="c-table__value" role="cell" data-label="Wars or Trek?">Trek</td>
-                        <td class="c-table__value" role="cell" data-label="Secret Alias">Digby Green</td>
-                        <td class="c-table__value" role="cell" data-label="Date of Birth">January 13, 1979</td>
-                        <td class="c-table__value" role="cell" data-label="Dream Vacation City">Gotham City</td>
-                        <td class="c-table__value" role="cell" data-label="GPA">3.1</td>
-                        <td class="c-table__value" role="cell" data-label="Arbitrary Data">RBX-12</td>
-                    </tr>
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First Name">The</td>
-                        <td class="c-table__value" role="cell" data-label="Last Name">Tick</td>
-                        <td class="c-table__value" role="cell" data-label="Job Title">Crimefighter Sorta</td>
-                        <td class="c-table__value" role="cell" data-label="Favorite Color">Blue</td>
-                        <td class="c-table__value" role="cell" data-label="Wars or Trek?">Wars</td>
-                        <td class="c-table__value" role="cell" data-label="Secret Alias">John Smith</td>
-                        <td class="c-table__value" role="cell" data-label="Date of Birth">July 19, 1968</td>
-                        <td class="c-table__value" role="cell" data-label="Dream Vacation City">Athens</td>
-                        <td class="c-table__value" role="cell" data-label="GPA">N/A</td>
-                        <td class="c-table__value" role="cell" data-label="Arbitrary Data">Edlund, Ben (July 1996).</td>
-                    </tr>
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First Name">Jokey</td>
-                        <td class="c-table__value" role="cell" data-label="Last Name">Smurf</td>
-                        <td class="c-table__value" role="cell" data-label="Job Title">Giving Exploding Presents</td>
-                        <td class="c-table__value" role="cell" data-label="Favorite Color">Smurflow</td>
-                        <td class="c-table__value" role="cell" data-label="Wars or Trek?">Smurf</td>
-                        <td class="c-table__value" role="cell" data-label="Secret Alias">Smurflane Smurfmutt</td>
-                        <td class="c-table__value" role="cell" data-label="Date of Birth">Smurfuary Smurfteenth, 1945</td>
-                        <td class="c-table__value" role="cell" data-label="Dream Vacation City">New Smurf City</td>
-                        <td class="c-table__value" role="cell" data-label="GPA">4.Smurf</td>
-                        <td class="c-table__value" role="cell" data-label="Arbitrary Data">One</td>
-                    </tr>
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First Name">Cindy</td>
-                        <td class="c-table__value" role="cell" data-label="Last Name">Beyler</td>
-                        <td class="c-table__value" role="cell" data-label="Job Title">Sales Representative</td>
-                        <td class="c-table__value" role="cell" data-label="Favorite Color">Red</td>
-                        <td class="c-table__value" role="cell" data-label="Wars or Trek?">Wars</td>
-                        <td class="c-table__value" role="cell" data-label="Secret Alias">Lori Quivey</td>
-                        <td class="c-table__value" role="cell" data-label="Date of Birth">July 5, 1956</td>
-                        <td class="c-table__value" role="cell" data-label="Dream Vacation City">Paris</td>
-                        <td class="c-table__value" role="cell" data-label="GPA">3.4</td>
-                        <td class="c-table__value" role="cell" data-label="Arbitrary Data">3451</td>
-                    </tr>
-                    <tr class="c-table__row" role="row">
-                        <td class="c-table__value" role="cell" data-label="First Name">Captain</td>
-                        <td class="c-table__value" role="cell" data-label="Last Name">Cool</td>
-                        <td class="c-table__value" role="cell" data-label="Job Title">Tree Crusher</td>
-                        <td class="c-table__value" role="cell" data-label="Favorite Color">Blue</td>
-                        <td class="c-table__value" role="cell" data-label="Wars or Trek?">Wars</td>
-                        <td class="c-table__value" role="cell" data-label="Secret Alias">Steve 42nd</td>
-                        <td class="c-table__value" role="cell" data-label="Date of Birth">December 13, 1982</td>
-                        <td class="c-table__value" role="cell" data-label="Dream Vacation City">Las Vegas</td>
-                        <td class="c-table__value" role="cell" data-label="GPA">1.9</td>
-                        <td class="c-table__value" role="cell" data-label="Arbitrary Data">Under the couch</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    
         
+        
+
+    <div class="c-component  c-component--full" >
+        
+        
+                    <div class="c-component__view  c-component__view--full">
+                                <table class="c-table  responsive" role="table">
+        <thead role="rowgroup">
+            <tr role="row">
+                                    <th role="columnheader">First name</th>
+                                    <th role="columnheader">Last name</th>
+                                    <th role="columnheader">Job title</th>
+                                    <th role="columnheader">Favorite Color</th>
+                                    <th role="columnheader">Wars or Trek ?</th>
+                                    <th role="columnheader">Secret Alias</th>
+                                    <th role="columnheader">Date of Birth</th>
+                                    <th role="columnheader">Dream Vacation City</th>
+                                    <th role="columnheader">GPA</th>
+                                    <th role="columnheader">Arbitrary Data</th>
+                            </tr>
+        </thead>
+        <tbody role="rowgroup">
+                            <tr role="row">
+                                    <td role="cell" data-label="First name">James</td>
+                                    <td role="cell" data-label="Last name">Matman</td>
+                                    <td role="cell" data-label="Job title">Chief Sandwich Eater</td>
+                                    <td role="cell" data-label="Favorite Color">Lettuce Green</td>
+                                    <td role="cell" data-label="Wars or Trek ?">Trek</td>
+                                    <td role="cell" data-label="Secret Alias">Digby Green</td>
+                                    <td role="cell" data-label="Date of Birth">January 13, 1979</td>
+                                    <td role="cell" data-label="Dream Vacation City">Gotham City</td>
+                                    <td role="cell" data-label="GPA">3.1</td>
+                                    <td role="cell" data-label="Arbitrary Data">RBX-12</td>
+                                            <tr role="row">
+                                    <td role="cell" data-label="First name">The</td>
+                                    <td role="cell" data-label="Last name">Tick</td>
+                                    <td role="cell" data-label="Job title">Crimefighter Sorta</td>
+                                    <td role="cell" data-label="Favorite Color">Blue</td>
+                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                                    <td role="cell" data-label="Secret Alias">John Smith</td>
+                                    <td role="cell" data-label="Date of Birth">July 19, 1968</td>
+                                    <td role="cell" data-label="Dream Vacation City">Athens</td>
+                                    <td role="cell" data-label="GPA">N/A</td>
+                                    <td role="cell" data-label="Arbitrary Data">Edlund, Ben (July 1996).</td>
+                                            <tr role="row">
+                                    <td role="cell" data-label="First name">Jokey</td>
+                                    <td role="cell" data-label="Last name">Smurf</td>
+                                    <td role="cell" data-label="Job title">Giving Exploding Presents</td>
+                                    <td role="cell" data-label="Favorite Color">Smurflow</td>
+                                    <td role="cell" data-label="Wars or Trek ?">Smurf</td>
+                                    <td role="cell" data-label="Secret Alias">Smurflane Smurfmutt</td>
+                                    <td role="cell" data-label="Date of Birth">Smurfuary Smurfteenth, 1945</td>
+                                    <td role="cell" data-label="Dream Vacation City">New Smurf City</td>
+                                    <td role="cell" data-label="GPA">4.Smurf</td>
+                                    <td role="cell" data-label="Arbitrary Data">One</td>
+                                            <tr role="row">
+                                    <td role="cell" data-label="First name">Cindy</td>
+                                    <td role="cell" data-label="Last name">Beyler</td>
+                                    <td role="cell" data-label="Job title">Sales Representative</td>
+                                    <td role="cell" data-label="Favorite Color">Red</td>
+                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                                    <td role="cell" data-label="Secret Alias">Lori Quivey</td>
+                                    <td role="cell" data-label="Date of Birth">July 5, 1956</td>
+                                    <td role="cell" data-label="Dream Vacation City">Paris</td>
+                                    <td role="cell" data-label="GPA">3.4</td>
+                                    <td role="cell" data-label="Arbitrary Data">3451</td>
+                                            <tr role="row">
+                                    <td role="cell" data-label="First name">Captain</td>
+                                    <td role="cell" data-label="Last name">Cool</td>
+                                    <td role="cell" data-label="Job title">Tree Crusher</td>
+                                    <td role="cell" data-label="Favorite Color">Blue</td>
+                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                                    <td role="cell" data-label="Secret Alias">Steve 42nd</td>
+                                    <td role="cell" data-label="Date of Birth">December 13, 1982</td>
+                                    <td role="cell" data-label="Dream Vacation City">Las Vegas</td>
+                                    <td role="cell" data-label="GPA">1.9</td>
+                                    <td role="cell" data-label="Arbitrary Data">Under the couch</td>
+                                    </tbody>
+    </table>
+    
+            </div>
+        
+        <div class="c-component__meta  c-component__meta--full">
+                            <h2 class="c-component-list__title">Table, default, responsive</h2>
+            
+            
+            
+                                            <pre class="c-component__code">&lt;table class=&quot;c-table responsive&quot; role=&quot;table&quot;&gt;
+  &lt;thead role=&quot;rowgroup&quot;&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;First name&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Last name&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Job title&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Favorite Color&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Wars or Trek ?&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Secret Alias&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Date of Birth&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Dream Vacation City&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;GPA&lt;/th&gt;
+      &lt;th role=&quot;columnheader&quot;&gt;Arbitrary Data&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody role=&quot;rowgroup&quot;&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;James&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Matman&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Chief Sandwich Eater&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Favorite Color&quot;&gt;Lettuce Green&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Wars or Trek ?&quot;&gt;Trek&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Secret Alias&quot;&gt;Digby Green&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of Birth&quot;&gt;January 13, 1979&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Dream Vacation City&quot;&gt;Gotham City&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;GPA&quot;&gt;3.1&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Arbitrary Data&quot;&gt;RBX-12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;The&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Tick&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Crimefighter Sorta&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Favorite Color&quot;&gt;Blue&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Wars or Trek ?&quot;&gt;Wars&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Secret Alias&quot;&gt;John Smith&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of Birth&quot;&gt;July 19, 1968&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Dream Vacation City&quot;&gt;Athens&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;GPA&quot;&gt;N/A&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Arbitrary Data&quot;&gt;Edlund, Ben (July 1996).&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;Jokey&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Smurf&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Giving Exploding Presents&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Favorite Color&quot;&gt;Smurflow&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Wars or Trek ?&quot;&gt;Smurf&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Secret Alias&quot;&gt;Smurflane Smurfmutt&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of Birth&quot;&gt;Smurfuary Smurfteenth, 1945&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Dream Vacation City&quot;&gt;New Smurf City&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;GPA&quot;&gt;4.Smurf&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Arbitrary Data&quot;&gt;One&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;Cindy&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Beyler&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Sales Representative&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Favorite Color&quot;&gt;Red&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Wars or Trek ?&quot;&gt;Wars&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Secret Alias&quot;&gt;Lori Quivey&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of Birth&quot;&gt;July 5, 1956&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Dream Vacation City&quot;&gt;Paris&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;GPA&quot;&gt;3.4&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Arbitrary Data&quot;&gt;3451&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr role=&quot;row&quot;&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;First name&quot;&gt;Captain&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Last name&quot;&gt;Cool&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Job title&quot;&gt;Tree Crusher&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Favorite Color&quot;&gt;Blue&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Wars or Trek ?&quot;&gt;Wars&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Secret Alias&quot;&gt;Steve 42nd&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Date of Birth&quot;&gt;December 13, 1982&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Dream Vacation City&quot;&gt;Las Vegas&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;GPA&quot;&gt;1.9&lt;/td&gt;
+      &lt;td role=&quot;cell&quot; data-label=&quot;Arbitrary Data&quot;&gt;Under the couch&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                    </div>
     </div>
 
+    
     <div class="c-component  c-component--full">
         <div class="c-component__meta  c-component__meta--full">
             <h2 class="c-component-list__title">Table, default, responsive</h2>

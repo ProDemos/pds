@@ -1,0 +1,40 @@
+
+// Tab navigational elements
+
+.c-tabs-container {
+    // didnt exist
+    // @extend .c-tab-navigation;
+
+
+    ul, ol, .c-tabs {
+        @extend .c-tab-navigation__list;
+        li, .c-tabs-item {
+            @extend .c-tab-navigation__list-item;
+            &:first-child {
+                @extend .c-tab-navigation__list-item.c-tab-navigation__list-item--first;
+            }
+            &:last-child {
+                @extend .c-tab-navigation__list-item.c-tab-navigation__list-item--last;
+            }
+            a, .c-tabs-link {
+                @extend .c-tab-navigation__link;
+                &.active {
+                    @extend .c-tab-navigation__link.c-tab-navigation__link--active;
+                }
+            }
+        }
+    }
+
+    .c-tabs-panels {
+        // didnt exist:
+        // @extend .c-tab-navigation--panels;
+        .c-tabs-panel {
+            @extend .c-tab-panel;
+            display:none;
+            &.active {
+                display:block;
+            }
+        }
+    }
+
+}

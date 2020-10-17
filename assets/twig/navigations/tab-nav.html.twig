@@ -1,9 +1,25 @@
-<nav class="c-tab-navigation  {{ theme }}" role="navigation">
-    <ol class="c-tab-navigation__list">
-        {% for tab in tabs %}
-            <li class="c-tab-navigation__list-item{% if loop.first %}  c-tab-navigation__list-item--first{% endif %}{% if loop.last %}  c-tab-navigation__list-item--last{% endif %}">
-                <a href="{{ tab.url }}" class="c-tab-navigation__link{% if tab.is_current %}  c-tab-navigation__link--active{% endif %}">{{ tab.label }}</a>
-            </li>
-        {% endfor %}
-    </ol>
-</nav>
+{% if bem %}
+    <nav class="c-tab-navigation  {{ theme }}" role="navigation">
+        <ol class="c-tab-navigation__list">
+            {% for tab in tabs %}
+                <li class="c-tab-navigation__list-item{% if loop.first %}  c-tab-navigation__list-item--first{% endif %}{% if loop.last %}  c-tab-navigation__list-item--last{% endif %}">
+                    <a href="{{ tab.url }}" class="c-tab-navigation__link{% if tab.is_current %}  c-tab-navigation__link--active{% endif %}">{{ tab.label }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% else %}
+    <nav class="c-tabs-container {{ theme }}" role="navigation">
+        <ol>
+            {% for tab in tabs %}
+                <li>
+                    {% if tab.url %}
+                        <a href="{{ tab.url }}" class="{% if tab.is_current %}active{% endif %}">{{ tab.label }}</a>
+                    {% else %}
+                        <span class="{{ tab.url }} c-tabs-link {% if tab.is_current %}active{% endif %}">{{ tab.label }}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% endif %}

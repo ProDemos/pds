@@ -7,9 +7,22 @@
 
 {% block component_intro %}
     <h2 class="c-copy--h2">Form elements</h2>
+
     <p>Input components are a bit simpler than buttons. Just add the default input class (c-input), 
     add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
     Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
+
+    <div class="s-default">
+        <h4>Elements and modifiers</h4>
+        <ul>
+            <li> .c-input[.disabled]</li>
+            <li> .c-input.text[.valid|.invalid]</li>
+            <li> .c-input.dropdown[.fullwidth]</li>
+            <li> .c-input.container[.radio|.checkbox]</li>
+            <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
+            <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
+        </ul>
+    </div>
 
 {% endblock %}
 
