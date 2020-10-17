@@ -31,6 +31,77 @@
     }
 }
 
+// default corporate theme for nobem
+// we should do this with a mixin .. 
+
+.c-btn {
+
+    @extend .c-btn--corporate;
+
+    &.primary {
+        @extend .c-btn--corporate.c-btn--primary;
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--primary:not(.c-btn--disabled);
+            @include hover {
+                &.primary {
+                    @extend .c-btn--corporate.c-btn--primary:not(.c-btn--disabled).c-btn--primary:hover;
+                }
+            }
+        }
+        &:active:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--primary:active:not(.c-btn--disabled);
+        }
+    }
+    &.accent {
+
+        @extend .c-btn--corporate.c-btn--accent;
+
+        &.primary {
+            @extend .c-btn--corporate.c-btn--accent.c-btn--primary;
+        }
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--accent.c-btn--primary:not(.c-btn--disabled);
+            @include hover {
+                &.primary {
+                    @extend .c-btn--corporate.c-btn--accent:not(.c-btn--disabled).c-btn--primary:hover;
+                }
+            }
+        }
+        &:active:not(.disabled) {
+            &.primary {
+                @extend .c-btn--corporate.c-btn--accent:active:not(.c-btn--disabled).c-btn--primary;
+            }
+        }
+    }
+    &.disabled {
+        @extend .c-btn--corporate.c-btn--disabled;
+        &.primary {
+            @extend .c-btn--corporate.c-btn--disabled.c-btn--primary;
+        }
+    }
+    
+    &.toggle {
+        @extend .c-btn--corporate.c-btn--toggle;
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:not(.c-btn--disabled);
+        }
+        &:active:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:active:not(.c-btn--disabled);
+        }
+        &:focus:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:focus:not(.c-btn--disabled);
+        }
+        &.disabled {
+            @extend .c-btn--corporate.c-btn--toggle.c-btn--disabled;
+        }
+    }
+    &.transparent {
+        @extend .c-btn--corporate.c-btn--transparent;
+    }
+}
+
+
+// other themes
 
 @each $theme in $prodemos-themes {
 
@@ -104,6 +175,7 @@
     .disabled {
         @extend .c-btn--disabled;
     }
+
     /* icons */
     .c-btn-content {
         @extend .c-button__icon-container;

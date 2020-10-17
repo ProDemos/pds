@@ -10,7 +10,6 @@
     required: true
     placeholder: 'Fill in something'
     input_attributes:
-    theme: corporate
 
 -
     styleguide_title: Single text field, invalid input
@@ -24,7 +23,6 @@
     placeholder: 'Fill in something'
     input_attributes:
     invalid: true
-    theme: corporate
 
 -
     styleguide_title: Single text field, valid input
@@ -38,7 +36,6 @@
     placeholder: 'Fill in something'
     input_attributes:
     valid: true
-    theme: corporate
 
 -
     styleguide_title: Single text field, but disabled
@@ -52,7 +49,6 @@
     placeholder: 'Fill in something'
     input_attributes: disabled
     disabled: true
-    theme: corporate
 
 -
     styleguide_title: Dropdown
@@ -78,7 +74,6 @@
             name: optie_3_name
             value: nee
             checked:
-    theme: corporate
 
 -
     styleguide_title: Dropdown, full width
@@ -106,7 +101,6 @@
             value: nee
             checked:
     full_width: true
-    theme: corporate
 
 -
     styleguide_title: Radio
@@ -116,7 +110,6 @@
     name: radio_name
     id: radio_1
     value: yes
-    theme: corporate
 
 -
     styleguide_title: Checkbox
@@ -126,4 +119,3 @@
     name: checkbox_name
     id: checkbox_1
     value: yes
-    theme: corporate

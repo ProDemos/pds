@@ -41,6 +41,17 @@
 @import "base/web-font--fira-sans";
 
 
+//
+// Scopes
+//
+@import "scopes/default";
+@import "scopes/cms-content";
+
+//
+// Themes
+//
+@import "themes/themes";
+
 
 //
 // Components
@@ -59,11 +70,6 @@
 
 
 
-//
-// Scopes
-//
-@import "scopes/default";
-@import "scopes/cms-content";
 
 //
 // Backward compatibility

@@ -12,17 +12,29 @@
     add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
     Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
 
-    <div class="s-default">
-        <h4>Elements and modifiers</h4>
-        <ul>
-            <li> .c-input[.disabled]</li>
-            <li> .c-input.text[.valid|.invalid]</li>
-            <li> .c-input.dropdown[.fullwidth]</li>
-            <li> .c-input.container[.radio|.checkbox]</li>
-            <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
-            <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
-        </ul>
-    </div>
+    <br>
+    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <ul>
+        
+        <li> .c-input[.disabled]</li>
+        <li> .c-input.text[.valid|.invalid]</li>
+        <li> .c-input.dropdown[.fullwidth]</li>
+        <li> .c-input.container[.radio|.checkbox]</li>
+        <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
+        <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
+    </ul>
+
+    <h1 class="c-copy--h1">Themes</h1>
+
+    <form>
+        <select class="c-input dropdown full-width"
+            onchange="document.body.className=this.options[this.selectedIndex].value">
+            <option value="" selected disabled>Select a theme ...</option>
+            {% for themeid,themename in themes %}
+                <option value="{{ themeid }}">{{ themename }}</option>
+            {% endfor %}
+        </select>
+    </form>
 
 {% endblock %}
 
