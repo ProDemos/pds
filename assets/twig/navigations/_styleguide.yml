@@ -2,7 +2,6 @@
     styleguide_title: Tabs as single navigational element (with lists)
     styleguide_type: navigations/tab-nav
     styleguide_component_width: true
-    theme: t-corporate
     tabs:
         -
             label: Thema's en topics
@@ -24,7 +23,6 @@
     styleguide_title: Tabs with content panels (with divs)
     styleguide_type: navigations/tab-content
     styleguide_component_width: true
-    theme: t-corporate
     tabs:
         -
             label: Thema's en topics

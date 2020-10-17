@@ -32,11 +32,16 @@
     }
 }
 
+// default theme
+.c-input.text {
+    @extend .c-input--text.t-corporate;
+}
+
+// spec themes
 @each $theme in $prodemos-themes {
-    &.t-#{nth($theme,1)} {
-        .c-input.text {
-            @extend .c-input--dropdown.t-#{nth($theme,1)}
-        }
+    .t-#{nth($theme,1)} .c-input.text,
+    .c-input.text.t-#{nth($theme,1)}:not(.inherit) {
+        @extend .c-input--text.t-#{nth($theme,1)}
     }
 }
 
@@ -47,11 +52,15 @@
     }
 }
 
+// def theme
+.c-input.dropdown {
+    @extend .c-input--dropdown.t-corporate;
+}
+// spec themes
 @each $theme in $prodemos-themes {
-    &.t-#{nth($theme,1)} {
-        .c-input.dropdown {
-            @extend .c-input--dropdown.t-#{nth($theme,1)}
-        }
+    &.t-#{nth($theme,1)} .c-input.dropdown,
+    .c-input.dropdown.t-#{nth($theme,1)}:not(.inherit) {
+        @extend .c-input--dropdown.t-#{nth($theme,1)}
     }
 }
 
@@ -59,8 +68,18 @@
 .c-input-container.radio {
     @extend .c-input--container--radio;
     @include hover {
+        // def theme
         @each $theme in $prodemos-themes {
-            &.t-#{nth($theme,1)} {
+            @if nth($theme,1) == 'corporate' {
+                .c-input-check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+        // spec themes
+        @each $theme in $prodemos-themes {
+            .t-#{nth($theme,1)} &,
+            &.t-#{nth($theme,1)}:not(.inherit) {
                 .c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
@@ -80,6 +99,19 @@
 .c-input.radio {
     @extend .c-input--radio;
     &:checked ~ .c-input-check {
+        // default theme
+        @each $theme in $prodemos-themes {
+            @if nth($theme,1) == 'corporate' {
+                & {
+                    border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                    &::before {
+                        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    }
+                }
+            }
+        }
+        // spec themes
         @each $theme in $prodemos-themes {
             .t-#{nth($theme,1)} & {
                 border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
@@ -96,8 +128,18 @@
 .c-input-container.checkbox {
     @extend .c-input--container--checkbox;
     @include hover {
+        // def theme
         @each $theme in $prodemos-themes {
-            &.t-#{nth($theme,1)} {
+            @if nth($theme,1) == 'corporate' {
+                .c-input-check {
+                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+            }
+        }
+        @each $theme in $prodemos-themes {
+            // spec themes
+            .t-#{nth($theme,1)} &,
+            &.t-#{nth($theme,1)}:not(.inherit) {
                 .c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
@@ -118,6 +160,19 @@
 .c-input.checkbox {
     @extend .c-input--checkbox;
     &:checked ~ .c-input-check {
+        // def theme
+        @each $theme in $prodemos-themes {
+            @if nth($theme,1) == 'corporate' {
+                & {
+                    border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                    &::before {
+                        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    }
+                }
+            }
+        }
+        // spec themes
         @each $theme in $prodemos-themes {
             .t-#{nth($theme,1)} & {
                 border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));

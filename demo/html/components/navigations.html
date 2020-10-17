@@ -93,15 +93,31 @@
         type of element with the right classes. The tabs with content
         panels require javascript to work.
    </p>
-   <div class="s-default">
-        <h4>Elements and modifiers</h4>
-        <ul>
-            <li> .c-tabs-container</li>
-            <li> .c-tabs-container > ( ul | ol | .c-tabs ) [ + .c-tabs-panels ]</li>
-            <li> .c-tabs > ( li | .c-tabs-item ) > ( a | .c-tabs-link )[ .current ]</li>
-            <li> .c-tabs-panels > .c-tabs-panel[ .current ]</li>
-        </ul>
-    </div>
+   <br>
+    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <ul>
+        <li> .c-tabs-container</li>
+        <li> .c-tabs-container > ( ul | ol | .c-tabs ) [ + .c-tabs-panels ]</li>
+        <li> .c-tabs > ( li | .c-tabs-item ) > ( a | .c-tabs-link )[ .current ]</li>
+        <li> .c-tabs-panels > .c-tabs-panel[ .current ]</li>
+    </ul>
+
+    <h1 class="c-copy--h1">Themes</h1>
+    
+    <form>
+        <select class="c-input dropdown full-width"
+            onchange="document.body.className=this.options[this.selectedIndex].value">
+            <option value="" selected disabled>Select a theme ...</option>
+                            <option value="t-corporate">Corporate</option>
+                            <option value="t-theme2">Theme2</option>
+                            <option value="t-theme3">Theme3</option>
+                            <option value="t-theme4">Theme4</option>
+                            <option value="t-theme5">Theme5</option>
+                            <option value="t-theme6">Theme6</option>
+                            <option value="t-theme7">Theme7</option>
+                    </select>
+    </form>
+
             </div>
 
                                 
@@ -112,7 +128,7 @@
         
         
                     <div class="c-component__view  c-component__view--full">
-                                <nav class="c-tabs-container t-corporate" role="navigation">
+                                <nav class="c-tabs-container " role="navigation">
         <ol>
                             <li>
                                             <a href="#test" class="active">Thema&#039;s en topics</a>
@@ -139,7 +155,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;nav class=&quot;c-tabs-container t-corporate&quot; role=&quot;navigation&quot;&gt;
+                                            <pre class="c-component__code">&lt;nav class=&quot;c-tabs-container &quot; role=&quot;navigation&quot;&gt;
   &lt;ol&gt;
     &lt;li&gt;
       &lt;a href=&quot;#test&quot; class=&quot;active&quot;&gt;Thema&#039;s en topics&lt;/a&gt;
@@ -169,7 +185,7 @@
         
         
                     <div class="c-component__view  c-component__view--full">
-                                <div class="c-tabs-container  t-corporate" role="navigation">
+                                <div class="c-tabs-container  " role="navigation">
         <div class="c-tabs">
                             <div class="c-tabs-item">
                     <button class="c-tabs-link active" role="tab" aria-controls="tab-content_1" id="Thema&#039;s_en_topics"
@@ -228,7 +244,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;div class=&quot;c-tabs-container t-corporate&quot; role=&quot;navigation&quot;&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;c-tabs-container &quot; role=&quot;navigation&quot;&gt;
   &lt;div class=&quot;c-tabs&quot;&gt;
     &lt;div class=&quot;c-tabs-item&quot;&gt;
       &lt;button class=&quot;c-tabs-link active&quot; role=&quot;tab&quot; aria-controls=&quot;tab-content_1&quot; id=&quot;Thema&#039;s_en_topics&quot; onclick=&quot;document.getElementsByClassName(&quot;&gt;Thema&#039;s en topics&lt;/button&gt;
