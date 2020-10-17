@@ -105,7 +105,6 @@ To create new elements,
 and compile the sass and twig using composer.
 Your element should now appear in the styleguide in demo/html
 
-Create a pull request of your changes in your own branch.
 
 # Publishing
 

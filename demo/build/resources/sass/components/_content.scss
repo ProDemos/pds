@@ -107,6 +107,10 @@
     width: 100%;
     padding: 3rem 2rem 7rem;
 
+    .c-content__intro {
+        padding:0 0 3rem 0;
+    }
+
     @include media-from(md) {
         padding: 3rem 0 7rem 3rem;
     }

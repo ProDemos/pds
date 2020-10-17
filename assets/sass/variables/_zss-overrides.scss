@@ -51,6 +51,7 @@ $base-line-height: 1.5;
 
 
 // Provide a default spacing scale for consistent spacings
+// eg: top: nth($spacing-scale, 4); = 12px
 $spacing-scale: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
 
 

@@ -7,6 +7,7 @@
     theme: corporate
     level: primary
     size: large
+    bem: false
 
 -
     styleguide_title: Text button, large, accent

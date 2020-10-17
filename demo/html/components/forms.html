@@ -86,7 +86,27 @@
 
         
         <div class="c-content__main">
-                <h2 class="c-copy--h2">Form elements</h2>
+            <div class="c-content__intro">
+                    <h2 class="c-copy--h2">Form elements</h2>
+
+    <p>Input components are a bit simpler than buttons. Just add the default input class (c-input), 
+    add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
+    Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
+
+    <div class="s-default">
+        <h4>Elements and modifiers</h4>
+        <ul>
+            <li> .c-input[.disabled]</li>
+            <li> .c-input.text[.valid|.invalid]</li>
+            <li> .c-input.dropdown[.fullwidth]</li>
+            <li> .c-input.container[.radio|.checkbox]</li>
+            <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
+            <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
+        </ul>
+    </div>
+
+            </div>
+
                                 
         
         
@@ -95,8 +115,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<input class="c-input  c-input--text  t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="c-input  text  t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -104,19 +123,8 @@
                             <h2 class="c-component-list__title">Single text field</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/text-input', {
-    &quot;label&quot;: &quot;Firstname&quot;,
-    &quot;type&quot;: &quot;text&quot;,
-    &quot;name&quot;: &quot;textinput_name&quot;,
-    &quot;id&quot;: 1,
-    &quot;value&quot;: &quot;&quot;,
-    &quot;required&quot;: true,
-    &quot;placeholder&quot;: &quot;Fill in something&quot;,
-    &quot;input_attributes&quot;: null,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;input class=&quot;c-input  c-input--text  t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; &gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;c-input text t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -128,8 +136,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<input class="c-input  c-input--text  c-input--text--invalid t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="c-input  text  invalid t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -137,20 +144,8 @@
                             <h2 class="c-component-list__title">Single text field, invalid input</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/text-input', {
-    &quot;label&quot;: &quot;Firstname&quot;,
-    &quot;type&quot;: &quot;text&quot;,
-    &quot;name&quot;: &quot;textinput_name&quot;,
-    &quot;id&quot;: 1,
-    &quot;value&quot;: &quot;&quot;,
-    &quot;required&quot;: true,
-    &quot;placeholder&quot;: &quot;Fill in something&quot;,
-    &quot;input_attributes&quot;: null,
-    &quot;invalid&quot;: true,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;input class=&quot;c-input  c-input--text  c-input--text--invalid t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; &gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;c-input text invalid t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -162,8 +157,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<input class="c-input  c-input--text  c-input--text--valid t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="c-input  text  valid t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -171,20 +165,8 @@
                             <h2 class="c-component-list__title">Single text field, valid input</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/text-input', {
-    &quot;label&quot;: &quot;Firstname&quot;,
-    &quot;type&quot;: &quot;text&quot;,
-    &quot;name&quot;: &quot;textinput_name&quot;,
-    &quot;id&quot;: 1,
-    &quot;value&quot;: &quot;&quot;,
-    &quot;required&quot;: true,
-    &quot;placeholder&quot;: &quot;Fill in something&quot;,
-    &quot;input_attributes&quot;: null,
-    &quot;valid&quot;: true,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;input class=&quot;c-input  c-input--text  c-input--text--valid t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; &gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;c-input text valid t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -196,8 +178,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<input class="c-input  c-input--text  c-input--disabled t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" disabled>
+                            <input class="c-input  text  disabled t-corporate" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" disabled>
     
             </div>
         
@@ -205,20 +186,8 @@
                             <h2 class="c-component-list__title">Single text field, but disabled</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/text-input', {
-    &quot;label&quot;: &quot;Firstname&quot;,
-    &quot;type&quot;: &quot;text&quot;,
-    &quot;name&quot;: &quot;textinput_name&quot;,
-    &quot;id&quot;: 1,
-    &quot;value&quot;: &quot;&quot;,
-    &quot;required&quot;: true,
-    &quot;placeholder&quot;: &quot;Fill in something&quot;,
-    &quot;input_attributes&quot;: &quot;disabled&quot;,
-    &quot;disabled&quot;: true,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;input class=&quot;c-input  c-input--text  c-input--disabled t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; disabled&gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;c-input text disabled t-corporate&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; disabled=&quot;disabled&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -230,8 +199,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<select class="c-input  c-input--dropdown  t-corporate  " id="3" name="dropdown">
+                            <select class="c-input  dropdown  t-corporate  " id="3" name="dropdown">
                                                 <option value="ja" >Kies opleiding</option>
             
                                                 <option value="nee" >VSO</option>
@@ -246,43 +214,12 @@
                             <h2 class="c-component-list__title">Dropdown</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/dropdown', {
-    &quot;name&quot;: &quot;dropdown&quot;,
-    &quot;id&quot;: 3,
-    &quot;options&quot;: {
-        &quot;optie1&quot;: {
-            &quot;id&quot;: 31,
-            &quot;label&quot;: &quot;Kies opleiding&quot;,
-            &quot;name&quot;: &quot;optie_1_name&quot;,
-            &quot;value&quot;: &quot;ja&quot;,
-            &quot;checked&quot;: null
-        },
-        &quot;optie2&quot;: {
-            &quot;id&quot;: 32,
-            &quot;label&quot;: &quot;VSO&quot;,
-            &quot;name&quot;: &quot;optie_2_name&quot;,
-            &quot;value&quot;: &quot;nee&quot;,
-            &quot;checked&quot;: null
-        },
-        &quot;optie3&quot;: {
-            &quot;id&quot;: 33,
-            &quot;label&quot;: &quot;VMBO&quot;,
-            &quot;name&quot;: &quot;optie_3_name&quot;,
-            &quot;value&quot;: &quot;nee&quot;,
-            &quot;checked&quot;: null
-        }
-    },
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;select class=&quot;c-input  c-input--dropdown  t-corporate  &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
-                                                &lt;option value=&quot;ja&quot; &gt;Kies opleiding&lt;/option&gt;
-            
-                                                &lt;option value=&quot;nee&quot; &gt;VSO&lt;/option&gt;
-            
-                                                &lt;option value=&quot;nee&quot; &gt;VMBO&lt;/option&gt;
-            
-                        &lt;/select&gt;</pre>
+                                            <pre class="c-component__code">&lt;select class=&quot;c-input dropdown t-corporate &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
+  &lt;option value=&quot;ja&quot;&gt;Kies opleiding&lt;/option&gt;
+  &lt;option value=&quot;nee&quot;&gt;VSO&lt;/option&gt;
+  &lt;option value=&quot;nee&quot;&gt;VMBO&lt;/option&gt;
+&lt;/select&gt;</pre>
                     </div>
     </div>
 
@@ -294,8 +231,7 @@
         
         
                     <div class="c-component__view  ">
-                            
-<select class="c-input  c-input--dropdown  c-input--dropdown--full-width t-corporate  " id="3" name="dropdown">
+                            <select class="c-input  dropdown  full-width t-corporate  " id="3" name="dropdown">
                                                 <option value="ja" >Kies opleiding</option>
             
                                                 <option value="nee" >VSO</option>
@@ -311,44 +247,12 @@
             
                             <p class="c-component__description">In some cases a version that spans the full width might be needed</p>
             
-                                            <pre class="c-component__code">{{ ui.component('forms/dropdown', {
-    &quot;name&quot;: &quot;dropdown&quot;,
-    &quot;id&quot;: 3,
-    &quot;options&quot;: {
-        &quot;optie1&quot;: {
-            &quot;id&quot;: 31,
-            &quot;label&quot;: &quot;Kies opleiding&quot;,
-            &quot;name&quot;: &quot;optie_1_name&quot;,
-            &quot;value&quot;: &quot;ja&quot;,
-            &quot;checked&quot;: null
-        },
-        &quot;optie2&quot;: {
-            &quot;id&quot;: 32,
-            &quot;label&quot;: &quot;VSO&quot;,
-            &quot;name&quot;: &quot;optie_2_name&quot;,
-            &quot;value&quot;: &quot;nee&quot;,
-            &quot;checked&quot;: null
-        },
-        &quot;optie3&quot;: {
-            &quot;id&quot;: 33,
-            &quot;label&quot;: &quot;VMBO&quot;,
-            &quot;name&quot;: &quot;optie_3_name&quot;,
-            &quot;value&quot;: &quot;nee&quot;,
-            &quot;checked&quot;: null
-        }
-    },
-    &quot;full_width&quot;: true,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;select class=&quot;c-input  c-input--dropdown  c-input--dropdown--full-width t-corporate  &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
-                                                &lt;option value=&quot;ja&quot; &gt;Kies opleiding&lt;/option&gt;
-            
-                                                &lt;option value=&quot;nee&quot; &gt;VSO&lt;/option&gt;
-            
-                                                &lt;option value=&quot;nee&quot; &gt;VMBO&lt;/option&gt;
-            
-                        &lt;/select&gt;</pre>
+                                            <pre class="c-component__code">&lt;select class=&quot;c-input dropdown full-width t-corporate &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
+  &lt;option value=&quot;ja&quot;&gt;Kies opleiding&lt;/option&gt;
+  &lt;option value=&quot;nee&quot;&gt;VSO&lt;/option&gt;
+  &lt;option value=&quot;nee&quot;&gt;VMBO&lt;/option&gt;
+&lt;/select&gt;</pre>
                     </div>
     </div>
 
@@ -361,11 +265,12 @@
         
                     <div class="c-component__view  ">
                             
-
-<div class="c-input--container  c-input--container--radio  has-hover-propagation  t-corporate">
-    <input class="c-input  c-input--radio" type="radio" id="radio_1" name="radio_name" value="yes" >
-    <label class="c-input-label" for="radio_1">Choose me</label>
-    <div class="c-input--radio__check"></div>
+<div class="c-input-container radio  has-hover-propagation  t-corporate">
+    <label class="c-input-label" for="radio_1">
+        <input class="c-input  radio" type="radio" id="radio_1" name="radio_name" value="yes" >
+        <div class="c-input-check"></div>
+        Choose me
+    </label>
 </div>
     
             </div>
@@ -374,19 +279,9 @@
                             <h2 class="c-component-list__title">Radio</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/radio-input', {
-    &quot;label&quot;: &quot;Choose me&quot;,
-    &quot;type&quot;: &quot;radio&quot;,
-    &quot;name&quot;: &quot;radio_name&quot;,
-    &quot;id&quot;: &quot;radio_1&quot;,
-    &quot;value&quot;: &quot;yes&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;div class=&quot;c-input--container  c-input--container--radio  has-hover-propagation  t-corporate&quot;&gt;
-    &lt;input class=&quot;c-input  c-input--radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot; &gt;
-    &lt;label class=&quot;c-input-label&quot; for=&quot;radio_1&quot;&gt;Choose me&lt;/label&gt;
-    &lt;div class=&quot;c-input--radio__check&quot;&gt;&lt;/div&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;c-input-container radio has-hover-propagation t-corporate&quot;&gt;
+  &lt;label class=&quot;c-input-label&quot; for=&quot;radio_1&quot;&gt;&lt;input class=&quot;c-input radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Choose me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>
@@ -400,11 +295,12 @@
         
                     <div class="c-component__view  ">
                             
-
-<div class="c-input--container  c-input--container--checkbox  has-hover-propagation  t-corporate">
-    <input class="c-input  c-input--checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
-    <label class="c-input-label" for="checkbox_1">Check me</label>
-    <div class="c-input--checkbox__check"></div>
+<div class="c-input-container checkbox  has-hover-propagation  t-corporate">
+    <label class="c-input-label" for="checkbox_1">
+        <input class="c-input  checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
+        <div class="c-input-check"></div>
+        Check me
+    </label>
 </div>
     
             </div>
@@ -413,19 +309,9 @@
                             <h2 class="c-component-list__title">Checkbox</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('forms/checkbox-input', {
-    &quot;label&quot;: &quot;Check me&quot;,
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;name&quot;: &quot;checkbox_name&quot;,
-    &quot;id&quot;: &quot;checkbox_1&quot;,
-    &quot;value&quot;: &quot;yes&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;div class=&quot;c-input--container  c-input--container--checkbox  has-hover-propagation  t-corporate&quot;&gt;
-    &lt;input class=&quot;c-input  c-input--checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot; &gt;
-    &lt;label class=&quot;c-input-label&quot; for=&quot;checkbox_1&quot;&gt;Check me&lt;/label&gt;
-    &lt;div class=&quot;c-input--checkbox__check&quot;&gt;&lt;/div&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;c-input-container checkbox has-hover-propagation t-corporate&quot;&gt;
+  &lt;label class=&quot;c-input-label&quot; for=&quot;checkbox_1&quot;&gt;&lt;input class=&quot;c-input checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Check me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>

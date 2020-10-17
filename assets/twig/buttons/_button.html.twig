@@ -13,7 +13,7 @@
     }) }}
 {% endif %#}
 
-{% set cx = {
+{% set cx = bem ? {
     container: html_classes({
         'c-btn--primary': level == 'primary' and size != 'small',
         'c-btn--secondary': level == 'secondary',
@@ -31,6 +31,25 @@
         'c-btn--small': size == 'small',
         'c-btn--accent': accent,
         'c-btn--disabled': disabled
+    }) 
+} : {
+    container: html_classes({
+        'primary': level == 'primary' and size != 'small',
+        'secondary': level == 'secondary',
+        'toggle': level == 'toggle',
+        'transparent': level == 'transparent',
+        't-corporate': theme == 'corporate' or not theme,
+        't-theme2': theme == 'theme2',
+        't-theme3': theme == 'theme3',
+        't-theme4': theme == 'theme4',
+        't-theme5': theme == 'theme5',
+        't-theme6': theme == 'theme6',
+        't-theme7': theme == 'theme7',
+        'large': size == 'large',
+        'regular': size == 'regular',
+        'small': size == 'small',
+        'accent': accent,
+        'disabled': disabled
     })
 } %}
 

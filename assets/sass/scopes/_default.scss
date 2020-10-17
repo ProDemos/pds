@@ -1,0 +1,152 @@
+@import "../helpers/responsive";
+
+// Styling for elements in a 'default' scope. These 
+// are the defaults for prodemos sites, but you do not 
+// have to use this .. 
+
+/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
+.s-default {
+    h1 {
+        margin-bottom: nth($spacing-scale, 5);
+        font-size: nth($type-scale, 3);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 2);
+        }
+    }
+
+    h2 {
+        margin-bottom: nth($spacing-scale, 4);
+        font-size: nth($type-scale, 4);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 3);
+        }
+    }
+
+    h3 {
+        margin-bottom: nth($spacing-scale, 3);
+        font-size: nth($type-scale, 5);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 4);
+        }
+    }
+
+    h4 {
+        margin-bottom: nth($spacing-scale, 3);
+        font-size: nth($type-scale, 6);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 5);
+        }
+    }
+
+    h5 {
+        margin-bottom: nth($spacing-scale, 3);
+        font-size: nth($type-scale, 6);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 5);
+        }
+    }
+
+    h6 {
+        margin-bottom: nth($spacing-scale, 3);
+        font-size: nth($type-scale, 6);
+
+        @include media-from(lg) {
+            font-size: nth($type-scale, 5);
+        }
+    }
+
+    p {
+        margin-bottom: nth($spacing-scale, 7);
+        font-size: nth($type-scale, 6);
+        font-weight: 400;
+        line-height: nth($line-height-scale, 5);
+
+        @include media-from(lg) {
+            margin-bottom: nth($spacing-scale, 8);
+        }
+    }
+
+    strong,
+    b {
+        font-weight: 600;
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    a:not(.c-button) {
+        color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 1));
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        word-break: break-all;
+
+        @include hover {
+            color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 1));
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 2));
+        }
+
+        /* stylelint-disable max-nesting-depth */
+        @each $theme in $prodemos-themes {
+            body.theme--#{nth($theme,1)} & {
+                color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+                @include hover {
+                    color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                }
+
+                &:visited {
+                    color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 1));
+                }
+            }
+        }
+    }
+
+    ul,
+    ol {
+        margin: 0 0 nth($spacing-scale, 6) nth($spacing-scale, 5);
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: nth($spacing-scale, 2);
+    }
+
+    blockquote {
+        margin-top: nth($spacing-scale, 7);
+        margin-bottom: nth($spacing-scale, 4);
+        font-size: nth($type-scale, 5);
+        font-style: italic;
+        font-weight: 500;
+        line-height: nth($line-height-scale, 4);
+
+        @include media-from(md) {
+            font-size: nth($type-scale, 4);
+        }
+    }
+
+    blockquote + footer {
+        margin-bottom: nth($spacing-scale, 6);
+        padding: 0 nth($spacing-scale, 3) 0 nth($spacing-scale, 4);
+        font-size: nth($type-scale, 7);
+        font-weight: 500;
+        line-height: nth($line-height-scale, 5);
+        border-left: 1px solid get-color(orange--cinnabar);
+    }
+
+    img {
+        display: block;
+    }
+}
+/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */

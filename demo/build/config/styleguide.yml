@@ -4,7 +4,7 @@ styleguide:
     brand: Zicht
     outputs: 
         - example
-        - twig
+        # - twig
         - html
     assets: 
         -

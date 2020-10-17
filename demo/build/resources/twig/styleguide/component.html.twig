@@ -15,7 +15,7 @@
 
 
 {% block component_list %}
-   x {% for component in examples[name] %}
-   y     {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
-   z {% endfor %}
+   {% for component in examples[name] %}
+        {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+   {% endfor %}
 {% endblock %}

@@ -80,7 +80,8 @@
             {% endif %}
 
             {% if 'html' in outputs %}
-                <pre class="c-component__code">{{ component.component(slug, component_properties)|trim|escape }}</pre>
+                {% set source %}{{ component.component(slug, component_properties)|raw }}{% endset %}
+                <pre class="c-component__code">{{ source|tidy }}</pre>
             {% endif %}
         </div>
     </div>

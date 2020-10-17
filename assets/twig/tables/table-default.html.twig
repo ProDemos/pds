@@ -1,0 +1,37 @@
+{% if bem %}
+    <table class="c-table  c-table--responsive" role="table">
+        <thead class="c-table__head" role="rowgroup">
+            <tr class="c-table__row  c-table__row--header" role="row">
+                {% for cell in header %}
+                    <th class="c-table__header" role="columnheader">{{ cell }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody class="c-table__body" role="rowgroup">
+            {% for row in rows %}
+                <tr class="c-table__row" role="row">
+                {% for idx,cell in row %}
+                    <td class="c-table__value" role="cell" data-label="{{ header[idx] }}">{{ cell }}</td>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <table class="c-table  responsive" role="table">
+        <thead role="rowgroup">
+            <tr role="row">
+                {% for cell in header %}
+                    <th role="columnheader">{{ cell }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody role="rowgroup">
+            {% for row in rows %}
+                <tr role="row">
+                {% for idx,cell in row %}
+                    <td role="cell" data-label="{{ header[idx] }}">{{ cell }}</td>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

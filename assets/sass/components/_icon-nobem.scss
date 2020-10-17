@@ -1,0 +1,22 @@
+/* NOBEM SimpleCSS */
+
+// button icons
+.c-btn-icon {
+    @extend .c-button__icon;
+}
+
+.c-btn-icon.left {
+    @extend .c-button__icon--left;
+
+    .c-btn.transparent & {
+        margin-right: nth($spacing-scale, 3);
+    }
+}
+
+.c-btn-icon.right {
+    @extend .c-button__icon--right;
+
+    .c-btn.transparent & {
+        margin-left: nth($spacing-scale, 3);
+    }
+}
