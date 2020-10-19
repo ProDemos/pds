@@ -15,7 +15,6 @@
         <ul>
             <li>CSS3 build with SASS</li>
             <li>Twig 2 templates</li>
-            <li>Typescript for Javascript</li>
             <li>SVGs for icons and images where possible</li>
             <li>All of the code is in Git version control</li>
         </ul>
@@ -31,23 +30,35 @@
         <p>In general,</p>
 
         <ul>
-            <li><b>Including main.css</b> before your own css will not change anything to your design. At least
+            <li>
+                The css defines scopes (<code>s-{scope}</code>), themes (<code>t-{theme}</code>),
+                components (<code>c-{components}</code>) and general modifiers (<code>m-{modifier}</code>).
+            </li>
+            <li>
+                <b>Including assets/main.css</b> before your own css will not change anything to your design. At least
                 one of the elements on your page should use one of the classes defined in the design system to 
                 actually use the design system. For example, adding the 'default' scope and 'corporate' theme 
-                to your body (<code>&lt;body class="s-default t-corporate"&gt;</code>) will already inherit 
-                things like font styles.
+                to your body (<code>&lt;body class="s-default t-corporate"&gt;</code>) will change the look of the page.
             </li>
-            <li><b>Scopes</b> can be specified by <code>class="s-{scope}"</code>. Scope will be inherited, and 
-            it can affect regular content like <code>&lt;h1&gt;</code>.</li>
-            <li><b>Themes</b> can be specified by <code>class="t-{theme}"</code>. Theme will be inherited, so
-            you can start with a <code>&lt;body class="t-corporate"&gt;</code> to have the whole page in the corporate theme.
-            The theme will mainly affect the design of components below it.</li>
-            <li><b>Components</b> have a <code>class="c-{component}"</code> and subcomponents may
-            have classes like <code>class="c-{component}-{subcomponent}"</code>. The classes may contain modifiers, like 'primary'
-            or 'disabled'; such modifiers should only mean something inside the component.
+            <li>
+                <b>Scopes</b> can be specified by <code>class="s-{scope}"</code>. Scope will be inherited, and 
+                it can affect regular content like <code>&lt;h1&gt;</code>.</li>
+            <li>
+                <b>Themes</b> can be specified by <code>class="t-{theme}"</code>. Theme will be inherited, so
+                you can start with a <code>&lt;body class="t-corporate"&gt;</code> to have the whole page in the corporate theme.
+                The theme will mainly affect the design of components below it.</li>
+            </li>
+            <li>
+                <b>Components</b> have a <code>class="c-{component}"</code> and subcomponents may
+                have classes like <code>class="c-{component}-{subcomponent}"</code>. The classes may contain component
+                modifiers, like 'primary' or 'disabled'; such modifiers should only mean something inside the component.
+            </li>
+            <li>
+                <b>Modifiers</b>, with a <code>class="m-{modifier}"</code>, are like inline styles, in
+                that they only modify appearance of the immediately contained content. 
+                For example, <code>class="m-colored-red"</code> changes the (text) color of the element to red. 
             </li>
             
-            </li>
         </ul>
 
         <h2>Design elements</h2>
@@ -58,6 +69,8 @@
         
         <h2>Sass</h2>
         <p>Little notes on the use of the Sass-files when adding styles</p>
+
+        <h4>Scales</h4>
         <p>The variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:</p>
         <pre>
 $type-scale: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
@@ -65,6 +78,8 @@ $type-scale: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
     font-size: nth($type-scale, 2); // second in the array, gives 44px
 }
         </pre>
+        <p>Similar methods should be used for the <code>$spacing-scale</code>, <code>$line-heighth-scale</code>, 
+        <code>$color-lighten-scale</code> and <code>$color-darken-scale</code>.
 
         <h4>Breakpoints</h4>
         <p>When breakpoints are defined, they can be used inline in the class to target specific behaviour.<br>Just use:<br>
