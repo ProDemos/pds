@@ -18,20 +18,14 @@ git submodule init
 ## npm
 Since this is a private repository, you will need to [authenticate with GitHub Packages](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages), to install the module. Start by [creating a personal access token](https://github.com/settings/tokens). It needs only `read:packages` permissions.
 
-In your project's root folder, create or edit `.npmrc` to include the following:
+Now copy your personal access token, and store it in your npm config:   
 
 ```
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-@prodemos:registry=https://npm.pkg.github.com/
+npm config set "@prodemos:registry" https://npm.pkg.github.com/
+npm config set "//npm.pkg.github.com/:_authToken" [your GitHub access token from step 1]
 ```
 
-Now copy your personal access token, and export it to the command line environment:   
-
-```
-export GITHUB_TOKEN=[your GitHub access token from step 1] 
-# on Windows:
-set GITHUB_TOKEN=[your GitHub access token from step 1]
-```
+These values are probably stored in your ~/.npmrc.
 
 Now you can install the package:
 
@@ -39,8 +33,25 @@ Now you can install the package:
 npm install @prodemos/pds
 ```
 
+Your co-developers will need to get the same instructions before they can install your project.
+
 ## Composer
-(link)
+
+Add the repository in your composer.json file 
+
+```
+{
+  ...,
+  "repositories":[
+    {
+      "type": "git",
+      "url": "https://github.com/prodemos/pds"
+    }
+  ],
+  ...
+}
+```
+and run `composer install`. Because it is a private repository, Composer may prompt you for credentials, but just follow the instructions there.
 
 ## Download
 or just fetch it as a zip 
