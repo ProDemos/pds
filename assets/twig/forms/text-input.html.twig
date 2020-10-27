@@ -1,4 +1,4 @@
-{% set cx = html_classes({
+{% set cx = (bem) ? html_classes({
     'c-input--text--invalid': invalid,
     'c-input--text--valid': valid,
     'c-input--disabled': disabled,
@@ -9,6 +9,16 @@
     't-theme5': theme == 'theme5',
     't-theme6': theme == 'theme6',
     't-theme7': theme == 'theme7',
+}) : html_classes({
+    'invalid': invalid,
+    'valid': valid,
+    'disabled': disabled,
+    't-corporate': theme == 'corporate',
+    't-theme2': theme == 'theme2',
+    't-theme3': theme == 'theme3',
+    't-theme4': theme == 'theme4',
+    't-theme5': theme == 'theme5',
+    't-theme6': theme == 'theme6',
+    't-theme7': theme == 'theme7',
 }) %}
-
-<input class="c-input  c-input--text  {{ cx }}" id="{{ id }}" name="{{ name }}" type="{{ type }}" value="{{ value }}" placeholder="{{ placeholder }}" {{ input_attributes }}>
+<input class="c-input  {% if bem %}c-input--text{% else %}text{% endif %}  {{ cx }}" id="{{ id }}" name="{{ name }}" type="{{ type }}" value="{{ value }}" placeholder="{{ placeholder }}" {{ input_attributes }}>

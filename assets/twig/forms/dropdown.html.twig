@@ -1,4 +1,4 @@
-{% set cx = {
+{% set cx = (bem) ? {
     input: html_classes({
         'c-input--dropdown--full-width': full_width,
         't-corporate': theme == 'corporate' or not theme,
@@ -9,9 +9,19 @@
         't-theme6': theme == 'theme6',
         't-theme7': theme == 'theme7',
     })
+} : {
+    input: html_classes({
+        'full-width': full_width,
+        't-corporate': theme == 'corporate',
+        't-theme2': theme == 'theme2',
+        't-theme3': theme == 'theme3',
+        't-theme4': theme == 'theme4',
+        't-theme5': theme == 'theme5',
+        't-theme6': theme == 'theme6',
+        't-theme7': theme == 'theme7',
+    })
 } %}
-
-<select class="c-input  c-input--dropdown  {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
+<select class="c-input  {% if bem %}c-input--dropdown{% else %}dropdown{% endif %}  {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
     {% if options|length %}
         {% set is_in_group = false %}
         {% for o in options %}

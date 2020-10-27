@@ -56,7 +56,7 @@
 
     // When the user added valid input
     &.c-input--text--valid {
-        background-image: url("~@design-system/images/icons/24px/check--green.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/24px/check--green.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -65,7 +65,7 @@
 
     // When the user added invalid input
     &.c-input--text--invalid {
-        background-image: url("~@design-system/images/icons/24px/error--red.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/24px/error--red.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -80,7 +80,7 @@
     padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
     border: none;
     border-bottom: 2px solid get-color(transparent);
-    background-image: url("~@design-system/images/icons/24px/arrows--dropdown.svg");
+    background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
     background-position: top 13px right 15px;
     background-repeat: no-repeat;
     background-size: 24px 24px;
@@ -137,32 +137,36 @@
 
     // The checkable element (replaces the invisible radio-input)
     .c-input--radio__check {
+        @extend %c-input--radio__check;
+    }
+}
+
+%c-input--radio__check {
+    display: block;
+    position: absolute;
+    border: 1px solid get-color(grey--gainsboro);
+    border-radius: 100%;
+    background-color: get-color(grey--romance);
+    height: nth($spacing-scale, 6);
+    width: nth($spacing-scale, 6);
+    top: nth($spacing-scale, 7);
+    left: nth($spacing-scale, 5);
+    z-index: 5;
+    transition: border 0.25s linear;
+    cursor: pointer;
+
+    // The radio tick
+    &::before {
         display: block;
         position: absolute;
-        border: 1px solid get-color(grey--gainsboro);
+        content: "";
         border-radius: 100%;
-        background-color: get-color(grey--romance);
-        height: nth($spacing-scale, 6);
-        width: nth($spacing-scale, 6);
-        top: nth($spacing-scale, 7);
-        left: nth($spacing-scale, 5);
-        z-index: 5;
-        transition: border 0.25s linear;
-        cursor: pointer;
-
-        // The radio tick
-        &::before {
-            display: block;
-            position: absolute;
-            content: "";
-            border-radius: 100%;
-            height: nth($spacing-scale, 4);
-            width: nth($spacing-scale, 4);
-            top: 3px;
-            left: 3px;
-            margin: auto;
-            transition: background 0.25s linear;
-        }
+        height: nth($spacing-scale, 4);
+        width: nth($spacing-scale, 4);
+        top: 3px;
+        left: 3px;
+        margin: auto;
+        transition: background 0.25s linear;
     }
 }
 
@@ -219,30 +223,34 @@
 
     // The checkable element (replaces the invisible checkbox)
     .c-input--checkbox__check {
+        @extend  %c-input--checkbox__check; 
+    }
+}
+
+%c-input--checkbox__check {
+    display: block;
+    position: absolute;
+    border: 1px solid get-color(grey--gainsboro);
+    background-color: get-color(grey--romance);
+    height: nth($spacing-scale, 6);
+    width: nth($spacing-scale, 6);
+    top: nth($spacing-scale, 7);
+    left: nth($spacing-scale, 5);
+    z-index: 5;
+    transition: border 0.25s linear;
+    cursor: pointer;
+
+    // The checkbox tick
+    &::before {
         display: block;
         position: absolute;
-        border: 1px solid get-color(grey--gainsboro);
-        background-color: get-color(grey--romance);
-        height: nth($spacing-scale, 6);
-        width: nth($spacing-scale, 6);
-        top: nth($spacing-scale, 7);
-        left: nth($spacing-scale, 5);
-        z-index: 5;
-        transition: border 0.25s linear;
-        cursor: pointer;
-
-        // The checkbox tick
-        &::before {
-            display: block;
-            position: absolute;
-            content: "";
-            height: nth($spacing-scale, 4);
-            width: nth($spacing-scale, 4);
-            top: 3px;
-            left: 3px;
-            margin: auto;
-            transition: background 0.25s linear;
-        }
+        content: "";
+        height: nth($spacing-scale, 4);
+        width: nth($spacing-scale, 4);
+        top: 3px;
+        left: 3px;
+        margin: auto;
+        transition: background 0.25s linear;
     }
 }
 

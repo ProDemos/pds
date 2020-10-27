@@ -4,9 +4,9 @@
     styleguide_type: buttons/text
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
+    bem: false
 
 -
     styleguide_title: Text button, large, accent
@@ -14,7 +14,6 @@
     styleguide_type: buttons/text
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
     accent: true
@@ -25,7 +24,6 @@
     styleguide_type: buttons/text
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
     disabled: true
@@ -36,7 +34,6 @@
     styleguide_type: buttons/icon--prefix
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
     icon:
@@ -50,7 +47,6 @@
     styleguide_type: buttons/icon--suffix
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
     icon:
@@ -64,7 +60,6 @@
     styleguide_type: buttons/icon--prefix-suffix
     text: Button
     url: '#'
-    theme: corporate
     level: primary
     size: large
     icon_left:
@@ -81,7 +76,6 @@
     styleguide_type: buttons/text
     text: Submit
     url: '#'
-    theme: theme4
     level: primary
     size: regular
 
@@ -90,7 +84,6 @@
     styleguide_type: buttons/text
     text: Submit
     url: '#'
-    theme: theme4
     level: secondary
     size: regular
 
@@ -100,7 +93,6 @@
     styleguide_type: buttons/icon--prefix
     text: Button
     url: '#'
-    theme: theme4
     level: primary
     size: regular
     icon:
@@ -114,7 +106,6 @@
     styleguide_type: buttons/text
     text: Submit
     url: '#'
-    theme: theme3
     level: secondary
     size: small
 
@@ -124,7 +115,6 @@
     styleguide_type: buttons/icon--prefix
     text: Button
     url: '#'
-    theme: theme3
     level: primary
     size: small
     icon:
@@ -137,7 +127,6 @@
     styleguide_type: buttons/text
     text: Submit
     url: '#'
-    theme: theme3
     level: secondary
     size: small
     disabled: true
@@ -148,7 +137,6 @@
     styleguide_type: buttons/text
     text: Toggle
     url: '#'
-    theme: corporate
     level: toggle
 
 -
@@ -156,7 +144,6 @@
     styleguide_type: buttons/text
     text: Toggle
     url: '#'
-    theme: corporate
     level: toggle
     disabled: true
 
@@ -166,7 +153,6 @@
     styleguide_type: buttons/text
     text: Button
     url: '#'
-    theme: corporate
     level: transparent
 
 -
@@ -174,7 +160,6 @@
     styleguide_type: buttons/icon--prefix
     text: Button
     url: '#'
-    theme: corporate
     level: transparent
     icon:
         name: 24px/arrow--right.svg

@@ -3,18 +3,32 @@
         "twig/twig": "^3.0",
         "symfony/yaml": "^5.1",
         "twig/html-extra": "^3.0"
-    },
+	},
+	"autoload": {
+		"psr-4": {
+			"Prodemos\\PDS\\": "src/Prodemos/PDS"
+		}
+	},	
     "scripts": {
     	"post-install-cmd": [
 			"npm install"
 		],
+		"compile" : [
+			"@compile-sass",
+			"@compile-twig"
+		],
+		"test-sass" : [
+			"node_modules/node-sass/bin/node-sass ../../assets/sass/main.scss ../../assets/css/main.css",
+			"node_modules/node-sass/bin/node-sass resources/sass/styleguide.scss ../html/css/styleguide.css",
+			"node_modules/node-sass/bin/node-sass resources/sass/prodemos.scss ../html/css/prodemos.css"
+		],
 		"compile-sass" : [
 			"node_modules/node-sass/bin/node-sass --output-style compressed ../../assets/sass/main.scss ../../assets/css/main.css",
-			"node_modules/node-sass/bin/node-sass --output-style compressed sources/sass/styleguide.scss ../html/css/styleguide.css",
-			"node_modules/node-sass/bin/node-sass --output-style compressed sources/sass/prodemos.scss ../html/css/prodemos.css"
+			"node_modules/node-sass/bin/node-sass --output-style compressed resources/sass/styleguide.scss ../html/css/styleguide.css",
+			"node_modules/node-sass/bin/node-sass --output-style compressed resources/sass/prodemos.scss ../html/css/prodemos.css"
 		],
 		"compile-twig" : [
-			"@php bin/compile-twig.php"
+			"Prodemos\\PDS\\TwigCompiler::run"
 		]
     }
 }

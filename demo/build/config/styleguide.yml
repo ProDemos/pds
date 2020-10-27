@@ -4,7 +4,7 @@ styleguide:
     brand: Zicht
     outputs: 
         - example
-        - twig
+        # - twig
         - html
     assets: 
         -
@@ -13,21 +13,34 @@ styleguide:
         -
             type: 'stylesheet'
             path: 'css/prodemos.css'
-colorgroups:
+colors:
     # should be defined in assets/sass/variables/zss-overrides
-    ZSS--COLORS:
-        black: { color: '#000', dark: true }
-        white: { color: '#fff', dark: false }
-        blue--deep-sky: { color: '#00b4e6', dark: true }
-        green--vida-loca: { color: '#58a333', dark: true }
-        grey--gainsboro: { color: '#dbdbdb', dark: false }
-        grey--romance: { color: '#f5f0e9', dark: false }
-        grey--romance--light: { color: '#fbf9f6', dark: false }
-        orange--cinnabar: { color: '#eb5b25', dark: true }
-        red--crimson: { color: '#d60d41', dark: true }
-        red--hollywood-cerise: { color: '#d7007e', dark: true }
-        violet--purple-dark: { color: '#98177c', dark: true }
-        yellow--my-sin: { color: '#fcc243', dark: false }
-    
+    - black
+    - white
+    - blue--deep-sky
+    - green--vida-loca
+    - grey--gainsboro
+    - grey--romance
+    - grey--romance--light
+    - orange--cinnabar
+    - red--crimson
+    - red--hollywood-cerise
+    - violet--purple-dark
+    - yellow--my-sin
+   
+scopes:
+        s-default : "Default" 
+        s-cms-content : "CMS Content" 
+
+themes:
+        t-corporate : Corporate
+        t-theme2    : Theme2 
+        t-theme3    : Theme3 
+        t-theme4    : Theme4 
+        t-theme5    : Theme5 
+        t-theme6    : Theme6 
+        t-theme7    : Theme7 
+
+
 icons:
     # will be read from the directory
