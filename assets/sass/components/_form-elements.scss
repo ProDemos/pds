@@ -56,7 +56,7 @@
 
     // When the user added valid input
     &.c-input--text--valid {
-        background-image: url("../images/icons/24px/check--green.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/24px/check--green.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -65,7 +65,7 @@
 
     // When the user added invalid input
     &.c-input--text--invalid {
-        background-image: url("../images/icons/24px/error--red.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/24px/error--red.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -80,7 +80,7 @@
     padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
     border: none;
     border-bottom: 2px solid get-color(transparent);
-    background-image: url("../images/icons/24px/arrows--dropdown.svg");
+    background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
     background-position: top 13px right 15px;
     background-repeat: no-repeat;
     background-size: 24px 24px;

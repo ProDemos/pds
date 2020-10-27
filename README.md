@@ -73,6 +73,15 @@ The rest is optional and depends on your project:
  - assets/sass : the source sass files you can include in your own project
  - assets/twig : some twig templates you can reuse in your own project
  - assets/javascript: used for more complex widgets created by twig 
+
+ If you plan to include the sass in your own project, 
+ you probably want to override 
+ ```
+ $pds-assets-path
+ ```
+ in your own sass, and point it to the assets folder
+ (relative to the output of the css you are compiling)
+
  
 # Demo / Styleguide
 
