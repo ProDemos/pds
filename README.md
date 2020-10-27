@@ -87,9 +87,25 @@ The rest is optional and depends on your project:
 
 You can view the PDS in action in demo/html. This html uses
 the assets from the assets folder, and was generated using 
-the twig files defined there. 
+the twig files defined there.
 
-# Build / compile
+# Making changes
+
+Package [releases](https://github.com/ProDemos/pds/releases) are automated
+using [semantic-release](https://github.com/semantic-release/semantic-release).
+
+The semantic version number increments are based on the commit messages that we use,
+so follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+* `fix: Fix some bug` bumps the patch version;
+* `feat: Add some new feature` bumps the minor version;
+* to bump the major version:
+  ```
+  feat: Add some backwards-incompatible feature
+
+  BREAKING CHANGE: call new() instead of old().
+
+## Build / compile
 
 If you want to make changes, check the demo/build directory. 
 You'll need Composer and Node. You should first run

@@ -1,7 +1,13 @@
 {
     "name": "@prodemos/pds",
-    "version": "0.0.3",
-    "repository": "git@github.com:ProDemos/pds.git",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ProDemos/pds.git"
+    },
+    "scripts": {
+        "semantic-release": "semantic-release"
+      },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     }
