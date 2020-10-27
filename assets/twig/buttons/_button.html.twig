@@ -1,19 +1,6 @@
 
 {# TODO: add all possible themes to the theme-list in the validate_context #}
-{#% if app.debug %}
-    {{ _context|validate_context({
-        level: 'in:primary,secondary,toggle,transparent',
-        theme: 'in:corporate,theme2,theme3,theme4,theme5,theme6,theme7,theme8',
-        size: 'in:large,regular,small',
-        accent: 'in:1,0',
-        full_width: 'in:1,0',
-        new_window: 'in:1,0',
-        type: 'in:submit',
-        disabled: 'in:1,0'
-    }) }}
-{% endif %#}
-
-{% set cx = {
+{% set cx = bem ? {
     container: html_classes({
         'c-btn--primary': level == 'primary' and size != 'small',
         'c-btn--secondary': level == 'secondary',
@@ -31,6 +18,25 @@
         'c-btn--small': size == 'small',
         'c-btn--accent': accent,
         'c-btn--disabled': disabled
+    }) 
+} : {
+    container: html_classes({
+        'primary': level == 'primary' and size != 'small',
+        'secondary': level == 'secondary',
+        'toggle': level == 'toggle',
+        'transparent': level == 'transparent',
+        't-corporate': theme == 'corporate',
+        't-theme2': theme == 'theme2',
+        't-theme3': theme == 'theme3',
+        't-theme4': theme == 'theme4',
+        't-theme5': theme == 'theme5',
+        't-theme6': theme == 'theme6',
+        't-theme7': theme == 'theme7',
+        'large': size == 'large',
+        'regular': size == 'regular',
+        'small': size == 'small',
+        'accent': accent,
+        'disabled': disabled
     })
 } %}
 

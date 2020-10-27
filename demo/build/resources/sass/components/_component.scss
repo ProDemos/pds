@@ -3,6 +3,7 @@
     display: grid;
     grid-column-gap: 3rem;
     grid-template-columns: 280px minmax(0, 1fr);
+    margin-bottom: 80px;
 
     @include media-from(md) {
         grid-template-columns: 50% minmax(0, 1fr);
@@ -28,6 +29,8 @@
     border-width: 1px;
     border-radius: 3px;
     font-size: 0.65rem;
+    margin: 0 0 1rem;
+    //white-space:pre-wrap;
 }
 
 
@@ -70,7 +73,7 @@
 
 
 .c-component__meta {
-    margin-bottom: 80px;
+    //margin-bottom: 80px;
 }
 
 .c-component__meta--full {

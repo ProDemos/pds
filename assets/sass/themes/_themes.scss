@@ -1,0 +1,155 @@
+/*
+    m- classes are global modifiers,
+    translating values from sass/variables/
+    straight to css
+
+    m-colored.black
+    m-filled.red.lighten3
+    m-bordered.corporate.accent.darken2
+    etc
+
+*/
+
+@each $cname, $cvalue in $zss--colors {
+    .m-filled.#{$cname} {
+        background-color: $cvalue;
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                background-color: lighten($cvalue, $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                background-color: darken($cvalue, $dscale);
+            }
+        }
+    }
+    .m-colored.#{$cname} {
+        color: $cvalue;
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                color: lighten($cvalue, $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                color: darken($cvalue, $dscale);
+            }
+        }
+    }
+    .m-bordered.#{$cname} {
+        border-color: $cvalue;
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                border-color: lighten($cvalue, $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                border-color: darken($cvalue, $dscale);
+            }
+        }
+    }
+}
+
+@each $theme in $prodemos-themes {
+    $themename: nth($theme, 1);
+    $colorname: nth($theme, 2);
+    $accentname: nth($theme, 3);
+    .m-filled.#{$themename} {
+        background-color: get-color($colorname);
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                background-color: lighten(get-color($colorname), $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                background-color: darken(get-color($colorname), $dscale);
+            }
+        }
+        &.accent {
+            background-color: get-color($accentname);
+            @for $lidx from 1 through length($color-lighten-scale) {
+                $lscale : nth($color-lighten-scale, $lidx);
+                &.lighten#{$lidx} {
+                    background-color: lighten(get-color($accentname), $lscale);
+                }
+            }
+            @for $didx from 1 through length($color-darken-scale) {
+                $dscale : nth($color-darken-scale, $didx);
+                &.darken#{$didx} {
+                    background-color: darken(get-color($accentname), $dscale);
+                }
+            }
+        }
+    }
+    .m-colored.#{$themename} {
+        color: get-color($colorname);
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                color: lighten(get-color($colorname), $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                color: darken(get-color($colorname), $dscale);
+            }
+        }
+        &.accent {
+            color: get-color($accentname);
+            @for $lidx from 1 through length($color-lighten-scale) {
+                $lscale : nth($color-lighten-scale, $lidx);
+                &.lighten#{$lidx} {
+                    color: lighten(get-color($accentname), $lscale);
+                }
+            }
+            @for $didx from 1 through length($color-darken-scale) {
+                $dscale : nth($color-darken-scale, $didx);
+                &.darken#{$didx} {
+                    color: darken(get-color($accentname), $dscale);
+                }
+            }
+        }
+    }
+    .m-bordered.#{$themename} {
+        border-color: get-color($colorname);
+        @for $lidx from 1 through length($color-lighten-scale) {
+            $lscale : nth($color-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                border-color: lighten(get-color($colorname), $lscale);
+            }
+        }
+        @for $didx from 1 through length($color-darken-scale) {
+            $dscale : nth($color-darken-scale, $didx);
+            &.darken#{$didx} {
+                border-color: darken(get-color($colorname), $dscale);
+            }
+        }
+        &.accent {
+            border-color: get-color($accentname);
+            @for $lidx from 1 through length($color-lighten-scale) {
+                $lscale : nth($color-lighten-scale, $lidx);
+                &.lighten#{$lidx} {
+                    border-color: lighten(get-color($accentname), $lscale);
+                }
+            }
+            @for $didx from 1 through length($color-darken-scale) {
+                $dscale : nth($color-darken-scale, $didx);
+                &.darken#{$didx} {
+                    border-color: darken(get-color($accentname), $dscale);
+                }
+            }
+        }
+    }
+}

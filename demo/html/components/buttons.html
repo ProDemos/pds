@@ -86,8 +86,45 @@
 
         
         <div class="c-content__main">
-               <h1 class="c-copy--h1">Buttons</h1>
-                                                        
+            <div class="c-content__intro">
+                   <h1 class="c-copy--h1">Buttons</h1>
+    <p>List of all kind of buttons used throughout the project. Every button starts with a class (c-btn) that contains the shared behaviour. 
+            There are modifiers to describe the primary or secondary style, and the themes, when used, primarily consists of colors for the default, hover, and focus states. If you want a button to be present but not yet clickable, just add the disabled modifier class provided in the example.
+            The buttons with an icon contain an extra container with the SVG-code. Just choose a button that fits best to your situation, copy the code and alter to your needs.
+    </p>
+    
+    <br>
+    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <ul>
+        <li> .c-btn[ .primary | .secondary ]</li>
+        <li> .c-btn[ .large | .regular |.small ]</li>
+        <li> .c-btn[ .accent | .disabled ]</li>
+        <li> .c-btn[ .toggle | .transparent ]</li>
+        <li> .c-btn > c.btn-label</li>
+        <li> .c-btn > .c-btn-content > [ .c-btn-icon.left + ] .c-btn-label[ .left | .right ]  [ + .c-btn-icon.right ] </li>
+    </ul>
+    
+    <h1 class="c-copy--h1">Themes</h1>
+
+    <form>
+        <select class="c-input dropdown full-width"
+            onchange="document.body.className=this.options[this.selectedIndex].value">
+            <option value="" selected disabled>Select a theme ...</option>
+                            <option value="t-corporate">Corporate</option>
+                            <option value="t-theme2">Theme2</option>
+                            <option value="t-theme3">Theme3</option>
+                            <option value="t-theme4">Theme4</option>
+                            <option value="t-theme5">Theme5</option>
+                            <option value="t-theme6">Theme6</option>
+                            <option value="t-theme7">Theme7</option>
+                    </select>
+    </form>
+
+    
+            </div>
+
+            
+                                            
         
         
 
@@ -99,12 +136,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large  "
+    class="c-btn  primary large  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Button</span>
+        <span class="c-btn-label">Button</span>
 </a>
 
     
@@ -115,19 +150,9 @@
             
                             <p class="c-component__description">Large is the default style of a button if no other properties are given</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -144,12 +169,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large c-btn--accent  "
+    class="c-btn  primary large accent  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Button</span>
+        <span class="c-btn-label">Button</span>
 </a>
 
     
@@ -160,20 +183,9 @@
             
                             <p class="c-component__description">Accent is always the opposite color of the theme</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;,
-    &quot;accent&quot;: true
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large c-btn--accent  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large accent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -190,12 +202,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large c-btn--disabled  "
+    class="c-btn  primary large disabled  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Button</span>
+        <span class="c-btn-label">Button</span>
 </a>
 
     
@@ -206,20 +216,9 @@
             
                             <p class="c-component__description">A class can be added to disable the button</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;,
-    &quot;disabled&quot;: true
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large c-btn--disabled  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -236,21 +235,22 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large  "
+    class="c-btn  primary large  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--left.svg" title="" width="22" height="22" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg">
-    
+                <span class="c-btn-content">
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
+    </svg>
+            
 
-        <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
-                            Button
-                    </span>
-    </span>
-</a>
+            <span class="c-btn-label right">
+                                    Button
+                            </span>
+        </span>
+    </a>
 
     
             </div>
@@ -260,33 +260,15 @@
             
                             <p class="c-component__description">Icon in front of the text</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--prefix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;,
-    &quot;icon&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--left.svg&quot;,
-        &quot;width&quot;: 22,
-        &quot;height&quot;: 22,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--left.svg&quot; title=&quot;&quot; width=&quot;22&quot; height=&quot;22&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg&quot;&gt;
-    
-
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--right  &quot;&gt;
-                            Button
-                    &lt;/span&gt;
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -303,20 +285,21 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large  "
+    class="c-btn  primary large  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <span class="c-button__icon-container__label  c-button__icon-container__label--left">
-                            Button
-                    </span>
-
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--right.svg" title="" width="22" height="22" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--right c-button__icon--24px/arrow--circled--right.svg">
-    
-    </span>
+                <span class="c-btn-content">
+            <span class="c-btn-label left">
+                                    Button
+                            </span>
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="c-btn-icon right icon--arrow--circled--right">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--right.svg#root'></use>
+    </svg>
+            
+        </span>
+        
 </a>
 
     
@@ -327,33 +310,15 @@
             
                             <p class="c-component__description">Icon behind the text</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--suffix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;,
-    &quot;icon&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--right.svg&quot;,
-        &quot;width&quot;: 22,
-        &quot;height&quot;: 22,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--left&quot;&gt;
-                            Button
-                    &lt;/span&gt;
-
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--right.svg&quot; title=&quot;&quot; width=&quot;22&quot; height=&quot;22&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--right c-button__icon--24px/arrow--circled--right.svg&quot;&gt;
-    
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;span class=&quot;c-btn-label left&quot;&gt; Button &lt;/span&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon right icon--arrow--circled--right&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--right.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -370,26 +335,30 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--corporate c-btn--large  "
+    class="c-btn  primary large  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--left.svg" title="" width="22" height="22" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg">
-    
+                <span class="c-btn-content">
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
+    </svg>
+            
 
-        <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
-                            Button
-                    </span>
+            <span class="c-btn-label right">
+                                    Button
+                            </span>
 
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--right.svg" title="" width="22" height="22" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--right c-button__icon--24px/arrow--circled--right.svg">
-    
-    </span>
-</a>
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="c-btn-icon right icon--arrow--circled--right">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--right.svg#root'></use>
+    </svg>
+            
+        </span>
+
+    </a>
 
     
             </div>
@@ -399,44 +368,19 @@
             
                             <p class="c-component__description">Icon both in front of and behind the text</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--prefix-suffix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;large&quot;,
-    &quot;icon_left&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--left.svg&quot;,
-        &quot;width&quot;: 22,
-        &quot;height&quot;: 22,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    },
-    &quot;icon_right&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--right.svg&quot;,
-        &quot;width&quot;: 22,
-        &quot;height&quot;: 22,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--corporate c-btn--large  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--left.svg&quot; title=&quot;&quot; width=&quot;22&quot; height=&quot;22&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg&quot;&gt;
-    
-
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--right  &quot;&gt;
-                            Button
-                    &lt;/span&gt;
-
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--right.svg&quot; title=&quot;&quot; width=&quot;22&quot; height=&quot;22&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--right c-button__icon--24px/arrow--circled--right.svg&quot;&gt;
-    
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon right icon--arrow--circled--right&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--right.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -453,12 +397,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--theme4 c-btn--regular  "
+    class="c-btn  primary regular  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Submit</span>
+        <span class="c-btn-label">Submit</span>
 </a>
 
     
@@ -468,19 +410,9 @@
                             <h2 class="c-component-list__title">Text button, regular, with 3D-effect</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Submit&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme4&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;regular&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--theme4 c-btn--regular  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -497,12 +429,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--secondary c-btn--theme4 c-btn--regular  "
+    class="c-btn  secondary regular  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Submit</span>
+        <span class="c-btn-label">Submit</span>
 </a>
 
     
@@ -512,19 +442,9 @@
                             <h2 class="c-component-list__title">Text button, regular</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Submit&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme4&quot;,
-    &quot;level&quot;: &quot;secondary&quot;,
-    &quot;size&quot;: &quot;regular&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--secondary c-btn--theme4 c-btn--regular  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -541,21 +461,22 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--primary c-btn--theme4 c-btn--regular  "
+    class="c-btn  primary regular  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--left.svg" title="" width="20" height="20" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg">
-    
+                <span class="c-btn-content">
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
+        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
+    </svg>
+            
 
-        <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
-                            Button
-                    </span>
-    </span>
-</a>
+            <span class="c-btn-label right">
+                                    Button
+                            </span>
+        </span>
+    </a>
 
     
             </div>
@@ -565,33 +486,15 @@
             
                             <p class="c-component__description">Icon in front of the text</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--prefix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme4&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;regular&quot;,
-    &quot;icon&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--left.svg&quot;,
-        &quot;width&quot;: 20,
-        &quot;height&quot;: 20,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--primary c-btn--theme4 c-btn--regular  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--left.svg&quot; title=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg&quot;&gt;
-    
-
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--right  &quot;&gt;
-                            Button
-                    &lt;/span&gt;
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -608,12 +511,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--secondary c-btn--theme3 c-btn--small  "
+    class="c-btn  secondary small  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Submit</span>
+        <span class="c-btn-label">Submit</span>
 </a>
 
     
@@ -624,19 +525,9 @@
             
                             <p class="c-component__description">Note; a small button can&#039;t have the 3D-effect of the &#039;primary&#039;, so it defaults to &#039;secondary&#039; when given this property</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Submit&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme3&quot;,
-    &quot;level&quot;: &quot;secondary&quot;,
-    &quot;size&quot;: &quot;small&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--secondary c-btn--theme3 c-btn--small  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -653,21 +544,22 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--theme3 c-btn--small  "
+    class="c-btn  small  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--circled--left.svg" title="" width="20" height="20" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg">
-    
+                <span class="c-btn-content">
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
+        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
+    </svg>
+            
 
-        <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
-                            Button
-                    </span>
-    </span>
-</a>
+            <span class="c-btn-label right">
+                                    Button
+                            </span>
+        </span>
+    </a>
 
     
             </div>
@@ -677,33 +569,15 @@
             
                             <p class="c-component__description">Icon in front of the text</p>
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--prefix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme3&quot;,
-    &quot;level&quot;: &quot;primary&quot;,
-    &quot;size&quot;: &quot;small&quot;,
-    &quot;icon&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--circled--left.svg&quot;,
-        &quot;width&quot;: 20,
-        &quot;height&quot;: 20,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--theme3 c-btn--small  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--circled--left.svg&quot; title=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--left c-button__icon--24px/arrow--circled--left.svg&quot;&gt;
-    
-
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--right  &quot;&gt;
-                            Button
-                    &lt;/span&gt;
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -720,12 +594,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--secondary c-btn--theme3 c-btn--small c-btn--disabled  "
+    class="c-btn  secondary small disabled  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Submit</span>
+        <span class="c-btn-label">Submit</span>
 </a>
 
     
@@ -735,20 +607,9 @@
                             <h2 class="c-component-list__title">Text button, small, disabled</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Submit&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;theme3&quot;,
-    &quot;level&quot;: &quot;secondary&quot;,
-    &quot;size&quot;: &quot;small&quot;,
-    &quot;disabled&quot;: true
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--secondary c-btn--theme3 c-btn--small c-btn--disabled  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary small disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -765,12 +626,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--toggle c-btn--corporate  "
+    class="c-btn  toggle  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Toggle</span>
+        <span class="c-btn-label">Toggle</span>
 </a>
 
     
@@ -780,18 +639,9 @@
                             <h2 class="c-component-list__title">Toggle button</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Toggle&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;toggle&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--toggle c-btn--corporate  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Toggle&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn toggle &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Toggle&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -808,12 +658,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--toggle c-btn--corporate c-btn--disabled  "
+    class="c-btn  toggle disabled  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Toggle</span>
+        <span class="c-btn-label">Toggle</span>
 </a>
 
     
@@ -823,19 +671,9 @@
                             <h2 class="c-component-list__title">Toggle button, disabled</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Toggle&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;toggle&quot;,
-    &quot;disabled&quot;: true
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--toggle c-btn--corporate c-btn--disabled  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Toggle&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn toggle disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Toggle&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -852,12 +690,10 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--transparent c-btn--corporate  "
+    class="c-btn  transparent  "
     data-component="button" href="#">
-        
-    <span class="c-button__icon-container__label">Button</span>
+        <span class="c-btn-label">Button</span>
 </a>
 
     
@@ -867,18 +703,9 @@
                             <h2 class="c-component-list__title">Link button</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/text', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;transparent&quot;
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--transparent c-btn--corporate  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        
-    &lt;span class=&quot;c-button__icon-container__label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -895,21 +722,22 @@
 
 
 
-
 <a
-    class="c-btn  c-btn--transparent c-btn--corporate  "
+    class="c-btn  transparent  "
     data-component="button" href="#">
-        <span class="c-button__icon-container">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                    <img src="../assets/images/icons/24px/arrow--right.svg" title="" width="26" height="26" 
-        aria-hidden="true"role="img"        class="c-button__icon c-button__icon--left c-button__icon--24px/arrow--right.svg">
-    
+                <span class="c-btn-content">
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px" 
+        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--right">
+        <use xlink:href='../assets/images/icons/24px/arrow--right.svg#root'></use>
+    </svg>
+            
 
-        <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
-                            Button
-                    </span>
-    </span>
-</a>
+            <span class="c-btn-label right">
+                                    Button
+                            </span>
+        </span>
+    </a>
 
     
             </div>
@@ -918,32 +746,15 @@
                             <h2 class="c-component-list__title">Link button</h2>
             
             
-                                            <pre class="c-component__code">{{ ui.component('buttons/icon--prefix', {
-    &quot;text&quot;: &quot;Button&quot;,
-    &quot;url&quot;: &quot;#&quot;,
-    &quot;theme&quot;: &quot;corporate&quot;,
-    &quot;level&quot;: &quot;transparent&quot;,
-    &quot;icon&quot;: {
-        &quot;name&quot;: &quot;24px\/arrow--right.svg&quot;,
-        &quot;width&quot;: 26,
-        &quot;height&quot;: 26,
-        &quot;directory&quot;: &quot;..\/assets\/images\/icons&quot;
-    }
-}) }}</pre>
             
-                            <pre class="c-component__code">&lt;a
-    class=&quot;c-btn  c-btn--transparent c-btn--corporate  &quot;
-    data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-        &lt;span class=&quot;c-button__icon-container&quot;&gt;
-        &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-                    &lt;img src=&quot;../assets/images/icons/24px/arrow--right.svg&quot; title=&quot;&quot; width=&quot;26&quot; height=&quot;26&quot; 
-        aria-hidden=&quot;true&quot;role=&quot;img&quot;        class=&quot;c-button__icon c-button__icon--left c-button__icon--24px/arrow--right.svg&quot;&gt;
-    
-
-        &lt;span class=&quot;c-button__icon-container__label  c-button__icon-container__label--right  &quot;&gt;
-                            Button
-                    &lt;/span&gt;
-    &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;c-btn transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;c-btn-content&quot;&gt;
+    &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;26px&quot; height=&quot;26px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--right&quot;&gt;
+      &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--right.svg#root&quot;/&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+  &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>

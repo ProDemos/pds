@@ -6,10 +6,45 @@
 
 {% block component_intro %}
     <h2 class="c-copy--h2">Colors</h2>
+    <p>Use the named color, this will help for consistency and to remember which color to use (you can remember blue--deep-sky, but #00b4e6 is much hard).
+        Color names can be rendered with: <a href="https://www.color-blindness.com/color-name-hue/" target="_blank" rel="noopener noreferrer">https://www.color-blindness.com/color-name-hue/</a><br>
+            pattern: <i>[hue--color-name]</i><br>
+        If a color contains it's hue in the name, leave the hue in the color name behind, for example:<br>
+        <pre>#2A3FC9 gives 'blue--cerulean-blue', but becomes: 'blue--cerulean'</pre></p>
+        
 {% endblock %}
 
 
 {% block component_list %}
-    {# colorgroups are defined in config/styleguide.yml #}
-    {{ styleguide.colors(colorgroups) }}
+
+
+    <h2 class="c-copy--h2">Theme colors</h2>
+    <table width="100%">
+        {% for theme in themes %}
+            <tr>
+                <th width="100">{{ theme }}</th>
+                <td class="m-filled {{ theme|lower }}">&nbsp;</td>
+                <td class="m-filled {{ theme|lower }} accent">&nbsp;</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    
+    <h2 class="c-copy--h2">All colors</h2>
+    <table width="100%">
+        {% for colorname in colors %}
+            <tr>
+                <th width="100">{{ colorname }}</th>
+                {% for i in 2..1 %}
+                    <td class="m-filled {{ colorname|lower }} darken{{ i }}">&nbsp;</td>
+                {% endfor %}
+                <td class="m-filled {{ colorname|lower }}"><center>{{ colorname|lower }}</center></td>
+                {% for i in 1..6 %}
+                    <td class="m-filled {{ colorname|lower }} lighten{{ i }}">&nbsp;</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
