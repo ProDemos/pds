@@ -17,11 +17,14 @@
 
 -
     title: Components
-    uri: components/brand.html
+    uri: components/graphics.html
     items:
         -
-            title: Brand
-            uri: components/brand.html
+            title: Graphics
+            uri: components/graphics.html
+        -
+            title: Icons
+            uri: components/icons.html
         -
             title: Buttons
             uri: components/buttons.html
@@ -29,8 +32,8 @@
             title: Forms
             uri: components/forms.html
         -
-            title: Navigations
-            uri: components/navigations.html
+            title: Navigation
+            uri: components/navigation.html
         -
             title: Tables
             uri: components/tables.html
