@@ -1,7 +1,7 @@
 -
     styleguide_title: Text button, large (=default)
     styleguide_description: Large is the default style of a button if no other properties are given
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Button
     url: '#'
     level: primary
@@ -11,7 +11,7 @@
 -
     styleguide_title: Text button, large, accent
     styleguide_description: Accent is always the opposite color of the theme
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Button
     url: '#'
     level: primary
@@ -21,7 +21,7 @@
 -
     styleguide_title: Text button, large, disabled
     styleguide_description: A class can be added to disable the button
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Button
     url: '#'
     level: primary
@@ -31,7 +31,7 @@
 -
     styleguide_title: Text button, large, with icon
     styleguide_description: Icon in front of the text
-    styleguide_type: buttons/icon--prefix
+    styleguide_type: button/icon--prefix
     text: Button
     url: '#'
     level: primary
@@ -44,7 +44,7 @@
 -
     styleguide_title: Text button, large, with icon
     styleguide_description: Icon behind the text
-    styleguide_type: buttons/icon--suffix
+    styleguide_type: button/icon--suffix
     text: Button
     url: '#'
     level: primary
@@ -57,7 +57,7 @@
 -
     styleguide_title: Text button, large, with icons
     styleguide_description: Icon both in front of and behind the text
-    styleguide_type: buttons/icon--prefix-suffix
+    styleguide_type: button/icon--prefix-suffix
     text: Button
     url: '#'
     level: primary
@@ -73,7 +73,7 @@
 
 -
     styleguide_title: Text button, regular, with 3D-effect
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Submit
     url: '#'
     level: primary
@@ -81,7 +81,7 @@
 
 -
     styleguide_title: Text button, regular
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Submit
     url: '#'
     level: secondary
@@ -90,7 +90,7 @@
 -
     styleguide_title: Text button, regular, with icon
     styleguide_description: Icon in front of the text
-    styleguide_type: buttons/icon--prefix
+    styleguide_type: button/icon--prefix
     text: Button
     url: '#'
     level: primary
@@ -103,7 +103,7 @@
 -
     styleguide_title: Text button, small.
     styleguide_description: Note; a small button can't have the 3D-effect of the 'primary', so it defaults to 'secondary' when given this property
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Submit
     url: '#'
     level: secondary
@@ -112,7 +112,7 @@
 -
     styleguide_title: Text button, small, with icon
     styleguide_description: Icon in front of the text
-    styleguide_type: buttons/icon--prefix
+    styleguide_type: button/icon--prefix
     text: Button
     url: '#'
     level: primary
@@ -124,7 +124,7 @@
 
 -
     styleguide_title: Text button, small, disabled
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Submit
     url: '#'
     level: secondary
@@ -134,14 +134,14 @@
 
 -
     styleguide_title: Toggle button
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Toggle
     url: '#'
     level: toggle
 
 -
     styleguide_title: Toggle button, disabled
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Toggle
     url: '#'
     level: toggle
@@ -150,14 +150,14 @@
 
 -
     styleguide_title: Link button
-    styleguide_type: buttons/text
+    styleguide_type: button/text
     text: Button
     url: '#'
     level: transparent
 
 -
     styleguide_title: Link button
-    styleguide_type: buttons/icon--prefix
+    styleguide_type: button/icon--prefix
     text: Button
     url: '#'
     level: transparent

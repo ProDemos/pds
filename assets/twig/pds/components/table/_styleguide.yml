@@ -1,7 +1,7 @@
 # more examples are in the HTML of tables.html.twig
 -
   styleguide_title: Table, default, not responsive
-  styleguide_type: tables/table-default-nr
+  styleguide_type: table/table-default-nr
   styleguide_component_width: true
   theme: t-corporate
   header:
@@ -23,7 +23,7 @@
 
 -
   styleguide_title: Table, default, responsive
-  styleguide_type: tables/table-default
+  styleguide_type: table/table-default
   styleguide_component_width: true
   theme: t-corporate
   header:

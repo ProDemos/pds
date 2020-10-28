@@ -40,7 +40,7 @@
 
 {% block component_list %}
 
-    {% for component in components.buttons %}
+    {% for component in components.button %}
         {% if component.icon %}
             {% set icon = component.icon|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
             {% set component = component|merge({'icon': icon}) %}

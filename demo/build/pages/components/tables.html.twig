@@ -29,7 +29,7 @@
 
 {% block component_list %}
 
-    {% for component in components.tables %}
+    {% for component in components.table %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}
 

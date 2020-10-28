@@ -1,6 +1,6 @@
 -
     styleguide_title: Tabs as single navigational element (with lists)
-    styleguide_type: navigations/tab-nav
+    styleguide_type: tab-navigation/tab-nav
     styleguide_component_width: true
     tabs:
         -
@@ -21,7 +21,7 @@
 
 -
     styleguide_title: Tabs with content panels (with divs)
-    styleguide_type: navigations/tab-content
+    styleguide_type: tab-navigation/tab-content
     styleguide_component_width: true
     tabs:
         -

@@ -62,9 +62,9 @@ class TwigCompiler
         $nav = $yaml->parse(file_get_contents($this->paths['config'].'/navigation.yml'));
         $this->data['navigation'] = $nav;
         
-        // defined widgets
-        foreach(scandir($this->paths['assets'].'/twig') as $dirname) {
-            $xmpfile = $this->paths['assets'].'/twig/'.$dirname.'/_styleguide.yml';
+        // defined components
+        foreach(scandir($this->paths['assets'].'/twig/pds/components') as $dirname) {
+            $xmpfile = $this->paths['assets'].'/twig/pds/components/'.$dirname.'/_styleguide.yml';
             if (file_exists($xmpfile)) {
                 $xmpdata = $yaml->parse(file_get_contents($xmpfile));
                 $this->data['components'][$dirname] = $xmpdata;
