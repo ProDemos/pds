@@ -1,0 +1,26 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Icons - Styleguide' %}
+
+
+{% block component_intro %}
+   <h1 class="c-copy--h1">Icons</h1>
+   <p>This is where the icon components will be listed.</p>
+   <br>
+    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <ul>
+        <li> .pds-c-icon</li>
+    </ul>
+    <br>
+{% endblock %}
+
+{% block component_list %}
+    <h3>TODO</h3>
+    {#% for component in components.brand %}
+        {% set logo = component.logo|merge({'directory': rooturi ~ 'assets/images/brand' }) %}
+        {% set component = component|merge({'logo': logo }) %}
+        {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+    {% endfor %#}
+{% endblock %}
