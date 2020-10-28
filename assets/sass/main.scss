@@ -36,7 +36,7 @@
 // Base: un-classed HTML and page setup
 //
 @import "base/responsive";
-@import "base/typograhpy";
+@import "base/typography";
 @import "base/web-font--bree-serif";
 @import "base/web-font--fira-sans";
 
@@ -44,31 +44,34 @@
 //
 // Scopes
 //
-@import "scopes/default";
-@import "scopes/cms-content";
+@import "pds/scopes/reset";
+@import "pds/scopes/content";
 
 //
 // Themes
 //
-@import "themes/themes";
+@import "pds/themes/themes";
 
 
 //
 // Components
 //
-@import "components/brand";
-@import "components/button";
-@import "components/button-nobem";
-@import "components/icon";
-@import "components/icon-nobem";
-@import "components/form-elements";
-@import "components/form-elements-nobem";
-@import "components/tab-navigation";
-@import "components/tab-navigation-nobem";
-@import "components/table";
-@import "components/table-nobem";
+@import "pds/components/brand";
+@import "pds/components/button";
+@import "pds/components/button-nobem";
+@import "pds/components/icon";
+@import "pds/components/icon-nobem";
+@import "pds/components/form-elements";
+@import "pds/components/form-elements-nobem";
+@import "pds/components/tab-navigation";
+@import "pds/components/tab-navigation-nobem";
+@import "pds/components/table";
+@import "pds/components/table-nobem";
 
-
+//
+// Modifiers
+//
+@import "pds/modifiers/modifiers";
 
 
 //

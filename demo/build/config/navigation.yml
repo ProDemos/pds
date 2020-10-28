@@ -1,4 +1,21 @@
 -
+    title: Design 
+    uri: design/colors.html
+    items:
+        -
+            title: Colors
+            uri: design/colors.html
+        -
+            title: Typography
+            uri: design/typography.html
+        -
+            title: Graphics
+            uri: design/graphics.html
+        -
+            title: Icons
+            uri: design/icons.html
+
+-
     title: Components
     uri: components/brand.html
     items:
@@ -17,21 +34,6 @@
         -
             title: Tables
             uri: components/tables.html
-
--
-    title: Design Elements
-    uri: design-elements/colors.html
-    items:
-        -
-            title: Colors
-            uri: design-elements/colors.html
-        -
-            title: Icons
-            uri: design-elements/icons.html
-        -
-            title: Typography
-            uri: design-elements/typography.html
-
 -
     title: Source files
     uri: source-files/design.html

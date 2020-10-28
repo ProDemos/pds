@@ -1,11 +1,11 @@
-@import "../helpers/responsive";
+@import "../../helpers/responsive";
 
 // Styling for elements which can't be target through classes, usually content from the CMS
-// Add the class .s-cms-content to the element that contians this CMS-content (usually a DIV)
+// Add the class .pds-s-content to the element that contians this CMS-content (usually a DIV)
 // Extend these styles to your needs.
 
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
-.s-cms-content {
+.pds-s-content {
     h1 {
         margin-bottom: nth($spacing-scale, 5);
         font-size: nth($type-scale, 3);

@@ -29,7 +29,24 @@
     {% endif %}
 {% endmacro %}
 
+{% macro graphics(img_list,rooturi) %}
+    {% import 'macros/components.html.twig' as ui %}
 
+    {% if img_list|default and img_list|length %}
+        <div class="c-img-list">
+            {% for i in img_list %}
+                <div class="c-img-list__item">
+                    {{ ui.svg(i, {
+                        directory: rooturi ~ 'assets/images',
+                        width: 200,
+                        height: 200,
+                    }) }}
+                    <p class="c-img-list__item__name">{{ i }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}
 
 {% macro icons(icon_list,rooturi) %}
     {% import 'macros/components.html.twig' as ui %}
@@ -49,3 +66,5 @@
         </div>
     {% endif %}
 {% endmacro %}
+
+

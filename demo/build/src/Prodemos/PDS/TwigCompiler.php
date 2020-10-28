@@ -71,6 +71,18 @@ class TwigCompiler
             }
         }
         
+        // generate list of images except icons
+        $this->data['images'] = array();
+        $imgrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images');
+        $imgritit = new \RecursiveIteratorIterator($imgrit);
+        foreach ($imgritit as $path) {
+            if (!is_dir($path) && strpos($path,'/icons/')===false) {
+                $image = str_replace($this->paths['assets'].'/images/','',$path);
+                $this->data['images'][] = $image;
+            }
+        }
+        sort($this->data['images']);
+
         // generate list of icons
         $this->data['icons'] = array();
         $iconrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images/icons');
