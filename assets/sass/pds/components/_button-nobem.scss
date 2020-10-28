@@ -1,6 +1,7 @@
 
 // --- Simple CSS (NON-BEM)
-.c-btn { 
+.pds-c-button { 
+    @extend .c-btn;
     &.primary {
         @extend .c-btn--primary;
         &:not(.disabled) {
@@ -34,7 +35,7 @@
 // default corporate theme for nobem
 // we should do this with a mixin .. 
 
-.c-btn {
+.pds-c-button {
 
     @extend .c-btn--corporate;
 
@@ -105,8 +106,8 @@
 
 @each $theme in $prodemos-themes {
 
-    .t-#{nth($theme,1)} .c-btn,
-    .c-btn.t-#{nth($theme,1)}:not(.t-inherit) {
+    .t-#{nth($theme,1)} .pds-c-button,
+    .pds-c-button.t-#{nth($theme,1)}:not(.pds-t-inherit) {
 
         @extend .c-btn--#{nth($theme,1)};
 
@@ -177,10 +178,10 @@
     }
 
     /* icons */
-    .c-btn-content {
+    .pds-c-button-content {
         @extend .c-button__icon-container;
     }
-    .c-btn-label {
+    .pds-c-button-label {
         @extend .c-button__icon-container__label;
         .right {
             @extend .c-button__icon-container__label--right;

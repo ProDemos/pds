@@ -1,19 +1,23 @@
 
+.pds-c-input {
+    @extend .c-input;
+}
+
 // Input wrapper, used for combined elements, like the radio's and checkboxes, but can be used for all elements
-.c-input-container {
+.pds-c-input-container {
     @extend .c-input--container;
 }
 
 
 // The default label styling
-.c-input-label {
-    // is good
+.pds-c-input-label {
+    @extend .c-input-label;
 }
 
 
 
 // Basic input styling, shared by all inputs
-.c-input {
+.pds-c-input {
     &.disabled {
         @extend .c-input.c-input--disabled;
     }
@@ -22,7 +26,7 @@
 
 
 // Text input
-.c-input.text {
+.pds-c-input.text {
     @extend .c-input--text;
     &.valid {
         @extend .c-input--text.c-input--text--valid;
@@ -33,19 +37,19 @@
 }
 
 // default theme
-.c-input.text {
+.pds-c-input.text {
     @extend .c-input--text.t-corporate;
 }
 
 // spec themes
 @each $theme in $prodemos-themes {
-    .t-#{nth($theme,1)} .c-input.text,
-    .c-input.text.t-#{nth($theme,1)}:not(.inherit) {
+    .t-#{nth($theme,1)} .pds-c-input.text,
+    .pds-c-input.text.t-#{nth($theme,1)}:not(.inherit) {
         @extend .c-input--text.t-#{nth($theme,1)}
     }
 }
 
-.c-input.dropdown {
+.pds-c-input.dropdown {
     @extend .c-input--dropdown;
     &.full-width {
         @extend .c-input--dropdown.c-input--dropdown--full-width;
@@ -53,25 +57,25 @@
 }
 
 // def theme
-.c-input.dropdown {
+.pds-c-input.dropdown {
     @extend .c-input--dropdown.t-corporate;
 }
 // spec themes
 @each $theme in $prodemos-themes {
-    &.t-#{nth($theme,1)} .c-input.dropdown,
-    .c-input.dropdown.t-#{nth($theme,1)}:not(.inherit) {
+    &.t-#{nth($theme,1)} .pds-c-input.dropdown,
+    .pds-c-input.dropdown.t-#{nth($theme,1)}:not(.inherit) {
         @extend .c-input--dropdown.t-#{nth($theme,1)}
     }
 }
 
 
-.c-input-container.radio {
+.pds-c-input-container.radio {
     @extend .c-input--container--radio;
     @include hover {
         // def theme
         @each $theme in $prodemos-themes {
             @if nth($theme,1) == 'corporate' {
-                .c-input-check {
+                .pds-c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
             }
@@ -80,25 +84,25 @@
         @each $theme in $prodemos-themes {
             .t-#{nth($theme,1)} &,
             &.t-#{nth($theme,1)}:not(.inherit) {
-                .c-input-check {
+                .pds-c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
             }
         }
     }
-    .c-input-label {
-        // good 
+    .pds-c-input-label {
+        // not good 
     }
-    .c-input-check {
+    .pds-c-input-check {
         @extend %c-input--radio__check; 
         // i moved the check inside the label so you can click it
         top: nth($spacing-scale, 4);
     }
 }
 
-.c-input.radio {
+.pds-c-input.radio {
     @extend .c-input--radio;
-    &:checked ~ .c-input-check {
+    &:checked ~ .pds-c-input-check {
         // default theme
         @each $theme in $prodemos-themes {
             @if nth($theme,1) == 'corporate' {
@@ -125,13 +129,13 @@
 
 }
 
-.c-input-container.checkbox {
+.pds-c-input-container.checkbox {
     @extend .c-input--container--checkbox;
     @include hover {
         // def theme
         @each $theme in $prodemos-themes {
             @if nth($theme,1) == 'corporate' {
-                .c-input-check {
+                .pds-c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
             }
@@ -140,16 +144,16 @@
             // spec themes
             .t-#{nth($theme,1)} &,
             &.t-#{nth($theme,1)}:not(.inherit) {
-                .c-input-check {
+                .pds-c-input-check {
                     border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
                 }
             }
         }
     }
-    .c-input-label {
-        // good
+    .pds-c-input-label {
+        // not good
     }
-    .c-input-check {
+    .pds-c-input-check {
         @extend %c-input--checkbox__check; 
         // i moved the check inside the label so you can click it
         top: nth($spacing-scale, 4);
@@ -157,9 +161,9 @@
 
 }
 
-.c-input.checkbox {
+.pds-c-input.checkbox {
     @extend .c-input--checkbox;
-    &:checked ~ .c-input-check {
+    &:checked ~ .pds-c-input-check {
         // def theme
         @each $theme in $prodemos-themes {
             @if nth($theme,1) == 'corporate' {

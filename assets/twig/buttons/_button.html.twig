@@ -1,25 +1,6 @@
 
 {# TODO: add all possible themes to the theme-list in the validate_context #}
-{% set cx = bem ? {
-    container: html_classes({
-        'c-btn--primary': level == 'primary' and size != 'small',
-        'c-btn--secondary': level == 'secondary',
-        'c-btn--toggle': level == 'toggle',
-        'c-btn--transparent': level == 'transparent',
-        'c-btn--corporate': theme == 'corporate' or not theme,
-        'c-btn--theme2': theme == 'theme2',
-        'c-btn--theme3': theme == 'theme3',
-        'c-btn--theme4': theme == 'theme4',
-        'c-btn--theme5': theme == 'theme5',
-        'c-btn--theme6': theme == 'theme6',
-        'c-btn--theme7': theme == 'theme7',
-        'c-btn--large': size == 'large',
-        'c-btn--regular': size == 'regular',
-        'c-btn--small': size == 'small',
-        'c-btn--accent': accent,
-        'c-btn--disabled': disabled
-    }) 
-} : {
+{% set cx = {
     container: html_classes({
         'primary': level == 'primary' and size != 'small',
         'secondary': level == 'secondary',
@@ -52,7 +33,7 @@
 %}
 
 <{{ tag }}
-    class="c-btn  {{ cx.container }}  {{ js_hook }}"
+    class="pds-c-button  {{ cx.container }}  {{ js_hook }}"
     data-component="button"{% if attrs is not empty %} {{ attrs|join(' ')|raw }}{% endif %}>
     {% block button_content '' %}
 </{{ tag }}>

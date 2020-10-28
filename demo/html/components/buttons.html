@@ -92,7 +92,7 @@
         <div class="c-content__main">
             <div class="c-content__intro">
                    <h1 class="c-copy--h1">Buttons</h1>
-    <p>List of all kind of buttons used throughout the project. Every button starts with a class (c-btn) that contains the shared behaviour. 
+    <p>List of all kind of buttons used throughout the project. Every button starts with a class (pds-c-button) that contains the shared behaviour. 
             There are modifiers to describe the primary or secondary style, and the themes, when used, primarily consists of colors for the default, hover, and focus states. If you want a button to be present but not yet clickable, just add the disabled modifier class provided in the example.
             The buttons with an icon contain an extra container with the SVG-code. Just choose a button that fits best to your situation, copy the code and alter to your needs.
     </p>
@@ -100,18 +100,18 @@
     <br>
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
-        <li> .c-btn[ .primary | .secondary ]</li>
-        <li> .c-btn[ .large | .regular |.small ]</li>
-        <li> .c-btn[ .accent | .disabled ]</li>
-        <li> .c-btn[ .toggle | .transparent ]</li>
-        <li> .c-btn > c.btn-label</li>
-        <li> .c-btn > .c-btn-content > [ .c-btn-icon.left + ] .c-btn-label[ .left | .right ]  [ + .c-btn-icon.right ] </li>
+        <li> .pds-c-button[ .primary | .secondary ]</li>
+        <li> .pds-c-button[ .large | .regular |.small ]</li>
+        <li> .pds-c-button[ .accent | .disabled ]</li>
+        <li> .pds-c-button[ .toggle | .transparent ]</li>
+        <li> .pds-c-button > pds-c.btn-label</li>
+        <li> .pds-c-button > .pds-c-button-content > [ .pds-c-button-icon.left + ] .pds-c-button-label[ .left | .right ]  [ + .pds-c-button-icon.right ] </li>
     </ul>
     
     <h1 class="c-copy--h1">Themes</h1>
 
     <form>
-        <select class="c-input dropdown full-width"
+        <select class="pds-c-input dropdown full-width"
             onchange="document.body.className=this.options[this.selectedIndex].value">
             <option value="" selected disabled>Select a theme ...</option>
                             <option value="t-corporate">Corporate</option>
@@ -141,9 +141,9 @@
 
 
 <a
-    class="c-btn  primary large  "
+    class="pds-c-button  primary large  "
     data-component="button" href="#">
-        <span class="c-btn-label">Button</span>
+        <span class="pds-c-btn-label">Button</span>
 </a>
 
     
@@ -155,8 +155,8 @@
                             <p class="c-component__description">Large is the default style of a button if no other properties are given</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -174,9 +174,9 @@
 
 
 <a
-    class="c-btn  primary large accent  "
+    class="pds-c-button  primary large accent  "
     data-component="button" href="#">
-        <span class="c-btn-label">Button</span>
+        <span class="pds-c-btn-label">Button</span>
 </a>
 
     
@@ -188,8 +188,8 @@
                             <p class="c-component__description">Accent is always the opposite color of the theme</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large accent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large accent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -207,9 +207,9 @@
 
 
 <a
-    class="c-btn  primary large disabled  "
+    class="pds-c-button  primary large disabled  "
     data-component="button" href="#">
-        <span class="c-btn-label">Button</span>
+        <span class="pds-c-btn-label">Button</span>
 </a>
 
     
@@ -221,8 +221,8 @@
                             <p class="c-component__description">A class can be added to disable the button</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -240,21 +240,22 @@
 
 
 <a
-    class="c-btn  primary large  "
+    class="pds-c-button  primary large  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
-        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        
+    <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon left icon--arrow--circled--left">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
     </svg>
             
 
-            <span class="c-btn-label right">
-                                    Button
-                            </span>
-        </span>
-    </a>
+        <span class="pds-c-button-label right">
+                            Button
+                    </span>
+    </span>
+</a>
 
     
             </div>
@@ -265,13 +266,13 @@
                             <p class="c-component__description">Icon in front of the text</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon left icon--arrow--circled--left&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
     &lt;/svg&gt;
-    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;span class=&quot;pds-c-button-label right&quot;&gt; Button &lt;/span&gt;
   &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
@@ -290,20 +291,19 @@
 
 
 <a
-    class="c-btn  primary large  "
+    class="pds-c-button  primary large  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <span class="c-btn-label left">
-                                    Button
-                            </span>
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
-        aria-hidden="true" role="img"         class="c-btn-icon right icon--arrow--circled--right">
+        <span class="pds-c-button-content">
+        <span class="pds-c-button-label left">
+                            Button
+                    </span>
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon right icon--arrow--circled--right">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--right.svg#root'></use>
     </svg>
             
-        </span>
-        
+    </span>
 </a>
 
     
@@ -315,11 +315,11 @@
                             <p class="c-component__description">Icon behind the text</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
-    &lt;span class=&quot;c-btn-label left&quot;&gt; Button &lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
+    &lt;span class=&quot;pds-c-button-label left&quot;&gt; Button &lt;/span&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon right icon--arrow--circled--right&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon right icon--arrow--circled--right&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--right.svg#root&quot;/&gt;
     &lt;/svg&gt;
   &lt;/span&gt;
@@ -340,29 +340,29 @@
 
 
 <a
-    class="c-btn  primary large  "
+    class="pds-c-button  primary large  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
-        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon left icon--arrow--circled--left">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
     </svg>
             
 
-            <span class="c-btn-label right">
-                                    Button
-                            </span>
+        <span class="pds-c-button-label right">
+                            Button
+                    </span>
 
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
-        aria-hidden="true" role="img"         class="c-btn-icon right icon--arrow--circled--right">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon right icon--arrow--circled--right">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--right.svg#root'></use>
     </svg>
             
-        </span>
+    </span>
 
-    </a>
+</a>
 
     
             </div>
@@ -373,15 +373,15 @@
                             <p class="c-component__description">Icon both in front of and behind the text</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary large &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon left icon--arrow--circled--left&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
     &lt;/svg&gt;
-    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;span class=&quot;pds-c-button-label right&quot;&gt; Button &lt;/span&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon right icon--arrow--circled--right&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;22px&quot; height=&quot;22px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon right icon--arrow--circled--right&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--right.svg#root&quot;/&gt;
     &lt;/svg&gt;
   &lt;/span&gt;
@@ -402,9 +402,9 @@
 
 
 <a
-    class="c-btn  primary regular  "
+    class="pds-c-button  primary regular  "
     data-component="button" href="#">
-        <span class="c-btn-label">Submit</span>
+        <span class="pds-c-btn-label">Submit</span>
 </a>
 
     
@@ -415,8 +415,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -434,9 +434,9 @@
 
 
 <a
-    class="c-btn  secondary regular  "
+    class="pds-c-button  secondary regular  "
     data-component="button" href="#">
-        <span class="c-btn-label">Submit</span>
+        <span class="pds-c-btn-label">Submit</span>
 </a>
 
     
@@ -447,8 +447,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button secondary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -466,21 +466,22 @@
 
 
 <a
-    class="c-btn  primary regular  "
+    class="pds-c-button  primary regular  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
-        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        
+    <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon left icon--arrow--circled--left">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
     </svg>
             
 
-            <span class="c-btn-label right">
-                                    Button
-                            </span>
-        </span>
-    </a>
+        <span class="pds-c-button-label right">
+                            Button
+                    </span>
+    </span>
+</a>
 
     
             </div>
@@ -491,13 +492,13 @@
                             <p class="c-component__description">Icon in front of the text</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button primary regular &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon left icon--arrow--circled--left&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
     &lt;/svg&gt;
-    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;span class=&quot;pds-c-button-label right&quot;&gt; Button &lt;/span&gt;
   &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
@@ -516,9 +517,9 @@
 
 
 <a
-    class="c-btn  secondary small  "
+    class="pds-c-button  secondary small  "
     data-component="button" href="#">
-        <span class="c-btn-label">Submit</span>
+        <span class="pds-c-btn-label">Submit</span>
 </a>
 
     
@@ -530,8 +531,8 @@
                             <p class="c-component__description">Note; a small button can&#039;t have the 3D-effect of the &#039;primary&#039;, so it defaults to &#039;secondary&#039; when given this property</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button secondary small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -549,21 +550,22 @@
 
 
 <a
-    class="c-btn  small  "
+    class="pds-c-button  small  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
-        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--circled--left">
+        
+    <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon left icon--arrow--circled--left">
         <use xlink:href='../assets/images/icons/24px/arrow--circled--left.svg#root'></use>
     </svg>
             
 
-            <span class="c-btn-label right">
-                                    Button
-                            </span>
-        </span>
-    </a>
+        <span class="pds-c-button-label right">
+                            Button
+                    </span>
+    </span>
+</a>
 
     
             </div>
@@ -574,13 +576,13 @@
                             <p class="c-component__description">Icon in front of the text</p>
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button small &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--circled--left&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;20px&quot; height=&quot;20px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon left icon--arrow--circled--left&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--circled--left.svg#root&quot;/&gt;
     &lt;/svg&gt;
-    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;span class=&quot;pds-c-button-label right&quot;&gt; Button &lt;/span&gt;
   &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
@@ -599,9 +601,9 @@
 
 
 <a
-    class="c-btn  secondary small disabled  "
+    class="pds-c-button  secondary small disabled  "
     data-component="button" href="#">
-        <span class="c-btn-label">Submit</span>
+        <span class="pds-c-btn-label">Submit</span>
 </a>
 
     
@@ -612,8 +614,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn secondary small disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Submit&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button secondary small disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Submit&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -631,9 +633,9 @@
 
 
 <a
-    class="c-btn  toggle  "
+    class="pds-c-button  toggle  "
     data-component="button" href="#">
-        <span class="c-btn-label">Toggle</span>
+        <span class="pds-c-btn-label">Toggle</span>
 </a>
 
     
@@ -644,8 +646,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn toggle &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Toggle&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button toggle &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Toggle&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -663,9 +665,9 @@
 
 
 <a
-    class="c-btn  toggle disabled  "
+    class="pds-c-button  toggle disabled  "
     data-component="button" href="#">
-        <span class="c-btn-label">Toggle</span>
+        <span class="pds-c-btn-label">Toggle</span>
 </a>
 
     
@@ -676,8 +678,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn toggle disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Toggle&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button toggle disabled &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Toggle&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -695,9 +697,9 @@
 
 
 <a
-    class="c-btn  transparent  "
+    class="pds-c-button  transparent  "
     data-component="button" href="#">
-        <span class="c-btn-label">Button</span>
+        <span class="pds-c-btn-label">Button</span>
 </a>
 
     
@@ -708,8 +710,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-label&quot;&gt;Button&lt;/span&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-btn-label&quot;&gt;Button&lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>
     </div>
@@ -727,21 +729,22 @@
 
 
 <a
-    class="c-btn  transparent  "
+    class="pds-c-button  transparent  "
     data-component="button" href="#">
-                <span class="c-btn-content">
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-                        <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px" 
-        aria-hidden="true" role="img"         class="c-btn-icon left icon--arrow--right">
+        
+    <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px" 
+        aria-hidden="true" role="img"         class="pds-c-button-icon left icon--arrow--right">
         <use xlink:href='../assets/images/icons/24px/arrow--right.svg#root'></use>
     </svg>
             
 
-            <span class="c-btn-label right">
-                                    Button
-                            </span>
-        </span>
-    </a>
+        <span class="pds-c-button-label right">
+                            Button
+                    </span>
+    </span>
+</a>
 
     
             </div>
@@ -751,13 +754,13 @@
             
             
             
-                                            <pre class="c-component__code">&lt;a class=&quot;c-btn transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
-  &lt;span class=&quot;c-btn-content&quot;&gt;
+                                            <pre class="c-component__code">&lt;a class=&quot;pds-c-button transparent &quot; data-component=&quot;button&quot; href=&quot;#&quot;&gt;
+  &lt;span class=&quot;pds-c-button-content&quot;&gt;
     &lt;!-- replace the SVG-code with the appropriate from the folder &#039;images/icons/24px&#039; --&gt;
-    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;26px&quot; height=&quot;26px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;c-btn-icon left icon--arrow--right&quot;&gt;
+    &lt;svg xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;26px&quot; height=&quot;26px&quot; aria-hidden=&quot;true&quot; role=&quot;img&quot; class=&quot;pds-c-button-icon left icon--arrow--right&quot;&gt;
       &lt;use xlink:href=&quot;../assets/images/icons/24px/arrow--right.svg#root&quot;/&gt;
     &lt;/svg&gt;
-    &lt;span class=&quot;c-btn-label right&quot;&gt; Button &lt;/span&gt;
+    &lt;span class=&quot;pds-c-button-label right&quot;&gt; Button &lt;/span&gt;
   &lt;/span&gt;
 &lt;/a&gt;</pre>
                     </div>

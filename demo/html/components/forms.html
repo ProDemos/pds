@@ -101,18 +101,18 @@
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
         
-        <li> .c-input[.disabled]</li>
-        <li> .c-input.text[.valid|.invalid]</li>
-        <li> .c-input.dropdown[.fullwidth]</li>
-        <li> .c-input.container[.radio|.checkbox]</li>
-        <li> .c-input-container.radio > .c-input.radio + .c-input-check + .c-input-label</li>
-        <li> .c-input-container.checkbox > .c-input.checkbox + .c-input-check + .c-input-label</li>
+        <li> .pds-c-input[.disabled]</li>
+        <li> .pds-c-input.text[.valid|.invalid]</li>
+        <li> .pds-c-input.dropdown[.fullwidth]</li>
+        <li> .pds-c-input.container[.radio|.checkbox]</li>
+        <li> .pds-c-input-container.radio > .pds-c-input.radio + .pds-c-input-check + .pds-c-input-label</li>
+        <li> .pds-c-input-container.checkbox > .pds-c-input.checkbox + .pds-c-input-check + .pds-c-input-label</li>
     </ul>
 
     <h1 class="c-copy--h1">Themes</h1>
 
     <form>
-        <select class="c-input dropdown full-width"
+        <select class="pds-c-input dropdown full-width"
             onchange="document.body.className=this.options[this.selectedIndex].value">
             <option value="" selected disabled>Select a theme ...</option>
                             <option value="t-corporate">Corporate</option>
@@ -135,7 +135,7 @@
         
         
                     <div class="c-component__view  ">
-                            <input class="c-input  text  " id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="pds-c-input text " id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -144,7 +144,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;input class=&quot;c-input text &quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;pds-c-input text &quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -156,7 +156,7 @@
         
         
                     <div class="c-component__view  ">
-                            <input class="c-input  text  invalid" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="pds-c-input text invalid" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -165,7 +165,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;input class=&quot;c-input text invalid&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;pds-c-input text invalid&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -177,7 +177,7 @@
         
         
                     <div class="c-component__view  ">
-                            <input class="c-input  text  valid" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
+                            <input class="pds-c-input text valid" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" >
     
             </div>
         
@@ -186,7 +186,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;input class=&quot;c-input text valid&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;pds-c-input text valid&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -198,7 +198,7 @@
         
         
                     <div class="c-component__view  ">
-                            <input class="c-input  text  disabled" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" disabled>
+                            <input class="pds-c-input text disabled" id="1" name="textinput_name" type="text" value="" placeholder="Fill in something" disabled>
     
             </div>
         
@@ -207,7 +207,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;input class=&quot;c-input text disabled&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; disabled=&quot;disabled&quot;/&gt;</pre>
+                                            <pre class="c-component__code">&lt;input class=&quot;pds-c-input text disabled&quot; id=&quot;1&quot; name=&quot;textinput_name&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;Fill in something&quot; disabled=&quot;disabled&quot;/&gt;</pre>
                     </div>
     </div>
 
@@ -219,7 +219,7 @@
         
         
                     <div class="c-component__view  ">
-                            <select class="c-input  dropdown    " id="3" name="dropdown">
+                            <select class="pds-c-input  dropdown    " id="3" name="dropdown">
                                                 <option value="ja" >Kies opleiding</option>
             
                                                 <option value="nee" >VSO</option>
@@ -235,7 +235,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;select class=&quot;c-input dropdown &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
+                                            <pre class="c-component__code">&lt;select class=&quot;pds-c-input dropdown &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
   &lt;option value=&quot;ja&quot;&gt;Kies opleiding&lt;/option&gt;
   &lt;option value=&quot;nee&quot;&gt;VSO&lt;/option&gt;
   &lt;option value=&quot;nee&quot;&gt;VMBO&lt;/option&gt;
@@ -251,7 +251,7 @@
         
         
                     <div class="c-component__view  ">
-                            <select class="c-input  dropdown  full-width  " id="3" name="dropdown">
+                            <select class="pds-c-input  dropdown  full-width  " id="3" name="dropdown">
                                                 <option value="ja" >Kies opleiding</option>
             
                                                 <option value="nee" >VSO</option>
@@ -268,7 +268,7 @@
                             <p class="c-component__description">In some cases a version that spans the full width might be needed</p>
             
             
-                                            <pre class="c-component__code">&lt;select class=&quot;c-input dropdown full-width &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
+                                            <pre class="c-component__code">&lt;select class=&quot;pds-c-input dropdown full-width &quot; id=&quot;3&quot; name=&quot;dropdown&quot;&gt;
   &lt;option value=&quot;ja&quot;&gt;Kies opleiding&lt;/option&gt;
   &lt;option value=&quot;nee&quot;&gt;VSO&lt;/option&gt;
   &lt;option value=&quot;nee&quot;&gt;VMBO&lt;/option&gt;
@@ -285,10 +285,10 @@
         
                     <div class="c-component__view  ">
                             
-<div class="c-input-container radio  has-hover-propagation  ">
-    <label class="c-input-label" for="radio_1">
-        <input class="c-input  radio" type="radio" id="radio_1" name="radio_name" value="yes" >
-        <div class="c-input-check"></div>
+<div class="pds-c-input-container radio  has-hover-propagation  ">
+    <label class="pds-c-input-label" for="radio_1">
+        <input class="pds-c-input  radio" type="radio" id="radio_1" name="radio_name" value="yes" >
+        <div class="pds-c-input-check"></div>
         Choose me
     </label>
 </div>
@@ -300,8 +300,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;div class=&quot;c-input-container radio has-hover-propagation &quot;&gt;
-  &lt;label class=&quot;c-input-label&quot; for=&quot;radio_1&quot;&gt;&lt;input class=&quot;c-input radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Choose me &lt;/label&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;pds-c-input-container radio has-hover-propagation &quot;&gt;
+  &lt;label class=&quot;pds-c-input-label&quot; for=&quot;radio_1&quot;&gt;&lt;input class=&quot;pds-c-input radio&quot; type=&quot;radio&quot; id=&quot;radio_1&quot; name=&quot;radio_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;pds-c-input-check&quot;/&gt; Choose me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>
@@ -315,10 +315,10 @@
         
                     <div class="c-component__view  ">
                             
-<div class="c-input-container checkbox  has-hover-propagation  ">
-    <label class="c-input-label" for="checkbox_1">
-        <input class="c-input  checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
-        <div class="c-input-check"></div>
+<div class="pds-c-input-container checkbox  has-hover-propagation  ">
+    <label class="pds-c-input-label" for="checkbox_1">
+        <input class="pds-c-input  checkbox" type="checkbox" id="checkbox_1" name="checkbox_name" value="yes" >
+        <div class="pds-c-input-check"></div>
         Check me
     </label>
 </div>
@@ -330,8 +330,8 @@
             
             
             
-                                            <pre class="c-component__code">&lt;div class=&quot;c-input-container checkbox has-hover-propagation &quot;&gt;
-  &lt;label class=&quot;c-input-label&quot; for=&quot;checkbox_1&quot;&gt;&lt;input class=&quot;c-input checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;c-input-check&quot;/&gt; Check me &lt;/label&gt;
+                                            <pre class="c-component__code">&lt;div class=&quot;pds-c-input-container checkbox has-hover-propagation &quot;&gt;
+  &lt;label class=&quot;pds-c-input-label&quot; for=&quot;checkbox_1&quot;&gt;&lt;input class=&quot;pds-c-input checkbox&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot; name=&quot;checkbox_name&quot; value=&quot;yes&quot;/&gt;&lt;div class=&quot;pds-c-input-check&quot;/&gt; Check me &lt;/label&gt;
 &lt;/div&gt;</pre>
                     </div>
     </div>

@@ -1,16 +1,5 @@
 
-{% set cx = (bem) ? {
-    container: html_classes({
-        'c-input--dropdown--full-width': full_width,
-        't-corporate': theme == 'corporate' or not theme,
-        't-theme2': theme == 'theme2',
-        't-theme3': theme == 'theme3',
-        't-theme4': theme == 'theme4',
-        't-theme5': theme == 'theme5',
-        't-theme6': theme == 'theme6',
-        't-theme7': theme == 'theme7',
-    })
-} : {
+{% set cx = {
     container: html_classes({
         'full-width': full_width,
         't-corporate': theme == 'corporate',
@@ -22,18 +11,10 @@
         't-theme7': theme == 'theme7',
     })
 } %}
-{% if bem %}
-<div class="c-input--container  c-input--container--radio  has-hover-propagation  {{ cx.container }}">
-    <input class="c-input  c-input--radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
-    <label class="c-input-label" for="{{ id }}">{{ label }}</label>
-    <div class="c-input--radio__check"></div>
-</div>
-{% else %}
-<div class="c-input-container radio  has-hover-propagation  {{ cx.container }}">
-    <label class="c-input-label" for="{{ id }}">
-        <input class="c-input  radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
-        <div class="c-input-check"></div>
+<div class="pds-c-input-container radio  has-hover-propagation  {{ cx.container }}">
+    <label class="pds-c-input-label" for="{{ id }}">
+        <input class="pds-c-input  radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
+        <div class="pds-c-input-check"></div>
         {{ label }}
     </label>
 </div>
-{% endif %}

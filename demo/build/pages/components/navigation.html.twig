@@ -15,16 +15,16 @@
    <br>
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
-        <li> .c-tabs-container</li>
-        <li> .c-tabs-container > ( ul | ol | .c-tabs ) [ + .c-tabs-panels ]</li>
-        <li> .c-tabs > ( li | .c-tabs-item ) > ( a | .c-tabs-link )[ .current ]</li>
-        <li> .c-tabs-panels > .c-tabs-panel[ .current ]</li>
+        <li> .pds-c-tabs-container</li>
+        <li> .pds-c-tabs-container > ( ul | ol | .pds-c-tabs ) [ + .pds-c-tabs-panels ]</li>
+        <li> .pds-c-tabs > ( li | .pds-c-tabs-item ) > ( a | .pds-c-tabs-link )[ .current ]</li>
+        <li> .pds-c-tabs-panels > .pds-c-tabs-panel[ .current ]</li>
     </ul>
 
     <h1 class="c-copy--h1">Themes</h1>
     
     <form>
-        <select class="c-input dropdown full-width"
+        <select class="pds-c-input dropdown full-width"
             onchange="document.body.className=this.options[this.selectedIndex].value">
             <option value="" selected disabled>Select a theme ...</option>
             {% for themeid,themename in themes %}
