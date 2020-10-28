@@ -46,13 +46,21 @@
 
         <nav class="c-navigation  c-page-header__navigation">
             <ul class="c-navigation__list">
+                                    <li class="c-navigation__item  ">
+                        <a class="c-navigation__link  " 
+                            href="../design/colors.html">Design</a>
+                                            </li>
                                     <li class="c-navigation__item  c-navigation__item--current">
                         <a class="c-navigation__link  c-navigation__link--current" 
-                            href="../components/brand.html">Components</a>
+                            href="../components/graphics.html">Components</a>
                                                                                                                                                         <ul class="c-sub-navigation__list">
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/brand.html">Brand</a>
+                                                    href="../components/graphics.html">Graphics</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../components/icons.html">Icons</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
@@ -64,7 +72,7 @@
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/navigations.html">Navigations</a>
+                                                    href="../components/navigation.html">Navigation</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
@@ -72,10 +80,6 @@
                                             </li>
                                                                             </ul>
                                                                                                         </li>
-                                    <li class="c-navigation__item  ">
-                        <a class="c-navigation__link  " 
-                            href="../design-elements/colors.html">Design Elements</a>
-                                            </li>
                                     <li class="c-navigation__item  ">
                         <a class="c-navigation__link  " 
                             href="../source-files/design.html">Source files</a>
@@ -99,9 +103,9 @@
     <br>
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
-        <li> .c-table[.responsive]</li>
-        <li> .c-table > thead > tr > th </li>
-        <li> .c-table > tbody > tr > td </li>
+        <li> .pds-c-table[.responsive]</li>
+        <li> .pds-c-table > thead > tr > th </li>
+        <li> .pds-c-table > tbody > tr > td </li>
     </ul>
 
 
@@ -116,28 +120,29 @@
         
         
                     <div class="c-component__view  c-component__view--full">
-                                <table class="c-table" role="table">
-        <thead role="rowgroup">
-            <tr role="row">
-                                    <th role="columnheader">First name</th>
-                                    <th role="columnheader">Last name</th>
-                                    <th role="columnheader">Job title</th>
-                                    <th role="columnheader">Date of birth</th>
-                            </tr>
-        </thead>
-        <tbody>
-                            <tr role="row">
-                                    <td role="cell" data-label="First name">James</td>
-                                    <td role="cell" data-label="Last name">Matman</td>
-                                    <td role="cell" data-label="Job title">Chief sandwich Eater</td>
-                                    <td role="cell" data-label="Date of birth">January 13th 1979</td>
-                                            <tr role="row">
-                                    <td role="cell" data-label="First name">James</td>
-                                    <td role="cell" data-label="Last name">Matman</td>
-                                    <td role="cell" data-label="Job title">Chief sandwich Eater</td>
-                                    <td role="cell" data-label="Date of birth">January 13th 1979</td>
-                                    </tbody>
-    </table>
+                            
+<table class="pds-c-table" role="table">
+    <thead role="rowgroup">
+        <tr role="row">
+                            <th role="columnheader">First name</th>
+                            <th role="columnheader">Last name</th>
+                            <th role="columnheader">Job title</th>
+                            <th role="columnheader">Date of birth</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr role="row">
+                            <td role="cell" data-label="First name">James</td>
+                            <td role="cell" data-label="Last name">Matman</td>
+                            <td role="cell" data-label="Job title">Chief sandwich Eater</td>
+                            <td role="cell" data-label="Date of birth">January 13th 1979</td>
+                                <tr role="row">
+                            <td role="cell" data-label="First name">James</td>
+                            <td role="cell" data-label="Last name">Matman</td>
+                            <td role="cell" data-label="Job title">Chief sandwich Eater</td>
+                            <td role="cell" data-label="Date of birth">January 13th 1979</td>
+                        </tbody>
+</table>
     
             </div>
         
@@ -146,7 +151,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;table class=&quot;c-table&quot; role=&quot;table&quot;&gt;
+                                            <pre class="c-component__code">&lt;table class=&quot;pds-c-table&quot; role=&quot;table&quot;&gt;
   &lt;thead role=&quot;rowgroup&quot;&gt;
     &lt;tr role=&quot;row&quot;&gt;
       &lt;th role=&quot;columnheader&quot;&gt;First name&lt;/th&gt;
@@ -181,79 +186,80 @@
         
         
                     <div class="c-component__view  c-component__view--full">
-                                <table class="c-table  responsive" role="table">
-        <thead role="rowgroup">
-            <tr role="row">
-                                    <th role="columnheader">First name</th>
-                                    <th role="columnheader">Last name</th>
-                                    <th role="columnheader">Job title</th>
-                                    <th role="columnheader">Favorite Color</th>
-                                    <th role="columnheader">Wars or Trek ?</th>
-                                    <th role="columnheader">Secret Alias</th>
-                                    <th role="columnheader">Date of Birth</th>
-                                    <th role="columnheader">Dream Vacation City</th>
-                                    <th role="columnheader">GPA</th>
-                                    <th role="columnheader">Arbitrary Data</th>
-                            </tr>
-        </thead>
-        <tbody role="rowgroup">
-                            <tr role="row">
-                                    <td role="cell" data-label="First name">James</td>
-                                    <td role="cell" data-label="Last name">Matman</td>
-                                    <td role="cell" data-label="Job title">Chief Sandwich Eater</td>
-                                    <td role="cell" data-label="Favorite Color">Lettuce Green</td>
-                                    <td role="cell" data-label="Wars or Trek ?">Trek</td>
-                                    <td role="cell" data-label="Secret Alias">Digby Green</td>
-                                    <td role="cell" data-label="Date of Birth">January 13, 1979</td>
-                                    <td role="cell" data-label="Dream Vacation City">Gotham City</td>
-                                    <td role="cell" data-label="GPA">3.1</td>
-                                    <td role="cell" data-label="Arbitrary Data">RBX-12</td>
-                                            <tr role="row">
-                                    <td role="cell" data-label="First name">The</td>
-                                    <td role="cell" data-label="Last name">Tick</td>
-                                    <td role="cell" data-label="Job title">Crimefighter Sorta</td>
-                                    <td role="cell" data-label="Favorite Color">Blue</td>
-                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
-                                    <td role="cell" data-label="Secret Alias">John Smith</td>
-                                    <td role="cell" data-label="Date of Birth">July 19, 1968</td>
-                                    <td role="cell" data-label="Dream Vacation City">Athens</td>
-                                    <td role="cell" data-label="GPA">N/A</td>
-                                    <td role="cell" data-label="Arbitrary Data">Edlund, Ben (July 1996).</td>
-                                            <tr role="row">
-                                    <td role="cell" data-label="First name">Jokey</td>
-                                    <td role="cell" data-label="Last name">Smurf</td>
-                                    <td role="cell" data-label="Job title">Giving Exploding Presents</td>
-                                    <td role="cell" data-label="Favorite Color">Smurflow</td>
-                                    <td role="cell" data-label="Wars or Trek ?">Smurf</td>
-                                    <td role="cell" data-label="Secret Alias">Smurflane Smurfmutt</td>
-                                    <td role="cell" data-label="Date of Birth">Smurfuary Smurfteenth, 1945</td>
-                                    <td role="cell" data-label="Dream Vacation City">New Smurf City</td>
-                                    <td role="cell" data-label="GPA">4.Smurf</td>
-                                    <td role="cell" data-label="Arbitrary Data">One</td>
-                                            <tr role="row">
-                                    <td role="cell" data-label="First name">Cindy</td>
-                                    <td role="cell" data-label="Last name">Beyler</td>
-                                    <td role="cell" data-label="Job title">Sales Representative</td>
-                                    <td role="cell" data-label="Favorite Color">Red</td>
-                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
-                                    <td role="cell" data-label="Secret Alias">Lori Quivey</td>
-                                    <td role="cell" data-label="Date of Birth">July 5, 1956</td>
-                                    <td role="cell" data-label="Dream Vacation City">Paris</td>
-                                    <td role="cell" data-label="GPA">3.4</td>
-                                    <td role="cell" data-label="Arbitrary Data">3451</td>
-                                            <tr role="row">
-                                    <td role="cell" data-label="First name">Captain</td>
-                                    <td role="cell" data-label="Last name">Cool</td>
-                                    <td role="cell" data-label="Job title">Tree Crusher</td>
-                                    <td role="cell" data-label="Favorite Color">Blue</td>
-                                    <td role="cell" data-label="Wars or Trek ?">Wars</td>
-                                    <td role="cell" data-label="Secret Alias">Steve 42nd</td>
-                                    <td role="cell" data-label="Date of Birth">December 13, 1982</td>
-                                    <td role="cell" data-label="Dream Vacation City">Las Vegas</td>
-                                    <td role="cell" data-label="GPA">1.9</td>
-                                    <td role="cell" data-label="Arbitrary Data">Under the couch</td>
-                                    </tbody>
-    </table>
+                            
+<table class="pds-c-table  responsive" role="table">
+    <thead role="rowgroup">
+        <tr role="row">
+                            <th role="columnheader">First name</th>
+                            <th role="columnheader">Last name</th>
+                            <th role="columnheader">Job title</th>
+                            <th role="columnheader">Favorite Color</th>
+                            <th role="columnheader">Wars or Trek ?</th>
+                            <th role="columnheader">Secret Alias</th>
+                            <th role="columnheader">Date of Birth</th>
+                            <th role="columnheader">Dream Vacation City</th>
+                            <th role="columnheader">GPA</th>
+                            <th role="columnheader">Arbitrary Data</th>
+                    </tr>
+    </thead>
+    <tbody role="rowgroup">
+                    <tr role="row">
+                            <td role="cell" data-label="First name">James</td>
+                            <td role="cell" data-label="Last name">Matman</td>
+                            <td role="cell" data-label="Job title">Chief Sandwich Eater</td>
+                            <td role="cell" data-label="Favorite Color">Lettuce Green</td>
+                            <td role="cell" data-label="Wars or Trek ?">Trek</td>
+                            <td role="cell" data-label="Secret Alias">Digby Green</td>
+                            <td role="cell" data-label="Date of Birth">January 13, 1979</td>
+                            <td role="cell" data-label="Dream Vacation City">Gotham City</td>
+                            <td role="cell" data-label="GPA">3.1</td>
+                            <td role="cell" data-label="Arbitrary Data">RBX-12</td>
+                                <tr role="row">
+                            <td role="cell" data-label="First name">The</td>
+                            <td role="cell" data-label="Last name">Tick</td>
+                            <td role="cell" data-label="Job title">Crimefighter Sorta</td>
+                            <td role="cell" data-label="Favorite Color">Blue</td>
+                            <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                            <td role="cell" data-label="Secret Alias">John Smith</td>
+                            <td role="cell" data-label="Date of Birth">July 19, 1968</td>
+                            <td role="cell" data-label="Dream Vacation City">Athens</td>
+                            <td role="cell" data-label="GPA">N/A</td>
+                            <td role="cell" data-label="Arbitrary Data">Edlund, Ben (July 1996).</td>
+                                <tr role="row">
+                            <td role="cell" data-label="First name">Jokey</td>
+                            <td role="cell" data-label="Last name">Smurf</td>
+                            <td role="cell" data-label="Job title">Giving Exploding Presents</td>
+                            <td role="cell" data-label="Favorite Color">Smurflow</td>
+                            <td role="cell" data-label="Wars or Trek ?">Smurf</td>
+                            <td role="cell" data-label="Secret Alias">Smurflane Smurfmutt</td>
+                            <td role="cell" data-label="Date of Birth">Smurfuary Smurfteenth, 1945</td>
+                            <td role="cell" data-label="Dream Vacation City">New Smurf City</td>
+                            <td role="cell" data-label="GPA">4.Smurf</td>
+                            <td role="cell" data-label="Arbitrary Data">One</td>
+                                <tr role="row">
+                            <td role="cell" data-label="First name">Cindy</td>
+                            <td role="cell" data-label="Last name">Beyler</td>
+                            <td role="cell" data-label="Job title">Sales Representative</td>
+                            <td role="cell" data-label="Favorite Color">Red</td>
+                            <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                            <td role="cell" data-label="Secret Alias">Lori Quivey</td>
+                            <td role="cell" data-label="Date of Birth">July 5, 1956</td>
+                            <td role="cell" data-label="Dream Vacation City">Paris</td>
+                            <td role="cell" data-label="GPA">3.4</td>
+                            <td role="cell" data-label="Arbitrary Data">3451</td>
+                                <tr role="row">
+                            <td role="cell" data-label="First name">Captain</td>
+                            <td role="cell" data-label="Last name">Cool</td>
+                            <td role="cell" data-label="Job title">Tree Crusher</td>
+                            <td role="cell" data-label="Favorite Color">Blue</td>
+                            <td role="cell" data-label="Wars or Trek ?">Wars</td>
+                            <td role="cell" data-label="Secret Alias">Steve 42nd</td>
+                            <td role="cell" data-label="Date of Birth">December 13, 1982</td>
+                            <td role="cell" data-label="Dream Vacation City">Las Vegas</td>
+                            <td role="cell" data-label="GPA">1.9</td>
+                            <td role="cell" data-label="Arbitrary Data">Under the couch</td>
+                        </tbody>
+</table>
     
             </div>
         
@@ -262,7 +268,7 @@
             
             
             
-                                            <pre class="c-component__code">&lt;table class=&quot;c-table responsive&quot; role=&quot;table&quot;&gt;
+                                            <pre class="c-component__code">&lt;table class=&quot;pds-c-table responsive&quot; role=&quot;table&quot;&gt;
   &lt;thead role=&quot;rowgroup&quot;&gt;
     &lt;tr role=&quot;row&quot;&gt;
       &lt;th role=&quot;columnheader&quot;&gt;First name&lt;/th&gt;

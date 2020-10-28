@@ -1,0 +1,17 @@
+{% import 'macros.twig' as ui %}
+
+
+{% if url %}
+<a class="pds-c-logo" href="{{ url }}" title="{{ title }}">
+{% endif %}
+    <figure>
+        {{ ui.svg(logo.name, {
+            directory: logo.directory,
+            width: logo.width|default(85),
+            height: logo.height|default(20),
+            css_classes: []
+        }) }}
+    </figure>
+{% if url %}
+</a>
+{% endif %}

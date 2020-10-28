@@ -1,0 +1,194 @@
+
+// --- Simple CSS (NON-BEM)
+.pds-c-button { 
+    @extend .c-btn;
+    &.primary {
+        @extend .c-btn--primary;
+        &:not(.disabled) {
+            @extend .c-btn--primary:not(.c-btn--disabled);
+        }
+        &:active:not(.disabled) {
+            @extend .c-btn--primary:active:not(.c-btn--disabled);
+        }
+    }
+    &.large {
+        @extend .c-btn--large;
+    }
+    &.regular {
+        @extend .c-btn--regular;
+    }
+    &.small {
+        @extend .c-btn--small;
+    }
+    &.toggle {
+        @extend .c-btn--toggle;
+    }
+    &.transparent {
+        @extend .c-btn--transparent;
+    }
+    
+    &.disabled {
+        @extend .c-btn--disabled;
+    }
+}
+
+// default corporate theme for nobem
+// we should do this with a mixin .. 
+
+.pds-c-button {
+
+    @extend .c-btn--corporate;
+
+    &.primary {
+        @extend .c-btn--corporate.c-btn--primary;
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--primary:not(.c-btn--disabled);
+            @include hover {
+                &.primary {
+                    @extend .c-btn--corporate.c-btn--primary:not(.c-btn--disabled).c-btn--primary:hover;
+                }
+            }
+        }
+        &:active:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--primary:active:not(.c-btn--disabled);
+        }
+    }
+    &.accent {
+
+        @extend .c-btn--corporate.c-btn--accent;
+
+        &.primary {
+            @extend .c-btn--corporate.c-btn--accent.c-btn--primary;
+        }
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--accent.c-btn--primary:not(.c-btn--disabled);
+            @include hover {
+                &.primary {
+                    @extend .c-btn--corporate.c-btn--accent:not(.c-btn--disabled).c-btn--primary:hover;
+                }
+            }
+        }
+        &:active:not(.disabled) {
+            &.primary {
+                @extend .c-btn--corporate.c-btn--accent:active:not(.c-btn--disabled).c-btn--primary;
+            }
+        }
+    }
+    &.disabled {
+        @extend .c-btn--corporate.c-btn--disabled;
+        &.primary {
+            @extend .c-btn--corporate.c-btn--disabled.c-btn--primary;
+        }
+    }
+    
+    &.toggle {
+        @extend .c-btn--corporate.c-btn--toggle;
+        &:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:not(.c-btn--disabled);
+        }
+        &:active:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:active:not(.c-btn--disabled);
+        }
+        &:focus:not(.disabled) {
+            @extend .c-btn--corporate.c-btn--toggle:focus:not(.c-btn--disabled);
+        }
+        &.disabled {
+            @extend .c-btn--corporate.c-btn--toggle.c-btn--disabled;
+        }
+    }
+    &.transparent {
+        @extend .c-btn--corporate.c-btn--transparent;
+    }
+}
+
+
+// other themes
+
+@each $theme in $prodemos-themes {
+
+    .t-#{nth($theme,1)} .pds-c-button,
+    .pds-c-button.t-#{nth($theme,1)}:not(.pds-t-inherit) {
+
+        @extend .c-btn--#{nth($theme,1)};
+
+        &.primary {
+            @extend .c-btn--#{nth($theme,1)}.c-btn--primary;
+            &:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--primary:not(.c-btn--disabled);
+                @include hover {
+                    &.primary {
+                        @extend .c-btn--#{nth($theme,1)}.c-btn--primary:not(.c-btn--disabled).c-btn--primary:hover;
+                    }
+                }
+            }
+            &:active:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--primary:active:not(.c-btn--disabled);
+            }
+        }
+        &.accent {
+
+            @extend .c-btn--#{nth($theme,1)}.c-btn--accent;
+
+            &.primary {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--accent.c-btn--primary;
+            }
+            &:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--accent.c-btn--primary:not(.c-btn--disabled);
+                @include hover {
+                    &.primary {
+                        @extend .c-btn--#{nth($theme,1)}.c-btn--accent:not(.c-btn--disabled).c-btn--primary:hover;
+                    }
+                }
+            }
+            &:active:not(.disabled) {
+                &.primary {
+                    @extend .c-btn--#{nth($theme,1)}.c-btn--accent:active:not(.c-btn--disabled).c-btn--primary;
+                }
+            }
+        }
+        &.disabled {
+            @extend .c-btn--#{nth($theme,1)}.c-btn--disabled;
+            &.primary {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--disabled.c-btn--primary;
+            }
+        }
+        
+        &.toggle {
+            @extend .c-btn--#{nth($theme,1)}.c-btn--toggle;
+            &:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--toggle:not(.c-btn--disabled);
+            }
+            &:active:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--toggle:active:not(.c-btn--disabled);
+            }
+            &:focus:not(.disabled) {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--toggle:focus:not(.c-btn--disabled);
+            }
+            &.disabled {
+                @extend .c-btn--#{nth($theme,1)}.c-btn--toggle.c-btn--disabled;
+            }
+        }
+        &.transparent {
+            @extend .c-btn--#{nth($theme,1)}.c-btn--transparent;
+        }
+    }
+
+    .disabled {
+        @extend .c-btn--disabled;
+    }
+
+    /* icons */
+    .pds-c-button-content {
+        @extend .c-button__icon-container;
+    }
+    .pds-c-button-label {
+        @extend .c-button__icon-container__label;
+        .right {
+            @extend .c-button__icon-container__label--right;
+        }
+        .left {
+            @extend .c-button__icon-container__label--left;
+        }
+    }
+
+}
