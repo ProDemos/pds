@@ -104,6 +104,7 @@ so follow [Conventional Commits](https://www.conventionalcommits.org/):
   feat: Add some backwards-incompatible feature
 
   BREAKING CHANGE: call new() instead of old().
+  ```
 
 ## Build / compile
 
