@@ -1,0 +1,20 @@
+
+<div class="pds-c-tabs-container  {{ theme }}" role="navigation">
+    <div class="pds-c-tabs">
+        {% for tab in tabs %}
+            <div class="pds-c-tabs-item">
+                <button class="pds-c-tabs-link {% if tab.is_current %}active{% endif %}" role="tab" aria-controls="tab-content_{{ loop.index }}" id="{{ tab.label|replace({' ': '_'}) }}"
+                    onclick="document.getElementsByClassName(">{{ tab.label }}</button>
+            </div>
+        {% endfor %}
+    </div>
+        <div class="pds-c-tabs-panels">
+        {% for tab in tabs %}
+            <div class="pds-c-tabs-panel  {% if tab.is_current %}active{% endif %}" tabindex="0" role="tabpanel" id="{{ tab.label|replace({' ': '_'}) }}-tab" aria-labelledby="{{ tab.label }}">
+                <p>
+                    {{ tab.body }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

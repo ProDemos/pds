@@ -29,8 +29,8 @@ colors:
     - yellow--my-sin
    
 scopes:
-        s-default : "Default" 
-        s-cms-content : "CMS Content" 
+        pds-s-reset : "Reset" 
+        pds-s-content : "Content" 
 
 themes:
         t-corporate : Corporate
@@ -41,6 +41,11 @@ themes:
         t-theme6    : Theme6 
         t-theme7    : Theme7 
 
-
+images:
+    # will be read from the assets/images/ directory
+    # by the build script
+    
 icons:
-    # will be read from the directory
+    # will be read from the assets/images/icons directory
+    # by the build script
+

@@ -1,0 +1,22 @@
+{% extends 'pds/components/button/_button.html.twig' %}
+{% import 'macros.twig' as ui %}
+
+
+{% block button_content %}
+    
+    <span class="pds-c-button-content">
+        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+        {{ ui.svg(icon.name, {
+            width: icon.width|default(10),
+            height: icon.height|default(10),
+            directory: icon.directory|default('assets/images/icons/24px'),
+            css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ icon.name|basename]
+        }) }}
+
+        <span class="pds-c-button-label right">
+            {% if text %}
+                {{ text }}
+            {% endif %}
+        </span>
+    </span>
+{% endblock %}

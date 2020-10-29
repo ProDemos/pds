@@ -1,0 +1,19 @@
+
+.c-img-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+}
+
+
+
+.c-img-list__item {
+    text-align: center;
+}
+
+
+
+.c-img-list__item__name {
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+}

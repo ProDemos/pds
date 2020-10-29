@@ -62,15 +62,27 @@ class TwigCompiler
         $nav = $yaml->parse(file_get_contents($this->paths['config'].'/navigation.yml'));
         $this->data['navigation'] = $nav;
         
-        // defined widgets
-        foreach(scandir($this->paths['assets'].'/twig') as $dirname) {
-            $xmpfile = $this->paths['assets'].'/twig/'.$dirname.'/_styleguide.yml';
+        // defined components
+        foreach(scandir($this->paths['assets'].'/twig/pds/components') as $dirname) {
+            $xmpfile = $this->paths['assets'].'/twig/pds/components/'.$dirname.'/_styleguide.yml';
             if (file_exists($xmpfile)) {
                 $xmpdata = $yaml->parse(file_get_contents($xmpfile));
                 $this->data['components'][$dirname] = $xmpdata;
             }
         }
         
+        // generate list of images except icons
+        $this->data['images'] = array();
+        $imgrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images');
+        $imgritit = new \RecursiveIteratorIterator($imgrit);
+        foreach ($imgritit as $path) {
+            if (!is_dir($path) && strpos($path,'/icons/')===false) {
+                $image = str_replace($this->paths['assets'].'/images/','',$path);
+                $this->data['images'][] = $image;
+            }
+        }
+        sort($this->data['images']);
+
         // generate list of icons
         $this->data['icons'] = array();
         $iconrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images/icons');
