@@ -22,6 +22,7 @@ $pds-color-stack: (
     yellow--my-sin: #fcc243,
 );
 
+// use pds-color(name) to get these colors easier
 
 $pds-colors: (
     black: map-get($pds-color-stack,black),
@@ -91,25 +92,25 @@ $pds-deftheme: 'corporate' !default;
 
 
 // Opacity values, used for color
-$color-lighten-scale: 0% 10% 20% 30% 40% 50%;
-$color-darken-scale: 5% 10%;
+$pds-lighten-scale: 0% 10% 20% 30% 40% 50%;
+$pds-darken-scale: 5% 10%;
 
 
 // Provide a default font-size list for a consistent typing scale
-$type-scale: 56px 44px 32px 24px 22px 18px 16px 14px 12px;
-$base-font-size: 18px;
+$pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;
+$pds-font-size: 18px !default;
 
 
-$line-height-scale: 0 1 1.25 1.5 1.75;
-$base-line-height: 1.5;
+$pds-line-heights: 0 1 1.25 1.5 1.75;
+$pds-line-height: 1.5 !default;
 
 
 // Provide a default spacing scale for consistent spacings
-// eg: top: nth($spacing-scale, 4); = 12px
-$spacing-scale: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
+// eg: top: nth($pds-spacings, 4); = 12px
+$pds-spacings: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
 
 
-$prodemos--breakpoints: (
+$pds-breakpoints: (
     xs: 0,
     sm: 550px,
     md: 760px,

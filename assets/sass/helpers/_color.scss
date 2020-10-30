@@ -11,7 +11,7 @@
     @return map-get($pds-colors, $name);
 }
 
-@function pds-theme-color($theme : corporate ,$key : fill) {
+@function pds-theme-color($theme : $pds-deftheme ,$key : fill) {
     @if map-has-key($pds-themes, $theme) == false {
         @error
             "There is no theme named `#{$theme}` in `$pds-themes`";

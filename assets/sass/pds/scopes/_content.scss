@@ -7,67 +7,67 @@
 /* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .pds-s-content {
     h1 {
-        margin-bottom: nth($spacing-scale, 5);
-        font-size: nth($type-scale, 3);
+        margin-bottom: nth($pds-spacings, 5);
+        font-size: nth($pds-font-sizes, 3);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 2);
+            font-size: nth($pds-font-sizes, 2);
         }
     }
 
     h2 {
-        margin-bottom: nth($spacing-scale, 4);
-        font-size: nth($type-scale, 4);
+        margin-bottom: nth($pds-spacings, 4);
+        font-size: nth($pds-font-sizes, 4);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 3);
+            font-size: nth($pds-font-sizes, 3);
         }
     }
 
     h3 {
-        margin-bottom: nth($spacing-scale, 3);
-        font-size: nth($type-scale, 5);
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: nth($pds-font-sizes, 5);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 4);
+            font-size: nth($pds-font-sizes, 4);
         }
     }
 
     h4 {
-        margin-bottom: nth($spacing-scale, 3);
-        font-size: nth($type-scale, 6);
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: nth($pds-font-sizes, 6);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 5);
+            font-size: nth($pds-font-sizes, 5);
         }
     }
 
     h5 {
-        margin-bottom: nth($spacing-scale, 3);
-        font-size: nth($type-scale, 6);
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: nth($pds-font-sizes, 6);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 5);
+            font-size: nth($pds-font-sizes, 5);
         }
     }
 
     h6 {
-        margin-bottom: nth($spacing-scale, 3);
-        font-size: nth($type-scale, 6);
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: nth($pds-font-sizes, 6);
 
         @include media-from(lg) {
-            font-size: nth($type-scale, 5);
+            font-size: nth($pds-font-sizes, 5);
         }
     }
 
     p {
-        margin-bottom: nth($spacing-scale, 7);
-        font-size: nth($type-scale, 6);
+        margin-bottom: nth($pds-spacings, 7);
+        font-size: nth($pds-font-sizes, 6);
         font-weight: 400;
-        line-height: nth($line-height-scale, 5);
+        line-height: nth($pds-line-heights, 5);
 
         @include media-from(lg) {
-            margin-bottom: nth($spacing-scale, 8);
+            margin-bottom: nth($pds-spacings, 8);
         }
     }
 
@@ -82,32 +82,32 @@
     }
 
     a:not(.c-button) {
-        color: darken(pds-color(blue), nth($color-darken-scale, 1));
+        color: darken(pds-color(blue), nth($pds-darken-scale, 1));
         font-weight: 500;
         text-decoration: none;
         transition: color 0.15s ease-out;
         word-break: break-all;
 
         @include hover {
-            color: darken(pds-color(blue), nth($color-darken-scale, 1));
+            color: darken(pds-color(blue), nth($pds-darken-scale, 1));
             text-decoration: underline;
         }
 
         &:visited {
-            color: darken(pds-color(blue), nth($color-darken-scale, 2));
+            color: darken(pds-color(blue), nth($pds-darken-scale, 2));
         }
 
         /* stylelint-disable max-nesting-depth */
         @each $theme in map-keys($pds-themes) {
             body.theme--#{$theme} & {
-                color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
 
                 @include hover {
-                    color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
                 }
 
                 &:visited {
-                    color: lighten(pds-theme-color($theme,'fill'), nth($color-lighten-scale, 1));
+                    color: lighten(pds-theme-color($theme,'fill'), nth($pds-lighten-scale, 1));
                 }
             }
         }
@@ -115,33 +115,33 @@
 
     ul,
     ol {
-        margin: 0 0 nth($spacing-scale, 6) nth($spacing-scale, 5);
+        margin: 0 0 nth($pds-spacings, 6) nth($pds-spacings, 5);
         padding: 0;
     }
 
     li {
-        margin-bottom: nth($spacing-scale, 2);
+        margin-bottom: nth($pds-spacings, 2);
     }
 
     blockquote {
-        margin-top: nth($spacing-scale, 7);
-        margin-bottom: nth($spacing-scale, 4);
-        font-size: nth($type-scale, 5);
+        margin-top: nth($pds-spacings, 7);
+        margin-bottom: nth($pds-spacings, 4);
+        font-size: nth($pds-font-sizes, 5);
         font-style: italic;
         font-weight: 500;
-        line-height: nth($line-height-scale, 4);
+        line-height: nth($pds-line-heights, 4);
 
         @include media-from(md) {
-            font-size: nth($type-scale, 4);
+            font-size: nth($pds-font-sizes, 4);
         }
     }
 
     blockquote + footer {
-        margin-bottom: nth($spacing-scale, 6);
-        padding: 0 nth($spacing-scale, 3) 0 nth($spacing-scale, 4);
-        font-size: nth($type-scale, 7);
+        margin-bottom: nth($pds-spacings, 6);
+        padding: 0 nth($pds-spacings, 3) 0 nth($pds-spacings, 4);
+        font-size: nth($pds-font-sizes, 7);
         font-weight: 500;
-        line-height: nth($line-height-scale, 5);
+        line-height: nth($pds-line-heights, 5);
         border-left: 1px solid pds-color(orange);
     }
 

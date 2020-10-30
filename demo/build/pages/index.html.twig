@@ -73,19 +73,19 @@
         <h4>Scales</h4>
         <p>The variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:</p>
         <pre>
-$type-scale: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
+$pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
 .class {
-    font-size: nth($type-scale, 2); // second in the array, gives 44px
+    font-size: nth($pds-font-sizes, 2); // second in the array, gives 44px
 }
         </pre>
-        <p>Similar methods should be used for the <code>$spacing-scale</code>, <code>$line-heighth-scale</code>, 
-        <code>$color-lighten-scale</code> and <code>$color-darken-scale</code>.
+        <p>Similar methods should be used for the <code>$pds-spacings</code>, <code>$line-heighth-scale</code>, 
+        <code>$pds-lighten-scale</code> and <code>$pds-darken-scale</code>.
 
         <h4>Breakpoints</h4>
         <p>When breakpoints are defined, they can be used inline in the class to target specific behaviour.<br>Just use:<br>
         <pre>
 @include media-from(lg) {
-    font-size: nth($type-scale, 2);
+    font-size: nth($pds-font-sizes, 2);
 }
         </pre> to set another style from breakpoint LG (LarGe, probably something around 1024px)</p>
         <p>

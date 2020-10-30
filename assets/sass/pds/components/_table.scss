@@ -9,7 +9,7 @@
 
     width: 100%;
     height: auto !important;
-    margin-bottom: nth($spacing-scale, 7);
+    margin-bottom: nth($pds-spacings, 7);
     color: pds-color(black);
     border-spacing: 0;
 
@@ -26,8 +26,8 @@
         transition: background-color 0.1s ease-in-out;
 
         th  {
-            padding: nth($spacing-scale, 3) nth($spacing-scale, 4);
-            font-size: nth($type-scale, 8);
+            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            font-size: nth($pds-font-sizes, 8);
             font-weight: 500;
             text-align: left;
             text-transform: uppercase;
@@ -36,8 +36,8 @@
 
         td  {
 
-            padding: nth($spacing-scale, 3) nth($spacing-scale, 4);
-            font-size: nth($type-scale, 8);
+            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            font-size: nth($pds-font-sizes, 8);
         }
         
     }
@@ -74,7 +74,7 @@
                     /* Behave  like a "row" */
                     position: relative;
                     display: block;
-                    padding: nth($spacing-scale, 3) nth($spacing-scale, 4) nth($spacing-scale, 3) 50%;
+                    padding: nth($pds-spacings, 3) nth($pds-spacings, 4) nth($pds-spacings, 3) 50%;
                     border: none;
 
                     &::before {
@@ -82,10 +82,10 @@
                         position: absolute;
 
                         /* Top/left values mimic padding */
-                        top: nth($spacing-scale, 3);
-                        left: nth($spacing-scale, 4);
+                        top: nth($pds-spacings, 3);
+                        left: nth($pds-spacings, 4);
                         width: 45%;
-                        padding-right: nth($spacing-scale, 4);
+                        padding-right: nth($pds-spacings, 4);
                         white-space: nowrap;
                         font-weight: 500;
                     }

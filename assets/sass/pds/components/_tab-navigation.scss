@@ -29,12 +29,12 @@
             border-bottom: 1px solid pds-color(grey);
 
             @include media-from(md) {
-                margin: 0 nth($spacing-scale, 3);
+                margin: 0 nth($pds-spacings, 3);
                 border: none;
             }
 
             @include media-from(lg) {
-                margin: 0 nth($spacing-scale, 5);
+                margin: 0 nth($pds-spacings, 5);
             }
 
             &:first-child {
@@ -48,10 +48,10 @@
             a, .pds-c-tabs-link {
 
                 display: inline-block;
-                padding: nth($spacing-scale, 3) 0 nth($spacing-scale, 3);
+                padding: nth($pds-spacings, 3) 0 nth($pds-spacings, 3);
                 color: pds-color(black);
                 font-family: $font--fira-sans;
-                font-size: nth($type-scale, 8);
+                font-size: nth($pds-font-sizes, 8);
                 font-weight: 500;
                 line-height: 1.5;
                 text-decoration: none;
@@ -63,7 +63,7 @@
 
                 @include media-from(md) {
                     position: relative;
-                    padding: nth($spacing-scale, 2) 0 nth($spacing-scale, 5);
+                    padding: nth($pds-spacings, 2) 0 nth($pds-spacings, 5);
                 }
 
                 &::after {
@@ -91,7 +91,7 @@
     .pds-c-tabs-panels {
         
         .pds-c-tabs-panel {
-            padding: nth($spacing-scale, 5) 0;
+            padding: nth($pds-spacings, 5) 0;
             display:none;
             &.active {
                 display:block;
@@ -109,17 +109,17 @@
             @include media-from(md) {
                 &:hover,
                 &:focus {
-                    color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                     &::after {
                         opacity: 1;
-                        background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
+                        background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                     }
                 }
             }
             &.active {
-                color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
+                color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                 &::after {
-                    background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                 }
             }
         }
@@ -135,17 +135,17 @@
                 @include media-from(md) {
                     &:hover,
                     &:focus {
-                        color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                        color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
                         &::after {
                             opacity: 1;
-                            background-color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                            background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
                         }
                     }
                 }
                 &.active {
-                    color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
                     &::after {
-                        background-color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
+                        background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
                     }
                 }
             }

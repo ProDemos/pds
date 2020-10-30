@@ -12,7 +12,7 @@
 
 .pds-c-input-container {
 
-    margin-bottom: nth($spacing-scale, 5);
+    margin-bottom: nth($pds-spacings, 5);
 
     // Radiobutton
     &.radio {
@@ -22,8 +22,8 @@
         label, .pds-c-input-label {
             display: block;
             position: relative;
-            padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
-            margin: nth($spacing-scale, 4) auto;
+            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+            margin: nth($pds-spacings, 4) auto;
             z-index: 2;
             cursor: pointer;
             transition: all 0.25s linear;
@@ -41,10 +41,10 @@
             border: 1px solid pds-color(grey);
             border-radius: 100%;
             background-color: pds-color(romance);
-            height: nth($spacing-scale, 6);
-            width: nth($spacing-scale, 6);
-            top: nth($spacing-scale, 4);
-            left: nth($spacing-scale, 5);
+            height: nth($pds-spacings, 6);
+            width: nth($pds-spacings, 6);
+            top: nth($pds-spacings, 4);
+            left: nth($pds-spacings, 5);
             z-index: 5;
             transition: border 0.25s linear;
             cursor: pointer;
@@ -55,8 +55,8 @@
                 position: absolute;
                 content: "";
                 border-radius: 100%;
-                height: nth($spacing-scale, 4);
-                width: nth($spacing-scale, 4);
+                height: nth($pds-spacings, 4);
+                width: nth($pds-spacings, 4);
                 top: 3px;
                 left: 3px;
                 margin: auto;
@@ -71,8 +71,8 @@
         label, .c-input-label {
             display: block;
             position: relative;
-            padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
-            margin: nth($spacing-scale, 4) auto;
+            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+            margin: nth($pds-spacings, 4) auto;
             z-index: 2;
             cursor: pointer;
             transition: all 0.25s linear;
@@ -91,10 +91,10 @@
             position: absolute;
             border: 1px solid pds-color(grey);
             background-color: pds-color(romance);
-            height: nth($spacing-scale, 6);
-            width: nth($spacing-scale, 6);
-            top: nth($spacing-scale, 4);
-            left: nth($spacing-scale, 5);
+            height: nth($pds-spacings, 6);
+            width: nth($pds-spacings, 6);
+            top: nth($pds-spacings, 4);
+            left: nth($pds-spacings, 5);
             z-index: 5;
             transition: border 0.25s linear;
             cursor: pointer;
@@ -104,8 +104,8 @@
                 display: block;
                 position: absolute;
                 content: "";
-                height: nth($spacing-scale, 4);
-                width: nth($spacing-scale, 4);
+                height: nth($pds-spacings, 4);
+                width: nth($pds-spacings, 4);
                 top: 3px;
                 left: 3px;
                 margin: auto;
@@ -120,10 +120,10 @@
 
 // The default label styling
 .pds-c-input-label {
-    margin-bottom: nth($spacing-scale, 5);
+    margin-bottom: nth($pds-spacings, 5);
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($type-scale, 7);
+    font-size: nth($pds-font-sizes, 7);
     font-weight: 500;
 }
 
@@ -133,8 +133,8 @@
 .pds-c-input {
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($type-scale, 7);
-    line-height: nth($line-height-scale, 5);
+    font-size: nth($pds-font-sizes, 7);
+    line-height: nth($pds-line-heights, 5);
     border-radius: 0;
     background-color: pds-color(romance);
 
@@ -143,14 +143,14 @@
     /* stylelint-enable property-no-vendor-prefix */
 
     &.disabled {
-        color: lighten(pds-color(black), nth($color-lighten-scale, 5));
-        background-color: lighten((pds-color(romance)), nth($color-lighten-scale, 1));
+        color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
+        background-color: lighten((pds-color(romance)), nth($pds-lighten-scale, 1));
         cursor: not-allowed;
     }
 
     &[type=text], &.text {
 
-        padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 3) nth($spacing-scale, 6);
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
         border-bottom: 3px solid pds-color(romance);
         transition: border-bottom-color 150ms ease-in-out;
@@ -177,7 +177,7 @@
     }
 
     @at-root select#{&}, &.dropdown {
-        padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
         border: none;
         border-bottom: 2px solid pds-color(transparent);
         background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
@@ -217,31 +217,31 @@
     &.radio {
         input[type=radio], .pds-c-input.radio {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
 
                 &::before {
-                    background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
             }
         }
     }
     &.checkbox {
         input[type=checkbox], .pds-c-input.checkbox {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 &::before {
-                    background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
             }
         }
     }
@@ -250,7 +250,7 @@
 @mixin pds-c-input-theme($theme : $pds-deftheme) {
     &[type=text], &.text {
         &:focus {
-            border-bottom-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+            border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
     }
 }
@@ -258,7 +258,7 @@
 @mixin pds-c-select-theme($theme : $pds-deftheme) {
     &:focus,
     &:hover {
-        border-bottom-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
+        border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
     }
 }
    
