@@ -58,23 +58,13 @@
 //
 @import "pds/components/brand";
 @import "pds/components/button";
-@import "pds/components/button-nobem";
 @import "pds/components/icon";
-@import "pds/components/icon-nobem";
 @import "pds/components/form-elements";
-@import "pds/components/form-elements-nobem";
 @import "pds/components/tab-navigation";
-@import "pds/components/tab-navigation-nobem";
 @import "pds/components/table";
-@import "pds/components/table-nobem";
 
 //
 // Modifiers
 //
 @import "pds/modifiers/modifiers";
 
-
-//
-// Backward compatibility
-//
-@import "helpers/bwc";

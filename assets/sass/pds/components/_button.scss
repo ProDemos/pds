@@ -1,9 +1,15 @@
 // -----------------------------------------------------------------------------
-// #HELPERS buttons
+//  COMPONENT .pds-c-button
+// .pds-c-button[ .primary | .secondary ]
+// .pds-c-button[ .large | .regular |.small ]
+// .pds-c-button[ .accent | .disabled ]
+// .pds-c-button[ .toggle | .transparent ]
+// .pds-c-button > pds-c.btn-label
+// .pds-c-button > .pds-c-button-content > [ .pds-c-button-icon.left + ] .pds-c-button-label[ .left | .right ] [ + .pds-c-button-icon.right ]
 // -----------------------------------------------------------------------------
 
 
-.c-btn {
+.pds-c-button {
     position: relative;
     display: inline-block;
     padding: nth($spacing-scale, 5) nth($spacing-scale, 6); // 16px 20px
@@ -15,253 +21,127 @@
     border: none;
     transition: all 100ms ease-in-out;
     cursor: pointer;
-}
 
+    &.primary {
 
+        margin-left: 10px;
 
-// Importance
-.c-btn--primary {
-    margin-left: 10px;
-
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        transition: all 100ms ease-in-out;
-        z-index: -1;
-    }
-
-    &::before {
-        width: 10px;
-        height: 100%;
-        bottom: -5px;
-        left: -10px;
-        transform: skewY(-45deg);
-    }
-
-    &::after {
-        width: 100%;
-        height: 10px;
-        bottom: -10px;
-        left: -5px;
-        transform: skewX(-45deg);
-    }
-
-    // Hover styles, but only when the button is not disabled
-    /* stylelint-disable max-nesting-depth */
-    
-    // libsass<3.6 has a regression issue with this:
-    // https://github.com/sass/node-sass/issues/2330
-    // @include hover:not(.c-btn-disabled) {
-    &:not(.c-btn--disabled) {
-        @include hover {
-            transform: translate(-2px, 2px);
-            &::before {
-                width: 8px;
-                height: 100%;
-                bottom: -5px;
-                left: -8px;
-            }
-
-            &::after {
-                width: 100%;
-                height: 8px;
-                bottom: -8px;
-                left: -5px;
-            }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            transition: all 100ms ease-in-out;
+            z-index: -1;
         }
-    }
-    
-    
-    &:active:not(.c-btn--disabled) {
-
-        transform: translate(-5px, 5px);
 
         &::before {
-            width: 6px;
+            width: 10px;
             height: 100%;
-            bottom: -3px;
-            left: -6px;
+            bottom: -5px;
+            left: -10px;
+            transform: skewY(-45deg);
         }
 
         &::after {
             width: 100%;
-            height: 6px;
-            bottom: -6px;
-            left: -3px;
+            height: 10px;
+            bottom: -10px;
+            left: -5px;
+            transform: skewX(-45deg);
+        }
+
+        // Hover styles, but only when the button is not disabled
+        /* stylelint-disable max-nesting-depth */
+        
+        // libsass<3.6 has a regression issue with this:
+        // https://github.com/sass/node-sass/issues/2330
+
+        &:not(.disabled) {
+            @include hover {
+                transform: translate(-2px, 2px);
+                &::before {
+                    width: 8px;
+                    height: 100%;
+                    bottom: -5px;
+                    left: -8px;
+                }
+
+                &::after {
+                    width: 100%;
+                    height: 8px;
+                    bottom: -8px;
+                    left: -5px;
+                }
+            }
         }
         
-    }
+        
+        &:active:not(.disabled) {
 
-    /* stylelint-enable max-nesting-depth */
-}
+            transform: translate(-5px, 5px);
 
+            &::before {
+                width: 6px;
+                height: 100%;
+                bottom: -3px;
+                left: -6px;
+            }
 
-
-// Sizing
-.c-btn--large {
-    padding: nth($spacing-scale, 5) nth($spacing-scale, 6); // 16px 20px
-    font-size: nth($type-scale, 5);
-}
-
-
-
-.c-btn--regular {
-    padding: nth($spacing-scale, 4) nth($spacing-scale, 5); // 12px 16px
-    font-size: nth($type-scale, 6);
-}
-
-
-
-.c-btn--small {
-    padding: nth($spacing-scale, 3) nth($spacing-scale, 4); // 8px 12px
-    font-size: nth($type-scale, 7);
-}
-
-
-
-.c-btn--toggle {
-    width: 100%;
-    padding: nth($spacing-scale, 3)  nth($spacing-scale, 4); // 8px 12px
-    font-size: nth($type-scale, 7);
-    text-align: center;
-    border-style: solid;
-    border-width: 2px;
-}
-
-
-
-.c-btn--transparent {
-    padding: nth($spacing-scale, 3) 0; // 8px 0px
-    font-size: nth($type-scale, 7);
-}
-
-
-
-// Themeing
-
-/* stylelint-disable max-nesting-depth */
-@each $theme in $prodemos-themes {
-    .c-btn--#{nth($theme,1)} {
-        color: get-color(white);
-        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-
-        @include hover {
-            background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
-        }
-
-        &.c-btn--primary {
-            &::before,
             &::after {
-                background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 3));
+                width: 100%;
+                height: 6px;
+                bottom: -6px;
+                left: -3px;
             }
-
-            // Hover styles, but only when the button is not disabled
-            &:not(.c-btn--disabled) {
-                @include hover {
-                    &.c-btn--primary {
-                        &::before,
-                        &::after {
-                            background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 2));
-                        }
-                    }
-                }
-            }
-
-            &:active:not(.c-btn--disabled) {
-                &.c-btn--primary {
-                    &::before,
-                    &::after {
-                        background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 1));
-                    }
-                }
-            }
+            
         }
 
-        &.c-btn--accent {
-            background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 1));
-
-            &.c-btn--primary {
-                &::before,
-                &::after {
-                    background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 3));
-                }
-            }
-
-            // Hover styles, but only when the button is not disabled
-            &:not(.c-btn--disabled) {
-                @include hover {
-                    background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 2));
-
-                    &.c-btn--primary {
-                        &::before,
-                        &::after {
-                            background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 2));
-                        }
-                    }
-                }
-            }
-
-            &:active:not(.c-btn--disabled) {
-                &.c-btn--primary {
-                    &::before,
-                    &::after {
-                        background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 1));
-                    }
-                }
-            }
-        }
-
-        &.c-btn--disabled {
-            background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 4));
-
-            &.c-btn--primary {
-                &::before,
-                &::after {
-                    background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 5));
-                }
-            }
-        }
-
-        &.c-btn--toggle {
-            color: get-color(black);
-            border-color: get-color(grey--romance);
-            background-color: get-color(grey--romance);
-
-            &:not(.c-btn--disabled) {
-                @include hover {
-                    border-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
-                    background-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
-                }
-            }
-
-            &:active:not(.c-btn--disabled) {
-                color: get-color(white);
-                background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-            }
-
-            &:focus:not(.c-btn--disabled) {
-                border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-            }
-
-            &.c-btn--disabled {
-                color: lighten(get-color(black), nth($color-lighten-scale, 5));
-            }
-        }
-
-        &.c-btn--transparent {
-            color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
-            background-color: get-color(transparent);
-        }
+        /* stylelint-enable max-nesting-depth */
     }
-}
-/* stylelint-enable max-nesting-depth */
+
+
+    &.large {
+        padding: nth($spacing-scale, 5) nth($spacing-scale, 6); // 16px 20px
+        font-size: nth($type-scale, 5);
+    }
 
 
 
-// Disabled state
-.c-btn--disabled {
-    cursor: not-allowed;
+    &.regular {
+        padding: nth($spacing-scale, 4) nth($spacing-scale, 5); // 12px 16px
+        font-size: nth($type-scale, 6);
+    }
+
+
+
+    &.small {
+        padding: nth($spacing-scale, 3) nth($spacing-scale, 4); // 8px 12px
+        font-size: nth($type-scale, 7);
+    }
+
+
+
+    &.toggle {
+        width: 100%;
+        padding: nth($spacing-scale, 3)  nth($spacing-scale, 4); // 8px 12px
+        font-size: nth($type-scale, 7);
+        text-align: center;
+        border-style: solid;
+        border-width: 2px;
+    }
+
+
+
+    &.transparent {
+        padding: nth($spacing-scale, 3) 0; // 8px 0px
+        font-size: nth($type-scale, 7);
+    }
+
+    // Disabled state
+    &.disabled {
+        cursor: not-allowed;
+    }
+
 }
 
 
@@ -269,23 +149,156 @@
 // --- Sub elements
 
 // Icon-prefix or icon-suffix
-.c-button__icon-container {
+.pds-c-button-content {
     display: flex;
     align-items: center;
 }
 
-.c-button__icon-container__label {
+.pds-c-button-label {
     flex: 1 1 auto;
     text-align: center;
+    .right {
+        text-align: right;
+    }
+    .left {
+        text-align: left;
+    }
 }
 
-.c-button__icon-container__label--right {
-    text-align: right;
+
+
+
+/* theming */
+
+@mixin pds-button-theme($theme : $deftheme) {
+    
+    color: get-color(white);
+    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+
+    @include hover {
+        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
+    }
+
+    &.primary {
+        &::before,
+        &::after {
+            background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 3));
+        }
+
+        // Hover styles, but only when the button is not disabled
+        &:not(.disabled) {
+            @include hover {
+                &.primary {
+                    &::before,
+                    &::after {
+                        background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 2));
+                    }
+                }
+            }
+        }
+
+        &:active:not(.disabled) {
+            &.primary {
+                &::before,
+                &::after {
+                    background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 1));
+                }
+            }
+        }
+    }
+
+    &.accent {
+        background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 1));
+
+        &.primary {
+            &::before,
+            &::after {
+                background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 3));
+            }
+        }
+
+        // Hover styles, but only when the button is not disabled
+        &:not(.disabled) {
+            @include hover {
+                background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 2));
+
+                &.primary {
+                    &::before,
+                    &::after {
+                        background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 2));
+                    }
+                }
+            }
+        }
+
+        &:active:not(.disabled) {
+            &.primary {
+                &::before,
+                &::after {
+                    background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 1));
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 4));
+
+        &.primary {
+            &::before,
+            &::after {
+                background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 5));
+            }
+        }
+    }
+
+    &.toggle {
+        color: get-color(black);
+        border-color: get-color(grey--romance);
+        background-color: get-color(grey--romance);
+
+        &:not(.disabled) {
+            @include hover {
+                border-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
+                background-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
+            }
+        }
+
+        &:active:not(.disabled) {
+            color: get-color(white);
+            background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+        }
+
+        &:focus:not(.disabled) {
+            border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+        }
+
+        &.disabled {
+            color: lighten(get-color(black), nth($color-lighten-scale, 5));
+        }
+    }
+
+    &.transparent {
+        color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
+        background-color: get-color(transparent);
+    }
 }
 
-.c-button__icon-container__label--left {
-    text-align: left;
+
+.pds-c-button {
+    @include pds-button-theme($pds-deftheme);
 }
+
+
+@each $theme in $prodemos-themes {
+    .t-#{nth($theme,1)} .pds-c-button,
+    .pds-c-button.t-#{nth($theme,1)}:not(.inherit) {
+        @include pds-button-theme($theme);
+    }
+}
+
+
+
 
 
 

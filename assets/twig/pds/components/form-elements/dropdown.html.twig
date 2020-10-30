@@ -10,7 +10,7 @@
         't-theme7': theme == 'theme7',
     })
 } %}
-<select class="pds-c-input  dropdown  {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
+<select class="pds-c-input {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
     {% if options|length %}
         {% set is_in_group = false %}
         {% for o in options %}

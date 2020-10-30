@@ -34,7 +34,7 @@ $prodemos-themes: (
     ("theme6", violet--purple-dark, yellow--my-sin),
     ("theme7", green--vida-loca, red--crimson),
 );
-
+$pds-deftheme: nth($prodemos-themes,1);
 
 // Opacity values, used for color
 $color-lighten-scale: 0% 10% 20% 30% 40% 50%;

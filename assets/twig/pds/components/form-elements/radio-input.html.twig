@@ -12,8 +12,8 @@
     })
 } %}
 <div class="pds-c-input-container radio  has-hover-propagation  {{ cx.container }}">
-    <label class="pds-c-input-label" for="{{ id }}">
-        <input class="pds-c-input  radio" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
+    <label for="{{ id }}">
+        <input class="pds-c-input" type="radio" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
         <div class="pds-c-input-check"></div>
         {{ label }}
     </label>
