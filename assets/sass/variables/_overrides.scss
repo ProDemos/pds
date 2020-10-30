@@ -47,44 +47,44 @@ $pds-themes: (
     corporate : (
         fill-color: map-get($pds-colors,blue),
         fill-accent: map-get($pds-colors,orange),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color: map-get($pds-colors,white),
+        stroke-accent: map-get($pds-colors,white) 
     ),
     variant01 : (
         fill-color: map-get($pds-colors,yellow),
         fill-accent: map-get($pds-colors,purple),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color: map-get($pds-colors,black), 
+        stroke-accent: map-get($pds-colors,white)
     ),
     variant02 : (
         fill-color: map-get($pds-colors,orange),
         fill-accent: map-get($pds-colors,blue),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,white) 
     ),
     variant03 : (
         fill-color: map-get($pds-colors,red),
         fill-accent: map-get($pds-colors,green),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent: map-get($pds-colors,white)
     ),
     variant04 : (
         fill-color: map-get($pds-colors,cherry),
         fill-accent: map-get($pds-colors,yellow),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,black) 
     ),
     variant05 : (
         fill-color: map-get($pds-colors,purple),
         fill-accent: map-get($pds-colors,yellow),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color:  map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,black)
     ),
     variant06 : (
         fill-color: map-get($pds-colors,green),
         fill-accent: map-get($pds-colors,red),
-        stroke-color: white,
-        stroke-accent: white
+        stroke-color:  map-get($pds-colors,white), 
+        stroke-accent: map-get($pds-colors,white)
     )
 );
 
