@@ -10,7 +10,7 @@
     width: 100%;
     height: auto !important;
     margin-bottom: nth($spacing-scale, 7);
-    color: get-color(black);
+    color: pds-color(black);
     border-spacing: 0;
 
     /*
@@ -45,7 +45,7 @@
     tbody  {
         tr  {
             &:nth-child(odd) {
-                background: get-color(grey--romance--light);
+                background: pds-color(lite);
             }
         }
     }

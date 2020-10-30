@@ -38,9 +38,9 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid get-color(grey--gainsboro);
+            border: 1px solid pds-color(grey);
             border-radius: 100%;
-            background-color: get-color(grey--romance);
+            background-color: pds-color(romance);
             height: nth($spacing-scale, 6);
             width: nth($spacing-scale, 6);
             top: nth($spacing-scale, 4);
@@ -89,8 +89,8 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid get-color(grey--gainsboro);
-            background-color: get-color(grey--romance);
+            border: 1px solid pds-color(grey);
+            background-color: pds-color(romance);
             height: nth($spacing-scale, 6);
             width: nth($spacing-scale, 6);
             top: nth($spacing-scale, 4);
@@ -121,7 +121,7 @@
 // The default label styling
 .pds-c-input-label {
     margin-bottom: nth($spacing-scale, 5);
-    color: get-color(black);
+    color: pds-color(black);
     font-family: $font--fira-sans;
     font-size: nth($type-scale, 7);
     font-weight: 500;
@@ -131,20 +131,20 @@
 
 // Basic input styling, shared by all inputs
 .pds-c-input {
-    color: get-color(black);
+    color: pds-color(black);
     font-family: $font--fira-sans;
     font-size: nth($type-scale, 7);
     line-height: nth($line-height-scale, 5);
     border-radius: 0;
-    background-color: get-color(grey--romance);
+    background-color: pds-color(romance);
 
     /* stylelint-disable property-no-vendor-prefix */
     -webkit-appearance: none;
     /* stylelint-enable property-no-vendor-prefix */
 
     &.disabled {
-        color: lighten(get-color(black), nth($color-lighten-scale, 5));
-        background-color: lighten((get-color(grey--romance)), nth($color-lighten-scale, 1));
+        color: lighten(pds-color(black), nth($color-lighten-scale, 5));
+        background-color: lighten((pds-color(romance)), nth($color-lighten-scale, 1));
         cursor: not-allowed;
     }
 
@@ -152,7 +152,7 @@
 
         padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 3) nth($spacing-scale, 6);
         border: none;
-        border-bottom: 3px solid get-color(grey--romance);
+        border-bottom: 3px solid pds-color(romance);
         transition: border-bottom-color 150ms ease-in-out;
 
         
@@ -163,7 +163,7 @@
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
-            border-bottom-color: get-color(green--vida-loca);
+            border-bottom-color: pds-color(green);
         }
 
         // When the user added invalid input
@@ -172,14 +172,14 @@
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
-            border-bottom-color: get-color(red--crimson);
+            border-bottom-color: pds-color(red);
         }
     }
 
     @at-root select#{&}, &.dropdown {
         padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
         border: none;
-        border-bottom: 2px solid get-color(transparent);
+        border-bottom: 2px solid pds-color(transparent);
         background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
@@ -217,31 +217,31 @@
     &.radio {
         input[type=radio], .pds-c-input.radio {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
 
                 &::before {
-                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                border-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
             }
         }
     }
     &.checkbox {
         input[type=checkbox], .pds-c-input.checkbox {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
                 &::before {
-                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                border-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
             }
         }
     }
@@ -250,7 +250,7 @@
 @mixin pds-c-input-theme($theme : $pds-deftheme) {
     &[type=text], &.text {
         &:focus {
-            border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+            border-bottom-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
         }
     }
 }
@@ -258,7 +258,7 @@
 @mixin pds-c-select-theme($theme : $pds-deftheme) {
     &:focus,
     &:hover {
-        border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+        border-bottom-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
     }
 }
    
@@ -277,26 +277,26 @@ select.pds-c-input,
 }
 
 
-@each $theme in $prodemos-themes {
+@each $theme in map-keys($pds-themes) {
 
     .pds-c-input-container {
-        .t-#{nth($theme,1)} &,
-        &.t-#{nth($theme,1)}:not(.inherit) {
+        .pds-t-#{$theme} &,
+        &.pds-t-#{$theme}:not(.inherit) {
             @include pds-c-input-container-theme($theme);
         }
     }
 
     .pds-c-input {
-        .t-#{nth($theme,1)} &,
-        &.t-#{nth($theme,1)}:not(.inherit) {
+        .pds-t-#{$theme} &,
+        &.pds-t-#{$theme}:not(.inherit) {
             @include pds-c-input-theme($theme);
         }
     }
         
     select.pds-c-input, 
     .pds-c-input.dropdown {
-        .t-#{nth($theme,1)} &, 
-        &.t-#{nth($theme,1)}:not(.inherit) {
+        .pds-t-#{$theme} &, 
+        &.pds-t-#{$theme}:not(.inherit) {
             @include pds-c-select-theme($theme);
         }
     }

@@ -170,19 +170,21 @@
 
 /* theming */
 
-@mixin pds-button-theme($theme : $deftheme) {
+@mixin pds-button-theme( $theme : $pds-deftheme ) {
     
-    color: get-color(white);
-    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+    // @debug 'theme' $theme;
+
+    color: pds-color(white);
+    background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
 
     @include hover {
-        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
+        background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 2));
     }
 
     &.primary {
         &::before,
         &::after {
-            background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 3));
+            background-color: lighten(pds-theme-color($theme,fill), nth($color-lighten-scale, 3));
         }
 
         // Hover styles, but only when the button is not disabled
@@ -191,7 +193,7 @@
                 &.primary {
                     &::before,
                     &::after {
-                        background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 2));
+                        background-color: lighten(pds-theme-color($theme,fill), nth($color-lighten-scale, 2));
                     }
                 }
             }
@@ -201,31 +203,31 @@
             &.primary {
                 &::before,
                 &::after {
-                    background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 1));
+                    background-color: lighten(pds-theme-color($theme,fill), nth($color-lighten-scale, 1));
                 }
             }
         }
     }
 
     &.accent {
-        background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 1));
+        background-color: darken(pds-theme-color($theme,accent), nth($color-darken-scale, 1));
 
         &.primary {
             &::before,
             &::after {
-                background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 3));
+                background-color: lighten(pds-theme-color($theme,accent), nth($color-lighten-scale, 3));
             }
         }
 
         // Hover styles, but only when the button is not disabled
         &:not(.disabled) {
             @include hover {
-                background-color: darken((get-color(#{nth($theme, 3)})), nth($color-darken-scale, 2));
+                background-color: darken(pds-theme-color($theme,accent), nth($color-darken-scale, 2));
 
                 &.primary {
                     &::before,
                     &::after {
-                        background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 2));
+                        background-color: lighten(pds-theme-color($theme,accent), nth($color-lighten-scale, 2));
                     }
                 }
             }
@@ -235,52 +237,52 @@
             &.primary {
                 &::before,
                 &::after {
-                    background-color: lighten((get-color(#{nth($theme, 3)})), nth($color-lighten-scale, 1));
+                    background-color: lighten(pds-theme-color($theme,accent), nth($color-lighten-scale, 1));
                 }
             }
         }
     }
 
     &.disabled {
-        background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 4));
+        background-color: lighten(pds-theme-color($theme,fill), nth($color-lighten-scale, 4));
 
         &.primary {
             &::before,
             &::after {
-                background-color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 5));
+                background-color: lighten(pds-theme-color($theme,fill), nth($color-lighten-scale, 5));
             }
         }
     }
 
     &.toggle {
-        color: get-color(black);
-        border-color: get-color(grey--romance);
-        background-color: get-color(grey--romance);
+        color: pds-color(black);
+        border-color: pds-color(romance);
+        background-color: pds-color(romance);
 
         &:not(.disabled) {
             @include hover {
-                border-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
-                background-color: darken((get-color(grey--romance)), nth($color-darken-scale, 2));
+                border-color: darken(pds-color(romance), nth($color-darken-scale, 2));
+                background-color: darken(pds-color(romance), nth($color-darken-scale, 2));
             }
         }
 
         &:active:not(.disabled) {
-            color: get-color(white);
-            background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+            color: pds-color(white);
+            background-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
         }
 
         &:focus:not(.disabled) {
-            border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+            border-color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 1));
         }
 
         &.disabled {
-            color: lighten(get-color(black), nth($color-lighten-scale, 5));
+            color: lighten(pds-color(black), nth($color-lighten-scale, 5));
         }
     }
 
     &.transparent {
-        color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 2));
-        background-color: get-color(transparent);
+        color: darken(pds-theme-color($theme,fill), nth($color-darken-scale, 2));
+        background-color: pds-color(transparent);
     }
 }
 
@@ -290,9 +292,9 @@
 }
 
 
-@each $theme in $prodemos-themes {
-    .t-#{nth($theme,1)} .pds-c-button,
-    .pds-c-button.t-#{nth($theme,1)}:not(.inherit) {
+@each $theme in map-keys($pds-themes) {
+    .pds-t-#{$theme} .pds-c-button,
+    .pds-c-button.pds-t-#{$theme}:not(.inherit) {
         @include pds-button-theme($theme);
     }
 }

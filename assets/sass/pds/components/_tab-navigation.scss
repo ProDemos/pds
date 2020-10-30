@@ -19,14 +19,14 @@
 
         @include media-from(md) {
             display: flex;
-            border-bottom: 1px solid get-color(grey--gainsboro);
+            border-bottom: 1px solid pds-color(grey);
         }
     
         li, .pds-c-tabs-item {
 
             position: relative;
             text-align: center;
-            border-bottom: 1px solid get-color(grey--gainsboro);
+            border-bottom: 1px solid pds-color(grey);
 
             @include media-from(md) {
                 margin: 0 nth($spacing-scale, 3);
@@ -49,7 +49,7 @@
 
                 display: inline-block;
                 padding: nth($spacing-scale, 3) 0 nth($spacing-scale, 3);
-                color: get-color(black);
+                color: pds-color(black);
                 font-family: $font--fira-sans;
                 font-size: nth($type-scale, 8);
                 font-weight: 500;
@@ -57,7 +57,7 @@
                 text-decoration: none;
                 text-transform: uppercase;
                 border: none;
-                background-color: get-color(white);
+                background-color: pds-color(white);
                 transition: all 100ms ease-in-out;
                 cursor: pointer;
 
@@ -74,7 +74,7 @@
                     width: 100%;
                     bottom: 0;
                     left: 0;
-                    background-color: get-color(transparent);
+                    background-color: pds-color(transparent);
                     opacity: 1;
                     transition: all 250ms ease-in-out;
                 }
@@ -109,43 +109,43 @@
             @include media-from(md) {
                 &:hover,
                 &:focus {
-                    color: darken((get-color(#{nth($pds-deftheme, 2)})), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
                     &::after {
                         opacity: 1;
-                        background-color: darken((get-color(#{nth($pds-deftheme, 2)})), nth($color-darken-scale, 1));
+                        background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
                     }
                 }
             }
             &.active {
-                color: darken((get-color(#{nth($pds-deftheme, 2)})), nth($color-darken-scale, 1));
+                color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
                 &::after {
-                    background-color: darken((get-color(#{nth($pds-deftheme, 2)})), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($color-darken-scale, 1));
                 }
             }
         }
     }
 } 
 
-@each $theme in $prodemos-themes {
+@each $theme in map-keys($pds-themes) {
     // the inherit class is only to make it more specific
-    .t-#{nth($theme,1)} .pds-c-tabs-container,
-    .pds-c-tabs-container.t-#{nth($theme,1)}:not(.inherit) {
+    .pds-t-#{$theme} .pds-c-tabs-container,
+    .pds-c-tabs-container.pds-t-#{$theme}:not(.inherit) {
         ul, ol, .pds-c-tabs {
             a, .pds-c-tabs-link {
                 @include media-from(md) {
                     &:hover,
                     &:focus {
-                        color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                        color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
                         &::after {
                             opacity: 1;
-                            background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                            background-color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
                         }
                     }
                 }
                 &.active {
-                    color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
                     &::after {
-                        background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                        background-color: darken(pds-theme-color($theme,'fill'), nth($color-darken-scale, 1));
                     }
                 }
             }

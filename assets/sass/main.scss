@@ -10,7 +10,7 @@
 // Settings / variables
 //
 @import "variables/global";
-@import "variables/zss-overrides";
+@import "variables/overrides";
 
 
 
@@ -21,7 +21,10 @@
 @import "helpers/hover";
 @import "helpers/responsive";
 
-
+/*
+    @debug "corporate fill " theme-color(corporate,color);
+    @debug "corporate stroke " theme-color('corporate','stroke');
+*/
 
 //
 // Generic: common resets

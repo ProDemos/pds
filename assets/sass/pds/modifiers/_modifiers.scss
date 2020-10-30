@@ -10,8 +10,8 @@
 
 */
 
-@each $cname, $cvalue in $zss--colors {
-    .m-filled.#{$cname} {
+@each $cname, $cvalue in $pds-colors {
+    .pds-m-filled.#{$cname} {
         background-color: $cvalue;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
@@ -26,7 +26,7 @@
             }
         }
     }
-    .m-colored.#{$cname} {
+    .pds-m-colored.#{$cname} {
         color: $cvalue;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
@@ -41,7 +41,7 @@
             }
         }
     }
-    .m-bordered.#{$cname} {
+    .pds-m-bordered.#{$cname} {
         border-color: $cvalue;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
@@ -58,96 +58,95 @@
     }
 }
 
-@each $theme in $prodemos-themes {
-    $themename: nth($theme, 1);
-    $colorname: nth($theme, 2);
-    $accentname: nth($theme, 3);
-    .m-filled.#{$themename} {
-        background-color: get-color($colorname);
+@each $themename in map-keys($pds-themes) {
+    $fillcolor: pds-theme-color($themename,'fill');
+    $acccolor: pds-theme-color($themename,'accent');
+    .pds-m-filled.#{$themename} {
+        background-color: $fillcolor;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
             &.lighten#{$lidx} {
-                background-color: lighten(get-color($colorname), $lscale);
+                background-color: lighten($fillcolor, $lscale);
             }
         }
         @for $didx from 1 through length($color-darken-scale) {
             $dscale : nth($color-darken-scale, $didx);
             &.darken#{$didx} {
-                background-color: darken(get-color($colorname), $dscale);
+                background-color: darken($fillcolor, $dscale);
             }
         }
         &.accent {
-            background-color: get-color($accentname);
+            background-color: $acccolor;
             @for $lidx from 1 through length($color-lighten-scale) {
                 $lscale : nth($color-lighten-scale, $lidx);
                 &.lighten#{$lidx} {
-                    background-color: lighten(get-color($accentname), $lscale);
+                    background-color: lighten($acccolor, $lscale);
                 }
             }
             @for $didx from 1 through length($color-darken-scale) {
                 $dscale : nth($color-darken-scale, $didx);
                 &.darken#{$didx} {
-                    background-color: darken(get-color($accentname), $dscale);
+                    background-color: darken($acccolor, $dscale);
                 }
             }
         }
     }
-    .m-colored.#{$themename} {
-        color: get-color($colorname);
+    .pds-m-colored.#{$themename} {
+        color: $fillcolor;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
             &.lighten#{$lidx} {
-                color: lighten(get-color($colorname), $lscale);
+                color: lighten($fillcolor, $lscale);
             }
         }
         @for $didx from 1 through length($color-darken-scale) {
             $dscale : nth($color-darken-scale, $didx);
             &.darken#{$didx} {
-                color: darken(get-color($colorname), $dscale);
+                color: darken($fillcolor, $dscale);
             }
         }
         &.accent {
-            color: get-color($accentname);
+            color: $acccolor;
             @for $lidx from 1 through length($color-lighten-scale) {
                 $lscale : nth($color-lighten-scale, $lidx);
                 &.lighten#{$lidx} {
-                    color: lighten(get-color($accentname), $lscale);
+                    color: lighten($acccolor, $lscale);
                 }
             }
             @for $didx from 1 through length($color-darken-scale) {
                 $dscale : nth($color-darken-scale, $didx);
                 &.darken#{$didx} {
-                    color: darken(get-color($accentname), $dscale);
+                    color: darken($acccolor, $dscale);
                 }
             }
         }
     }
-    .m-bordered.#{$themename} {
-        border-color: get-color($colorname);
+    .pds-m-bordered.#{$themename} {
+        border-color: $fillcolor;
         @for $lidx from 1 through length($color-lighten-scale) {
             $lscale : nth($color-lighten-scale, $lidx);
             &.lighten#{$lidx} {
-                border-color: lighten(get-color($colorname), $lscale);
+                border-color: lighten($fillcolor, $lscale);
             }
         }
         @for $didx from 1 through length($color-darken-scale) {
             $dscale : nth($color-darken-scale, $didx);
             &.darken#{$didx} {
-                border-color: darken(get-color($colorname), $dscale);
+                border-color: darken($fillcolor, $dscale);
             }
         }
         &.accent {
-            border-color: get-color($accentname);
+            border-color: $acccolor;
             @for $lidx from 1 through length($color-lighten-scale) {
                 $lscale : nth($color-lighten-scale, $lidx);
                 &.lighten#{$lidx} {
-                    border-color: lighten(get-color($accentname), $lscale);
+                    border-color: lighten($acccolor, $lscale);
                 }
             }
             @for $didx from 1 through length($color-darken-scale) {
                 $dscale : nth($color-darken-scale, $didx);
                 &.darken#{$didx} {
-                    border-color: darken(get-color($accentname), $dscale);
+                    border-color: darken($acccolor, $dscale);
                 }
             }
         }

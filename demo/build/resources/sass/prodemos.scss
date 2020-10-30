@@ -3,7 +3,7 @@
 // Settings / variables
 //
 @import "../../../../assets/sass/variables/global";
-@import "../../../../assets/sass/variables/zss-overrides";
+@import "../../../../assets/sass/variables/overrides";
 
 
 
@@ -97,32 +97,32 @@
     }
 
     a {
-        color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 1));
+        color: darken((pds-color(blue)), nth($color-darken-scale, 1));
         font-weight: 500;
         text-decoration: none;
         transition: color 0.15s ease-out;
         word-break: break-all;
 
         @include hover {
-            color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 1));
+            color: darken((pds-color(blue)), nth($color-darken-scale, 1));
             text-decoration: underline;
         }
 
         &:visited {
-            color: darken((get-color(blue--deep-sky)), nth($color-darken-scale, 2));
+            color: darken((pds-color(blue)), nth($color-darken-scale, 2));
         }
 
         /* stylelint-disable max-nesting-depth */
-        @each $theme in $prodemos-themes {
+        @each $theme in map-keys($pds-themes) {
             body.theme--#{nth($theme,1)} & {
-                color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                color: darken(pds-theme-color($theme,accent), nth($color-darken-scale, 1));
 
                 @include hover {
-                    color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    color: darken(pds-theme-color($theme,accent), nth($color-darken-scale, 1));
                 }
 
                 &:visited {
-                    color: lighten((get-color(#{nth($theme, 2)})), nth($color-lighten-scale, 1));
+                    color: lighten(pds-theme-color($theme,accent), nth($color-lighten-scale, 1));
                 }
             }
         }
