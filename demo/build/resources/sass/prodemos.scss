@@ -6,7 +6,6 @@
 @import "../../../../assets/sass/variables/overrides";
 
 
-
 //
 // Mixins and helpers
 //
@@ -15,11 +14,7 @@
 @import "../../../../assets/sass/helpers/responsive";
 
 
-// Styling for elements which can't be target through classes, usually content from the CMS
-// Add the class .pds-s-content to the element that contains this content (usually a DIV)
-// Extend these styles to your needs.
 
-/* stylelint-disable selector-max-type, selector-max-compound-selectors, selector-max-combinators */
 .s-styleguide-content {
     h1 {
         margin-bottom: nth($pds-spacings, 5);
@@ -112,9 +107,8 @@
             color: darken((pds-color(blue)), nth($pds-darken-scale, 2));
         }
 
-        /* stylelint-disable max-nesting-depth */
         @each $theme in map-keys($pds-themes) {
-            body.theme--#{nth($theme,1)} & {
+            &.pds-t-#{$theme}:not(.inherit) {
                 color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
 
                 @include hover {
@@ -138,4 +132,3 @@
         margin-bottom: nth($pds-spacings, 2);
     }
 }
-/* stylelint-enable selector-max-type, selector-max-compound-selectors, selector-max-combinators */

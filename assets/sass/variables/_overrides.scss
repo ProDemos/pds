@@ -35,7 +35,7 @@ $pds-colors: (
     lite: map-get($pds-color-stack,grey--romance--light),
     orange: map-get($pds-color-stack,orange--cinnabar),
     red: map-get($pds-color-stack,red--crimson),
-    cherry: map-get($pds-color-stack,red--hollywood-cerise),
+    pink: map-get($pds-color-stack,red--hollywood-cerise),
     purple:map-get($pds-color-stack,violet--purple-dark),
     yellow:map-get($pds-color-stack,yellow--my-sin)
 );
@@ -69,7 +69,7 @@ $pds-themes: (
         stroke-accent: map-get($pds-colors,white)
     ),
     variant04 : (
-        fill-color: map-get($pds-colors,cherry),
+        fill-color: map-get($pds-colors,pink),
         fill-accent: map-get($pds-colors,yellow),
         stroke-color: map-get($pds-colors,white), 
         stroke-accent:  map-get($pds-colors,black) 
