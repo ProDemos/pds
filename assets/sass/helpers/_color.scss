@@ -1,9 +1,32 @@
 
-@function get-color($name) {
-    @if map-has-key($zss--colors, $name) == false {
+
+
+@function pds-color($name) {
+    @if map-has-key($pds-colors, $name) == false {
+        @if map-has-key($pds-color-stack, $name) == false {
+            @error  "There is no color named `#{$name}`";
+        }
+        @return map-get($pds-color-stack, $name);
+    }
+    @return map-get($pds-colors, $name);
+}
+
+@function pds-theme-color($theme : $pds-deftheme ,$key : fill) {
+    @if map-has-key($pds-themes, $theme) == false {
         @error
-            "There is no color named `#{$name}` in `$zss--colors`";
+            "There is no theme named `#{$theme}` in `$pds-themes`";
     }
 
-    @return map-get($zss--colors, $name);
+    $mapkey : $key;
+    @if ($key == 'fill')   { $mapkey: 'fill-color'; }
+    @if ($key == 'color')  { $mapkey: 'fill-color'; }
+    @if ($key == 'accent') { $mapkey: 'fill-accent'; }
+    @if ($key == 'stroke') { $mapkey: 'stroke-color'; }
+
+    $thememap : map-get($pds-themes, $theme);
+    @if map-has-key($thememap, $mapkey) == false {
+        @error
+            "There is no value named `#{$mapkey}` in theme `#{$theme}`";
+    }
+    @return map-get($thememap,$mapkey);
 }

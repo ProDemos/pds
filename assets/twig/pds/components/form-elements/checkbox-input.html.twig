@@ -2,18 +2,18 @@
 {% set cx = {
     container: html_classes({
         'full-width': full_width,
-        't-corporate': theme == 'corporate',
-        't-theme2': theme == 'theme2',
-        't-theme3': theme == 'theme3',
-        't-theme4': theme == 'theme4',
-        't-theme5': theme == 'theme5',
-        't-theme6': theme == 'theme6',
-        't-theme7': theme == 'theme7',
+        'pds-t-corporate': theme == 'corporate',
+        'pds-t-variant01': theme == 'variant01',
+        'pds-t-variant02': theme == 'variant02',
+        'pds-t-variant03': theme == 'variant03',
+        'pds-t-variant04': theme == 'variant04',
+        'pds-t-variant05': theme == 'variant05',
+        'pds-t-variant06': theme == 'variant06'
     })
 } %}
 <div class="pds-c-input-container checkbox  has-hover-propagation  {{ cx.container }}">
-    <label class="pds-c-input-label" for="{{ id }}">
-        <input class="pds-c-input  checkbox" type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
+    <label for="{{ id }}">
+        <input class="pds-c-input" type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ value }}" {% if checked %}checked="checked"{% endif %}>
         <div class="pds-c-input-check"></div>
         {{ label }}
     </label>

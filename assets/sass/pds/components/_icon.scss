@@ -5,23 +5,25 @@
 // -----------------------------------------------------------------------------
 
 
-.c-button__icon {
+.pds-c-button-icon {
+
     display: block;
     margin-top: -1px;
-}
 
-.c-button__icon--left {
-    margin-right: nth($spacing-scale, 5);
+    &.left {
+        margin-right: nth($pds-spacings, 5);
+    }
+    &.right {
+        margin-left: nth($pds-spacings, 5);
+    }
+    .pds-c-button.transparent & {
 
-    .c-btn--transparent & {
-        margin-right: nth($spacing-scale, 3);
+        &.left {
+            margin-right: nth($pds-spacings, 3);
+        }
+        &.right {
+            margin-left: nth($pds-spacings, 3);
+        }
     }
 }
 
-.c-button__icon--right {
-    margin-left: nth($spacing-scale, 5);
-
-    .c-btn--transparent & {
-        margin-left: nth($spacing-scale, 3);
-    }
-}

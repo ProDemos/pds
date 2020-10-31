@@ -19,8 +19,8 @@
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
         <li> .pds-c-table[.responsive]</li>
-        <li> .pds-c-table > thead > tr > th </li>
-        <li> .pds-c-table > tbody > tr > td </li>
+        <li> .pds-c-table > thead > tr > th,td </li>
+        <li> .pds-c-table > tbody > tr > th,td </li>
     </ul>
 
 
@@ -36,21 +36,21 @@
     <div class="c-component  c-component--full">
         
         <div class="c-component__view  c-component__view--full">
-            <table class="c-table  c-table--responsive">
-                <thead class="c-table__head" role="rowgroup">
-                    <tr class="c-table__row  c-table__row--header" role="row">
-                        <th class="c-table__header" role="columnheader">wo 4 maart</th>
-                        <th class="c-table__header" role="columnheader">Programma</th>
-                        <th class="c-table__header" role="columnheader">Taal</th>
-                        <th class="c-table__header" role="columnheader">Vrij</th>
-                        <th class="c-table__header" role="columnheader">Prijs p.p.</th>
-                        <th class="c-table__header" role="columnheader">Selecteer</th>
+            <table class="pds-c-table  responsive">
+                <thead role="rowgroup">
+                    <trrole="row">
+                        <th role="columnheader">wo 4 maart</th>
+                        <th role="columnheader">Programma</th>
+                        <th role="columnheader">Taal</th>
+                        <th role="columnheader">Vrij</th>
+                        <th role="columnheader">Prijs p.p.</th>
+                        <th role="columnheader">Selecteer</th>
                     </tr>
                 </thead>
-                <tbody class="c-table__body" role="rowgroup">
-                <tr class="c-table__row" role="row">
-                    <td class="c-table__value" role="cell" data-label="wo 4 maart">10:00 uur (duur:1:30)</td>
-                    <td class="c-table__value" role="cell" data-label="Programma">
+                <tbody role="rowgroup">
+                <tr role="row">
+                    <td role="cell" data-label="wo 4 maart">10:00 uur (duur:1:30)</td>
+                    <td role="cell" data-label="Programma">
                         Staten-Generaaltour                                <a class="program_show info16" programinfo="<h3>D&amp;eacute; highlighttour van Politiek Den Haag</h3>
     <p>Tijdens deze  rondleiding neemt de gids je mee naar de Ridderzaal, Eerste &amp;eacute;n Tweede  Kamer. Hierdoor krijg je niet alleen verhalen te horen over het huidige  gebruik van het Binnenhof, maar ook een compleet overzicht van de  bijzondere ontstaansgeschiedenis van deze plek. Wie gaf opdracht tot het  bouwen van de Ridderzaal? Hoe gaat het eraan toe op Prinsjesdag? En wie  zit waar in de plenaire zaal van de Tweede Kamer.</p>
     <p><strong>Let op:</strong></p>
@@ -61,20 +61,20 @@
     </ul>" title="Meer informatie">Info</a>
 
                     </td>
-                    <td class="c-table__value" role="cell" data-label="Taal">Nederl.</td>
-                    <td class="c-table__value" role="cell" data-label="Vrij">30</td>
-                    <td class="c-table__value" role="cell" data-label="Prijs p.p.">€ 11,00</td>
-                    <td  class="c-table__value  webshop_order" role="cell" data-label="Selecteer">
+                    <td role="cell" data-label="Taal">Nederl.</td>
+                    <td role="cell" data-label="Vrij">30</td>
+                    <td role="cell" data-label="Prijs p.p.">€ 11,00</td>
+                    <td  class="webshop_order" role="cell" data-label="Selecteer">
                         <div class="webshop_registreer">
 
-                            <span class="c-btn  c-btn--corporate  c-btn--small  item_select cart16" data-component="button">
-                                <span class="c-button__icon-container">
+                            <span class="pds-c-button small pds-t-corporate  item_select cart16" data-component="button">
+                                <span class="pds-c-button-content">
                                     <?xml version="1.0"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px">
                                         <path fill="currentColor" d="M16.7,11.3c0.4,0.4,0.4,1,0,1.4l-4,4c-0.4,0.4-1,0.4-1.4,0l-4-4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l2.3,2.3V8
                                             c0-0.6,0.4-1,1-1s1,0.4,1,1v5.6l2.3-2.3C15.7,10.9,16.2,10.9,16.7,11.3z"/>
                                     </svg>
-                                    <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
+                                    <span class="pds-c-button-label right  ">
                                         Selecteer
                                     </span>
                                 </span>
@@ -193,26 +193,26 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="c-table__row" role="row">
-                    <td class="c-table__value" role="cell" data-label="wo 4 maart">10:00 uur (duur:1:15)</td>
-                    <td class="c-table__value" role="cell" data-label="Programma">
+                <tr role="row">
+                    <td role="cell" data-label="wo 4 maart">10:00 uur (duur:1:15)</td>
+                    <td role="cell" data-label="Programma">
                         Buitenwandeling met audioset (Dutch) Ferry Mingelen                                <a class="program_show info16" programinfo="<p>Audiotour buiten langs de gebouwen van het Binnenhof. Tijdens deze audiotour neemt de stem van Ferry Mingelen je mee naar de belangrijkste plekken op en rond het Binnenhof. Met zijn persoonlijke verhalen en herinneringen komt de omgeving tot leven!<br /><br /><strong>This audiotour is only available in Dutch.</strong></p>" title="Meer informatie">Info</a>
 
                     </td>
-                    <td class="c-table__value" role="cell" data-label="Taal">Nederl.</td>
-                    <td class="c-table__value" role="cell" data-label="Vrij">4</td>
-                    <td class="c-table__value" role="cell" data-label="Prijs p.p.">€ 5,50</td>
-                    <td  class="c-table__value  webshop_order" role="cell" data-label="Selecteer">
+                    <td role="cell" data-label="Taal">Nederl.</td>
+                    <td role="cell" data-label="Vrij">4</td>
+                    <td role="cell" data-label="Prijs p.p.">€ 5,50</td>
+                    <td  class=" webshop_order" role="cell" data-label="Selecteer">
                         <div class="webshop_registreer">
 
-                            <span class="c-btn  c-btn--corporate  c-btn--small  item_select cart16" data-component="button">
-                                <span class="c-button__icon-container">
+                            <span class="pds-c-button small pds-t-corporate  item_select cart16" data-component="button">
+                                <span class="pds-c-button-content">
                                     <?xml version="1.0"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px">
                                         <path fill="currentColor" d="M16.7,11.3c0.4,0.4,0.4,1,0,1.4l-4,4c-0.4,0.4-1,0.4-1.4,0l-4-4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l2.3,2.3V8
                                             c0-0.6,0.4-1,1-1s1,0.4,1,1v5.6l2.3-2.3C15.7,10.9,16.2,10.9,16.7,11.3z"/>
                                     </svg>
-                                    <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
+                                    <span class="pds-c-button-label right  ">
                                         Selecteer
                                     </span>
                                 </span>
@@ -248,9 +248,9 @@
 
                     </td>
                 </tr>
-                <tr class="c-table__row" role="row">
-                    <td class="c-table__value" role="cell" data-label="wo 4 maart">10:30 uur (duur:1:30)</td>
-                    <td class="c-table__value" role="cell" data-label="Programma">
+                <tr role="row">
+                    <td role="cell" data-label="wo 4 maart">10:30 uur (duur:1:30)</td>
+                    <td role="cell" data-label="Programma">
                         Staten-Generaaltour                                <a class="program_show info16" programinfo="<h3>D&amp;eacute; highlighttour van Politiek Den Haag</h3>
     <p>Tijdens deze  rondleiding neemt de gids je mee naar de Ridderzaal, Eerste &amp;eacute;n Tweede  Kamer. Hierdoor krijg je niet alleen verhalen te horen over het huidige  gebruik van het Binnenhof, maar ook een compleet overzicht van de  bijzondere ontstaansgeschiedenis van deze plek. Wie gaf opdracht tot het  bouwen van de Ridderzaal? Hoe gaat het eraan toe op Prinsjesdag? En wie  zit waar in de plenaire zaal van de Tweede Kamer.</p>
     <p><strong>Let op:</strong></p>
@@ -261,20 +261,20 @@
     </ul>" title="Meer informatie">Info</a>
 
                     </td>
-                    <td class="c-table__value" role="cell" data-label="Taal">Nederl.</td>
-                    <td class="c-table__value" role="cell" data-label="Vrij">21</td>
-                    <td class="c-table__value" role="cell" data-label="Prijs p.p.">€ 11,00</td>
-                    <td  class="c-table__value  webshop_order" role="cell" data-label="Selecteer">
+                    <td role="cell" data-label="Taal">Nederl.</td>
+                    <td role="cell" data-label="Vrij">21</td>
+                    <td role="cell" data-label="Prijs p.p.">€ 11,00</td>
+                    <td  class="webshop_order" role="cell" data-label="Selecteer">
                         <div class="webshop_registreer">
 
-                            <span class="c-btn  c-btn--corporate  c-btn--small  item_select cart16" data-component="button">
-                                <span class="c-button__icon-container">
+                            <span class="pds-c-button small pds-t-corporate  item_select cart16" data-component="button">
+                                <span class="pds-c-button-content">
                                     <?xml version="1.0"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px">
                                         <path fill="currentColor" d="M16.7,11.3c0.4,0.4,0.4,1,0,1.4l-4,4c-0.4,0.4-1,0.4-1.4,0l-4-4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l2.3,2.3V8
                                             c0-0.6,0.4-1,1-1s1,0.4,1,1v5.6l2.3-2.3C15.7,10.9,16.2,10.9,16.7,11.3z"/>
                                     </svg>
-                                    <span class="c-button__icon-container__label  c-button__icon-container__label--right  ">
+                                    <span class="pds-c-button-label right  ">
                                         Selecteer
                                     </span>
                                 </span>

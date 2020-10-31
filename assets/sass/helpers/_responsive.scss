@@ -1,5 +1,5 @@
 
-@mixin media-until($name, $breakpoints: $prodemos--breakpoints) {
+@mixin media-until($name, $breakpoints: $pds-breakpoints) {
     @if map-has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
@@ -12,7 +12,7 @@
 
 
 
-@mixin media-between($min-name, $max-name, $breakpoints: $prodemos--breakpoints) {
+@mixin media-between($min-name, $max-name, $breakpoints: $pds-breakpoints) {
     @if map-has-key($breakpoints, $min-name) == false {
         @error
             "There is no breakpoint defined by the name `#{$min-name}`";
@@ -33,7 +33,7 @@
 
 
 
-@mixin media-from($name, $breakpoints: $prodemos--breakpoints) {
+@mixin media-from($name, $breakpoints: $pds-breakpoints) {
     @if map-has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";

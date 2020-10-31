@@ -21,8 +21,9 @@
 
         <h2>How to use this design system?</h2>
 
-        <p>To include the design system in your own project, look at the README in github. It contains two
-        parts: <code>assets</code> and <code>demo</code>. You are currently reading <code>demo/html/index.html</code>.
+        <p>To include the design system in your own project, look at the 
+        <a href="https://github.com/ProDemos/pds/blob/master/README.md">README.md in github</a>. The system contains two
+        parts: an <code>assets</code> folder and a <code>demo</code>. You are currently reading <code>demo/html/index.html</code>.
         For your own project, you only need the assets folder; it contains css, fonts etcetera, but also Twig
         components you can reuse in your own project. It may contain Vue components later.<p>
 
@@ -31,78 +32,49 @@
 
         <ul>
             <li>
-                The css defines scopes (<code>s-{scope}</code>), themes (<code>t-{theme}</code>),
-                components (<code>c-{components}</code>) and general modifiers (<code>m-{modifier}</code>).
+                <b>Include <code>assets/css/main.css</code></b> and optionally <code>assets/css/reset.css</code>
+                in your pages, or alternatively add <code>assets/sass/main.scss</code> and 
+                optionally <code>assets/sass/reset.scss</code> to your workflow.
+            </li>
+            <li>
+                <b>The css defines</b> scopes (<code>pds-s-{scope}</code>), themes (<code>pds-t-{theme}</code>),
+                components (<code>pds-c-{components}</code>) and general modifiers (<code>pds-m-{modifier}</code>),
+                and nothing else. It should not conflict with your own css.
             </li>
             <li>
                 <b>Including assets/main.css</b> before your own css will not change anything to your design. At least
                 one of the elements on your page should use one of the classes defined in the design system to 
-                actually use the design system. For example, adding the 'default' scope and 'corporate' theme 
-                to your body (<code>&lt;body class="s-default t-corporate"&gt;</code>) will change the look of the page.
+                actually use the design system. For example, adding the 'content' scope and 'corporate' theme 
+                to your body (<code>&lt;body class="pds-s-content pds-t-corporate"&gt;</code>) will change the look of 
+                the page.
+                Including assets/reset.css before your own css will probably change your design a bit, as
+                it defines font-sizes, line-heights, box-sizings and such on a global level. 
             </li>
             <li>
-                <b>Scopes</b> can be specified by <code>class="s-{scope}"</code>. Scope will be inherited, and 
+                <b>Scopes</b> can be specified by <code>class="pds-s-{scope}"</code>. Scopes will be inherited, and 
                 it can affect regular content like <code>&lt;h1&gt;</code>.</li>
             <li>
-                <b>Themes</b> can be specified by <code>class="t-{theme}"</code>. Theme will be inherited, so
-                you can start with a <code>&lt;body class="t-corporate"&gt;</code> to have the whole page in the corporate theme.
+                <b>Themes</b> can be specified by <code>class="pds-t-{theme}"</code>. Themes will be inherited, so
+                you can start with a <code>&lt;body class="pds-t-corporate"&gt;</code> to have the whole page in the corporate theme.
                 The theme will mainly affect the design of components below it.</li>
             </li>
             <li>
-                <b>Components</b> have a <code>class="c-{component}"</code> and subcomponents may
-                have classes like <code>class="c-{component}-{subcomponent}"</code>. The classes may contain component
+                <b>Components</b> have a <code>class="pds-c-{component}"</code> and subcomponents may
+                have classes like <code>class="pds-c-{component}-{subcomponent}"</code>. The classes may contain component
                 modifiers, like 'primary' or 'disabled'; such modifiers should only mean something inside the component.
             </li>
             <li>
-                <b>Modifiers</b>, with a <code>class="m-{modifier}"</code>, are like inline styles, in
-                that they only modify appearance of the immediately contained content. 
-                For example, <code>class="m-colored-red"</code> changes the (text) color of the element to red. 
+                <b>Modifiers</b>, with a <code>class="pds-m-{modifier}"</code>, are like inline styles, in
+                that they only modify the appearance of the immediately contained content. 
+                For example, <code>class="pds-m-colored red"</code> changes the (text) color of the element to red. 
             </li>
             
         </ul>
 
-        <h2>Design elements</h2>
-        <p>The section Design Elements contains the colors, icons and basic typography.</p>
-
-        <h2>Components</h2>
-        <p>Here you can find the logo's, button, form elements, navigation elements and tables.</p>
         
-        <h2>Sass</h2>
-        <p>Little notes on the use of the Sass-files when adding styles</p>
+        
+        
 
-        <h4>Scales</h4>
-        <p>The variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:</p>
-        <pre>
-$type-scale: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
-.class {
-    font-size: nth($type-scale, 2); // second in the array, gives 44px
-}
-        </pre>
-        <p>Similar methods should be used for the <code>$spacing-scale</code>, <code>$line-heighth-scale</code>, 
-        <code>$color-lighten-scale</code> and <code>$color-darken-scale</code>.
-
-        <h4>Breakpoints</h4>
-        <p>When breakpoints are defined, they can be used inline in the class to target specific behaviour.<br>Just use:<br>
-        <pre>
-@include media-from(lg) {
-    font-size: nth($type-scale, 2);
-}
-        </pre> to set another style from breakpoint LG (LarGe, probably something around 1024px)</p>
-        <p>
-            Three types can be used:<br>
-        <pre>@include media-from(lg){ ... }</pre>
-        Which means: 'Use this style up from Large screens'
-        <pre>@include media-between(md, lg) { ... }</pre>
-        Which means: 'use this style between Medium and Large screens'
-        <pre>@include media-until(lg) { ... }</pre>
-        Which means: 'use this style until Large screens'
-        </p>
-
-
-        <h2>Code base</h2>
-        <h3>Code source</h3>
-        <p>The source code of the design system is available on GitHub: https://github.com/ProDemos/design-system</p>
-        <p>Use Git to fetch the source code (<code>git clone git@github.com:ProDemos/design-system.git</code>) and follow the steps in the <code>README.md</code> file to setup the project.</p>
 
 
     </div>

@@ -1,0 +1,119 @@
+/*
+    Add colors by name, this will help for consistency and to remember which color to use (you can remember blue--deep-sky, but #00b4e6 is hard)
+    Names can be rendered with: https://www.color-blindness.com/color-name-hue/
+    pattern: hue--color-name
+    If a color contains it's hue in the name, leave the hue in the color name behind, for example:
+    #2A3FC9 = 'blue--cerulean-blue', but becomes: 'blue--cerulean'
+*/
+
+$pds-color-stack: (
+    black: #000,
+    white: #fff,
+    transparent: transparent,
+    blue--deep-sky: #00b4e6,
+    green--vida-loca: #58a333,
+    grey--gainsboro: #dbdbdb,
+    grey--romance: #f5f0e9,
+    grey--romance--light: #fbf9f6,
+    orange--cinnabar: #eb5b25,
+    red--crimson: #d60d41,
+    red--hollywood-cerise: #d7007e,
+    violet--purple-dark: #98177c,
+    yellow--my-sin: #fcc243,
+);
+
+// use pds-color(name) to get these colors easier
+
+$pds-colors: (
+    black: map-get($pds-color-stack,black),
+    white: map-get($pds-color-stack,white),
+    transparent: map-get($pds-color-stack,transparent),
+    blue: map-get($pds-color-stack,blue--deep-sky),
+    green: map-get($pds-color-stack,green--vida-loca),
+    grey: map-get($pds-color-stack,grey--gainsboro),
+    romance:map-get($pds-color-stack,grey--romance),
+    lite: map-get($pds-color-stack,grey--romance--light),
+    orange: map-get($pds-color-stack,orange--cinnabar),
+    red: map-get($pds-color-stack,red--crimson),
+    pink: map-get($pds-color-stack,red--hollywood-cerise),
+    purple:map-get($pds-color-stack,violet--purple-dark),
+    yellow:map-get($pds-color-stack,yellow--my-sin)
+);
+
+// use pds-theme-color($themename,$propname)
+// to get to these values easier.
+
+$pds-themes: (
+    corporate : (
+        fill-color: map-get($pds-colors,blue),
+        fill-accent: map-get($pds-colors,orange),
+        stroke-color: map-get($pds-colors,white),
+        stroke-accent: map-get($pds-colors,white) 
+    ),
+    variant01 : (
+        fill-color: map-get($pds-colors,yellow),
+        fill-accent: map-get($pds-colors,purple),
+        stroke-color: map-get($pds-colors,black), 
+        stroke-accent: map-get($pds-colors,white)
+    ),
+    variant02 : (
+        fill-color: map-get($pds-colors,orange),
+        fill-accent: map-get($pds-colors,blue),
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,white) 
+    ),
+    variant03 : (
+        fill-color: map-get($pds-colors,red),
+        fill-accent: map-get($pds-colors,green),
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent: map-get($pds-colors,white)
+    ),
+    variant04 : (
+        fill-color: map-get($pds-colors,pink),
+        fill-accent: map-get($pds-colors,yellow),
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,black) 
+    ),
+    variant05 : (
+        fill-color: map-get($pds-colors,purple),
+        fill-accent: map-get($pds-colors,yellow),
+        stroke-color:  map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,black)
+    ),
+    variant06 : (
+        fill-color: map-get($pds-colors,green),
+        fill-accent: map-get($pds-colors,red),
+        stroke-color:  map-get($pds-colors,white), 
+        stroke-accent: map-get($pds-colors,white)
+    )
+);
+
+$pds-deftheme: 'corporate' !default;
+
+
+// Opacity values, used for color
+$pds-lighten-scale: 0% 10% 20% 30% 40% 50%;
+$pds-darken-scale: 5% 10%;
+
+
+// Provide a default font-size list for a consistent typing scale
+$pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;
+$pds-font-size: 18px !default;
+
+
+$pds-line-heights: 0 1 1.25 1.5 1.75;
+$pds-line-height: 1.5 !default;
+
+
+// Provide a default spacing scale for consistent spacings
+// eg: top: nth($pds-spacings, 4); = 12px
+$pds-spacings: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
+
+
+$pds-breakpoints: (
+    xs: 0,
+    sm: 550px,
+    md: 760px,
+    lg: 990px,
+    xl: 1200px
+);

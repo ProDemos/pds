@@ -9,7 +9,10 @@ styleguide:
     assets: 
         -
             type: 'stylesheet'
-            path: 'assets/css/main.css'
+            path: '../../assets/css/reset.css'
+        -
+            type: 'stylesheet'
+            path: '../../assets/css/main.css'
         -
             type: 'stylesheet'
             path: 'css/prodemos.css'
@@ -17,29 +20,28 @@ colors:
     # should be defined in assets/sass/variables/zss-overrides
     - black
     - white
-    - blue--deep-sky
-    - green--vida-loca
-    - grey--gainsboro
-    - grey--romance
-    - grey--romance--light
-    - orange--cinnabar
-    - red--crimson
-    - red--hollywood-cerise
-    - violet--purple-dark
-    - yellow--my-sin
+    - blue
+    - green
+    - grey
+    - romance
+    - lite
+    - orange
+    - red
+    - pink
+    - purple
+    - yellow
    
 scopes:
-        pds-s-reset : "Reset" 
         pds-s-content : "Content" 
 
 themes:
-        t-corporate : Corporate
-        t-theme2    : Theme2 
-        t-theme3    : Theme3 
-        t-theme4    : Theme4 
-        t-theme5    : Theme5 
-        t-theme6    : Theme6 
-        t-theme7    : Theme7 
+        pds-t-corporate : Corporate
+        pds-t-variant01 : Variant01 
+        pds-t-variant02 : Variant02 
+        pds-t-variant03 : Variant03 
+        pds-t-variant04 : Variant04 
+        pds-t-variant05 : Variant05 
+        pds-t-variant06 : Variant06 
 
 images:
     # will be read from the assets/images/ directory
