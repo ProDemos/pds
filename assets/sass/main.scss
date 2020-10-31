@@ -1,9 +1,10 @@
 /* ----------------------------------------------------------------------------- *\
  *
  * Main stylesheet.
+ * make sure to include the reset.scss
+ * first if you need it in your project.
  *
 \* ----------------------------------------------------------------------------- */
-
 
 
 //
@@ -12,8 +13,6 @@
 @import "variables/global";
 @import "variables/overrides";
 
-
-
 //
 // Mixins and helpers
 //
@@ -21,29 +20,13 @@
 @import "helpers/hover";
 @import "helpers/responsive";
 
-
-//
-// Generic: common resets
-//
-@import "generic/box-sizing";
-@import "generic/hard-reset";
-@import "generic/normalize";
-
-
-
-//
-// Base: un-classed HTML and page setup
-//
-@import "base/responsive";
-@import "base/typography";
+// Fonts
 @import "base/web-font--bree-serif";
 @import "base/web-font--fira-sans";
-
 
 //
 // Scopes
 //
-@import "pds/scopes/reset";
 @import "pds/scopes/content";
 
 //

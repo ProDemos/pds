@@ -15,7 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="../css/styleguide.css">
-                    <link rel="stylesheet" href="../assets/css/main.css">
+                    <link rel="stylesheet" href="../../../assets/css/reset.css">
+                    <link rel="stylesheet" href="../../../assets/css/main.css">
                     <link rel="stylesheet" href="../css/prodemos.css">
                     
         <script>
@@ -90,13 +91,7 @@
                 <section class="c-component--typography" style="max-width: 980px;">
 
         <form>
-            <select class="pds-c-input dropdown full-width"
-                onchange="this.parentElement.nextSibling.className=this.options[this.selectedIndex].value">
-                <option value="" selected disabled>Select a scope ...</option>
-                                    <option value="pds-s-reset">Reset</option>
-                                    <option value="pds-s-content">Content</option>
-                            </select>
-            <br><br><!-- hm .. -->
+
             <select class="pds-c-input dropdown full-width"
                 onchange="document.body.className=this.options[this.selectedIndex].value">
                 <option value="" selected disabled>Select a theme ...</option>
@@ -109,9 +104,17 @@
                                     <option value="pds-t-variant06">Variant06</option>
                             </select>
             <br><br><!-- hm .. -->
+
+            <select class="pds-c-input dropdown full-width"
+                onchange="this.parentElement.nextElementSibling.className=this.options[this.selectedIndex].value">
+                <option value="" selected disabled>Select a scope ...</option>
+                                    <option value="pds-s-content">Content</option>
+                            </select>
+            <br><br><!-- hm .. -->
+            
         </form>
-        
-        <div class="" style="border:1px solid grey">
+
+        <div class="pds-s-content" style="outline:1px solid #ddd">
         
 
             
