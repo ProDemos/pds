@@ -20,14 +20,14 @@
 		"test-sass" : [
 			"node_modules/node-sass/bin/node-sass ../../assets/sass/main.scss ../../assets/css/main.css",
 			"node_modules/node-sass/bin/node-sass ../../assets/sass/reset.scss ../../assets/css/reset.css",
-			"node_modules/node-sass/bin/node-sass resources/sass/styleguide.scss ../html/css/styleguide.css",
-			"node_modules/node-sass/bin/node-sass resources/sass/prodemos.scss ../html/css/prodemos.css"
+			"node_modules/node-sass/bin/node-sass ./sass/styleguide.scss ../html/css/styleguide.css",
+			"node_modules/node-sass/bin/node-sass ./sass/prodemos.scss ../html/css/prodemos.css"
 		],
 		"compile-sass" : [
 			"node_modules/node-sass/bin/node-sass --output-style compressed ../../assets/sass/main.scss ../../assets/css/main.css",
 			"node_modules/node-sass/bin/node-sass --output-style compressed ../../assets/sass/reset.scss ../../assets/css/reset.css",
-			"node_modules/node-sass/bin/node-sass --output-style compressed resources/sass/styleguide.scss ../html/css/styleguide.css",
-			"node_modules/node-sass/bin/node-sass --output-style compressed resources/sass/prodemos.scss ../html/css/prodemos.css"
+			"node_modules/node-sass/bin/node-sass --output-style compressed ./sass/styleguide.scss ../html/css/styleguide.css",
+			"node_modules/node-sass/bin/node-sass --output-style compressed ./sass/prodemos.scss ../html/css/prodemos.css"
 		],
 		"compile-twig" : [
 			"Prodemos\\PDS\\TwigCompiler::run"

@@ -58,11 +58,109 @@
     }
 }
 
+// default theming 
+
+
+.pds-m-filled {
+    background-color: pds-theme-color($pds-deftheme,'fill-color');
+    color:pds-theme-color($pds-deftheme,'stroke-color');
+    @for $lidx from 1 through length($pds-lighten-scale) {
+        $lscale : nth($pds-lighten-scale, $lidx);
+        &.lighten#{$lidx} {
+            background-color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
+        }
+    }
+    @for $didx from 1 through length($pds-darken-scale) {
+        $dscale : nth($pds-darken-scale, $didx);
+        &.darken#{$didx} {
+            background-color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
+        }
+    }
+    &.accent {
+        background-color: pds-theme-color($pds-deftheme,'fill-accent');
+        color:pds-theme-color($pds-deftheme,'stroke-accent');
+        @for $lidx from 1 through length($pds-lighten-scale) {
+            $lscale : nth($pds-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                background-color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
+            }
+        }
+        @for $didx from 1 through length($pds-darken-scale) {
+            $dscale : nth($pds-darken-scale, $didx);
+            &.darken#{$didx} {
+                background-color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
+            }
+        }
+    }
+}
+.pds-m-colored {
+    color: pds-theme-color($pds-deftheme,'fill-color');
+    @for $lidx from 1 through length($pds-lighten-scale) {
+        $lscale : nth($pds-lighten-scale, $lidx);
+        &.lighten#{$lidx} {
+            color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
+        }
+    }
+    @for $didx from 1 through length($pds-darken-scale) {
+        $dscale : nth($pds-darken-scale, $didx);
+        &.darken#{$didx} {
+            color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
+        }
+    }
+    &.accent {
+        color: pds-theme-color($pds-deftheme,'fill-accent');
+        @for $lidx from 1 through length($pds-lighten-scale) {
+            $lscale : nth($pds-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
+            }
+        }
+        @for $didx from 1 through length($pds-darken-scale) {
+            $dscale : nth($pds-darken-scale, $didx);
+            &.darken#{$didx} {
+                color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
+            }
+        }
+    }
+}
+.pds-m-bordered {
+    border-color: pds-theme-color($pds-deftheme,'fill-color');
+    @for $lidx from 1 through length($pds-lighten-scale) {
+        $lscale : nth($pds-lighten-scale, $lidx);
+        &.lighten#{$lidx} {
+            border-color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
+        }
+    }
+    @for $didx from 1 through length($pds-darken-scale) {
+        $dscale : nth($pds-darken-scale, $didx);
+        &.darken#{$didx} {
+            border-color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
+        }
+    }
+    &.accent {
+        border-color: pds-theme-color($pds-deftheme,'fill-accent');
+        @for $lidx from 1 through length($pds-lighten-scale) {
+            $lscale : nth($pds-lighten-scale, $lidx);
+            &.lighten#{$lidx} {
+                border-color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
+            }
+        }
+        @for $didx from 1 through length($pds-darken-scale) {
+            $dscale : nth($pds-darken-scale, $didx);
+            &.darken#{$didx} {
+                border-color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
+            }
+        }
+    }
+}
+
 @each $themename in map-keys($pds-themes) {
-    $fillcolor: pds-theme-color($themename,'fill');
-    $acccolor: pds-theme-color($themename,'accent');
-    .pds-m-filled.#{$themename} {
+    $fillcolor: pds-theme-color($themename,'fill-color');
+    $acccolor: pds-theme-color($themename,'fill-accent');
+    @at-root .pds-t-#{$themename} .pds-m-filled,
+    .pds-m-filled.pds-t-#{$themename} {
         background-color: $fillcolor;
+        color:pds-theme-color($themename,'stroke-color');
         @for $lidx from 1 through length($pds-lighten-scale) {
             $lscale : nth($pds-lighten-scale, $lidx);
             &.lighten#{$lidx} {
@@ -77,6 +175,7 @@
         }
         &.accent {
             background-color: $acccolor;
+            color:pds-theme-color($themename,'stroke-accent');
             @for $lidx from 1 through length($pds-lighten-scale) {
                 $lscale : nth($pds-lighten-scale, $lidx);
                 &.lighten#{$lidx} {
@@ -91,7 +190,8 @@
             }
         }
     }
-    .pds-m-colored.#{$themename} {
+    @at-root .pds-t-#{$themename} .pds-m-colored,
+    .pds-m-colored.pds-t-#{$themename} {
         color: $fillcolor;
         @for $lidx from 1 through length($pds-lighten-scale) {
             $lscale : nth($pds-lighten-scale, $lidx);
@@ -121,7 +221,8 @@
             }
         }
     }
-    .pds-m-bordered.#{$themename} {
+    @at-root .pds-t-#{$themename} .pds-m-bordered,
+    .pds-m-bordered.pds-t-#{$themename} {
         border-color: $fillcolor;
         @for $lidx from 1 through length($pds-lighten-scale) {
             $lscale : nth($pds-lighten-scale, $lidx);

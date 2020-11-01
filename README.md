@@ -135,13 +135,22 @@ to do both.
 
 # Expand - adding new elements
 
-To create new elements, 
-  - write your sass in assets/sass
-  - write a demo twig template in assets/twig/*
-  - add a demo config for that twig template to assets/twig/*/_styleguide.yml
-and compile the sass and twig using composer.
+To create a new element, say pds-c-foo
+  - write your sass in assets/sass/pds/components/_foo.scss
+  - add your stylesheet to assets/sass/main.scss
+  - write a demo twig template in assets/twig/components/foo/foo.twig
+  - add a config for template to assets/twig/pds/components/foo/_styleguide.yml
+and compile the sass and twig as described above.
+
 Your element should now appear in the styleguide in demo/html
 
+Always prefix you classnames with pds-. Try to stay
+within the definitions of pds-s(copes), pds-t(hemes),
+pds-c(omponents) and pds-m(odifiers). Avoid BEM.
+Use predefined colors, sizes and fonts.
+
+If you want to write directly in the demo pages, 
+check demo/build/pages/*
 
 # Publishing
 
@@ -167,7 +176,7 @@ Similar methods should be used for the `pds-spacings`, `$pds-line-heights`,
 
 ####Colors
 Colors are defined in `$pds-colors` as a map, but you can use the mixin `@pds-color` and `@pds-theme-color` to find the right color.
-
+Themes are defined in `$pds-themes`.`
 
 #### Breakpoints
 
