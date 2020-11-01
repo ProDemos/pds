@@ -165,6 +165,29 @@
     }
 }
 
+.pds-c-button-icon {
+
+    display: block;
+    margin-top: -1px;
+
+    &.left {
+        margin-right: nth($pds-spacings, 5);
+    }
+    &.right {
+        margin-left: nth($pds-spacings, 5);
+    }
+    .pds-c-button.transparent & {
+
+        &.left {
+            margin-right: nth($pds-spacings, 3);
+        }
+        &.right {
+            margin-left: nth($pds-spacings, 3);
+        }
+    }
+}
+
+
 
 
 

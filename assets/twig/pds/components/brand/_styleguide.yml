@@ -14,7 +14,7 @@
     url: /
     title: Home
     logo:
-        name: logo--nl.svg
+        name: logo-nl.svg
         width: 192
         height: 65
 
@@ -24,6 +24,6 @@
     url: /
     title: Home
     logo:
-        name: logo--en.svg
+        name: logo-en.svg
         width: 226
         height: 65
