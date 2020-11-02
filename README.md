@@ -185,6 +185,7 @@ Just use:
 ```
 to set another style from breakpoint LG (LarGe, probably something around 1024px)
 
+
 Three types can be used:
  - `@include media-from(lg){ ... }` \ Which means: 'Use this style up from Large screens'
  - `@include media-between(md, lg) { ... }`  \ Which means: 'use this style between Medium and Large screens'
