@@ -152,11 +152,6 @@ Use predefined colors, sizes and fonts.
 If you want to write directly in the demo pages, 
 check demo/build/pages/*
 
-# Publishing
-
-More information on how to publish a new version of the package can be found in the [wiki](https://github.com/ProDemos/pds/wiki/Publishing)
-
-
 #Sass
 
 A few notes on the use of the Sass-files when adding styles
