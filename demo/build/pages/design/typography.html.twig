@@ -13,18 +13,32 @@
 {% block component_list %}
     <section class="c-component--typography" style="max-width: 980px;">
 
-        <div class="s-default">
+        <form>
+
+            <select class="pds-c-input dropdown full-width"
+                onchange="document.body.className=this.options[this.selectedIndex].value">
+                <option value="" selected disabled>Select a theme ...</option>
+                {% for themeid,themename in themes %}
+                    <option value="{{ themeid }}">{{ themename }}</option>
+                {% endfor %}
+            </select>
+            <br><br><!-- hm .. -->
+
+            <select class="pds-c-input dropdown full-width"
+                onchange="this.parentElement.nextElementSibling.className=this.options[this.selectedIndex].value">
+                <option value="" selected disabled>Select a scope ...</option>
+                {% for scopeid,scopename in scopes %}
+                    <option value="{{ scopeid }}">{{ scopename }}</option>
+                {% endfor %}
+            </select>
+            <br><br><!-- hm .. -->
+            
+        </form>
+
+        <div class="pds-s-content" style="outline:1px solid #ddd">
         
 
-            <form>
-                <select class="pds-c-input dropdown full-width"
-                    onchange="this.parentElement.parentElement.className=this.options[this.selectedIndex].value">
-                    <option value="" selected disabled>Select a scope ...</option>
-                    {% for scopeid,scopename in scopes %}
-                        <option value="{{ scopeid }}">{{ scopename }}</option>
-                    {% endfor %}
-                </select>
-            </form>
+            
             
             <h1>The quick brown fox jumps over the lazy dog.</h1>
 

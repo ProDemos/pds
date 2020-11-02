@@ -1,277 +1,304 @@
 
-// Input wrapper, used for combined elements, like the radio's and checkboxes, but can be used for all elements
-.c-input--container {
-    margin-bottom: nth($spacing-scale, 5);
+// -----------------------------------------------------------------------------
+//  COMPONENT .pds-c-input
+// .pds-c-input[.disabled]
+//  input[type=text].pds-c-input [.valid|.invalid]
+//  select.pds-c-input [.fullwidth]
+// .pds-c-input.container[.radio|.checkbox]
+// .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label
+// .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label
+// -----------------------------------------------------------------------------
+
+
+.pds-c-input-container {
+
+    margin-bottom: nth($pds-spacings, 5);
+
+    // Radiobutton
+    &.radio {
+
+        
+        // The label
+        label, .pds-c-input-label {
+            display: block;
+            position: relative;
+            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+            margin: nth($pds-spacings, 4) auto;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.25s linear;
+        }
+
+        input[type=radio], .pds-c-input.radio {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        // The checkable element (replaces the invisible radio-input)
+        .pds-c-input-check {
+            display: block;
+            position: absolute;
+            border: 1px solid pds-color(grey);
+            border-radius: 100%;
+            background-color: pds-color(romance);
+            height: nth($pds-spacings, 6);
+            width: nth($pds-spacings, 6);
+            top: nth($pds-spacings, 4);
+            left: nth($pds-spacings, 5);
+            z-index: 5;
+            transition: border 0.25s linear;
+            cursor: pointer;
+
+            // The radio tick
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                border-radius: 100%;
+                height: nth($pds-spacings, 4);
+                width: nth($pds-spacings, 4);
+                top: 3px;
+                left: 3px;
+                margin: auto;
+                transition: background 0.25s linear;
+            }
+        }
+        
+    }
+    &.checkbox {
+       
+        // The label
+        label, .c-input-label {
+            display: block;
+            position: relative;
+            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+            margin: nth($pds-spacings, 4) auto;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.25s linear;
+        }
+
+
+        // The radio input itself
+        input[type=checkbox],.pds-c-input.checkbox {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        // The checkable element (replaces the invisible checkbox)
+        .pds-c-input-check {
+            display: block;
+            position: absolute;
+            border: 1px solid pds-color(grey);
+            background-color: pds-color(romance);
+            height: nth($pds-spacings, 6);
+            width: nth($pds-spacings, 6);
+            top: nth($pds-spacings, 4);
+            left: nth($pds-spacings, 5);
+            z-index: 5;
+            transition: border 0.25s linear;
+            cursor: pointer;
+        
+            // The checkbox tick
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                height: nth($pds-spacings, 4);
+                width: nth($pds-spacings, 4);
+                top: 3px;
+                left: 3px;
+                margin: auto;
+                transition: background 0.25s linear;
+            }
+            
+        }
+    }
+
 }
 
 
 // The default label styling
-.c-input-label {
-    margin-bottom: nth($spacing-scale, 5);
-    color: get-color(black);
+.pds-c-input-label {
+    margin-bottom: nth($pds-spacings, 5);
+    color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($type-scale, 7);
+    font-size: nth($pds-font-sizes, 7);
     font-weight: 500;
 }
 
 
 
 // Basic input styling, shared by all inputs
-.c-input {
-    color: get-color(black);
+.pds-c-input {
+    color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($type-scale, 7);
-    line-height: nth($line-height-scale, 5);
+    font-size: nth($pds-font-sizes, 7);
+    line-height: nth($pds-line-heights, 5);
     border-radius: 0;
-    background-color: get-color(grey--romance);
+    background-color: pds-color(romance);
 
     /* stylelint-disable property-no-vendor-prefix */
     -webkit-appearance: none;
     /* stylelint-enable property-no-vendor-prefix */
 
-    &.c-input--disabled {
-        color: lighten(get-color(black), nth($color-lighten-scale, 5));
-        background-color: lighten((get-color(grey--romance)), nth($color-lighten-scale, 1));
+    &.disabled {
+        color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
+        background-color: lighten((pds-color(romance)), nth($pds-lighten-scale, 1));
         cursor: not-allowed;
     }
-}
 
+    &[type=text], &.text {
 
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
+        border: none;
+        border-bottom: 3px solid pds-color(romance);
+        transition: border-bottom-color 150ms ease-in-out;
 
-// Text input
-.c-input--text {
-    padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 3) nth($spacing-scale, 6);
-    border: none;
-    border-bottom: 3px solid get-color(grey--romance);
-    transition: border-bottom-color 150ms ease-in-out;
+        
 
-    // Themeing
-    @each $theme in $prodemos-themes {
-        &.t-#{nth($theme,1)} {
-            &:focus {
-                border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-            }
+        // When the user added valid input
+        &.valid {
+            background-image: url("#{$pds-assets-path}/images/icons/24px/check--green.svg");
+            background-position: top 13px right 15px;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            border-bottom-color: pds-color(green);
+        }
+
+        // When the user added invalid input
+        &.invalid {
+            background-image: url("#{$pds-assets-path}/images/icons/24px/error--red.svg");
+            background-position: top 13px right 15px;
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            border-bottom-color: pds-color(red);
         }
     }
 
-    // When the user added valid input
-    &.c-input--text--valid {
-        background-image: url("#{$pds-assets-path}/images/icons/24px/check--green.svg");
+    @at-root select#{&}, &.dropdown {
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
+        border: none;
+        border-bottom: 2px solid pds-color(transparent);
+        background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
-        border-bottom-color: get-color(green--vida-loca);
-    }
-
-    // When the user added invalid input
-    &.c-input--text--invalid {
-        background-image: url("#{$pds-assets-path}/images/icons/24px/error--red.svg");
-        background-position: top 13px right 15px;
-        background-repeat: no-repeat;
-        background-size: 24px 24px;
-        border-bottom-color: get-color(red--crimson);
-    }
-}
-
-
-
-// Selectbox
-.c-input--dropdown {
-    padding: nth($spacing-scale, 4) nth($spacing-scale, 9) nth($spacing-scale, 4) nth($spacing-scale, 6);
-    border: none;
-    border-bottom: 2px solid get-color(transparent);
-    background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
-    background-position: top 13px right 15px;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    cursor: pointer;
-    transition: border-bottom-color 150ms ease-in-out;
-
-    // When full width is required
-    &.c-input--dropdown--full-width {
-        width: 100%;
-    }
-
-    // Themeing
-    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-
-    @each $theme in $prodemos-themes {
-        &.t-#{nth($theme,1)} {
-            &:focus,
-            &:hover {
-                border-bottom-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-            }
-        }
-    }
-    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-}
-
-
-
-// Radiobutton
-.c-input--container--radio {
-
-    // Themeing
-    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-    @include hover {
-        @each $theme in $prodemos-themes {
-            &.t-#{nth($theme,1)} {
-                .c-input--radio__check {
-                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-                }
-            }
-        }
-    }
-    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-
-    // The label
-    .c-input-label {
-        display: block;
-        position: relative;
-        padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
-        margin: nth($spacing-scale, 4) auto;
-        z-index: 2;
         cursor: pointer;
-        transition: all 0.25s linear;
+        transition: border-bottom-color 150ms ease-in-out;
+
+        // When full width is required
+        &.full-width {
+            width: 100%;
+        }
+  
     }
 
-    // The checkable element (replaces the invisible radio-input)
-    .c-input--radio__check {
-        @extend %c-input--radio__check;
+    &.radio {
+
+        // this is hidden, but only in a 
+        // pds-c-input-container with a
+        // visible check
+
     }
+    &.checkbox {
+        // this is hidden, but only in a 
+        // pdx-c-input-container with a 
+        // visible check
+    }
+
 }
 
-%c-input--radio__check {
-    display: block;
-    position: absolute;
-    border: 1px solid get-color(grey--gainsboro);
-    border-radius: 100%;
-    background-color: get-color(grey--romance);
-    height: nth($spacing-scale, 6);
-    width: nth($spacing-scale, 6);
-    top: nth($spacing-scale, 7);
-    left: nth($spacing-scale, 5);
-    z-index: 5;
-    transition: border 0.25s linear;
-    cursor: pointer;
 
-    // The radio tick
-    &::before {
-        display: block;
-        position: absolute;
-        content: "";
-        border-radius: 100%;
-        height: nth($spacing-scale, 4);
-        width: nth($spacing-scale, 4);
-        top: 3px;
-        left: 3px;
-        margin: auto;
-        transition: background 0.25s linear;
-    }
-}
+// ----theming -------
+      
 
-// The radio input itself
-.c-input--radio {
-    position: absolute;
-    visibility: hidden;
-
-    // And some styling to control the adjecent elements when checked
-    // Themeing
-    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-    &:checked ~ .c-input--radio__check {
-        @each $theme in $prodemos-themes {
-            .t-#{nth($theme,1)} & {
-                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+@mixin pds-c-input-container-theme($theme : $pds-deftheme) {
+    &.radio {
+        input[type=radio], .pds-c-input.radio {
+            &:checked ~ .pds-c-input-check {
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
 
                 &::before {
-                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 }
             }
         }
-    }
-    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-}
-
-
-
-// Checkbox (basically the same as the radiobutton, but separated to make it easier to edit the styles
-.c-input--container--checkbox {
-
-    // Themeing
-    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-    @include hover {
-        @each $theme in $prodemos-themes {
-            &.t-#{nth($theme,1)} {
-                .c-input--checkbox__check {
-                    border-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-                }
+        @include hover {
+            .c-input-check {
+                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
             }
         }
     }
-    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-
-    // The label
-    .c-input-label {
-        display: block;
-        position: relative;
-        padding: nth($spacing-scale, 4) nth($spacing-scale, 6) nth($spacing-scale, 4) nth($spacing-scale, 9);
-        margin: nth($spacing-scale, 4) auto;
-        z-index: 2;
-        cursor: pointer;
-        transition: all 0.25s linear;
-    }
-
-    // The checkable element (replaces the invisible checkbox)
-    .c-input--checkbox__check {
-        @extend  %c-input--checkbox__check; 
-    }
-}
-
-%c-input--checkbox__check {
-    display: block;
-    position: absolute;
-    border: 1px solid get-color(grey--gainsboro);
-    background-color: get-color(grey--romance);
-    height: nth($spacing-scale, 6);
-    width: nth($spacing-scale, 6);
-    top: nth($spacing-scale, 7);
-    left: nth($spacing-scale, 5);
-    z-index: 5;
-    transition: border 0.25s linear;
-    cursor: pointer;
-
-    // The checkbox tick
-    &::before {
-        display: block;
-        position: absolute;
-        content: "";
-        height: nth($spacing-scale, 4);
-        width: nth($spacing-scale, 4);
-        top: 3px;
-        left: 3px;
-        margin: auto;
-        transition: background 0.25s linear;
-    }
-}
-
-// The radio input itself
-.c-input--checkbox {
-    position: absolute;
-    visibility: hidden;
-
-    // And some styling to control the adjecent elements when checked
-    // Themeing
-    /* stylelint-disable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
-    &:checked ~ .c-input--checkbox__check {
-        @each $theme in $prodemos-themes {
-            .t-#{nth($theme,1)} & {
-                border: 1px solid darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
-
+    &.checkbox {
+        input[type=checkbox], .pds-c-input.checkbox {
+            &:checked ~ .pds-c-input-check {
+                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 &::before {
-                    background-color: darken((get-color(#{nth($theme, 2)})), nth($color-darken-scale, 1));
+                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
                 }
             }
         }
+        @include hover {
+            .c-input-check {
+                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+            }
+        }
     }
-    /* stylelint-enable max-nesting-depth, selector-max-compound-selectors, selector-max-combinators */
 }
+
+@mixin pds-c-input-theme($theme : $pds-deftheme) {
+    &[type=text], &.text {
+        &:focus {
+            border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+        }
+    }
+}
+
+@mixin pds-c-select-theme($theme : $pds-deftheme) {
+    &:focus,
+    &:hover {
+        border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+    }
+}
+   
+
+.pds-c-input-container {
+    @include pds-c-input-container-theme();
+}
+
+.pds-c-input {
+   @include pds-c-input-theme();
+}
+    
+select.pds-c-input, 
+.pds-c-input.dropdown {
+    @include pds-c-select-theme();
+}
+
+
+@each $theme in map-keys($pds-themes) {
+
+    .pds-c-input-container {
+        .pds-t-#{$theme} &,
+        &.pds-t-#{$theme}:not(.inherit) {
+            @include pds-c-input-container-theme($theme);
+        }
+    }
+
+    .pds-c-input {
+        .pds-t-#{$theme} &,
+        &.pds-t-#{$theme}:not(.inherit) {
+            @include pds-c-input-theme($theme);
+        }
+    }
+        
+    select.pds-c-input, 
+    .pds-c-input.dropdown {
+        .pds-t-#{$theme} &, 
+        &.pds-t-#{$theme}:not(.inherit) {
+            @include pds-c-select-theme($theme);
+        }
+    }
+}
+      

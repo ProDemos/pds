@@ -1,7 +1,7 @@
 {% set cx = html_classes({
-    'invalid': invalid,
-    'valid': valid,
-    'disabled': disabled,
+    'large': large,
+    'colored': colored,
+    'accented': accented,
     'pds-t-corporate': theme == 'corporate',
     'pds-t-variant01': theme == 'variant01',
     'pds-t-variant02': theme == 'variant02',
@@ -10,4 +10,4 @@
     'pds-t-variant05': theme == 'variant05',
     'pds-t-variant06': theme == 'variant06',
 }) %}
-<input class="pds-c-input {{ cx }}" id="{{ id }}" name="{{ name }}" type="{{ type }}" value="{{ value }}" placeholder="{{ placeholder }}" {{ input_attributes }}>
+<i class="pds-c-icon {{ icon }} {{ color }} {{ cx }}"></i>

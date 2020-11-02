@@ -1,16 +1,16 @@
 {% set cx = {
     input: html_classes({
         'full-width': full_width,
-        't-corporate': theme == 'corporate',
-        't-theme2': theme == 'theme2',
-        't-theme3': theme == 'theme3',
-        't-theme4': theme == 'theme4',
-        't-theme5': theme == 'theme5',
-        't-theme6': theme == 'theme6',
-        't-theme7': theme == 'theme7',
+        'pds-t-corporate': theme == 'corporate',
+        'pds-t-variant01': theme == 'variant01',
+        'pds-t-variant02': theme == 'variant02',
+        'pds-t-variant03': theme == 'variant03',
+        'pds-t-variant04': theme == 'variant04',
+        'pds-t-variant05': theme == 'variant05',
+        'pds-t-variant06': theme == 'variant06',
     })
 } %}
-<select class="pds-c-input  dropdown  {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
+<select class="pds-c-input {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
     {% if options|length %}
         {% set is_in_group = false %}
         {% for o in options %}

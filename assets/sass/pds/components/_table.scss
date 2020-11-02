@@ -1,104 +1,113 @@
 // -----------------------------------------------------------------------------
-// #COMPONENTS tables
+//  COMPONENT .pds-c-table
+// .pds-c-table[.responsive]
+// .pds-c-table > thead > tr > th
+// .pds-c-table > tbody > tr > td
 // -----------------------------------------------------------------------------
 
-/* stylelint-disable declaration-no-important, max-nesting-depth */
-.c-table {
+.pds-c-table {
+
     width: 100%;
     height: auto !important;
-    margin-bottom: nth($spacing-scale, 7);
-    color: get-color(black);
+    margin-bottom: nth($pds-spacings, 7);
+    color: pds-color(black);
     border-spacing: 0;
 
-    // Responsive table, rotated on mobile
-    &.c-table--responsive {
-        @include media-until(lg) {
-            display: block;
+    /*
+        thead, .pds-c-table-head,
+        tbody, .pds-c-table-body {
+
+            
+        }
+    */
+
+    tr  {
+        border: none;
+        transition: background-color 0.1s ease-in-out;
+
+        th  {
+            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            font-size: nth($pds-font-sizes, 8);
+            font-weight: 500;
+            text-align: left;
+            text-transform: uppercase;
+            vertical-align: top;
+        }
+
+        td  {
+
+            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            font-size: nth($pds-font-sizes, 8);
+        }
+        
+    }
+
+    tbody  {
+        tr  {
+            &:nth-child(odd) {
+                background: pds-color(lite);
+            }
         }
     }
-}
 
-.c-table__head,
-.c-table__body {
 
     // Responsive table, rotated on mobile
-    .c-table--responsive & {
+    &.responsive {
+
         @include media-until(lg) {
             display: block;
         }
-    }
-}
 
-
-
-.c-table__row {
-    border: none;
-    transition: background-color 0.1s ease-in-out;
-
-    // Responsive table, rotated on mobile
-    .c-table--responsive & {
-        @include media-until(lg) {
-            display: block;
-            margin: 0 0 1rem;
-        }
-
-        /* Hide table headers (but not display: none;, for accessibility) */
-        &.c-table__row--header {
+        thead,  tbody {
             @include media-until(lg) {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
+                display: block;
+            }
+        }
+
+        tr {
+            @include media-until(lg) {
+                display: block;
+                margin: 0 0 1rem;
+            }
+            td, th {
+                @include media-until(lg) {
+                    /* Behave  like a "row" */
+                    position: relative;
+                    display: block;
+                    padding: nth($pds-spacings, 3) nth($pds-spacings, 4) nth($pds-spacings, 3) 50%;
+                    border: none;
+
+                    &::before {
+                        /* Now make a table header */
+                        position: absolute;
+
+                        /* Top/left values mimic padding */
+                        top: nth($pds-spacings, 3);
+                        left: nth($pds-spacings, 4);
+                        width: 45%;
+                        padding-right: nth($pds-spacings, 4);
+                        white-space: nowrap;
+                        font-weight: 500;
+                    }
+
+                    &:nth-of-type(n+1)::before {
+                        content: attr(data-label);
+                    }
+                }
+            }
+        }
+
+        thead {
+            tr {
+                @include media-until(lg) {
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                }
             }
         }
     }
 
-    &:nth-child(odd):not(.c-table__row--header) {
-        background: get-color(grey--romance--light);
-    }
-}
-
-
-.c-table__header {
-    padding: nth($spacing-scale, 3) nth($spacing-scale, 4);
-    font-size: nth($type-scale, 8);
-    font-weight: 500;
-    text-align: left;
-    text-transform: uppercase;
-    vertical-align: top;
-}
-
-
-.c-table__value {
-    padding: nth($spacing-scale, 3) nth($spacing-scale, 4);
-    font-size: nth($type-scale, 8);
-
-    // Responsive table, rotated on mobile
-    .c-table--responsive & {
-        @include media-until(lg) {
-            /* Behave  like a "row" */
-            position: relative;
-            display: block;
-            padding: nth($spacing-scale, 3) nth($spacing-scale, 4) nth($spacing-scale, 3) 50%;
-            border: none;
-
-            &::before {
-                /* Now make a table header */
-                position: absolute;
-
-                /* Top/left values mimic padding */
-                top: nth($spacing-scale, 3);
-                left: nth($spacing-scale, 4);
-                width: 45%;
-                padding-right: nth($spacing-scale, 4);
-                white-space: nowrap;
-                font-weight: 500;
-            }
-
-            &:nth-of-type(n+1)::before {
-                content: attr(data-label);
-            }
-        }
-    }
 }
 
 /* stylelint-enable declaration-no-important, max-nesting-depth */
