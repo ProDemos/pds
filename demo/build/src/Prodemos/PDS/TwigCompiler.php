@@ -19,7 +19,7 @@ class TwigCompiler
     private $data;
 
     private $paths = [
-        'views'     => 'resources/twig',
+        'views'     => 'twig',
         'pages'     => 'pages',
         'config'    => 'config',
         'assets'    => '../../assets',

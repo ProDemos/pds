@@ -85,58 +85,21 @@
         <div class="c-content__main">
             <div class="c-content__intro">
                     <h2 class="c-copy--h2">Colors</h2>
-    <p>Use the named color, this will help for consistency and to remember which color to use (you can remember blue--deep-sky, but #00b4e6 is much hard).
-        Color names can be rendered with: <a href="https://www.color-blindness.com/color-name-hue/" target="_blank" rel="noopener noreferrer">https://www.color-blindness.com/color-name-hue/</a><br>
-            pattern: <i>[hue--color-name]</i><br>
-        If a color contains it's hue in the name, leave the hue in the color name behind, for example:<br>
-        <pre>#2A3FC9 gives 'blue--cerulean-blue', but becomes: 'blue--cerulean'</pre></p>
-        
+    <p>
+        The design system has a set of named colors, that you can access through css modifiers (<code>pds-m-foo.blue</code>)
+        or using sass (<code>@pds-color(blue)</code>).
+    </p>
+    <br><!-- pf -->
+    <p>
+        These colors are grouped in themes that you can access through css themes (<code>pds-t-corporate</code>)
+        or using sass (<code>@pds-theme-color(variant01,stroke-accent)</code>).
+    </p>
+
             </div>
 
             
 
-    <h2 class="c-copy--h2">Theme colors</h2>
-    <table width="100%">
-                    <tr>
-                <th width="100">Corporate</th>
-                <td class="pds-m-filled corporate">&nbsp;</td>
-                <td class="pds-m-filled corporate accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant01</th>
-                <td class="pds-m-filled variant01">&nbsp;</td>
-                <td class="pds-m-filled variant01 accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant02</th>
-                <td class="pds-m-filled variant02">&nbsp;</td>
-                <td class="pds-m-filled variant02 accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant03</th>
-                <td class="pds-m-filled variant03">&nbsp;</td>
-                <td class="pds-m-filled variant03 accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant04</th>
-                <td class="pds-m-filled variant04">&nbsp;</td>
-                <td class="pds-m-filled variant04 accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant05</th>
-                <td class="pds-m-filled variant05">&nbsp;</td>
-                <td class="pds-m-filled variant05 accent">&nbsp;</td>
-            </tr>
-                    <tr>
-                <th width="100">Variant06</th>
-                <td class="pds-m-filled variant06">&nbsp;</td>
-                <td class="pds-m-filled variant06 accent">&nbsp;</td>
-            </tr>
-            </table>
-    <br><br>
-
-    
-    <h2 class="c-copy--h2">All colors</h2>
+    <h2 class="c-copy--h2">named colors</h2>
     <table width="100%">
                     <tr>
                 <th width="100">black</th>
@@ -283,6 +246,49 @@
                                     <td class="pds-m-filled yellow lighten6">&nbsp;</td>
                             </tr>
             </table>
+    <br><br>
+    <h2 class="c-copy--h2">Theme colors</h2>
+    <table width="100%">
+                    <tr>
+                <th width="100">Corporate</th>
+                <td class="pds-m-filled pds-t-corporate">Corporate</td>
+                <td class="pds-m-filled pds-t-corporate accent">Corporate</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant01</th>
+                <td class="pds-m-filled pds-t-variant01">Variant01</td>
+                <td class="pds-m-filled pds-t-variant01 accent">Variant01</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant02</th>
+                <td class="pds-m-filled pds-t-variant02">Variant02</td>
+                <td class="pds-m-filled pds-t-variant02 accent">Variant02</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant03</th>
+                <td class="pds-m-filled pds-t-variant03">Variant03</td>
+                <td class="pds-m-filled pds-t-variant03 accent">Variant03</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant04</th>
+                <td class="pds-m-filled pds-t-variant04">Variant04</td>
+                <td class="pds-m-filled pds-t-variant04 accent">Variant04</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant05</th>
+                <td class="pds-m-filled pds-t-variant05">Variant05</td>
+                <td class="pds-m-filled pds-t-variant05 accent">Variant05</td>
+            </tr>
+                    <tr>
+                <th width="100">Variant06</th>
+                <td class="pds-m-filled pds-t-variant06">Variant06</td>
+                <td class="pds-m-filled pds-t-variant06 accent">Variant06</td>
+            </tr>
+            </table>
+    <br><br>
+
+    
+    
 
         </div>
     </main>
