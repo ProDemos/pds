@@ -159,7 +159,7 @@
 
         // When the user added valid input
         &.valid {
-            background-image: url("#{$pds-assets-path}/images/icons/24px/check--green.svg");
+            background-image: url("#{$pds-assets-path}/images/icons/24px/check-green.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -168,7 +168,7 @@
 
         // When the user added invalid input
         &.invalid {
-            background-image: url("#{$pds-assets-path}/images/icons/24px/error--red.svg");
+            background-image: url("#{$pds-assets-path}/images/icons/24px/error-red.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -180,7 +180,7 @@
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
         border: none;
         border-bottom: 2px solid pds-color(transparent);
-        background-image: url("#{$pds-assets-path}/images/icons/24px/arrows--dropdown.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
