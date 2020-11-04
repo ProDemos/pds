@@ -169,7 +169,7 @@ $pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
 Similar methods should be used for the `pds-spacings`, `$pds-line-heights`, 
 `$pds-lighten-scale` and `$pds-darken-scale`.
 
-####Colors
+#### Colors
 Colors are defined in `$pds-colors` as a map, but you can use the mixin `@pds-color` and `@pds-theme-color` to find the right color.
 Themes are defined in `$pds-themes`.`
 
