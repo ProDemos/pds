@@ -152,11 +152,11 @@ Use predefined colors, sizes and fonts.
 If you want to write directly in the demo pages, 
 check demo/build/pages/*
 
-#Sass
+# Sass
 
 A few notes on the use of the Sass-files when adding styles
 
-####Scales
+#### Scales
 
 The variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
 ```
