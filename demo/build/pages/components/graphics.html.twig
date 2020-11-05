@@ -18,7 +18,7 @@
 
 {% block component_list %}
     {% for component in components.brand %}
-        {% set logo = component.logo|merge({'directory': rooturi ~ 'assets/images/brand' }) %}
+        {% set logo = component.logo|merge({'directory': rooturi ~ '../../assets/images/brand' }) %}
         {% set component = component|merge({'logo': logo }) %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}

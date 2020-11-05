@@ -7,7 +7,7 @@
     },
     "scripts": {
         "semantic-release": "semantic-release"
-      },
+    },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     }

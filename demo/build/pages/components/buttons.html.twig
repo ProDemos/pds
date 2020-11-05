@@ -19,8 +19,10 @@
         <li> .pds-c-button[ .large | .regular |.small ]</li>
         <li> .pds-c-button[ .accent | .disabled ]</li>
         <li> .pds-c-button[ .toggle | .transparent ]</li>
-        <li> .pds-c-button > pds-c.btn-label</li>
-        <li> .pds-c-button > .pds-c-button-content > [ .pds-c-button-icon.left + ] .pds-c-button-label[ .left | .right ]  [ + .pds-c-button-icon.right ] </li>
+        <li> .pds-c-button > pds-c.button-label</li>
+        <li> .pds-c-button > .pds-c-button-content > [ i.pds-c-button-icon .{name} + ] .pds-c-button-label [ .left | .right ]  [ + i.pds-c-button-icon .{name} ] </li>
+        <li> .pds-c-button > .pds-c-button-content > [ svg.pds-c-button-icon + ] .pds-c-button-label [ .left | .right ]  [ + svg.pds-c-button-icon ] </li>
+
     </ul>
     
     <h1 class="c-copy--h1">Themes</h1>
@@ -41,18 +43,22 @@
 {% block component_list %}
 
     {% for component in components.button %}
-        {% if component.icon %}
-            {% set icon = component.icon|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
-            {% set component = component|merge({'icon': icon}) %}
+
+        {# fix svg icons paths .. #}
+        {% if component.svgicon %}
+            {% set svgicon = component.svgicon|merge({'directory': rooturi ~ '../../assets/images/icons' })  %}
+            {% set component = component|merge({'svgicon': svgicon}) %}
         {% endif %}
-        {% if component.icon_right %}
-            {% set icon_right = component.icon_right|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
-            {% set component = component|merge({'icon_right': icon_right}) %}
+        {% if component.svgicon_right %}
+            {% set svgicon_right = component.svgicon_right|merge({'directory': rooturi ~ '../../assets/images/icons' })  %}
+            {% set component = component|merge({'svgicon_right': svgicon_right}) %}
         {% endif %}
-        {% if component.icon_left %}
-            {% set icon_left = component.icon_left|merge({'directory': rooturi ~ 'assets/images/icons' })  %}
-            {% set component = component|merge({'icon_left': icon_left}) %}
+        {% if component.svgicon_left %}
+            {% set icon_left = component.svgicon_left|merge({'directory': rooturi ~ '../../assets/images/icons' })  %}
+            {% set component = component|merge({'svgicon_left': icon_left}) %}
         {% endif %}
+
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+        
     {% endfor %}
 {% endblock %}

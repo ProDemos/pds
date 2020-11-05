@@ -114,10 +114,10 @@ class TwigCompiler
             try {
                 //libxml_use_internal_errors(true);
                 $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED | LIBXML_NOERROR | LIBXML_ERR_NONE |  LIBXML_NOWARNING );
-                $tidy = $dom->saveXML($dom->documentElement);
+                $tidy = $dom->saveXML($dom->documentElement,LIBXML_NOEMPTYTAG);
                 // play it again sam
                 $dom->loadXML($tidy);
-                $tidy = $dom->saveXML($dom->documentElement);
+                $tidy = $dom->saveXML($dom->documentElement,LIBXML_NOEMPTYTAG);
                 $html = $tidy;
             } catch (ErrorException $x) {
                 // oops
