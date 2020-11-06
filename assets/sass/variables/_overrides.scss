@@ -6,42 +6,118 @@
     #2A3FC9 = 'blue--cerulean-blue', but becomes: 'blue--cerulean'
 */
 
-$pds-color-stack: (
-    black: #000,
-    white: #fff,
-    transparent: transparent,
-    blue--deep-sky: #00b4e6,
-    green--vida-loca: #58a333,
-    grey--gainsboro: #dbdbdb,
-    grey--romance: #f5f0e9,
-    grey--romance--light: #fbf9f6,
-    orange--cinnabar: #eb5b25,
-    red--crimson: #d60d41,
-    red--hollywood-cerise: #d7007e,
-    violet--purple-dark: #98177c,
-    yellow--my-sin: #fcc243,
-);
-
 // use pds-color(name) to get these colors easier
 
-$pds-colors: (
-    black: map-get($pds-color-stack,black),
-    white: map-get($pds-color-stack,white),
-    transparent: map-get($pds-color-stack,transparent),
-    blue: map-get($pds-color-stack,blue--deep-sky),
-    green: map-get($pds-color-stack,green--vida-loca),
-    grey: map-get($pds-color-stack,grey--gainsboro),
-    romance:map-get($pds-color-stack,grey--romance),
-    lite: map-get($pds-color-stack,grey--romance--light),
-    orange: map-get($pds-color-stack,orange--cinnabar),
-    red: map-get($pds-color-stack,red--crimson),
-    pink: map-get($pds-color-stack,red--hollywood-cerise),
-    purple:map-get($pds-color-stack,violet--purple-dark),
-    yellow:map-get($pds-color-stack,yellow--my-sin)
+$pds-color-stack: (
+    black: #000,
+    black--charcoal: #4a4a4a,           // core (text & headers)
+    white: #fff,
+    transparent: transparent,
+    blue--deep-sky: #00b4e6,            // legacy
+    blue--neon: #233fff,                // core 
+    blue--persian: #1C32CC,
+    green--vida-loca: #58a333,          // core 
+    green--la-palma:#3D8D35,
+    grey--romance: #f5f0e9,             // core 
+    orange--cinnabar: #eb5b25,          // core
+    orange: #EDA300,
+    orange--harley-davidson: #D83B14,
+    red--crimson: #d60d41,              // core 
+    red--hollywood-cerise: #d7007e,     // core
+    red--fire-brick:#A6172E,
+    red--jazzberry-jam: #B3116B,
+    violet--purple: #7D0062,
+    violet--purple-dark: #98177c,       // core 
+    yellow--my-sin: #fcc243,            // core
+    yellow--sisal: #C7B8A4,
+    yellow--merino: #DFD7CC
 );
 
+// use pds-color(name) to get these colors,
+// but also, these colors will appear in 
+// modifiers (like .pds-m-filled.red )
+
+$pds-colors: (
+
+    transparent: map-get($pds-color-stack,transparent),
+    white: map-get($pds-color-stack,white),
+
+    black: map-get($pds-color-stack,black--charcoal),
+    black-110: map-get($pds-color-stack,black),
+    black-80: mix(map-get($pds-color-stack,black--charcoal),white, 80%), 
+    black-60: mix(map-get($pds-color-stack,black--charcoal),white, 60%), 
+    black-40: mix(map-get($pds-color-stack,black--charcoal),white, 40%), 
+    black-20: mix(map-get($pds-color-stack,black--charcoal),white, 20%),
+    
+    sand: map-get($pds-color-stack,grey--romance),
+    sand-120: map-get($pds-color-stack,yellow--sisal),
+    sand-110: map-get($pds-color-stack,yellow--merino),
+    sand-80: mix(map-get($pds-color-stack,grey--romance),white, 80%), 
+    sand-60: mix(map-get($pds-color-stack,grey--romance),white, 60%), 
+    sand-40: mix(map-get($pds-color-stack,grey--romance),white, 40%), 
+    sand-20: mix(map-get($pds-color-stack,grey--romance),white, 20%),
+
+    yellow:map-get($pds-color-stack,yellow--my-sin),   
+    yellow-110: map-get($pds-color-stack,orange),      
+    yellow-80: mix(map-get($pds-color-stack,yellow--my-sin),white, 80%), 
+    yellow-60: mix(map-get($pds-color-stack,yellow--my-sin),white, 60%), 
+    yellow-40: mix(map-get($pds-color-stack,yellow--my-sin),white, 40%), 
+    yellow-20: mix(map-get($pds-color-stack,yellow--my-sin),white, 20%), 
+
+    orange: map-get($pds-color-stack,orange--cinnabar),
+    orange-110: map-get($pds-color-stack,orange--harley-davidson),
+    orange-80: mix(map-get($pds-color-stack,orange--cinnabar),white, 80%), 
+    orange-60: mix(map-get($pds-color-stack,orange--cinnabar),white, 60%), 
+    orange-40: mix(map-get($pds-color-stack,orange--cinnabar),white, 40%), 
+    orange-20: mix(map-get($pds-color-stack,orange--cinnabar),white, 20%), 
+
+    red: map-get($pds-color-stack,red--crimson),
+    red-110: map-get($pds-color-stack,red--fire-brick),
+    red-80: mix(map-get($pds-color-stack,red--crimson),white, 80%), 
+    red-60: mix(map-get($pds-color-stack,red--crimson),white, 60%), 
+    red-40: mix(map-get($pds-color-stack,red--crimson),white, 40%), 
+    red-20: mix(map-get($pds-color-stack,red--crimson),white, 20%), 
+
+    pink: map-get($pds-color-stack,red--hollywood-cerise),
+    pink-110: map-get($pds-color-stack,red--jazzberry-jam),
+    pink-80: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 80%), 
+    pink-60: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 60%), 
+    pink-40: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 40%), 
+    pink-20: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 20%), 
+
+    purple:map-get($pds-color-stack,violet--purple-dark),
+    purple-110: map-get($pds-color-stack,violet--purple),
+    purple-80: mix(map-get($pds-color-stack,violet--purple-dark),white, 80%), 
+    purple-60: mix(map-get($pds-color-stack,violet--purple-dark),white, 60%), 
+    purple-40: mix(map-get($pds-color-stack,violet--purple-dark),white, 40%), 
+    purple-20: mix(map-get($pds-color-stack,violet--purple-dark),white, 20%), 
+
+    blue: map-get($pds-color-stack,blue--neon),
+    blue-110: map-get($pds-color-stack,blue--persian),
+    blue-80: mix(map-get($pds-color-stack,blue--neon), white, 80%), 
+    blue-60: mix(map-get($pds-color-stack,blue--neon), white, 60%), 
+    blue-40: mix(map-get($pds-color-stack,blue--neon), white, 40%), 
+    blue-20: mix(map-get($pds-color-stack,blue--neon), white, 20%),   
+
+    green: map-get($pds-color-stack,green--vida-loca),
+    green-110: map-get($pds-color-stack,green--la-palma),
+    green-80: mix(map-get($pds-color-stack,green--vida-loca),white, 80%), 
+    green-60: mix(map-get($pds-color-stack,green--vida-loca),white, 60%), 
+    green-40: mix(map-get($pds-color-stack,green--vida-loca),white, 40%), 
+    green-20: mix(map-get($pds-color-stack,green--vida-loca),white, 20%)
+
+);
+
+
+@debug mix(map-get($pds-color-stack,red--crimson), black, 75%); // sand-110
+
+
+
+
 // use pds-theme-color($themename,$propname)
-// to get to these values easier.
+// to get to these values easier, but also,
+// these colors will be appear in themes 
+// (like .pds-t-corporate)
 
 $pds-themes: (
     corporate : (

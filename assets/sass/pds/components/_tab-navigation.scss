@@ -19,14 +19,14 @@
 
         @include media-from(md) {
             display: flex;
-            border-bottom: 1px solid pds-color(grey);
+            border-bottom: 1px solid pds-color(black-20);
         }
     
         li, .pds-c-tabs-item {
 
             position: relative;
             text-align: center;
-            border-bottom: 1px solid pds-color(grey);
+            border-bottom: 1px solid pds-color(black-20);
 
             @include media-from(md) {
                 margin: 0 nth($pds-spacings, 3);

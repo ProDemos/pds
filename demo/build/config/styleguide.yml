@@ -18,18 +18,62 @@ styleguide:
             path: 'css/prodemos.css'
 colors:
     # should be defined in assets/sass/variables/zss-overrides
-    - black
-    - white
-    - blue
-    - green
-    - grey
-    - romance
-    - lite
-    - orange
-    - red
-    - pink
-    - purple
-    - yellow
+    white:
+    black:
+        - black-110
+        - black-80
+        - black-60
+        - black-40
+        - black-20
+    sand:
+        - sand-120
+        - sand-110
+        - sand-80 
+        - sand-60 
+        - sand-40 
+        - sand-20
+    yellow:
+        - yellow-110      
+        - yellow-80
+        - yellow-60
+        - yellow-40
+        - yellow-20
+    orange:
+        - orange-110
+        - orange-80 
+        - orange-60 
+        - orange-40 
+        - orange-20 
+    red:
+        - red-110
+        - red-80
+        - red-60
+        - red-40
+        - red-20
+    pink:
+        - pink-110
+        - pink-80
+        - pink-60
+        - pink-40
+        - pink-20
+    purple:
+        - purple-110
+        - purple-80
+        - purple-60
+        - purple-40
+        - purple-20
+    blue:
+        - blue-110
+        - blue-80 
+        - blue-60 
+        - blue-40 
+        - blue-20   
+    green:
+        - green-110
+        - green-80
+        - green-60
+        - green-40
+        - green-20
    
 scopes:
         pds-s-content : "Content" 

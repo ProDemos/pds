@@ -23,34 +23,43 @@
 
 
     <h2 class="c-copy--h2">named colors</h2>
-    <table width="100%">
-        {% for colorname in colors %}
+    <table width="100%" id="colortable">
+        {% for maincolor, subcolors in colors %}
             <tr>
-                <th width="100">{{ colorname }}</th>
-                {% for i in 2..1 %}
-                    <td class="pds-m-filled {{ colorname|lower }} darken{{ i }}">&nbsp;</td>
-                {% endfor %}
-                <td class="pds-m-filled {{ colorname|lower }}"><center>{{ colorname|lower }}</center></td>
-                {% for i in 1..6 %}
-                    <td class="pds-m-filled {{ colorname|lower }} lighten{{ i }}">&nbsp;</td>
+                <th class="pds-m-filled {{ maincolor }}">{{ maincolor }}</th>
+                {% for color in subcolors %}
+                    <td class="pds-m-filled {{ color }}">{{ color }}</td>
                 {% endfor %}
             </tr>
         {% endfor %}
     </table>
     <br><br>
     <h2 class="c-copy--h2">Theme colors</h2>
-    <table width="100%">
+    <table width="100%" id="themetable">
         {% for theme in themes %}
             <tr>
-                <th width="100">{{ theme }}</th>
                 <td class="pds-m-filled pds-t-{{ theme|lower }}">{{ theme }}</td>
-                <td class="pds-m-filled pds-t-{{ theme|lower }} accent">{{ theme }}</td>
+                <td class="pds-m-filled pds-t-{{ theme|lower }} accent">{{ theme }} / accent</td>
             </tr>
         {% endfor %}
     </table>
     <br><br>
 
-    
-    
+    <style type="text/css">
+        #colortable th {
+            padding:1em 2em;
+            color:black;
+        }
+        #colortable td {
+            padding:.5em;
+            color:black;
+        }
+        #themetable th {
+            padding:1em 2em;
+        }
+        #themetable td {
+            padding:.5em;
+        }
+    </style>
 
 {% endblock %}

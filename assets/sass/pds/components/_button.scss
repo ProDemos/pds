@@ -295,13 +295,13 @@
         color: pds-color(black);
         .pds-c-button-icon:not(svg) { background-color: pds-color(black); }
 
-        border-color: pds-color(romance);
-        background-color: pds-color(romance);
+        border-color: pds-color(sand);
+        background-color: pds-color(sand);
 
         &:not(.disabled) {
             @include hover {
-                border-color: darken(pds-color(romance), nth($pds-darken-scale, 2));
-                background-color: darken(pds-color(romance), nth($pds-darken-scale, 2));
+                border-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
+                background-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
             }
         }
 
