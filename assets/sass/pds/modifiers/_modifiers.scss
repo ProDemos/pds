@@ -13,48 +13,12 @@
 @each $cname, $cvalue in $pds-colors {
     .pds-m-filled.#{$cname} {
         background-color: $cvalue;
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                background-color: lighten($cvalue, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                background-color: darken($cvalue, $dscale);
-            }
-        }*/
     }
     .pds-m-colored.#{$cname} {
         color: $cvalue;
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                color: lighten($cvalue, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                color: darken($cvalue, $dscale);
-            }
-        }*/
     }
     .pds-m-bordered.#{$cname} {
         border-color: $cvalue;
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                border-color: lighten($cvalue, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                border-color: darken($cvalue, $dscale);
-            }
-        }*/
     }
 }
 
@@ -64,95 +28,25 @@
 .pds-m-filled {
     background-color: pds-theme-color($pds-deftheme,'fill-color');
     color:pds-theme-color($pds-deftheme,'stroke-color');
-    /*@for $lidx from 1 through length($pds-lighten-scale) {
-        $lscale : nth($pds-lighten-scale, $lidx);
-        &.lighten#{$lidx} {
-            background-color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
-        }
-    }
-    @for $didx from 1 through length($pds-darken-scale) {
-        $dscale : nth($pds-darken-scale, $didx);
-        &.darken#{$didx} {
-            background-color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
-        }
-    }*/
     &.accent {
         background-color: pds-theme-color($pds-deftheme,'fill-accent');
         color:pds-theme-color($pds-deftheme,'stroke-accent');
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                background-color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                background-color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
-            }
-        }*/
     }
 }
 .pds-m-colored {
     color: pds-theme-color($pds-deftheme,'fill-color');
-    /*@for $lidx from 1 through length($pds-lighten-scale) {
-        $lscale : nth($pds-lighten-scale, $lidx);
-        &.lighten#{$lidx} {
-            color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
-        }
-    }
-    @for $didx from 1 through length($pds-darken-scale) {
-        $dscale : nth($pds-darken-scale, $didx);
-        &.darken#{$didx} {
-            color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
-        }
-    }*/
     &.accent {
         color: pds-theme-color($pds-deftheme,'fill-accent');
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
-            }
-        }*/
     }
 }
 .pds-m-bordered {
     border-color: pds-theme-color($pds-deftheme,'fill-color');
-    /*@for $lidx from 1 through length($pds-lighten-scale) {
-        $lscale : nth($pds-lighten-scale, $lidx);
-        &.lighten#{$lidx} {
-            border-color: lighten(pds-theme-color($pds-deftheme,'fill-color'), $lscale);
-        }
-    }
-    @for $didx from 1 through length($pds-darken-scale) {
-        $dscale : nth($pds-darken-scale, $didx);
-        &.darken#{$didx} {
-            border-color: darken(pds-theme-color($pds-deftheme,'fill-color'), $dscale);
-        }
-    }*/
     &.accent {
         border-color: pds-theme-color($pds-deftheme,'fill-accent');
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                border-color: lighten(pds-theme-color($pds-deftheme,'fill-accent'), $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                border-color: darken(pds-theme-color($pds-deftheme,'fill-accent'), $dscale);
-            }
-        }*/
     }
 }
+
+// themes
 
 @each $themename in map-keys($pds-themes) {
     $fillcolor: pds-theme-color($themename,'fill-color');
@@ -161,95 +55,23 @@
     .pds-m-filled.pds-t-#{$themename} {
         background-color: $fillcolor;
         color:pds-theme-color($themename,'stroke-color');
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                background-color: lighten($fillcolor, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                background-color: darken($fillcolor, $dscale);
-            }
-        }*/
         &.accent {
             background-color: $acccolor;
             color:pds-theme-color($themename,'stroke-accent');
-            /*@for $lidx from 1 through length($pds-lighten-scale) {
-                $lscale : nth($pds-lighten-scale, $lidx);
-                &.lighten#{$lidx} {
-                    background-color: lighten($acccolor, $lscale);
-                }
-            }
-            @for $didx from 1 through length($pds-darken-scale) {
-                $dscale : nth($pds-darken-scale, $didx);
-                &.darken#{$didx} {
-                    background-color: darken($acccolor, $dscale);
-                }
-            }*/
         }
     }
     @at-root .pds-t-#{$themename} .pds-m-colored,
     .pds-m-colored.pds-t-#{$themename} {
         color: $fillcolor;
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                color: lighten($fillcolor, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                color: darken($fillcolor, $dscale);
-            }
-        }*/
         &.accent {
             color: $acccolor;
-            /*@for $lidx from 1 through length($pds-lighten-scale) {
-                $lscale : nth($pds-lighten-scale, $lidx);
-                &.lighten#{$lidx} {
-                    color: lighten($acccolor, $lscale);
-                }
-            }
-            @for $didx from 1 through length($pds-darken-scale) {
-                $dscale : nth($pds-darken-scale, $didx);
-                &.darken#{$didx} {
-                    color: darken($acccolor, $dscale);
-                }
-            }*/
         }
     }
     @at-root .pds-t-#{$themename} .pds-m-bordered,
     .pds-m-bordered.pds-t-#{$themename} {
         border-color: $fillcolor;
-        /*@for $lidx from 1 through length($pds-lighten-scale) {
-            $lscale : nth($pds-lighten-scale, $lidx);
-            &.lighten#{$lidx} {
-                border-color: lighten($fillcolor, $lscale);
-            }
-        }
-        @for $didx from 1 through length($pds-darken-scale) {
-            $dscale : nth($pds-darken-scale, $didx);
-            &.darken#{$didx} {
-                border-color: darken($fillcolor, $dscale);
-            }
-        }*/
         &.accent {
             border-color: $acccolor;
-            /*@for $lidx from 1 through length($pds-lighten-scale) {
-                $lscale : nth($pds-lighten-scale, $lidx);
-                &.lighten#{$lidx} {
-                    border-color: lighten($acccolor, $lscale);
-                }
-            }
-            @for $didx from 1 through length($pds-darken-scale) {
-                $dscale : nth($pds-darken-scale, $didx);
-                &.darken#{$didx} {
-                    border-color: darken($acccolor, $dscale);
-                }
-            }*/
         }
     }
 }
