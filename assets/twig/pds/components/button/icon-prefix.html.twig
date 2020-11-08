@@ -5,14 +5,17 @@
 {% block button_content %}
     
     <span class="pds-c-button-content">
-        <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
-        {{ ui.svg(icon.name, {
-            width: icon.width|default(10),
-            height: icon.height|default(10),
-            directory: icon.directory|default('assets/images/icons/24px'),
-            css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ icon.name|basename]
-        }) }}
-
+        {% if svgicon %}
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            {{ ui.svg(svgicon.name, {
+                width: svgicon.width|default(10),
+                height: svgicon.height|default(10),
+                directory: svgicon.directory|default('assets/images/icons/24px'),
+                css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ svgicon.name|basename]
+            }) }}
+        {% else %}
+            <i class="pds-c-button-icon {{ icon }} {{ color }}"></i>
+        {% endif %}
         <span class="pds-c-button-label right">
             {% if text %}
                 {{ text }}

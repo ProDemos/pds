@@ -78,7 +78,7 @@ class TwigCompiler
         foreach ($imgritit as $path) {
             if (!is_dir($path) && strpos($path,'/icons/')===false) {
                 $image = str_replace($this->paths['assets'].'/images/','',$path);
-                $this->data['images'][] = $image;
+                if (strpos($image,'.')!==0) $this->data['images'][] = $image;
             }
         }
         sort($this->data['images']);
@@ -90,7 +90,7 @@ class TwigCompiler
         foreach ($iconritit as $path) {
             if (!is_dir($path)) {
                 $icon = str_replace($this->paths['assets'].'/images/icons/','',$path);
-                $this->data['icons'][] = $icon;
+                if (strpos($icon,'.')!==0) $this->data['icons'][] = $icon;
             }
         }
         sort($this->data['icons']);
@@ -114,10 +114,10 @@ class TwigCompiler
             try {
                 //libxml_use_internal_errors(true);
                 $dom->loadHTML($html,LIBXML_HTML_NOIMPLIED | LIBXML_NOERROR | LIBXML_ERR_NONE |  LIBXML_NOWARNING );
-                $tidy = $dom->saveXML($dom->documentElement);
+                $tidy = $dom->saveXML($dom->documentElement,LIBXML_NOEMPTYTAG);
                 // play it again sam
                 $dom->loadXML($tidy);
-                $tidy = $dom->saveXML($dom->documentElement);
+                $tidy = $dom->saveXML($dom->documentElement,LIBXML_NOEMPTYTAG);
                 $html = $tidy;
             } catch (ErrorException $x) {
                 // oops

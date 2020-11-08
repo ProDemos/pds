@@ -38,9 +38,9 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid pds-color(grey);
+            border: 1px solid pds-color(black-20);
             border-radius: 100%;
-            background-color: pds-color(romance);
+            background-color: pds-color(sand);
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -89,8 +89,8 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid pds-color(grey);
-            background-color: pds-color(romance);
+            border: 1px solid pds-color(black-20);
+            background-color: pds-color(sand);
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -136,7 +136,7 @@
     font-size: nth($pds-font-sizes, 7);
     line-height: nth($pds-line-heights, 5);
     border-radius: 0;
-    background-color: pds-color(romance);
+    background-color: pds-color(sand);
 
     /* stylelint-disable property-no-vendor-prefix */
     -webkit-appearance: none;
@@ -144,7 +144,7 @@
 
     &.disabled {
         color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
-        background-color: lighten((pds-color(romance)), nth($pds-lighten-scale, 1));
+        background-color: lighten((pds-color(sand)), nth($pds-lighten-scale, 1));
         cursor: not-allowed;
     }
 
@@ -152,7 +152,7 @@
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
-        border-bottom: 3px solid pds-color(romance);
+        border-bottom: 3px solid pds-color(sand);
         transition: border-bottom-color 150ms ease-in-out;
 
         

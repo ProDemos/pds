@@ -29,27 +29,25 @@
     disabled: true
 
 -
-    styleguide_title: Text button, large, with icon
+    styleguide_title: Text button, large, regular icon
     styleguide_description: Icon in front of the text
     styleguide_type: button/icon-prefix
     text: Button
     url: '#'
     level: primary
     size: large
-    icon:
-        name: 24px/arrow-circled-left.svg
-        width: 22
-        height: 22
+    icon: arrow-circled-left
+        
 
 -
-    styleguide_title: Text button, large, with icon
+    styleguide_title: Text button, large, svg icon
     styleguide_description: Icon behind the text
     styleguide_type: button/icon-suffix
     text: Button
     url: '#'
     level: primary
     size: large
-    icon:
+    svgicon:
         name: 24px/arrow-circled-right.svg
         width: 22
         height: 22
@@ -62,15 +60,9 @@
     url: '#'
     level: primary
     size: large
-    icon_left:
-        name: 24px/arrow-circled-left.svg
-        width: 22
-        height: 22
-    icon_right:
-        name: 24px/arrow-circled-right.svg
-        width: 22
-        height: 22
-
+    icon_left: arrow-circled-left
+    icon_right: arrow-circled-right
+        
 -
     styleguide_title: Text button, regular, with 3D-effect
     styleguide_type: button/text
@@ -95,10 +87,7 @@
     url: '#'
     level: primary
     size: regular
-    icon:
-        name: 24px/arrow-circled-left.svg
-        width: 20
-        height: 20
+    icon: arrow-circled-left
 
 -
     styleguide_title: Text button, small.
@@ -117,10 +106,7 @@
     url: '#'
     level: primary
     size: small
-    icon:
-        name: 24px/arrow-circled-left.svg
-        width: 20
-        height: 20
+    icon: arrow-circled-left
 
 -
     styleguide_title: Text button, small, disabled
@@ -161,7 +147,4 @@
     text: Button
     url: '#'
     level: transparent
-    icon:
-        name: 24px/arrow-right.svg
-        width: 26
-        height: 26
+    icon: arrow-right

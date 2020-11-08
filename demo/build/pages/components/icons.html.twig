@@ -48,7 +48,7 @@
             <p style="columns: 2 auto;">
                 <big><i class="pds-c-icon large {{ iname }} colored"></i>&nbsp;{{ iname }}.colored</big><br>
                 <big><i class="pds-c-icon large {{ iname }} accented"></i>&nbsp;{{ iname }}.accented</big><br>
-                {% for color in colors %}
+                {% for color,subcolors in colors %}
                     <big><i class="pds-c-icon large {{ iname }} {{ color }}"></i>&nbsp;{{ iname }}.{{ color }}</big><br>
                 {% endfor %}
             </p>
