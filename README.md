@@ -62,7 +62,14 @@ https://github.com/ProDemos/pds/archive/master.zip
 
 If you just pulled this repo into your own project,
 you can use the assets folder to implement the PDS
-design. It contains
+design. 
+```
+<link rel="stylesheet" href="pds/assets/css/reset.css">
+<link rel="stylesheet" href="pds/assets/css/main.css">
+```
+The reset.css is optional.
+
+The assets folder contains
 
  - assets/css : the minified css files
  - assets/images : some images referred to by those css files
@@ -87,7 +94,7 @@ The rest is optional and depends on your project:
 
 You can view the PDS in action in demo/html. This html uses
 the assets from the assets folder, and was generated using 
-the twig files defined there.
+the twig files defined in the assets folder.
 
 # Making changes
 
