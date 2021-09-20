@@ -224,7 +224,7 @@ i.pds-c-button-icon {
 
     // all named colors
     @each $cname, $cvalue in $pds-colors {
-        &.#{$cname} {
+        &.#{""+$cname} {
             background-color: $cvalue;
         }
     }
