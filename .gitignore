@@ -1,6 +1,9 @@
 # composer
-demo/vendor
-demo/composer.lock
+demo/build/vendor
+demo/build/composer.lock
 # node
-demo/node_modules
-demo/package-lock.json
+demo/build/node_modules
+demo/build/package-lock.json
+# general
+.DS_Store
+._*
