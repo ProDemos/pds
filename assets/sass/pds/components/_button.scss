@@ -15,7 +15,7 @@
     display: inline-block;
     padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
     font-family: $font--fira-sans;
-    font-size: nth($pds-font-sizes, 5);
+    font-size: pds-fontsize(m);
     font-weight: 500;
     line-height: 1.5;
     text-decoration: none;
@@ -103,14 +103,14 @@
 
     &.large {
         padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
-        font-size: nth($pds-font-sizes, 5);
+        font-size: pds-fontsize(m);
     }
 
 
 
     &.regular {
         padding: nth($pds-spacings, 4) nth($pds-spacings, 5); // 12px 16px
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
         .pds-c-button-icon { font-size:1.11em; }
     }
 
@@ -118,7 +118,7 @@
 
     &.small {
         padding: nth($pds-spacings, 3) nth($pds-spacings, 4); // 8px 12px
-        font-size: nth($pds-font-sizes, 7);
+        font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size:1.25em; }
     }
 
@@ -127,7 +127,7 @@
     &.toggle {
         width: 100%;
         padding: nth($pds-spacings, 3)  nth($pds-spacings, 4); // 8px 12px
-        font-size: nth($pds-font-sizes, 7);
+        font-size: pds-fontsize(s);
         text-align: center;
         border-style: solid;
         border-width: 2px;
@@ -137,7 +137,7 @@
 
     &.transparent {
         padding: nth($pds-spacings, 3) 0; // 8px 0px
-        font-size: nth($pds-font-sizes, 7);
+        font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
     }
 

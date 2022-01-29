@@ -51,7 +51,7 @@
                 padding: nth($pds-spacings, 3) 0 nth($pds-spacings, 3);
                 color: pds-color(black);
                 font-family: $font--fira-sans;
-                font-size: nth($pds-font-sizes, 8);
+                font-size: pds-fontsize(xs);
                 font-weight: 500;
                 line-height: 1.5;
                 text-decoration: none;
@@ -101,7 +101,7 @@
 
 }
 
-// Themeing
+// Theming
 
 .pds-c-tabs-container {
     ul, ol, .pds-c-tabs {

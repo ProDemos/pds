@@ -118,6 +118,12 @@ $pds-colors: (
 // (like .pds-t-corporate)
 
 $pds-themes: (
+	public : (
+        fill-color: map-get($pds-colors,sand-110),
+        fill-accent: map-get($pds-colors,orange),
+        stroke-color: map-get($pds-colors,black),
+        stroke-accent: map-get($pds-colors,white) 
+    ),
     corporate : (
         fill-color: map-get($pds-colors,blue),
         fill-accent: map-get($pds-colors,orange),
@@ -171,12 +177,30 @@ $pds-darken-scale: 5% 10%;
 
 
 // Provide a default font-size list for a consistent typing scale
-$pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;
-$pds-font-size: 18px !default;
+// use `pds-fontsize(m)` to get fontsize m
+$pds-fontsizes: (
+  tiny: 8px,
+  xxs: 12px,
+  xs: 14px,
+  s: 16px,
+  default: 18px,
+  m: 22px,
+  l: 24px,
+  xl: 32px,
+  xxl: 44px,
+  huge: 56px,
+);
+$pds-fontsize: map-get($pds-fontsizes, default) !default;
 
 
-$pds-line-heights: 0 1 1.25 1.5 1.75;
-$pds-line-height: 1.5 !default;
+$pds-lineheights: (
+  none: 0,
+  xs: 1,
+  s: 1.25,
+  default: 1.5,
+  m: 1.75,
+);
+$pds-lineheight: map-get($pds-lineheights, default) !default;
 
 
 // Provide a default spacing scale for consistent spacings

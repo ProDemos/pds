@@ -123,7 +123,7 @@
     margin-bottom: nth($pds-spacings, 5);
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($pds-font-sizes, 7);
+    font-size: pds-fontsize(s);
     font-weight: 500;
 }
 
@@ -133,8 +133,8 @@
 .pds-c-input {
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($pds-font-sizes, 7);
-    line-height: nth($pds-line-heights, 5);
+    font-size: pds-fontsize(s);
+    line-height: pds-lineheight(m);
     border-radius: 0;
     background-color: pds-color(sand);
 

@@ -27,7 +27,7 @@
 
         th  {
             padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
-            font-size: nth($pds-font-sizes, 8);
+            font-size: pds-fontsize(xs);
             font-weight: 500;
             text-align: left;
             text-transform: uppercase;
@@ -37,7 +37,7 @@
         td  {
 
             padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
-            font-size: nth($pds-font-sizes, 8);
+            font-size: pds-fontsize(xs);
         }
         
     }
