@@ -16,8 +16,10 @@
 //
 // Mixins and helpers
 //
+@import "helpers/size";
 @import "helpers/color";
 @import "helpers/hover";
+@import "helpers/slant";
 @import "helpers/responsive";
 
 // Fonts
