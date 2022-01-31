@@ -154,3 +154,30 @@
 }
 
 
+/*
+    this is a bug in pds
+    links inside a tab panel 
+    show up as tabs
+
+    https://github.com/ProDemos/pds/issues/14
+*/
+
+.pds-c-tabs-container .pds-c-tabs-panel ul li a {
+    display: inline;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: normal;
+    text-decoration: underline;
+    text-transform: none;
+    border: none;
+    background-color: transparent;
+    transition: none;
+    cursor: pointer;
+    &::after,
+    &:hover::after {
+      display: none;
+    }
+  }

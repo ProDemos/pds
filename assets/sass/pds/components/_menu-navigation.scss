@@ -1,0 +1,51 @@
+
+// -----------------------------------------------------------------------------
+//  COMPONENT .pds-c-menu
+//
+// .pds-c-menu li a
+// -----------------------------------------------------------------------------
+
+
+.pds-c-menu {
+    display: flex;
+    align-items:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color:pds-theme-color($pds-deftheme,fill);
+
+    li {
+      border-right: 1px solid rgba(pds-color(white), 0.15);
+  
+      &:first-child {
+        border-left: 1px solid rgba(pds-color(white), 0.15);
+      }
+    }
+  
+    a {
+      color:pds-theme-color($pds-deftheme,stroke);
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      font-family: $font--fira-sans;
+      font-weight: 100;
+      line-height: 1.5;
+      text-decoration: none;
+      text-transform: none;
+      cursor: pointer;
+      padding: 0.4em 1em;
+      transition: background 100ms ease-in-out;
+  
+      &:hover {
+        background-color: rgba(pds-color(white), 0.1);
+      }
+
+      @include media-until("md") {
+        font-size: pds-fontsize(s);
+      }
+  
+      @include media-from("md") {
+        font-size: pds-fontsize(m);
+      }
+    }
+  }
