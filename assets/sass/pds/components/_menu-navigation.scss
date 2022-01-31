@@ -12,7 +12,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color:pds-theme-color($pds-deftheme,fill);
 
     li {
       border-right: 1px solid rgba(pds-color(white), 0.15);
@@ -23,7 +22,7 @@
     }
   
     a {
-      color:pds-theme-color($pds-deftheme,stroke);
+      
       display: inline-block;
       position: relative;
       width: 100%;
@@ -49,3 +48,24 @@
       }
     }
   }
+
+/* theming */
+
+@mixin pds-menu-theme( $theme : $pds-deftheme ) {
+    background-color:pds-theme-color($theme,fill);
+    a {
+        color:pds-theme-color($theme,stroke);
+    }
+}
+
+.pds-c-menu {
+    @include pds-menu-theme($pds-deftheme);
+}
+
+
+@each $theme in map-keys($pds-themes) {
+    .pds-t-#{$theme} .pds-c-menu,
+    .pds-c-menu.pds-t-#{$theme}:not(.inherit) {
+        @include pds-menu-theme($theme);
+    }
+}
