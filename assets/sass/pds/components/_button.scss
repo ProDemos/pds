@@ -148,6 +148,9 @@
         padding: nth($pds-spacings, 3) 0; // 8px 0px
         font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
+        .pds-c-button-icon:not(svg).black {
+            background-color:black;
+        }
     }
 
     // Disabled state

@@ -30,6 +30,10 @@ i.pds-c-button-icon {
         width:2em; 
         height:2em; 
     }
+    &.medium {
+        width:1.75em; 
+        height:1.75em; 
+    }
 
    // default icon
     mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
