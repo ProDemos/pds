@@ -115,6 +115,16 @@
         }
     }
 
+    &.select {
+        display: flex;
+        align-items: center;
+    }
+
+    //default labels are styled
+    label {
+        @extend .pds-c-input-label;
+    }
+
 }
 
 
