@@ -108,6 +108,7 @@
         <li> .pds-c-input-container[.radio|.checkbox]</li>
         <li> .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label</li>
         <li> .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label</li>
+        <li> .pds-c-progress[.pending|.ready|.error] > .spinner</li>
     </ul>
 
     <h1 class="c-copy--h1">Themes</h1>
@@ -338,7 +339,26 @@
                     </div>
     </div>
 
+    
+    <!-- custom elements -->
+    <div class="c-component  ">
+        <div class="c-component__view  ">
+            <button class="pds-c-button">Submit</button>
+            <div class="pds-c-progress pending">
+                <div class="spinner"></div>
             </div>
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">Progress spinner</h2>
+            <xmp class="c-component__code">
+<div class="pds-c-progress pending">
+    <div class="spinner"></div>
+</div>
+            </xmp>
+        </div>
+    </div>
+
+        </div>
     </main>
     </body>
 </html>

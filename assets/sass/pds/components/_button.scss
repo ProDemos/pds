@@ -22,6 +22,10 @@
     border: none;
     transition: all 100ms ease-in-out;
     cursor: pointer;
+    
+    &.full-width {
+        width:100%;
+    }
 
     &.primary {
 
@@ -32,7 +36,7 @@
             content: "";
             position: absolute;
             transition: all 100ms ease-in-out;
-            z-index: -1;
+            z-index: 0;
         }
 
         &::before {
@@ -131,6 +135,11 @@
         text-align: center;
         border-style: solid;
         border-width: 2px;
+        &.on {
+            color:pds-theme-color($pds-deftheme,'stroke-accent');
+            background-color:pds-theme-color($pds-deftheme,'fill-accent');
+            border-color:pds-theme-color($pds-deftheme,'fill-accent');
+        }
     }
 
 
@@ -167,6 +176,9 @@
         display: flex;
         align-items: center;
 
+        &.big {
+            font-size:larger;
+        }
 
         .pds-c-button-icon {
             display: block;
@@ -275,6 +287,13 @@
                 &::after {
                     background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 1));
                 }
+            }
+        }
+        &.toggle {
+            &.on {
+                color:pds-theme-color($theme,'stroke-accent');
+                background-color:pds-theme-color($theme,'fill-accent');
+                border-color:pds-theme-color($theme,'fill-accent');
             }
         }
     }
