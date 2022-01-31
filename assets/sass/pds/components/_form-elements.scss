@@ -131,6 +131,7 @@
 
 // Basic input styling, shared by all inputs
 .pds-c-input {
+    outline: none;
     color: pds-color(black);
     font-family: $font--fira-sans;
     font-size: pds-fontsize(s);
@@ -142,6 +143,7 @@
     -webkit-appearance: none;
     /* stylelint-enable property-no-vendor-prefix */
 
+
     &.disabled {
         color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
         background-color: lighten((pds-color(sand)), nth($pds-lighten-scale, 1));
@@ -152,6 +154,7 @@
     &[type=email],
     &[type=tel],
     &[type=password],
+    &[type=number],
     &.text {
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
@@ -178,6 +181,11 @@
             background-size: 24px 24px;
             border-bottom-color: pds-color(red);
         }
+    }
+
+    // some exceptions
+    &[type=number] {
+        padding-right: nth($pds-spacings, 6);
     }
 
     @at-root select#{&}, &.dropdown {
@@ -210,9 +218,16 @@
         // pdx-c-input-container with a 
         // visible check
     }
+    &.transparent {
+        background-color: transparent;
+    }
 
 }
 
+// fake input
+span.pds-c-input {
+    padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
+}
 
 // ----theming -------
       

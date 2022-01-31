@@ -16,8 +16,8 @@
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
         
-        <li> .pds-c-input[.disabled]</li>
-        <li> input[type=text].pds-c-input[.valid|.invalid]</li>
+        <li> .pds-c-input[.disabled][.transparent]</li>
+        <li> input[type=text|email|tel|password|number].pds-c-input[.valid|.invalid]</li>
         <li> select.pds-c-input[.fullwidth]</li>
         <li> .pds-c-input-container[.radio|.checkbox]</li>
         <li> .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label</li>
@@ -45,6 +45,16 @@
     {% endfor %}
 
     <!-- custom elements -->
+    <div class="c-component  ">
+        <div class="c-component__view  ">
+            <span class="pds-c-input">padding</span>
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">Fake input</h2>
+            <xmp class="c-component__code"><span class="pds-c-input">padding</span></xmp>
+        </div>
+    </div>
+
     <div class="c-component  ">
         <div class="c-component__view  ">
             <button class="pds-c-button small regular">Submit</button>
