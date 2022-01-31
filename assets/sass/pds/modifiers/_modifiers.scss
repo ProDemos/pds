@@ -49,7 +49,21 @@
 // themes
 
 @each $themename in map-keys($pds-themes) {
-    $fillcolor: pds-theme-color($themename,'fill-color');
+    
+    
+    @each $cname, $cvalue in $pds-colors {
+		@at-root .pds-t-#{$themename} .pds-m-filled.#{""+$cname} {
+			background-color: $cvalue;
+		}
+		@at-root .pds-t-#{$themename} .pds-m-colored.#{""+$cname} {
+			color: $cvalue;
+		}
+		@at-root .pds-t-#{$themename} .pds-m-bordered.#{""+$cname} {
+			border-color: $cvalue;
+		}
+	}
+
+	$fillcolor: pds-theme-color($themename,'fill-color');
     $acccolor: pds-theme-color($themename,'fill-accent');
     @at-root .pds-t-#{$themename} .pds-m-filled,
     .pds-m-filled.pds-t-#{$themename} {

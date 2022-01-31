@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Graphics - Styleguide - 1</title>
+        <title>Typography - Styleguide - 1</title>
 
             <!--
             Copyright (c) Zicht Online 2022 All rights reserved
@@ -56,7 +56,7 @@
                                                     href="../design/colors.html">Colors</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
-                                                <a class="c-sub-navigation__link  " 
+                                                <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
                                                     href="../design/layout.html">Layout</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
@@ -64,7 +64,7 @@
                                                     href="../design/typography.html">Typography</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
-                                                <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
+                                                <a class="c-sub-navigation__link  " 
                                                     href="../design/graphics.html">Graphics</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
@@ -88,54 +88,29 @@
         
         <div class="c-content__main">
             <div class="c-content__intro">
-                    <h2 class="c-copy--h2">Graphics</h2>
+                    <h2 class="c-copy--h2">Layout</h2>
+    
+    <h3 class="c-copy--h3">Spacings</h3>
     <p>
-        All graphics are located in ./assets/images. Most of these graphics will be used in components, so look in that chapter on how to use them properly. If images don't show up here, you may be looking on http://localhost ?
-    </p>
+        The design system has a set of numbered spacings that you can access 
+        in sass (<code>nth($pds-spacings, 4)</code>). <br>
+    </p><br>
+    <h3 class="c-copy--h3">Breakpoints</h3>
+    <p>
+        The design system has a set of named breakpoints that you can access 
+        in sass. The names are <br>
+        <code>xs,  sm, md, lg, xl</code>
+        It contains some helpers mixins:
+<xmp>
+    @include media-until(xs) { h1 { color:red; } }
+    @include media-between(xs,md) { h1 { color:green; } }
+    @include media-from(md) { h1 { color:yellow; } }
+</xmp>
+    </p><br>
+    
             </div>
 
-                <div>
-                    
-            <div class="c-img-list">
-                            <div class="c-img-list__item">
-                            
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="240px" height="240px" 
-        aria-hidden="true"role="img"         aria-hidden="true" role="img">
-        <use xlink:href='../../../assets/images/backgrounds/bgpattern-bison.svg#root'></use>
-    </svg>
-            
-                    <p class="c-img-list__item__name">backgrounds/bgpattern-bison.svg</p>
-                </div>
-                            <div class="c-img-list__item">
-                            
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="240px" height="240px" 
-        aria-hidden="true"role="img"         aria-hidden="true" role="img">
-        <use xlink:href='../../../assets/images/brand/logo-en.svg#root'></use>
-    </svg>
-            
-                    <p class="c-img-list__item__name">brand/logo-en.svg</p>
-                </div>
-                            <div class="c-img-list__item">
-                            
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="240px" height="240px" 
-        aria-hidden="true"role="img"         aria-hidden="true" role="img">
-        <use xlink:href='../../../assets/images/brand/logo-nl.svg#root'></use>
-    </svg>
-            
-                    <p class="c-img-list__item__name">brand/logo-nl.svg</p>
-                </div>
-                            <div class="c-img-list__item">
-                            
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="240px" height="240px" 
-        aria-hidden="true"role="img"         aria-hidden="true" role="img">
-        <use xlink:href='../../../assets/images/brand/logo.svg#root'></use>
-    </svg>
-            
-                    <p class="c-img-list__item__name">brand/logo.svg</p>
-                </div>
-                    </div>
-    
-    </div>
+                
         </div>
     </main>
     </body>

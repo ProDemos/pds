@@ -8,19 +8,9 @@
 
 
 //
-// Settings / variables
+// Variables, mixins and helpers
 //
-@import "variables/global";
-@import "variables/overrides";
-
-//
-// Mixins and helpers
-//
-@import "helpers/size";
-@import "helpers/color";
-@import "helpers/hover";
-@import "helpers/slant";
-@import "helpers/responsive";
+@import "prepend";
 
 // Fonts
 @import "base/web-font--bree-serif";

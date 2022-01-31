@@ -118,11 +118,11 @@ $pds-colors: (
 // (like .pds-t-corporate)
 
 $pds-themes: (
-	public : (
-        fill-color: map-get($pds-colors,sand-110),
-        fill-accent: map-get($pds-colors,orange),
-        stroke-color: map-get($pds-colors,black),
-        stroke-accent: map-get($pds-colors,white) 
+    public : (
+        fill-color: map-get($pds-colors,orange),
+        fill-accent: map-get($pds-colors,green),
+        stroke-color: map-get($pds-colors,white), 
+        stroke-accent:  map-get($pds-colors,white) 
     ),
     corporate : (
         fill-color: map-get($pds-colors,blue),

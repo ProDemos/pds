@@ -69,6 +69,14 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
     }
+    &.arrow-small-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+    }
+    &.arrow-small-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+    }
     &.arrow-up	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);

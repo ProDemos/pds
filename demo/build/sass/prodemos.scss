@@ -18,63 +18,63 @@
 .s-styleguide-content {
     h1 {
         margin-bottom: nth($pds-spacings, 5);
-        font-size: nth($pds-font-sizes, 3);
+        font-size: pds-fontsize(xl);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 2);
+            font-size: pds-fontsize(xxl);
         }
     }
 
     h2 {
         margin-bottom: nth($pds-spacings, 4);
-        font-size: nth($pds-font-sizes, 4);
+        font-size: pds-fontsize(l);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 3);
+            font-size: pds-fontsize(xl);
         }
     }
 
     h3 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 5);
+        font-size: pds-fontsize(m);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 4);
+            font-size: pds-fontsize(l);
         }
     }
 
     h4 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(m);
         }
     }
 
     h5 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(5);
         }
     }
 
     h6 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(m);
         }
     }
 
     p {
         margin-bottom: nth($pds-spacings, 7);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
         font-weight: 400;
-        line-height: nth($pds-line-heights, 5);
+        line-height: pds-lineheight(m);
 
         @include media-from(lg) {
             margin-bottom: nth($pds-spacings, 8);

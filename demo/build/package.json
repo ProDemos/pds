@@ -1,10 +1,10 @@
 {
   "name": "@prodemos/pds-build",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0"
   }
 }

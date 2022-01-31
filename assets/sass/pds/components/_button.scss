@@ -313,7 +313,7 @@
         }
 
         &:focus:not(.disabled) {
-            border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+            border-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
         }
 
         &.disabled {

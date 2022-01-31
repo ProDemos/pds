@@ -6,7 +6,7 @@
         <title>Typography - Styleguide - 1</title>
 
             <!--
-            Copyright (c) Zicht Online 2021 All rights reserved
+            Copyright (c) Zicht Online 2022 All rights reserved
             Developed by: Zicht Online
             Contact: info@zicht.nl
             Version: 1
@@ -56,6 +56,10 @@
                                                     href="../design/colors.html">Colors</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  " 
+                                                    href="../design/layout.html">Layout</a>
+                                            </li>
+                                                                                    <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
                                                     href="../design/typography.html">Typography</a>
                                             </li>
@@ -71,7 +75,7 @@
                                                                                                         </li>
                                     <li class="c-navigation__item  ">
                         <a class="c-navigation__link  " 
-                            href="../components/graphics.html">Components</a>
+                            href="../components/icons.html">Components</a>
                                             </li>
                                     <li class="c-navigation__item  ">
                         <a class="c-navigation__link  " 
@@ -85,7 +89,29 @@
         <div class="c-content__main">
             <div class="c-content__intro">
                     <h2 class="c-copy--h2">Typography</h2>
-    <p>Typography is based on the scope of the content, for example, header, content or menu. </p>
+    <p>
+        Typography is based on the scope of the content, for example, header, content or menu. 
+        You can set the scope using the scope modifier in html (<code>.pds-s-content</code>).
+    </p><br>
+    <h3 class="c-copy--h3">Font sizes</h3>
+    <p>
+        The design system has a set of named fontsizes that you can access 
+        in sass (<code>@pds-fontsize(xs)</code>). <br>
+        The names are 
+        <code>tiny, xxs, xs, s, default, m, l, xl, xxl, huge</code>
+    </p><br>
+    <h3 class="c-copy--h3">Line heights</h3>
+    <p>
+        The design system has a set of named lineheights that you can access 
+        in sass (<code>@pds-lineheight(xs)</code>). <br>
+        The names are 
+        <code>none, xs, s, default, m</code>
+    </p><br>
+    <h3 class="c-copy--h3">Colors</h3>
+    <p>
+        The colors are grouped in themes that you can access through css themes (<code>pds-t-corporate</code>)
+        or using sass (<code>@pds-theme-color(variant01,stroke-accent)</code>).
+    </p><br>
             </div>
 
                 <section class="c-component--typography" style="max-width: 980px;">
@@ -95,6 +121,7 @@
             <select class="pds-c-input dropdown full-width"
                 onchange="document.body.className=this.options[this.selectedIndex].value">
                 <option value="" selected disabled>Select a theme ...</option>
+                                    <option value="pds-t-public">Public</option>
                                     <option value="pds-t-corporate">Corporate</option>
                                     <option value="pds-t-variant01">Variant01</option>
                                     <option value="pds-t-variant02">Variant02</option>

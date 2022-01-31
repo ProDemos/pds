@@ -79,6 +79,7 @@ scopes:
         pds-s-content : "Content" 
 
 themes:
+        pds-t-public : Public
         pds-t-corporate : Corporate
         pds-t-variant01 : Variant01 
         pds-t-variant02 : Variant02 

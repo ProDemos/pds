@@ -2,7 +2,7 @@
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-input
 // .pds-c-input[.disabled]
-//  input[type=text].pds-c-input [.valid|.invalid]
+//  input[type=text|email|tel|password].pds-c-input [.valid|.invalid]
 //  select.pds-c-input [.fullwidth]
 // .pds-c-input.container[.radio|.checkbox]
 // .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label
@@ -148,7 +148,11 @@
         cursor: not-allowed;
     }
 
-    &[type=text], &.text {
+    &[type=text], 
+    &[type=email],
+    &[type=tel],
+    &[type=password],
+    &.text {
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
@@ -248,7 +252,11 @@
 }
 
 @mixin pds-c-input-theme($theme : $pds-deftheme) {
-    &[type=text], &.text {
+    &[type=text], 
+    &[type=email],
+    &[type=tel],
+    &[type=password],
+    &.text {
         &:focus {
             border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
