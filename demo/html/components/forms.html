@@ -6,7 +6,7 @@
         <title>Form elements - Styleguide - 1</title>
 
             <!--
-            Copyright (c) Zicht Online 2021 All rights reserved
+            Copyright (c) Zicht Online 2022 All rights reserved
             Developed by: Zicht Online
             Contact: info@zicht.nl
             Version: 1
@@ -53,15 +53,15 @@
                                             </li>
                                     <li class="c-navigation__item  c-navigation__item--current">
                         <a class="c-navigation__link  c-navigation__link--current" 
-                            href="../components/graphics.html">Components</a>
+                            href="../components/icons.html">Components</a>
                                                                                                                                                         <ul class="c-sub-navigation__list">
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/graphics.html">Graphics</a>
+                                                    href="../components/icons.html">Icons</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/icons.html">Icons</a>
+                                                    href="../components/graphics.html">Graphics</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
@@ -102,12 +102,13 @@
     <h4 class="c-copy--h3">Elements and modifiers</h4>
     <ul>
         
-        <li> .pds-c-input[.disabled]</li>
-        <li> input[type=text].pds-c-input[.valid|.invalid]</li>
+        <li> .pds-c-input[.disabled][.transparent]</li>
+        <li> input[type=text|email|tel|password|number].pds-c-input[.valid|.invalid]</li>
         <li> select.pds-c-input[.fullwidth]</li>
         <li> .pds-c-input-container[.radio|.checkbox]</li>
         <li> .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label</li>
         <li> .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label</li>
+        <li> .pds-c-progress[.pending|.ready|.error] > .spinner</li>
     </ul>
 
     <h1 class="c-copy--h1">Themes</h1>
@@ -116,6 +117,7 @@
         <select class="pds-c-input dropdown full-width"
             onchange="document.body.className=this.options[this.selectedIndex].value">
             <option value="" selected disabled>Select a theme ...</option>
+                            <option value="pds-t-public">Public</option>
                             <option value="pds-t-corporate">Corporate</option>
                             <option value="pds-t-variant01">Variant01</option>
                             <option value="pds-t-variant02">Variant02</option>
@@ -337,7 +339,36 @@
                     </div>
     </div>
 
+    
+    <!-- custom elements -->
+    <div class="c-component  ">
+        <div class="c-component__view  ">
+            <span class="pds-c-input">padding</span>
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">Fake input</h2>
+            <xmp class="c-component__code"><span class="pds-c-input">padding</span></xmp>
+        </div>
+    </div>
+
+    <div class="c-component  ">
+        <div class="c-component__view  ">
+            <button class="pds-c-button small regular">Submit</button>
+            <div class="pds-c-progress pending">
+                <div class="spinner"></div>
             </div>
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">Progress spinner</h2>
+            <xmp class="c-component__code">
+<div class="pds-c-progress pending">
+    <div class="spinner"></div>
+</div>
+            </xmp>
+        </div>
+    </div>
+
+        </div>
     </main>
     </body>
 </html>

@@ -7,63 +7,63 @@
 .pds-s-content {
     h1 {
         margin-bottom: nth($pds-spacings, 5);
-        font-size: nth($pds-font-sizes, 3);
+        font-size: pds-fontsize(xl);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 2);
+            font-size: pds-fontsize(xxl);
         }
     }
 
     h2 {
         margin-bottom: nth($pds-spacings, 4);
-        font-size: nth($pds-font-sizes, 4);
+        font-size: pds-fontsize(l);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 3);
+            font-size: pds-fontsize(xl);
         }
     }
 
     h3 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 5);
+        font-size: pds-fontsize(m);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 4);
+            font-size: pds-fontsize(l);
         }
     }
 
     h4 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(m);
         }
     }
 
     h5 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(m);
         }
     }
 
     h6 {
         margin-bottom: nth($pds-spacings, 3);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
 
         @include media-from(lg) {
-            font-size: nth($pds-font-sizes, 5);
+            font-size: pds-fontsize(m);
         }
     }
 
     p {
         margin-bottom: nth($pds-spacings, 7);
-        font-size: nth($pds-font-sizes, 6);
+        font-size: pds-fontsize(default);
         font-weight: 400;
-        line-height: nth($pds-line-heights, 5);
+        line-height: pds-lineheight(m);
 
         @include media-from(lg) {
             margin-bottom: nth($pds-spacings, 8);
@@ -127,22 +127,22 @@
     blockquote {
         margin-top: nth($pds-spacings, 7);
         margin-bottom: nth($pds-spacings, 4);
-        font-size: nth($pds-font-sizes, 5);
+        font-size: pds-fontsize(m);
         font-style: italic;
         font-weight: 500;
-        line-height: nth($pds-line-heights, 4);
+        line-height: pds-lineheight(default);
 
         @include media-from(md) {
-            font-size: nth($pds-font-sizes, 4);
+            font-size: pds-fontsize(l);
         }
     }
 
     blockquote + footer {
         margin-bottom: nth($pds-spacings, 6);
         padding: 0 nth($pds-spacings, 3) 0 nth($pds-spacings, 4);
-        font-size: nth($pds-font-sizes, 7);
+        font-size: pds-fontsize(s);
         font-weight: 500;
-        line-height: nth($pds-line-heights, 5);
+        line-height: pds-lineheight(m);
         border-left: 1px solid pds-color(orange);
     }
 

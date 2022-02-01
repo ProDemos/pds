@@ -120,9 +120,15 @@ so follow [Conventional Commits](https://www.conventionalcommits.org/):
 ## Build / compile
 
 If you want to make changes, check the demo/build directory. 
+
+> The changes should be compiled before committed to the repo, so
+> the end user can just use the compiled css from the repo
+> if s/he wants to.
+
 You'll need Composer and Node. You should first run
 
 ```
+cd demo/build
 composer install
 ```
 
@@ -167,23 +173,6 @@ check demo/build/pages/*
 
 A few notes on the use of the Sass-files when adding styles
 
-#### Scales
-
-The variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
-```
-$pds-font-sizes: 56px 44px 32px 24px 22px 18px 16px 14px 12px;<br>
-.class {
-    font-size: nth($pds-font-sizes, 2); // second in the array, gives 44px
-}
-```
-
-Similar methods should be used for the `pds-spacings`, `$pds-line-heights`, 
-`$pds-lighten-scale` and `$pds-darken-scale`.
-
-#### Colors
-Colors are defined in `$pds-colors` as a map, but you can use the mixin `@pds-color` and `@pds-theme-color` to find the right color.
-Themes are defined in `$pds-themes`.`
-
 #### Breakpoints
 
 When breakpoints are defined, they can be used inline in the class to target specific behaviour.
@@ -201,4 +190,38 @@ Three types can be used:
  - `@include media-from(lg){ ... }` \ Which means: 'Use this style up from Large screens'
  - `@include media-between(md, lg) { ... }`  \ Which means: 'use this style between Medium and Large screens'
  - `@include media-until(lg) { ... }` \ Which means: 'use this style until Large screens'
+
+#### Colors
+Colors are defined in `$pds-colors` as a map, but you can use the helpers `pds-color` and `pds-theme-color` to find the right color. Themes are defined in `$pds-themes`.`
+
+```
+.class {
+    background-color: pds-color(red);
+    color: pds-theme-color(stroke); 
+}
+```
+
+#### Fonts
+
+The fonts are defined by name, which helps in consistency. A scale can be accessed with a helper:
+```
+.class {
+    font-size: pds-fontsize(l);
+    line-height: pds-lineheight(m);
+}
+```
+
+#### Scales
+
+Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
+```
+.class {
+    margin-bottom: nth($pds-spacings, 2); // second in the array
+}
+```
+
+Similar methods should be used for the `$pds-lighten-scale` and `$pds-darken-scale`.
+
+
+
 

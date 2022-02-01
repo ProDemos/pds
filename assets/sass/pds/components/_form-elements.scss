@@ -2,7 +2,7 @@
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-input
 // .pds-c-input[.disabled]
-//  input[type=text].pds-c-input [.valid|.invalid]
+//  input[type=text|email|tel|password].pds-c-input [.valid|.invalid]
 //  select.pds-c-input [.fullwidth]
 // .pds-c-input.container[.radio|.checkbox]
 // .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label
@@ -115,6 +115,16 @@
         }
     }
 
+    &.select {
+        display: flex;
+        align-items: center;
+    }
+
+    //default labels are styled
+    label {
+        @extend .pds-c-input-label;
+    }
+
 }
 
 
@@ -123,7 +133,7 @@
     margin-bottom: nth($pds-spacings, 5);
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($pds-font-sizes, 7);
+    font-size: pds-fontsize(s);
     font-weight: 500;
 }
 
@@ -131,10 +141,11 @@
 
 // Basic input styling, shared by all inputs
 .pds-c-input {
+    outline: none;
     color: pds-color(black);
     font-family: $font--fira-sans;
-    font-size: nth($pds-font-sizes, 7);
-    line-height: nth($pds-line-heights, 5);
+    font-size: pds-fontsize(s);
+    line-height: pds-lineheight(m);
     border-radius: 0;
     background-color: pds-color(sand);
 
@@ -142,13 +153,19 @@
     -webkit-appearance: none;
     /* stylelint-enable property-no-vendor-prefix */
 
+
     &.disabled {
         color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
         background-color: lighten((pds-color(sand)), nth($pds-lighten-scale, 1));
         cursor: not-allowed;
     }
 
-    &[type=text], &.text {
+    &[type=text], 
+    &[type=email],
+    &[type=tel],
+    &[type=password],
+    &[type=number],
+    &.text {
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
@@ -174,6 +191,11 @@
             background-size: 24px 24px;
             border-bottom-color: pds-color(red);
         }
+    }
+
+    // some exceptions
+    &[type=number] {
+        padding-right: nth($pds-spacings, 6);
     }
 
     @at-root select#{&}, &.dropdown {
@@ -206,9 +228,16 @@
         // pdx-c-input-container with a 
         // visible check
     }
+    &.transparent {
+        background-color: transparent;
+    }
 
 }
 
+// fake input
+span.pds-c-input {
+    padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
+}
 
 // ----theming -------
       
@@ -248,7 +277,11 @@
 }
 
 @mixin pds-c-input-theme($theme : $pds-deftheme) {
-    &[type=text], &.text {
+    &[type=text], 
+    &[type=email],
+    &[type=tel],
+    &[type=password],
+    &.text {
         &:focus {
             border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
@@ -302,3 +335,71 @@ select.pds-c-input,
     }
 }
       
+/* spinner */
+
+.pds-c-button + .pds-c-progress {
+    margin-left: 1em;
+}
+  
+.pds-c-progress {
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    color: transparent;
+  
+    &.pending {
+      visibility: visible;
+      .spinner {
+        display: inline-block;
+      }
+    }
+  
+    &.ready {
+      visibility: visible;
+      color: inherit;
+    }
+    &.error {
+      visibility: visible;
+      color: pds-color(red);
+    }
+  
+    .spinner {
+      display: none;
+      position: relative;
+      vertical-align: middle;
+      width: 1.5em;
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        margin: 0px auto;
+        border-left: 6px solid rgba(0, 0, 0, 0.15);
+        border-right: 6px solid rgba(0, 0, 0, 0.15);
+        border-bottom: 6px solid rgba(0, 0, 0, 0.15);
+        border-top: 6px solid rgba(0, 0, 0, 0.8);
+        border-radius: 100%;
+  
+        -webkit-animation: pds-anim-rotation 0.6s infinite linear;
+        -moz-animation: pds-anim-rotation 0.6s infinite linear;
+        -o-animation: pds-anim-rotation 0.6s infinite linear;
+        animation: pds-anim-rotation 0.6s infinite linear;
+      }
+    }
+}
+  
+@keyframes pds-anim-rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}

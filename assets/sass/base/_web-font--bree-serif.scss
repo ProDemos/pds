@@ -16,3 +16,9 @@ $font-path: "#{$pds-assets-path}/fonts/bree-serif/";
         url("#{$font-path}bree-serif-v9-latin-regular.ttf") format("truetype"),
         url("#{$font-path}bree-serif-v9-latin-regular.svg#BreeSerif") format("svg");
 }
+
+
+.bree-serif {
+	font-family: "Bree Serif";
+	font-weight: 400;
+}

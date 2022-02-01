@@ -6,7 +6,7 @@
         <title>Buttons - Styleguide - 1</title>
 
             <!--
-            Copyright (c) Zicht Online 2021 All rights reserved
+            Copyright (c) Zicht Online 2022 All rights reserved
             Developed by: Zicht Online
             Contact: info@zicht.nl
             Version: 1
@@ -53,15 +53,15 @@
                                             </li>
                                     <li class="c-navigation__item  c-navigation__item--current">
                         <a class="c-navigation__link  c-navigation__link--current" 
-                            href="../components/graphics.html">Components</a>
+                            href="../components/icons.html">Components</a>
                                                                                                                                                         <ul class="c-sub-navigation__list">
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/graphics.html">Graphics</a>
+                                                    href="../components/icons.html">Icons</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  " 
-                                                    href="../components/icons.html">Icons</a>
+                                                    href="../components/graphics.html">Graphics</a>
                                             </li>
                                                                                     <li class="c-sub-navigation__item">
                                                 <a class="c-sub-navigation__link  c-sub-navigation__link--current" 
@@ -103,11 +103,12 @@
     <ul>
         <li> .pds-c-button[ .primary | .secondary ]</li>
         <li> .pds-c-button[ .large | .regular |.small ]</li>
+        <li> .pds-c-button[ .full-width ]</li>
         <li> .pds-c-button[ .accent | .disabled ]</li>
-        <li> .pds-c-button[ .toggle | .transparent ]</li>
+        <li> .pds-c-button[ .toggle[.on|.off] | .transparent ]</li>
         <li> .pds-c-button > pds-c.button-label</li>
-        <li> .pds-c-button > .pds-c-button-content > [ i.pds-c-button-icon .{name} + ] .pds-c-button-label [ .left | .right ]  [ + i.pds-c-button-icon .{name} ] </li>
-        <li> .pds-c-button > .pds-c-button-content > [ svg.pds-c-button-icon + ] .pds-c-button-label [ .left | .right ]  [ + svg.pds-c-button-icon ] </li>
+        <li> .pds-c-button > .pds-c-button-content[.big] > [ i.pds-c-button-icon .{name} + ] .pds-c-button-label [ .left | .right ]  [ + i.pds-c-button-icon .{name} ] </li>
+        <li> .pds-c-button > .pds-c-button-content[.big] > [ svg.pds-c-button-icon + ] .pds-c-button-label [ .left | .right ]  [ + svg.pds-c-button-icon ] </li>
 
     </ul>
     
@@ -117,6 +118,7 @@
         <select class="pds-c-input dropdown full-width"
             onchange="document.body.className=this.options[this.selectedIndex].value">
             <option value="" selected disabled>Select a theme ...</option>
+                            <option value="pds-t-public">Public</option>
                             <option value="pds-t-corporate">Corporate</option>
                             <option value="pds-t-variant01">Variant01</option>
                             <option value="pds-t-variant02">Variant02</option>

@@ -30,6 +30,10 @@ i.pds-c-button-icon {
         width:2em; 
         height:2em; 
     }
+    &.medium {
+        width:1.75em; 
+        height:1.75em; 
+    }
 
    // default icon
     mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
@@ -68,6 +72,14 @@ i.pds-c-button-icon {
     &.arrow-small-up	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
+    }
+    &.arrow-small-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+    }
+    &.arrow-small-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
     }
     &.arrow-up	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);

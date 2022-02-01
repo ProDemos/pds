@@ -1,0 +1,33 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Typography - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Layout</h2>
+    
+    <h3 class="c-copy--h3">Spacings</h3>
+    <p>
+        The design system has a set of numbered spacings that you can access 
+        in sass (<code>nth($pds-spacings, 4)</code>). <br>
+    </p><br>
+    <h3 class="c-copy--h3">Breakpoints</h3>
+    <p>
+        The design system has a set of named breakpoints that you can access 
+        in sass. The names are <br>
+        <code>xs,  sm, md, lg, xl</code>
+        It contains some helpers mixins:
+<xmp>
+    @include media-until(xs) { h1 { color:red; } }
+    @include media-between(xs,md) { h1 { color:green; } }
+    @include media-from(md) { h1 { color:yellow; } }
+</xmp>
+    </p><br>
+    
+{% endblock %}
+
+{% block component_list %}
+    
+{% endblock %}

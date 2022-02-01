@@ -6,6 +6,9 @@
             title: Colors
             uri: design/colors.html
         -
+            title: Layout
+            uri: design/layout.html
+        -
             title: Typography
             uri: design/typography.html
         -
@@ -17,14 +20,14 @@
 
 -
     title: Components
-    uri: components/graphics.html
+    uri: components/icons.html
     items:
-        -
-            title: Graphics
-            uri: components/graphics.html
         -
             title: Icons
             uri: components/icons.html
+        -
+            title: Graphics
+            uri: components/graphics.html
         -
             title: Buttons
             uri: components/buttons.html
