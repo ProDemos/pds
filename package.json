@@ -10,6 +10,9 @@
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
-    }
-    
+    },
+    "files": [
+        "assets/",
+        "README.md"
+    ]
 }
