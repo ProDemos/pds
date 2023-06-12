@@ -1,24 +1,24 @@
+/*
+    Only use woff/woff2, this is covering the browsers we support.
+    No need to include the ttf/eot/svg
+    https://caniuse.com/woff
+    
+    Web fonts can ben found here: https://gwfh.mranftl.com/fonts/bree-serif?subsets=latin
+*/
 
 $font-path: "#{$pds-assets-path}/fonts/bree-serif/";
 
 @font-face {
-    font-display: swap;
-    font-family: "Bree Serif";
-    font-style: normal;
-    font-weight: 400;
-    src: url("#{$font-path}bree-serif-v9-latin-regular.eot"); /* IE9 Compat Modes */
-    src:
-        local("Bree Serif Regular"),
-        local("BreeSerif-Regular"),
-        url("#{$font-path}bree-serif-v9-latin-regular.eot?#iefix") format("embedded-opentype"),
-        url("#{$font-path}bree-serif-v9-latin-regular.woff2") format("woff2"),
-        url("#{$font-path}bree-serif-v9-latin-regular.woff") format("woff"),
-        url("#{$font-path}bree-serif-v9-latin-regular.ttf") format("truetype"),
-        url("#{$font-path}bree-serif-v9-latin-regular.svg#BreeSerif") format("svg");
+  font-display: swap;
+  font-family: "Bree Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Bree Serif Regular"), local("BreeSerif-Regular"),
+    url("#{$font-path}bree-serif-v9-latin-regular.woff2") format("woff2"),
+    url("#{$font-path}bree-serif-v9-latin-regular.woff") format("woff");
 }
 
-
 .bree-serif {
-	font-family: "Bree Serif";
-	font-weight: 400;
+  font-family: "Bree Serif";
+  font-weight: 400;
 }
