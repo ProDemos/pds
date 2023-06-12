@@ -29,10 +29,22 @@ compile-css:
 		--output-style compressed \
 		src/assets/sass/main.scss \
 		src/assets/css/main.css
+	node_modules/node-sass/bin/node-sass \
+		--output-style compressed \
+		src/assets/sass/reset.scss \
+		src/assets/css/reset.css
+	node_modules/node-sass/bin/node-sass \
+		--output-style compressed \
+		src/demo/twig/sass/styleguide.scss \
+		src/demo/html/css/styleguide.css
+	node_modules/node-sass/bin/node-sass \
+		--output-style compressed \
+		src/demo/twig/sass/prodemos.scss \
+		src/demo/html/css/prodemos.css
 
 compile-html:
 	@echo
-	php src/php/compile-html.php
+	php src/demo/compile.php
 
 clean: 
 	rm -rf ./build/*/
@@ -55,10 +67,11 @@ package-pds-compiled:
 	cp -r src/assets/css \
 		src/assets/javascript \
 		src/assets/images \
+		src/assets/fonts \
 		build/pds-compiled/assets 
 	rm -f build/pds-compiled/assets/css/README.md
 	cp build/package.json.tpl build/pds-compiled/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-compiled/' build/pds-compiled/package.json
+	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-compiled/' build/pds-compiled/package.json
 
 package-pds-source:
 	@echo
@@ -66,20 +79,21 @@ package-pds-source:
 	mkdir -p build/pds-source/assets
 	cp -r src/assets/javascript \
 		src/assets/images \
+		src/assets/fonts \
 		src/assets/sass \
 		build/pds-source/assets
 	cp build/package.json.tpl build/pds-source/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-source/' build/pds-source/package.json
+	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-source/' build/pds-source/package.json
 
 package-pds-demo:
 	@echo
 	@echo Building pds-demo ..
-	@if [ ! -f "src/demo/html/test.html" ] ; then echo "Compile html first" ; false ; fi
+	@if [ ! -f "src/demo/html/index.html" ] ; then echo "Compile html first" ; false ; fi
 	mkdir -p build/pds-demo
 	cp -r src/demo/html build/pds-demo
 	rm -f build/pds-demo/html/README.md
 	cp build/package.json.tpl build/pds-demo/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-demo/' build/pds-demo/package.json
+	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-demo/' build/pds-demo/package.json
 
 release:
 

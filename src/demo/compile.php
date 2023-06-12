@@ -174,5 +174,5 @@ class TwigCompiler
 
 }
 
-$compiler = new TwigCompiler(__DIR__.'/../../');
+$compiler = new TwigCompiler(__DIR__.'/twig');
 $compiler->compile();
