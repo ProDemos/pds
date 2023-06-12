@@ -35,14 +35,21 @@
     {% if img_list|default and img_list|length %}
         <div class="c-img-list">
             {% for i in img_list %}
-                <div class="c-img-list__item">
-                    {{ ui.svg(i, {
-                        directory: rooturi ~ '../../assets/images',
-                        width: 240,
-                        height: 240,
-                    }) }}
-                    <p class="c-img-list__item__name">{{ i }}</p>
-                </div>
+                {% if i|split('.')|last == "svg" %}
+                    <div class="c-img-list__item">
+                        {{ ui.svg(i, {
+                            directory: rooturi ~ '../../assets/images',
+                            width: 240,
+                            height: 240,
+                        }) }}
+                        <p class="c-img-list__item__name">{{ i }}</p>
+                    </div>
+                {% else %}
+                    <div class="c-img-list__item">
+                        <img src="../../assets/images/{{i}}" style="max-width:128px">
+                        <p class="c-img-list__item__name">{{ i }}</p>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     {% endif %}

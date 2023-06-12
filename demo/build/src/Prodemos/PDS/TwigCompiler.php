@@ -71,12 +71,12 @@ class TwigCompiler
             }
         }
         
-        // generate list of images except icons
+        // generate list of images except icons and favicons
         $this->data['images'] = array();
         $imgrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images');
         $imgritit = new \RecursiveIteratorIterator($imgrit);
         foreach ($imgritit as $path) {
-            if (!is_dir($path) && strpos($path,'/icons/')===false) {
+            if (!is_dir($path) && strpos($path,'/icons/') == false && strpos($path,'/favicons/') ===false) {
                 $image = str_replace($this->paths['assets'].'/images/','',$path);
                 if (strpos($image,'.')!==0) $this->data['images'][] = $image;
             }
