@@ -6,7 +6,7 @@ composer.phar
 # pds
 /build/
 /src/assets/css
-/src/docs/html
+/src/demo/html
 # general
 .DS_Store
 ._*

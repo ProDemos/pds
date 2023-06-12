@@ -5,7 +5,7 @@ Prodemos Design System [PDS]
 
 You can view the design system in action at https://pds.prodemos.nl/
 
-# Install
+# How to use PDS in your own project
 
 
 ## git submodule
@@ -20,6 +20,9 @@ git submodule init
 ```
 
 ## npm
+
+Each release comes with a few npm packages you can use in your node project.
+
 Since this is a Github Package, you will need to [authenticate with GitHub Packages](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages), to install the module. Start by [creating a personal access token](https://github.com/settings/tokens). It needs only `read:packages` permissions.
 
 Now copy your personal access token, and store it in your npm config:   
@@ -34,9 +37,10 @@ These values are probably stored in your ~/.npmrc.
 Now you can install the package:
 
 ```
-npm install @prodemos/pds
+npm install @prodemos/pds-xxx
 ```
 
+where xxx is the name of the package you want to install.
 Your co-developers will need to get the same instructions before they can install your project.
 
 ## Composer
@@ -58,9 +62,10 @@ Add the repository in your composer.json file
 and run `composer install`. Because it is a private repository, Composer may prompt you for credentials, but just follow the instructions there.
 
 ## Download
-or just fetch it as a zip 
 
-https://github.com/ProDemos/pds/archive/master.zip
+Each release comes with a few zip files you can download:
+
+https://github.com/ProDemos/pds/xxxx/TODO
 
 # Usage
 
@@ -96,26 +101,15 @@ The rest is optional and depends on your project:
  
 # Demo / Styleguide
 
-You can view the PDS in action in demo/html. This html uses
-the assets from the assets folder, and was generated using 
-the twig files defined in the assets folder.
+You can view the PDS in action at https://pds.prodemos.nl/
+
+Alternatively, you can clone this repo and build the 
+demo yourself, see below.
+
 
 # Making changes
 
-Package [releases](https://github.com/ProDemos/pds/releases) are automated
-using [semantic-release](https://github.com/semantic-release/semantic-release).
-
-The semantic version number increments are based on the commit messages that we use,
-so follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-* `fix: Fix some bug` bumps the patch version;
-* `feat: Add some new feature` bumps the minor version;
-* to bump the major version:
-  ```
-  feat: Add some backwards-incompatible feature
-
-  BREAKING CHANGE: call new() instead of old().
-  ```
+XXX TODO
  
 ## Build / compile
 

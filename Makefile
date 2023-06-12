@@ -6,7 +6,7 @@ minor = $(word 2,$(semver))
 patch = $(word 3,$(semver))
 version = $(major).$(minor).$(patch)
 
-packages = pds-compiled pds-source pds-docs
+packages = pds-compiled pds-source pds-demo
 
 # uncomment this on mac
 # SEDFIX=''
@@ -35,13 +35,13 @@ compile-html:
 	php src/php/compile-html.php
 
 clean: 
-	rm -r ./build/*/
+	rm -rf ./build/*/
 
 	rm -rf src/assets/css/*
 	echo "The CSS will be generated here." >> src/assets/css/README.md
 
-	rm -rf src/docs/html/*
-	echo "The HTML will be generated here." >> src/docs/html/README.md
+	rm -rf src/demo/html/*
+	echo "The HTML will be generated here." >> src/demo/html/README.md
 
 packages:
 	rm -rf ./build/*/
@@ -71,15 +71,15 @@ package-pds-source:
 	cp build/package.json.tpl build/pds-source/package.json
 	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-source/' build/pds-source/package.json
 
-package-pds-docs:
+package-pds-demo:
 	@echo
-	@echo Building pds-docs ..
-	@if [ ! -f "src/docs/html/test.html" ] ; then echo "Compile html first" ; false ; fi
-	mkdir -p build/pds-docs
-	cp -r src/docs/html build/pds-docs
-	rm -f build/pds-docs/html/README.md
-	cp build/package.json.tpl build/pds-docs/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-docs/' build/pds-docs/package.json
+	@echo Building pds-demo ..
+	@if [ ! -f "src/demo/html/test.html" ] ; then echo "Compile html first" ; false ; fi
+	mkdir -p build/pds-demo
+	cp -r src/demo/html build/pds-demo
+	rm -f build/pds-demo/html/README.md
+	cp build/package.json.tpl build/pds-demo/package.json
+	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/multipackage-demo/' build/pds-demo/package.json
 
 release:
 
@@ -106,12 +106,12 @@ release-pds-source:
 	tar -cvzf ./build/pds-source.tgz ./build/pds-source
 	hub release edit -a ./build/pds-source.tgz -m "" $(version)
 
-release-pds-docs:
+release-pds-demo:
 
 	@echo
-	@echo Releasing pds-docs ..
-	@if [ ! -d "build/pds-docs" ] ; then echo "build/pds-docs not ready" ; false ; fi
-	cd build/pds-docs && npm version $(version)
-	npm publish ./build/pds-docs
-	tar -cvzf ./build/pds-docs.tgz ./build/pds-docs
-	hub release edit -a ./build/pds-docs.tgz -m "" $(version)
+	@echo Releasing pds-demo ..
+	@if [ ! -d "build/pds-demo" ] ; then echo "build/pds-demo not ready" ; false ; fi
+	cd build/pds-demo && npm version $(version)
+	npm publish ./build/pds-demo
+	tar -cvzf ./build/pds-demo.tgz ./build/pds-demo
+	hub release edit -a ./build/pds-demo.tgz -m "" $(version)
