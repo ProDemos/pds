@@ -1,0 +1,131 @@
+{#
+    This macro facilitates the easy embedding of component views.
+    These component views can be used in both the app's views and the styleguide, to prevent
+    HTML duplication.
+
+    Considerations:
+    1. Another solution is to let the developer create macros for each component, but that could
+    become tedious when all you want is to do is include a bit of HTML in your view.
+    Also, the current solution forces each component to have it's own file, which improves clarity.
+    2. The include uses the `only` keyword to make sure no other data from parent views leaks into
+    the components view, and all data is sent through the `properties` parameter.
+
+    Example call:
+    `{{ ui.component('buttons/button', { 'title': 'Melp' }) }}`
+
+    @param string slug The name of the component, which corresponds with the name of the file.
+    @param object properties The properties of the component.
+#}
+{% macro component(slug, properties) %}
+    {#% strict false %#}
+        {% include 'pds/components/%s.html.twig'|format(slug) with properties only %}
+    {#% endstrict %#}
+{% endmacro %}
+
+
+
+{#
+    This method does exactly the same as the `component()` macro, except it's intended
+    for rendering inside the style guide, with code examples et cetera.
+
+    @param string slug The name of the component, which corresponds with the name of the file.
+    @param object properties The properties of the component.
+#}
+{% macro styleguide_component(slug, properties, outputs = ['example', 'twig']) %}
+    {% import 'macros/components.html.twig' as component %}
+    
+    {% set cx = {
+        container: html_classes({
+            'c-component--full': properties.styleguide_component_width|default == 'full',
+        }),
+        view: html_classes({
+            'c-component__view--full': properties.styleguide_component_width|default == 'full',
+            'c-component__view--dark': properties.styleguide_dark|default == true
+        }),
+        meta: html_classes({
+            'c-component__meta--full': properties.styleguide_component_width|default == 'full' or 'example' not in outputs
+        })
+        }
+    %}
+    
+    {#% set cx = {
+        container: (properties.styleguide_component_width|default == 'full') ? 'c-component--full' : '',
+        view: (properties.styleguide_component_width|default == 'full') ? 'c-component__view--full' : '' ~ (properties.styleguide_dark|default == true) ? ' c-component__view--dark' : '',
+        meta: (properties.styleguide_component_width|default == 'full' or 'example' not in outputs) ? 'c-component__meta--full' : ''
+    } %#}
+    
+
+    <div class="c-component  {{ cx.container }}" {% if properties.styleguide_component_width|default != '' and properties.styleguide_component_width|default != 'full' %}style="grid-template-columns: {{ properties.styleguide_component_width }} minmax(0, 1fr)"{% endif %}>
+        
+        {% set component_properties = properties | filter((v, k) => not(k matches '/^styleguide_.*/')) %}
+
+        {% if 'example' in outputs %}
+            <div class="c-component__view  {{ cx.view }}">
+                {{ component.component(slug, component_properties) }}
+            </div>
+        {% endif %}
+
+        <div class="c-component__meta  {{ cx.meta }}">
+            {% if properties.styleguide_title|default %}
+                <h2 class="c-component-list__title">{{ properties.styleguide_title }}</h2>
+            {% endif %}
+
+            {% if properties.styleguide_description|default %}
+                <p class="c-component__description">{{ properties.styleguide_description }}</p>
+            {% endif %}
+
+            {% if 'twig' in outputs %}
+                {% set json = component_properties|json_encode(constant('JSON_PRETTY_PRINT')) %}
+                <pre class="c-component__code">{{ '{{ ' }}ui.component('{{ slug }}', {{ json }}{{ ') }}' }}</pre>
+            {% endif %}
+
+            {% if 'html' in outputs %}
+                {% set source %}{{ component.component(slug, component_properties)|raw }}{% endset %}
+                <pre class="c-component__code">{{ source|tidy }}</pre>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+
+
+{#
+    Embed the SVG using <svg><use>, so css can cascade into the svg.
+
+    @param string symbol The name of the SVG to load, without .svg extension.
+    @param object options
+#}
+{% macro svg(name, options) %}
+    {% set default_options = {
+        width: '',
+        height: '',
+        viewbox_x: '',
+        viewbox_y: '',
+        css_classes: [],
+        attributes: {
+            'aria-hidden': 'true',
+            role: 'img'
+        },
+        title: '',
+        directory: 'images'
+    } %}
+    {% set options = default_options|merge(options|default([])) %}
+
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="{{ options.width }}px" height="{{ options.height }}px" 
+        {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}"{% endfor %}
+        {% if options.css_classes.length %}class="{{ options.css_classes | join(" ") }}"{% endif %} aria-hidden="true" role="img">
+        <use xlink:href='{{ options.directory }}/{{ name }}#root'></use>
+    </svg>
+    {# <figure>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="{{ options.width }}px" height="{{ options.height }}px" 
+            viewBox="0 0 {{ options.width }} {{ options.height }}" preserveAspectRatio="xMidYMid meet" 
+            class="" aria-hidden="true" role="img">
+            <use xlink:href='{{ options.directory }}/{{ name }}#root'></use>
+        </svg>
+    </figure> #}
+    {#<img src="{{ options.directory }}/{{ name }}" title="{{ options.title }}" width="{{ options.width }}" height="{{ options.height }}" 
+        {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}"{% endfor %}
+        class="{{ options.css_classes | join(" ") }}">#}
+    {#{ embed_svg(name, options.width, options.height, options.viewbox_x, options.viewbox_y, options.css_classes, options.attributes, options.title, options.directory)|raw }#}
+{% endmacro %}

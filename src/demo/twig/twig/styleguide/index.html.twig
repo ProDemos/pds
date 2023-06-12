@@ -1,0 +1,22 @@
+{% extends '/_base.html.twig' %}
+
+
+{% block body %}
+    {% block styleguide_top %}
+        {% include '/styleguide/_top.html.twig' %}
+    {% endblock %}
+
+    <main class="c-content">
+        {% block styleguide_aside %}
+            {% include '/styleguide/_side-bar.html.twig' %}
+        {% endblock %}
+
+        <div class="c-content__main">
+            <div class="c-content__intro">
+                {% block component_intro '' %}
+            </div>
+
+            {% block component_list '' %}
+        </div>
+    </main>
+{% endblock %}

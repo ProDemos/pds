@@ -1,0 +1,18 @@
+
+<table class="pds-c-table {{ theme }} responsive" role="table">
+    <thead role="rowgroup">
+        <tr role="row">
+            {% for cell in header %}
+                <th role="columnheader">{{ cell }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody role="rowgroup">
+        {% for row in rows %}
+            <tr role="row">
+            {% for idx,cell in row %}
+                <td role="cell" data-label="{{ header[idx] }}">{{ cell }}</td>
+            {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+{% extends 'pds/components/button/_button.html.twig' %}
+{% import 'macros.twig' as ui %}
+
+
+{% block button_content %}
+    <span class="pds-c-button-content">
+        {% if svgicon_left %}
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            {{ ui.svg(svgicon_left.name, {
+                width: svgicon_left.width|default(10),
+                height: svgicon_left.height|default(10),
+                directory: svgicon_left.directory|default('assets/images/icons/24px'),
+                css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ svgicon_left.name|basename]
+            }) }}
+        {% else %}
+            <i class="pds-c-button-icon {{ icon_left }} {{ color }}"></i>
+        {% endif %}
+        <span class="pds-c-button-label right">
+            {% if text %}
+                {{ text }}
+            {% endif %}
+        </span>
+        {% if svgicon_right %}
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            {{ ui.svg(svgicon_right.name, {
+                width: svgicon_right.width|default(10),
+                height: svgicon_right.height|default(10),
+                directory: svgicon_right.directory|default('assets/images/icons/24px'),
+                css_classes: ['pds-c-button-icon', 'right', 'icon--' ~ svgicon_right.name|basename]
+            }) }}
+        {% else %}
+            <i class="pds-c-button-icon {{ icon_right }} {{ color }}"></i>
+        {% endif %}
+    </span>
+
+{% endblock %}

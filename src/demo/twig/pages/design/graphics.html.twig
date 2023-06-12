@@ -1,0 +1,20 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Graphics - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Graphics</h2>
+    <p>
+        All graphics are located in ./assets/images. Most of these graphics will be used in components, so look in that chapter on how to use them properly. If images don't show up here, you may be looking on http://localhost ?
+    </p>
+{% endblock %}
+
+
+{% block component_list %}
+    <div>
+        {# 'images' is read from assets/images directory by build script #}
+        {{ styleguide.graphics(images,rooturi) }}
+    </div>
+{% endblock %}

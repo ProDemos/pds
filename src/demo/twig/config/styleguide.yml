@@ -1,0 +1,98 @@
+version : 1.0
+styleguide:
+    title : Prodemos Design System
+    brand: Zicht
+    outputs: 
+        - example
+        # - twig
+        - html
+    assets: 
+        -
+            type: 'stylesheet'
+            path: '../../assets/css/reset.css'
+        -
+            type: 'stylesheet'
+            path: '../../assets/css/main.css'
+        -
+            type: 'stylesheet'
+            path: 'css/prodemos.css'
+colors:
+    # should be defined in assets/sass/variables/zss-overrides
+    white:
+    black:
+        - black-110
+        - black-80
+        - black-60
+        - black-40
+        - black-20
+    sand:
+        - sand-120
+        - sand-110
+        - sand-80 
+        - sand-60 
+        - sand-40 
+        - sand-20
+    yellow:
+        - yellow-110      
+        - yellow-80
+        - yellow-60
+        - yellow-40
+        - yellow-20
+    orange:
+        - orange-110
+        - orange-80 
+        - orange-60 
+        - orange-40 
+        - orange-20 
+    red:
+        - red-110
+        - red-80
+        - red-60
+        - red-40
+        - red-20
+    pink:
+        - pink-110
+        - pink-80
+        - pink-60
+        - pink-40
+        - pink-20
+    purple:
+        - purple-110
+        - purple-80
+        - purple-60
+        - purple-40
+        - purple-20
+    blue:
+        - blue-110
+        - blue-80 
+        - blue-60 
+        - blue-40 
+        - blue-20   
+    green:
+        - green-110
+        - green-80
+        - green-60
+        - green-40
+        - green-20
+   
+scopes:
+        pds-s-content : "Content" 
+
+themes:
+        pds-t-public : Public
+        pds-t-corporate : Corporate
+        pds-t-variant01 : Variant01 
+        pds-t-variant02 : Variant02 
+        pds-t-variant03 : Variant03 
+        pds-t-variant04 : Variant04 
+        pds-t-variant05 : Variant05 
+        pds-t-variant06 : Variant06 
+
+images:
+    # will be read from the assets/images/ directory
+    # by the build script
+    
+icons:
+    # will be read from the assets/images/icons directory
+    # by the build script
+

@@ -1,0 +1,65 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Colors - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Colors</h2>
+    <p>
+        The design system has a set of named colors, that you can access through css modifiers (<code>pds-m-foo.blue</code>)
+        or using sass (<code>@pds-color(blue)</code>).
+    </p>
+    <br><!-- pf -->
+    <p>
+        These colors are grouped in themes that you can access through css themes (<code>pds-t-corporate</code>)
+        or using sass (<code>@pds-theme-color(variant01,stroke-accent)</code>).
+    </p>
+
+{% endblock %}
+
+
+{% block component_list %}
+
+
+    <h2 class="c-copy--h2">named colors</h2>
+    <table width="100%" id="colortable">
+        {% for maincolor, subcolors in colors %}
+            <tr>
+                <th class="pds-m-filled {{ maincolor }}">{{ maincolor }}</th>
+                {% for color in subcolors %}
+                    <td class="pds-m-filled {{ color }}">{{ color }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <h2 class="c-copy--h2">Theme colors</h2>
+    <table width="100%" id="themetable">
+        {% for theme in themes %}
+            <tr>
+                <td class="pds-m-filled pds-t-{{ theme|lower }}">{{ theme }}</td>
+                <td class="pds-m-filled pds-t-{{ theme|lower }} accent">{{ theme }} / accent</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    <style type="text/css">
+        #colortable th {
+            padding:1em 2em;
+            color:black;
+        }
+        #colortable td {
+            padding:.5em;
+            color:black;
+        }
+        #themetable th {
+            padding:1em 2em;
+        }
+        #themetable td {
+            padding:.5em;
+        }
+    </style>
+
+{% endblock %}

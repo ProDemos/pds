@@ -1,5 +1,10 @@
 {
     "name": "prodemos/pds",
     "description" : "Prodemos Design System; used for implementing a consistent design over the range of ProDemos products. Includes JS, CSS, graphics and a demo",
-    "type": "library"
+    "type": "library",
+    "require": {
+        "twig/twig": "^3.0",
+        "symfony/yaml": "^5.1",
+        "twig/html-extra": "^3.0"
+	}
 }

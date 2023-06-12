@@ -1,0 +1,183 @@
+
+// -----------------------------------------------------------------------------
+//  COMPONENT .pds-c-tabs
+//
+// .pds-c-tabs-container
+// .pds-c-tabs-container > ( ul | ol | .pds-c-tabs ) [ + .pds-c-tabs-panels ]
+// .pds-c-tabs > ( li | .pds-c-tabs-item ) > ( a | .pds-c-tabs-link )[ .current ]
+// .pds-c-tabs-panels > .pds-c-tabs-panel[ .current ]
+// -----------------------------------------------------------------------------
+
+
+.pds-c-tabs-container {
+
+    ul, ol, .pds-c-tabs {
+
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include media-from(md) {
+            display: flex;
+            border-bottom: 1px solid pds-color(black-20);
+        }
+    
+        li, .pds-c-tabs-item {
+
+            position: relative;
+            text-align: center;
+            border-bottom: 1px solid pds-color(black-20);
+
+            @include media-from(md) {
+                margin: 0 nth($pds-spacings, 3);
+                border: none;
+            }
+
+            @include media-from(lg) {
+                margin: 0 nth($pds-spacings, 5);
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        
+            a, .pds-c-tabs-link {
+
+                display: inline-block;
+                padding: nth($pds-spacings, 3) 0 nth($pds-spacings, 3);
+                color: pds-color(black);
+                font-family: $font--fira-sans;
+                font-size: pds-fontsize(xs);
+                font-weight: 500;
+                line-height: 1.5;
+                text-decoration: none;
+                text-transform: uppercase;
+                border: none;
+                background-color: pds-color(white);
+                transition: all 100ms ease-in-out;
+                cursor: pointer;
+
+                @include media-from(md) {
+                    position: relative;
+                    padding: nth($pds-spacings, 2) 0 nth($pds-spacings, 5);
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    background-color: pds-color(transparent);
+                    opacity: 1;
+                    transition: all 250ms ease-in-out;
+                }
+
+                &.active {
+                    &::after {
+                        opacity: 1;
+                    }
+
+                }
+            }
+        }
+    }
+    .pds-c-tabs-panels {
+        
+        .pds-c-tabs-panel {
+            padding: nth($pds-spacings, 5) 0;
+            display:none;
+            &.active {
+                display:block;
+            }
+        }
+    }
+
+}
+
+// Theming
+
+.pds-c-tabs-container {
+    ul, ol, .pds-c-tabs {
+        a, .pds-c-tabs-link {
+            @include media-from(md) {
+                &:hover,
+                &:focus {
+                    color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    &::after {
+                        opacity: 1;
+                        background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    }
+                }
+            }
+            &.active {
+                color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                &::after {
+                    background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                }
+            }
+        }
+    }
+} 
+
+@each $theme in map-keys($pds-themes) {
+    // the inherit class is only to make it more specific
+    .pds-t-#{$theme} .pds-c-tabs-container,
+    .pds-c-tabs-container.pds-t-#{$theme}:not(.inherit) {
+        ul, ol, .pds-c-tabs {
+            a, .pds-c-tabs-link {
+                @include media-from(md) {
+                    &:hover,
+                    &:focus {
+                        color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+                        &::after {
+                            opacity: 1;
+                            background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+                        }
+                    }
+                }
+                &.active {
+                    color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+                    &::after {
+                        background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+/*
+    this is a bug in pds
+    links inside a tab panel 
+    show up as tabs
+
+    https://github.com/ProDemos/pds/issues/14
+*/
+
+.pds-c-tabs-container .pds-c-tabs-panel ul li a {
+    display: inline;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: normal;
+    text-decoration: underline;
+    text-transform: none;
+    border: none;
+    background-color: transparent;
+    transition: none;
+    cursor: pointer;
+    &::after,
+    &:hover::after {
+      display: none;
+    }
+  }

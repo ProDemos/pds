@@ -1,0 +1,40 @@
+
+
+{% set items = navigation %}
+
+{% if items|default and items|length %}
+    <input type="checkbox" id="navToggle" class="c-content__toggle__checkbox">
+    <div class="c-content__nav__overlay"></div>
+
+    <aside class="c-content__aside">
+
+        <label class="c-content__toggle__trigger" for="navToggle"></label>
+
+        <nav class="c-navigation  c-page-header__navigation">
+            <ul class="c-navigation__list">
+                {% for i in items %}
+                    <li class="c-navigation__item  {{ i.intrail ? 'c-navigation__item--current' : '' }}">
+                        <a class="c-navigation__link  {{ i.intrail ? 'c-navigation__link--current' : '' }}" 
+                            href="{{ rooturi }}{{ i.uri }}">{{ i.title }}</a>
+                        {% if i.intrail %}
+                            {% if i.items %}
+                                {% set submenu_items = i.items %}
+                                {% if submenu_items|length %}
+                                    <ul class="c-sub-navigation__list">
+                                        {% for i in submenu_items %}
+                                            <li class="c-sub-navigation__item">
+                                                <a class="c-sub-navigation__link  {{ i.current ? 'c-sub-navigation__link--current' : '' }}" 
+                                                    href="{{ rooturi }}{{ i.uri }}">{{ i.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </aside>
+{% endif %}
+

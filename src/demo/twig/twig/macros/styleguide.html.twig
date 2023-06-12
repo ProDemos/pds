@@ -1,0 +1,77 @@
+
+{% macro colors(color_groups) %}
+    {% if color_groups|default and color_groups|length %}
+        {% for name, colors in color_groups %}
+            {% set info = null %}
+            {% if '__' in name %}
+                {% set info = name|split('__', 2)|last %}
+                {% set name = name|split('__', 2)|first %}
+            {% endif %}
+            <h3 class="c-copy--h3">{{ name }}{% if info %} ({{ info|replace({'-': ' '}) }}){% endif %}</h3>
+            <div class="c-color-list">
+                {% for name, values in colors %}
+                    {% set cx_loop = {
+                        container: html_classes({
+                            'c-color-list__item--light': not(values.dark),
+                            'c-color-list__item--dark': values.dark
+                        })
+                    } %}
+
+                    <div class="c-color-list__item  {{ cx_loop.container }}">
+                        <div class="c-color-list__item__value" style="background-color: {{ values.color }};">
+                            {{ values.color }}
+                        </div>
+                        <code class="c-color-list__item__name">{{ name }}</code>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% macro graphics(img_list,rooturi) %}
+    {% import 'macros/components.html.twig' as ui %}
+
+    {% if img_list|default and img_list|length %}
+        <div class="c-img-list">
+            {% for i in img_list %}
+                {% if i|split('.')|last == "svg" %}
+                    <div class="c-img-list__item">
+                        {{ ui.svg(i, {
+                            directory: rooturi ~ '../../assets/images',
+                            width: 240,
+                            height: 240,
+                        }) }}
+                        <p class="c-img-list__item__name">{{ i }}</p>
+                    </div>
+                {% else %}
+                    <div class="c-img-list__item">
+                        <img src="../../assets/images/{{i}}" style="max-width:128px">
+                        <p class="c-img-list__item__name">{{ i }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro icons(icon_list,rooturi) %}
+    {% import 'macros/components.html.twig' as ui %}
+
+    {% if icon_list|default and icon_list|length %}
+        <div class="c-icon-list">
+            {% for i in icon_list %}
+                <div class="c-icon-list__item">
+                    {{ ui.svg(i, {
+                        directory: rooturi ~ '../../assets/images/icons',
+                        width: 48,
+                        height: 48,
+                    }) }}
+                    <p class="c-icon-list__item__name">{{ i }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+

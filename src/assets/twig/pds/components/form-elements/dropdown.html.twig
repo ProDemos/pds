@@ -1,0 +1,32 @@
+{% set cx = {
+    input: html_classes({
+        'full-width': full_width,
+        'pds-t-corporate': theme == 'corporate',
+        'pds-t-variant01': theme == 'variant01',
+        'pds-t-variant02': theme == 'variant02',
+        'pds-t-variant03': theme == 'variant03',
+        'pds-t-variant04': theme == 'variant04',
+        'pds-t-variant05': theme == 'variant05',
+        'pds-t-variant06': theme == 'variant06',
+    })
+} %}
+<select class="pds-c-input {{ cx.input }}  {{ js_hook }}" id="{{ id }}" name="{{ name }}">
+    {% if options|length %}
+        {% set is_in_group = false %}
+        {% for o in options %}
+            {% if o.label and o.group_header %}
+                {% if is_in_group %}
+                    </optgroup>
+                {% endif %}
+                <optgroup label="{{ o.label }}">
+                {% set is_in_group = true %}
+            {% else %}
+                <option value="{{ o.value }}" {% if o.selected %}selected="selected"{% endif %}>{{ o.label }}</option>
+            {% endif %}
+
+            {% if loop.last and is_in_group %}
+                </optgroup>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</select>

@@ -1,0 +1,19 @@
+
+// Add variables specific to the project
+
+// these may be overriden by any project that includes the
+// sass and as a result has their assets in a different place,
+// like ./node_modules/prodemos/pds/assets or 
+// ./vendor/prodemos/pds. 
+
+// The $pds-assets-path
+// depends on where the css is generated, and in the
+// default package, the demo, the css is generated
+// inside the package, in ./assets/css/main.css,
+// so the paths can be relative
+
+$pds-assets-path: ".." !default;
+
+$font--bree-serif: "Bree Serif", sans-serif;
+
+$font--fira-sans: "Fira Sans", sans-serif;

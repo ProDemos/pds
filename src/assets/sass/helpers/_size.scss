@@ -1,0 +1,30 @@
+@function pds-fontsize($name) {
+	@if type-of($name) == string {
+		@if map-has-key($pds-fontsizes, $name) == false {
+			@error  "There is no fontsize named `#{$name}`";
+		}
+		@return map-get($pds-fontsizes, $name);
+	} 
+	@if nth($pds-fontsizes, $name) == false {
+		@error  "There is no fontsize numbered `#{$name}`";
+	}
+	@return nth(map-values($pds-fontsizes), $name);
+	
+}
+
+@function pds-lineheight($name) {
+	@if type-of($name) == string {
+		@if map-has-key($pds-lineheights, $name) == false {
+			@error  "There is no lineheight named `#{$name}`";
+		}
+		@return map-get($pds-lineheights, $name);
+	} 
+	@if nth($pds-lineheights, $name) == false {
+		@error  "There is no lineheight numbered `#{$name}`";
+	}
+	@return nth(map-values($pds-lineheights), $name);
+	
+}
+
+
+

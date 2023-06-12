@@ -1,0 +1,47 @@
+/* ----------------------------------------------------------------------------- *\
+ *
+ * Main stylesheet.
+ * make sure to include the reset.scss
+ * first if you need it in your project.
+ *
+\* ----------------------------------------------------------------------------- */
+
+
+//
+// Variables, mixins and helpers
+//
+@import "prepend";
+
+// Fonts
+@import "base/web-font--bree-serif";
+@import "base/web-font--fira-sans";
+
+//
+// Scopes
+//
+@import "pds/scopes/content";
+
+//
+// Themes
+//
+@import "pds/themes/themes";
+
+
+//
+// Components
+//
+@import "pds/components/brand";
+@import "pds/components/button";
+@import "pds/components/icon";
+@import "pds/components/link";
+@import "pds/components/list";
+@import "pds/components/form-elements";
+@import "pds/components/tab-navigation";
+@import "pds/components/menu-navigation";
+@import "pds/components/table";
+
+//
+// Modifiers
+//
+@import "pds/modifiers/modifiers";
+

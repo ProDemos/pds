@@ -1,0 +1,29 @@
+-
+    styleguide_title: Logo
+    styleguide_type: brand/logo
+    url: /
+    title: Home
+    logo:
+        name: logo.svg
+        width: 205
+        height: 74
+
+-
+    styleguide_title: Logo Dutch
+    styleguide_type: brand/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-nl.svg
+        width: 192
+        height: 65
+
+-
+    styleguide_title: Logo English
+    styleguide_type: brand/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-en.svg
+        width: 226
+        height: 65

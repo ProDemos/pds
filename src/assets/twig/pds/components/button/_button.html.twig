@@ -1,0 +1,40 @@
+
+{# TODO: add all possible themes to the theme-list in the validate_context #}
+{% set cx = {
+    container: html_classes({
+        'primary': level == 'primary' and size != 'small',
+        'secondary': level == 'secondary',
+        'toggle': level == 'toggle',
+        'transparent': level == 'transparent',
+        'pds-t-corporate': theme == 'corporate',
+        'pds-t-variant01': theme == 'variant01',
+        'pds-t-variant02': theme == 'variant02',
+        'pds-t-variant03': theme == 'variant03',
+        'pds-t-variant04': theme == 'variant04',
+        'pds-t-variant05': theme == 'variant05',
+        'pds-t-variant06': theme == 'variant06',
+        'large': size == 'large',
+        'regular': size == 'regular',
+        'small': size == 'small',
+        'accent': accent,
+        'disabled': disabled
+    })
+} %}
+
+{% set tag = url ? 'a' : (type ? 'button' : 'div') %}
+
+{% set attrs = {
+    href: url,
+    type: type and not url ? type,
+    target: new_window ? '_blank',
+    rel: new_window ? 'noreferrer  noopener',
+} | filter((attr) => attr is not empty)
+| map((value, attr) => '%s="%s"'|format(attr, value|escape))
+%}
+
+<{{ tag }}
+    class="pds-c-button  {{ cx.container }}  {{ js_hook }}"
+    data-component="button"{% if attrs is not empty %} {{ attrs|join(' ')|raw }}{% endif %}>
+    {% block button_content '' %}
+</{{ tag }}>
+
