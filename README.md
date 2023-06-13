@@ -5,7 +5,7 @@ Prodemos Design System [PDS]
 
 You can view the design system in action at https://pds.prodemos.nl/
 
-# How to use PDS in your own project
+# How to include PDS in your own project
 
 Each release comes with a number of packages and assets
 you can use in your own project. Current packages are 
@@ -106,7 +106,7 @@ can include the plain css/javascript into your project
 ```
 The reset.css is optional.
 
- ## Source scss
+## Source scss
 
  If you installed the source package, you can import 
  the reset and main scss files. Make sure to override
@@ -127,12 +127,10 @@ before including the scss files, like
 breakpoints and fontsizes. YMMV.
  
 
-# Making changes
+# Making changes, new releases
 
 To install this repo locally and make changes, 
 see [docs/Development.md](docs/Development.md). 
-
-# New releases
 
 See [docs/Distribution.md](docs/Distribution.md)
 on how to create a new release.
