@@ -8,8 +8,13 @@ version = $(major).$(minor).$(patch)
 
 packages = pds-compiled pds-source pds-demo
 
-# uncomment this on mac
-# SEDFIX=''
+SEDFIX = 
+ifneq ($(OS),Windows_NT)
+	UNAME := $(shell uname -s)
+	ifeq ($(UNAME),Darwin)
+		SEDFIX = ''
+	endif
+endif
 
 test:
 	@echo $(tag) - $(semver) - $(version)
@@ -47,7 +52,8 @@ compile-html:
 	php src/demo/compile.php
 
 clean: 
-	rm -rf ./build/*/
+
+	rm -rf ./build/packages/*/
 
 	rm -rf src/assets/css/*
 	echo "The CSS will be generated here." >> src/assets/css/README.md
@@ -56,76 +62,80 @@ clean:
 	echo "The HTML will be generated here." >> src/demo/html/README.md
 
 packages:
-	rm -rf ./build/*/
+	rm -rf ./build/packages/*/
 	$(foreach package,$(packages),make package-$(package);)
 
+package-pds-compiled: PACKAGE_DIR = build/packages/pds-compiled
 package-pds-compiled:
 	@echo
 	@echo Building pds-compiled ..
 	@if [ ! -f "src/assets/css/main.css" ] ; then echo "Compile css first" ; false ; fi
-	mkdir -p build/pds-compiled/assets
+	mkdir -p $(PACKAGE_DIR)/assets
 	cp -r src/assets/css \
 		src/assets/javascript \
 		src/assets/images \
 		src/assets/fonts \
-		build/pds-compiled/assets 
-	rm -f build/pds-compiled/assets/css/README.md
-	cp build/package.json.tpl build/pds-compiled/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-compiled/' build/pds-compiled/package.json
+		$(PACKAGE_DIR)/assets 
+	rm -f $(PACKAGE_DIR)/assets/css/README.md
+	@echo Creating package.json ..
+	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
+	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-compiled/' $(PACKAGE_DIR)/package.json
 
+package-pds-source: PACKAGE_DIR = build/packages/pds-source
 package-pds-source:
 	@echo
 	@echo Building pds-source ..
-	mkdir -p build/pds-source/assets
+	mkdir -p $(PACKAGE_DIR)/assets
 	cp -r src/assets/javascript \
 		src/assets/images \
 		src/assets/fonts \
 		src/assets/sass \
-		build/pds-source/assets
-	cp build/package.json.tpl build/pds-source/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-source/' build/pds-source/package.json
+		$(PACKAGE_DIR)/assets
+	@echo Creating package.json ..
+	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
+	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-source/' $(PACKAGE_DIR)/package.json
 
+package-pds-demo: PACKAGE_DIR = build/packages/pds-demo
 package-pds-demo:
 	@echo
 	@echo Building pds-demo ..
 	@if [ ! -f "src/demo/html/index.html" ] ; then echo "Compile html first" ; false ; fi
-	mkdir -p build/pds-demo
-	cp -r src/demo/html build/pds-demo
-	rm -f build/pds-demo/html/README.md
-	cp build/package.json.tpl build/pds-demo/package.json
-	sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-demo/' build/pds-demo/package.json
+	mkdir -p $(PACKAGE_DIR)
+	cp -r src/demo/html $(PACKAGE_DIR)
+	rm -f $(PACKAGE_DIR)/html/README.md
+	@echo Creating package.json ..
+	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
+	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-demo/' $(PACKAGE_DIR)/package.json
 
 release:
-
 	@if test -z "$(version)"; then echo "make release requires a semantic version"; false ; fi
 	$(foreach package,$(packages),make release-$(package);)
 
 release-pds-compiled:
-
 	@echo
 	@echo Releasing pds-compiled ..
-	@if [ ! -d "build/pds-compiled" ] ; then echo "build/pds-compiled not ready" ; false ; fi
-	cd build/pds-compiled && npm version $(version)
-	npm publish ./build/pds-compiled
-	tar -cvzf ./build/pds-compiled.tgz ./build/pds-compiled
-	hub release edit -a ./build/pds-compiled.tgz -m "" $(version)
+	@if [ ! -d "build/packages/pds-compiled" ] ; then echo "build/packages/pds-compiled not ready" ; false ; fi
+	cd build/packages/pds-compiled && npm version $(version)
+	npm publish ./build/packages/pds-compiled
+	tar -cvzf ./build/packages/pds-compiled.tgz ./build/packages/pds-compiled
+	hub release edit -a ./build/packages/pds-compiled.tgz -m "" $(version)
 
 release-pds-source:
 
 	@echo
 	@echo Releasing pds-source ..
-	@if [ ! -d "build/pds-source" ] ; then echo "build/pds-source not ready" ; false ; fi
-	cd build/pds-source && npm version $(version)
-	npm publish ./build/pds-source
-	tar -cvzf ./build/pds-source.tgz ./build/pds-source
-	hub release edit -a ./build/pds-source.tgz -m "" $(version)
+	@if [ ! -d "build/packages/pds-source" ] ; then echo "build/packages/pds-source not ready" ; false ; fi
+	cd build/packages/pds-source && npm version $(version)
+	npm publish ./build/packages/pds-source
+	tar -cvzf ./build/packages/pds-source.tgz ./build/packages/pds-source
+	hub release edit -a ./build/packages/pds-source.tgz -m "" $(version)
 
 release-pds-demo:
 
 	@echo
 	@echo Releasing pds-demo ..
-	@if [ ! -d "build/pds-demo" ] ; then echo "build/pds-demo not ready" ; false ; fi
-	cd build/pds-demo && npm version $(version)
-	npm publish ./build/pds-demo
-	tar -cvzf ./build/pds-demo.tgz ./build/pds-demo
-	hub release edit -a ./build/pds-demo.tgz -m "" $(version)
+	@if [ ! -d "build/packages/pds-demo" ] ; then echo "build/packages/pds-demo not ready" ; false ; fi
+	cd build/packages/pds-demo && npm version $(version)
+	npm publish ./build/packages/pds-demo
+	tar -cvzf ./build/packages/pds-demo.tgz ./build/packages/pds-demo
+	hub release edit -a ./build/packages/pds-demo.tgz -m "" $(version)
