@@ -1,0 +1,23 @@
+
+name: QA
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: php-actions/composer@v6
+        with:
+          command: nop
+      - run: make install
+      - run: make compile
+      - run: make packages
+      
