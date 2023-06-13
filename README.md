@@ -106,7 +106,7 @@ can include the plain css/javascript into your project
 ```
 The reset.css is optional.
 
- ## Soure scss
+ ## Source scss
 
  If you installed the source package, you can import 
  the reset and main scss files. Make sure to override
@@ -126,123 +126,14 @@ There are more variables you can override
 before including the scss files, like 
 breakpoints and fontsizes. YMMV.
  
-# Demo / Styleguide
-
-You can view the PDS in action at https://pds.prodemos.nl/
-
-Alternatively, you can clone this repo and build the 
-demo yourself, see below.
-
 
 # Making changes
 
-XXX TODO
- 
-## Build / compile
+To install this repo locally and make changes, 
+see [docs/Development.md](docs/Development.md). 
 
-If you want to make changes, check the demo/build directory. 
+# New releases
 
-> The changes should be compiled before committed to the repo, so
-> the end user can just use the compiled css from the repo
-> if s/he wants to.
-
-You'll need Composer and Node. You should first run
-
-```
-cd demo/build
-composer install
-```
-
-to install a twig- and sass-compiler and a yaml parser. 
-After that you can run
-
-```
-composer compile-sass
-```
-to compile assets/sass/main.scss to assets/css/main.css
-
-and
-```
-composer compile-twig
-```
-to generate new demo files in demo/html
-
-You can also just call
-``composer compile``
-to do both.
-
-# Expand - adding new elements
-
-To create a new element, say pds-c-foo
-  - write your sass in assets/sass/pds/components/_foo.scss
-  - add your stylesheet to assets/sass/main.scss
-  - write a demo twig template in assets/twig/components/foo/foo.twig
-  - add a config for template to assets/twig/pds/components/foo/_styleguide.yml
-and compile the sass and twig as described above.
-
-Your element should now appear in the styleguide in demo/html
-
-Always prefix you classnames with pds-. Try to stay
-within the definitions of pds-s(copes), pds-t(hemes),
-pds-c(omponents) and pds-m(odifiers). Avoid BEM.
-Use predefined colors, sizes and fonts.
-
-If you want to write directly in the demo pages, 
-check demo/build/pages/*
-
-# Sass
-
-A few notes on the use of the Sass-files when adding styles
-
-#### Breakpoints
-
-When breakpoints are defined, they can be used inline in the class to target specific behaviour.
-
-Just use:
-```
-@include media-from(lg) {
-    font-size: nth($pds-font-sizes, 2);
-}
-```
-to set another style from breakpoint LG (LarGe, probably something around 1024px)
-
-
-Three types can be used:
- - `@include media-from(lg){ ... }` \ Which means: 'Use this style up from Large screens'
- - `@include media-between(md, lg) { ... }`  \ Which means: 'use this style between Medium and Large screens'
- - `@include media-until(lg) { ... }` \ Which means: 'use this style until Large screens'
-
-#### Colors
-Colors are defined in `$pds-colors` as a map, but you can use the helpers `pds-color` and `pds-theme-color` to find the right color. Themes are defined in `$pds-themes`.`
-
-```
-.class {
-    background-color: pds-color(red);
-    color: pds-theme-color(stroke); 
-}
-```
-
-#### Fonts
-
-The fonts are defined by name, which helps in consistency. A scale can be accessed with a helper:
-```
-.class {
-    font-size: pds-fontsize(l);
-    line-height: pds-lineheight(m);
-}
-```
-
-#### Scales
-
-Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
-```
-.class {
-    margin-bottom: nth($pds-spacings, 2); // second in the array
-}
-```
-
-Similar methods should be used for the `$pds-lighten-scale` and `$pds-darken-scale`.
-
-
-
+See [docs/Distribution.md](docs/Distribution.md)
+on how to create a new release.
 
