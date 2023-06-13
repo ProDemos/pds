@@ -11,7 +11,8 @@ use Twig\Extra\Html\HtmlExtension;
 
 class TwigCompiler
 {
-    private $rootdir;
+    private $srcdir;
+    private $dstdir;
     private $twig;
     private $data;
 
@@ -19,18 +20,18 @@ class TwigCompiler
         'views'     => 'twig',
         'pages'     => 'pages',
         'config'    => 'config',
-        'assets'    => '../../assets',
-        'output'    => '../html'
+        'assets'    => '../../assets'
     ];
 
-    public function __construct($rootdir) {
-        $this->rootdir = $rootdir;
+    public function __construct($srcdir,$dstdir) {
+        $this->srcdir = $srcdir;
+        $this->dstdir = $dstdir;
     }
 
     public function compile()
     {
         $cwd = getcwd();
-        chdir($this->rootdir);
+        chdir($this->srcdir);
 
         $loader = new FilesystemLoader([
             $this->paths['views'], 
@@ -117,9 +118,10 @@ class TwigCompiler
         // the pages define which widgets it will display (if any)
         // using the _styleguide.yml defintions in the assets/twig folder
 
-        $this->renderTemplates($this->paths['pages'],$this->paths['output']);
-       
         chdir($cwd);
+        $this->renderTemplates($this->srcdir.'/'.$this->paths['pages'],$this->dstdir);
+       
+        
 
         
     }
@@ -174,5 +176,11 @@ class TwigCompiler
 
 }
 
-$compiler = new TwigCompiler(__DIR__.'/twig');
+$srcdir = $argv[1];
+$dstdir = $argv[2];
+if (!$srcdir || !$dstdir) {
+    echo "Usage: compile $srcdir $dstdir";
+    exit(1);
+}
+$compiler = new TwigCompiler($srcdir,$dstdir);
 $compiler->compile();
