@@ -1,29 +1,32 @@
 Prodemos Design System [PDS]
 =============================
 
-# Browse
+# Demo
 
 You can view the design system in action at https://pds.prodemos.nl/
 
 # How to use PDS in your own project
 
+Each release comes with a number of packages and assets
+you can use in your own project. Current packages are 
+- **pds-compiled** \
+  an assets folder containing, amongst others, plain css
+- **pds-source** \
+  an assets folder containing, amongst others, scss sources
+- **pds-demo** \
+  the website visible at https://pds.prodemos.nl/
 
-## git submodule
-To install, you can pull this repo into your project
-as a __git submodule__ 
+## Download
 
-https://git-scm.com/book/en/v2/Git-Tools-Submodules
+You can download the packages as zip files at the releases page:
+https://github.com/ProDemos/pds/releases
 
-```
-git submodule add https://github.com/prodemos/pds
-git submodule init
-```
+## Node / NPM
 
-## npm
+The packages are available as NPM packages too, see
+https://github.com/orgs/ProDemos/packages?repo_name=pds
 
-Each release comes with a few npm packages you can use in your node project.
-
-Since this is a Github Package, you will need to [authenticate with GitHub Packages](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages), to install the module. Start by [creating a personal access token](https://github.com/settings/tokens). It needs only `read:packages` permissions.
+Since this is a Github NPM Package, you will need to [authenticate with GitHub Packages](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages), to install the module. Start by [creating a personal access token](https://github.com/settings/tokens). It needs only `read:packages` permissions.
 
 Now copy your personal access token, and store it in your npm config:   
 
@@ -37,15 +40,14 @@ These values are probably stored in your ~/.npmrc.
 Now you can install the package:
 
 ```
-npm install @prodemos/pds-xxx
+npm install @prodemos/(packagename)
 ```
 
-where xxx is the name of the package you want to install.
 Your co-developers will need to get the same instructions before they can install your project.
 
-## Composer
+## PHP / Composer
 
-Add the repository in your composer.json file 
+You can add this full repository in your composer.json file 
 
 ```
 {
@@ -61,43 +63,68 @@ Add the repository in your composer.json file
 ```
 and run `composer install`. Because it is a private repository, Composer may prompt you for credentials, but just follow the instructions there.
 
-## Download
 
-Each release comes with a few zip files you can download:
+## GIT submodule
 
-https://github.com/ProDemos/pds/xxxx/TODO
+You can pull this full repository into your project
+as a __git submodule__ 
+
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+```
+git submodule add https://github.com/prodemos/pds
+git submodule init
+```
+
 
 # Usage
 
-If you just pulled this repo into your own project,
-you can use the assets folder to implement the PDS
-design. 
-```
-<link rel="stylesheet" href="pds/assets/css/reset.css">
-<link rel="stylesheet" href="pds/assets/css/main.css">
-```
-The reset.css is optional.
+After installing, the package provides an `assets` folder somewhere
+in your installation. 
 
 The assets folder contains
 
- - assets/css : the minified css files
  - assets/images : some images referred to by those css files
  - assets/fonts : some fonts referred to by those css files
- 
-The rest is optional and depends on your project:
+
+The compiled package also contains 
+
+ - assets/css : the minified css files
+
+The source package also contains
 
  - assets/sass : the source sass files you can include in your own project
  - assets/twig : some twig templates you can reuse in your own project
- - assets/javascript: used for more complex widgets created by twig 
+ - assets/javascript: used for more complex widgets created by twig
 
- If you plan to include the sass in your own project, 
- you probably want to override 
- ```
- $pds-assets-path
- ```
- in your own sass, and point it to the assets folder
- (relative to the output of the css you are compiling)
+## Plain css
+If you installed the compiled package, you
+can include the plain css/javascript into your project
+```
+<link rel="stylesheet" href=".../pds/assets/css/reset.css">
+<link rel="stylesheet" href=".../pds/assets/css/main.css">
+```
+The reset.css is optional.
 
+ ## Soure scss
+
+ If you installed the source package, you can import 
+ the reset and main scss files. Make sure to override
+ `$pds-assets-path` to point to the right root folder
+
+ ```
+ // override the pds assets base
+$pds-assets-path: "@pds";
+
+// import pds
+@import "@pds/sass/reset.scss"; // optional
+@import "@pds/sass/main.scss";
+
+ ```
+
+There are more variables you can override 
+before including the scss files, like 
+breakpoints and fontsizes. YMMV.
  
 # Demo / Styleguide
 
