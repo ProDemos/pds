@@ -20,7 +20,7 @@ class TwigCompiler
         'views'     => 'twig',
         'pages'     => 'pages',
         'config'    => 'config',
-        'assets'    => '../../assets'
+        'assets'    => '../assets'
     ];
 
     public function __construct($srcdir,$dstdir) {

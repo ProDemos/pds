@@ -54,7 +54,7 @@ compile-css:
 
 compile-html:
 	@echo
-	php src/demo/compile.php src/demo/twig build/demo
+	php src/demo/compile.php src/demo build/demo
 	cp -r build/assets build/demo
 
 clean: 
