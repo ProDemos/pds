@@ -30,37 +30,42 @@ compile: compile-css compile-html
 
 compile-css:
 	@echo
+
+	cp -r src/assets/* build/assets
+	mkdir -p build/assets/css/
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
-		src/assets/sass/main.scss \
-		src/assets/css/main.css
+		build/assets/sass/main.scss \
+		build/assets/css/main.css
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
-		src/assets/sass/reset.scss \
-		src/assets/css/reset.css
+		build/assets/sass/reset.scss \
+		build/assets/css/reset.css
+
+	mkdir -p build/demo/css/
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
 		src/demo/twig/sass/styleguide.scss \
-		src/demo/html/css/styleguide.css
+		build/demo/css/styleguide.css
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
 		src/demo/twig/sass/prodemos.scss \
-		src/demo/html/css/prodemos.css
+		build/demo/css/prodemos.css
 
 compile-html:
 	@echo
-	php src/demo/compile.php src/demo/twig src/demo/html
-	cp -r src/assets src/demo/html
+	php src/demo/compile.php src/demo/twig build/demo
+	cp -r build/assets build/demo
 
 clean: 
 
 	rm -rf ./build/packages/*/
 
-	rm -rf src/assets/css/*
-	echo "The CSS will be generated here." >> src/assets/css/README.md
+	rm -rf ./build/assets/*
+	echo "The assets will be compiled here." >> build/assets/README.md
 
-	rm -rf src/demo/html/*
-	echo "The HTML will be generated here." >> src/demo/html/README.md
+	rm -rf ./build/demo/*
+	echo "The demo will be compiled here." >> build/demo/README.md
 
 packages:
 	rm -rf ./build/packages/*/
@@ -70,14 +75,13 @@ package-pds-compiled: PACKAGE_DIR = build/packages/pds-compiled
 package-pds-compiled:
 	@echo
 	@echo Building pds-compiled ..
-	@if [ ! -f "src/assets/css/main.css" ] ; then echo "Compile css first" ; false ; fi
+	@if [ ! -d "build/assets/css" ] ; then echo "Error: compile css first" ; false ; fi
 	mkdir -p $(PACKAGE_DIR)/assets
-	cp -r src/assets/css \
-		src/assets/javascript \
-		src/assets/images \
-		src/assets/fonts \
+	cp -r build/assets/css \
+		build/assets/javascript \
+		build/assets/images \
+		build/assets/fonts \
 		$(PACKAGE_DIR)/assets 
-	rm -f $(PACKAGE_DIR)/assets/css/README.md
 	@echo Creating package.json ..
 	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
 	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-compiled/' $(PACKAGE_DIR)/package.json
@@ -100,10 +104,10 @@ package-pds-demo: PACKAGE_DIR = build/packages/pds-demo
 package-pds-demo:
 	@echo
 	@echo Building pds-demo ..
-	@if [ ! -f "src/demo/html/index.html" ] ; then echo "Compile html first" ; false ; fi
+	@if [ ! -f "build/demo/index.html" ] ; then echo "Error: compile html first" ; false ; fi
 	mkdir -p $(PACKAGE_DIR)
-	cp -r src/demo/html $(PACKAGE_DIR)
-	rm -f $(PACKAGE_DIR)/html/README.md
+	cp -r build/demo $(PACKAGE_DIR)
+	rm -f $(PACKAGE_DIR)/README.md
 	@echo Creating package.json ..
 	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
 	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-demo/' $(PACKAGE_DIR)/package.json
