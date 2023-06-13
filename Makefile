@@ -45,11 +45,11 @@ compile-css:
 	mkdir -p build/demo/css/
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
-		src/demo/twig/sass/styleguide.scss \
+		src/demo/sass/styleguide.scss \
 		build/demo/css/styleguide.css
 	node_modules/node-sass/bin/node-sass \
 		--output-style compressed \
-		src/demo/twig/sass/prodemos.scss \
+		src/demo/sass/prodemos.scss \
 		build/demo/css/prodemos.css
 
 compile-html:
