@@ -1,6 +1,11 @@
 Prodemos Design System [PDS]
 =============================
 
+The Prodemos Design System (PDS) attempts to normalize the design used for apps and sites within the Prodemos ecosystem. You can install and use it in your app. 
+
+It does not by default change any of the design in your app; instead it offers tools and utilities to comply with ProDemos' standards. For example, it does not specify any default fonts, but it does provides the standard fonts used by ProDemos. It does not specify any colors, but it does provide methods to use Prodemos' default color sets - etcetera.
+
+
 # Demo
 
 You can view the design system in action at https://pds.prodemos.nl/
@@ -77,28 +82,22 @@ git submodule init
 ```
 
 
-# Usage
+# How to use PDS in your own project
 
 After installing, the package provides an `assets` folder somewhere
 in your installation. 
 
-The assets folder contains
+Depending on the package you installed, the assets folder may contain any or all of these folders:
 
  - assets/images : some images referred to by those css files
  - assets/fonts : some fonts referred to by those css files
-
-The compiled package also contains 
-
  - assets/css : the minified css files
-
-The source package also contains
-
  - assets/sass : the source sass files you can include in your own project
  - assets/twig : some twig templates you can reuse in your own project
  - assets/javascript: used for more complex widgets created by twig
 
 ## Plain css
-If you installed the compiled package, you
+If you installed a compiled package, you
 can include the plain css/javascript into your project
 ```
 <link rel="stylesheet" href=".../pds/assets/css/reset.css">
@@ -108,7 +107,7 @@ The reset.css is optional.
 
 ## Source scss
 
- If you installed the source package, you can import 
+ If you installed a package containing sass, you can import 
  the reset and main scss files. Make sure to override
  `$pds-assets-path` to point to the right root folder
 
@@ -129,7 +128,7 @@ breakpoints and fontsizes. YMMV.
 
 # Making changes, new releases
 
-To install this repo locally and make changes, 
+To install this repo locally and make changes to PDS, 
 see [docs/Development.md](docs/Development.md). 
 
 See [docs/Distribution.md](docs/Distribution.md)

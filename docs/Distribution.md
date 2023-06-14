@@ -10,8 +10,7 @@ Make sure to use a valid semantic version as a tag name (for NPM).
 
 This triggers a workflow that builds the packages and releases them.
 
-A new release creates either **npm packages** and/or **github release assets**
-for every build in the build dir.
+A new release creates either a **npm package** and/or a **github release asset** for every package in the build dir.
 
 
 
@@ -21,8 +20,7 @@ Packaging is set up following
 
 https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-multiple-packages-to-the-same-repository
 
-To add a completely new package, create new targets in the makefile
-for `package-YOURPACKAGE` and `release-YOURPACKAGE`
+To add a completely new package to be created on every release, create new targets in the makefile for `package-YOURPACKAGE` and `release-YOURPACKAGE`
 
 ## Releasing manually
 
