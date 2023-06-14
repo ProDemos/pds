@@ -69,7 +69,13 @@ git checkout -b feature/barf
 make compile
 make packages
 
-# check if it works here ..
+# check if it works here, eg using a webserver 
+# in the 'build/demo' folder 
+
+cd build/demo
+python3 -m http.server 
+
+# and checking http://localhost:8000/
 
 git push origin feature/barf
 
