@@ -36,17 +36,17 @@
         <div class="c-img-list">
             {% for i in img_list %}
                 {% if i|split('.')|last == "svg" %}
-                    <div class="c-img-list__item">
+                    <div class="c-img-list__item" style="background-color:#efefef; padding:1em">
                         {{ ui.svg(i, {
-                            directory: rooturi ~ '../../assets/images',
+                            directory: rooturi ~ '/assets/images',
                             width: 240,
                             height: 240,
                         }) }}
                         <p class="c-img-list__item__name">{{ i }}</p>
                     </div>
                 {% else %}
-                    <div class="c-img-list__item">
-                        <img src="../../assets/images/{{i}}" style="max-width:128px">
+                    <div class="c-img-list__item"  style="background-color:#efefef; padding:1em">
+                        <img src="/assets/images/{{i}}" style="max-width:128px">
                         <p class="c-img-list__item__name">{{ i }}</p>
                     </div>
                 {% endif %}
@@ -63,7 +63,7 @@
             {% for i in icon_list %}
                 <div class="c-icon-list__item">
                     {{ ui.svg(i, {
-                        directory: rooturi ~ '../../assets/images/icons',
+                        directory: rooturi ~ '/assets/images/icons',
                         width: 48,
                         height: 48,
                     }) }}
