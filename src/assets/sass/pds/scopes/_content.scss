@@ -1,0 +1,182 @@
+@import "../../helpers/responsive";
+
+// Styling for elements which can't be target through classes, usually content from the CMS
+// Add the class .pds-s-content to the element that contians this CMS-content (usually a DIV)
+// Extend these styles to your needs.
+
+.pds-s-content {
+    h1 {
+        margin-bottom: nth($pds-spacings, 5);
+        font-size: pds-fontsize(xl);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(xxl);
+        }
+    }
+
+    h2 {
+        margin-bottom: nth($pds-spacings, 4);
+        font-size: pds-fontsize(l);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(xl);
+        }
+    }
+
+    h3 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(m);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(l);
+        }
+    }
+
+    h4 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(m);
+        }
+    }
+
+    h5 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(m);
+        }
+    }
+
+    h6 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(m);
+        }
+    }
+
+    p {
+        margin-bottom: nth($pds-spacings, 7);
+        font-size: pds-fontsize(default);
+        font-weight: 400;
+        line-height: pds-lineheight(m);
+
+        @include media-from(lg) {
+            margin-bottom: nth($pds-spacings, 8);
+        }
+    }
+
+    strong,
+    b {
+        font-weight: 600;
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    a:not(.pds-c-button) {
+        color: darken(pds-color(blue), nth($pds-darken-scale, 1));
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        word-break: break-all;
+
+        @include hover {
+            color: darken(pds-color(blue), nth($pds-darken-scale, 1));
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: darken(pds-color(blue), nth($pds-darken-scale, 2));
+        }
+
+        // allows classnames on links to override link color, too
+        @each $theme in map-keys($pds-themes) {
+            &.pds-t-#{$theme} {
+                
+                color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+        
+                @include hover {
+                    color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+                }
+        
+                &:visited {
+                    color: lighten(pds-theme-color($theme,'fill'), nth($pds-lighten-scale, 1));
+                }
+            }
+        }
+            
+    }
+
+    ul,
+    ol {
+        margin: 0 0 nth($pds-spacings, 6) nth($pds-spacings, 5);
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: nth($pds-spacings, 2);
+    }
+
+    blockquote {
+        margin-top: nth($pds-spacings, 7);
+        margin-bottom: nth($pds-spacings, 4);
+        font-size: pds-fontsize(m);
+        font-style: italic;
+        font-weight: 500;
+        line-height: pds-lineheight(default);
+
+        @include media-from(md) {
+            font-size: pds-fontsize(l);
+        }
+    }
+
+    blockquote + footer {
+        margin-bottom: nth($pds-spacings, 6);
+        padding: 0 nth($pds-spacings, 3) 0 nth($pds-spacings, 4);
+        font-size: pds-fontsize(s);
+        font-weight: 500;
+        line-height: pds-lineheight(m);
+        border-left: 1px solid pds-color(orange);
+    }
+
+    img {
+        display: block;
+    }
+}
+
+// theming ---------------------
+
+@mixin pds-content-theme($theme : $pds-deftheme) {
+
+    a:not(.pds-c-button) {
+        color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+
+        @include hover {
+            color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
+        }
+
+        &:visited {
+            color: lighten(pds-theme-color($theme,'fill'), nth($pds-lighten-scale, 1));
+        }
+    }
+    
+    
+}
+
+.pds-t-content {
+    @include pds-content-theme();
+}
+
+@each $theme in map-keys($pds-themes) {
+    .pds-t-#{$theme} .pds-s-content,
+    .pds-s-content.pds-t-#{$theme}:not(.inherit) {
+        @include pds-content-theme($theme);
+    }
+}

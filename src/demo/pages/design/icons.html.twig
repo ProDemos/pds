@@ -1,0 +1,51 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Icons - Styleguide' %}
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Favicons</h2>
+    <p>
+        Favicons in are supplied for your convenience. In various colors,
+        these files are available in ../assets/images/favicons/[color]/:
+        <ul>
+            <li>android-chrome-192x192.png </li>
+            <li>android-chrome-512x512.png </li>
+            <li>apple-touch-icon.png </li>
+            <li>favicon-16x16.png </li>
+            <li>favicon-32x32.png </li>
+            <li>favicon.ico</li>
+        </ul>
+    </p>
+    <br><br>
+    <div class="c-icon-list">
+        {% for color in ['black','blue','green','orange','pink','purple','red','yellow'] %}
+            <div class="c-icon-list__item">
+                <img src="/assets/images/favicons/{{ color }}/favicon.ico">
+                <p class="c-icon-list__item__name">.../{{ color }}/favicon.ico</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="c-copy--h2">Other icons</h2>
+    <p>
+        The icons for buttons are based on SVG with a canvas size of 24 x 24, and when you create new icons the 
+        line art is preferably max 22 x 22 px. If you stick to these numbers the icons will render consistently. 
+        <br><br>
+        Most of these icons will be defined as icon components too, so look in that chapter on how to use them properly, 
+        but you can also use them straight from the SVG source. To do that,
+        copy the SVG-code and alter just the width and height to your need when using it in your project. 
+        They are scalable, so you can make them larger than the default 24 x 24.
+            The icons that can be used as graphical element on the background are default 48 x 48 px.<br><br>
+        
+        If icons don't show up here, you may be looking on http://localhost ?
+    </p>
+{% endblock %}
+
+
+{% block component_list %}
+    <div>
+        {# 'icons' is read from assets/images/icons directory by build script #}
+        {{ styleguide.icons(icons,rooturi) }}
+    </div>
+{% endblock %}

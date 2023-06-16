@@ -1,0 +1,264 @@
+// -----------------------------------------------------------------------------
+// #HELPERS icons
+// .pds-c-icon [.{name}][.large][.colored][.accented][.{color}]
+// -----------------------------------------------------------------------------
+
+i.pds-c-icon, 
+i.pds-c-button-icon {
+
+	color: transparent;
+	font-style:normal;
+	display:inline-block;
+	vertical-align:middle;
+	//background-repeat:no-repeat;
+    width:1em; 
+    height:1em;
+    cursor:pointer;
+    
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    user-select: none;
+    
+    background-color:pds-color(black);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+
+    &.large {
+        width:2em; 
+        height:2em; 
+    }
+    &.medium {
+        width:1.75em; 
+        height:1.75em; 
+    }
+
+   // default icon
+    mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
+    -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
+
+    // 24px
+
+    &.alert	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/alert.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/alert.svg);
+    }
+    &.arrow-circled-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-left.svg);
+    }
+    &.arrow-circled-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-right.svg);
+    }
+    &.arrow-down	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-down.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-down.svg);
+    }
+    &.arrow-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-left.svg);
+    }
+    &.arrow-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right.svg);
+    }
+    &.arrow-small-down	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-down.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-down.svg);
+    }
+    &.arrow-small-up	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
+    }
+    &.arrow-small-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+    }
+    &.arrow-small-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+    }
+    &.arrow-up	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);
+    }
+    &.arrows-dropdown	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg);
+    }
+    &.basket	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/basket.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/basket.svg);
+    }
+    &.bin	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/bin.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/bin.svg);
+    }
+    &.calendar	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar.svg);
+    }
+    &.check-green	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/check-green.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check-green.svg);
+    }
+    &.check	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/check.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check.svg);
+    }
+    &.close	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/close.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/close.svg);
+    }
+    &.edit	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/edit.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/edit.svg);
+    }
+    &.error-red	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/error-red.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/error-red.svg);
+    }
+    &.error	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/error.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/error.svg);
+    }
+    &.hamburger	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/hamburger.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/hamburger.svg);
+    }
+    &.info	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
+    }
+    &.magnifier	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier.svg);
+    }
+    &.plus	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/plus.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/plus.svg);
+    }
+    &.remove	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/remove.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/remove.svg);
+    }
+    &.sidebar	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/sidebar.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/sidebar.svg);
+    }
+    &.user	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/user.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/user.svg);
+    }
+
+    // 48px
+
+    &.balloon-double	{
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/balloon-double.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/balloon-double.svg);
+    }
+    &.balloon {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/balloon.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/balloon.svg);
+    }
+    &.briefcase {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/briefcase.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/briefcase.svg);
+    }
+    &.court {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/court.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/court.svg);
+    }
+    &.crown {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/crown.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/crown.svg);
+    }
+    &.flag-european {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/flag-european.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/flag-european.svg);
+    }
+    &.fort {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/fort.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/fort.svg);
+    }
+    &.hamburger {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/hamburger.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/hamburger.svg);
+    }
+    &.holland {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/holland.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/holland.svg);
+    }
+    &.megaphone {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/megaphone.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/megaphone.svg);
+    }
+    &.necklace {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/necklace.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/necklace.svg);
+    }
+    &.pencil {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/pencil.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/pencil.svg);
+    }
+    &.provincial-house {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/provincial-house.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/provincial-house.svg);
+    }
+    &.ridderzaal {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/ridderzaal.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/ridderzaal.svg);
+    }
+    &.scale {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/scale.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/scale.svg);
+    }
+    &.sign {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/sign.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/sign.svg);
+    }
+    &.television {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/television.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/television.svg);
+    }
+    &.vote {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/vote.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/vote.svg);
+    }
+    &.voting {
+        mask-image: url(#{$pds-assets-path}/images/icons/48px/voting.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/48px/voting.svg);
+    }
+
+
+    // all named colors
+    @each $cname, $cvalue in $pds-colors {
+        &.#{""+$cname} {
+            background-color: $cvalue;
+        }
+    }
+
+    // theming
+
+    &.colored {
+        background-color: pds-theme-color($pds-deftheme,'fill');
+    }
+    &.accented {
+        background-color: pds-theme-color($pds-deftheme,'accent');
+    }
+    @each $themename in map-keys($pds-themes) {
+        @at-root .pds-t-#{$themename} &.colored,
+        &.colored.pds-t-#{$themename}:not(.inherit) {
+            background-color: pds-theme-color($themename,'fill');
+        }
+        @at-root .pds-t-#{$themename} &.accented,
+        &.accented.pds-t-#{$themename}:not(.inherit) {
+            background-color: pds-theme-color($themename,'accent');
+        }
+    }
+}
+
+
