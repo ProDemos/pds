@@ -17,8 +17,9 @@ jobs:
       - run: make install
       - run: make compile
       - run: make package-pds-demo
-  call-workflow-passing-data:
-    uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
+  upload:
+#   uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
+    uses: ./.github/workflows/copy_to_server.yml@main
     needs: build
     with:
       source_folder: build/packages/pds-demo/demo
