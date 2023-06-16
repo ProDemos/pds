@@ -42,7 +42,7 @@ jobs:
       - name: Prepare config file
         run: |
           printf "${{ secrets.DEPLOYMENT_VPN_CONFIG }}" >> .github/config.ovpn
-          shell: bash
+        shell: bash
           
       - name: Connect VPN
         run: |
