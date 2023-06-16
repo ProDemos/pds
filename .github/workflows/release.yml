@@ -1,0 +1,35 @@
+
+name: Release
+
+on:
+  release:
+    types: 
+      - released
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: php-actions/composer@v6
+        with:
+          command: nop
+      - name: Prepare environment
+        run: |
+            echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' > .npmrc
+            echo '@prodemos:registry=https://npm.pkg.github.com/' >> .npmrc
+            git config --global user.name "${GITHUB_ACTOR}"
+            git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+      - run: make install
+      - run: make compile
+      - run: make packages
+      - run: make release tag=${{ github.event.release.tag_name }}
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      

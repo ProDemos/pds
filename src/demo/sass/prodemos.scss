@@ -1,0 +1,134 @@
+
+//
+// Settings / variables
+//
+@import "../../assets/sass/variables/global";
+@import "../../assets/sass/variables/overrides";
+
+
+//
+// Mixins and helpers
+//
+@import "../../assets/sass/helpers/color";
+@import "../../assets/sass/helpers/hover";
+@import "../../assets/sass/helpers/responsive";
+
+
+
+.s-styleguide-content {
+    h1 {
+        margin-bottom: nth($pds-spacings, 5);
+        font-size: pds-fontsize(xl);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(xxl);
+        }
+    }
+
+    h2 {
+        margin-bottom: nth($pds-spacings, 4);
+        font-size: pds-fontsize(l);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(xl);
+        }
+    }
+
+    h3 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(m);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(l);
+        }
+    }
+
+    h4 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(m);
+        }
+    }
+
+    h5 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(5);
+        }
+    }
+
+    h6 {
+        margin-bottom: nth($pds-spacings, 3);
+        font-size: pds-fontsize(default);
+
+        @include media-from(lg) {
+            font-size: pds-fontsize(m);
+        }
+    }
+
+    p {
+        margin-bottom: nth($pds-spacings, 7);
+        font-size: pds-fontsize(default);
+        font-weight: 400;
+        line-height: pds-lineheight(m);
+
+        @include media-from(lg) {
+            margin-bottom: nth($pds-spacings, 8);
+        }
+    }
+
+    strong,
+    b {
+        font-weight: 600;
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    a {
+        color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.15s ease-out;
+        word-break: break-all;
+
+        @include hover {
+            color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: darken((pds-color(blue)), nth($pds-darken-scale, 2));
+        }
+
+        @each $theme in map-keys($pds-themes) {
+            &.pds-t-#{$theme}:not(.inherit) {
+                color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+
+                @include hover {
+                    color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+                }
+
+                &:visited {
+                    color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 1));
+                }
+            }
+        }
+    }
+
+    ul,
+    ol {
+        margin: 0 0 nth($pds-spacings, 6) nth($pds-spacings, 5);
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: nth($pds-spacings, 2);
+    }
+}

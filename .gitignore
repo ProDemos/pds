@@ -1,9 +1,12 @@
 # composer
-demo/build/vendor
-demo/build/composer.lock
+composer.phar
+/vendor/
 # node
-demo/build/node_modules
-demo/build/package-lock.json
+/node_modules/
+# pds
+/build/
+/src/assets/css
+/src/demo/html
 # general
 .DS_Store
 ._*
