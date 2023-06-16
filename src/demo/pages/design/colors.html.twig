@@ -26,9 +26,19 @@
     <table width="100%" id="colortable">
         {% for maincolor, subcolors in colors %}
             <tr>
-                <th class="pds-m-filled {{ maincolor }}">{{ maincolor }}</th>
+                <th class="pds-m-filled {{ maincolor }}">
+                    {% if maincolor == "black" %}
+                        <span class="pds-m-colored black-60">{{ maincolor }}</span>
+                    {% else %}
+                        {{ maincolor }}
+                    {% endif %}
+                </th>
                 {% for color in subcolors %}
-                    <td class="pds-m-filled {{ color }}">{{ color }}</td>
+                    {% if not(color == "black") %}
+                        <td class="pds-m-filled {{ color }}">{{ color }}</td>
+                    {% else %}
+                        <td class="pds-m-filled black"></td>
+                    {% endif %}
                 {% endfor %}
             </tr>
         {% endfor %}
