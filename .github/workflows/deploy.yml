@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - feature/test-deploy
-
 jobs:
   build:
     name: Build
@@ -18,7 +17,6 @@ jobs:
       - run: make install
       - run: make compile
       - run: make package-pds-demo
-      
   call-workflow-passing-data:
     uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
     needs: build
