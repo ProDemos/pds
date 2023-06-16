@@ -77,6 +77,7 @@ package-pds:
 	@echo Building pds ..
 	mkdir -p $(PACKAGE_DIR)/assets
 	cp -r build/assets/* $(PACKAGE_DIR)/assets
+	rm -f $(PACKAGE_DIR)/assets/README.md
 	@echo Creating package.json ..
 	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
 	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds/' $(PACKAGE_DIR)/package.json
@@ -117,7 +118,7 @@ package-pds-demo:
 	@if [ ! -f "build/demo/index.html" ] ; then echo "Error: compile html first" ; false ; fi
 	mkdir -p $(PACKAGE_DIR)
 	cp -r build/demo $(PACKAGE_DIR)
-	rm -f $(PACKAGE_DIR)/README.md
+	rm -f $(PACKAGE_DIR)/demo/README.md $(PACKAGE_DIR)/demo/assets/README.md
 	@echo Creating package.json ..
 	@cp build/packages/package.json.tpl $(PACKAGE_DIR)/package.json
 	@sed -i $(SEDFIX) 's/##PACKAGE-NAME##/pds-demo/' $(PACKAGE_DIR)/package.json

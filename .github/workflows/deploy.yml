@@ -1,9 +1,10 @@
-name: Test deploy
+name: Deploy
 
 on:
-  push:
-    branches:
-      - feature/test-deploy
+  release:
+    types: 
+      - released
+
 jobs:
   deploy:
     name: Deploy
