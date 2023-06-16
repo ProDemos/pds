@@ -1,0 +1,78 @@
+name: Deploy
+
+on:
+  release:
+    types: 
+      - released
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: php-actions/composer@v6
+        with:
+          command: nop
+      - run: make install
+      - run: make compile
+      - run: make package-pds-demo
+
+    
+## this repo doesnt have access, but also,
+## I need to run this in the same job, as a composite
+## action, because I need to use the package I just build
+## above ..
+
+#     - uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
+#       with:
+#         source_folder: build/packages/pds-demo/demo
+#         target_folder: ${{ vars.TARGET_FOLDER }}
+#       secrets:
+#         target_server: ${{ secrets.DEPLOYMENT_LAMP14_HOST }}
+#         vpn_config: ${{ secrets.DEPLOYMENT_VPN_CONFIG }}
+#         ssh_key: ${{ secrets.DEPLOYMENT_LAMP14_SSH_KEY }}
+#         ssh_user: ${{ secrets.DEPLOYMENT_LAMP14_USER }}
+
+      - name: Install OpenVPN
+        run: |
+          sudo apt-get update
+          sudo apt-get --assume-yes --no-install-recommends install openvpn
+
+      - name: Prepare config file
+        run: |
+          printf "${{ secrets.DEPLOYMENT_VPN_CONFIG }}" >> .github/config.ovpn
+        shell: bash
+          
+      - name: Connect VPN
+        run: |
+          sudo openvpn --config ".github/config.ovpn" --log "vpn.log" --daemon
+          
+      - name: Wait for a VPN connection
+        timeout-minutes: 2
+        run: |
+          until ping -c1 ${{ secrets.DEPLOYMENT_LAMP14_HOST }}; do sleep 2; done
+
+      - name: copy to server
+        uses: easingthemes/ssh-deploy@v3.0.1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOYMENT_LAMP14_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.DEPLOYMENT_LAMP14_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOYMENT_LAMP14_USER }}
+          ARGS: "-rltzvO"
+          SOURCE: "build/packages/pds-demo/demo/*"
+          TARGET: ${{ vars.TARGET_FOLDER }}
+
+      - name: Kill VPN connection
+        if: always()
+        run: |
+          sudo chmod 777 vpn.log
+          sudo killall openvpn
+
+      - name: Upload VPN logs
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: VPN logs
+          path: vpn.log

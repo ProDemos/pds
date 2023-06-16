@@ -14,10 +14,12 @@ You can view the design system in action at https://pds.prodemos.nl/
 
 Each release comes with a number of packages and assets
 you can use in your own project. Current packages are 
+- **pds** \
+  an assets folder containing everything
 - **pds-compiled** \
-  an assets folder containing, amongst others, plain css
+  an assets folder containing the compiled sources (eg css)
 - **pds-source** \
-  an assets folder containing, amongst others, scss sources
+  an assets folder containing the raw sources (eg scss) 
 - **pds-demo** \
   the website visible at https://pds.prodemos.nl/
 
