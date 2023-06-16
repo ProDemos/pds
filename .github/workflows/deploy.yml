@@ -19,7 +19,7 @@ jobs:
       - run: make package-pds-demo
   upload:
 #   uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
-    uses: ./.github/workflows/copy_to_server.yml@main
+    uses: ./.github/workflows/copy_to_server.yml
     needs: build
     with:
       source_folder: build/packages/pds-demo/demo
