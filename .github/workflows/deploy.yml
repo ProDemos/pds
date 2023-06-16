@@ -60,7 +60,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.DEPLOYMENT_LAMP14_HOST }}
           REMOTE_USER: ${{ secrets.DEPLOYMENT_LAMP14_USER }}
           ARGS: "-rltzvO"
-          SOURCE: build/packages/pds-demo/demo
+          SOURCE: "build/packages/pds-demo/demo/*"
           TARGET: ${{ vars.TARGET_FOLDER }}
 
       - name: Kill VPN connection
