@@ -5,8 +5,8 @@ on:
     branches:
       - feature/test-deploy
 jobs:
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,15 +17,13 @@ jobs:
       - run: make install
       - run: make compile
       - run: make package-pds-demo
-  upload:
-#   uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
-    uses: ./.github/workflows/copy_to_server.yml
-    needs: build
-    with:
-      source_folder: build/packages/pds-demo/demo
-      target_folder: ${{ vars.TARGET_FOLDER }}
-    secrets:
-      target_server: ${{ secrets.DEPLOYMENT_LAMP14_HOST }}
-      vpn_config: ${{ secrets.DEPLOYMENT_VPN_CONFIG }}
-      ssh_key: ${{ secrets.DEPLOYMENT_LAMP14_SSH_KEY }}
-      ssh_user: ${{ secrets.DEPLOYMENT_LAMP14_USER }}
+    #   uses: prodemos/workflows/.github/workflows/copy_to_server.yml@main
+      - uses: ./.github/workflows/copy_to_server.yml
+        with:
+            source_folder: build/packages/pds-demo/demo
+            target_folder: ${{ vars.TARGET_FOLDER }}
+            secrets:
+            target_server: ${{ secrets.DEPLOYMENT_LAMP14_HOST }}
+            vpn_config: ${{ secrets.DEPLOYMENT_VPN_CONFIG }}
+            ssh_key: ${{ secrets.DEPLOYMENT_LAMP14_SSH_KEY }}
+            ssh_user: ${{ secrets.DEPLOYMENT_LAMP14_USER }}
