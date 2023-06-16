@@ -28,7 +28,9 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@master
+      # in a local action, this is not needed
+      # and gives errors
+      # - uses: actions/checkout@v3 
 
       - name: Install OpenVPN
         run: |
