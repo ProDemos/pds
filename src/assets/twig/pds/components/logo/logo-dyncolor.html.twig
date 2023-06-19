@@ -2,7 +2,7 @@
 
 
 {% if url %}
-<a class="pds-c-logo" href="{{ url }}" title="{{ title }}">
+<a class="pds-c-logo {{ logo.color ? 'pds-m-colored ' ~ logo.color }}" href="{{ url }}" title="{{ title }}">
 {% endif %}
     <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="{{ logo.width }}px" height="{{ logo.height }}px" 
         {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}" {% endfor %}

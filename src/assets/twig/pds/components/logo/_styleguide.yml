@@ -20,13 +20,6 @@
     logo:
         name: logo-prodemos-payoff.svg
 -
-    styleguide_title: ProDemos Logo Small
-    styleguide_type: logo/logo
-    url: /
-    title: Home
-    logo:
-        name: logo-prodemos-small.svg
--
     styleguide_title: ProDemos standalone payoff
     styleguide_type: logo/logo
     url: /
@@ -39,17 +32,26 @@
     url: /
     title: Home
     logo:
-        name: logo-prodemos-bw.svg
+        name: logo-prodemos-dc.svg
+        color: green
         width: 205
         height: 74
-
+-
+    styleguide_title: ProDemos Logo Small (dynamic color)
+    styleguide_type: logo/logo-dyncolor
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-dc-small.svg
+        color: orange
 -
     styleguide_title: ProDemos Logo Strapline NL (dynamic color)
     styleguide_type: logo/logo-dyncolor
     url: /
     title: Home
     logo:
-        name: logo-prodemos-bw-strapline-nl.svg
+        name: logo-prodemos-dc-strapline-nl.svg
+        color: blue
         width: 192
         height: 65
 
@@ -59,7 +61,8 @@
     url: /
     title: Home
     logo:
-        name: logo-prodemos-bw-strapline-en.svg
+        name: logo-prodemos-dc-strapline-en.svg
+        color: purple
         width: 226
         height: 65
 
