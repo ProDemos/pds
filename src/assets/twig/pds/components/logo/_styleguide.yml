@@ -1,0 +1,59 @@
+-
+    styleguide_title: ProDemos Logo 
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos.svg
+-
+    styleguide_title: ProDemos Logo Diap
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-diap.svg
+-
+    styleguide_title: ProDemos Logo Payoff
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-payoff.svg
+-
+    styleguide_title: ProDemos standalone payoff
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: payoff-prodemos.svg
+-
+    styleguide_title: ProDemos Logo (dynamic color)
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-bw.svg
+        width: 205
+        height: 74
+
+-
+    styleguide_title: ProDemos Logo Strapline NL (dynamic color)
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-bw-strapline-nl.svg
+        width: 192
+        height: 65
+
+-
+    styleguide_title: ProDemos Logo Strapline EN (dynamic color)
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-bw-strapline-en.svg
+        width: 226
+        height: 65
+
+
