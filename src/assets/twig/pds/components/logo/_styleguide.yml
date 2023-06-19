@@ -20,6 +20,13 @@
     logo:
         name: logo-prodemos-payoff.svg
 -
+    styleguide_title: ProDemos Logo Small
+    styleguide_type: logo/logo
+    url: /
+    title: Home
+    logo:
+        name: logo-prodemos-small.svg
+-
     styleguide_title: ProDemos standalone payoff
     styleguide_type: logo/logo
     url: /
