@@ -4,14 +4,12 @@
 {% if url %}
 <a class="pds-c-logo" href="{{ url }}" title="{{ title }}">
 {% endif %}
-    <figure>
-        {{ ui.svg(logo.name, {
-            directory: logo.directory,
-            width: logo.width,
-            height: logo.height,
-            css_classes: []
-        }) }}
-    </figure>
+    <img src="{{ logo.directory }}/{{ logo.name }}" 
+        {{ logo.width ? 'width=' ~ logo.width ~'' }}
+        {{ logo.height ? 'height=' ~ logo.height ~ ''}}
+        {{ logo.alt ? 'alt=' ~ logo.alt ~ ''}}
+        {{ not url ? 'title=' ~ title ~ ''}}
+    >
 {% if url %}
 </a>
 {% endif %}

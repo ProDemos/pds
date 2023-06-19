@@ -1,0 +1,16 @@
+{% import 'macros.twig' as ui %}
+
+
+{% if url %}
+<a class="pds-c-logo" href="{{ url }}" title="{{ title }}">
+{% endif %}
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="{{ logo.width }}px" height="{{ logo.height }}px" 
+        {% for attrname,attrval in options.attributes %}{{attrname}}="{{attrval}}" {% endfor %}
+        {{ logo.alt ? 'alt=' ~ logo.alt ~ ''}}
+        {{ not url ? 'title=' ~ title ~ ''}}
+    >
+        <use xlink:href='{{ logo.directory }}/{{ logo.name }}#root'></use>
+    </svg>
+{% if url %}
+</a>
+{% endif %}

@@ -35,7 +35,7 @@
         name: payoff-prodemos.svg
 -
     styleguide_title: ProDemos Logo (dynamic color)
-    styleguide_type: logo/logo
+    styleguide_type: logo/logo-dyncolor
     url: /
     title: Home
     logo:
@@ -45,7 +45,7 @@
 
 -
     styleguide_title: ProDemos Logo Strapline NL (dynamic color)
-    styleguide_type: logo/logo
+    styleguide_type: logo/logo-dyncolor
     url: /
     title: Home
     logo:
@@ -55,7 +55,7 @@
 
 -
     styleguide_title: ProDemos Logo Strapline EN (dynamic color)
-    styleguide_type: logo/logo
+    styleguide_type: logo/logo-dyncolor
     url: /
     title: Home
     logo:
