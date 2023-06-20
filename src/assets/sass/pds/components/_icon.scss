@@ -41,17 +41,20 @@ i.pds-c-button-icon {
 
     // 24px
 
-    &.alert	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/alert.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/alert.svg);
+    &.alert, //lgc 202306
+    &.exclamation-triangle	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/exclamation-triangle.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/exclamation-triangle.svg);
     }
-    &.arrow-circled-left	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-left.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-left.svg);
+    &.arrow-circled-left, // lgc202306
+    &.arrow-left-circle-solid	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-left-circle-solid.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-left-circle-solid.svg);
     }
-    &.arrow-circled-right	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-right.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-circled-right.svg);
+    &.arrow-circled-right, // lgc202306
+    &.arrow-right-circle-solid		{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right-circle-solid.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right-circle-solid.svg);
     }
     &.arrow-down	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-down.svg);
@@ -65,93 +68,106 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-right.svg);
     }
-    &.arrow-small-down	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-down.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-down.svg);
+    &.arrow-small-down, // lgc202306
+    &.chevron-down	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-down.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-down.svg);
     }
-    &.arrow-small-up	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-up.svg);
+    &.arrow-small-up, // lgc202306
+    &.chevron-up	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-up.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-up.svg);
     }
-    &.arrow-small-left	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-left.svg);
+    &.arrow-small-left, // lgc202306
+    &.chevron-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-left.svg);
     }
-    &.arrow-small-right	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-small-right.svg);
+    &.arrow-small-right, // lgc202306
+    &.chevron-right	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-right.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/chevron-right.svg);
     }
     &.arrow-up	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrow-up.svg);
     }
-    &.arrows-dropdown	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg);
+    &.arrows-dropdown, // lgc202306
+    &.chevrons-updown	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/chevrons-updown.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/chevrons-updown.svg);
     }
-    &.basket	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/basket.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/basket.svg);
+    &.basket-lgc	{ // lgc202306
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/basket-lgc.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/basket-lgc.svg);
     }
     &.bin	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/bin.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/bin.svg);
     }
-    &.calendar	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar.svg);
+    &.calendar-lgc	{ // lgc202306
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar-lgc.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/calendar-lgc.svg);
     }
-    &.check-green	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/check-green.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check-green.svg);
+    &.check-green, // lgc202306
+    &.check-circle-solid-green	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/check-circle-solid-green.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check-circle-solid-green.svg);
     }
-    &.check	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/check.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check.svg);
+    &.check,// lgc202306
+    &.check-circle-solid 	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/check-circle-solid.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/check-circle-solid.svg);
     }
-    &.close	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/close.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/close.svg);
+    &.close, // lgc202306
+    &.cross	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/cross.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/cross.svg);
     }
-    &.edit	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/edit.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/edit.svg);
+    &.edit, // lgc202306
+    &.pencil-left	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/pencil-left.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/pencil-left.svg);
     }
-    &.error-red	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/error-red.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/error-red.svg);
+    &.error-red, //lgc202306
+    &.cross-circle-solid-red	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid-red.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid-red.svg);
     }
-    &.error	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/error.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/error.svg);
+    &.error, //lgc202306
+    &.cross-circle-solid	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid.svg);
     }
     &.hamburger	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/hamburger.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/hamburger.svg);
     }
-    &.info	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/info.svg);
+    &.info, // lgc202306
+    &.info-circle-solid	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/info-circle-solid.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/info-circle-solid.svg);
     }
-    &.magnifier	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier.svg);
+    &.magnifier-lgc	{ // lgc202306
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier-lgc.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/magnifier-lgc.svg);
     }
     &.plus	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/plus.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/plus.svg);
     }
-    &.remove	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/remove.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/remove.svg);
+    &.remove, // lgc202306
+    &.cross-circle-solid-small	{
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid-small.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/cross-circle-solid-small.svg);
     }
     &.sidebar	{
         mask-image: url(#{$pds-assets-path}/images/icons/24px/sidebar.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/sidebar.svg);
     }
-    &.user	{
-        mask-image: url(#{$pds-assets-path}/images/icons/24px/user.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/user.svg);
+    &.user-lgc	{ // lgc202306
+        mask-image: url(#{$pds-assets-path}/images/icons/24px/user-lgc.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/24px/user-lgc.svg);
     }
 
     // 48px
