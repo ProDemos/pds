@@ -105,10 +105,6 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/basket.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/basket.svg);
     }
-    &.basket-lgc	{ // lgc202306
-        mask-image: url(#{$pds-assets-path}/images/icons/basket-lgc.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/basket-lgc.svg);
-    }
     &.bin	{
         mask-image: url(#{$pds-assets-path}/images/icons/bin.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/bin.svg);
@@ -121,11 +117,7 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/calendar-lgc.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/calendar-lgc.svg);
     }
-    &.check-green, // lgc202306
-    &.check-circle-solid-green	{
-        mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid-green.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid-green.svg);
-    }
+    &.check-green, // lgc202306,
     &.check-circle-solid 	{
         mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid.svg);
@@ -133,10 +125,6 @@ i.pds-c-button-icon {
     &.check	{
         mask-image: url(#{$pds-assets-path}/images/icons/check.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/check.svg);
-    }
-    &.check-2	{
-        mask-image: url(#{$pds-assets-path}/images/icons/check-2.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/check-2.svg);
     }
     &.clock	{
         mask-image: url(#{$pds-assets-path}/images/icons/clock.svg);
@@ -168,23 +156,11 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid.svg);
     }
-    &.envelope-square-solid-2	{
-        mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid-2.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid-2.svg);
-    }
     &.error-red, //lgc202306
-    &.cross-circle-solid-red	{
-        mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid-red.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid-red.svg);
-    }
     &.error, //lgc202306
     &.cross-circle-solid	{
         mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid.svg);
-    }
-    &.exclamation-2	{
-        mask-image: url(#{$pds-assets-path}/images/icons/exclamation-2.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/exclamation-2.svg);
     }
     &.exclamation-circle-solid	{
         mask-image: url(#{$pds-assets-path}/images/icons/exclamation-circle-solid.svg);
@@ -219,10 +195,6 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
     }
-    &.key-entree	{
-        mask-image: url(#{$pds-assets-path}/images/icons/key-entree.pn);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/key-entree.png);
-    }
     &.location	{
         mask-image: url(#{$pds-assets-path}/images/icons/location.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/location.svg);
@@ -238,10 +210,6 @@ i.pds-c-button-icon {
     &.plus	{
         mask-image: url(#{$pds-assets-path}/images/icons/plus.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/plus.svg);
-    }
-    &.plus-2	{
-        mask-image: url(#{$pds-assets-path}/images/icons/plus-2.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/plus-2.svg);
     }
     &.plus-circle-solid	{
         mask-image: url(#{$pds-assets-path}/images/icons/plus-circle-solid.svg);
@@ -292,10 +260,6 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/user-lgc.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/user-lgc.svg);
     }
-    &.user-2	{ 
-        mask-image: url(#{$pds-assets-path}/images/icons/user-2.svg);
-        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/user-2.svg);
-    }
     &.user	{ 
         mask-image: url(#{$pds-assets-path}/images/icons/user.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/user.svg);
@@ -326,6 +290,18 @@ i.pds-c-button-icon {
             background-color: pds-theme-color($themename,'accent');
         }
     }
+
+    // other icons
+    &.key-entree	{
+        mask-image: unset;
+        -webkit-mask-image: none;
+        background-color: transparent!important;
+        background-image: url(#{$pds-assets-path}/images/icons/key-entree.pn);
+        background-size: 83%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
 }
 
 
