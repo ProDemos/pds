@@ -106,6 +106,8 @@ Your element should now appear in the styleguide in `build/demo`
 
 ## Conventions
 
+### scss
+
 Always prefix you classnames with pds-. Try to stay
 within the definitions of pds-s(copes), pds-t(hemes),
 pds-c(omponents) and pds-m(odifiers). Avoid BEM.
@@ -113,6 +115,13 @@ Use predefined colors, sizes and fonts.
 
 If you want to write directly in the demo pages, 
 check `src/demo/pages/*`
+
+### icons
+
+Icon components (`pds-c-icon`) are defined within a 20x20 frame,
+but placed in a 24x24 viewbox, so with 2px space on all sides.
+This leaves room for some icons to stick out a bit while still
+being in scale.
 
 ## Sass
 

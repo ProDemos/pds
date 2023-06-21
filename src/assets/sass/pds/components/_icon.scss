@@ -109,6 +109,10 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/bin.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/bin.svg);
     }
+    &.bracket-down	{
+        mask-image: url(#{$pds-assets-path}/images/icons/bracket-down.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/bracket-down.svg);
+    }
     &.calendar	{
         mask-image: url(#{$pds-assets-path}/images/icons/calendar.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/calendar.svg);
@@ -207,6 +211,10 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/magnifier-lgc.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/magnifier-lgc.svg);
     }
+    &.minus-circle	{
+        mask-image: url(#{$pds-assets-path}/images/icons/minus-circle.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/minus-circle.svg);
+    }
     &.plus	{
         mask-image: url(#{$pds-assets-path}/images/icons/plus.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/plus.svg);
@@ -235,6 +243,10 @@ i.pds-c-button-icon {
     &.sidebar	{
         mask-image: url(#{$pds-assets-path}/images/icons/sidebar.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/sidebar.svg);
+    }
+    &.spinner	{
+        mask-image: url(#{$pds-assets-path}/images/icons/spinner.svg);
+        -webkit-mask-image: url(#{$pds-assets-path}/images/icons/spinner.svg);
     }
     &.social-facebook	{
         mask-image: url(#{$pds-assets-path}/images/icons/social-facebook.svg);
