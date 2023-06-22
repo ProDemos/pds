@@ -14,22 +14,29 @@ $pds-color-stack: (
     white: #fff,
     transparent: transparent,
     blue--deep-sky: #00b4e6,            // legacy
-    blue--neon: #233fff,                // core 
-    blue--persian: #1C32CC,
+    blue--neon: #233fff,                // legacy 
+    blue--persian: #1C32CC,             // legacy
+    blue--pacific: #009FCB,             // core
+    blue--dcerulean: #007FA2,
     green--vida-loca: #58a333,          // core 
-    green--la-palma:#3D8D35,
+    green--la-palma:#3D8D35,            // legacy
+    green--bilbao: #34810E,
     grey--romance: #f5f0e9,             // core 
+    grey--tea: #C5BBAF,
     orange--cinnabar: #eb5b25,          // core
     orange: #EDA300,
-    orange--harley-davidson: #D83B14,
+    orange--harley-davidson: #D83B14,   // legacy
+    orange--grenadier: #D83B00,
     red--crimson: #d60d41,              // core 
     red--hollywood-cerise: #d7007e,     // core
-    red--fire-brick:#A6172E,
-    red--jazzberry-jam: #B3116B,
+    red--fire-brick:#A6172E,            // legacy
+    red--carmine:#A6002B,
+    red--jazzberry-jam: #B3116B,        // legacy
+    pink--flirt: #B30069,
     violet--purple: #7D0062,
     violet--purple-dark: #98177c,       // core 
     yellow--my-sin: #fcc243,            // core
-    yellow--sisal: #C7B8A4,
+    yellow--sisal: #C7B8A4,             // legacy
     yellow--merino: #DFD7CC
 );
 
@@ -42,13 +49,15 @@ $pds-colors: (
     transparent: map-get($pds-color-stack,transparent),
     white: map-get($pds-color-stack,white),
 
-    black: map-get($pds-color-stack,black--charcoal),
+    black: map-get($pds-color-stack,black),
+    // legacy 202306
     black-110: map-get($pds-color-stack,black),
-    black-80: mix(map-get($pds-color-stack,black--charcoal),white, 80%), 
-    black-60: mix(map-get($pds-color-stack,black--charcoal),white, 60%), 
-    black-40: mix(map-get($pds-color-stack,black--charcoal),white, 40%), 
-    black-20: mix(map-get($pds-color-stack,black--charcoal),white, 20%),
+    black-80: mix(map-get($pds-color-stack,black),white, 80%), 
+    black-60: mix(map-get($pds-color-stack,black),white, 60%), 
+    black-40: mix(map-get($pds-color-stack,black),white, 40%), 
+    black-20: mix(map-get($pds-color-stack,black),white, 20%),
     
+    // legacy 202306
     sand: map-get($pds-color-stack,grey--romance),
     sand-120: map-get($pds-color-stack,yellow--sisal),
     sand-110: map-get($pds-color-stack,yellow--merino),
@@ -56,6 +65,14 @@ $pds-colors: (
     sand-60: mix(map-get($pds-color-stack,grey--romance),white, 60%), 
     sand-40: mix(map-get($pds-color-stack,grey--romance),white, 40%), 
     sand-20: mix(map-get($pds-color-stack,grey--romance),white, 20%),
+
+    creme: map-get($pds-color-stack,grey--romance),
+    creme-120: map-get($pds-color-stack,grey--tea),
+    creme-110: map-get($pds-color-stack,yellow--merino),
+    creme-80: mix(map-get($pds-color-stack,grey--romance),white, 80%), 
+    creme-60: mix(map-get($pds-color-stack,grey--romance),white, 60%), 
+    creme-40: mix(map-get($pds-color-stack,grey--romance),white, 40%), 
+    creme-20: mix(map-get($pds-color-stack,grey--romance),white, 20%),
 
     yellow:map-get($pds-color-stack,yellow--my-sin),   
     yellow-110: map-get($pds-color-stack,orange),      
@@ -65,21 +82,21 @@ $pds-colors: (
     yellow-20: mix(map-get($pds-color-stack,yellow--my-sin),white, 20%), 
 
     orange: map-get($pds-color-stack,orange--cinnabar),
-    orange-110: map-get($pds-color-stack,orange--harley-davidson),
+    orange-110: map-get($pds-color-stack,orange--grenadier),
     orange-80: mix(map-get($pds-color-stack,orange--cinnabar),white, 80%), 
     orange-60: mix(map-get($pds-color-stack,orange--cinnabar),white, 60%), 
     orange-40: mix(map-get($pds-color-stack,orange--cinnabar),white, 40%), 
     orange-20: mix(map-get($pds-color-stack,orange--cinnabar),white, 20%), 
 
     red: map-get($pds-color-stack,red--crimson),
-    red-110: map-get($pds-color-stack,red--fire-brick),
+    red-110: map-get($pds-color-stack,red--carmine),
     red-80: mix(map-get($pds-color-stack,red--crimson),white, 80%), 
     red-60: mix(map-get($pds-color-stack,red--crimson),white, 60%), 
     red-40: mix(map-get($pds-color-stack,red--crimson),white, 40%), 
     red-20: mix(map-get($pds-color-stack,red--crimson),white, 20%), 
 
     pink: map-get($pds-color-stack,red--hollywood-cerise),
-    pink-110: map-get($pds-color-stack,red--jazzberry-jam),
+    pink-110: map-get($pds-color-stack,pink--flirt),
     pink-80: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 80%), 
     pink-60: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 60%), 
     pink-40: mix(map-get($pds-color-stack,red--hollywood-cerise),white, 40%), 
@@ -92,15 +109,15 @@ $pds-colors: (
     purple-40: mix(map-get($pds-color-stack,violet--purple-dark),white, 40%), 
     purple-20: mix(map-get($pds-color-stack,violet--purple-dark),white, 20%), 
 
-    blue: map-get($pds-color-stack,blue--neon),
-    blue-110: map-get($pds-color-stack,blue--persian),
-    blue-80: mix(map-get($pds-color-stack,blue--neon), white, 80%), 
-    blue-60: mix(map-get($pds-color-stack,blue--neon), white, 60%), 
-    blue-40: mix(map-get($pds-color-stack,blue--neon), white, 40%), 
-    blue-20: mix(map-get($pds-color-stack,blue--neon), white, 20%),   
+    blue: map-get($pds-color-stack,blue--pacific),
+    blue-110: map-get($pds-color-stack,blue--dcerulean),
+    blue-80: mix(map-get($pds-color-stack,blue--pacific), white, 80%), 
+    blue-60: mix(map-get($pds-color-stack,blue--pacific), white, 60%), 
+    blue-40: mix(map-get($pds-color-stack,blue--pacific), white, 40%), 
+    blue-20: mix(map-get($pds-color-stack,blue--pacific), white, 20%),   
 
     green: map-get($pds-color-stack,green--vida-loca),
-    green-110: map-get($pds-color-stack,green--la-palma),
+    green-110: map-get($pds-color-stack,green--bilbao),
     green-80: mix(map-get($pds-color-stack,green--vida-loca),white, 80%), 
     green-60: mix(map-get($pds-color-stack,green--vida-loca),white, 60%), 
     green-40: mix(map-get($pds-color-stack,green--vida-loca),white, 40%), 
