@@ -3,7 +3,8 @@
 //  COMPONENT .pds-c-input
 // .pds-c-input[.disabled]
 //  input[type=text|email|tel|password|date|time].pds-c-input [.valid|.invalid]
-//  select.pds-c-input [.fullwidth]
+//  select.pds-c-input [.full-width]
+//  textarea.pds-c-input [.full-width]
 // .pds-c-input.container[.radio|.checkbox]
 // .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label
 // .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label
@@ -206,18 +207,27 @@
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
         border: none;
         border-bottom: 2px solid pds-color(transparent);
-        background-image: url("#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/chevrons-updown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
         cursor: pointer;
         transition: border-bottom-color 150ms ease-in-out;
 
-        // When full width is required
         &.full-width {
             width: 100%;
         }
   
+    }
+    @at-root textarea#{&} {
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3)
+          nth($pds-spacings, 6);
+        border: none;
+        border-bottom: 3px solid pds-color(creme);
+        transition: border-bottom-color 150ms ease-in-out;
+        &.full-width {
+            width: 100%;
+        }
     }
 
     &.radio {
@@ -300,7 +310,16 @@ span.pds-c-input {
         border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
     }
 }
-   
+
+@mixin pds-c-textarea-theme($theme: $pds-deftheme) {
+    &:focus {
+      border-bottom-color: darken(
+        pds-theme-color($theme, fill),
+        nth($pds-darken-scale, 1)
+      );
+    }
+}
+  
 
 .pds-c-input-container {
     @include pds-c-input-container-theme();
@@ -315,6 +334,9 @@ select.pds-c-input,
     @include pds-c-select-theme();
 }
 
+textarea.pds-c-input {
+    @include pds-c-textarea-theme();
+}
 
 @each $theme in map-keys($pds-themes) {
 
@@ -337,6 +359,13 @@ select.pds-c-input,
         .pds-t-#{$theme} &, 
         &.pds-t-#{$theme}:not(.inherit) {
             @include pds-c-select-theme($theme);
+        }
+    }
+
+    textarea.pds-c-input {
+        .pds-t-#{$theme} &, 
+        &.pds-t-#{$theme}:not(.inherit) {
+            @include pds-c-textarea-theme($theme);
         }
     }
 }
