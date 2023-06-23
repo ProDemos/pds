@@ -13,12 +13,89 @@
     margin: 0;
     padding: 0;
 
-    li {
+    & > li {
       border-right: 1px solid rgba(pds-color(white), 0.15);
-  
       &:first-child {
         border-left: 1px solid rgba(pds-color(white), 0.15);
       }
+    }
+
+    li {
+      position:relative;
+      border-right: 1px solid rgba(pds-color(white), 0.15);
+
+      &:has(ul) > a {
+        padding-left:.25em;
+        &:before {
+          content:" ";
+          display: inline-block;
+          vertical-align: middle;
+          @include media-until("md") {
+            width:pds-fontsize(l);
+            height:pds-fontsize(l);
+          }
+          @include media-from("md") {
+            width:pds-fontsize(xl);
+            height:pds-fontsize(xl);
+          }
+          mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
+          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
+          background-color:white;
+        }
+      }
+
+      ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease;
+        margin-top: 1rem;
+        left: -1px;
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        min-width:125%;
+        li {
+          border-top: 1px solid rgba(pds-color(white), 0.15);
+          ul {
+            top:0;
+            left:100%;
+            ul {
+              display:none!important;
+            }
+          }
+        }
+        li:not(:has(ul)) {
+          a {
+            padding-left: 1.75em;
+          }
+        }
+      }
+
+      &:hover > ul,
+      &:focus-within > ul,
+      & ul:hover,
+      & ul:focus {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+
+      &:hover:has(ul),
+      &:focus-within:has(ul) {
+        & > a:before {
+          mask-image: url(#{$pds-assets-path}/images/icons/chevron-down.svg);
+          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-down.svg);
+        }
+      }
+
+      & ul li {
+        clear: both;
+        width: 100%;
+      }
+
+
     }
   
     a {
@@ -31,6 +108,7 @@
       line-height: 1.5;
       text-decoration: none;
       text-transform: none;
+      white-space:nowrap;
       cursor: pointer;
       padding: 0.4em 1em;
       transition: background 100ms ease-in-out;
@@ -56,16 +134,21 @@
     a {
         color:pds-theme-color($theme,stroke);
     }
+    a:before {
+      background-color:pds-theme-color($theme,stroke);
+    }
 }
 
-.pds-c-menu {
+.pds-c-menu, .pds-c-menu ul {
     @include pds-menu-theme($pds-deftheme);
 }
 
 
 @each $theme in map-keys($pds-themes) {
     .pds-t-#{$theme} .pds-c-menu,
-    .pds-c-menu.pds-t-#{$theme}:not(.inherit) {
+    .pds-c-menu.pds-t-#{$theme}:not(.inherit),
+    .pds-t-#{$theme} .pds-c-menu ul,
+    .pds-c-menu.pds-t-#{$theme}:not(.inherit) ul {
         @include pds-menu-theme($theme);
     }
 }
