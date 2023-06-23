@@ -45,11 +45,12 @@
         {% set iname = icon | basename() %}
         {% if iname %} 
             <h3><i class="pds-c-icon large {{ iname }}"></i>&nbsp;{{ iname }}</h3>
+            <br>
             <p style="columns: 2 auto;">
-                <big><i class="pds-c-icon large {{ iname }} colored"></i>&nbsp;{{ iname }}.colored</big><br>
-                <big><i class="pds-c-icon large {{ iname }} accented"></i>&nbsp;{{ iname }}.accented</big><br>
+                <small><i class="pds-c-icon large {{ iname }} colored"></i>&nbsp;{{ iname }}.colored</small><br>
+                <small><i class="pds-c-icon large {{ iname }} accented"></i>&nbsp;{{ iname }}.accented</small><br>
                 {% for color,subcolors in colors %}
-                    <big><i class="pds-c-icon large {{ iname }} {{ color }}"></i>&nbsp;{{ iname }}.{{ color }}</big><br>
+                    <small><i class="pds-c-icon large {{ iname }} {{ color }}"></i>&nbsp;{{ iname }}.{{ color }}</small><br>
                 {% endfor %}
             </p>
             <hr>

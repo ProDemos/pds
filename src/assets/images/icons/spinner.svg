@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="root">
+    <g id="Group" transform="translate(4,4)" fill="none" stroke="currentColor" stroke-width="3">
+        <circle id="Oval" opacity="0.200000003" cx="8" cy="8" r="8"></circle>
+        <path d="M16,8 C16,3.581722 12.418278,0 8,0" id="Oval-Copy" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>
