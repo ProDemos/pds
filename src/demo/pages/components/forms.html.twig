@@ -20,10 +20,11 @@
         <li> input[type=text|email|tel|password|number|date|time].pds-c-input[.valid|.invalid]</li>
         <li> textarea.pds-c-input[.full-width]</li>
         <li> select.pds-c-input[.full-width]</li>
+        <li> label.pds-c-input-label</li>
         <li> .pds-c-input-container[.radio|.checkbox]</li>
-        <li> .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label</li>
-        <li> .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label</li>
-        <li> .pds-c-progress[.pending|.ready|.error] > .spinner</li>
+        <li> .pds-c-input-container.radio > input[type=radio][.has-validation] + .pds-c-input-check + label</li>
+        <li> .pds-c-input-container.checkbox > input[type=checkbox][.has-validation] + .pds-c-input-check + label</li>
+        <li> .pds-c-progress[.pending|.ready|.error][.white] > .spinner</li>
     </ul>
 
     <h1 class="c-copy--h1">Themes</h1>
@@ -41,11 +42,28 @@
 {% endblock %}
 
 {% block component_list %}
+
+    <!-- custom elements -->
+    <div class="c-component">
+        <div class="c-component__view  ">
+            <label for="label-demo" class="pds-c-input-label">Some label</label><br>
+            <input id="label-demo" class="pds-c-input" type="text" value="demo">
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">Label</h2>
+            <xmp class="c-component__code">
+<label for="label-demo" class="pds-c-input-label">Some label</label><br>
+<input id="label-demo" class="pds-c-input" type="text" value="demo"></xmp>
+        </div>
+    </div>
+
+
     {% for component in components['form-elements'] %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}
 
     <!-- custom elements -->
+    
     <div class="c-component  ">
         <div class="c-component__view  ">
             <span class="pds-c-input">padding</span>
@@ -67,6 +85,23 @@
            <h2 class="c-component-list__title">Progress spinner</h2>
             <xmp class="c-component__code">
 <div class="pds-c-progress pending">
+    <div class="spinner"></div>
+</div>
+            </xmp>
+        </div>
+    </div>
+
+    <div class="c-component  ">
+        <div class="c-component__view  pds-m-filled blue">
+            <button class="pds-c-button small regular">Submit</button>
+            <div class="pds-c-progress pending white">
+                <div class="spinner"></div>
+            </div>
+        </div>
+        <div class="c-component__meta  ">
+           <h2 class="c-component-list__title">White progress spinner</h2>
+            <xmp class="c-component__code">
+<div class="pds-c-progress pending white">
     <div class="spinner"></div>
 </div>
             </xmp>
