@@ -2,12 +2,15 @@
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-input
 // .pds-c-input[.disabled]
-//  input[type=text|email|tel|password].pds-c-input [.valid|.invalid]
-//  select.pds-c-input [.fullwidth]
+//  input[type=text|email|tel|password|date|time].pds-c-input [.valid|.invalid]
+//  select.pds-c-input [.full-width]
+//  textarea.pds-c-input [.full-width]
 // .pds-c-input.container[.radio|.checkbox]
-// .pds-c-input-container.radio > input[type=radio] + .pds-c-input-check + label
-// .pds-c-input-container.checkbox > input[type=checkbox] + .pds-c-input-check + label
+// .pds-c-input-container.radio > input[type=radio][.has-validation] + .pds-c-input-check + label
+// .pds-c-input-container.checkbox > input[type=checkbox][.has-validation] + .pds-c-input-check + label
+// .pds-c-progress[.pending|.ready|.error][.white] > .spinner
 // -----------------------------------------------------------------------------
+
 
 
 .pds-c-input-container {
@@ -15,7 +18,7 @@
     margin-bottom: nth($pds-spacings, 5);
 
     // Radiobutton
-    &.radio {
+    &.radio, &:has(input[type=radio]) {
 
         
         // The label
@@ -32,6 +35,12 @@
         input[type=radio], .pds-c-input.radio {
             position: absolute;
             visibility: hidden;
+            &.has-validation {
+                visibility: visible;
+                width: 1em;
+                height: 1em;
+                opacity: 0;
+            }
         }
 
         // The checkable element (replaces the invisible radio-input)
@@ -65,7 +74,7 @@
         }
         
     }
-    &.checkbox {
+    &.checkbox, &:has(input[type=checkbox])  {
        
         // The label
         label, .c-input-label {
@@ -83,6 +92,12 @@
         input[type=checkbox],.pds-c-input.checkbox {
             position: absolute;
             visibility: hidden;
+            &.has-validation {
+                visibility: visible;
+                width: 1em;
+                height: 1em;
+                opacity: 0;
+            }
         }
 
         // The checkable element (replaces the invisible checkbox)
@@ -115,7 +130,7 @@
         }
     }
 
-    &.select {
+    &.select, &:has(select)  {
         display: flex;
         align-items: center;
     }
@@ -165,6 +180,8 @@
     &[type=tel],
     &[type=password],
     &[type=number],
+    &[type=date],
+    &[type=time],
     &.text {
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
@@ -174,7 +191,6 @@
 
         
 
-        // When the user added valid input
         &.valid {
             background-image: url("#{$pds-assets-path}/images/icons/24px/check-green.svg");
             background-position: top 13px right 15px;
@@ -183,7 +199,6 @@
             border-bottom-color: pds-color(green);
         }
 
-        // When the user added invalid input
         &.invalid {
             background-image: url("#{$pds-assets-path}/images/icons/24px/error-red.svg");
             background-position: top 13px right 15px;
@@ -191,10 +206,22 @@
             background-size: 24px 24px;
             border-bottom-color: pds-color(red);
         }
+
+        &:read-only {
+            background-color: pds-color(black-20);
+            border-bottom-color: pds-color(black-20);
+            color: pds-color(black-60);
+            cursor: default;
+            &:focus {
+              border-bottom-color: pds-color(black-20);
+            }
+        }
     }
 
     // some exceptions
-    &[type=number] {
+    &[type=number],
+    &[type=date],
+    &[type=time] {
         padding-right: nth($pds-spacings, 6);
     }
 
@@ -202,18 +229,45 @@
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
         border: none;
         border-bottom: 2px solid pds-color(transparent);
-        background-image: url("#{$pds-assets-path}/images/icons/24px/arrows-dropdown.svg");
+        background-image: url("#{$pds-assets-path}/images/icons/chevrons-updown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
         cursor: pointer;
         transition: border-bottom-color 150ms ease-in-out;
 
-        // When full width is required
+        &:disabled {
+            background-color: pds-color(black-20);
+            border-bottom-color: pds-color(black-20);
+            color: pds-color(black-60);
+            cursor: default;
+            &:focus {
+              border-bottom-color: pds-color(black-20);
+            }
+        }
         &.full-width {
             width: 100%;
         }
   
+    }
+    @at-root textarea#{&} {
+        padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3)
+          nth($pds-spacings, 6);
+        border: none;
+        border-bottom: 3px solid pds-color(creme);
+        transition: border-bottom-color 150ms ease-in-out;
+        &:read-only {
+            background-color: pds-color(black-20);
+            border-bottom-color: pds-color(black-20);
+            color: pds-color(black-60);
+            cursor: default;
+            &:focus {
+              border-bottom-color: pds-color(black-20);
+            }
+        }
+        &.full-width {
+            width: 100%;
+        }
     }
 
     &.radio {
@@ -236,7 +290,8 @@
 
 // fake input
 span.pds-c-input {
-    padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
+    display:inline-block;
+    padding: 10px nth($pds-spacings, 9) 10px nth($pds-spacings, 6);
 }
 
 // ----theming -------
@@ -281,20 +336,31 @@ span.pds-c-input {
     &[type=email],
     &[type=tel],
     &[type=password],
+    &[type=date],
+    &[type=time],
     &.text {
-        &:focus {
+        &:focus:not(:disabled) {
             border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
     }
 }
 
 @mixin pds-c-select-theme($theme : $pds-deftheme) {
-    &:focus,
-    &:hover {
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
         border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
     }
 }
-   
+
+@mixin pds-c-textarea-theme($theme: $pds-deftheme) {
+    &:focus:not(:disabled) {
+      border-bottom-color: darken(
+        pds-theme-color($theme, fill),
+        nth($pds-darken-scale, 1)
+      );
+    }
+}
+  
 
 .pds-c-input-container {
     @include pds-c-input-container-theme();
@@ -309,6 +375,9 @@ select.pds-c-input,
     @include pds-c-select-theme();
 }
 
+textarea.pds-c-input {
+    @include pds-c-textarea-theme();
+}
 
 @each $theme in map-keys($pds-themes) {
 
@@ -331,6 +400,13 @@ select.pds-c-input,
         .pds-t-#{$theme} &, 
         &.pds-t-#{$theme}:not(.inherit) {
             @include pds-c-select-theme($theme);
+        }
+    }
+
+    textarea.pds-c-input {
+        .pds-t-#{$theme} &, 
+        &.pds-t-#{$theme}:not(.inherit) {
+            @include pds-c-textarea-theme($theme);
         }
     }
 }
@@ -392,6 +468,17 @@ select.pds-c-input,
         -o-animation: pds-anim-rotation 0.6s infinite linear;
         animation: pds-anim-rotation 0.6s infinite linear;
       }
+    }
+    &.white {
+        .spinner {
+            &:after {
+            border-left: 6px solid rgba(255, 255, 255, 0.15);
+            border-right: 6px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 6px solid rgba(255, 255, 255, 0.15);
+            border-top: 6px solid rgba(255, 255, 255, 0.8);
+            border-radius: 100%;
+            }
+        }
     }
 }
   

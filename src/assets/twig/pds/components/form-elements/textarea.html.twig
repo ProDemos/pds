@@ -1,0 +1,13 @@
+{% set cx = {
+    input: html_classes({
+        'full-width': full_width,
+        'pds-t-corporate': theme == 'corporate',
+        'pds-t-variant01': theme == 'variant01',
+        'pds-t-variant02': theme == 'variant02',
+        'pds-t-variant03': theme == 'variant03',
+        'pds-t-variant04': theme == 'variant04',
+        'pds-t-variant05': theme == 'variant05',
+        'pds-t-variant06': theme == 'variant06',
+    })
+} %}
+<textarea class="pds-c-input {{ cx.input }}" id="{{ id }}" name="{{ name }}">{{ value }}</textarea>

@@ -51,6 +51,67 @@
     disabled: true
 
 -
+    styleguide_title: Date field
+    styleguide_type: form-elements/text-input
+    label: Date
+    type: date
+    name: textinput_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+-
+    styleguide_title: Time field
+    styleguide_type: form-elements/text-input
+    label: Time
+    type: time
+    name: textinput_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+-
+    styleguide_title: Password field
+    styleguide_type: form-elements/text-input
+    label: Password
+    type: password
+    name: textinput_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+-
+    styleguide_title: Number field
+    styleguide_type: form-elements/text-input
+    label: Number
+    type: number
+    name: textinput_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+-
+    styleguide_title: Telephone field
+    styleguide_type: form-elements/text-input
+    label: Telephone
+    type: tel
+    name: textinput_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+-
+    styleguide_title: Textarea, full width
+    styleguide_type: form-elements/textarea
+    label: Textarea
+    name: textarea_name
+    id: 1
+    value: ''
+    required: true
+    input_attributes:
+    full_width: true
+    
+-
     styleguide_title: Dropdown
     styleguide_type: form-elements/dropdown
     name: dropdown
