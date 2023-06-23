@@ -126,6 +126,9 @@ but placed in a 24x24 viewbox, so with 2px space on all sides.
 This leaves room for some icons to stick out a bit while still
 being in scale.
 
+To find new icons, try https://lucide.dev. It's open source
+and aligns with ProDemos' design.
+
 ## Sass
 
 A few notes on the use of the Sass-files when adding styles
