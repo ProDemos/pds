@@ -58,6 +58,9 @@ To create a new release, read [Distribution.md](Distribution.md)
 - **make clean** \
   remove generated files in `/build/*`
 
+- **make serve** \
+  starts a webserver in `/build/demo` - requires python
+
 # Making changes
 
 To make changes
@@ -69,13 +72,13 @@ git checkout -b feature/barf
 make compile
 make packages
 
-# check if it works here, eg using a webserver 
-# in the 'build/demo' folder 
+# check if it works here, by starting a webserver 
+# in the 'build/demo' folder (requires python)
 
-cd build/demo
-python3 -m http.server 
+make serve
 
 # and checking http://localhost:8000/
+# once you're done 
 
 git push origin feature/barf
 
@@ -84,11 +87,11 @@ git push origin feature/barf
 
 ## Compile & package
 
-You can edit the files in `src/`.
-To compile them, use `make compile`. The compiled versions
-appear in `build/`. If needed, you can call `make packages`, too. The packages will appear in `build/packages`. 
+All source files are in `src/`.
+The compiled versions appear in `build/`. 
+The packages will appear in `build/packages`. 
 
-The compiled files are *not* included in the repo. When creating a 
+The compiled files and packages are *not* included in the repo. When creating a 
 new release from master, the workflow compiles these folders and
 packages again and attaches them to the release.
 

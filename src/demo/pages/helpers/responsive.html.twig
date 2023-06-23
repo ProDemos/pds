@@ -1,0 +1,55 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Responsive - Styleguide' %}
+
+
+{% block component_intro %}
+    <h1 class="c-copy--h1">Responsive</h1>
+    <h2 class="c-copy--h2">Mixin pds-media</h2>
+    <p>
+        <b><code>pds-media(name,[min|max],[breakpoints])</code></b>
+        <dl>
+            <dt><code>name</code></dt>
+            <dd>refers to a breakpoint name, like 'tablet' or 'phone'</dt>
+            <dt><code>min|max</code> (default: min)</dt>
+            <dd>wether supplied content should be applied until given breakpoint (+1) or from that breakpoint</dt>
+            <dt><code>breakpoints</code> (default: pds defaults)</dt>
+            <dd>the list of breakpoints to use.</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+@include pds-media("tablet", min) {
+  ul.pas-form-pager {
+    display: flex;
+  }
+}
+</xmp>
+    
+    <hr>
+
+        <code>$breakpoints</code> are defined as a map, like 
+<xmp>
+$pds-breakpoints: (
+    xs: 0,
+    sm: 550px,
+    md: 768px,
+    lg: 990px,
+    xl: 1200px
+);
+</xmp>
+        You can add your own breakpoints by adding entries to the map:
+<xmp>
+@use "sass:map";
+
+$pds-breakpoints: map.set($pds-breakpoints, phone-small, 375px);
+$pds-breakpoints: map.set($pds-breakpoints, phone, 400px);
+
+
+</xmp>
+    </p>
+
+{% endblock %}
+
