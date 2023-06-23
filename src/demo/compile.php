@@ -65,7 +65,10 @@ class TwigCompiler
         $imgrit = new \RecursiveDirectoryIterator($this->paths['assets'].'/images');
         $imgritit = new \RecursiveIteratorIterator($imgrit);
         foreach ($imgritit as $path) {
-            if (!is_dir($path) && strpos($path,'/icons/') == false && strpos($path,'/favicons/') ===false) {
+            if (!is_dir($path) 
+                && strpos($path,'/icons/') == false 
+                && strpos($path,'/favicons/') ===false
+                && strpos($path,'/.') ===false) {
                 $image = str_replace($this->paths['assets'].'/images/','',$path);
                 if (strpos($image,'.')!==0) $this->data['images'][] = $image;
             }
