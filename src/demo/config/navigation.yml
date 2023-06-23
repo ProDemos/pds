@@ -51,8 +51,8 @@
             title: Typography
             uri: helpers/typography.html
         -
-            title: Breakpoints
-            uri: helpers/breakpoints.html
+            title: Responsive
+            uri: helpers/responsive.html
 -
     title: Source files
     uri: source-files/design.html
