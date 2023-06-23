@@ -1,0 +1,57 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Conventions - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Development conventions</h2>
+{% endblock %}
+
+{% block component_list %}
+    <div class="s-styleguide-content">
+
+        <h2 id="preferred-stack">Preferred stack</h2>
+        <ul>
+        <li><code>NPM</code> over <code>YARN</code> to manage node packages.</li>
+        <li><code>Composer</code> is preferred for the <code>PHP</code> dependency manager.</li>
+        <li><code>SCSS</code> is preferred over <code>LESS</code></li>
+        </ul>
+        <p>Please discuss if you want to diverge from these standards</p>
+        <h2 id="wordpress">Wordpress</h2>
+        <ul>
+        <li>Use <a href="https://roots.io/bedrock/">Bedrock</a> for any Wordpress installation. </li>
+        <li>Install the <a href="https://github.com/ProDemos/Wordpress-Base-Plugin">ProDemos Base plugin</a>.</li>
+        <li>Never assign permission in the admin but set them explicitly in the code.</li>
+        </ul>
+        <h2 id="node">Node</h2>
+        <ul>
+        <li>the Node version used is recorded in <code>package.json</code> (cf. <a href="https://stackoverflow.com/a/29349773/18890850">https://stackoverflow.com/a/29349773/18890850</a>)</li>
+        </ul>
+        <h2 id="vue">Vue</h2>
+        <h2 id="deployment">Deployment</h2>
+        <ul>
+        <li>github workflows</li>
+        </ul>
+        <p>Use the following build commands</p>
+        <pre><code>composer <span class="hljs-keyword">update</span>
+        npm/yarn <span class="hljs-keyword">install</span>
+        npm/yarn run <span class="hljs-keyword">build</span>
+        </code></pre><h2 id="browser-support">Browser support</h2>
+        <p>The following browsers should be supported and should be tested against. </p>
+        <ul>
+        <li>Chrome</li>
+        <li>Safari</li>
+        <li>Edge</li>
+        <li>Firefox</li>
+        </ul>
+        <h3 id="browserlist">Browserlist</h3>
+        <p>Use the following snippet in package.json to prefix/compile to support these browsers:</p>
+        <pre><code class="lang-javascript"><span class="hljs-string">"browserslist"</span>: [ 
+            <span class="hljs-string">"last 2 versions"</span>
+        ]
+        </code></pre>
+
+    </div>
+{% endblock %}

@@ -54,9 +54,15 @@
             title: Responsive
             uri: helpers/responsive.html
 -
-    title: Source files
-    uri: source-files/design.html
+    title: Resources
+    uri: resources/files.html
     items:
         -
-            title: Design
-            uri: source-files/design.html
+            title: Files
+            uri: resources/files.html
+        -
+            title: Conventions
+            uri: resources/conventions.html
+        -
+            title: Accessilbility
+            uri: resources/accessibility.html

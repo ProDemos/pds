@@ -1,0 +1,39 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Accessibility - Styleguide' %}
+
+
+{% block component_intro %}
+    <h2 class="c-copy--h2">Accessibility</h2>
+{% endblock %}
+
+{% block component_list %}
+    <div class="s-styleguide-content">
+
+        <p>ProDemos aims all websites/apps to comply with the <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> guidlelines to be accessiblity to a wide range of users. </p>
+        <h2 id="take-the-following-points-into-account-when-developing-">Take the following points into account when developing:</h2>
+        <ul>
+        <li>Provide <a href="http://www.w3.org/WAI/WCAG21/quickref/#text-equiv">text alternatives</a> for non-text content.</li>
+        <li>Provide <a href="http://www.w3.org/WAI/WCAG21/quickref/#media-equiv">captions and other alternatives</a> for multimedia.</li>
+        <li>Create content that can be <a href="http://www.w3.org/WAI/WCAG21/quickref/#content-structure-separation">presented in different ways</a>, including by assistive technologies, without losing meaning.</li>
+        <li>Make it easier for users to <a href="http://www.w3.org/WAI/WCAG21/quickref/#visual-audio-contrast">see and hear content</a>.</li>
+        <li>Make all functionality available from a <a href="http://www.w3.org/WAI/WCAG21/quickref/#keyboard-operation">keyboard</a>.</li>
+        </ul>
+        <p><a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">from WCAG 2.1 at a Glance</a></p>
+        <h2 id="points-of-attention">Points of attention</h2>
+        <h3 id="contrast-minimum-">Contrast (Minimum)</h3>
+        <p>The intent of this Success Criterion is to provide enough contrast between text and its background so that it can be read by people with moderately low vision (who do not use contrast-enhancing assistive technology).</p>
+        <p><a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html">Read more</a>
+        <a href="https://webaim.org/resources/contrastchecker/">Color contrast checker</a></p>
+        <h3 id="using-the-wai-aria-aria-expanded-state-to-mark-expandable-and-collapsible-regions">Using the WAI-ARIA aria-expanded state to mark expandable and collapsible regions</h3>
+        <p>The objective of this technique is to use the aria-expanded state to indicate whether regions of the content are collapsible, and to expose whether a region is currently expanded or collapsed. As an example, when subtrees of a tree can be expanded and collapsed dynamically, the aria-expanded state indicates whether the subtree can be expanded or collapsed, as well as whether or not it is currently expanded or collapsed.</p>
+        <p><a href="https://www.w3.org/WAI/GL/wiki/Using_the_WAI-ARIA_aria-expanded_state_to_mark_expandable_and_collapsible_regions">Read more</a></p>
+        <h3 id="focus-order">Focus Order</h3>
+        <p>The intent of this Success Criterion is to ensure that when users navigate sequentially through content, they encounter information in an order that is consistent with the meaning of the content and can be operated from the keyboard. This reduces confusion by letting users form a consistent mental model of the content. There may be different orders that reflect logical relationships in the content. For example, moving through components in a table one row at a time or one column at a time both reflect the logical relationships in the content. Either order may satisfy this Success Criterion.</p>
+        <p><a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">Read more</a></p>
+
+
+    </div>
+{% endblock %}
