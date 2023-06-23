@@ -41,6 +41,19 @@
             title: Tables
             uri: components/tables.html
 -
+    title: Helpers
+    uri: helpers/colors.html
+    items:
+        -
+            title: Colors
+            uri: helpers/colors.html
+        -
+            title: Typography
+            uri: helpers/typography.html
+        -
+            title: Breakpoints
+            uri: helpers/breakpoints.html
+-
     title: Source files
     uri: source-files/design.html
     items:

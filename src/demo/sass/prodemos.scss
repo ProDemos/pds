@@ -11,9 +11,25 @@
 //
 @import "../../assets/sass/helpers/color";
 @import "../../assets/sass/helpers/hover";
-@import "../../assets/sass/helpers/responsive";
+@import "../../assets/sass/helpers/media";
 
 
+.c-content {
+    hr {
+        margin:1em 0;
+    }
+    dl {
+        margin:1em 0;
+    }
+    dt, dd {
+        margin: revert;
+        padding: revert;
+    }
+    xmp {
+        padding:1em;
+        background-color: pds-color(creme-40);
+    }
+}
 
 .s-styleguide-content {
     h1 {
@@ -131,4 +147,6 @@
     li {
         margin-bottom: nth($pds-spacings, 2);
     }
+    
+
 }

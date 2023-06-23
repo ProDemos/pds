@@ -1,0 +1,45 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Colors - Styleguide' %}
+
+
+{% block component_intro %}
+    <h1 class="c-copy--h1">Colors</h1>
+    <h2 class="c-copy--h2">pds-color</h2>
+    <p>
+        <b><code>pds-color(name)</code></b>
+        <dl>
+            <dt><code>name</code></dt>
+            <dd>refers to a color name, like 'blue' or 'creme-40'</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+    h1 {
+        background-color:pds-color(creme-40);
+    }
+</xmp>
+    
+    <hr>
+
+        <code>$pds-colors</code> is defined as a map, like 
+<xmp>
+$pds-colors: (
+    black-110: map-get($pds-color-stack,black),
+    black-80: mix(map-get($pds-color-stack,black),white, 80%), 
+);
+</xmp>
+        You can add your own colors by adding entries to the map:
+<xmp>
+@use "sass:map";
+
+$pds-colors: map.set($pds-colors, jazzberry, #B3116B);
+$pds-colors: map.set($pds-colors, flirt, #B30069);
+
+</xmp>
+    </p>
+
+{% endblock %}
+

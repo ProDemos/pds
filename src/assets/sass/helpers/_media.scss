@@ -1,5 +1,24 @@
 
-@mixin media-until($name, $breakpoints: $pds-breakpoints) {
+@mixin pds-media($name, $type: min, $breakpoints: $pds-breakpoints) {
+    @if map-has-key($breakpoints, $name) == false {
+      @error "There is no breakpoint defined by the name `#{$name}`";
+    }
+    $width: map_get($breakpoints, $name);
+    @if $type == max {
+      $width: $width;
+    }
+    @if $type == min {
+      $width: $width + 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+  
+  
+  /* lgc202306 */
+  
+  @mixin media-until($name, $breakpoints: $pds-breakpoints) {
     @if map-has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
