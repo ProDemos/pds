@@ -1,21 +1,11 @@
 version : 1.0
 styleguide:
-    title : Prodemos Design System
-    brand: Zicht
+    title : ProDemos Design System
+    brand: ProDemos
     outputs: 
         - example
         # - twig
         - html
-    assets: 
-        -
-            type: 'stylesheet'
-            path: '../../assets/css/reset.css'
-        -
-            type: 'stylesheet'
-            path: '../../assets/css/main.css'
-        -
-            type: 'stylesheet'
-            path: 'css/prodemos.css'
 colors:
     # should be defined in assets/sass/variables/overrides
     white:

@@ -1,54 +1,17 @@
 <!doctype html>
-<html class="s-no-javascript  not-loaded  {% block html_class '' %}" {% block html_attributes '' %}>
+<html class="{% block html_class '' %}" {% block html_attributes '' %}>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>{% block head_title styleguide.title %}{%- if version is not empty %}{{ ' - ' ~ version }}{% endif %}</title>
 
-        {%~ block head_copyright %}
-            <!--
-            Copyright (c) Zicht Online {{ 'now'|date('Y') }} All rights reserved
-            Developed by: Zicht Online
-            Contact: info@zicht.nl
-            Version: {{ version ?: 'n.a.' }}
-            -->
-        {% endblock %}
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {% block head -%}
-            {%- set assets = [{ type: 'stylesheet', path: 'css/styleguide.css' }] |merge(styleguide.assets) -%}
-
-            {%- for assetConfig in assets -%}
-                {%- if assetConfig.type == 'stylesheet' -%}
-                    {%- if assetConfig.path is defined -%}
-                        <link rel="stylesheet" href="{{ rooturi }}{{ assetConfig.path }}">
-                    {% elseif assetConfig.url is defined -%}
-                        <link rel="stylesheet" href="{{ assetConfig.url }}">
-                    {% elseif assetConfig.body is defined -%}
-                        <style>
-                            {{ assetConfig.body|raw }}
-                        </style>
-                    {% endif -%}
-                {%- elseif assetConfig.type == 'script' -%}
-                    {%- if assetConfig.path is defined -%}
-                        <script defer src="{{ rooturi }}{{ assetConfig.path }}"></script>
-                    {% elseif assetConfig.url is defined -%}
-                        <script defer src="{{ assetConfig.url }}"></script>
-                    {% elseif assetConfig.body is defined -%}
-                        <script>
-                            {{ assetConfig.body|raw }}
-                        </script>
-                    {% endif -%}
-                {%- endif -%}
-            {%- endfor -%}
+            <link rel="stylesheet" href="../css/main.css">
         {%- endblock %}
 
-        <script>
-            'use strict';
-            var html = document.getElementsByTagName('html')[0];
-            html.className = html.className.replace('s-no-javascript', 's-javascript');
-        </script>
+        
     </head>
 
     <body class="{% block body_class '' %}" {% block body_attributes '' %}>

@@ -4,7 +4,7 @@
 {% block head_title 'Icons - Styleguide' %}
 
 {% block component_intro %}
-    <h2 class="c-copy--h2">Favicons</h2>
+    <h2 >Favicons</h2>
     <p>
         Favicons in are supplied for your convenience. In various colors,
         these files are available in ../assets/images/favicons/[color]/:
@@ -18,16 +18,16 @@
         </ul>
     </p>
     <br><br>
-    <div class="c-icon-list">
+    <div class="demo-icons">
         {% for color in ['black','blue','green','orange','pink','purple','red','yellow'] %}
-            <div class="c-icon-list__item">
+            <div class="demo-icon">
                 <img src="/assets/images/favicons/{{ color }}/favicon.ico">
-                <p class="c-icon-list__item__name">.../{{ color }}/favicon.ico</p>
+                <p class="demo-icon-name">.../{{ color }}/favicon.ico</p>
             </div>
         {% endfor %}
     </div>
 
-    <h2 class="c-copy--h2">Other icons</h2>
+    <h2 >Other icons</h2>
     <p>
         The icons for buttons are based on SVG with a canvas size of 24 x 24, and when you create new icons the 
         line art is preferably max 22 x 22 px. If you stick to these numbers the icons will render consistently. 

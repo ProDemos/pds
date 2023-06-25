@@ -36,52 +36,52 @@
     
     {% set cx = {
         container: html_classes({
-            'c-component--full': properties.styleguide_component_width|default == 'full',
+            'demo-component-full': properties.styleguide_component_width|default == 'full',
         }),
         view: html_classes({
-            'c-component__view--full': properties.styleguide_component_width|default == 'full',
-            'c-component__view--dark': properties.styleguide_dark|default == true
+            'demo-component-view--full': properties.styleguide_component_width|default == 'full',
+            'demo-component-view--dark': properties.styleguide_dark|default == true
         }),
         meta: html_classes({
-            'c-component__meta--full': properties.styleguide_component_width|default == 'full' or 'example' not in outputs
+            'demo-component-meta--full': properties.styleguide_component_width|default == 'full' or 'example' not in outputs
         })
         }
     %}
     
     {#% set cx = {
-        container: (properties.styleguide_component_width|default == 'full') ? 'c-component--full' : '',
-        view: (properties.styleguide_component_width|default == 'full') ? 'c-component__view--full' : '' ~ (properties.styleguide_dark|default == true) ? ' c-component__view--dark' : '',
-        meta: (properties.styleguide_component_width|default == 'full' or 'example' not in outputs) ? 'c-component__meta--full' : ''
+        container: (properties.styleguide_component_width|default == 'full') ? 'demo-component-full' : '',
+        view: (properties.styleguide_component_width|default == 'full') ? 'demo-component-view--full' : '' ~ (properties.styleguide_dark|default == true) ? ' demo-component-view--dark' : '',
+        meta: (properties.styleguide_component_width|default == 'full' or 'example' not in outputs) ? 'demo-component-meta--full' : ''
     } %#}
     
 
-    <div class="c-component  {{ cx.container }}" {% if properties.styleguide_component_width|default != '' and properties.styleguide_component_width|default != 'full' %}style="grid-template-columns: {{ properties.styleguide_component_width }} minmax(0, 1fr)"{% endif %}>
+    <div class="demo-component  {{ cx.container }}" {% if properties.styleguide_component_width|default != '' and properties.styleguide_component_width|default != 'full' %}style="grid-template-columns: {{ properties.styleguide_component_width }} minmax(0, 1fr)"{% endif %}>
         
         {% set component_properties = properties | filter((v, k) => not(k matches '/^styleguide_.*/')) %}
 
         {% if 'example' in outputs %}
-            <div class="c-component__view  {{ cx.view }}">
+            <div class="demo-component-view  {{ cx.view }}">
                 {{ component.component(slug, component_properties) }}
             </div>
         {% endif %}
 
-        <div class="c-component__meta  {{ cx.meta }}">
+        <div class="demo-component-meta  {{ cx.meta }}">
             {% if properties.styleguide_title|default %}
-                <h2 class="c-component-list__title">{{ properties.styleguide_title }}</h2>
+                <h2 class="demo-component-list__title">{{ properties.styleguide_title }}</h2>
             {% endif %}
 
             {% if properties.styleguide_description|default %}
-                <p class="c-component__description">{{ properties.styleguide_description }}</p>
+                <p class="demo-component-description">{{ properties.styleguide_description }}</p>
             {% endif %}
 
             {% if 'twig' in outputs %}
                 {% set json = component_properties|json_encode(constant('JSON_PRETTY_PRINT')) %}
-                <pre class="c-component__code">{{ '{{ ' }}ui.component('{{ slug }}', {{ json }}{{ ') }}' }}</pre>
+                <pre class="demo-component-code">{{ '{{ ' }}ui.component('{{ slug }}', {{ json }}{{ ') }}' }}</pre>
             {% endif %}
 
             {% if 'html' in outputs %}
                 {% set source %}{{ component.component(slug, component_properties)|raw }}{% endset %}
-                <pre class="c-component__code">{{ source|tidy }}</pre>
+                <pre class="demo-component-code">{{ source|tidy }}</pre>
             {% endif %}
         </div>
     </div>

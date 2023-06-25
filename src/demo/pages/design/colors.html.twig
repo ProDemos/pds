@@ -5,7 +5,7 @@
 
 
 {% block component_intro %}
-    <h2 class="c-copy--h2">Colors</h2>
+    <h2 >Colors</h2>
     <p>
         The design system has a set of named colors, that you can access through css modifiers (<code>pds-m-foo.blue</code>)
         or using sass (<code>@pds-color(blue)</code>).
@@ -22,7 +22,7 @@
 {% block component_list %}
 
 
-    <h2 class="c-copy--h2">named colors</h2>
+    <h2 >named colors</h2>
     <table width="100%" id="colortable">
         {% for maincolor, subcolors in colors %}
             <tr>
@@ -44,7 +44,7 @@
         {% endfor %}
     </table>
     <br><br>
-    <h2 class="c-copy--h2">Theme colors</h2>
+    <h2 >Theme colors</h2>
     <table width="100%" id="themetable">
         {% for theme in themes %}
             <tr>
