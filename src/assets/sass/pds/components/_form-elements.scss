@@ -22,14 +22,16 @@
 
         
         // The label
-        label:has(input[type=radio]), .pds-c-input-label {
-            display: block;
-            position: relative;
-            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
-            margin: nth($pds-spacings, 4) auto;
-            z-index: 2;
-            cursor: pointer;
-            transition: all 0.25s linear;
+        label, .pds-c-input-label {
+            &:has(input[type=radio]) {
+                display: block;
+                position: relative;
+                padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+                margin: nth($pds-spacings, 4) auto;
+                z-index: 2;
+                cursor: pointer;
+                transition: all 0.25s linear;
+            }
         }
 
         input[type=radio], .pds-c-input.radio {
@@ -77,14 +79,16 @@
     &.checkbox, &:has(input[type=checkbox])  {
        
         // The label
-        label:has(input[type=checkbox]), .c-input-label {
-            display: block;
-            position: relative;
-            padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
-            margin: nth($pds-spacings, 4) auto;
-            z-index: 2;
-            cursor: pointer;
-            transition: all 0.25s linear;
+        label, .pds-c-input-label {
+            &:has(input[type=checkbox]) {
+                display: block;
+                position: relative;
+                padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
+                margin: nth($pds-spacings, 4) auto;
+                z-index: 2;
+                cursor: pointer;
+                transition: all 0.25s linear;
+            }
         }
 
 
