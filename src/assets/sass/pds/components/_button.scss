@@ -61,7 +61,7 @@
         // libsass<3.6 has a regression issue with this:
         // https://github.com/sass/node-sass/issues/2330
 
-        &:not(.disabled) {
+        &:not(.disabled,:disabled) {
             @include hover {
                 transform: translate(-2px, 2px);
                 &::before {
@@ -81,7 +81,7 @@
         }
         
         
-        &:active:not(.disabled) {
+        &:active:not(.disabled,:disabled) {
 
             transform: translate(-5px, 5px);
 
@@ -154,7 +154,7 @@
     }
 
     // Disabled state
-    &.disabled {
+    &.disabled, &:disabled {
         cursor: not-allowed;
     }
 
@@ -239,7 +239,7 @@
         }
 
         // Hover styles, but only when the button is not disabled
-        &:not(.disabled) {
+        &:not(.disabled, :disabled) {
             @include hover {
                 &.primary {
                     &::before,
@@ -250,7 +250,7 @@
             }
         }
 
-        &:active:not(.disabled) {
+        &:active:not(.disabled, :disabled) {
             &.primary {
                 &::before,
                 &::after {
@@ -271,7 +271,7 @@
         }
 
         // Hover styles, but only when the button is not disabled
-        &:not(.disabled) {
+        &:not(.disabled, :disabled) {
             @include hover {
                 background-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 2));
 
@@ -284,7 +284,7 @@
             }
         }
 
-        &:active:not(.disabled) {
+        &:active:not(.disabled, :disabled) {
             &.primary {
                 &::before,
                 &::after {
@@ -301,7 +301,7 @@
         }
     }
 
-    &.disabled {
+    &.disabled, &:disabled {
         background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 4));
 
         &.primary {
@@ -320,25 +320,25 @@
         border-color: pds-color(sand);
         background-color: pds-color(sand);
 
-        &:not(.disabled) {
+        &:not(.disabled, :disabled) {
             @include hover {
                 border-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
                 background-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
             }
         }
 
-        &:active:not(.disabled) {
+        &:active:not(.disabled, :disabled) {
             color: pds-color(white);
             .pds-c-button-icon:not(svg) { background-color: pds-color(white); }
 
             background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
 
-        &:focus:not(.disabled) {
+        &:focus:not(.disabled, :disabled) {
             border-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
         }
 
-        &.disabled {
+        &.disabled, &:disabled {
             color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
             .pds-c-button-icon:not(svg) { background-color: lighten(pds-color(black), nth($pds-lighten-scale, 5)); }
         }

@@ -6,9 +6,6 @@
             title: Colors
             uri: design/colors.html
         -
-            title: Layout
-            uri: design/layout.html
-        -
             title: Typography
             uri: design/typography.html
         -
@@ -26,8 +23,8 @@
             title: Icons
             uri: components/icons.html
         -
-            title: Graphics
-            uri: components/graphics.html
+            title: Logos
+            uri: components/logos.html
         -
             title: Buttons
             uri: components/buttons.html
@@ -41,9 +38,28 @@
             title: Tables
             uri: components/tables.html
 -
-    title: Source files
-    uri: source-files/design.html
+    title: Helpers
+    uri: helpers/colors.html
     items:
         -
-            title: Design
-            uri: source-files/design.html
+            title: Colors
+            uri: helpers/colors.html
+        -
+            title: Typography
+            uri: helpers/typography.html
+        -
+            title: Responsive
+            uri: helpers/responsive.html
+-
+    title: Resources
+    uri: resources/files.html
+    items:
+        -
+            title: Files
+            uri: resources/files.html
+        -
+            title: Conventions
+            uri: resources/conventions.html
+        -
+            title: Accessilbility
+            uri: resources/accessibility.html

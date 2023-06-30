@@ -162,3 +162,8 @@ release-pds-demo:
 	npm publish ./build/packages/pds-demo
 	tar -czf ./build/packages/pds-demo.tgz ./build/packages/pds-demo
 	hub release edit -a ./build/packages/pds-demo.tgz -m "" $(version)
+
+serve:
+	@echo
+	@echo Starting python webserver ..
+	cd build/demo && python3 -m http.server

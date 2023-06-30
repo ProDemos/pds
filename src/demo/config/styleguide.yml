@@ -17,58 +17,66 @@ styleguide:
             type: 'stylesheet'
             path: 'css/prodemos.css'
 colors:
-    # should be defined in assets/sass/variables/zss-overrides
+    # should be defined in assets/sass/variables/overrides
     white:
     black:
-        - black-110
+        - black
+        - black
         - black-80
         - black-60
         - black-40
         - black-20
-    sand:
-        - sand-120
-        - sand-110
-        - sand-80 
-        - sand-60 
-        - sand-40 
-        - sand-20
+    creme:
+        - creme-120
+        - creme-110
+        - creme-80 
+        - creme-60 
+        - creme-40 
+        - creme-20
     yellow:
+        - black
         - yellow-110      
         - yellow-80
         - yellow-60
         - yellow-40
         - yellow-20
     orange:
+        - black
         - orange-110
         - orange-80 
         - orange-60 
         - orange-40 
         - orange-20 
     red:
+        - black
         - red-110
         - red-80
         - red-60
         - red-40
         - red-20
     pink:
+        - black
         - pink-110
         - pink-80
         - pink-60
         - pink-40
         - pink-20
     purple:
+        - black
         - purple-110
         - purple-80
         - purple-60
         - purple-40
         - purple-20
     blue:
+        - black
         - blue-110
         - blue-80 
         - blue-60 
         - blue-40 
         - blue-20   
     green:
+        - black
         - green-110
         - green-80
         - green-60

@@ -1,0 +1,122 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/styleguide.html.twig' as styleguide %}
+
+{% block head_title 'Typography - Styleguide' %}
+
+
+{% block component_intro %}
+
+    <h1 class="c-copy--h1">Typography</h1>
+
+    <h2 class="c-copy--h2">Function: pds-fontsize</h2>
+    <p>
+        <b><code>pds-fontsize(name)</code></b>
+        <dl>
+            <dt><code>name</code></dt>
+            <dd>refers to a fontsize name, like 'huge'</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+h1 {
+    font-size: pds-fontsize(huge);
+}
+</xmp>
+    
+    <hr>
+
+        <code>$pds-fontsizes</code> are defined as a map, like 
+<xmp>
+$pds-fontsizes: (
+  tiny: 8px,
+  xxs: 12px,
+  xs: 14px,
+  s: 16px,
+  default: 18px,
+  m: 22px,
+  l: 24px,
+  xl: 32px,
+  xxl: 44px,
+  huge: 56px,
+);
+</xmp>
+        You can add your own fontsize by adding entries to the map:
+<xmp>
+@use "sass:map";
+
+$pds-fontsizes: map.set($pds-fontsizes, header-large, 4rem);
+$pds-fontsizes: map.set($pds-fontsizes, footnote, .5rem);
+
+
+</xmp>
+    </p>
+
+    <h2 class="c-copy--h2">Function: pds-lineheight</h2>
+    <p>
+        <b><code>pds-lineheight(name)</code></b>
+        <dl>
+            <dt><code>name</code></dt>
+            <dd>refers to a lineheight name, like 'default'</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+h1 {
+    line-height: pds-lineheight(default);
+}
+</xmp>
+    
+    <hr>
+
+        <code>$pds-lineheights</code> are defined as a map, like 
+<xmp>
+$pds-lineheights: (
+  none: 0,
+  xs: 1,
+  s: 1.25,
+  default: 1.5,
+  m: 1.75,
+);
+</xmp>
+        You can add your own lineheight by adding entries to the map:
+<xmp>
+@use "sass:map";
+
+$pds-lineheights: map.set($pds-lineheights, header-large, 1.2);
+$pds-lineheights: map.set($pds-lineheights, footnote, .5);
+
+
+</xmp>
+    </p>
+
+    <h2 class="c-copy--h2">Mixin: pds-slant</h2>
+    <p>
+        <b><code>pds-slant([color], [bottom-left|bottom-right], [size])</code></b>
+        <dl>
+            <dt><code>color</code> (default blue)</dt>
+            <dd>refers to a color name, like 'blue-40'</dt>
+        </dl>
+        <dl>
+            <dt><code>bottom-left|bottom-right</code> (default bottom-left)</dt>
+            <dd>indicates the direction of the slant</dt>
+        </dl>
+        <dl>
+            <dt><code>size</code> (default 10px)</dt>
+            <dd>the size of the slant</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+.infobox {
+    @include pds-slant(red)
+}
+</xmp>
+    
+    
+    </p>
+
+{% endblock %}
+

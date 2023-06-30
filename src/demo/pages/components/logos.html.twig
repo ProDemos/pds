@@ -1,0 +1,28 @@
+{% extends 'styleguide/component.html.twig' %}
+{% import 'macros/components.html.twig' as ui %}
+
+
+{% block head_title 'Logo\'s - Styleguide' %}
+
+
+{% block component_intro %}
+   <h1 class="c-copy--h1">Logo's</h1>
+   <p>
+        Here you can find, ao, the logo's of ProDemos. <br>
+        For some, The color can be changed by CSS by setting the font-color of the element.
+   </p>
+   <br>
+    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <ul>
+        <li> .pds-c-logo</li>
+    </ul>
+    <br>
+{% endblock %}
+
+{% block component_list %}
+    {% for component in components.logo %}
+        {% set logo = component.logo|merge({'directory': rooturi ~ '../../assets/images/logos' }) %}
+        {% set component = component|merge({'logo': logo }) %}
+        {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+    {% endfor %}
+{% endblock %}
