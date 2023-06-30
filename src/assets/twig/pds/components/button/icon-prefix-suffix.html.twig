@@ -5,11 +5,11 @@
 {% block button_content %}
     <span class="pds-c-button-content">
         {% if svgicon_left %}
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons' -->
             {{ ui.svg(svgicon_left.name, {
                 width: svgicon_left.width|default(10),
                 height: svgicon_left.height|default(10),
-                directory: svgicon_left.directory|default('assets/images/icons/24px'),
+                directory: svgicon_left.directory|default('assets/images/icons'),
                 css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ svgicon_left.name|basename]
             }) }}
         {% else %}
@@ -21,11 +21,11 @@
             {% endif %}
         </span>
         {% if svgicon_right %}
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons' -->
             {{ ui.svg(svgicon_right.name, {
                 width: svgicon_right.width|default(10),
                 height: svgicon_right.height|default(10),
-                directory: svgicon_right.directory|default('assets/images/icons/24px'),
+                directory: svgicon_right.directory|default('assets/images/icons'),
                 css_classes: ['pds-c-button-icon', 'right', 'icon--' ~ svgicon_right.name|basename]
             }) }}
         {% else %}

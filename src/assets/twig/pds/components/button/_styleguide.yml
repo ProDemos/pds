@@ -48,7 +48,7 @@
     level: primary
     size: large
     svgicon:
-        name: 24px/arrow-circled-right.svg
+        name: arrow-right-circle-solid.svg
         width: 22
         height: 22
 
