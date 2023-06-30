@@ -130,10 +130,6 @@
         }
     }
 
-    &.select, &:has(select)  {
-        display: flex;
-        align-items: center;
-    }
 
     //default labels are styled
     label {
