@@ -22,7 +22,7 @@
 
         
         // The label
-        label, .pds-c-input-label {
+        label:has(input[type=radio]), .pds-c-input-label {
             display: block;
             position: relative;
             padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
@@ -77,7 +77,7 @@
     &.checkbox, &:has(input[type=checkbox])  {
        
         // The label
-        label, .c-input-label {
+        label:has(input[type=checkbox]), .c-input-label {
             display: block;
             position: relative;
             padding: nth($pds-spacings, 4) nth($pds-spacings, 6) nth($pds-spacings, 4) nth($pds-spacings, 9);
