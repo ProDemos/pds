@@ -188,7 +188,7 @@
         
 
         &.valid {
-            background-image: url("#{$pds-assets-path}/images/icons/24px/check-green.svg");
+            background-image: url("#{$pds-assets-path}/images/icons/check-circle-solid-green.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -196,7 +196,7 @@
         }
 
         &.invalid {
-            background-image: url("#{$pds-assets-path}/images/icons/24px/error-red.svg");
+            background-image: url("#{$pds-assets-path}/images/icons/cross-circle-solid-red.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
