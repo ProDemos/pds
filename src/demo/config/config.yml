@@ -74,9 +74,6 @@ colors:
         - green-60
         - green-40
         - green-20
-   
-scopes:
-        pds-s-content : "Content" 
 
 themes:
         pds-t-public : Public

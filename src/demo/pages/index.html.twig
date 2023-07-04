@@ -37,22 +37,19 @@
                 optionally <code>assets/sass/reset.scss</code> to your workflow.
             </li>
             <li>
-                <b>The css defines</b> scopes (<code>pds-s-{scope}</code>), themes (<code>pds-t-{theme}</code>),
+                <b>The css defines</b> themes (<code>pds-t-{theme}</code>),
                 components (<code>pds-c-{components}</code>) and general modifiers (<code>pds-m-{modifier}</code>),
                 and nothing else. It should not conflict with your own css.
             </li>
             <li>
                 <b>Including assets/main.css</b> before your own css will not change anything to your design. At least
                 one of the elements on your page should use one of the classes defined in the design system to 
-                actually use the design system. For example, adding the 'content' scope and 'corporate' theme 
-                to your body (<code>&lt;body class="pds-s-content pds-t-corporate"&gt;</code>) will change the look of 
+                actually use the design system. For example, adding the 'corporate' theme 
+                to your body (<code>&lt;body class="pds-t-corporate"&gt;</code>) will change the look of 
                 the page.
                 Including assets/reset.css before your own css will probably change your design a bit, as
                 it defines font-sizes, line-heights, box-sizings and such on a global level. 
             </li>
-            <li>
-                <b>Scopes</b> can be specified by <code>class="pds-s-{scope}"</code>. Scopes will be inherited, and 
-                it can affect regular content like <code>&lt;h1&gt;</code>.</li>
             <li>
                 <b>Themes</b> can be specified by <code>class="pds-t-{theme}"</code>. Themes will be inherited, so
                 you can start with a <code>&lt;body class="pds-t-corporate"&gt;</code> to have the whole page in the corporate theme.
