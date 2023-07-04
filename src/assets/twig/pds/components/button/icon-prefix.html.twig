@@ -6,11 +6,11 @@
     
     <span class="pds-c-button-content">
         {% if svgicon %}
-            <!-- replace the SVG-code with the appropriate from the folder 'images/icons/24px' -->
+            <!-- replace the SVG-code with the appropriate from the folder 'images/icons' -->
             {{ ui.svg(svgicon.name, {
                 width: svgicon.width|default(10),
                 height: svgicon.height|default(10),
-                directory: svgicon.directory|default('assets/images/icons/24px'),
+                directory: svgicon.directory|default('assets/images/icons'),
                 css_classes: ['pds-c-button-icon', 'left', 'icon--' ~ svgicon.name|basename]
             }) }}
         {% else %}
