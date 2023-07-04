@@ -142,17 +142,12 @@ When breakpoints are defined, they can be used inline in the class to target spe
 
 Just use:
 ```
-@include media-from(lg) {
-    font-size: nth($pds-font-sizes, 2);
+@include pds-media(lg,min) {
+    font-size: pds-fontsize(l);
 }
 ```
 to set another style from breakpoint LG (LarGe, probably something around 1024px)
 
-
-Three types can be used:
- - `@include media-from(lg){ ... }` \ Which means: 'Use this style up from Large screens'
- - `@include media-between(md, lg) { ... }`  \ Which means: 'use this style between Medium and Large screens'
- - `@include media-until(lg) { ... }` \ Which means: 'use this style until Large screens'
 
 ### Colors
 Colors are defined in `$pds-colors` as a map, but you can use the helpers `pds-color` and `pds-theme-color` to find the right color. Themes are defined in `$pds-themes`.`
