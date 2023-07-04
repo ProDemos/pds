@@ -52,12 +52,9 @@ class TwigCompiler
         $this->data['navigation'] = $nav;
         
         // defined components
-        foreach(scandir($this->paths['assets'].'/twig/pds/components') as $dirname) {
-            $xmpfile = $this->paths['assets'].'/twig/pds/components/'.$dirname.'/_styleguide.yml';
-            if (file_exists($xmpfile)) {
-                $xmpdata = $yaml->parse(file_get_contents($xmpfile));
-                $this->data['components'][$dirname] = $xmpdata;
-            }
+        foreach(glob($this->paths['config'].'/components/*.yml') as $xmpfile) {
+            $xmpdata = $yaml->parse(file_get_contents($xmpfile));
+            $this->data['components'][basename($xmpfile,'.yml')] = $xmpdata;
         }
         
         // generate list of images except icons and favicons
