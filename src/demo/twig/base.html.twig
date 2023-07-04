@@ -33,10 +33,18 @@
 
             <div class="body-main">
                 <div class="body-intro">
-                    {% block component_intro '' %}
+                    {% block body_intro %}
+                        <h1 >{{ name|capitalize }}</h1>
+                    {% endblock %}
                 </div>
 
-                {% block component_list '' %}
+                <div class="body-content">
+                    {% block body_content %}
+                        {% for component in examples[name] %}
+                                {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+                        {% endfor %}
+                    {% endblock %}
+                </div>
             </div>
         </main>
     </body>

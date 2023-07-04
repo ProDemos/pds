@@ -318,6 +318,10 @@ body {
         }
     }
 
+    .body-content {
+        
+    }
+
     @include pds-media(md,min) {
         padding: 3rem 0 7rem 3rem;
     }

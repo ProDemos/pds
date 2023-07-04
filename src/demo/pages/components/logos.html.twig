@@ -5,7 +5,7 @@
 {% block head_title 'Logo\'s' %}
 
 
-{% block component_intro %}
+{% block body_intro %}
    <h1 >Logo's</h1>
    <p>
         Here you can find, ao, the logo's of ProDemos. <br>
@@ -19,7 +19,7 @@
     <br>
 {% endblock %}
 
-{% block component_list %}
+{% block body_content %}
     {% for component in components.logo %}
         {% set logo = component.logo|merge({'directory': rooturi ~ '../../assets/images/logos' }) %}
         {% set component = component|merge({'logo': logo }) %}
