@@ -8,6 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         {% block head -%}
+            <style type="text/css">
+                a { color: black; }
+            </style>
             <link rel="stylesheet" href="../css/main.css">
         {%- endblock %}
 
@@ -15,6 +18,22 @@
     </head>
 
     <body class="{% block body_class '' %}" {% block body_attributes '' %}>
-        {% block body '' %}
+        {% block styleguide_top %}
+        {% include '/styleguide/_top.html.twig' %}
+    {% endblock %}
+
+        <main class="page-body">
+            {% block styleguide_aside %}
+                {% include '/styleguide/_side-bar.html.twig' %}
+            {% endblock %}
+
+            <div class="body-main">
+                <div class="body-intro">
+                    {% block component_intro '' %}
+                </div>
+
+                {% block component_list '' %}
+            </div>
+        </main>
     </body>
 </html>
