@@ -23,12 +23,12 @@
 
     <body class="{% block body_class '' %}" {% block body_attributes '' %}>
         {% block styleguide_top %}
-        {% include '/styleguide/top.html.twig' %}
+        {% include 'top.html.twig' %}
     {% endblock %}
 
         <main class="page-body">
             {% block styleguide_aside %}
-                {% include '/styleguide/sidebar.html.twig' %}
+                {% include 'sidebar.html.twig' %}
             {% endblock %}
 
             <div class="body-main">

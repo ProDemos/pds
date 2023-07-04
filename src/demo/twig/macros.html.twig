@@ -25,7 +25,7 @@
     @param object properties The properties of the component.
 #}
 {% macro styleguide_component(slug, properties, outputs = ['example', 'twig']) %}
-    {% import 'macros/components.html.twig' as component %}
+    {% import 'macros.html.twig' as component %}
     
     {% set cx = {
         container: html_classes({
