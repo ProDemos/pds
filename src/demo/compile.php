@@ -45,7 +45,7 @@ class TwigCompiler
         $yaml = new Parser();
         
         // core config
-        $this->data = $yaml->parse(file_get_contents($this->paths['config'].'/styleguide.yml'));
+        $this->data = $yaml->parse(file_get_contents($this->paths['config'].'/config.yml'));
         
         // menu
         $nav = $yaml->parse(file_get_contents($this->paths['config'].'/navigation.yml'));

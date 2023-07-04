@@ -1,3 +1,5 @@
+# PDS demo/config/config.yml
+# General config file for the demo site
 version : 1.0
 styleguide:
     title : ProDemos Design System
@@ -86,11 +88,15 @@ themes:
         pds-t-variant05 : Variant05 
         pds-t-variant06 : Variant06 
 
+components:
+    # will be read from the demo/config/components/ directory
+    # by the compile script
+
 images:
     # will be read from the assets/images/ directory
-    # by the build script
+    # by the compile script
     
 icons:
     # will be read from the assets/images/icons directory
-    # by the build script
+    # by the compile script
 
