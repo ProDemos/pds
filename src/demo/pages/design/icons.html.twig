@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% import 'macros/styleguide.html.twig' as styleguide %}
+{% import 'macros/components.html.twig' as ui %}
 
 {% block head_title 'Icons' %}
 
@@ -46,6 +46,17 @@
 {% block body_content %}
     <div>
         {# 'icons' is read from assets/images/icons directory by build script #}
-        {{ styleguide.icons(icons,rooturi) }}
+        <div class="demo-icons">
+            {% for i in icons %}
+                <div class="demo-icon">
+                    {{ ui.svg(i, {
+                        directory: rooturi ~ '/assets/images/icons',
+                        width: 48,
+                        height: 48,
+                    }) }}
+                    <p class="demo-icon-name">{{ i }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
