@@ -39,11 +39,7 @@
                 </div>
 
                 <div class="body-content">
-                    {% block body_content %}
-                        {% for component in examples[name] %}
-                                {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
-                        {% endfor %}
-                    {% endblock %}
+                    {% block body_content '' %}
                 </div>
             </div>
         </main>
