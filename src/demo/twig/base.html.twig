@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{% block head_title styleguide.title %}{%- if version is not empty %}{{ ' - ' ~ version }}{% endif %}</title>
+        <title>{% block head_title styleguide.title %}</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,12 +19,12 @@
 
     <body class="{% block body_class '' %}" {% block body_attributes '' %}>
         {% block styleguide_top %}
-        {% include '/styleguide/_top.html.twig' %}
+        {% include '/styleguide/top.html.twig' %}
     {% endblock %}
 
         <main class="page-body">
             {% block styleguide_aside %}
-                {% include '/styleguide/_side-bar.html.twig' %}
+                {% include '/styleguide/sidebar.html.twig' %}
             {% endblock %}
 
             <div class="body-main">
