@@ -1,57 +1,57 @@
 
-.c-color-list {
+.demo-colors {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     margin-bottom: 1.5rem;
 
-    @include media-from(md) {
+    @include pds-media(md,min) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @include media-from(lg) {
+    @include pds-media(lg,min) {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
 
 
-.c-color-list__item {
+.demo-color {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     min-width: 120px;
     text-align: center;
 
-    @include media-from(md) {
+    @include pds-media(md,min) {
         min-width: 150px;
     }
 }
 
 
 
-.c-color-list__item__value {
+.demo-color-value {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     border-radius: 3px;
     border-width: 1px;
-    border-color: $white--smoke;
+    border-color: pds-color(creme-80);
     border-style: solid;
 
-    .c-color-list__item--light & {
-        color: $grey--charcoal;
+    .demo-color-light & {
+        color: pds-color(black-80);
     }
 
-    .c-color-list__item--dark & {
-        color: $white;
+    .demo-color-dark & {
+        color: pds-color(white);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 }
 
 
 
-.c-color-list__item__name {
+.demo-color-name {
     font-size: 0.75rem;
 }

@@ -1,19 +1,19 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Form elements - Styleguide' %}
+{% block head_title 'Form elements' %}
 
 
-{% block component_intro %}
-    <h2 class="c-copy--h2">Form elements</h2>
+{% block body_intro %}
+    <h1 >Form elements</h1>
 
     <p>Input components are a bit simpler than buttons. Just add the default input class (c-input), 
     add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
     Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
 
     <br>
-    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <h3 >Elements and modifiers</h3>
     <ul>
         
         <li> .pds-c-input[.disabled][.transparent]</li>
@@ -27,7 +27,8 @@
         <li> .pds-c-progress[.pending|.ready|.error][.white] > .spinner</li>
     </ul>
 
-    <h1 class="c-copy--h1">Themes</h1>
+    <br>
+    <h2 >Themes</h2>
 
     <form>
         <select class="pds-c-input dropdown full-width"
@@ -41,17 +42,17 @@
 
 {% endblock %}
 
-{% block component_list %}
+{% block body_content %}
 
     <!-- custom elements -->
-    <div class="c-component">
-        <div class="c-component__view  ">
+    <div class="demo-component">
+        <div class="demo-component-view  ">
             <label for="label-demo" class="pds-c-input-label">Some label</label><br>
             <input id="label-demo" class="pds-c-input" type="text" value="demo">
         </div>
-        <div class="c-component__meta  ">
-           <h2 class="c-component-list__title">Label</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  ">
+           <h2 class="demo-component-list__title">Label</h2>
+            <xmp class="demo-component-code">
 <label for="label-demo" class="pds-c-input-label">Some label</label><br>
 <input id="label-demo" class="pds-c-input" type="text" value="demo"></xmp>
         </div>
@@ -64,26 +65,26 @@
 
     <!-- custom elements -->
     
-    <div class="c-component  ">
-        <div class="c-component__view  ">
+    <div class="demo-component  ">
+        <div class="demo-component-view  ">
             <span class="pds-c-input">padding</span>
         </div>
-        <div class="c-component__meta  ">
-           <h2 class="c-component-list__title">Fake input</h2>
-            <xmp class="c-component__code"><span class="pds-c-input">padding</span></xmp>
+        <div class="demo-component-meta  ">
+           <h2 class="demo-component-list__title">Fake input</h2>
+            <xmp class="demo-component-code"><span class="pds-c-input">padding</span></xmp>
         </div>
     </div>
 
-    <div class="c-component  ">
-        <div class="c-component__view  ">
+    <div class="demo-component  ">
+        <div class="demo-component-view  ">
             <button class="pds-c-button small regular">Submit</button>
             <div class="pds-c-progress pending">
                 <div class="spinner"></div>
             </div>
         </div>
-        <div class="c-component__meta  ">
-           <h2 class="c-component-list__title">Progress spinner</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  ">
+           <h2 class="demo-component-list__title">Progress spinner</h2>
+            <xmp class="demo-component-code">
 <div class="pds-c-progress pending">
     <div class="spinner"></div>
 </div>
@@ -91,16 +92,16 @@
         </div>
     </div>
 
-    <div class="c-component  ">
-        <div class="c-component__view  pds-m-filled blue">
+    <div class="demo-component  ">
+        <div class="demo-component-view  pds-m-filled blue">
             <button class="pds-c-button small regular">Submit</button>
             <div class="pds-c-progress pending white">
                 <div class="spinner"></div>
             </div>
         </div>
-        <div class="c-component__meta  ">
-           <h2 class="c-component-list__title">White progress spinner</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  ">
+           <h2 class="demo-component-list__title">White progress spinner</h2>
+            <xmp class="demo-component-code">
 <div class="pds-c-progress pending white">
     <div class="spinner"></div>
 </div>

@@ -1,20 +1,7 @@
 
-//
-// Settings / variables
-//
-@import "../../assets/sass/variables/global";
-@import "../../assets/sass/variables/overrides";
 
 
-//
-// Mixins and helpers
-//
-@import "../../assets/sass/helpers/color";
-@import "../../assets/sass/helpers/hover";
-@import "../../assets/sass/helpers/responsive";
-
-
-.c-content {
+.page-body {
     hr {
         margin:1em 0;
     }
@@ -31,12 +18,12 @@
     }
 }
 
-.s-styleguide-content {
+.content-text {
     h1 {
         margin-bottom: nth($pds-spacings, 5);
         font-size: pds-fontsize(xl);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(xxl);
         }
     }
@@ -45,7 +32,7 @@
         margin-bottom: nth($pds-spacings, 4);
         font-size: pds-fontsize(l);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(xl);
         }
     }
@@ -54,7 +41,7 @@
         margin-bottom: nth($pds-spacings, 3);
         font-size: pds-fontsize(m);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(l);
         }
     }
@@ -63,7 +50,7 @@
         margin-bottom: nth($pds-spacings, 3);
         font-size: pds-fontsize(default);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(m);
         }
     }
@@ -72,7 +59,7 @@
         margin-bottom: nth($pds-spacings, 3);
         font-size: pds-fontsize(default);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(5);
         }
     }
@@ -81,7 +68,7 @@
         margin-bottom: nth($pds-spacings, 3);
         font-size: pds-fontsize(default);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             font-size: pds-fontsize(m);
         }
     }
@@ -92,7 +79,7 @@
         font-weight: 400;
         line-height: pds-lineheight(m);
 
-        @include media-from(lg) {
+        @include pds-media(lg,min) {
             margin-bottom: nth($pds-spacings, 8);
         }
     }
@@ -150,3 +137,32 @@
     
 
 }
+
+
+.body-main h1 {
+    margin-bottom: 3rem;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: pds-color(black-80);
+    font-size: 1.9rem;
+}
+
+
+
+.body-main h2 {
+//    text-transform: uppercase;
+    margin-bottom: 3rem;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: pds-color(black-80);
+    font-size: 1.5rem;
+}
+
+
+
+.body-main h3 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+

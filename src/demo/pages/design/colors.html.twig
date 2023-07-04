@@ -1,11 +1,10 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/styleguide.html.twig' as styleguide %}
+{% extends 'base.html.twig' %}
 
-{% block head_title 'Colors - Styleguide' %}
+{% block head_title 'Colors' %}
 
 
-{% block component_intro %}
-    <h2 class="c-copy--h2">Colors</h2>
+{% block body_intro %}
+    <h2 >Colors</h2>
     <p>
         The design system has a set of named colors, that you can access through css modifiers (<code>pds-m-foo.blue</code>)
         or using sass (<code>@pds-color(blue)</code>).
@@ -19,10 +18,10 @@
 {% endblock %}
 
 
-{% block component_list %}
+{% block body_content %}
 
 
-    <h2 class="c-copy--h2">named colors</h2>
+    <h3 >named colors</h3>
     <table width="100%" id="colortable">
         {% for maincolor, subcolors in colors %}
             <tr>
@@ -44,7 +43,7 @@
         {% endfor %}
     </table>
     <br><br>
-    <h2 class="c-copy--h2">Theme colors</h2>
+    <h3 >Theme colors</h3>
     <table width="100%" id="themetable">
         {% for theme in themes %}
             <tr>

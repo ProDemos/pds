@@ -1,19 +1,19 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Buttons - Styleguide' %}
+{% block head_title 'Buttons' %}
 
 
-{% block component_intro %}
-   <h1 class="c-copy--h1">Buttons</h1>
+{% block body_intro %}
+   <h1 >Buttons</h1>
     <p>List of all kind of buttons used throughout the project. Every button starts with a class (pds-c-button) that contains the shared behaviour. 
             There are modifiers to describe the primary or secondary style, and the themes, when used, primarily consists of colors for the default, hover, and focus states. If you want a button to be present but not yet clickable, just add the disabled modifier class provided in the example.
             The buttons with an icon contain an extra container with the SVG-code. Just choose a button that fits best to your situation, copy the code and alter to your needs.
     </p>
     
     <br>
-    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <h3 >Elements and modifiers</h3>
     <ul>
         <li> .pds-c-button[ .primary | .secondary ]</li>
         <li> .pds-c-button[ .large | .regular |.small ]</li>
@@ -25,8 +25,8 @@
         <li> .pds-c-button > .pds-c-button-content[.big] > [ svg.pds-c-button-icon + ] .pds-c-button-label [ .left | .right ]  [ + svg.pds-c-button-icon ] </li>
 
     </ul>
-    
-    <h1 class="c-copy--h1">Themes</h1>
+    <br>
+    <h2 >Themes</h2>
 
     <form>
         <select class="pds-c-input dropdown full-width"
@@ -41,7 +41,7 @@
     
 {% endblock %}
 
-{% block component_list %}
+{% block body_content %}
 
     {% for component in components.button %}
 

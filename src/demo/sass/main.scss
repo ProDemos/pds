@@ -1,0 +1,33 @@
+/* ----------------------------------------------------------------------------- *\
+ *
+ * Styleguide stylesheet.
+ *
+\* ----------------------------------------------------------------------------- */
+
+
+// -------------------
+// PDS
+//
+$pds-assets-path: "/assets";
+@import "../../assets/sass/reset.scss";
+@import "../../assets/sass/main.scss";
+
+// -------------------
+// LOCAL 
+//
+
+@import "variables.scss";
+@import "layout.scss";
+@import "defaults.scss";
+
+// -------------------
+// Components
+//
+
+@import "components/color-list";
+@import "components/component";
+@import "components/img-list";
+@import "components/icon-list";
+
+
+

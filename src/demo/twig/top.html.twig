@@ -1,0 +1,8 @@
+
+<header class="page-header">
+    <h1 class="header-title"><a class="header-link" href="{{ rooturi }}index.html">{{ styleguide.title }}</a></h1>
+
+    {% if styleguide.brand|default %}
+        <h2 class="header-subtitle">{{ styleguide.brand|raw }}</h2>
+    {% endif %}
+</header>

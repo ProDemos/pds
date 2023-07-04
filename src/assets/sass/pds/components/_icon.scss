@@ -121,7 +121,6 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/calendar-lgc.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/calendar-lgc.svg);
     }
-    &.check-green, // lgc202306,
     &.check-circle-solid 	{
         mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/check-circle-solid.svg);
@@ -160,8 +159,6 @@ i.pds-c-button-icon {
         mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/envelope-square-solid.svg);
     }
-    &.error-red, //lgc202306
-    &.error, //lgc202306
     &.cross-circle-solid	{
         mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid.svg);
         -webkit-mask-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid.svg);
@@ -301,6 +298,29 @@ i.pds-c-button-icon {
         &.accented.pds-t-#{$themename}:not(.inherit) {
             background-color: pds-theme-color($themename,'accent');
         }
+    }
+
+    // precolord icons 
+
+    &.check-green, // lgc202306,
+    &.check-circle-solid-green {
+        mask-image: unset;
+        -webkit-mask-image: none;
+        background-color: transparent!important;
+        background-image: url(#{$pds-assets-path}/images/icons/check-circle-solid-green.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &.error, //lgc202306
+    &.error-red, //lgc202306
+    &.cross-circle-solid-red {
+        mask-image: unset;
+        -webkit-mask-image: none;
+        background-color: transparent!important;
+        background-image: url(#{$pds-assets-path}/images/icons/cross-circle-solid-red.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     // other icons

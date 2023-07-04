@@ -1,12 +1,12 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Tables - Styleguide' %}
+{% block head_title 'Tables' %}
 
 
-{% block component_intro %}
-    <h2 class="c-copy--h2">Tables</h2>
+{% block body_intro %}
+    <h2 >Tables</h2>
      <p>
         There are two types of tables styled: responsive and non responsive. It's up to the layout of the page and the 
         use of the table to decide which one to use.
@@ -16,7 +16,7 @@
         The cells data-label is printed as table headers on each row on mobile.
     </p>
     <br>
-    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <h3 >Elements and modifiers</h3>
     <ul>
         <li> .pds-c-table[.responsive]</li>
         <li> .pds-c-table > thead > tr > th,td </li>
@@ -27,15 +27,15 @@
 {% endblock %}
 
 
-{% block component_list %}
+{% block body_content %}
 
     {% for component in components.table %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}
 
-    <div class="c-component  c-component--full">
+    <div class="demo-component  demo-component-full">
         
-        <div class="c-component__view  c-component__view--full">
+        <div class="demo-component-view  demo-component-view--full">
             <table class="pds-c-table  responsive">
                 <thead role="rowgroup">
                     <trrole="row">
@@ -379,9 +379,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Table, default, responsive</h2>
-            <p class="c-component__description">Example with realistic content, taken from:<br> https://reserveren.prodemos.nl/bezoekerscentrum/2020-03-04</p>
+        <div class="demo-component-meta  demo-component-meta--full">
+            <h2 class="demo-component-list__title">Table, default, responsive</h2>
+            <p class="demo-component-description">Example with realistic content, taken from:<br> https://reserveren.prodemos.nl/bezoekerscentrum/2020-03-04</p>
         </div>
         
     </div>

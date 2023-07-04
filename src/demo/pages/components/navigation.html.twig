@@ -1,19 +1,19 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Navigation - Styleguide' %}
+{% block head_title 'Navigation' %}
 
 
-{% block component_intro %}
-   <h1 class="c-copy--h1">Navigation</h1>
+{% block body_intro %}
+   <h1 >Navigation</h1>
    <p>
         Tab menus can be written using bullet lists or any other 
         type of element with the right classes. The tabs with content
         panels require javascript to work.
    </p>
    <br>
-    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <h3 >Elements and modifiers</h3>
     <ul>
         <li> ul.pds-c-menu li a </li>
         <li> ul.pds-c-list[.breakout] [.pds-c-list-header] li</li>
@@ -27,7 +27,8 @@
 
     </ul>
 
-    <h1 class="c-copy--h1">Themes</h1>
+    <br>
+    <h2 >Themes</h2>
     
     <form>
         <select class="pds-c-input dropdown full-width"
@@ -41,21 +42,21 @@
 
 {% endblock %}
 
-{% block component_list %}
+{% block body_content %}
 
     <!-- menu -->
 
-    <div class="c-component  c-component--full">
-        <div class="c-component__view  c-component__view--full">
+    <div class="demo-component  demo-component-full">
+        <div class="demo-component-view  demo-component-view--full">
             <ul class="pds-c-menu">
                 <li><a href="#">Item 1</a></li>
                 <li><a href="#">Item 2</a></li>
                 <li><a href="#">Item 3</a></li>
             </ul>      
         </div>
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Menubar</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  demo-component-meta--full">
+            <h2 class="demo-component-list__title">Menubar</h2>
+            <xmp class="demo-component-code">
 <ul class="pds-c-menu">
     <li><a href="#">Item 1</a></li>
     <li><a href="#">Item 2</a></li>
@@ -67,8 +68,8 @@
 
     <!-- menu -->
 
-    <div class="c-component  c-component--full">
-        <div class="c-component__view  c-component__view--full">
+    <div class="demo-component  demo-component-full">
+        <div class="demo-component-view  demo-component-view--full">
             <ul class="pds-c-menu">
                 <li>
                     <a href="#">Item 1</a>
@@ -93,9 +94,9 @@
                 </li>
             </ul>      
         </div>
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Menubar (nested)</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  demo-component-meta--full">
+            <h2 class="demo-component-list__title">Menubar (nested)</h2>
+            <xmp class="demo-component-code">
 <ul class="pds-c-menu">
     <li>
         <a href="#">Item 1</a>
@@ -125,8 +126,8 @@
 
     <!-- list -->
 
-    <div class="c-component  c-component--full">
-        <div class="c-component__view  c-component__view--full">
+    <div class="demo-component  demo-component-full">
+        <div class="demo-component-view  demo-component-view--full">
             <ul class="pds-c-list">
                 <h3 class="pds-c-list-header">List header</h3>    
                 <li>Item 1</li>
@@ -134,9 +135,9 @@
                 <li>Item 3</li>
             </ul>      
         </div>
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Plain List</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  demo-component-meta--full">
+            <h2 class="demo-component-list__title">Plain List</h2>
+            <xmp class="demo-component-code">
 <ul class="pds-c-list">
     <h3 class="pds-c-list-header">List</h3>    
     <li>Item 1</li>
@@ -149,8 +150,8 @@
 
     <!-- droplink -->
 
-    <div class="c-component  c-component--full">
-        <div class="c-component__view  c-component__view--full">
+    <div class="demo-component  demo-component-full">
+        <div class="demo-component-view  demo-component-view--full">
             <a class="pds-c-droplink">
                 Droplink: Hover me
                 <div class="pds-c-droplink-content">
@@ -162,9 +163,9 @@
                 </div>
             </a>      
         </div>
-        <div class="c-component__meta  c-component__meta--full">
-            <h2 class="c-component-list__title">Droplink</h2>
-            <xmp class="c-component__code">
+        <div class="demo-component-meta  demo-component-meta--full">
+            <h2 class="demo-component-list__title">Droplink</h2>
+            <xmp class="demo-component-code">
 <a class="pds-c-droplink">
     Droplink: Hover me
     <div class="pds-c-droplink-content">

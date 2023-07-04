@@ -1,25 +1,25 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Icons - Styleguide' %}
+{% block head_title 'Icons' %}
 
 
-{% block component_intro %}
-   <h1 class="c-copy--h1">Icons</h1>
+{% block body_intro %}
+   <h1 >Icons</h1>
    <p>
     List of all kind of icons used throughout the project. Every icons starts with a class (pds-c-icon) 
     and a modifier to specify which icon. Optional additional modifiers are colors, 'colored' and 'accented'
     to use the current themes color and accent, and 'large'.
    </p>
    <br>
-    <h4 class="c-copy--h3">Elements and modifiers</h4>
+    <h3 >Elements and modifiers</h3>
     <ul>
         <li>.pds-c-icon [.{name}] [.large | .medium ]  [.colored] [.accented] [.{color}] </li>
     </ul>
     <br>
 
-    <h1 class="c-copy--h1">Themes</h1>
+    <h2 >Themes</h2>
     
     <form>
         <select class="pds-c-input dropdown full-width"
@@ -33,7 +33,7 @@
 
 {% endblock %}
 
-{% block component_list %}
+{% block body_content %}
 
     {% for component in components['icon'] %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
