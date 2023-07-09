@@ -5,23 +5,23 @@
 
 {% block body_intro %}
     <h1 >Colors</h1>
-    <h2 >Function: pds-color</h2>
+    <h2 >Css variables: pds-color-xxx</h2>
     <p>
-        <b><code>pds-color(name)</code></b>
+        <b><code>pds-color-$name</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a color name, like 'blue' or 'creme-40'</dt>
         </dl>
 
-    <hr>
+        <hr>
         Example:
 <xmp>
     h1 {
-        background-color:pds-color(creme-40);
+        background-color:var(--pds-color-creme-40);
     }
 </xmp>
     
-    <hr>
+        <hr>
 
         <code>$pds-colors</code> is defined as a map, like 
 <xmp>
@@ -30,14 +30,53 @@ $pds-colors: (
     black-80: mix(map-get($pds-color-stack,black),white, 80%), 
 );
 </xmp>
-        You can add your own colors by adding entries to the map:
+        You can override these css variables in your own design,
+        or you can add your own colors by adding entries to the map:
 <xmp>
 @use "sass:map";
 
 $pds-colors: map.set($pds-colors, jazzberry, #B3116B);
 $pds-colors: map.set($pds-colors, flirt, #B30069);
 
+...
+
+p {
+    background-color: var(--pds-color-flirt);
+}
 </xmp>
+    <h2 >Css variables: pds-color-xxx-yyy</h2>
+    <p>
+        <b><code>pds-color-$themename-$property</code></b>
+        <dl>
+            <dt><code>$themename</code></dt>
+            <dd>refers to a theme name, like 'theme05'; 'theme' indicates the active theme.</dt>
+            <dt><code>$property</code></dt>
+            <dd>refers to a theme property, like 'fill2'</dt>
+        </dl>
+
+        <hr>
+        Example:
+<xmp>
+    h1 {
+        background-color:var(--pds-color-theme-stroke);
+    }
+</xmp>
+    
+        <hr>
+
+        <code>$pds-themes</code> is defined as a map, like 
+<xmp>
+$pds-themes: (
+    theme01 : (
+        fill: map-get($pds-colors,'blue'),
+        fill2: map-get($pds-colors,'orange'),
+        stroke: map-get($pds-colors,'white'),
+        stroke2: map-get($pds-colors,'white') 
+    )
+)
+</xmp>
+        You can override the css variables in your own design,
+        or you can add your own themes by adding entries to the map.
     </p>
 
 {% endblock %}
