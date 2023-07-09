@@ -13,10 +13,10 @@
     <br>
     <p>
         These colors are grouped in themes that you can access through pds
-        theme class (<code>class="pds-t-theme01"</code>)
-        or using css variables (<code>var(--pds-color-theme01-fill</code>).
-        Each theme contains a <code>fill</code>, <code>stroke</code>, <code>fill2</code>, 
-        and <code>stroke2</code> color.<br><br>
+        theme classes (<code>class="pds-t-theme01"</code>)
+        or using css variables (<code>var(--pds-color-theme-fill</code>).
+        Each theme contains a <code>fill</code>, <code>stroke</code>, <code>accfill</code>, 
+        and <code>accstroke</code> colors, and their shadings.<br><br>
         The 'themes' are also used to style pds components, so displaying eg a button
         in 'theme02' changes all the associated hover/active state colors of that 
         button.
@@ -55,7 +55,7 @@
         {% for theme , themename in themes %}
             <tr class="pds-t-{{ theme }}">
                 <td class="pds-m-filled" colspan="6">{{ themename }} (fill, stroke)</td>
-                <td class="pds-m-filled accent" colspan="6">{{ themename }} accent (fill2, stroke2)</td>
+                <td class="pds-m-filled accent" colspan="6">{{ themename }} accent (accfill, accstroke)</td>
             </tr>
             <tr class="pds-t-{{ theme }}">
                 <td class="pds-m-filled fill-120">120</td>

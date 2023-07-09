@@ -20,10 +20,10 @@
     $mapkey : $key;
     @if ($key == 'fill-color')   { $mapkey: 'fill'; }
     @if ($key == 'color')  { $mapkey: 'fill'; }
-    @if ($key == 'accent') { $mapkey: 'fill2'; }
+    @if ($key == 'accent') { $mapkey: 'accfill'; }
     @if ($key == 'stroke-color') { $mapkey: 'stroke'; }
-    @if ($key == 'fill-accent') { $mapkey: 'fill2'; }
-    @if ($key == 'stroke-accent') { $mapkey: 'stroke2'; }
+    @if ($key == 'fill-accent') { $mapkey: 'accfill'; }
+    @if ($key == 'stroke-accent') { $mapkey: 'accstroke'; }
 
     $thememap : map-get($pds-themes, $theme);
     @if map-has-key($thememap, $mapkey) == false {

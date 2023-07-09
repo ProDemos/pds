@@ -38,8 +38,8 @@
     background-color: var(--pds-color-theme-fill);
     color:var(--pds-color-theme-stroke);
     &.accent {
-        background-color: var(--pds-color-theme-fill2);
-        color: var(--pds-color-theme-stroke2);
+        background-color: var(--pds-color-theme-accfill);
+        color: var(--pds-color-theme-accstroke);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
@@ -47,36 +47,36 @@
             color: var(--pds-color-theme-stroke);
         }
         &.accent-#{$shade} {
-            background-color: var(--pds-color-theme-fill2-#{$shade});
-            color: var(--pds-color-theme-stroke2);
+            background-color: var(--pds-color-theme-accfill-#{$shade});
+            color: var(--pds-color-theme-accstroke);
         }
     }
 }
 .pds-m-colored {
     color: var(--pds-color-theme-fill);
     &.accent {
-        color: var(--pds-color-theme-fill2);
+        color: var(--pds-color-theme-accfill);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
             color: var(--pds-color-theme-fill-#{$shade});
         }
         &.accent-#{$shade} {
-            color: var(--pds-color-theme-fill2-#{$shade});
+            color: var(--pds-color-theme-accfill-#{$shade});
         }
     }
 }
 .pds-m-bordered {
     border-color: var(--pds-color-theme-fill);
     &.accent {
-        border-color: var(--pds-color-theme-fill2);
+        border-color: var(--pds-color-theme-accfill);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
             border-color: var(--pds-color-theme-fill-#{$shade});
         }
         &.accent-#{$shade} {
-            border-color: var(--pds-color-theme-fill2-#{$shade});
+            border-color: var(--pds-color-theme-accfill-#{$shade});
         }
     }
 }

@@ -5,24 +5,60 @@
 
 {% block body_intro %}
     <h1 >Colors</h1>
+
+{% endblock %}
+
+{% block body_content %}
+
+
+    <h2 >@mixin: pds-theme</h2>
+    <p>
+        <b><code>pds-theme($name)</code></b>
+        <dl>
+            <dt><code>$name</code></dt>
+            <dd>
+                refers to a theme name, like 'theme05'.
+            </dd>
+        </dl>
+        Changes the current theme css variables to the given theme;
+        if <code>var(--pds-color-theme-accfill)</code> would have been
+        orange before calling the mixin, it may be blue after calling it.
+        <hr>
+        Example:
+<xmp>
+    h1 {
+        @include pds-theme(theme04);
+        color:var(--pds-color-theme-stroke-60);
+        background-color:var(--pds-color-theme-fill-60);
+    }
+</xmp>
+    
+
     <h2 >Css variables: pds-color-xxx</h2>
     <p>
         <b><code>pds-color-$name</code></b>
         <dl>
             <dt><code>name</code></dt>
-            <dd>refers to a color name, like 'blue' or 'creme-40'</dd>
+            <dd>
+                Refers to a color name, like 'blue', 'creme-40' or 'theme-fill-20'.
+                See design/colors for an overview of the available color names.
+                The 'theme' colors depend on the current theme, followed by its
+                property. Available theme properties are 
+                <code>fill</code>,<code>stroke</code>,
+                <code>accfill</code> and <code>accstroke</code>
+            </dd>
         </dl>
 
         <hr>
         Example:
 <xmp>
     h1 {
+        color:var(--pds-color-theme-stroke);
         background-color:var(--pds-color-creme-40);
     }
 </xmp>
     
         <hr>
-
         <code>$pds-colors</code> is defined as a map, like 
 <xmp>
 $pds-colors: (
@@ -44,48 +80,24 @@ p {
     background-color: var(--pds-color-flirt);
 }
 </xmp>
-    <h2 >Css variables: pds-color-xxx-yyy</h2>
-    <p>
-        <b><code>pds-color-$themename-$property</code></b>
-        <dl>
-            <dt><code>$themename</code></dt>
-            <dd>
-                refers to a theme name, like 'theme05'; <br>
-                'theme' indicates the active theme.
-            </dd>
-            <dt><code>$property</code></dt>
-            <dd>
-                refers to a theme property, like 'fill2';<br>
-                available properties are 
-                <code>fill</code>,<code>stroke</code>,
-                <code>fill2</code> and <code>stroke2</code>
-            </dd>
-        </dl>
 
-        <hr>
-        Example:
-<xmp>
-    h1 {
-        background-color:var(--pds-color-theme-stroke);
-    }
-</xmp>
-    
-        <hr>
 
-        <code>$pds-themes</code> is defined as a map, like 
+        <code>$pds-themes</code> is also defined as a map, like 
 <xmp>
 $pds-themes: (
     theme01 : (
         fill: map-get($pds-colors,'blue'),
-        fill2: map-get($pds-colors,'orange'),
+        accfill: map-get($pds-colors,'orange'),
         stroke: map-get($pds-colors,'white'),
-        stroke2: map-get($pds-colors,'white') 
+        accstroke: map-get($pds-colors,'white') 
     )
 )
 </xmp>
         You can override the css variables in your own design,
         or you can add your own themes by adding entries to the map.
     </p>
+
+
 
 {% endblock %}
 
