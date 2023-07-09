@@ -26,66 +26,73 @@
 
 
 .pds-m-filled {
-    background-color: pds-theme-color($pds-deftheme,'fill-color');
-    color:pds-theme-color($pds-deftheme,'stroke-color');
+    background-color: var(--pds-color-theme-fill);
+    color:var(--pds-color-theme-stroke);
     &.accent {
-        background-color: pds-theme-color($pds-deftheme,'fill-accent');
-        color:pds-theme-color($pds-deftheme,'stroke-accent');
+        background-color: var(--pds-color-theme-fill2);
+        color: var(--pds-color-theme-stroke2);
     }
 }
 .pds-m-colored {
-    color: pds-theme-color($pds-deftheme,'fill-color');
+    color: var(--pds-color-theme-fill);
     &.accent {
-        color: pds-theme-color($pds-deftheme,'fill-accent');
+        color: var(--pds-color-theme-fill2);
     }
 }
 .pds-m-bordered {
-    border-color: pds-theme-color($pds-deftheme,'fill-color');
+    border-color: var(--pds-color-theme-fill);
     &.accent {
-        border-color: pds-theme-color($pds-deftheme,'fill-accent');
+        border-color: var(--pds-color-theme-fill2);
     }
 }
 
 // themes
 
-@each $themename in map-keys($pds-themes) {
-    
-    
-    @each $cname, $cvalue in $pds-colors {
-		@at-root .pds-t-#{$themename} .pds-m-filled.#{""+$cname} {
-			background-color: $cvalue;
-		}
-		@at-root .pds-t-#{$themename} .pds-m-colored.#{""+$cname} {
-			color: $cvalue;
-		}
-		@at-root .pds-t-#{$themename} .pds-m-bordered.#{""+$cname} {
-			border-color: $cvalue;
-		}
-	}
+@each $themename, $thememap in $pds-themes {
 
-	$fillcolor: pds-theme-color($themename,'fill-color');
-    $acccolor: pds-theme-color($themename,'fill-accent');
+    :root .pds-t-#{$themename} {
+        --pds-color-theme-fill: #{map-get($thememap,fill)};
+        --pds-color-theme-stroke: #{map-get($thememap,stroke)};
+        --pds-color-theme-fill2: #{map-get($thememap,fill2)};
+        --pds-color-theme-stroke2: #{map-get($thememap,stroke2)};
+    }
+
+    /*
     @at-root .pds-t-#{$themename} .pds-m-filled,
-    .pds-m-filled.pds-t-#{$themename} {
-        background-color: $fillcolor;
-        color:pds-theme-color($themename,'stroke-color');
+    [class^=pds-t-] .pds-t-#{$themename} .pds-m-filled {
+        background-color: var(--pds-color-#{$themename}-fill);
+        color:var(--pds-color-#{$themename}-stroke);
         &.accent {
-            background-color: $acccolor;
-            color:pds-theme-color($themename,'stroke-accent');
+            background-color: var(--pds-color-#{$themename}-fill2);
+            color:var(--pds-color-#{$themename}-stroke2);
         }
     }
     @at-root .pds-t-#{$themename} .pds-m-colored,
-    .pds-m-colored.pds-t-#{$themename} {
-        color: $fillcolor;
+    [class^=pds-t-] .pds-t-#{$themename} .pds-m-colored {
+        color: var(--pds-color-#{$themename}-fill);
         &.accent {
-            color: $acccolor;
+            color: var(--pds-color-#{$themename}-fill2);
         }
     }
     @at-root .pds-t-#{$themename} .pds-m-bordered,
-    .pds-m-bordered.pds-t-#{$themename} {
-        border-color: $fillcolor;
+    [class^=pds-t-] .pds-t-#{$themename} .pds-m-bordered {
+        border-color: var(--pds-color-#{$themename}-fill);
         &.accent {
-            border-color: $acccolor;
+            border-color: var(--pds-color-#{$themename}-fill2);
         }
     }
+
+    // allow color override swithin a theme
+    @each $cname, $cvalue in $pds-colors {
+		@at-root .pds-t-#{$themename} .pds-m-filled.#{$cname} {
+			background-color: var(--pds-color-#{$cname});
+		}
+		@at-root .pds-t-#{$themename} .pds-m-colored.#{$cname} {
+			color: var(--pds-color-#{$cname});
+		}
+		@at-root .pds-t-#{$themename} .pds-m-bordered.#{$cname} {
+			border-color: var(--pds-color-#{$cname});
+		}
+	}
+    */
 }

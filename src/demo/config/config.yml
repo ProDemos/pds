@@ -76,14 +76,14 @@ colors:
         - green-20
 
 themes:
-        pds-t-public : Public
-        pds-t-corporate : Corporate
-        pds-t-variant01 : Variant01 
-        pds-t-variant02 : Variant02 
-        pds-t-variant03 : Variant03 
-        pds-t-variant04 : Variant04 
-        pds-t-variant05 : Variant05 
-        pds-t-variant06 : Variant06 
+        theme01 : Theme 01
+        theme02 : Theme 02
+        theme03 : Theme 03 
+        theme04 : Theme 04 
+        theme05 : Theme 05 
+        theme06 : Theme 06 
+        theme07 : Theme 07 
+        theme08 : Theme 08 
 
 components:
     # will be read from the demo/config/components/ directory

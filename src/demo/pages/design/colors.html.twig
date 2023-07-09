@@ -6,13 +6,20 @@
 {% block body_intro %}
     <h2 >Colors</h2>
     <p>
-        The design system has a set of named colors, that you can access through css modifiers (<code>pds-m-foo.blue</code>)
-        or using sass (<code>@pds-color(blue)</code>).
+        The design system has a set of named colors, that you can access through pds 
+        modifier classes (<code>class="pds-m-foo blue"</code>)
+        or using css variables (<code>var(--pds-color-blue)</code>).
     </p>
-    <br><!-- pf -->
+    <br>
     <p>
-        These colors are grouped in themes that you can access through css themes (<code>pds-t-corporate</code>)
-        or using sass (<code>@pds-theme-color(variant01,stroke-accent)</code>).
+        These colors are grouped in themes that you can access through pds
+        theme class (<code>class="pds-t-theme01"</code>)
+        or using css variables (<code>var(--pds-color-theme01-fill</code>).
+        Each theme contains a <code>fill</code>, <code>stroke</code>, <code>fill2</code>, 
+        and <code>stroke2</code> color.<br><br>
+        The 'themes' are also used to style pds components, so displaying eg a button
+        in 'theme02' changes all the associated hover/active state colors of that 
+        button.
     </p>
 
 {% endblock %}
@@ -45,10 +52,10 @@
     <br><br>
     <h3 >Theme colors</h3>
     <table width="100%" id="themetable">
-        {% for theme in themes %}
-            <tr>
-                <td class="pds-m-filled pds-t-{{ theme|lower }}">{{ theme }}</td>
-                <td class="pds-m-filled pds-t-{{ theme|lower }} accent">{{ theme }} / accent</td>
+        {% for theme , themename in themes %}
+            <tr class="pds-t-{{ theme }}">
+                <td class="pds-m-filled">{{ themename }} (fill, stroke)</td>
+                <td class="pds-m-filled accent">{{ themename }} accent (fill2, stroke2)</td>
             </tr>
         {% endfor %}
     </table>

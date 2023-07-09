@@ -2,7 +2,13 @@
 <header class="page-header">
     <h1 class="header-title"><a class="header-link" href="{{ rooturi }}index.html">{{ styleguide.title }}</a></h1>
 
-    {% if styleguide.brand|default %}
-        <h2 class="header-subtitle">{{ styleguide.brand|raw }}</h2>
-    {% endif %}
+    <form id="theme-selector">
+        <select class="pds-c-input dropdown full-width"
+            onchange="document.body.className=this.options[this.selectedIndex].value">
+            <option value="" selected disabled>Select a theme ...</option>
+            {% for themeid,themename in themes %}
+                <option value="pds-t-{{ themeid }}">{{ themename }}</option>
+            {% endfor %}
+        </select>
+    </form>
 </header>
