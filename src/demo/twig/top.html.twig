@@ -1,10 +1,17 @@
 
 <header class="page-header">
-    <h1 class="header-title"><a class="header-link" href="{{ rooturi }}index.html">{{ styleguide.title }}</a></h1>
+    <a class="header-logo"  href="{{ rooturi }}index.html">
+        <svg viewBox="0 0 30 30">
+            <use href="{{ rooturi }}assets/images/logos/logo-prodemos-dc-small.svg#root" width="30px" height="30px"></use>
+        </svg>
+    </a>
+    <h1 class="header-title">
+        <a class="header-link" href="{{ rooturi }}index.html">{{ styleguide.title }}</a>
+    </h1>
 
     <form id="theme-selector">
         <select class="pds-c-input dropdown full-width"
-            onchange="document.body.className=this.options[this.selectedIndex].value">
+            onchange="selectTheme(this.options[this.selectedIndex].value)">
             <option value="" selected disabled>Select a theme ...</option>
             {% for themeid,themename in themes %}
                 <option value="pds-t-{{ themeid }}">{{ themename }}</option>

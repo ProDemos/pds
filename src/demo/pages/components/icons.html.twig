@@ -19,27 +19,9 @@
     </ul>
     <br>
 
-    <h2 >Themes</h2>
-    
-    <form>
-        <select class="pds-c-input dropdown full-width"
-            onchange="document.body.className=this.options[this.selectedIndex].value">
-            <option value="" selected disabled>Select a theme ...</option>
-            {% for themeid,themename in themes %}
-                <option value="{{ themeid }}">{{ themename }}</option>
-            {% endfor %}
-        </select>
-    </form>
-
 {% endblock %}
 
 {% block body_content %}
-
-    {% for component in components['icon'] %}
-        {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
-    {% endfor %}
-    
-    <hr>
 
     {% for icon in icons %}
         {% set iname = icon | basename() %}

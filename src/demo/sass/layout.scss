@@ -56,6 +56,14 @@ body {
     }
 }
 
+.header-logo {
+    height: 100%;
+    svg {
+        color: var(--pds-color-theme-fill);
+        margin-right: 1em;
+        height: 100%;
+    }
+}
 
 .header-title {
     order: 2;
@@ -63,8 +71,9 @@ body {
     margin-right: 2rem;
     margin-bottom: 0.9rem;
     font-size: 1.2rem;
-    text-transform: uppercase;
-
+    font-family: "Bree Serif";
+    font-weight:normal;
+    
     @include pds-media(md,min) {
         order: 1;
         margin-bottom: 0.5rem;

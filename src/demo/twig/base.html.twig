@@ -11,12 +11,32 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% block head -%}
-            <style type="text/css">
-                a { color: black; }
-            </style>
-            <link rel="stylesheet" href="../css/main.css">
-        {%- endblock %}
+        <script type="text/javascript">
+            function selectTheme(theme) {
+                if (!theme) {
+                    theme = sessionStorage.getItem("theme");
+                }
+                if (theme) {
+                    document.body.className=theme;
+                    sessionStorage.setItem("theme", theme);
+                    let $selector = document.querySelector('#theme-selector select');
+                    if ($selector) {
+                        $selector.selectedIndex = [...$selector.children].findIndex(
+                            o=>o.value===theme
+                        );
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", function(event) {
+                selectTheme();
+            });
+        </script>
+        <style type="text/css">
+            a { color: black; }
+        </style>
+        <link rel="stylesheet" href="../css/main.css">
+
+        
 
         
     </head>
