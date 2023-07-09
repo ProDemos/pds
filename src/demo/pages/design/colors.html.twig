@@ -54,8 +54,22 @@
     <table width="100%" id="themetable">
         {% for theme , themename in themes %}
             <tr class="pds-t-{{ theme }}">
-                <td class="pds-m-filled">{{ themename }} (fill, stroke)</td>
-                <td class="pds-m-filled accent">{{ themename }} accent (fill2, stroke2)</td>
+                <td class="pds-m-filled" colspan="6">{{ themename }} (fill, stroke)</td>
+                <td class="pds-m-filled accent" colspan="6">{{ themename }} accent (fill2, stroke2)</td>
+            </tr>
+            <tr class="pds-t-{{ theme }}">
+                <td class="pds-m-filled fill-120">120</td>
+                <td class="pds-m-filled fill-110">110</td>
+                <td class="pds-m-filled fill-80">80</td>
+                <td class="pds-m-filled fill-60">60</td>
+                <td class="pds-m-filled fill-40">40</td>
+                <td class="pds-m-filled fill-20">20</td>
+                <td class="pds-m-filled accent-120">120</td>
+                <td class="pds-m-filled accent-110">110</td>
+                <td class="pds-m-filled accent-80">80</td>
+                <td class="pds-m-filled accent-60">60</td>
+                <td class="pds-m-filled accent-40">40</td>
+                <td class="pds-m-filled accent-20">20</td>
             </tr>
         {% endfor %}
     </table>

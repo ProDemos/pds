@@ -1,14 +1,24 @@
 /*
-    m- classes are global modifiers,
-    translating values from sass/variables/
-    straight to css
+    pds-t- clases are themes
+    
+    pds-m- classes are global modifiers,
 
-    m-colored.black
-    m-filled.red.lighten3
-    m-bordered.corporate.accent.darken2
+    pds-t-theme01
+    pds-m-colored.black
+    pds-m-filled.red.lighten3
+    pds- m-bordered.corporate.accent.darken2
     etc
 
 */
+
+
+@each $themename, $thememap in $pds-themes {
+    :root .pds-t-#{$themename} {
+        @each $propname, $propval in $thememap {
+            --pds-color-theme-#{$propname}: #{$propval};
+        }
+    }
+}
 
 @each $cname, $cvalue in $pds-colors {
     .pds-m-filled.#{$cname} {
@@ -22,8 +32,7 @@
     }
 }
 
-// default theming 
-
+// themed modifiers
 
 .pds-m-filled {
     background-color: var(--pds-color-theme-fill);
@@ -32,11 +41,29 @@
         background-color: var(--pds-color-theme-fill2);
         color: var(--pds-color-theme-stroke2);
     }
+    @each $shade in 20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            background-color: var(--pds-color-theme-fill-#{$shade});
+            color: var(--pds-color-theme-stroke);
+        }
+        &.accent-#{$shade} {
+            background-color: var(--pds-color-theme-fill2-#{$shade});
+            color: var(--pds-color-theme-stroke2);
+        }
+    }
 }
 .pds-m-colored {
     color: var(--pds-color-theme-fill);
     &.accent {
         color: var(--pds-color-theme-fill2);
+    }
+    @each $shade in 20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            color: var(--pds-color-theme-fill-#{$shade});
+        }
+        &.accent-#{$shade} {
+            color: var(--pds-color-theme-fill2-#{$shade});
+        }
     }
 }
 .pds-m-bordered {
@@ -44,55 +71,13 @@
     &.accent {
         border-color: var(--pds-color-theme-fill2);
     }
+    @each $shade in 20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            border-color: var(--pds-color-theme-fill-#{$shade});
+        }
+        &.accent-#{$shade} {
+            border-color: var(--pds-color-theme-fill2-#{$shade});
+        }
+    }
 }
 
-// themes
-
-@each $themename, $thememap in $pds-themes {
-
-    :root .pds-t-#{$themename} {
-        --pds-color-theme-fill: #{map-get($thememap,fill)};
-        --pds-color-theme-stroke: #{map-get($thememap,stroke)};
-        --pds-color-theme-fill2: #{map-get($thememap,fill2)};
-        --pds-color-theme-stroke2: #{map-get($thememap,stroke2)};
-    }
-
-    /*
-    @at-root .pds-t-#{$themename} .pds-m-filled,
-    [class^=pds-t-] .pds-t-#{$themename} .pds-m-filled {
-        background-color: var(--pds-color-#{$themename}-fill);
-        color:var(--pds-color-#{$themename}-stroke);
-        &.accent {
-            background-color: var(--pds-color-#{$themename}-fill2);
-            color:var(--pds-color-#{$themename}-stroke2);
-        }
-    }
-    @at-root .pds-t-#{$themename} .pds-m-colored,
-    [class^=pds-t-] .pds-t-#{$themename} .pds-m-colored {
-        color: var(--pds-color-#{$themename}-fill);
-        &.accent {
-            color: var(--pds-color-#{$themename}-fill2);
-        }
-    }
-    @at-root .pds-t-#{$themename} .pds-m-bordered,
-    [class^=pds-t-] .pds-t-#{$themename} .pds-m-bordered {
-        border-color: var(--pds-color-#{$themename}-fill);
-        &.accent {
-            border-color: var(--pds-color-#{$themename}-fill2);
-        }
-    }
-
-    // allow color override swithin a theme
-    @each $cname, $cvalue in $pds-colors {
-		@at-root .pds-t-#{$themename} .pds-m-filled.#{$cname} {
-			background-color: var(--pds-color-#{$cname});
-		}
-		@at-root .pds-t-#{$themename} .pds-m-colored.#{$cname} {
-			color: var(--pds-color-#{$cname});
-		}
-		@at-root .pds-t-#{$themename} .pds-m-bordered.#{$cname} {
-			border-color: var(--pds-color-#{$cname});
-		}
-	}
-    */
-}

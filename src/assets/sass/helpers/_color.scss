@@ -1,18 +1,10 @@
-
-
-
-@function pds-color-o($name) {
-    @if map-has-key($pds-colors, $name) == false {
-        @if map-has-key($pds-color-stack, $name) == false {
-            @error  "There is no color named `#{$name}`";
-        }
-        @return map-get($pds-color-stack, $name);
-    }
-    @return map-get($pds-colors, $name);
+@mixin pds-theme($name) {
+    @each $propname, $propval in map-get($pds-themes,$name) {
+        --pds-color-theme-#{$propname}: #{$propval};
+    }    
 }
 
 @function pds-color($name) {
-    //@debug("color "+$name+"=var(--pds-color-#{$name})");
     @if map-has-key($pds-colors, $name) == false {
         @error  "There is no color named `#{$name}`";
     }

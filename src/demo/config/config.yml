@@ -12,8 +12,8 @@ colors:
     # should be defined in assets/sass/variables/overrides
     white:
     black:
-        - black
-        - black
+        - black-120
+        - black-110
         - black-80
         - black-60
         - black-40
@@ -26,49 +26,49 @@ colors:
         - creme-40 
         - creme-20
     yellow:
-        - black
+        - yellow-120  
         - yellow-110      
         - yellow-80
         - yellow-60
         - yellow-40
         - yellow-20
     orange:
-        - black
+        - orange-120
         - orange-110
         - orange-80 
         - orange-60 
         - orange-40 
         - orange-20 
     red:
-        - black
+        - red-120
         - red-110
         - red-80
         - red-60
         - red-40
         - red-20
     pink:
-        - black
+        - pink-120
         - pink-110
         - pink-80
         - pink-60
         - pink-40
         - pink-20
     purple:
-        - black
+        - purple-120
         - purple-110
         - purple-80
         - purple-60
         - purple-40
         - purple-20
     blue:
-        - black
+        - blue-120
         - blue-110
         - blue-80 
         - blue-60 
         - blue-40 
         - blue-20   
     green:
-        - black
+        - green-120
         - green-110
         - green-80
         - green-60
