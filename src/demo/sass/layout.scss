@@ -10,7 +10,7 @@ html {
 body {
     height: 100%;
     min-height: 100%;
-    color: pds-color(black-80);
+    color: pds-color('black-80');
 }
 
 
@@ -32,8 +32,8 @@ body {
     flex-direction: column;
     height: $header-height--mobile;
     padding: 0 1rem;
-    background-color: pds-color(black-80);
-    color: pds-color(white);
+    background-color: pds-color('black-80');
+    color: pds-color('white');
 
     @include pds-media(md,min) {
         flex-direction: row;
@@ -122,7 +122,7 @@ body {
 
 .header-link {
     transition: color 100ms ease;
-    color: pds-color(white);
+    color: pds-color('white');
     text-decoration: none;
 
     &:hover {
@@ -136,7 +136,7 @@ body {
     width: 275px;
     min-height: calc(100vh - #{$header-height--mobile});
     padding: 3rem 0;
-    background-color: pds-color(creme-60);
+    background-color: pds-color('creme-60');
     transform: translateX(-275px);
     transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 666;
@@ -188,7 +188,7 @@ body {
     right: 100%;
     bottom: 0;
     left: 0;
-    background-color: pds-color(black-40);
+    background-color: pds-color('black-40');
     opacity: 0;
     z-index: 665;
     pointer-events: auto;
@@ -208,7 +208,7 @@ body {
     height: 44px;
     top: 0;
     right: 0;
-    background-color: pds-color(creme-60);
+    background-color: pds-color('creme-60');
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' height='20px' width='20px' preserveAspectRatio='xMidYMid meet'%3E%3Cg fill='currentColor'%3E%3Crect x='2' y='2.5' width='28' height='4'/%3E%3Crect x='2' y='14' width='28' height='4'/%3E%3Crect x='2' y='25.5' width='28' height='4'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center center;
@@ -240,7 +240,7 @@ body {
                 height: 100%;
                 top: 0;
                 left: 0;
-                background-color: pds-color(pink-60);
+                background-color: pds-color('pink-60');
             }
         }
     }
@@ -252,7 +252,7 @@ body {
     display: block;
     padding: 1rem 1.5rem;
     transition: color 100ms ease;
-    color: pds-color(black-80);
+    color: pds-color('black-80');
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -263,7 +263,7 @@ body {
 
     @at-root {
         #{&}--current {
-            background-color: pds-color(creme-80);
+            background-color: pds-color('creme-80');
         }
     }
 }
@@ -271,13 +271,13 @@ body {
 .page-subnav {
     list-style-type: none;
     padding-bottom: 0.5rem;
-    background-color: pds-color(creme-80);
+    background-color: pds-color('creme-80');
 }
 
 
 
 .page-subnav-item {
-    border-color: pds-color(creme-110);
+    border-color: pds-color('creme-110');
     border-style: solid;
     border-width: 0 0 1px;
 
@@ -294,7 +294,7 @@ body {
     transition: color 100ms ease;
     text-decoration: none;
     font-size: 0.8rem;
-    color: pds-color(black-80);
+    color: pds-color('black-80');
 
     &:hover {
         text-decoration: underline;

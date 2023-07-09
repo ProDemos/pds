@@ -11,14 +11,14 @@
 */
 
 @each $cname, $cvalue in $pds-colors {
-    .pds-m-filled.#{""+$cname} {
-        background-color: $cvalue;
+    .pds-m-filled.#{$cname} {
+        background-color: var(--pds-color-#{$cname});
     }
-    .pds-m-colored.#{""+$cname} {
-        color: $cvalue;
+    .pds-m-colored.#{$cname} {
+        color: var(--pds-color-#{$cname});
     }
-    .pds-m-bordered.#{""+$cname} {
-        border-color: $cvalue;
+    .pds-m-bordered.#{$cname} {
+        border-color: var(--pds-color-#{$cname});
     }
 }
 

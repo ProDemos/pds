@@ -1,7 +1,7 @@
 
 
 
-@function pds-color($name) {
+@function pds-color-o($name) {
     @if map-has-key($pds-colors, $name) == false {
         @if map-has-key($pds-color-stack, $name) == false {
             @error  "There is no color named `#{$name}`";
@@ -11,6 +11,14 @@
     @return map-get($pds-colors, $name);
 }
 
+@function pds-color($name) {
+    //@debug("color "+$name+"=var(--pds-color-#{$name})");
+    @if map-has-key($pds-colors, $name) == false {
+        @error  "There is no color named `#{$name}`";
+    }
+    @return var(--pds-color-#{$name});
+}
+
 @function pds-theme-color($theme : $pds-deftheme ,$key : fill) {
     @if map-has-key($pds-themes, $theme) == false {
         @error
@@ -18,10 +26,12 @@
     }
 
     $mapkey : $key;
-    @if ($key == 'fill')   { $mapkey: 'fill-color'; }
-    @if ($key == 'color')  { $mapkey: 'fill-color'; }
-    @if ($key == 'accent') { $mapkey: 'fill-accent'; }
-    @if ($key == 'stroke') { $mapkey: 'stroke-color'; }
+    @if ($key == 'fill-color')   { $mapkey: 'fill'; }
+    @if ($key == 'color')  { $mapkey: 'fill'; }
+    @if ($key == 'accent') { $mapkey: 'fill2'; }
+    @if ($key == 'stroke-color') { $mapkey: 'stroke'; }
+    @if ($key == 'fill-accent') { $mapkey: 'fill2'; }
+    @if ($key == 'stroke-accent') { $mapkey: 'stroke2'; }
 
     $thememap : map-get($pds-themes, $theme);
     @if map-has-key($thememap, $mapkey) == false {

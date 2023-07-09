@@ -222,8 +222,8 @@
     
     // @debug 'theme' $theme;
 
-    color: pds-color(white);
-    .pds-c-button-icon:not(svg) { background-color: pds-color(white); }
+    color: pds-color('white');
+    .pds-c-button-icon:not(svg) { background-color: pds-color('white'); }
 
     background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
     
@@ -314,22 +314,24 @@
 
     &.toggle {
 
-        color: pds-color(black);
-        .pds-c-button-icon:not(svg) { background-color: pds-color(black); }
+        color: pds-color('black');
+        .pds-c-button-icon:not(svg) { background-color: pds-color('black'); }
 
-        border-color: pds-color(sand);
-        background-color: pds-color(sand);
+        border-color: pds-color('sand');
+        background-color: pds-color('sand');
 
         &:not(.disabled, :disabled) {
             @include hover {
-                border-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
-                background-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
+                //border-color: darken(pds-color('sand'), nth($pds-darken-scale, 2));
+                //background-color: darken(pds-color('sand'), nth($pds-darken-scale, 2));
+                border-color: var(--pds-color-sand-60);
+                background-color: var(--pds-color-sand-60);
             }
         }
 
         &:active:not(.disabled, :disabled) {
-            color: pds-color(white);
-            .pds-c-button-icon:not(svg) { background-color: pds-color(white); }
+            color: pds-color('white');
+            .pds-c-button-icon:not(svg) { background-color: pds-color('white'); }
 
             background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
         }
@@ -339,15 +341,19 @@
         }
 
         &.disabled, &:disabled {
-            color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
-            .pds-c-button-icon:not(svg) { background-color: lighten(pds-color(black), nth($pds-lighten-scale, 5)); }
+            //color: lighten(pds-color('black'), nth($pds-lighten-scale, 5));
+            //.pds-c-button-icon:not(svg) { background-color: lighten(pds-color('black'), nth($pds-lighten-scale, 5)); }
+            color: var(--pds-color-black-20); // l5
+            .pds-c-button-icon:not(svg) {
+                background-color: var(--pds-color-black-20); // l5
+            }
         }
     }
 
     &.transparent {
         color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 2));
         .pds-c-button-icon:not(svg) { background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 2)); }
-        background-color: pds-color(transparent);
+        background-color: pds-color('transparent');
     }
 }
 

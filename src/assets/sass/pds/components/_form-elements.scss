@@ -49,9 +49,9 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid pds-color(black-20);
+            border: 1px solid pds-color('black-20');
             border-radius: 100%;
-            background-color: pds-color(sand);
+            background-color: pds-color('sand');
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -108,8 +108,8 @@
         .pds-c-input-check {
             display: block;
             position: absolute;
-            border: 1px solid pds-color(black-20);
-            background-color: pds-color(sand);
+            border: 1px solid pds-color('black-20');
+            background-color: pds-color('sand');
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -146,7 +146,7 @@
 // The default label styling
 .pds-c-input-label {
     margin-bottom: nth($pds-spacings, 5);
-    color: pds-color(black);
+    color: pds-color('black');
     font-family: $font--fira-sans;
     font-size: pds-fontsize(s);
     font-weight: 500;
@@ -157,12 +157,12 @@
 // Basic input styling, shared by all inputs
 .pds-c-input {
     outline: none;
-    color: pds-color(black);
+    color: pds-color('black');
     font-family: $font--fira-sans;
     font-size: pds-fontsize(s);
     line-height: pds-lineheight(m);
     border-radius: 0;
-    background-color: pds-color(sand);
+    background-color: pds-color('sand');
 
     /* stylelint-disable property-no-vendor-prefix */
     -webkit-appearance: none;
@@ -170,8 +170,10 @@
 
 
     &.disabled {
-        color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
-        background-color: lighten((pds-color(sand)), nth($pds-lighten-scale, 1));
+        //color: lighten(pds-color('black'), nth($pds-lighten-scale, 5));
+        //background-color: lighten((pds-color('sand')), nth($pds-lighten-scale, 1));
+        color: var(--pds-color-black-20); // l5
+        background-color: var(--pds-color-sand-80); // l1
         cursor: not-allowed;
     }
 
@@ -186,7 +188,7 @@
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
-        border-bottom: 3px solid pds-color(sand);
+        border-bottom: 3px solid pds-color('sand');
         transition: border-bottom-color 150ms ease-in-out;
 
         
@@ -196,7 +198,7 @@
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
-            border-bottom-color: pds-color(green);
+            border-bottom-color: pds-color('green');
         }
 
         &.invalid {
@@ -204,16 +206,16 @@
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
-            border-bottom-color: pds-color(red);
+            border-bottom-color: pds-color('red');
         }
 
         &:read-only {
-            background-color: pds-color(black-20);
-            border-bottom-color: pds-color(black-20);
-            color: pds-color(black-60);
+            background-color: pds-color('black-20');
+            border-bottom-color: pds-color('black-20');
+            color: pds-color('black-60');
             cursor: default;
             &:focus {
-              border-bottom-color: pds-color(black-20);
+              border-bottom-color: pds-color('black-20');
             }
         }
     }
@@ -228,7 +230,7 @@
     @at-root select#{&}, &.dropdown {
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 4) nth($pds-spacings, 6);
         border: none;
-        border-bottom: 2px solid pds-color(transparent);
+        border-bottom: 2px solid pds-color('transparent');
         background-image: url("#{$pds-assets-path}/images/icons/chevrons-updown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
@@ -237,12 +239,12 @@
         transition: border-bottom-color 150ms ease-in-out;
 
         &:disabled {
-            background-color: pds-color(black-20);
-            border-bottom-color: pds-color(black-20);
-            color: pds-color(black-60);
+            background-color: pds-color('black-20');
+            border-bottom-color: pds-color('black-20');
+            color: pds-color('black-60');
             cursor: default;
             &:focus {
-              border-bottom-color: pds-color(black-20);
+              border-bottom-color: pds-color('black-20');
             }
         }
         &.full-width {
@@ -254,15 +256,15 @@
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3)
           nth($pds-spacings, 6);
         border: none;
-        border-bottom: 3px solid pds-color(creme);
+        border-bottom: 3px solid pds-color('creme');
         transition: border-bottom-color 150ms ease-in-out;
         &:read-only {
-            background-color: pds-color(black-20);
-            border-bottom-color: pds-color(black-20);
-            color: pds-color(black-60);
+            background-color: pds-color('black-20');
+            border-bottom-color: pds-color('black-20');
+            color: pds-color('black-60');
             cursor: default;
             &:focus {
-              border-bottom-color: pds-color(black-20);
+              border-bottom-color: pds-color('black-20');
             }
         }
         &.full-width {
@@ -436,7 +438,7 @@ textarea.pds-c-input {
     }
     &.error {
       visibility: visible;
-      color: pds-color(red);
+      color: pds-color('red');
     }
   
     .spinner {
