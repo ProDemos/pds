@@ -17,7 +17,7 @@
         <dl>
             <dt><code>$name</code></dt>
             <dd>
-                refers to a theme name, like 'theme05'.
+                refers to a theme name, like 'red01'.
             </dd>
         </dl>
         Changes the current theme css variables to the given theme;
@@ -27,7 +27,7 @@
         Example:
 <xmp>
     h1 {
-        @include pds-theme(theme04);
+        @include pds-theme(creme01);
         color:var(--pds-color-stroke-60);
         background-color:var(--pds-color-fill-60);
     }
@@ -85,7 +85,7 @@ p {
         <code>$pds-themes</code> is also defined as a map, like 
 <xmp>
 $pds-themes: (
-    theme01 : (
+    blue01 : (
         fill: map-get($pds-colors,'blue'),
         accfill: map-get($pds-colors,'orange'),
         stroke: map-get($pds-colors,'white'),

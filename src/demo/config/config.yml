@@ -76,14 +76,14 @@ colors:
         - green-20
 
 themes:
-        theme01 : Theme 01
-        theme02 : Theme 02
-        theme03 : Theme 03 
-        theme04 : Theme 04 
-        theme05 : Theme 05 
-        theme06 : Theme 06 
-        theme07 : Theme 07 
-        theme08 : Theme 08 
+        creme01 : Creme 01
+        yellow01 : Yellow 01 
+        orange01 : Orange 01
+        red01 : Red 01
+        pink01 : Pink 01 
+        purple01 : Purple 01 
+        blue01 : Blue 01
+        green01 : Green 01
 
 components:
     # will be read from the demo/config/components/ directory

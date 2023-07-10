@@ -155,46 +155,30 @@ $pds-colors: (
 // use pds-theme-color($themename,$propname)
 // to get to these values easier, but also,
 // these colors will be appear in themes 
-// (like .pds-t-theme01)
+// (like .pds-t-blue01)
 
 $pds-themes: (
-    theme01 : (
-        fill: map-get($pds-colors,'blue'),
-        fill-120: map-get($pds-colors,'blue-120'),
-		fill-110: map-get($pds-colors,'blue-110'),
-		fill-80: map-get($pds-colors,'blue-80'),
-		fill-60: map-get($pds-colors,'blue-60'),
-		fill-40: map-get($pds-colors,'blue-40'),
-		fill-20: map-get($pds-colors,'blue-20'),
-        accfill: map-get($pds-colors,'orange'),
-        accfill-120: map-get($pds-colors,'orange-120'),
-		accfill-110: map-get($pds-colors,'orange-110'),
-		accfill-80: map-get($pds-colors,'orange-80'),
-		accfill-60: map-get($pds-colors,'orange-60'),
-		accfill-40: map-get($pds-colors,'orange-40'),
-		accfill-20: map-get($pds-colors,'orange-20'),
-        stroke: map-get($pds-colors,'white'),
-        accstroke: map-get($pds-colors,'white') 
-    ),
-    theme02 : (
-        fill: map-get($pds-colors,'orange'),
-        fill-120: map-get($pds-colors,'orange-120'),
-		fill-110: map-get($pds-colors,'orange-110'),
-		fill-80: map-get($pds-colors,'orange-80'),
-		fill-60: map-get($pds-colors,'orange-60'),
-		fill-40: map-get($pds-colors,'orange-40'),
-		fill-20: map-get($pds-colors,'orange-20'),
-        accfill: map-get($pds-colors,'green'),
-        accfill-120: map-get($pds-colors,'green-120'),
-		accfill-110: map-get($pds-colors,'green-110'),
-		accfill-80: map-get($pds-colors,'green-80'),
-		accfill-60: map-get($pds-colors,'green-60'),
-		accfill-40: map-get($pds-colors,'green-40'),
-		accfill-20: map-get($pds-colors,'green-20'),
-        stroke: map-get($pds-colors,'white'), 
+    
+    
+    creme01 : (
+        fill: map-get($pds-colors,'creme-120'),
+        fill-120: map-get($pds-colors,'creme-120'),
+		fill-110: map-get($pds-colors,'creme-120'),
+		fill-80: map-get($pds-colors,'creme-110'),
+		fill-60: map-get($pds-colors,'creme'),
+		fill-40: map-get($pds-colors,'creme-80'),
+		fill-20: map-get($pds-colors,'creme-40'),
+        accfill: map-get($pds-colors,'blue'),
+        accfill-120: map-get($pds-colors,'blue-120'),
+		accfill-110: map-get($pds-colors,'blue-110'),
+		accfill-80: map-get($pds-colors,'blue-80'),
+		accfill-60: map-get($pds-colors,'blue-60'),
+		accfill-40: map-get($pds-colors,'blue-40'),
+		accfill-20: map-get($pds-colors,'blue-20'),
+        stroke: map-get($pds-colors,'black'), 
         accstroke:  map-get($pds-colors,'white') 
     ),
-    theme03 : (
+    yellow01 : (
         fill: map-get($pds-colors,'yellow'),
         fill-120: map-get($pds-colors,'yellow-120'),
 		fill-110: map-get($pds-colors,'yellow-110'),
@@ -212,7 +196,7 @@ $pds-themes: (
         stroke: map-get($pds-colors,'black'), 
         accstroke: map-get($pds-colors,'white')
     ),
-    theme04 : (
+    orange01 : (
         fill: map-get($pds-colors,'orange'),
         fill-120: map-get($pds-colors,'orange-120'),
 		fill-110: map-get($pds-colors,'orange-110'),
@@ -220,17 +204,17 @@ $pds-themes: (
 		fill-60: map-get($pds-colors,'orange-60'),
 		fill-40: map-get($pds-colors,'orange-40'),
 		fill-20: map-get($pds-colors,'orange-20'),
-        accfill: map-get($pds-colors,'blue'),
-        accfill-120: map-get($pds-colors,'blue-120'),
-		accfill-110: map-get($pds-colors,'blue-110'),
-		accfill-80: map-get($pds-colors,'blue-80'),
-		accfill-60: map-get($pds-colors,'blue-60'),
-		accfill-40: map-get($pds-colors,'blue-40'),
-		accfill-20: map-get($pds-colors,'blue-20'),
+        accfill: map-get($pds-colors,'green'),
+        accfill-120: map-get($pds-colors,'green-120'),
+		accfill-110: map-get($pds-colors,'green-110'),
+		accfill-80: map-get($pds-colors,'green-80'),
+		accfill-60: map-get($pds-colors,'green-60'),
+		accfill-40: map-get($pds-colors,'green-40'),
+		accfill-20: map-get($pds-colors,'green-20'),
         stroke: map-get($pds-colors,'white'), 
         accstroke:  map-get($pds-colors,'white') 
     ),
-    theme05 : (
+    red01 : (
         fill: map-get($pds-colors,'red'),
         fill-120: map-get($pds-colors,'red-120'),
 		fill-110: map-get($pds-colors,'red-110'),
@@ -248,7 +232,7 @@ $pds-themes: (
         stroke: map-get($pds-colors,'white'), 
         accstroke: map-get($pds-colors,'white')
     ),
-    theme06 : (
+    pink01 : (
         fill: map-get($pds-colors,'pink'),
         fill-120: map-get($pds-colors,'pink-120'),
 		fill-110: map-get($pds-colors,'pink-110'),
@@ -266,7 +250,7 @@ $pds-themes: (
         stroke: map-get($pds-colors,'white'), 
         accstroke:  map-get($pds-colors,'black') 
     ),
-    theme07 : (
+    purple01 : (
         fill: map-get($pds-colors,'purple'),
         fill-120: map-get($pds-colors,'purple-120'),
 		fill-110: map-get($pds-colors,'purple-110'),
@@ -284,7 +268,25 @@ $pds-themes: (
         stroke:  map-get($pds-colors,'white'), 
         accstroke:  map-get($pds-colors,'black')
     ),
-    theme08 : (
+    blue01 : (
+        fill: map-get($pds-colors,'blue'),
+        fill-120: map-get($pds-colors,'blue-120'),
+		fill-110: map-get($pds-colors,'blue-110'),
+		fill-80: map-get($pds-colors,'blue-80'),
+		fill-60: map-get($pds-colors,'blue-60'),
+		fill-40: map-get($pds-colors,'blue-40'),
+		fill-20: map-get($pds-colors,'blue-20'),
+        accfill: map-get($pds-colors,'orange'),
+        accfill-120: map-get($pds-colors,'orange-120'),
+		accfill-110: map-get($pds-colors,'orange-110'),
+		accfill-80: map-get($pds-colors,'orange-80'),
+		accfill-60: map-get($pds-colors,'orange-60'),
+		accfill-40: map-get($pds-colors,'orange-40'),
+		accfill-20: map-get($pds-colors,'orange-20'),
+        stroke: map-get($pds-colors,'white'),
+        accstroke: map-get($pds-colors,'white') 
+    ),
+    green01 : (
         fill: map-get($pds-colors,'green'),
         fill-120: map-get($pds-colors,'green-120'),
 		fill-110: map-get($pds-colors,'green-110'),
@@ -304,7 +306,7 @@ $pds-themes: (
     )
 );
 
-$pds-deftheme: 'theme01' !default;
+$pds-deftheme: 'blue01' !default;
 
 
 // Opacity values, used for color
