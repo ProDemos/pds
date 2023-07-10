@@ -136,9 +136,9 @@
         border-style: solid;
         border-width: 2px;
         &.on {
-            color:pds-theme-color($pds-deftheme,'stroke-accent');
-            background-color:pds-theme-color($pds-deftheme,'fill-accent');
-            border-color:pds-theme-color($pds-deftheme,'fill-accent');
+            color:pds-theme-color($pds-deftheme,'accstroke');
+            background-color:pds-theme-color($pds-deftheme,'accfill');
+            border-color:pds-theme-color($pds-deftheme,'accfill');
         }
     }
 
@@ -261,24 +261,24 @@
     }
 
     &.accent {
-        background-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+        background-color: darken(pds-theme-color($theme,accfill), nth($pds-darken-scale, 1));
 
         &.primary {
             &::before,
             &::after {
-                background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 3));
+                background-color: lighten(pds-theme-color($theme,accfill), nth($pds-lighten-scale, 3));
             }
         }
 
         // Hover styles, but only when the button is not disabled
         &:not(.disabled, :disabled) {
             @include hover {
-                background-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 2));
+                background-color: darken(pds-theme-color($theme,accfill), nth($pds-darken-scale, 2));
 
                 &.primary {
                     &::before,
                     &::after {
-                        background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 2));
+                        background-color: lighten(pds-theme-color($theme,accfill), nth($pds-lighten-scale, 2));
                     }
                 }
             }
@@ -288,15 +288,15 @@
             &.primary {
                 &::before,
                 &::after {
-                    background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 1));
+                    background-color: lighten(pds-theme-color($theme,accfill), nth($pds-lighten-scale, 1));
                 }
             }
         }
         &.toggle {
             &.on {
-                color:pds-theme-color($theme,'stroke-accent');
-                background-color:pds-theme-color($theme,'fill-accent');
-                border-color:pds-theme-color($theme,'fill-accent');
+                color:pds-theme-color($theme,'accstroke');
+                background-color:pds-theme-color($theme,'accfill');
+                border-color:pds-theme-color($theme,'accfill');
             }
         }
     }
@@ -337,7 +337,7 @@
         }
 
         &:focus:not(.disabled, :disabled) {
-            border-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+            border-color: darken(pds-theme-color($theme,accfill), nth($pds-darken-scale, 1));
         }
 
         &.disabled, &:disabled {
