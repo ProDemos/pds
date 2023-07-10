@@ -6,7 +6,7 @@
         --pds-color-#{$cname}: #{$cvalue};
     }
     @each $propname, $propval in map-get($pds-themes,$pds-deftheme) {
-        --pds-color-theme-#{$propname}: #{$propval};
+        --pds-color-#{$propname}: #{$propval};
     }
     /*
         // you dont really need this ..

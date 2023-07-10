@@ -1,6 +1,6 @@
 @mixin pds-theme($name) {
     @each $propname, $propval in map-get($pds-themes,$name) {
-        --pds-color-theme-#{$propname}: #{$propval};
+        --pds-color-#{$propname}: #{$propval};
     }    
 }
 

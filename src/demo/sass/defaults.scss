@@ -96,7 +96,7 @@
 
     a {
         //color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
-        color:var(--pds-color-theme-fill-110); // d1
+        color:var(--pds-color-fill-110); // d1
         font-weight: 500;
         text-decoration: none;
         transition: color 0.15s ease-out;
@@ -104,13 +104,13 @@
 
         @include hover {
             // color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
-            color:var(--pds-color-theme-fill-110); // d1
+            color:var(--pds-color-fill-110); // d1
             text-decoration: underline;
         }
 
         &:visited {
             //color: darken((pds-color(blue)), nth($pds-darken-scale, 2));
-            color:var(--pds-color-theme-fill-120); // d2
+            color:var(--pds-color-fill-120); // d2
         }
 
     }

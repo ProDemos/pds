@@ -12,13 +12,7 @@
 */
 
 
-@each $themename, $thememap in $pds-themes {
-    :root .pds-t-#{$themename} {
-        @each $propname, $propval in $thememap {
-            --pds-color-theme-#{$propname}: #{$propval};
-        }
-    }
-}
+// named colors
 
 @each $cname, $cvalue in $pds-colors {
     .pds-m-filled.#{$cname} {
@@ -32,51 +26,61 @@
     }
 }
 
-// themed modifiers
+// theme selector
+
+@each $themename, $thememap in $pds-themes {
+    :root .pds-t-#{$themename} {
+        @each $propname, $propval in $thememap {
+            --pds-color-#{$propname}: #{$propval};
+        }
+    }
+}
+
+// themed colors
 
 .pds-m-filled {
-    background-color: var(--pds-color-theme-fill);
-    color:var(--pds-color-theme-stroke);
+    background-color: var(--pds-color-fill);
+    color:var(--pds-color-stroke);
     &.accent {
-        background-color: var(--pds-color-theme-accfill);
-        color: var(--pds-color-theme-accstroke);
+        background-color: var(--pds-color-accfill);
+        color: var(--pds-color-accstroke);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
-            background-color: var(--pds-color-theme-fill-#{$shade});
-            color: var(--pds-color-theme-stroke);
+            background-color: var(--pds-color-fill-#{$shade});
+            color: var(--pds-color-stroke);
         }
         &.accent-#{$shade} {
-            background-color: var(--pds-color-theme-accfill-#{$shade});
-            color: var(--pds-color-theme-accstroke);
+            background-color: var(--pds-color-accfill-#{$shade});
+            color: var(--pds-color-accstroke);
         }
     }
 }
 .pds-m-colored {
-    color: var(--pds-color-theme-fill);
+    color: var(--pds-color-fill);
     &.accent {
-        color: var(--pds-color-theme-accfill);
+        color: var(--pds-color-accfill);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
-            color: var(--pds-color-theme-fill-#{$shade});
+            color: var(--pds-color-fill-#{$shade});
         }
         &.accent-#{$shade} {
-            color: var(--pds-color-theme-accfill-#{$shade});
+            color: var(--pds-color-accfill-#{$shade});
         }
     }
 }
 .pds-m-bordered {
-    border-color: var(--pds-color-theme-fill);
+    border-color: var(--pds-color-fill);
     &.accent {
-        border-color: var(--pds-color-theme-accfill);
+        border-color: var(--pds-color-accfill);
     }
     @each $shade in 20,40,60,80,110,120 {
         &.fill-#{$shade} {
-            border-color: var(--pds-color-theme-fill-#{$shade});
+            border-color: var(--pds-color-fill-#{$shade});
         }
         &.accent-#{$shade} {
-            border-color: var(--pds-color-theme-accfill-#{$shade});
+            border-color: var(--pds-color-accfill-#{$shade});
         }
     }
 }

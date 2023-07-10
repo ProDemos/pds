@@ -21,15 +21,15 @@
             </dd>
         </dl>
         Changes the current theme css variables to the given theme;
-        if <code>var(--pds-color-theme-accfill)</code> would have been
+        if <code>var(--pds-color-accfill)</code> would have been
         orange before calling the mixin, it may be blue after calling it.
         <hr>
         Example:
 <xmp>
     h1 {
         @include pds-theme(theme04);
-        color:var(--pds-color-theme-stroke-60);
-        background-color:var(--pds-color-theme-fill-60);
+        color:var(--pds-color-stroke-60);
+        background-color:var(--pds-color-fill-60);
     }
 </xmp>
     
@@ -53,7 +53,7 @@
         Example:
 <xmp>
     h1 {
-        color:var(--pds-color-theme-stroke);
+        color:var(--pds-color-stroke);
         background-color:var(--pds-color-creme-40);
     }
 </xmp>

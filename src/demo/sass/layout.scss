@@ -33,7 +33,7 @@ body {
     height: $header-height--mobile;
     padding: 0 1rem;
     background-color: var(--pds-color-black-80);
-    border-bottom: 3px solid var(--pds-color-theme-fill);
+    border-bottom: 3px solid var(--pds-color-fill);
     color: var(--pds-color-white);
 
     @include pds-media(md,min) {
@@ -59,7 +59,7 @@ body {
 .header-logo {
     height: 100%;
     svg {
-        color: var(--pds-color-theme-fill);
+        color: var(--pds-color-fill);
         margin-right: 1em;
         height: 100%;
     }
@@ -246,7 +246,7 @@ form#theme-selector {
                 height: 100%;
                 top: 0;
                 left: 0;
-                background-color: var(--pds-color-theme-fill);
+                background-color: var(--pds-color-fill);
             }
         }
     }

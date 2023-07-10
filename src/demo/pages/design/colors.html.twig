@@ -12,14 +12,16 @@
     </p>
     <br>
     <p>
-        These colors are grouped in themes that you can access through pds
+        The design system also has a set of theme colors, named
+        <code>fill</code>, <code>stroke</code>, <code>accfill</code>, 
+        and <code>accstroke</code> , that you can access through pds 
+        modifier classes (<code>class="pds-m-foo fill-60"</code>)
+        or using css variables (<code>var(--pds-color-fill-60)</code>).
+        <br><br>
+        The exact colors of these properties depend on the `theme` used
+        in that context. You can select a theme through pds
         theme classes (<code>class="pds-t-theme01"</code>)
-        or using css variables (<code>var(--pds-color-theme-fill</code>).
-        Each theme contains a <code>fill</code>, <code>stroke</code>, <code>accfill</code>, 
-        and <code>accstroke</code> colors, and their shadings.<br><br>
-        The 'themes' are also used to style pds components, so displaying eg a button
-        in 'theme02' changes all the associated hover/active state colors of that 
-        button.
+        or using a sass mixin (<code>@include pds-theme(theme03)</code>).        
     </p>
 
 {% endblock %}
