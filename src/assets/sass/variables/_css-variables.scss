@@ -1,0 +1,20 @@
+// Transform sass variables to css variables
+
+:root {
+    @each $cname, $cvalue in $pds-colors {
+        //@debug("color "+$cname+"="+$cvalue);
+        --pds-color-#{$cname}: #{$cvalue};
+    }
+    @each $propname, $propval in map-get($pds-themes,$pds-deftheme) {
+        --pds-color-theme-#{$propname}: #{$propval};
+    }
+    /*
+        // you dont really need this ..
+        @each $tname, $tmap in $pds-themes {
+            //@debug("color "+$cname+"="+$cvalue);
+            @each $propname, $propval in $tmap {
+                --pds-color-#{$tname}-#{$propname}: #{$propval};
+            }
+        }
+    */
+}
