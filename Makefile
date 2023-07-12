@@ -128,7 +128,7 @@ release-pds:
 	@echo Releasing pds ..
 	@if [ ! -d "build/packages/pds" ] ; then echo "build/packages/pds not ready" ; false ; fi
 	cd build/packages/pds && npm version $(version)
-	npm publish ./build/packages/pds
+	npm publish ./build/packages/pds --access public
 	tar -czf ./build/packages/pds.tgz ./build/packages/pds
 	hub release edit -a ./build/packages/pds.tgz -m "" $(version)
 
@@ -137,7 +137,7 @@ release-pds-source:
 	@echo Releasing pds-source ..
 	@if [ ! -d "build/packages/pds-source" ] ; then echo "build/packages/pds-source not ready" ; false ; fi
 	cd build/packages/pds-source && npm version $(version)
-	npm publish ./build/packages/pds-source
+	npm publish ./build/packages/pds-source --access public
 	tar -czf ./build/packages/pds-source.tgz ./build/packages/pds-source
 	hub release edit -a ./build/packages/pds-source.tgz -m "" $(version)
 
@@ -146,7 +146,7 @@ release-pds-compiled:
 	@echo Releasing pds-compiled ..
 	@if [ ! -d "build/packages/pds-compiled" ] ; then echo "build/packages/pds-compiled not ready" ; false ; fi
 	cd build/packages/pds-compiled && npm version $(version)
-	npm publish ./build/packages/pds-compiled
+	npm publish ./build/packages/pds-compiled --access public
 	tar -czf ./build/packages/pds-compiled.tgz ./build/packages/pds-compiled
 	hub release edit -a ./build/packages/pds-compiled.tgz -m "" $(version)
 
@@ -155,7 +155,7 @@ release-pds-demo:
 	@echo Releasing pds-demo ..
 	@if [ ! -d "build/packages/pds-demo" ] ; then echo "build/packages/pds-demo not ready" ; false ; fi
 	cd build/packages/pds-demo && npm version $(version)
-	npm publish ./build/packages/pds-demo
+	npm publish ./build/packages/pds-demo --access public
 	tar -czf ./build/packages/pds-demo.tgz ./build/packages/pds-demo
 	hub release edit -a ./build/packages/pds-demo.tgz -m "" $(version)
 
