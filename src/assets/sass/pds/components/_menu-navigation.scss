@@ -129,21 +129,26 @@
 
 /* theming */
 
-@mixin pds-menu-theme( $theme : $pds-deftheme ) {
-    background-color:pds-theme-color($theme,fill);
-    a {
-        color:pds-theme-color($theme,stroke);
-    }
-    a:before {
-      background-color:pds-theme-color($theme,stroke);
-    }
-}
+//@mixin pds-menu-theme( $theme : $pds-deftheme ) {
 
 .pds-c-menu, .pds-c-menu ul {
-    @include pds-menu-theme($pds-deftheme);
+    //background-color:pds-theme-color($theme,fill);
+    background-color:var(--pds-color-fill);
+    a {
+        //color:pds-theme-color($theme,stroke);
+        color:var(--pds-color-stroke);
+    }
+    a:before {
+      //background-color:pds-theme-color($theme,stroke);
+      background-color:var(--pds-color-stroke);
+    }
 }
 
+//.pds-c-menu, .pds-c-menu ul {
+//    @include pds-menu-theme($pds-deftheme);
+//}
 
+/*
 @each $theme in map-keys($pds-themes) {
     .pds-t-#{$theme} .pds-c-menu,
     .pds-c-menu.pds-t-#{$theme}:not(.inherit),
@@ -152,3 +157,4 @@
         @include pds-menu-theme($theme);
     }
 }
+*/

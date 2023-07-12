@@ -71,10 +71,10 @@ $pds-colors: (
     'black': map-get($pds-color-stack,'black'),
     'black-120': map-get($pds-color-stack,'black'),
     'black-110': map-get($pds-color-stack,'black'),
-    'black-80': mix(map-get($pds-color-stack,'black'),white, 80%), 
-    'black-60': mix(map-get($pds-color-stack,'black'),white, 60%), 
-    'black-40': mix(map-get($pds-color-stack,'black'),white, 40%), 
-    'black-20': mix(map-get($pds-color-stack,'black'),white, 20%),
+    'black-80': mix(map-get($pds-color-stack,'black'),white, 80%), // or lighten 10%
+    'black-60': mix(map-get($pds-color-stack,'black'),white, 60%), // or lighten 20%
+    'black-40': mix(map-get($pds-color-stack,'black'),white, 40%), // or lighten 30%
+    'black-20': mix(map-get($pds-color-stack,'black'),white, 20%), // or lighten 40%
     
     // legacy 202306
     'sand': map-get($pds-color-stack,'grey--romance'),
