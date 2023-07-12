@@ -14,7 +14,7 @@
     }
     xmp {
         padding:1em;
-        background-color: pds-color(creme-40);
+        background-color: var(--pds-color-creme-40);
     }
 }
 
@@ -95,7 +95,7 @@
     }
 
     a {
-        //color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+        //color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 1));
         color:var(--pds-color-fill-110); // d1
         font-weight: 500;
         text-decoration: none;
@@ -103,13 +103,13 @@
         word-break: break-all;
 
         @include hover {
-            // color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+            // color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 1));
             color:var(--pds-color-fill-110); // d1
             text-decoration: underline;
         }
 
         &:visited {
-            //color: darken((pds-color(blue)), nth($pds-darken-scale, 2));
+            //color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 2));
             color:var(--pds-color-fill-120); // d2
         }
 
@@ -133,7 +133,7 @@
     margin-bottom: 3rem;
     border-width: 0 0 1px;
     border-style: solid;
-    border-color: pds-color(black-80);
+    border-color: var(--pds-color-black-80);
     font-size: 1.9rem;
 }
 
@@ -144,7 +144,7 @@
     margin-bottom: 3rem;
     border-width: 0 0 1px;
     border-style: solid;
-    border-color: pds-color(black-80);
+    border-color: var(--pds-color-black-80);
     font-size: 1.5rem;
 }
 

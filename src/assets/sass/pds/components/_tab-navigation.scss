@@ -19,14 +19,14 @@
 
         @include media-from(md) {
             display: flex;
-            border-bottom: 1px solid pds-color('black-20');
+            border-bottom: 1px solid var(--pds-color-black-20);
         }
     
         li, .pds-c-tabs-item {
 
             position: relative;
             text-align: center;
-            border-bottom: 1px solid pds-color('black-20');
+            border-bottom: 1px solid var(--pds-color-black-20);
 
             @include media-from(md) {
                 margin: 0 nth($pds-spacings, 3);
@@ -49,7 +49,7 @@
 
                 display: inline-block;
                 padding: nth($pds-spacings, 3) 0 nth($pds-spacings, 3);
-                color: pds-color('black');
+                color: var(--pds-color-black);
                 font-family: $font--fira-sans;
                 font-size: pds-fontsize(xs);
                 font-weight: 500;
@@ -57,7 +57,7 @@
                 text-decoration: none;
                 text-transform: uppercase;
                 border: none;
-                background-color: pds-color('white');
+                background-color: var(--pds-color-white);
                 transition: all 100ms ease-in-out;
                 cursor: pointer;
 
@@ -74,7 +74,7 @@
                     width: 100%;
                     bottom: 0;
                     left: 0;
-                    background-color: pds-color('transparent');
+                    background-color: var(--pds-color-transparent);
                     opacity: 1;
                     transition: all 250ms ease-in-out;
                 }

@@ -37,15 +37,15 @@
     padding: 2rem;
     border-radius: 3px;
     border-width: 1px;
-    border-color: pds-color('creme-80');
+    border-color: var(--pds-color-creme-80);
     border-style: solid;
 
     .demo-color-light & {
-        color: pds-color('black-80');
+        color: var(--pds-color-black-80);
     }
 
     .demo-color-dark & {
-        color: pds-color('white');
+        color: var(--pds-color-white);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 }

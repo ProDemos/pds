@@ -10,7 +10,7 @@
     width: 100%;
     height: auto !important;
     margin-bottom: nth($pds-spacings, 7);
-    color: pds-color('black');
+    color: var(--pds-color-black);
     border-spacing: 0;
 
     /*
@@ -45,7 +45,7 @@
     tbody  {
         tr  {
             &:nth-child(odd) {
-                background: pds-color('sand-40');
+                background: var(--pds-color-sand-40);
             }
         }
     }

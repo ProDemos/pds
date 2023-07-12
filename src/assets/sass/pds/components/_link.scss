@@ -9,9 +9,9 @@
       display: none;
       position: absolute;
       z-index: 1;
-      background-color: pds-color('white');
-      color: pds-color('black');
-      border: 1px solid pds-color('black-20');
+      background-color: var(--pds-color-white);
+      color: var(--pds-color-black);
+      border: 1px solid var(--pds-color-black-20);
       top: 100%;
       min-width: 110%;
       left: -5%;
@@ -20,7 +20,7 @@
         list-style-type: none;
         li {
           white-space: nowrap;
-          border-bottom: 1px solid pds-color('black-20');
+          border-bottom: 1px solid var(--pds-color-black-20);
           padding: 0.5em;
           &:last-child {
             border-bottom: 0;
