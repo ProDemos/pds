@@ -2,7 +2,7 @@
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-input
 // .pds-c-input[.disabled]
-//  input[type=text|email|tel|password|date|time].pds-c-input [.valid|.invalid]
+//  input[type=text|number|email|tel|password|date|time].pds-c-input [.valid|.invalid]
 //  select.pds-c-input [.full-width]
 //  textarea.pds-c-input [.full-width]
 // .pds-c-input.container[.radio|.checkbox]
@@ -178,6 +178,7 @@
     }
 
     &[type=text], 
+    &[type=number],
     &[type=email],
     &[type=tel],
     &[type=password],
@@ -299,42 +300,51 @@ span.pds-c-input {
 // ----theming -------
       
 
-@mixin pds-c-input-container-theme($theme : $pds-deftheme) {
+//@mixin pds-c-input-container-theme($theme : $pds-deftheme) {
+.pds-c-input-container {
     &.radio {
         input[type=radio], .pds-c-input.radio {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                //border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                border: 1px solid var(--pds-color-fill-110);
 
                 &::before {
-                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                    //background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                    background-color: var(--pds-color-fill-110);
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                //border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                border-color: var(--pds-color-fill-110);
             }
         }
     }
     &.checkbox {
         input[type=checkbox], .pds-c-input.checkbox {
             &:checked ~ .pds-c-input-check {
-                border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                //border: 1px solid darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                border: 1px solid var(--pds-color-fill-110);
                 &::before {
-                    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                    //background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                    background-color: var(--pds-color-fill-110);
                 }
             }
         }
         @include hover {
             .c-input-check {
-                border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                //border-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+                border-color: var(--pds-color-fill-110);
             }
         }
     }
 }
 
-@mixin pds-c-input-theme($theme : $pds-deftheme) {
+//@mixin pds-c-input-theme($theme : $pds-deftheme) {
+.pds-c-input {
     &[type=text], 
+    &[type=number],
     &[type=email],
     &[type=tel],
     &[type=password],
@@ -342,45 +352,53 @@ span.pds-c-input {
     &[type=time],
     &.text {
         &:focus:not(:disabled) {
-            border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+            //border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+            border-bottom-color: var(--pds-color-fill-110);
         }
     }
 }
 
-@mixin pds-c-select-theme($theme : $pds-deftheme) {
+//@mixin pds-c-select-theme($theme : $pds-deftheme) {
+select.pds-c-input, 
+.pds-c-input.dropdown {
+
     &:focus:not(:disabled),
     &:hover:not(:disabled) {
-        border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+        //border-bottom-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+        border-bottom-color: var(--pds-color-fill-110);
     }
 }
 
-@mixin pds-c-textarea-theme($theme: $pds-deftheme) {
+//@mixin pds-c-textarea-theme($theme: $pds-deftheme) {
+textarea.pds-c-input {
     &:focus:not(:disabled) {
-      border-bottom-color: darken(
-        pds-theme-color($theme, fill),
-        nth($pds-darken-scale, 1)
-      );
+      //border-bottom-color: darken(
+      //  pds-theme-color($theme, fill),
+      //  nth($pds-darken-scale, 1)
+      //);
+      border-bottom-color: var(--pds-color-fill-110);
     }
 }
   
 
-.pds-c-input-container {
-    @include pds-c-input-container-theme();
-}
+//.pds-c-input-container {
+//    @include pds-c-input-container-theme();
+//}
 
-.pds-c-input {
-   @include pds-c-input-theme();
-}
+//.pds-c-input {
+//   @include pds-c-input-theme();
+//}
     
-select.pds-c-input, 
-.pds-c-input.dropdown {
-    @include pds-c-select-theme();
-}
+//select.pds-c-input, 
+//.pds-c-input.dropdown {
+//    @include pds-c-select-theme();
+//}
 
-textarea.pds-c-input {
-    @include pds-c-textarea-theme();
-}
+//textarea.pds-c-input {
+//    @include pds-c-textarea-theme();
+//}
 
+/*
 @each $theme in map-keys($pds-themes) {
 
     .pds-c-input-container {
@@ -412,7 +430,8 @@ textarea.pds-c-input {
         }
     }
 }
-      
+*/
+
 /* spinner */
 
 .pds-c-button + .pds-c-progress {
