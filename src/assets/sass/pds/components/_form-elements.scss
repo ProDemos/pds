@@ -51,7 +51,7 @@
             position: absolute;
             border: 1px solid var(--pds-color-black-20);
             border-radius: 100%;
-            background-color: var(--pds-color-sand);
+            background-color: var(--pds-color-creme);
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -109,7 +109,7 @@
             display: block;
             position: absolute;
             border: 1px solid var(--pds-color-black-20);
-            background-color: var(--pds-color-sand);
+            background-color: var(--pds-color-creme);
             height: nth($pds-spacings, 6);
             width: nth($pds-spacings, 6);
             top: nth($pds-spacings, 4);
@@ -162,7 +162,7 @@
     font-size: pds-fontsize(s);
     line-height: pds-lineheight(m);
     border-radius: 0;
-    background-color: var(--pds-color-sand);
+    background-color: var(--pds-color-creme);
 
     /* stylelint-disable property-no-vendor-prefix */
     -webkit-appearance: none;
@@ -171,9 +171,9 @@
 
     &.disabled {
         //color: lighten(var(--pds-color-black), nth($pds-lighten-scale, 5));
-        //background-color: lighten((var(--pds-color-sand)), nth($pds-lighten-scale, 1));
+        //background-color: lighten((var(--pds-color-creme)), nth($pds-lighten-scale, 1));
         color: var(--pds-color-black-20); // l5
-        background-color: var(--pds-color-sand-80); // l1
+        background-color: var(--pds-color-creme-80); // l1
         cursor: not-allowed;
     }
 
@@ -189,7 +189,7 @@
 
         padding: nth($pds-spacings, 4) nth($pds-spacings, 9) nth($pds-spacings, 3) nth($pds-spacings, 6);
         border: none;
-        border-bottom: 3px solid var(--pds-color-sand);
+        border-bottom: 3px solid var(--pds-color-creme);
         transition: border-bottom-color 150ms ease-in-out;
 
         

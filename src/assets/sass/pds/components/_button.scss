@@ -332,15 +332,15 @@
         color: var(--pds-color-black);
         .pds-c-button-icon:not(svg) { background-color: var(--pds-color-black); }
 
-        border-color: var(--pds-color-sand);
-        background-color: var(--pds-color-sand);
+        border-color: var(--pds-color-creme);
+        background-color: var(--pds-color-creme);
 
         &:not(.disabled, :disabled) {
             @include hover {
-                //border-color: darken(var(--pds-color-sand), nth($pds-darken-scale, 2));
-                //background-color: darken(var(--pds-color-sand), nth($pds-darken-scale, 2));
-                border-color: var(--pds-color-sand-60);
-                background-color: var(--pds-color-sand-60);
+                //border-color: darken(var(--pds-color-creme), nth($pds-darken-scale, 2));
+                //background-color: darken(var(--pds-color-creme), nth($pds-darken-scale, 2));
+                border-color: var(--pds-color-creme-60);
+                background-color: var(--pds-color-creme-60);
             }
         }
 
