@@ -510,7 +510,17 @@ $pds-deftheme: 'blue01' !default;
 // Opacity values, used for color
 $pds-lighten-scale: 0% 10% 20% 30% 40% 50%;
 $pds-darken-scale: 5% 10%;
+/*
+    $pds-lighten-scale 0 = 0	= 0 
+    $pds-lighten-scale 1 = 10%	= 80
+    $pds-lighten-scale 2 = 20%	= 60
+    $pds-lighten-scale 3 = 30%	= 40
+    $pds-lighten-scale 4 = 40%	= 20
+    $pds-lighten-scale 5 = 50%	= ~
 
+    $pds-darken-scale 1 = 5%	= 110
+    $pds-lighten-scale 2 = 10%	= 120
+*/
 
 // Provide a default font-size list for a consistent typing scale
 // use `pds-fontsize(m)` to get fontsize m
