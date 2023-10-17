@@ -71,10 +71,10 @@ $pds-colors: (
     'black': map-get($pds-color-stack,'black'),
     'black-120': map-get($pds-color-stack,'black'),
     'black-110': map-get($pds-color-stack,'black'),
-    'black-80': mix(map-get($pds-color-stack,'black'),white, 80%), // or lighten 10%
-    'black-60': mix(map-get($pds-color-stack,'black'),white, 60%), // or lighten 20%
-    'black-40': mix(map-get($pds-color-stack,'black'),white, 40%), // or lighten 30%
-    'black-20': mix(map-get($pds-color-stack,'black'),white, 20%), // or lighten 40%
+    'black-80': mix(map-get($pds-color-stack,'black'),white, 80%), // or lighten 10%, l2
+    'black-60': mix(map-get($pds-color-stack,'black'),white, 60%), // or lighten 20%, l3
+    'black-40': mix(map-get($pds-color-stack,'black'),white, 40%), // or lighten 30%, l4
+    'black-20': mix(map-get($pds-color-stack,'black'),white, 20%), // or lighten 40%, l5
     
     // legacy 202306
     'sand': map-get($pds-color-stack,'grey--romance'),
@@ -147,7 +147,84 @@ $pds-colors: (
     'green-80': mix(map-get($pds-color-stack,'green--vida-loca'),white, 80%), 
     'green-60': mix(map-get($pds-color-stack,'green--vida-loca'),white, 60%), 
     'green-40': mix(map-get($pds-color-stack,'green--vida-loca'),white, 40%), 
-    'green-20': mix(map-get($pds-color-stack,'green--vida-loca'),white, 20%)
+    'green-20': mix(map-get($pds-color-stack,'green--vida-loca'),white, 20%),
+
+    // these were used by pds darken() and lighten(), and now wont work
+    // because colors are css vars. 
+    
+    'black-d2': darken(map-get($pds-color-stack,'black'),10%),
+    'black-d1': darken(map-get($pds-color-stack,'black'),5%),
+    'black-l1': lighten(map-get($pds-color-stack,'black'),0%),
+    'black-l2': lighten(map-get($pds-color-stack,'black'),10%),
+    'black-l3': lighten(map-get($pds-color-stack,'black'),20%),
+    'black-l4': lighten(map-get($pds-color-stack,'black'),30%),
+    'black-l5': lighten(map-get($pds-color-stack,'black'),40%),
+    
+    'creme-d2': darken(map-get($pds-color-stack,'grey--romance'),10%),
+    'creme-d1': darken(map-get($pds-color-stack,'grey--romance'),5%),
+    'creme-l1': lighten(map-get($pds-color-stack,'grey--romance'),0%),
+    'creme-l2': lighten(map-get($pds-color-stack,'grey--romance'),10%),
+    'creme-l3': lighten(map-get($pds-color-stack,'grey--romance'),20%),
+    'creme-l4': lighten(map-get($pds-color-stack,'grey--romance'),30%),
+    'creme-l5': lighten(map-get($pds-color-stack,'grey--romance'),40%),
+    
+
+    'yellow-d2': darken(map-get($pds-color-stack,'yellow--my-sin'),10%),
+    'yellow-d1': darken(map-get($pds-color-stack,'yellow--my-sin'),5%),
+    'yellow-l1': lighten(map-get($pds-color-stack,'yellow--my-sin'),0%),
+    'yellow-l2': lighten(map-get($pds-color-stack,'yellow--my-sin'),10%),
+    'yellow-l3': lighten(map-get($pds-color-stack,'yellow--my-sin'),20%),
+    'yellow-l4': lighten(map-get($pds-color-stack,'yellow--my-sin'),30%),
+    'yellow-l5': lighten(map-get($pds-color-stack,'yellow--my-sin'),40%),
+
+    'orange-d2': darken(map-get($pds-color-stack,'orange--cinnabar'),10%),
+    'orange-d1': darken(map-get($pds-color-stack,'orange--cinnabar'),5%),
+    'orange-l1': lighten(map-get($pds-color-stack,'orange--cinnabar'),0%),
+    'orange-l2': lighten(map-get($pds-color-stack,'orange--cinnabar'),10%),
+    'orange-l3': lighten(map-get($pds-color-stack,'orange--cinnabar'),20%),
+    'orange-l4': lighten(map-get($pds-color-stack,'orange--cinnabar'),30%),
+    'orange-l5': lighten(map-get($pds-color-stack,'orange--cinnabar'),40%),
+
+    'red-d2': darken(map-get($pds-color-stack,'red--crimson'),10%),
+    'red-d1': darken(map-get($pds-color-stack,'red--crimson'),5%),
+    'red-l1': lighten(map-get($pds-color-stack,'red--crimson'),0%),
+    'red-l2': lighten(map-get($pds-color-stack,'red--crimson'),10%),
+    'red-l3': lighten(map-get($pds-color-stack,'red--crimson'),20%),
+    'red-l4': lighten(map-get($pds-color-stack,'red--crimson'),30%),
+    'red-l5': lighten(map-get($pds-color-stack,'red--crimson'),40%),
+
+    'pink-d2': darken(map-get($pds-color-stack,'red--hollywood-cerise'),10%),
+    'pink-d1': darken(map-get($pds-color-stack,'red--hollywood-cerise'),5%),
+    'pink-l1': lighten(map-get($pds-color-stack,'red--hollywood-cerise'),0%),
+    'pink-l2': lighten(map-get($pds-color-stack,'red--hollywood-cerise'),10%),
+    'pink-l3': lighten(map-get($pds-color-stack,'red--hollywood-cerise'),20%),
+    'pink-l4': lighten(map-get($pds-color-stack,'red--hollywood-cerise'),30%),
+    'pink-l5': lighten(map-get($pds-color-stack,'red--hollywood-cerise'),40%),
+
+    'purple-d2': darken(map-get($pds-color-stack,'violet--purple-dark'),10%),
+    'purple-d1': darken(map-get($pds-color-stack,'violet--purple-dark'),5%),
+    'purple-l1': lighten(map-get($pds-color-stack,'violet--purple-dark'),0%),
+    'purple-l2': lighten(map-get($pds-color-stack,'violet--purple-dark'),10%),
+    'purple-l3': lighten(map-get($pds-color-stack,'violet--purple-dark'),20%),
+    'purple-l4': lighten(map-get($pds-color-stack,'violet--purple-dark'),30%),
+    'purple-l5': lighten(map-get($pds-color-stack,'violet--purple-dark'),40%),
+
+    'blue-d2': darken(map-get($pds-color-stack,'blue--pacific'),10%),
+    'blue-d1': darken(map-get($pds-color-stack,'blue--pacific'),5%),
+    'blue-l1': lighten(map-get($pds-color-stack,'blue--pacific'),0%),
+    'blue-l2': lighten(map-get($pds-color-stack,'blue--pacific'),10%),
+    'blue-l3': lighten(map-get($pds-color-stack,'blue--pacific'),20%),
+    'blue-l4': lighten(map-get($pds-color-stack,'blue--pacific'),30%),
+    'blue-l5': lighten(map-get($pds-color-stack,'blue--pacific'),40%),
+
+    'green-d2': darken(map-get($pds-color-stack,'green--vida-loca'),10%),
+    'green-d1': darken(map-get($pds-color-stack,'green--vida-loca'),5%),
+    'green-l1': lighten(map-get($pds-color-stack,'green--vida-loca'),0%),
+    'green-l2': lighten(map-get($pds-color-stack,'green--vida-loca'),10%),
+    'green-l3': lighten(map-get($pds-color-stack,'green--vida-loca'),20%),
+    'green-l4': lighten(map-get($pds-color-stack,'green--vida-loca'),30%),
+    'green-l5': lighten(map-get($pds-color-stack,'green--vida-loca'),40%),
+
 
 );
 
@@ -176,7 +253,23 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'blue-40'),
 		accfill-20: map-get($pds-colors,'blue-20'),
         stroke: map-get($pds-colors,'black'), 
-        accstroke:  map-get($pds-colors,'white') 
+        accstroke:  map-get($pds-colors,'white'),
+
+        fill-d2: map-get($pds-colors,'creme-d2'),
+        fill-d1: map-get($pds-colors,'creme-d1'),
+        fill-l1: map-get($pds-colors,'creme-l1'),
+        fill-l2: map-get($pds-colors,'creme-l2'),
+        fill-l3: map-get($pds-colors,'creme-l3'),
+        fill-l4: map-get($pds-colors,'creme-l4'),
+        fill-l5: map-get($pds-colors,'creme-l5'),
+        accfill-d2: map-get($pds-colors,'blue-d2'),
+        accfill-d1: map-get($pds-colors,'blue-d1'),
+        accfill-l1: map-get($pds-colors,'blue-l1'),
+        accfill-l2: map-get($pds-colors,'blue-l2'),
+        accfill-l3: map-get($pds-colors,'blue-l3'),
+        accfill-l4: map-get($pds-colors,'blue-l4'),
+        accfill-l5: map-get($pds-colors,'blue-l5')
+
     ),
     yellow01 : (
         fill: map-get($pds-colors,'yellow'),
@@ -194,7 +287,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'purple-40'),
 		accfill-20: map-get($pds-colors,'purple-20'),
         stroke: map-get($pds-colors,'black'), 
-        accstroke: map-get($pds-colors,'white')
+        accstroke: map-get($pds-colors,'white'),
+
+        fill-d2: map-get($pds-colors,'yellow-d2'),
+        fill-d1: map-get($pds-colors,'yellow-d1'),
+        fill-l1: map-get($pds-colors,'yellow-l1'),
+        fill-l2: map-get($pds-colors,'yellow-l2'),
+        fill-l3: map-get($pds-colors,'yellow-l3'),
+        fill-l4: map-get($pds-colors,'yellow-l4'),
+        fill-l5: map-get($pds-colors,'yellow-l5'),
+        accfill-d2: map-get($pds-colors,'purple-d2'),
+        accfill-d1: map-get($pds-colors,'purple-d1'),
+        accfill-l1: map-get($pds-colors,'purple-l1'),
+        accfill-l2: map-get($pds-colors,'purple-l2'),
+        accfill-l3: map-get($pds-colors,'purple-l3'),
+        accfill-l4: map-get($pds-colors,'purple-l4'),
+        accfill-l5: map-get($pds-colors,'purple-l5')
     ),
     orange01 : (
         fill: map-get($pds-colors,'orange'),
@@ -212,7 +320,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'green-40'),
 		accfill-20: map-get($pds-colors,'green-20'),
         stroke: map-get($pds-colors,'white'), 
-        accstroke:  map-get($pds-colors,'white') 
+        accstroke:  map-get($pds-colors,'white'),
+
+        fill-d2: map-get($pds-colors,'orange-d2'),
+        fill-d1: map-get($pds-colors,'orange-d1'),
+        fill-l1: map-get($pds-colors,'orange-l1'),
+        fill-l2: map-get($pds-colors,'orange-l2'),
+        fill-l3: map-get($pds-colors,'orange-l3'),
+        fill-l4: map-get($pds-colors,'orange-l4'),
+        fill-l5: map-get($pds-colors,'orange-l5'),
+        accfill-d2: map-get($pds-colors,'green-d2'),
+        accfill-d1: map-get($pds-colors,'green-d1'),
+        accfill-l1: map-get($pds-colors,'green-l1'),
+        accfill-l2: map-get($pds-colors,'green-l2'),
+        accfill-l3: map-get($pds-colors,'green-l3'),
+        accfill-l4: map-get($pds-colors,'green-l4'),
+        accfill-l5: map-get($pds-colors,'green-l5')
     ),
     red01 : (
         fill: map-get($pds-colors,'red'),
@@ -230,7 +353,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'green-40'),
 		accfill-20: map-get($pds-colors,'green-20'),
         stroke: map-get($pds-colors,'white'), 
-        accstroke: map-get($pds-colors,'white')
+        accstroke: map-get($pds-colors,'white'),
+
+        fill-d2: map-get($pds-colors,'red-d2'),
+        fill-d1: map-get($pds-colors,'red-d1'),
+        fill-l1: map-get($pds-colors,'red-l1'),
+        fill-l2: map-get($pds-colors,'red-l2'),
+        fill-l3: map-get($pds-colors,'red-l3'),
+        fill-l4: map-get($pds-colors,'red-l4'),
+        fill-l5: map-get($pds-colors,'red-l5'),
+        accfill-d2: map-get($pds-colors,'green-d2'),
+        accfill-d1: map-get($pds-colors,'green-d1'),
+        accfill-l1: map-get($pds-colors,'green-l1'),
+        accfill-l2: map-get($pds-colors,'green-l2'),
+        accfill-l3: map-get($pds-colors,'green-l3'),
+        accfill-l4: map-get($pds-colors,'green-l4'),
+        accfill-l5: map-get($pds-colors,'green-l5')
     ),
     pink01 : (
         fill: map-get($pds-colors,'pink'),
@@ -248,7 +386,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'yellow-40'),
 		accfill-20: map-get($pds-colors,'yellow-20'),
         stroke: map-get($pds-colors,'white'), 
-        accstroke:  map-get($pds-colors,'black') 
+        accstroke:  map-get($pds-colors,'black') ,
+
+        fill-d2: map-get($pds-colors,'pink-d2'),
+        fill-d1: map-get($pds-colors,'pink-d1'),
+        fill-l1: map-get($pds-colors,'pink-l1'),
+        fill-l2: map-get($pds-colors,'pink-l2'),
+        fill-l3: map-get($pds-colors,'pink-l3'),
+        fill-l4: map-get($pds-colors,'pink-l4'),
+        fill-l5: map-get($pds-colors,'pink-l5'),
+        accfill-d2: map-get($pds-colors,'yellow-d2'),
+        accfill-d1: map-get($pds-colors,'yellow-d1'),
+        accfill-l1: map-get($pds-colors,'yellow-l1'),
+        accfill-l2: map-get($pds-colors,'yellow-l2'),
+        accfill-l3: map-get($pds-colors,'yellow-l3'),
+        accfill-l4: map-get($pds-colors,'yellow-l4'),
+        accfill-l5: map-get($pds-colors,'yellow-l5')
     ),
     purple01 : (
         fill: map-get($pds-colors,'purple'),
@@ -266,7 +419,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'yellow-40'),
 		accfill-20: map-get($pds-colors,'yellow-20'),
         stroke:  map-get($pds-colors,'white'), 
-        accstroke:  map-get($pds-colors,'black')
+        accstroke:  map-get($pds-colors,'black'),
+
+        fill-d2: map-get($pds-colors,'purple-d2'),
+        fill-d1: map-get($pds-colors,'purple-d1'),
+        fill-l1: map-get($pds-colors,'purple-l1'),
+        fill-l2: map-get($pds-colors,'purple-l2'),
+        fill-l3: map-get($pds-colors,'purple-l3'),
+        fill-l4: map-get($pds-colors,'purple-l4'),
+        fill-l5: map-get($pds-colors,'purple-l5'),
+        accfill-d2: map-get($pds-colors,'yellow-d2'),
+        accfill-d1: map-get($pds-colors,'yellow-d1'),
+        accfill-l1: map-get($pds-colors,'yellow-l1'),
+        accfill-l2: map-get($pds-colors,'yellow-l2'),
+        accfill-l3: map-get($pds-colors,'yellow-l3'),
+        accfill-l4: map-get($pds-colors,'yellow-l4'),
+        accfill-l5: map-get($pds-colors,'yellow-l5')
     ),
     blue01 : (
         fill: map-get($pds-colors,'blue'),
@@ -284,7 +452,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'orange-40'),
 		accfill-20: map-get($pds-colors,'orange-20'),
         stroke: map-get($pds-colors,'white'),
-        accstroke: map-get($pds-colors,'white') 
+        accstroke: map-get($pds-colors,'white') ,
+
+        fill-d2: map-get($pds-colors,'blue-d2'),
+        fill-d1: map-get($pds-colors,'blue-d1'),
+        fill-l1: map-get($pds-colors,'blue-l1'),
+        fill-l2: map-get($pds-colors,'blue-l2'),
+        fill-l3: map-get($pds-colors,'blue-l3'),
+        fill-l4: map-get($pds-colors,'blue-l4'),
+        fill-l5: map-get($pds-colors,'blue-l5'),
+        accfill-d2: map-get($pds-colors,'orange-d2'),
+        accfill-d1: map-get($pds-colors,'orange-d1'),
+        accfill-l1: map-get($pds-colors,'orange-l1'),
+        accfill-l2: map-get($pds-colors,'orange-l2'),
+        accfill-l3: map-get($pds-colors,'orange-l3'),
+        accfill-l4: map-get($pds-colors,'orange-l4'),
+        accfill-l5: map-get($pds-colors,'orange-l5')
     ),
     green01 : (
         fill: map-get($pds-colors,'green'),
@@ -302,7 +485,22 @@ $pds-themes: (
 		accfill-40: map-get($pds-colors,'red-40'),
 		accfill-20: map-get($pds-colors,'red-20'),
         stroke:  map-get($pds-colors,'white'), 
-        accstroke: map-get($pds-colors,'white')
+        accstroke: map-get($pds-colors,'white'),
+
+        fill-d2: map-get($pds-colors,'green-d2'),
+        fill-d1: map-get($pds-colors,'green-d1'),
+        fill-l1: map-get($pds-colors,'green-l1'),
+        fill-l2: map-get($pds-colors,'green-l2'),
+        fill-l3: map-get($pds-colors,'green-l3'),
+        fill-l4: map-get($pds-colors,'green-l4'),
+        fill-l5: map-get($pds-colors,'green-l5'),
+        accfill-d2: map-get($pds-colors,'red-d2'),
+        accfill-d1: map-get($pds-colors,'red-d1'),
+        accfill-l1: map-get($pds-colors,'red-l1'),
+        accfill-l2: map-get($pds-colors,'red-l2'),
+        accfill-l3: map-get($pds-colors,'red-l3'),
+        accfill-l4: map-get($pds-colors,'red-l4'),
+        accfill-l5: map-get($pds-colors,'red-l5')
     )
 );
 

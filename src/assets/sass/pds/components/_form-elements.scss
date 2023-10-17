@@ -171,8 +171,8 @@
 
     &.disabled {
         //color: lighten(var(--pds-color-black), nth($pds-lighten-scale, 5));
-        //background-color: lighten((var(--pds-color-creme)), nth($pds-lighten-scale, 1));
         color: var(--pds-color-black-20); // l5
+        //background-color: lighten((var(--pds-color-creme)), nth($pds-lighten-scale, 1));
         background-color: var(--pds-color-creme-80); // l1
         cursor: not-allowed;
     }

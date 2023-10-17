@@ -109,23 +109,28 @@
             @include media-from(md) {
                 &:hover,
                 &:focus {
-                    color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    //color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    color: var(--pds-color-fill-110);
                     &::after {
                         opacity: 1;
-                        background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                        //background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                        background-color: var(--pds-color-fill-110);
                     }
                 }
             }
             &.active {
-                color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                //color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                color: var(--pds-color-fill-110);
                 &::after {
-                    background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    //background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
+                    background-color: var(--pds-color-fill-110);
                 }
             }
         }
     }
 } 
 
+/*
 @each $theme in map-keys($pds-themes) {
     // the inherit class is only to make it more specific
     .pds-t-#{$theme} .pds-c-tabs-container,
@@ -152,12 +157,10 @@
         }
     } 
 }
-
+*/
 
 /*
-    this is a bug in pds
-    links inside a tab panel 
-    show up as tabs
+    show links inside tbs as links
 
     https://github.com/ProDemos/pds/issues/14
 */
