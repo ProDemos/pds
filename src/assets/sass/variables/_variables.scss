@@ -17,47 +17,6 @@ $font--bree-serif: "Bree Serif", sans-serif;
 
 $font--fira-sans: "Fira Sans", sans-serif;
 
-/*
-    Add colors by name, this will help for consistency and to remember which color to use (you can remember blue--deep-sky, but #00b4e6 is hard)
-    Names can be rendered with: https://www.color-blindness.com/color-name-hue/
-    pattern: hue--color-name
-    If a color contains it's hue in the name, leave the hue in the color name behind, for example:
-    #2A3FC9 = 'blue--cerulean-blue', but becomes: 'blue--cerulean'
-*/
-
-// use var(--pds-color-name) to get these colors easier
-
-$pds-color-stack: (
-    'black': #000,
-    'black--charcoal': #4a4a4a,           // core (text & headers)
-    'white': #fff,
-    'transparent': transparent,
-    'blue--deep-sky': #00b4e6,            // legacy
-    'blue--neon': #233fff,                // legacy 
-    'blue--persian': #1C32CC,             // legacy
-    'blue--pacific': #009FCB,             // core
-    'blue--dcerulean': #007FA2,
-    'green--vida-loca': #58a333,          // core 
-    'green--la-palma':#3D8D35,            // legacy
-    'green--bilbao': #34810E,
-    'grey--romance': #f5f0e9,             // core 
-    'grey--tea': #C5BBAF,
-    'orange--cinnabar': #eb5b25,          // core
-    'orange': #EDA300,
-    'orange--harley-davidson': #D83B14,   // legacy
-    'orange--grenadier': #D83B00,
-    'red--crimson': #d60d41,              // core 
-    'red--hollywood-cerise': #d7007e,     // core
-    'red--fire-brick':#A6172E,            // legacy
-    'red--carmine':#A6002B,
-    'red--jazzberry-jam': #B3116B,        // legacy
-    'pink--flirt': #B30069,
-    'violet--purple': #7D0062,
-    'violet--purple-dark': #98177c,       // core 
-    'yellow--my-sin': #fcc243,            // core
-    'yellow--sisal': #C7B8A4,             // legacy
-    'yellow--merino': #DFD7CC
-);
 
 // use var(--pds-color-name) to get these colors,
 // but also, these colors will appear in 
@@ -65,91 +24,89 @@ $pds-color-stack: (
 
 $pds-colors: (
 
-    'transparent': map-get($pds-color-stack,'transparent'),
-    'white': map-get($pds-color-stack,'white'),
+    'transparent': transparent,
+    'white': #fff,
 
-    'black': map-get($pds-color-stack,'black'),
-    'black-120': map-get($pds-color-stack,'black'),
-    'black-110': map-get($pds-color-stack,'black'),
-    'black-80': mix(map-get($pds-color-stack,'black'),white, 80%), // or lighten 10%, l2
-    'black-60': mix(map-get($pds-color-stack,'black'),white, 60%), // or lighten 20%, l3
-    'black-40': mix(map-get($pds-color-stack,'black'),white, 40%), // or lighten 30%, l4
-    'black-20': mix(map-get($pds-color-stack,'black'),white, 20%), // or lighten 40%, l5
+    'black': #000,
+    'black-120': #000,
+    'black-110': #000,
+    'black-80': #333,
+    'black-60': #666,
+    'black-40': #929292,
+    'black-20': #d8d8d8,
     
     // legacy 202306
-    'sand': map-get($pds-color-stack,'grey--romance'),
-    'sand-120': map-get($pds-color-stack,'yellow--sisal'),
-    'sand-110': map-get($pds-color-stack,'yellow--merino'),
-    'sand-80': mix(map-get($pds-color-stack,'grey--romance'),white, 80%), 
-    'sand-60': mix(map-get($pds-color-stack,'grey--romance'),white, 60%), 
-    'sand-40': mix(map-get($pds-color-stack,'grey--romance'),white, 40%), 
-    'sand-20': mix(map-get($pds-color-stack,'grey--romance'),white, 20%),
+    'sand': #f5f0e9,
+    'sand-120': #C5BBAF,
+    'sand-110': #DFD7CC,
+    'sand-80': #F7F3ED,
+    'sand-60': #F9F6F2,
+    'sand-40': #FBF9F6,
+    'sand-20': #FDFCFB,
 
-    'creme': map-get($pds-color-stack,'grey--romance'),
-    'creme-120': map-get($pds-color-stack,'grey--tea'),
-    'creme-110': map-get($pds-color-stack,'yellow--merino'),
-    'creme-80': mix(map-get($pds-color-stack,'grey--romance'),white, 80%), 
-    'creme-60': mix(map-get($pds-color-stack,'grey--romance'),white, 60%), 
-    'creme-40': mix(map-get($pds-color-stack,'grey--romance'),white, 40%), 
-    'creme-20': mix(map-get($pds-color-stack,'grey--romance'),white, 20%),
+    'creme': #f5f0e9,
+    'creme-120': #C5BBAF,
+    'creme-110': #DFD7CC,
+    'creme-80': #F7F3ED,
+    'creme-60': #F9F6F2,
+    'creme-40': #FBF9F6,
+    'creme-20': #FDFCFB,
 
-    'yellow': map-get($pds-color-stack,'yellow--my-sin'),   
-    'yellow-120': mix(map-get($pds-color-stack,'orange'),black, 80%), 
-    'yellow-110': map-get($pds-color-stack,'orange'),      
-    'yellow-80': mix(map-get($pds-color-stack,'yellow--my-sin'),white, 80%), 
-    'yellow-60': mix(map-get($pds-color-stack,'yellow--my-sin'),white, 60%), 
-    'yellow-40': mix(map-get($pds-color-stack,'yellow--my-sin'),white, 40%), 
-    'yellow-20': mix(map-get($pds-color-stack,'yellow--my-sin'),white, 20%), 
+    'yellow': #FCC243,   
+    'yellow-120': #EDA300,
+    'yellow-110': #EDA300,     
+    'yellow-80': #FDCE69, 
+    'yellow-60': #FDDA8E, 
+    'yellow-40': #FEE7B4, 
+    'yellow-20': #FEF3D9, 
 
-    'orange': map-get($pds-color-stack,'orange--cinnabar'),
-    'orange-120': mix(map-get($pds-color-stack,'orange--grenadier'),black, 80%), 
-    'orange-110': map-get($pds-color-stack,'orange--grenadier'),
-    'orange-80': mix(map-get($pds-color-stack,'orange--cinnabar'),white, 80%), 
-    'orange-60': mix(map-get($pds-color-stack,'orange--cinnabar'),white, 60%), 
-    'orange-40': mix(map-get($pds-color-stack,'orange--cinnabar'),white, 40%), 
-    'orange-20': mix(map-get($pds-color-stack,'orange--cinnabar'),white, 20%), 
+    'orange': #EB5B25,
+    'orange-120': #D83B00, 
+    'orange-110': #D83B00,
+    'orange-80': #EF7C51, 
+    'orange-60': #F39D7C, 
+    'orange-40': #F7BDA8, 
+    'orange-20': #FBDED3, 
 
-    'red': map-get($pds-color-stack,'red--crimson'),
-    'red-120': mix(map-get($pds-color-stack,'red--carmine'),black, 80%), 
-    'red-110': map-get($pds-color-stack,'red--carmine'),
-    'red-80': mix(map-get($pds-color-stack,'red--crimson'),white, 80%), 
-    'red-60': mix(map-get($pds-color-stack,'red--crimson'),white, 60%), 
-    'red-40': mix(map-get($pds-color-stack,'red--crimson'),white, 40%), 
-    'red-20': mix(map-get($pds-color-stack,'red--crimson'),white, 20%), 
+    'red': #D60D41,
+    'red-120': #A6002B, 
+    'red-110': #A6002B,
+    'red-80': #DE3D67, 
+    'red-60': #E66E8D, 
+    'red-40': #EF9EB3, 
+    'red-20': #F7CFD9, 
 
-    'pink': map-get($pds-color-stack,'red--hollywood-cerise'),
-    'pink-120': mix(map-get($pds-color-stack,'pink--flirt'),black, 80%), 
-    'pink-110': map-get($pds-color-stack,'pink--flirt'),
-    'pink-80': mix(map-get($pds-color-stack,'red--hollywood-cerise'),white, 80%), 
-    'pink-60': mix(map-get($pds-color-stack,'red--hollywood-cerise'),white, 60%), 
-    'pink-40': mix(map-get($pds-color-stack,'red--hollywood-cerise'),white, 40%), 
-    'pink-20': mix(map-get($pds-color-stack,'red--hollywood-cerise'),white, 20%), 
+    'pink': #D7007E,
+    'pink-120': #B30069, 
+    'pink-110': #B30069,
+    'pink-80': #DF3398, 
+    'pink-60': #E766B2, 
+    'pink-40': #EF99CB, 
+    'pink-20': #F7CCE5, 
 
-    'purple':map-get($pds-color-stack,'violet--purple-dark'),
-    'purple-120': mix(map-get($pds-color-stack,'violet--purple'),black, 80%), 
-    'purple-110': map-get($pds-color-stack,'violet--purple'),
-    'purple-80': mix(map-get($pds-color-stack,'violet--purple-dark'),white, 80%), 
-    'purple-60': mix(map-get($pds-color-stack,'violet--purple-dark'),white, 60%), 
-    'purple-40': mix(map-get($pds-color-stack,'violet--purple-dark'),white, 40%), 
-    'purple-20': mix(map-get($pds-color-stack,'violet--purple-dark'),white, 20%), 
+    'purple': #98177C,
+    'purple-120': #7D0062, 
+    'purple-110': #7D0062,
+    'purple-80': #AD4596, 
+    'purple-60': #C174B0, 
+    'purple-40': #D6A2CB, 
+    'purple-20': #EAD1E5, 
 
-    'blue': map-get($pds-color-stack,'blue--pacific'),
-    'blue-120': mix(map-get($pds-color-stack,'blue--dcerulean'), black, 80%), 
-    'blue-110': map-get($pds-color-stack,'blue--dcerulean'),
-    'blue-80': mix(map-get($pds-color-stack,'blue--pacific'), white, 80%), 
-    'blue-60': mix(map-get($pds-color-stack,'blue--pacific'), white, 60%), 
-    'blue-40': mix(map-get($pds-color-stack,'blue--pacific'), white, 40%), 
-    'blue-20': mix(map-get($pds-color-stack,'blue--pacific'), white, 20%),   
+    'blue': #009FCB,
+    'blue-120': #007FA2,
+    'blue-110': #007FA2,
+    'blue-80': #33B2D5, 
+    'blue-60': #66C5E0, 
+    'blue-40': #99D9EA,
+    'blue-20': #CCECF5,   
 
-    'green': map-get($pds-color-stack,'green--vida-loca'),
-    'green-120': mix(map-get($pds-color-stack,'green--bilbao'),black, 80%), 
-    'green-110': map-get($pds-color-stack,'green--bilbao'),
-    'green-80': mix(map-get($pds-color-stack,'green--vida-loca'),white, 80%), 
-    'green-60': mix(map-get($pds-color-stack,'green--vida-loca'),white, 60%), 
-    'green-40': mix(map-get($pds-color-stack,'green--vida-loca'),white, 40%), 
-    'green-20': mix(map-get($pds-color-stack,'green--vida-loca'),white, 20%),
-
-
+    'green': #58A333,
+    'green-120': #34810E, 
+    'green-110': #34810E,
+    'green-80': #79B55C, 
+    'green-60': #9BC885, 
+    'green-40': #BCDAAD, 
+    'green-20': #DEEDD6,
 
 );
 
