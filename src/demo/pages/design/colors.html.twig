@@ -50,25 +50,6 @@
                 {% endfor %}
                 
             </tr>
-            {% if maincolor != "white" %}
-                <tr>
-                    <!-- d, l colors demo -->
-                    <th class="pds-m-filled {{ maincolor }}">
-                        {% if maincolor == "black" %}
-                            <span class="pds-m-colored black-60">{{ maincolor }}</span>
-                        {% else %}
-                            {{ maincolor }}
-                        {% endif %}
-                    </th>
-                    <td class="pds-m-filled {{ maincolor~'-d2' }}">{{ maincolor~'-d2' }}</td>
-                    <td class="pds-m-filled {{ maincolor~'-d1' }}">{{ maincolor~'-d1' }}</td>
-                    <td class="pds-m-filled {{ maincolor~'-l2' }}">{{ maincolor~'-l2' }}</td>
-                    <td class="pds-m-filled {{ maincolor~'-l3' }}">{{ maincolor~'-l3' }}</td>
-                    <td class="pds-m-filled {{ maincolor~'-l4' }}">{{ maincolor~'-l4' }}</td>
-                    <td class="pds-m-filled {{ maincolor~'-l5' }}">{{ maincolor~'-l5' }}</td>
-
-                </tr>
-            {% endif %}
         {% endfor %}
     </table>
     <br><br>

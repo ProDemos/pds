@@ -185,7 +185,6 @@ Some variables are defined by scales, which helps in consistency for sizings and
 }
 ```
 
-Similar methods should be used for the `$pds-lighten-scale` and `$pds-darken-scale`.
 
 
 
