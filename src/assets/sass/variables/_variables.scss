@@ -334,8 +334,7 @@ $pds-lineheights: (
 $pds-lineheight: map-get($pds-lineheights, default) !default;
 
 
-// Provide a default spacing scale for consistent spacings
-// eg: top: pds-spacing(xs); = 12px
+// use `pds-spacing(m)` to get spacing m
 $pds-spacings: (
     none: 0,
     tiny: 4px,
