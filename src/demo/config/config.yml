@@ -18,6 +18,7 @@ colors:
         - black-60
         - black-40
         - black-20
+        - black-10
     creme:
         - creme-120
         - creme-110
@@ -25,6 +26,7 @@ colors:
         - creme-60 
         - creme-40 
         - creme-20
+        - creme-10
     yellow:
         - yellow-120  
         - yellow-110      
@@ -32,6 +34,7 @@ colors:
         - yellow-60
         - yellow-40
         - yellow-20
+        - yellow-10
     orange:
         - orange-120
         - orange-110
@@ -39,6 +42,7 @@ colors:
         - orange-60 
         - orange-40 
         - orange-20 
+        - orange-10 
     red:
         - red-120
         - red-110
@@ -46,6 +50,7 @@ colors:
         - red-60
         - red-40
         - red-20
+        - red-10
     pink:
         - pink-120
         - pink-110
@@ -53,6 +58,7 @@ colors:
         - pink-60
         - pink-40
         - pink-20
+        - pink-10
     purple:
         - purple-120
         - purple-110
@@ -60,13 +66,15 @@ colors:
         - purple-60
         - purple-40
         - purple-20
+        - purple-10
     blue:
         - blue-120
         - blue-110
         - blue-80 
         - blue-60 
         - blue-40 
-        - blue-20   
+        - blue-20
+        - blue-10   
     green:
         - green-120
         - green-110
@@ -74,6 +82,7 @@ colors:
         - green-60
         - green-40
         - green-20
+        - green-10
 
 themes:
         creme01 : Creme 01

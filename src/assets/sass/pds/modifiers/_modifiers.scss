@@ -1,5 +1,5 @@
 /*
-    pds-t- clases are themes
+    pds-t- classes are themes
     
     pds-m- classes are global modifiers,
 
@@ -45,7 +45,7 @@
         background-color: var(--pds-color-accfill);
         color: var(--pds-color-accstroke);
     }
-    @each $shade in 20,40,60,80,110,120 {
+    @each $shade in 10,20,40,60,80,110,120 {
         &.fill-#{$shade} {
             background-color: var(--pds-color-fill-#{$shade});
             color: var(--pds-color-stroke);
@@ -61,7 +61,7 @@
     &.accent {
         color: var(--pds-color-accfill);
     }
-    @each $shade in 20,40,60,80,110,120 {
+    @each $shade in 10,20,40,60,80,110,120 {
         &.fill-#{$shade} {
             color: var(--pds-color-fill-#{$shade});
         }
@@ -75,7 +75,7 @@
     &.accent {
         border-color: var(--pds-color-accfill);
     }
-    @each $shade in 20,40,60,80,110,120 {
+    @each $shade in 10,20,40,60,80,110,120 {
         &.fill-#{$shade} {
             border-color: var(--pds-color-fill-#{$shade});
         }

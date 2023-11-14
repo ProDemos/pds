@@ -6,22 +6,27 @@
 {% block body_intro %}
     <h2 >Colors</h2>
     <p>
-        The design system has a set of named colors, that you can access through pds 
-        modifier classes (<code>class="pds-m-foo blue"</code>)
-        or using css variables (<code>var(--pds-color-blue)</code>).
+        The design system has a set of named colors, that you can access in html through classes 
+        (<code>class="pds-m-foo blue"</code>)
+        or in css using variables (<code>var(--pds-color-blue)</code>).
     </p>
-    <br>
+    <p>
+        The available modifier classes involving color are 
+        <code>pds-m-filled</code>,
+        <code>pds-m-colored</code>,
+        <code>pds-m-bordered</code>,
+    </p>
     <p>
         The design system also has a set of theme colors, named
         <code>fill</code>, <code>stroke</code>, <code>accfill</code>, 
-        and <code>accstroke</code> , that you can access through pds 
-        modifier classes (<code>class="pds-m-foo fill-60"</code>)
-        or using css variables (<code>var(--pds-color-fill-60)</code>).
+        and <code>accstroke</code> , that you can access in html through
+         classes (<code>class="pds-m-foo fill-60"</code>)
+        or in css using variables (<code>var(--pds-color-fill-60)</code>).
         <br><br>
         The exact colors of these properties depend on the `theme` used
-        in that context. You can select a theme through pds
-        theme classes (<code>class="pds-t-blue01"</code>)
-        or using a sass mixin (<code>@include pds-theme(yellow01)</code>).        
+        in that context. You can select a theme in html through 
+        classes (<code>class="pds-t-blue01"</code>)
+        or in sass using a mixin (<code>@include pds-theme(yellow01)</code>).        
     </p>
 
 {% endblock %}
@@ -57,8 +62,8 @@
     <table width="100%" id="themetable">
         {% for theme , themename in themes %}
             <tr class="pds-t-{{ theme }}">
-                <td class="pds-m-filled" colspan="6">{{ themename }} (fill, stroke)</td>
-                <td class="pds-m-filled accent" colspan="6">{{ themename }} accent (accfill, accstroke)</td>
+                <td class="pds-m-filled" colspan="7">{{ themename }} (fill, stroke)</td>
+                <td class="pds-m-filled accent" colspan="7">{{ themename }} accent (accfill, accstroke)</td>
             </tr>
             <tr class="pds-t-{{ theme }}">
                 <td class="pds-m-filled fill-120">120</td>
@@ -67,12 +72,14 @@
                 <td class="pds-m-filled fill-60">60</td>
                 <td class="pds-m-filled fill-40">40</td>
                 <td class="pds-m-filled fill-20">20</td>
+                <td class="pds-m-filled fill-10">10</td>
                 <td class="pds-m-filled accent-120">120</td>
                 <td class="pds-m-filled accent-110">110</td>
                 <td class="pds-m-filled accent-80">80</td>
                 <td class="pds-m-filled accent-60">60</td>
                 <td class="pds-m-filled accent-40">40</td>
                 <td class="pds-m-filled accent-20">20</td>
+                <td class="pds-m-filled accent-10">10</td>
             </tr>
         {% endfor %}
     </table>

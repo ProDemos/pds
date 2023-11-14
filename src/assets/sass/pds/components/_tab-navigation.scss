@@ -109,20 +109,16 @@
             @include media-from(md) {
                 &:hover,
                 &:focus {
-                    //color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                     color: var(--pds-color-fill-110);
                     &::after {
                         opacity: 1;
-                        //background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                         background-color: var(--pds-color-fill-110);
                     }
                 }
             }
             &.active {
-                //color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                 color: var(--pds-color-fill-110);
                 &::after {
-                    //background-color: darken(pds-theme-color($pds-deftheme,'fill'), nth($pds-darken-scale, 1));
                     background-color: var(--pds-color-fill-110);
                 }
             }
@@ -130,34 +126,6 @@
     }
 } 
 
-/*
-@each $theme in map-keys($pds-themes) {
-    // the inherit class is only to make it more specific
-    .pds-t-#{$theme} .pds-c-tabs-container,
-    .pds-c-tabs-container.pds-t-#{$theme}:not(.inherit) {
-        ul, ol, .pds-c-tabs {
-            a, .pds-c-tabs-link {
-                @include media-from(md) {
-                    &:hover,
-                    &:focus {
-                        color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
-                        &::after {
-                            opacity: 1;
-                            background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
-                        }
-                    }
-                }
-                &.active {
-                    color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
-                    &::after {
-                        background-color: darken(pds-theme-color($theme,'fill'), nth($pds-darken-scale, 1));
-                    }
-                }
-            }
-        }
-    } 
-}
-*/
 
 /*
     show links inside tbs as links
