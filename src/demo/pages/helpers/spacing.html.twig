@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block head_title 'Spacing' %}
+
+
+{% block body_intro %}
+
+    <h1 >Spacing</h1>
+
+    <h2 >Function: pds-spacing</h2>
+    <p>
+        <b><code>pds-spacing(name)</code></b>
+        <dl>
+            <dt><code>name</code></dt>
+            <dd>refers to a spacing name, like 'huge'</dt>
+        </dl>
+
+    <hr>
+        Example:
+<xmp>
+h1 {
+    margin: pds-spacing(huge) pds-spacing(none);
+}
+</xmp>
+    
+    <hr>
+
+        <code>$pds-spacings</code> are defined as a map, like 
+<xmp>
+$pds-spacings: (
+    none: 0,
+    tiny: 4px,
+    xxs: 8px,
+    xs: 12px,
+    s: 16px,
+    default: 20px,
+    m: 24px,
+    l: 32px,
+    xl: 48px,
+    xxl: 56px,
+    huge: 64px
+);
+</xmp>
+        You can add your own spacing by adding entries to the map:
+<xmp>
+@use "sass:map";
+
+$pds-spacings: map.set($pds-spacings, header-large, 4rem);
+$pds-spacings: map.set($pds-spacings, footnote, .5rem);
+
+
+</xmp>
+    </p>
+
+   
+
+{% endblock %}
+

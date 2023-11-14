@@ -17,7 +17,7 @@
         padding: 0;
         list-style: none;
 
-        @include media-from(md) {
+        @include media-from(m) {
             display: flex;
             border-bottom: 1px solid var(--pds-color-black-20);
         }
@@ -28,13 +28,13 @@
             text-align: center;
             border-bottom: 1px solid var(--pds-color-black-20);
 
-            @include media-from(md) {
-                margin: 0 nth($pds-spacings, 3);
+            @include media-from(m) {
+                margin: 0 pds-spacing(xxs);
                 border: none;
             }
 
-            @include media-from(lg) {
-                margin: 0 nth($pds-spacings, 5);
+            @include media-from(l) {
+                margin: 0 pds-spacing(s);
             }
 
             &:first-child {
@@ -48,7 +48,7 @@
             a, .pds-c-tabs-link {
 
                 display: inline-block;
-                padding: nth($pds-spacings, 3) 0 nth($pds-spacings, 3);
+                padding: pds-spacing(xxs) 0 pds-spacing(xxs);
                 color: var(--pds-color-black);
                 font-family: $font--fira-sans;
                 font-size: pds-fontsize(xs);
@@ -61,9 +61,9 @@
                 transition: all 100ms ease-in-out;
                 cursor: pointer;
 
-                @include media-from(md) {
+                @include media-from(m) {
                     position: relative;
-                    padding: nth($pds-spacings, 2) 0 nth($pds-spacings, 5);
+                    padding: pds-spacing(tiny) 0 pds-spacing(s);
                 }
 
                 &::after {
@@ -91,7 +91,7 @@
     .pds-c-tabs-panels {
         
         .pds-c-tabs-panel {
-            padding: nth($pds-spacings, 5) 0;
+            padding: pds-spacing(s) 0;
             display:none;
             &.active {
                 display:block;
@@ -106,7 +106,7 @@
 .pds-c-tabs-container {
     ul, ol, .pds-c-tabs {
         a, .pds-c-tabs-link {
-            @include media-from(md) {
+            @include media-from(m) {
                 &:hover,
                 &:focus {
                     color: var(--pds-color-fill-110);

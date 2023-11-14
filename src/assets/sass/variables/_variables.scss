@@ -301,26 +301,9 @@ $pds-themes: (
 $pds-deftheme: 'blue01' !default;
 
 
-// Opacity values, used for color
-/*
-    $pds-lighten-scale: 0% 10% 20% 30% 40% 50%;
-    $pds-darken-scale: 5% 10%;
-*/
-/*
-    $pds-lighten-scale 0 = 0	= 0 
-    $pds-lighten-scale 1 = 10%	= 80
-    $pds-lighten-scale 2 = 20%	= 60
-    $pds-lighten-scale 3 = 30%	= 40
-    $pds-lighten-scale 4 = 40%	= 20
-    $pds-lighten-scale 5 = 50%	= ~
-
-    $pds-darken-scale 1 = 5%	= 110
-    $pds-lighten-scale 2 = 10%	= 120
-*/
-
-// Provide a default font-size list for a consistent typing scale
 // use `pds-fontsize(m)` to get fontsize m
 $pds-fontsizes: (
+  none: 0,
   tiny: 8px,
   xxs: 12px,
   xs: 14px,
@@ -334,26 +317,50 @@ $pds-fontsizes: (
 );
 $pds-fontsize: map-get($pds-fontsizes, default) !default;
 
-
+// use `pds-lineheight(m)` to get lineheight m
 $pds-lineheights: (
   none: 0,
+  tiny: 1,
+  xxs: 1,
   xs: 1,
   s: 1.25,
   default: 1.5,
   m: 1.75,
+  l: 1.75,
+  xl: 1.75,
+  xxl: 1.75,
+  huge: 1.75
 );
 $pds-lineheight: map-get($pds-lineheights, default) !default;
 
 
-// Provide a default spacing scale for consistent spacings
-// eg: top: nth($pds-spacings, 4); = 12px
-$pds-spacings: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
+// use `pds-spacing(m)` to get spacing m
+$pds-spacings: (
+    none: 0,
+    tiny: 4px,
+    xxs: 8px,
+    xs: 12px,
+    s: 16px,
+    default: 20px,
+    m: 24px,
+    l: 32px,
+    xl: 48px,
+    xxl: 56px,
+    huge: 64px
+);
+$pds-spacing: map-get($pds-spacings, default) !default;
 
-
+// use `pds-media(s,min|max) to get a @media query
 $pds-breakpoints: (
-    xs: 0,
-    sm: 550px,
-    md: 768px,
-    lg: 990px,
-    xl: 1200px
+    none:0, 
+    tiny: 280px,
+    xxs: 320px,
+    xs: 480px,
+    s: 576px, // was sm=550
+    default: 768px,
+    m: 768px, // was md
+    l: 992px, // was lg=990
+    xl: 1200px,
+    xxl: 1400px,
+    huge: 1600px,
 );

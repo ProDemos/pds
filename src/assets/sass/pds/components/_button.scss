@@ -13,7 +13,7 @@
 .pds-c-button {
     position: relative;
     display: inline-block;
-    padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
+    padding: pds-spacing(s) pds-spacing(default); // 16px 20px
     font-family: $font--fira-sans;
     font-size: pds-fontsize(m);
     font-weight: 500;
@@ -106,14 +106,14 @@
 
 
     &.large {
-        padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
+        padding: pds-spacing(s) pds-spacing(default); // 16px 20px
         font-size: pds-fontsize(m);
     }
 
 
 
     &.regular {
-        padding: nth($pds-spacings, 4) nth($pds-spacings, 5); // 12px 16px
+        padding: pds-spacing(xs) pds-spacing(s); // 12px 16px
         font-size: pds-fontsize(default);
         .pds-c-button-icon { font-size:1.11em; }
     }
@@ -121,7 +121,7 @@
 
 
     &.small {
-        padding: nth($pds-spacings, 3) nth($pds-spacings, 4); // 8px 12px
+        padding: pds-spacing(xxs) pds-spacing(xs); // 8px 12px
         font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size:1.25em; }
     }
@@ -130,7 +130,7 @@
 
     &.toggle {
         width: 100%;
-        padding: nth($pds-spacings, 3)  nth($pds-spacings, 4); // 8px 12px
+        padding: pds-spacing(xxs)  pds-spacing(xs); // 8px 12px
         font-size: pds-fontsize(s);
         text-align: center;
         border-style: solid;
@@ -145,7 +145,7 @@
 
 
     &.transparent {
-        padding: nth($pds-spacings, 3) 0; // 8px 0px
+        padding: pds-spacing(xxs) 0; // 8px 0px
         font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
         .pds-c-button-icon:not(svg).black {
@@ -189,11 +189,11 @@
         }
 
         .pds-c-button-label + .pds-c-button-icon  {
-            margin-left: nth($pds-spacings, 5);
+            margin-left: pds-spacing(s);
         }
         
         .pds-c-button-icon + .pds-c-button-label  {
-            margin-left: nth($pds-spacings, 5);
+            margin-left: pds-spacing(s);
         }
         
 
@@ -203,11 +203,11 @@
     &.transparent  {
         .pds-c-button-content {
             .pds-c-button-label + .pds-c-button-icon  {
-                margin-left: nth($pds-spacings, 3);
+                margin-left: pds-spacing(xxs);
             }
             
             .pds-c-button-icon + .pds-c-button-label  {
-                margin-left: nth($pds-spacings, 3);
+                margin-left: pds-spacing(xxs);
             }
         }
     }

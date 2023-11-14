@@ -9,7 +9,7 @@
 
     width: 100%;
     height: auto !important;
-    margin-bottom: nth($pds-spacings, 7);
+    margin-bottom: pds-spacing(m);
     color: var(--pds-color-black);
     border-spacing: 0;
 
@@ -26,7 +26,7 @@
         transition: background-color 0.1s ease-in-out;
 
         th  {
-            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            padding: pds-spacing(xxs) pds-spacing(xs);
             font-size: pds-fontsize(xs);
             font-weight: 500;
             text-align: left;
@@ -36,7 +36,7 @@
 
         td  {
 
-            padding: nth($pds-spacings, 3) nth($pds-spacings, 4);
+            padding: pds-spacing(xxs) pds-spacing(xs);
             font-size: pds-fontsize(xs);
         }
         
@@ -54,27 +54,27 @@
     // Responsive table, rotated on mobile
     &.responsive {
 
-        @include media-until(lg) {
+        @include media-until(l) {
             display: block;
         }
 
         thead,  tbody {
-            @include media-until(lg) {
+            @include media-until(l) {
                 display: block;
             }
         }
 
         tr {
-            @include media-until(lg) {
+            @include media-until(l) {
                 display: block;
                 margin: 0 0 1rem;
             }
             td, th {
-                @include media-until(lg) {
+                @include media-until(l) {
                     /* Behave  like a "row" */
                     position: relative;
                     display: block;
-                    padding: nth($pds-spacings, 3) nth($pds-spacings, 4) nth($pds-spacings, 3) 50%;
+                    padding: pds-spacing(xxs) pds-spacing(xs) pds-spacing(xxs) 50%;
                     border: none;
 
                     &::before {
@@ -82,10 +82,10 @@
                         position: absolute;
 
                         /* Top/left values mimic padding */
-                        top: nth($pds-spacings, 3);
-                        left: nth($pds-spacings, 4);
+                        top: pds-spacing(xxs);
+                        left: pds-spacing(xs);
                         width: 45%;
-                        padding-right: nth($pds-spacings, 4);
+                        padding-right: pds-spacing(xs);
                         white-space: nowrap;
                         font-weight: 500;
                     }
@@ -99,7 +99,7 @@
 
         thead {
             tr {
-                @include media-until(lg) {
+                @include media-until(l) {
                     position: absolute;
                     top: -9999px;
                     left: -9999px;

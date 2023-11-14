@@ -26,5 +26,19 @@
 	
 }
 
+@function pds-spacing($name) {
+	@if type-of($name) == string {
+		@if map-has-key($pds-spacings, $name) == false {
+			@error  "There is no spacing named `#{$name}`";
+		}
+		@return map-get($pds-spacings, $name);
+	} 
+	@if nth($pds-spacings, $name) == false {
+		@error  "There is no spacing numbered `#{$name}`";
+	}
+	@return nth(map-values($pds-spacings), $name);
+	
+}
+
 
 

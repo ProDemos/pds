@@ -48,6 +48,9 @@
             title: Typography
             uri: helpers/typography.html
         -
+            title: Spacing
+            uri: helpers/spacing.html
+        -
             title: Responsive
             uri: helpers/responsive.html
 -

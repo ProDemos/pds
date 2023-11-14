@@ -30,11 +30,11 @@
           content:" ";
           display: inline-block;
           vertical-align: middle;
-          @include media-until("md") {
+          @include media-until("m") {
             width:pds-fontsize(l);
             height:pds-fontsize(l);
           }
-          @include media-from("md") {
+          @include media-from("m") {
             width:pds-fontsize(xl);
             height:pds-fontsize(xl);
           }
@@ -117,11 +117,11 @@
         background-color: rgba(255,255,255, 0.1);
       }
 
-      @include media-until("md") {
+      @include media-until("m") {
         font-size: pds-fontsize(s);
       }
   
-      @include media-from("md") {
+      @include media-from("m") {
         font-size: pds-fontsize(m);
       }
     }
