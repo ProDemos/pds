@@ -28,8 +28,11 @@
 
 {% block body_content %}
 
+    <hr>
+
     {% for component in components.table %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+        <hr>
     {% endfor %}
 
     <div class="demo-component  demo-component-full">

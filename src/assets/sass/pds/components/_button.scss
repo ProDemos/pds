@@ -336,9 +336,9 @@
         }
 
         &.disabled, &:disabled {
-            color: var(--pds-color-black-10); 
+            color: var(--pds-color-black-60); 
             .pds-c-button-icon:not(svg) {
-                background-color: var(--pds-color-black-10); 
+                background-color: var(--pds-color-black-20); 
             }
         }
     }

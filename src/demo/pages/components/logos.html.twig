@@ -19,6 +19,8 @@
 {% endblock %}
 
 {% block body_content %}
+    <hr>
+
     {% for component in components.logo %}
         {% set logo = component.logo|merge({'directory': rooturi ~ '../../assets/images/logos' }) %}
         {% set component = component|merge({'logo': logo }) %}
