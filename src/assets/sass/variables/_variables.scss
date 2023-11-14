@@ -335,8 +335,21 @@ $pds-lineheight: map-get($pds-lineheights, default) !default;
 
 
 // Provide a default spacing scale for consistent spacings
-// eg: top: nth($pds-spacings, 4); = 12px
-$pds-spacings: 0 4px 8px 12px 16px 20px 24px 32px 48px 56px;
+// eg: top: pds-spacing(4); = 12px
+$pds-spacings: (
+    none: 0,
+    tine: 4px,
+    xxs: 8px,
+    xs: 12px,
+    s: 16px,
+    default: 20px,
+    m: 24px,
+    l: 32px,
+    xl: 48px,
+    xxl: 56px,
+    huge: 64px
+);
+$pds-spacing: map-get($pds-spacings, default) !default;
 
 // use `pds-media(s,min|max) to get a @media query
 $pds-breakpoints: (
