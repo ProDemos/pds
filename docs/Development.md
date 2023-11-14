@@ -181,7 +181,7 @@ The fonts are defined by name, which helps in consistency. A scale can be access
 Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
 ```
 .class {
-    margin-bottom: pds-spacing(2); // second in the array
+    margin-bottom: pds-spacing(tiny); // second in the array
 }
 ```
 

@@ -7,7 +7,7 @@
 .pds-c-list {
     width: 100%;
     height: auto !important;
-    margin-bottom: pds-spacing(7);
+    margin-bottom: pds-spacing(m);
     color: var(--pds-color-black);
     list-style-type: none;
   
@@ -17,7 +17,7 @@
     }
   
     .pds-c-list-header {
-      padding: pds-spacing(3) pds-spacing(4);
+      padding: pds-spacing(xxs) pds-spacing(xs);
       font-size: pds-fontsize(xs);
       font-weight: 500;
       text-align: left;
@@ -29,7 +29,7 @@
     .pds-c-list-item {
       transition: background-color 0.1s ease-in-out;
   
-      padding: pds-spacing(3) pds-spacing(4);
+      padding: pds-spacing(xxs) pds-spacing(xs);
       font-size: pds-fontsize(xs);
   
       &:nth-child(even):not(.pds-c-list-header) {

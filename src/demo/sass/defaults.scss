@@ -20,7 +20,7 @@
 
 .content-text {
     h1 {
-        margin-bottom: pds-spacing(5);
+        margin-bottom: pds-spacing(s);
         font-size: pds-fontsize(xl);
 
         @include pds-media(l,min) {
@@ -29,7 +29,7 @@
     }
 
     h2 {
-        margin-bottom: pds-spacing(4);
+        margin-bottom: pds-spacing(xs);
         font-size: pds-fontsize(l);
 
         @include pds-media(l,min) {
@@ -38,7 +38,7 @@
     }
 
     h3 {
-        margin-bottom: pds-spacing(3);
+        margin-bottom: pds-spacing(xxs);
         font-size: pds-fontsize(m);
 
         @include pds-media(l,min) {
@@ -47,7 +47,7 @@
     }
 
     h4 {
-        margin-bottom: pds-spacing(3);
+        margin-bottom: pds-spacing(xxs);
         font-size: pds-fontsize(default);
 
         @include pds-media(l,min) {
@@ -56,7 +56,7 @@
     }
 
     h5 {
-        margin-bottom: pds-spacing(3);
+        margin-bottom: pds-spacing(xxs);
         font-size: pds-fontsize(default);
 
         @include pds-media(l,min) {
@@ -65,7 +65,7 @@
     }
 
     h6 {
-        margin-bottom: pds-spacing(3);
+        margin-bottom: pds-spacing(xxs);
         font-size: pds-fontsize(default);
 
         @include pds-media(l,min) {
@@ -74,13 +74,13 @@
     }
 
     p {
-        margin-bottom: pds-spacing(7);
+        margin-bottom: pds-spacing(m);
         font-size: pds-fontsize(default);
         font-weight: 400;
         line-height: pds-lineheight(m);
 
         @include pds-media(l,min) {
-            margin-bottom: pds-spacing(8);
+            margin-bottom: pds-spacing(l);
         }
     }
 
@@ -114,12 +114,12 @@
 
     ul,
     ol {
-        margin: 0 0 pds-spacing(6) pds-spacing(5);
+        margin: 0 0 pds-spacing(default) pds-spacing(s);
         padding: 0;
     }
 
     li {
-        margin-bottom: pds-spacing(2);
+        margin-bottom: pds-spacing(tiny);
     }
     
 

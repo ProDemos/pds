@@ -9,7 +9,7 @@
 
     width: 100%;
     height: auto !important;
-    margin-bottom: pds-spacing(7);
+    margin-bottom: pds-spacing(m);
     color: var(--pds-color-black);
     border-spacing: 0;
 
@@ -26,7 +26,7 @@
         transition: background-color 0.1s ease-in-out;
 
         th  {
-            padding: pds-spacing(3) pds-spacing(4);
+            padding: pds-spacing(xxs) pds-spacing(xs);
             font-size: pds-fontsize(xs);
             font-weight: 500;
             text-align: left;
@@ -36,7 +36,7 @@
 
         td  {
 
-            padding: pds-spacing(3) pds-spacing(4);
+            padding: pds-spacing(xxs) pds-spacing(xs);
             font-size: pds-fontsize(xs);
         }
         
@@ -74,7 +74,7 @@
                     /* Behave  like a "row" */
                     position: relative;
                     display: block;
-                    padding: pds-spacing(3) pds-spacing(4) pds-spacing(3) 50%;
+                    padding: pds-spacing(xxs) pds-spacing(xs) pds-spacing(xxs) 50%;
                     border: none;
 
                     &::before {
@@ -82,10 +82,10 @@
                         position: absolute;
 
                         /* Top/left values mimic padding */
-                        top: pds-spacing(3);
-                        left: pds-spacing(4);
+                        top: pds-spacing(xxs);
+                        left: pds-spacing(xs);
                         width: 45%;
-                        padding-right: pds-spacing(4);
+                        padding-right: pds-spacing(xs);
                         white-space: nowrap;
                         font-weight: 500;
                     }
