@@ -150,12 +150,19 @@ to set another style from breakpoint LG (LarGe, probably something around 1024px
 
 
 ### Colors
-Colors are defined in `$pds-colors` as a map, but you can use the helpers `pds-color` and `pds-theme-color` to find the right color. Themes are defined in `$pds-themes`.`
+Colors are defined in `$pds-colors` as a map, and themes are defined in `$pds-themes`. On preprocessing,
+these are translated to css vars. You can use the helpers `pds-color` and `pds-theme-color` to find the right color,
+but you should preferably use their css equivalents, eg the below classes are the same:
 
 ```
-.class {
-    background-color: pds-color(red);
-    color: pds-theme-color(stroke); 
+.class1 {
+    background-color: pds-color(red-80);
+    color: pds-theme-color('blue01',stroke); 
+}
+.class2 {
+    background-color: var(--pds-color-red-80);
+    @include pds-theme('blue01');
+    color: var(--pds-color-stroke);
 }
 ```
 
@@ -178,7 +185,6 @@ Some variables are defined by scales, which helps in consistency for sizings and
 }
 ```
 
-Similar methods should be used for the `$pds-lighten-scale` and `$pds-darken-scale`.
 
 
 

@@ -14,7 +14,7 @@
     }
     xmp {
         padding:1em;
-        background-color: pds-color(creme-40);
+        background-color: var(--pds-color-creme-40);
     }
 }
 
@@ -95,34 +95,21 @@
     }
 
     a {
-        color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+        color:var(--pds-color-fill-110); 
         font-weight: 500;
         text-decoration: none;
         transition: color 0.15s ease-out;
         word-break: break-all;
 
         @include hover {
-            color: darken((pds-color(blue)), nth($pds-darken-scale, 1));
+            color:var(--pds-color-fill-110); 
             text-decoration: underline;
         }
 
         &:visited {
-            color: darken((pds-color(blue)), nth($pds-darken-scale, 2));
+            color:var(--pds-color-fill-120); 
         }
 
-        @each $theme in map-keys($pds-themes) {
-            &.pds-t-#{$theme}:not(.inherit) {
-                color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
-
-                @include hover {
-                    color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
-                }
-
-                &:visited {
-                    color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 1));
-                }
-            }
-        }
     }
 
     ul,
@@ -139,30 +126,42 @@
 }
 
 
-.body-main h1 {
-    margin-bottom: 3rem;
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: pds-color(black-80);
-    font-size: 1.9rem;
-}
+.body-main {
+    h1 {
+        margin-bottom: 3rem;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: var(--pds-color-black-80);
+        font-size: 1.9rem;
+    }
 
+    h2 {
+        margin-bottom: 3rem;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: var(--pds-color-black-80);
+        font-size: 1.5rem;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .body-intro {
 
+        ul {
+            padding:0 1em;
+        }
+        p {
+            margin-bottom:1em;
+        }
+    }
 
-.body-main h2 {
-//    text-transform: uppercase;
-    margin-bottom: 3rem;
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: pds-color(black-80);
-    font-size: 1.5rem;
-}
-
-
-
-.body-main h3 {
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    .body-content {
+        p {
+            margin-bottom:1em;
+        }
+    }
 }
 

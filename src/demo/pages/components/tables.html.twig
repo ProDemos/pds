@@ -8,14 +8,13 @@
 {% block body_intro %}
     <h2 >Tables</h2>
      <p>
-        There are two types of tables styled: responsive and non responsive. It's up to the layout of the page and the 
-        use of the table to decide which one to use.
+        There are two types of tables styled: responsive and non responsive. It's up to the layout 
+        of the page and the use of the table to decide which one to use.
         <br><br>
         Take a good look at the role- and data-attributes,
         they are an important part of the responsive and accessible behaviour, so don't forget them.
         The cells data-label is printed as table headers on each row on mobile.
     </p>
-    <br>
     <h3 >Elements and modifiers</h3>
     <ul>
         <li> .pds-c-table[.responsive]</li>
@@ -29,8 +28,11 @@
 
 {% block body_content %}
 
+    <hr>
+
     {% for component in components.table %}
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
+        <hr>
     {% endfor %}
 
     <div class="demo-component  demo-component-full">

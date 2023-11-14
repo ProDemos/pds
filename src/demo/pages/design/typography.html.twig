@@ -26,24 +26,25 @@
             <li><span  class="fira-sans-semibold">.fira-sans-semibold</span> (<code>font-family:"Bree Serif"; font-weight:600;</code>)</li>
             <li><span  class="fira-sans-bold">.fira-sans-bold</span> (<code>font-family:"Bree Serif"; font-weight:700;</code>)</li>
         </ul>
-    </p><br>
+    </p>
     <h3 >Font sizes</h3>
     <p>
         The design system has a set of named fontsizes that you can access 
         in sass (<code>@pds-fontsize(xs)</code>). <br>
         The names are 
         <code>tiny, xxs, xs, s, default, m, l, xl, xxl, huge</code>
-    </p><br>
+    </p>
     <h3 >Line heights</h3>
     <p>
         The design system has a set of named lineheights that you can access 
         in sass (<code>@pds-lineheight(xs)</code>). <br>
         The names are 
         <code>none, xs, s, default, m</code>
-    </p><br>
+    </p>
     <h3 >Colors</h3>
     <p>
-        The colors are grouped in themes that you can access through css themes (<code>pds-t-corporate</code>)
-        or using sass (<code>@pds-theme-color(variant01,stroke-accent)</code>).
-    </p><br>
+        The colors are defined in css which you can access in html 
+         (<code>class="pds-m-colored blue"</code>)
+        or using css variables (<code>color: var(--pds-color-blue)</code>).
+    </p>
 {% endblock %}

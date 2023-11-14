@@ -11,13 +11,16 @@
     <p>Input components are a bit simpler than buttons. Just add the default input class (c-input), 
     add the specific modifier class for the type of input (eg text) and optionally a theme (t-corporate). 
     Just as with buttons they can be disabled, just add the modifier class 'disabled'.</p>
-
-    <br>
+    
+    <p>
+    Forms use themes for their different colors. If you want a 
+    different colored form element, try a different theme on the form.
+    </p>
     <h3 >Elements and modifiers</h3>
     <ul>
         
         <li> .pds-c-input[.disabled][.transparent]</li>
-        <li> input[type=text|email|tel|password|number|date|time].pds-c-input[.valid|.invalid]</li>
+        <li> input[type=text|number|email|tel|password|number|date|time].pds-c-input[.valid|.invalid]</li>
         <li> textarea.pds-c-input[.full-width]</li>
         <li> select.pds-c-input[.full-width]</li>
         <li> label.pds-c-input-label</li>
@@ -27,22 +30,12 @@
         <li> .pds-c-progress[.pending|.ready|.error][.white] > .spinner</li>
     </ul>
 
-    <br>
-    <h2 >Themes</h2>
-
-    <form>
-        <select class="pds-c-input dropdown full-width"
-            onchange="document.body.className=this.options[this.selectedIndex].value">
-            <option value="" selected disabled>Select a theme ...</option>
-            {% for themeid,themename in themes %}
-                <option value="{{ themeid }}">{{ themename }}</option>
-            {% endfor %}
-        </select>
-    </form>
 
 {% endblock %}
 
 {% block body_content %}
+
+    <hr>
 
     <!-- custom elements -->
     <div class="demo-component">
@@ -63,7 +56,7 @@
         {{ ui.styleguide_component(component.styleguide_type, component, styleguide.outputs) }}
     {% endfor %}
 
-    <!-- custom elements -->
+    <!-- more custom elements -->
     
     <div class="demo-component  ">
         <div class="demo-component-view  ">
@@ -93,7 +86,7 @@
     </div>
 
     <div class="demo-component  ">
-        <div class="demo-component-view  pds-m-filled blue">
+        <div class="demo-component-view  pds-m-filled">
             <button class="pds-c-button small regular">Submit</button>
             <div class="pds-c-progress pending white">
                 <div class="spinner"></div>

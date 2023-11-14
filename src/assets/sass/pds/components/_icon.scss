@@ -22,7 +22,7 @@ i.pds-c-button-icon {
 	-ms-user-select: none;
     user-select: none;
     
-    background-color:pds-color(black);
+    background-color:var(--pds-color-black);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 
@@ -287,7 +287,7 @@ i.pds-c-button-icon {
         background-color: pds-theme-color($pds-deftheme,'fill');
     }
     &.accented {
-        background-color: pds-theme-color($pds-deftheme,'accent');
+        background-color: pds-theme-color($pds-deftheme,'accfill');
     }
     @each $themename in map-keys($pds-themes) {
         @at-root .pds-t-#{$themename} &.colored,
@@ -296,11 +296,11 @@ i.pds-c-button-icon {
         }
         @at-root .pds-t-#{$themename} &.accented,
         &.accented.pds-t-#{$themename}:not(.inherit) {
-            background-color: pds-theme-color($themename,'accent');
+            background-color: pds-theme-color($themename,'accfill');
         }
     }
 
-    // precolord icons 
+    // icons with fixed colors 
 
     &.check-green, // lgc202306,
     &.check-circle-solid-green {

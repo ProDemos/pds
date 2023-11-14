@@ -7,12 +7,20 @@
 
 {% block body_intro %}
    <h1 >Buttons</h1>
-    <p>List of all kind of buttons used throughout the project. Every button starts with a class (pds-c-button) that contains the shared behaviour. 
-            There are modifiers to describe the primary or secondary style, and the themes, when used, primarily consists of colors for the default, hover, and focus states. If you want a button to be present but not yet clickable, just add the disabled modifier class provided in the example.
-            The buttons with an icon contain an extra container with the SVG-code. Just choose a button that fits best to your situation, copy the code and alter to your needs.
+    <p>List of all kind of buttons used throughout the project. Every button starts 
+        with a class (pds-c-button) that contains the shared behaviour. 
+        There are modifiers to describe the primary or secondary style, 
+        and the themes, when used, primarily consists of colors for the default, 
+        hover, and focus states. If you want a button to be present but not yet 
+        clickable, just add the disabled modifier class provided in the example.
+        The buttons with an icon contain an extra container with the SVG-code. 
+        Just choose a button that fits best to your situation, copy 
+        the code and alter to your needs.
+        <br><br>
+        Buttons use themes for their different colors. If you want a 
+        different colored button, try a different theme on the button.
     </p>
     
-    <br>
     <h3 >Elements and modifiers</h3>
     <ul>
         <li> .pds-c-button[ .primary | .secondary ]</li>
@@ -25,23 +33,13 @@
         <li> .pds-c-button > .pds-c-button-content[.big] > [ svg.pds-c-button-icon + ] .pds-c-button-label [ .left | .right ]  [ + svg.pds-c-button-icon ] </li>
 
     </ul>
-    <br>
-    <h2 >Themes</h2>
-
-    <form>
-        <select class="pds-c-input dropdown full-width"
-            onchange="document.body.className=this.options[this.selectedIndex].value">
-            <option value="" selected disabled>Select a theme ...</option>
-            {% for themeid,themename in themes %}
-                <option value="{{ themeid }}">{{ themename }}</option>
-            {% endfor %}
-        </select>
-    </form>
 
     
 {% endblock %}
 
 {% block body_content %}
+
+    <hr>
 
     {% for component in components.button %}
 
