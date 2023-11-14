@@ -95,22 +95,19 @@
     }
 
     a {
-        //color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 1));
-        color:var(--pds-color-fill-110); // d1
+        color:var(--pds-color-fill-110); 
         font-weight: 500;
         text-decoration: none;
         transition: color 0.15s ease-out;
         word-break: break-all;
 
         @include hover {
-            // color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 1));
-            color:var(--pds-color-fill-110); // d1
+            color:var(--pds-color-fill-110); 
             text-decoration: underline;
         }
 
         &:visited {
-            //color: darken((var(--pds-color-blue)), nth($pds-darken-scale, 2));
-            color:var(--pds-color-fill-120); // d2
+            color:var(--pds-color-fill-120); 
         }
 
     }
@@ -139,7 +136,6 @@
     }
 
     h2 {
-    //    text-transform: uppercase;
         margin-bottom: 3rem;
         border-width: 0 0 1px;
         border-style: solid;
