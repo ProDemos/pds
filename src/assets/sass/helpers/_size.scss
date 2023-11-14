@@ -26,5 +26,19 @@
 	
 }
 
+@function pds-spacing($name) {
+	@if type-of($name) == string {
+		@if map-has-key($pds-spacings, $name) == false {
+			@error  "There is no lineheight named `#{$name}`";
+		}
+		@return map-get($pds-lineheights, $name);
+	} 
+	@if nth($pds-lineheights, $name) == false {
+		@error  "There is no lineheight numbered `#{$name}`";
+	}
+	@return nth(map-values($pds-lineheights), $name);
+	
+}
+
 
 

@@ -16,9 +16,9 @@
   }
   
   
-  /* lgc202306 */
+/* lgc202306 */
   
-  @mixin media-until($name, $breakpoints: $pds-breakpoints) {
+@mixin media-until($name, $breakpoints: $pds-breakpoints) {
     @if map-has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
