@@ -102,4 +102,74 @@
         }
     </style>
 
+
+    <h3 >Examples</h3>
+
+    <h4>Named colors through html</h4>
+
+    <xmp>
+<div class="pds-m-filled blue-80">BLUE 80</div>
+    </xmp>
+
+    <div class="demo-color-html pds-m-filled blue-80">BLUE 80</div>
+
+    <hr>
+    <h4>Named colors through css</h4>
+<xmp>
+.demo-color-css {
+    background-color: var(--pds-color-blue-80);
+}
+</xmp>
+    <div class="demo-color-css">BLUE 80</div>
+
+    <hr>
+    <h4>Named colors through sass</h4>
+<xmp>
+.demo-color-sass {
+    background-color:pds-color(blue-80);
+}
+</xmp>
+    <div class="demo-color-sass">BLUE 80</div>
+
+    <hr>
+    <h4>Theme colors through html</h4>
+<xmp>
+<div class="pds-t-blue01">
+  <div class="pds-m-filled">
+    <div class="pds-m-bordered accent-80">
+        FILL THEME, BORDER ACCENT-80
+    </div>
+  </div>
+</div>
+</xmp>
+    <div class="demo-theme-html pds-t-blue01">
+        <div class="pds-m-filled">
+            <div class="pds-m-bordered accent-80">
+                FILL THEME, BORDER ACCENT-80
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h4>Theme colors through css</h4>
+<xmp>
+background-color: var(--pds-color-fill);
+border-color: var(--pds-color-accfill-80);
+</xmp>
+    <div class="demo-theme-css pds-t-blue01">
+        FILL THEME, BORDER ACCENT-80
+    </div>
+
+    <hr>
+    <h4>Theme colors through sass</h4>
+<xmp>
+@include pds-theme(blue01);
+background-color: var(--pds-color-fill);
+border-color: var(--pds-color-accfill-80);
+</xmp>
+    <div class="demo-theme-sass">
+        FILL THEME, BORDER ACCENT-80
+    </div>
+
+
 {% endblock %}
