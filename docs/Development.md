@@ -97,15 +97,18 @@ packages again and attaches them to the release.
 
 # Expand - adding new elements
 
-To create a new element, say pds-c-foo
+To create a new component, say pds-c-foo
   - write your sass in `src/assets/sass/pds/components/_foo.scss`
   - add your stylesheet to `src/assets/sass/main.scss`
-  - write a demo twig template in `src/assets/twig/components/foo/foo.twig`
-  - add a config for template to `src/assets/twig/pds/components/foo/_styleguide.yml`
+  - optionally write a demo twig template in `src/assets/twig/components/foo/foo.twig`
+  - optionally add a config for that template to `src/demo/config/components/foo.yml`
 
 and compile the sass and twig as described above.
 
-Your element should now appear in the styleguide in `build/demo`
+If you added twig and a config, your component 
+should now appear in the styleguide in `build/demo`.
+Otherwise, manually edit a page in `src/demo/pages` 
+to demo your new element.
 
 ## Conventions
 
@@ -139,25 +142,27 @@ When breakpoints are defined, they can be used inline in the class to target spe
 
 Just use:
 ```
-@include media-from(lg) {
-    font-size: nth($pds-font-sizes, 2);
+@include pds-media(lg,min) {
+    font-size: pds-fontsize(l);
 }
 ```
 to set another style from breakpoint LG (LarGe, probably something around 1024px)
 
 
-Three types can be used:
- - `@include media-from(lg){ ... }` \ Which means: 'Use this style up from Large screens'
- - `@include media-between(md, lg) { ... }`  \ Which means: 'use this style between Medium and Large screens'
- - `@include media-until(lg) { ... }` \ Which means: 'use this style until Large screens'
-
 ### Colors
-Colors are defined in `$pds-colors` as a map, but you can use the helpers `pds-color` and `pds-theme-color` to find the right color. Themes are defined in `$pds-themes`.`
+Colors are defined in `$pds-colors` as a map, and themes are defined in `$pds-themes`. On preprocessing,
+these are translated to css vars. You can use the helpers `pds-color` and `pds-theme-color` to find the right color,
+but you should preferably use their css equivalents, eg the below classes are the same:
 
 ```
-.class {
-    background-color: pds-color(red);
-    color: pds-theme-color(stroke); 
+.class1 {
+    background-color: pds-color(red-80);
+    color: pds-theme-color('blue01',stroke); 
+}
+.class2 {
+    background-color: var(--pds-color-red-80);
+    @include pds-theme('blue01');
+    color: var(--pds-color-stroke);
 }
 ```
 
@@ -176,11 +181,10 @@ The fonts are defined by name, which helps in consistency. A scale can be access
 Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
 ```
 .class {
-    margin-bottom: nth($pds-spacings, 2); // second in the array
+    margin-bottom: pds-spacing(tiny); // second in the array
 }
 ```
 
-Similar methods should be used for the `$pds-lighten-scale` and `$pds-darken-scale`.
 
 
 

@@ -13,7 +13,7 @@
 .pds-c-button {
     position: relative;
     display: inline-block;
-    padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
+    padding: pds-spacing(s) pds-spacing(default); // 16px 20px
     font-family: $font--fira-sans;
     font-size: pds-fontsize(m);
     font-weight: 500;
@@ -106,14 +106,14 @@
 
 
     &.large {
-        padding: nth($pds-spacings, 5) nth($pds-spacings, 6); // 16px 20px
+        padding: pds-spacing(s) pds-spacing(default); // 16px 20px
         font-size: pds-fontsize(m);
     }
 
 
 
     &.regular {
-        padding: nth($pds-spacings, 4) nth($pds-spacings, 5); // 12px 16px
+        padding: pds-spacing(xs) pds-spacing(s); // 12px 16px
         font-size: pds-fontsize(default);
         .pds-c-button-icon { font-size:1.11em; }
     }
@@ -121,7 +121,7 @@
 
 
     &.small {
-        padding: nth($pds-spacings, 3) nth($pds-spacings, 4); // 8px 12px
+        padding: pds-spacing(xxs) pds-spacing(xs); // 8px 12px
         font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size:1.25em; }
     }
@@ -130,22 +130,22 @@
 
     &.toggle {
         width: 100%;
-        padding: nth($pds-spacings, 3)  nth($pds-spacings, 4); // 8px 12px
+        padding: pds-spacing(xxs)  pds-spacing(xs); // 8px 12px
         font-size: pds-fontsize(s);
         text-align: center;
         border-style: solid;
         border-width: 2px;
         &.on {
-            color:pds-theme-color($pds-deftheme,'stroke-accent');
-            background-color:pds-theme-color($pds-deftheme,'fill-accent');
-            border-color:pds-theme-color($pds-deftheme,'fill-accent');
+            color:var(--pds-color-accstroke);
+            background-color:var(--pds-color-accfill);
+            border-color:var(--pds-color-accfill);
         }
     }
 
 
 
     &.transparent {
-        padding: nth($pds-spacings, 3) 0; // 8px 0px
+        padding: pds-spacing(xxs) 0; // 8px 0px
         font-size: pds-fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
         .pds-c-button-icon:not(svg).black {
@@ -189,11 +189,11 @@
         }
 
         .pds-c-button-label + .pds-c-button-icon  {
-            margin-left: nth($pds-spacings, 5);
+            margin-left: pds-spacing(s);
         }
         
         .pds-c-button-icon + .pds-c-button-label  {
-            margin-left: nth($pds-spacings, 5);
+            margin-left: pds-spacing(s);
         }
         
 
@@ -203,11 +203,11 @@
     &.transparent  {
         .pds-c-button-content {
             .pds-c-button-label + .pds-c-button-icon  {
-                margin-left: nth($pds-spacings, 3);
+                margin-left: pds-spacing(xxs);
             }
             
             .pds-c-button-icon + .pds-c-button-label  {
-                margin-left: nth($pds-spacings, 3);
+                margin-left: pds-spacing(xxs);
             }
         }
     }
@@ -218,24 +218,22 @@
 
 /* theming */
 
-@mixin pds-button-theme( $theme : $pds-deftheme ) {
-    
-    // @debug 'theme' $theme;
 
-    color: pds-color(white);
-    .pds-c-button-icon:not(svg) { background-color: pds-color(white); }
+.pds-c-button {
 
-    background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
-    
+    color: var(--pds-color-white);
+    .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
+
+    background-color: var(--pds-color-fill-110);
 
     @include hover {
-        background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 2));
+        background-color: var(--pds-color-fill-120);
     }
 
     &.primary {
         &::before,
         &::after {
-            background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 3));
+            background-color: var(--pds-color-fill-40);
         }
 
         // Hover styles, but only when the button is not disabled
@@ -244,7 +242,7 @@
                 &.primary {
                     &::before,
                     &::after {
-                        background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 2));
+                        background-color: var(--pds-color-fill-60);
                     }
                 }
             }
@@ -254,31 +252,30 @@
             &.primary {
                 &::before,
                 &::after {
-                    background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 1));
+                    background-color: var(--pds-color-fill-80);
                 }
             }
         }
     }
 
     &.accent {
-        background-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+        background-color: var(--pds-color-accfill-110);
 
         &.primary {
             &::before,
             &::after {
-                background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 3));
+                background-color: var(--pds-color-accfill-40);
             }
         }
 
         // Hover styles, but only when the button is not disabled
         &:not(.disabled, :disabled) {
             @include hover {
-                background-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 2));
-
+                background-color: var(--pds-color-accfill-120); // ?
                 &.primary {
                     &::before,
                     &::after {
-                        background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 2));
+                        background-color: var(--pds-color-accfill-60);
                     }
                 }
             }
@@ -288,84 +285,72 @@
             &.primary {
                 &::before,
                 &::after {
-                    background-color: lighten(pds-theme-color($theme,accent), nth($pds-lighten-scale, 1));
+                    background-color: var(--pds-color-accfill-80);
                 }
             }
         }
         &.toggle {
             &.on {
-                color:pds-theme-color($theme,'stroke-accent');
-                background-color:pds-theme-color($theme,'fill-accent');
-                border-color:pds-theme-color($theme,'fill-accent');
+                color: var(--pds-color-accstroke);
+                background-color: var(--pds-color-accfill);
+                border-color: var(--pds-color-accfill);
             }
         }
     }
 
     &.disabled, &:disabled {
-        background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 4));
+        background-color: var(--pds-color-fill-40); // should be 20
 
         &.primary {
             &::before,
             &::after {
-                background-color: lighten(pds-theme-color($theme,fill), nth($pds-lighten-scale, 5));
+                background-color: var(--pds-color-fill-20); // should be 10 ..
             }
         }
     }
 
     &.toggle {
 
-        color: pds-color(black);
-        .pds-c-button-icon:not(svg) { background-color: pds-color(black); }
+        color: var(--pds-color-black);
+        .pds-c-button-icon:not(svg) { background-color: var(--pds-color-black); }
 
-        border-color: pds-color(sand);
-        background-color: pds-color(sand);
+        border-color: var(--pds-color-creme);
+        background-color: var(--pds-color-creme);
 
         &:not(.disabled, :disabled) {
             @include hover {
-                border-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
-                background-color: darken(pds-color(sand), nth($pds-darken-scale, 2));
+                border-color: var(--pds-color-creme-120);
+                background-color: var(--pds-color-creme-120);
             }
         }
 
         &:active:not(.disabled, :disabled) {
-            color: pds-color(white);
-            .pds-c-button-icon:not(svg) { background-color: pds-color(white); }
+            color: var(--pds-color-white);
+            .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
 
-            background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 1));
+            background-color: var(--pds-color-fill-110);
         }
 
         &:focus:not(.disabled, :disabled) {
-            border-color: darken(pds-theme-color($theme,accent), nth($pds-darken-scale, 1));
+            border-color: var(--pds-color-accfill-110);
         }
 
         &.disabled, &:disabled {
-            color: lighten(pds-color(black), nth($pds-lighten-scale, 5));
-            .pds-c-button-icon:not(svg) { background-color: lighten(pds-color(black), nth($pds-lighten-scale, 5)); }
+            color: var(--pds-color-black-60); 
+            .pds-c-button-icon:not(svg) {
+                background-color: var(--pds-color-black-20); 
+            }
         }
     }
 
     &.transparent {
-        color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 2));
-        .pds-c-button-icon:not(svg) { background-color: darken(pds-theme-color($theme,fill), nth($pds-darken-scale, 2)); }
-        background-color: pds-color(transparent);
+        color: var(--pds-color-fill-120);
+        .pds-c-button-icon:not(svg) { 
+            background-color: var(--pds-color-fill-120); 
+        }
+        background-color: var(--pds-color-transparent);
     }
 }
-
-
-.pds-c-button {
-    @include pds-button-theme($pds-deftheme);
-}
-
-
-@each $theme in map-keys($pds-themes) {
-    .pds-t-#{$theme} .pds-c-button,
-    .pds-c-button.pds-t-#{$theme}:not(.inherit) {
-        @include pds-button-theme($theme);
-    }
-}
-
-
-
 
 
 

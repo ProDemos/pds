@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="{% block html_class '' %}" {% block html_attributes '' %}>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ styleguide.title ~ ' - '}}
+            {%- block head_title %}
+                {%- if name|default %} - {{ name|capitalize }}{% endif -%}
+            {% endblock -%}
+        </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            function selectTheme(theme) {
+                if (!theme) {
+                    theme = sessionStorage.getItem("theme");
+                }
+                if (theme) {
+                    document.body.className=theme;
+                    sessionStorage.setItem("theme", theme);
+                    let $selector = document.querySelector('#theme-selector select');
+                    if ($selector) {
+                        $selector.selectedIndex = [...$selector.children].findIndex(
+                            o=>o.value===theme
+                        );
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", function(event) {
+                selectTheme();
+            });
+        </script>
+        <style type="text/css">
+            a { color: black; }
+        </style>
+        <link rel="stylesheet" href="../css/main.css">
+
+        
+
+        
+    </head>
+
+    <body class="{% block body_class '' %}" {% block body_attributes '' %}>
+        {% block styleguide_top %}
+        {% include 'top.html.twig' %}
+    {% endblock %}
+
+        <main class="page-body">
+            {% block styleguide_aside %}
+                {% include 'sidebar.html.twig' %}
+            {% endblock %}
+
+            <div class="body-main">
+                <div class="body-intro">
+                    {% block body_intro %}
+                        <h1 >{{ name|capitalize }}</h1>
+                    {% endblock %}
+                </div>
+
+                <div class="body-content">
+                    {% block body_content '' %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

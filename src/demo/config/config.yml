@@ -1,31 +1,24 @@
+# PDS demo/config/config.yml
+# General config file for the demo site
 version : 1.0
 styleguide:
-    title : Prodemos Design System
-    brand: Zicht
+    title : ProDemos Design System
+    brand: ProDemos
     outputs: 
         - example
         # - twig
         - html
-    assets: 
-        -
-            type: 'stylesheet'
-            path: '../../assets/css/reset.css'
-        -
-            type: 'stylesheet'
-            path: '../../assets/css/main.css'
-        -
-            type: 'stylesheet'
-            path: 'css/prodemos.css'
 colors:
     # should be defined in assets/sass/variables/overrides
     white:
     black:
-        - black
-        - black
+        - black-120
+        - black-110
         - black-80
         - black-60
         - black-40
         - black-20
+        - black-10
     creme:
         - creme-120
         - creme-110
@@ -33,74 +26,83 @@ colors:
         - creme-60 
         - creme-40 
         - creme-20
+        - creme-10
     yellow:
-        - black
+        - yellow-120  
         - yellow-110      
         - yellow-80
         - yellow-60
         - yellow-40
         - yellow-20
+        - yellow-10
     orange:
-        - black
+        - orange-120
         - orange-110
         - orange-80 
         - orange-60 
         - orange-40 
         - orange-20 
+        - orange-10 
     red:
-        - black
+        - red-120
         - red-110
         - red-80
         - red-60
         - red-40
         - red-20
+        - red-10
     pink:
-        - black
+        - pink-120
         - pink-110
         - pink-80
         - pink-60
         - pink-40
         - pink-20
+        - pink-10
     purple:
-        - black
+        - purple-120
         - purple-110
         - purple-80
         - purple-60
         - purple-40
         - purple-20
+        - purple-10
     blue:
-        - black
+        - blue-120
         - blue-110
         - blue-80 
         - blue-60 
         - blue-40 
-        - blue-20   
+        - blue-20
+        - blue-10   
     green:
-        - black
+        - green-120
         - green-110
         - green-80
         - green-60
         - green-40
         - green-20
-   
-scopes:
-        pds-s-content : "Content" 
+        - green-10
 
 themes:
-        pds-t-public : Public
-        pds-t-corporate : Corporate
-        pds-t-variant01 : Variant01 
-        pds-t-variant02 : Variant02 
-        pds-t-variant03 : Variant03 
-        pds-t-variant04 : Variant04 
-        pds-t-variant05 : Variant05 
-        pds-t-variant06 : Variant06 
+        creme01 : Creme 01
+        yellow01 : Yellow 01 
+        orange01 : Orange 01
+        red01 : Red 01
+        pink01 : Pink 01 
+        purple01 : Purple 01 
+        blue01 : Blue 01
+        green01 : Green 01
+
+components:
+    # will be read from the demo/config/components/ directory
+    # by the compile script
 
 images:
     # will be read from the assets/images/ directory
-    # by the build script
+    # by the compile script
     
 icons:
     # will be read from the assets/images/icons directory
-    # by the build script
+    # by the compile script
 

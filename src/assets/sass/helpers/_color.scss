@@ -1,32 +1,28 @@
-
-
+@mixin pds-theme($name) {
+    @each $propname, $propval in map-get($pds-themes,$name) {
+        --pds-color-#{$propname}: #{$propval};
+    }    
+}
 
 @function pds-color($name) {
     @if map-has-key($pds-colors, $name) == false {
-        @if map-has-key($pds-color-stack, $name) == false {
-            @error  "There is no color named `#{$name}`";
+        $thememap : map-get($pds-themes, $pds-deftheme);
+        @if map-has-key($thememap, $name) == false {
+            @error  "There is no color or theme property named `#{$name}`";
         }
-        @return map-get($pds-color-stack, $name);
     }
-    @return map-get($pds-colors, $name);
+    @return var(--pds-color-#{$name});
 }
 
-@function pds-theme-color($theme : $pds-deftheme ,$key : fill) {
+@function pds-theme-color($theme : $pds-deftheme ,$prop : fill) {
     @if map-has-key($pds-themes, $theme) == false {
         @error
             "There is no theme named `#{$theme}` in `$pds-themes`";
     }
-
-    $mapkey : $key;
-    @if ($key == 'fill')   { $mapkey: 'fill-color'; }
-    @if ($key == 'color')  { $mapkey: 'fill-color'; }
-    @if ($key == 'accent') { $mapkey: 'fill-accent'; }
-    @if ($key == 'stroke') { $mapkey: 'stroke-color'; }
-
     $thememap : map-get($pds-themes, $theme);
-    @if map-has-key($thememap, $mapkey) == false {
+    @if map-has-key($thememap, $prop) == false {
         @error
-            "There is no value named `#{$mapkey}` in theme `#{$theme}`";
+            "There is no property named `#{$prop}` in theme `#{$theme}`";
     }
-    @return map-get($thememap,$mapkey);
+    @return map-get($thememap,$prop);
 }

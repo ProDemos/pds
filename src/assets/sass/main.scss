@@ -17,15 +17,14 @@
 @import "base/web-font--fira-sans";
 
 //
-// Scopes
-//
-@import "pds/scopes/content";
-
-//
 // Themes
 //
 @import "pds/themes/themes";
 
+//
+// Modifiers
+//
+@import "pds/modifiers/modifiers";
 
 //
 // Components
@@ -40,8 +39,5 @@
 @import "pds/components/menu-navigation";
 @import "pds/components/table";
 
-//
-// Modifiers
-//
-@import "pds/modifiers/modifiers";
+
 

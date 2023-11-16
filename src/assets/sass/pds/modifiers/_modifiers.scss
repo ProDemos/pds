@@ -1,91 +1,87 @@
 /*
-    m- classes are global modifiers,
-    translating values from sass/variables/
-    straight to css
+    pds-t- classes are themes
+    
+    pds-m- classes are global modifiers,
 
-    m-colored.black
-    m-filled.red.lighten3
-    m-bordered.corporate.accent.darken2
+    pds-t-blue01
+    pds-m-colored.black
+    pds-m-filled.red.lighten3
+    pds- m-bordered.corporate.accent.darken2
     etc
 
 */
 
+
+// named colors
+
 @each $cname, $cvalue in $pds-colors {
-    .pds-m-filled.#{""+$cname} {
-        background-color: $cvalue;
+    .pds-m-filled.#{$cname} {
+        background-color: var(--pds-color-#{$cname});
     }
-    .pds-m-colored.#{""+$cname} {
-        color: $cvalue;
+    .pds-m-colored.#{$cname} {
+        color: var(--pds-color-#{$cname});
     }
-    .pds-m-bordered.#{""+$cname} {
-        border-color: $cvalue;
+    .pds-m-bordered.#{$cname} {
+        border-color: var(--pds-color-#{$cname});
     }
 }
 
-// default theming 
+// theme selector
 
+@each $themename, $thememap in $pds-themes {
+    :root .pds-t-#{$themename} {
+        @each $propname, $propval in $thememap {
+            --pds-color-#{$propname}: #{$propval};
+        }
+    }
+}
+
+// themed colors
 
 .pds-m-filled {
-    background-color: pds-theme-color($pds-deftheme,'fill-color');
-    color:pds-theme-color($pds-deftheme,'stroke-color');
+    background-color: var(--pds-color-fill);
+    color:var(--pds-color-stroke);
     &.accent {
-        background-color: pds-theme-color($pds-deftheme,'fill-accent');
-        color:pds-theme-color($pds-deftheme,'stroke-accent');
+        background-color: var(--pds-color-accfill);
+        color: var(--pds-color-accstroke);
+    }
+    @each $shade in 10,20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            background-color: var(--pds-color-fill-#{$shade});
+            color: var(--pds-color-stroke);
+        }
+        &.accent-#{$shade} {
+            background-color: var(--pds-color-accfill-#{$shade});
+            color: var(--pds-color-accstroke);
+        }
     }
 }
 .pds-m-colored {
-    color: pds-theme-color($pds-deftheme,'fill-color');
+    color: var(--pds-color-fill);
     &.accent {
-        color: pds-theme-color($pds-deftheme,'fill-accent');
+        color: var(--pds-color-accfill);
+    }
+    @each $shade in 10,20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            color: var(--pds-color-fill-#{$shade});
+        }
+        &.accent-#{$shade} {
+            color: var(--pds-color-accfill-#{$shade});
+        }
     }
 }
 .pds-m-bordered {
-    border-color: pds-theme-color($pds-deftheme,'fill-color');
+    border-color: var(--pds-color-fill);
     &.accent {
-        border-color: pds-theme-color($pds-deftheme,'fill-accent');
+        border-color: var(--pds-color-accfill);
     }
-}
-
-// themes
-
-@each $themename in map-keys($pds-themes) {
-    
-    
-    @each $cname, $cvalue in $pds-colors {
-		@at-root .pds-t-#{$themename} .pds-m-filled.#{""+$cname} {
-			background-color: $cvalue;
-		}
-		@at-root .pds-t-#{$themename} .pds-m-colored.#{""+$cname} {
-			color: $cvalue;
-		}
-		@at-root .pds-t-#{$themename} .pds-m-bordered.#{""+$cname} {
-			border-color: $cvalue;
-		}
-	}
-
-	$fillcolor: pds-theme-color($themename,'fill-color');
-    $acccolor: pds-theme-color($themename,'fill-accent');
-    @at-root .pds-t-#{$themename} .pds-m-filled,
-    .pds-m-filled.pds-t-#{$themename} {
-        background-color: $fillcolor;
-        color:pds-theme-color($themename,'stroke-color');
-        &.accent {
-            background-color: $acccolor;
-            color:pds-theme-color($themename,'stroke-accent');
+    @each $shade in 10,20,40,60,80,110,120 {
+        &.fill-#{$shade} {
+            border-color: var(--pds-color-fill-#{$shade});
         }
-    }
-    @at-root .pds-t-#{$themename} .pds-m-colored,
-    .pds-m-colored.pds-t-#{$themename} {
-        color: $fillcolor;
-        &.accent {
-            color: $acccolor;
-        }
-    }
-    @at-root .pds-t-#{$themename} .pds-m-bordered,
-    .pds-m-bordered.pds-t-#{$themename} {
-        border-color: $fillcolor;
-        &.accent {
-            border-color: $acccolor;
+        &.accent-#{$shade} {
+            border-color: var(--pds-color-accfill-#{$shade});
         }
     }
 }
+

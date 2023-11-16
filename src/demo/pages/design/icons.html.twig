@@ -1,10 +1,10 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/styleguide.html.twig' as styleguide %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
-{% block head_title 'Icons - Styleguide' %}
+{% block head_title 'Icons' %}
 
-{% block component_intro %}
-    <h2 class="c-copy--h2">Favicons</h2>
+{% block body_intro %}
+    <h2 >Favicons</h2>
     <p>
         Favicons in are supplied for your convenience. In various colors,
         these files are available in ../assets/images/favicons/[color]/:
@@ -18,16 +18,16 @@
         </ul>
     </p>
     <br><br>
-    <div class="c-icon-list">
+    <div class="demo-icons">
         {% for color in ['black','blue','green','orange','pink','purple','red','yellow'] %}
-            <div class="c-icon-list__item">
+            <div class="demo-icon">
                 <img src="/assets/images/favicons/{{ color }}/favicon.ico">
-                <p class="c-icon-list__item__name">.../{{ color }}/favicon.ico</p>
+                <p class="demo-icon-name">.../{{ color }}/favicon.ico</p>
             </div>
         {% endfor %}
     </div>
 
-    <h2 class="c-copy--h2">Other icons</h2>
+    <h2 >Other icons</h2>
     <p>
         The icons for buttons are based on SVG with a canvas size of 24 x 24, and when you create new icons the 
         line art is preferably max 22 x 22 px. If you stick to these numbers the icons will render consistently. 
@@ -43,9 +43,20 @@
 {% endblock %}
 
 
-{% block component_list %}
+{% block body_content %}
     <div>
         {# 'icons' is read from assets/images/icons directory by build script #}
-        {{ styleguide.icons(icons,rooturi) }}
+        <div class="demo-icons">
+            {% for i in icons %}
+                <div class="demo-icon">
+                    {{ ui.svg(i, {
+                        directory: rooturi ~ '/assets/images/icons',
+                        width: 48,
+                        height: 48,
+                    }) }}
+                    <p class="demo-icon-name">{{ i }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

@@ -1,15 +1,15 @@
-.c-img-list {
+.demo-images {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	grid-gap: 2rem;
 }
 
-.c-img-list__item {
+.demo-image {
 	text-align: center;
 }
 
-.c-img-list__item__name {
+.demo-image-name {
 	margin-bottom: 2rem;
 	font-size: 0.75rem;
-	color: $grey--charcoal;
+	color: var(--pds-color-black-80);
 }

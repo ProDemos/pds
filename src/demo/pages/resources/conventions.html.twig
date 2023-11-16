@@ -1,16 +1,16 @@
-{% extends 'styleguide/component.html.twig' %}
-{% import 'macros/components.html.twig' as ui %}
+{% extends 'base.html.twig' %}
+{% import 'macros.html.twig' as ui %}
 
 
-{% block head_title 'Conventions - Styleguide' %}
+{% block head_title 'Conventions' %}
 
 
-{% block component_intro %}
-    <h2 class="c-copy--h2">Development conventions</h2>
+{% block body_intro %}
+    <h1 >Development conventions</h1>
 {% endblock %}
 
-{% block component_list %}
-    <div class="s-styleguide-content">
+{% block body_content %}
+    <div class="content-text">
 
         <h2 id="preferred-stack">Preferred stack</h2>
         <ul>
@@ -48,10 +48,10 @@
         </ul>
         <h3 id="browserlist">Browserlist</h3>
         <p>Use the following snippet in package.json to prefix/compile to support these browsers:</p>
-        <pre><code class="lang-javascript"><span class="hljs-string">"browserslist"</span>: [ 
-            <span class="hljs-string">"last 2 versions"</span>
-        ]
-        </code></pre>
+<pre><code class="lang-javascript"><span class="hljs-string">"browserslist"</span>: [ 
+    <span class="hljs-string">"last 2 versions"</span>
+]
+</code></pre>
 
     </div>
 {% endblock %}

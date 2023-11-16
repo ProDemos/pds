@@ -1,18 +1,18 @@
 
-.c-component {
+.demo-component {
     display: grid;
     grid-column-gap: 3rem;
     grid-template-columns: 280px minmax(0, 1fr);
     margin-bottom: 80px;
 
-    @include media-from(md) {
+    @include pds-media(m,min) {
         grid-template-columns: 50% minmax(0, 1fr);
     }
 
-    &.c-component--full {
+    &.demo-component-full {
         grid-template-columns: 280px minmax(0, 1fr);
 
-        @include media-from(md) {
+        @include pds-media(m,min) {
             grid-template-columns: 400px minmax(0, 1fr);
         }
     }
@@ -20,11 +20,11 @@
 
 
 
-.c-component__code {
+.demo-component-code {
     overflow: auto;
     padding: 0.25rem;
-    background-color: $white--smoke;
-    border-color: $white--smoke--dark;
+    background-color: var(--pds-color-creme-80);
+    border-color: var(--pds-color-creme);
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
@@ -35,58 +35,58 @@
 
 
 
-.c-component__title {
+.demo-component-title {
     margin-bottom: 0.75rem;
     line-height: 1.25;
 }
 
 
 
-.c-component__description {
+.demo-component-description {
     margin-bottom: 1.5rem;
 }
 
 
 
-.c-component__view {
+.demo-component-view {
     grid-column: 1 / -1;
     margin-bottom: 15px;
 
-    @include media-from(lg) {
+    @include pds-media(l,min) {
         grid-column: 1 / 1;
         position: relative;
         margin-bottom: 80px;
     }
 }
 
-.c-component__view--full {
+.demo-component-view--full {
     grid-column: 1 / -1;
     margin-bottom: 15px;
 }
 
-.c-component__view--dark {
+.demo-component-view--dark {
     padding: 1rem;
     border-radius: 3px;
-    background-color: $grey--charcoal;
+    background-color: var(--pds-color-black-80);
 }
 
 
 
-.c-component__meta {
+.demo-component-meta {
     //margin-bottom: 80px;
 }
 
-.c-component__meta--full {
+.demo-component-meta--full {
     grid-column: 1 / -1;
     max-width: 80vw;
 
-    @include media-from(md) {
+    @include pds-media(m,min) {
         max-width: 50vw;
     }
 }
 
 
 
-.c-component--typograph {
+.demo-component-typograph {
     max-width: 980px;
 }

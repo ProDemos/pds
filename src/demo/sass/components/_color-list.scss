@@ -1,57 +1,91 @@
 
-.c-color-list {
+.demo-colors {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
     margin-bottom: 1.5rem;
 
-    @include media-from(md) {
+    @include pds-media(m,min) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @include media-from(lg) {
+    @include pds-media(l,min) {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
 
 
-.c-color-list__item {
+.demo-color {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     min-width: 120px;
     text-align: center;
 
-    @include media-from(md) {
+    @include pds-media(m,min) {
         min-width: 150px;
     }
 }
 
 
 
-.c-color-list__item__value {
+.demo-color-value {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     border-radius: 3px;
     border-width: 1px;
-    border-color: $white--smoke;
+    border-color: var(--pds-color-creme-80);
     border-style: solid;
 
-    .c-color-list__item--light & {
-        color: $grey--charcoal;
+    .demo-color-light & {
+        color: var(--pds-color-black-80);
     }
 
-    .c-color-list__item--dark & {
-        color: $white;
+    .demo-color-dark & {
+        color: var(--pds-color-white);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 }
 
-
-
-.c-color-list__item__name {
+.demo-color-name {
     font-size: 0.75rem;
+}
+
+.demo-color-html {
+    padding:1em;
+}
+.demo-color-css {
+    padding:1em;
+    background-color: var(--pds-color-blue-80);
+}
+.demo-color-sass {
+    padding:1em;
+    background-color:pds-color(blue-80);
+}
+.demo-theme-html {
+    div {
+        div {
+            padding:1em;
+            border-width:3px;
+            border-style:solid;
+        }
+    }
+}
+.demo-theme-css {
+    padding:1em;
+    background-color: var(--pds-color-fill);
+    border-color: var(--pds-color-accfill-80);
+    border-width:3px;
+    border-style:solid;
+}
+.demo-theme-sass {
+    padding:1em;
+    @include pds-theme(blue01);
+    background-color: var(--pds-color-fill);
+    border-color: var(--pds-color-accfill-80);
+    border-width:3px;
+    border-style:solid;
 }
