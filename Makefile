@@ -130,7 +130,7 @@ release-pds:
 	cd build/packages/pds && npm version $(version)
 	npm publish ./build/packages/pds --access public
 	tar -czf ./build/packages/pds.tgz ./build/packages/pds
-	hub release edit -a ./build/packages/pds.tgz -m "" $(version)
+	gh release upload $(version) ./build/packages/pds.tgz
 
 release-pds-source:
 	@echo
@@ -139,7 +139,7 @@ release-pds-source:
 	cd build/packages/pds-source && npm version $(version)
 	npm publish ./build/packages/pds-source --access public
 	tar -czf ./build/packages/pds-source.tgz ./build/packages/pds-source
-	hub release edit -a ./build/packages/pds-source.tgz -m "" $(version)
+	gh release upload $(version) ./build/packages/pds-source.tgz
 
 release-pds-compiled:
 	@echo
@@ -148,7 +148,7 @@ release-pds-compiled:
 	cd build/packages/pds-compiled && npm version $(version)
 	npm publish ./build/packages/pds-compiled --access public
 	tar -czf ./build/packages/pds-compiled.tgz ./build/packages/pds-compiled
-	hub release edit -a ./build/packages/pds-compiled.tgz -m "" $(version)
+	gh release upload $(version) ./build/packages/pds-compiled.tgz
 
 release-pds-demo:
 	@echo
@@ -157,7 +157,7 @@ release-pds-demo:
 	cd build/packages/pds-demo && npm version $(version)
 	npm publish ./build/packages/pds-demo --access public
 	tar -czf ./build/packages/pds-demo.tgz ./build/packages/pds-demo
-	hub release edit -a ./build/packages/pds-demo.tgz -m "" $(version)
+	gh release upload $(version) ./build/packages/pds-demo.tgz
 
 serve:
 	@echo
