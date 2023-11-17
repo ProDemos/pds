@@ -27,7 +27,7 @@ To add a completely new package to be created on every release, create new targe
 If you want to call the `make release $version` target from the command 
 line, you can; it would require a  github token with packages 
 privileges to be set in  `.npmrc` in this repo; see `.npmrc-dist` 
-for an example; and the `hub` command installed. Also a release with
+for an example; and the `gh` command installed. Also a release with
 version $version would already have to exist on github.
 
 
