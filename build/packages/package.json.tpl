@@ -1,7 +1,11 @@
 {
   "name": "@prodemos/##PACKAGE-NAME##",
-  "repository": "https://github.com/prodemos/pds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prodemos/pds.git"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "scripts": {}
 }
