@@ -26,6 +26,10 @@ i.pds-c-button-icon {
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 
+    // default icon
+    mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
+    -webkit-mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
+
     &.large {
         width:2em; 
         height:2em; 
@@ -34,10 +38,6 @@ i.pds-c-button-icon {
         width:1.75em; 
         height:1.75em; 
     }
-
-   // default icon
-    mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
-    -webkit-mask-image: url(#{$pds-assets-path}/images/icons/info-circle-solid.svg);
 
     // 24px
 

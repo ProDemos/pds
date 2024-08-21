@@ -222,10 +222,10 @@
 .pds-c-button {
 
     color: var(--pds-color-white);
-    .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
-
     background-color: var(--pds-color-fill-110);
 
+    .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
+    
     @include hover {
         background-color: var(--pds-color-fill-120);
     }
@@ -312,10 +312,10 @@
     &.toggle {
 
         color: var(--pds-color-black);
-        .pds-c-button-icon:not(svg) { background-color: var(--pds-color-black); }
-
         border-color: var(--pds-color-creme);
         background-color: var(--pds-color-creme);
+
+        .pds-c-button-icon:not(svg) { background-color: var(--pds-color-black); }
 
         &:not(.disabled, :disabled) {
             @include hover {
@@ -326,9 +326,8 @@
 
         &:active:not(.disabled, :disabled) {
             color: var(--pds-color-white);
-            .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
-
             background-color: var(--pds-color-fill-110);
+            .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
         }
 
         &:focus:not(.disabled, :disabled) {
@@ -345,10 +344,10 @@
 
     &.transparent {
         color: var(--pds-color-fill-120);
+        background-color: var(--pds-color-transparent);
         .pds-c-button-icon:not(svg) { 
             background-color: var(--pds-color-fill-120); 
         }
-        background-color: var(--pds-color-transparent);
     }
 }
 
