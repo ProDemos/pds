@@ -33,18 +33,18 @@ compile-css:
 
 	cp -r src/assets/* build/assets
 	mkdir -p build/assets/css/
-	node_modules/node-sass/bin/node-sass \
-		--output-style compressed \
+	node_modules/.bin/sass \
+		--style=compressed \
 		build/assets/sass/main.scss \
 		build/assets/css/main.css
-	node_modules/node-sass/bin/node-sass \
-		--output-style compressed \
+	node_modules/.bin/sass \
+		--style=compressed \
 		build/assets/sass/reset.scss \
 		build/assets/css/reset.css
 
 	mkdir -p build/demo/css/
-	node_modules/node-sass/bin/node-sass \
-		--output-style compressed \
+	node_modules/.bin/sass \
+		--style=compressed \
 		src/demo/sass/main.scss \
 		build/demo/css/main.css
 
