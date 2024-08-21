@@ -1,8 +1,8 @@
 {
     "name": "@prodemos/pds-repo",
-    "version": "5.0.0",
+    "version": "5.0.2",
     "private": true,
     "devDependencies": {
-      "node-sass": "^7.0"
+        "sass": "^1.77.8"
     }
 }

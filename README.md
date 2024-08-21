@@ -54,21 +54,24 @@ Your co-developers will need to get the same instructions before they can instal
 
 ## PHP / Composer
 
-You can add this full repository in your composer.json file 
+You can add specific assets to your project by defining the package in your composer.json
+```
+"repositories":[
+        {
+            "type": "package",
+            "package": {
+                "name": "prodemos/pds",
+                "version": "v5.0.1",
+                "dist": {
+                    "url": "https://github.com/ProDemos/pds/releases/download/v5.0.1/pds-compiled.tgz",
+                    "type": "tar"
+                }
+            }
+        }
+]
+```
+and run `composer require prodemos/pds`. This will download and unzip the asset in `vendor/prodemos/pds/`
 
-```
-{
-  ...,
-  "repositories":[
-    {
-      "type": "git",
-      "url": "https://github.com/prodemos/pds"
-    }
-  ],
-  ...
-}
-```
-and run `composer install`. Because it is a private repository, Composer may prompt you for credentials, but just follow the instructions there.
 
 
 ## GIT submodule

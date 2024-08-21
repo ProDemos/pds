@@ -30,6 +30,10 @@
           content:" ";
           display: inline-block;
           vertical-align: middle;
+          mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
+          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
+          background-color:white;
+          
           @include media-until("m") {
             width:pds-fontsize(l);
             height:pds-fontsize(l);
@@ -38,9 +42,7 @@
             width:pds-fontsize(xl);
             height:pds-fontsize(xl);
           }
-          mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
-          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
-          background-color:white;
+          
         }
       }
 
