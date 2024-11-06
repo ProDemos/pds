@@ -1,3 +1,6 @@
+@use "../../helpers/responsive";
+@use "../../helpers/size";
+
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-table
 // .pds-c-table[.responsive]
@@ -9,7 +12,7 @@
 
     width: 100%;
     height: auto !important;
-    margin-bottom: pds-spacing(m);
+    margin-bottom: size.pds-spacing(m);
     color: var(--pds-color-black);
     border-spacing: 0;
 
@@ -26,8 +29,8 @@
         transition: background-color 0.1s ease-in-out;
 
         th  {
-            padding: pds-spacing(xxs) pds-spacing(xs);
-            font-size: pds-fontsize(xs);
+            padding: size.pds-spacing(xxs) size.pds-spacing(xs);
+            font-size: size.pds-fontsize(xs);
             font-weight: 500;
             text-align: left;
             text-transform: uppercase;
@@ -36,8 +39,8 @@
 
         td  {
 
-            padding: pds-spacing(xxs) pds-spacing(xs);
-            font-size: pds-fontsize(xs);
+            padding: size.pds-spacing(xxs) size.pds-spacing(xs);
+            font-size: size.pds-fontsize(xs);
         }
         
     }
@@ -54,27 +57,27 @@
     // Responsive table, rotated on mobile
     &.responsive {
 
-        @include media-until(l) {
+        @include responsive.media-until(l) {
             display: block;
         }
 
         thead,  tbody {
-            @include media-until(l) {
+            @include responsive.media-until(l) {
                 display: block;
             }
         }
 
         tr {
-            @include media-until(l) {
+            @include responsive.media-until(l) {
                 display: block;
                 margin: 0 0 1rem;
             }
             td, th {
-                @include media-until(l) {
+                @include responsive.media-until(l) {
                     /* Behave  like a "row" */
                     position: relative;
                     display: block;
-                    padding: pds-spacing(xxs) pds-spacing(xs) pds-spacing(xxs) 50%;
+                    padding: size.pds-spacing(xxs) size.pds-spacing(xs) size.pds-spacing(xxs) 50%;
                     border: none;
 
                     &::before {
@@ -82,10 +85,10 @@
                         position: absolute;
 
                         /* Top/left values mimic padding */
-                        top: pds-spacing(xxs);
-                        left: pds-spacing(xs);
+                        top: size.pds-spacing(xxs);
+                        left: size.pds-spacing(xs);
                         width: 45%;
-                        padding-right: pds-spacing(xs);
+                        padding-right: size.pds-spacing(xs);
                         white-space: nowrap;
                         font-weight: 500;
                     }
@@ -99,7 +102,7 @@
 
         thead {
             tr {
-                @include media-until(l) {
+                @include responsive.media-until(l) {
                     position: absolute;
                     top: -9999px;
                     left: -9999px;

@@ -8,19 +8,19 @@
 // Settings / variables
 //
 
-@import "variables/variables";
+@forward "variables/variables" show $pds-assets-path;
 
 //
 // Generic: common resets
 //
-@import "reset/box-sizing";
-@import "reset/hard-reset";
-@import "reset/normalize";
+@use "reset/box-sizing";
+@use "reset/hard-reset";
+@use "reset/normalize";
 
 //
 // Base: un-classed HTML and page setup
 //
-@import "reset/responsive";
-@import "reset/typography";
+@use "reset/responsive";
+@use "reset/typography";
 
 

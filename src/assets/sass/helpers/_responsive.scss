@@ -1,9 +1,12 @@
+@use "sass:map";
+@use "../variables/variables";
 
-@mixin pds-media($name, $type: min, $breakpoints: $pds-breakpoints) {
-    @if map-has-key($breakpoints, $name) == false {
+
+@mixin pds-media($name, $type: min, $breakpoints: variables.$pds-breakpoints) {
+    @if map.has-key($breakpoints, $name) == false {
       @error "There is no breakpoint defined by the name `#{$name}`";
     }
-    $width: map_get($breakpoints, $name);
+    $width: map.get($breakpoints, $name);
     @if $type == max {
       $width: $width;
     }
@@ -18,32 +21,32 @@
   
 /* lgc202306 */
   
-@mixin media-until($name, $breakpoints: $pds-breakpoints) {
-    @if map-has-key($breakpoints, $name) == false {
+@mixin media-until($name, $breakpoints: variables.$pds-breakpoints) {
+    @if map.has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
     }
 
-    @media (max-width: map-get($breakpoints, $name)) {
+    @media (max-width: map.get($breakpoints, $name)) {
         @content;
     }
 }
 
 
 
-@mixin media-between($min-name, $max-name, $breakpoints: $pds-breakpoints) {
-    @if map-has-key($breakpoints, $min-name) == false {
+@mixin media-between($min-name, $max-name, $breakpoints: variables.$pds-breakpoints) {
+    @if map.has-key($breakpoints, $min-name) == false {
         @error
             "There is no breakpoint defined by the name `#{$min-name}`";
     }
 
-    @if map-has-key($breakpoints, $max-name) == false {
+    @if map.has-key($breakpoints, $max-name) == false {
         @error
             "There is no breakpoint defined by the name `#{$max-name}`";
     }
 
-    $min: map-get($breakpoints, $min-name);
-    $max: map-get($breakpoints, $max-name);
+    $min: map.get($breakpoints, $min-name);
+    $max: map.get($breakpoints, $max-name);
 
     @media (min-width: $min) and (max-width: $max) {
         @content;
@@ -52,13 +55,13 @@
 
 
 
-@mixin media-from($name, $breakpoints: $pds-breakpoints) {
-    @if map-has-key($breakpoints, $name) == false {
+@mixin media-from($name, $breakpoints: variables.$pds-breakpoints) {
+    @if map.has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
     }
 
-    @media (min-width: map-get($breakpoints, $name)) {
+    @media (min-width: map.get($breakpoints, $name)) {
         @content;
     }
 }

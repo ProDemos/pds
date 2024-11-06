@@ -1,3 +1,7 @@
+@use "../../helpers/hover";
+@use "../../helpers/size";
+@use "../../variables/variables";
+
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-button
 // .pds-c-button[ .primary | .secondary ]
@@ -13,9 +17,9 @@
 .pds-c-button {
     position: relative;
     display: inline-block;
-    padding: pds-spacing(s) pds-spacing(default); // 16px 20px
-    font-family: $font--fira-sans;
-    font-size: pds-fontsize(m);
+    padding: size.pds-spacing(s) size.pds-spacing(default); // 16px 20px
+    font-family: variables.$font--fira-sans;
+    font-size: size.pds-fontsize(m);
     font-weight: 500;
     line-height: 1.5;
     text-decoration: none;
@@ -62,7 +66,7 @@
         // https://github.com/sass/node-sass/issues/2330
 
         &:not(.disabled,:disabled) {
-            @include hover {
+            @include hover.hover {
                 transform: translate(-2px, 2px);
                 &::before {
                     width: 8px;
@@ -106,23 +110,23 @@
 
 
     &.large {
-        padding: pds-spacing(s) pds-spacing(default); // 16px 20px
-        font-size: pds-fontsize(m);
+        padding: size.pds-spacing(s) size.pds-spacing(default); // 16px 20px
+        font-size: size.pds-fontsize(m);
     }
 
 
 
     &.regular {
-        padding: pds-spacing(xs) pds-spacing(s); // 12px 16px
-        font-size: pds-fontsize(default);
+        padding: size.pds-spacing(xs) size.pds-spacing(s); // 12px 16px
+        font-size: size.pds-fontsize(default);
         .pds-c-button-icon { font-size:1.11em; }
     }
 
 
 
     &.small {
-        padding: pds-spacing(xxs) pds-spacing(xs); // 8px 12px
-        font-size: pds-fontsize(s);
+        padding: size.pds-spacing(xxs) size.pds-spacing(xs); // 8px 12px
+        font-size: size.pds-fontsize(s);
         .pds-c-button-icon { font-size:1.25em; }
     }
 
@@ -130,8 +134,8 @@
 
     &.toggle {
         width: 100%;
-        padding: pds-spacing(xxs)  pds-spacing(xs); // 8px 12px
-        font-size: pds-fontsize(s);
+        padding: size.pds-spacing(xxs)  size.pds-spacing(xs); // 8px 12px
+        font-size: size.pds-fontsize(s);
         text-align: center;
         border-style: solid;
         border-width: 2px;
@@ -145,8 +149,8 @@
 
 
     &.transparent {
-        padding: pds-spacing(xxs) 0; // 8px 0px
-        font-size: pds-fontsize(s);
+        padding: size.pds-spacing(xxs) 0; // 8px 0px
+        font-size: size.pds-fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
         .pds-c-button-icon:not(svg).black {
             background-color:black;
@@ -189,11 +193,11 @@
         }
 
         .pds-c-button-label + .pds-c-button-icon  {
-            margin-left: pds-spacing(s);
+            margin-left: size.pds-spacing(s);
         }
         
         .pds-c-button-icon + .pds-c-button-label  {
-            margin-left: pds-spacing(s);
+            margin-left: size.pds-spacing(s);
         }
         
 
@@ -203,11 +207,11 @@
     &.transparent  {
         .pds-c-button-content {
             .pds-c-button-label + .pds-c-button-icon  {
-                margin-left: pds-spacing(xxs);
+                margin-left: size.pds-spacing(xxs);
             }
             
             .pds-c-button-icon + .pds-c-button-label  {
-                margin-left: pds-spacing(xxs);
+                margin-left: size.pds-spacing(xxs);
             }
         }
     }
@@ -226,7 +230,7 @@
 
     .pds-c-button-icon:not(svg) { background-color: var(--pds-color-white); }
     
-    @include hover {
+    @include hover.hover {
         background-color: var(--pds-color-fill-120);
     }
 
@@ -238,7 +242,7 @@
 
         // Hover styles, but only when the button is not disabled
         &:not(.disabled, :disabled) {
-            @include hover {
+            @include hover.hover {
                 &.primary {
                     &::before,
                     &::after {
@@ -270,7 +274,7 @@
 
         // Hover styles, but only when the button is not disabled
         &:not(.disabled, :disabled) {
-            @include hover {
+            @include hover.hover {
                 background-color: var(--pds-color-accfill-120); // ?
                 &.primary {
                     &::before,
@@ -318,7 +322,7 @@
         .pds-c-button-icon:not(svg) { background-color: var(--pds-color-black); }
 
         &:not(.disabled, :disabled) {
-            @include hover {
+            @include hover.hover {
                 border-color: var(--pds-color-creme-120);
                 background-color: var(--pds-color-creme-120);
             }

@@ -15,16 +15,16 @@
 //
 // Settings / variables
 //
-@import "variables/variables";
-@import "variables/css-variables";
+@forward "variables/variables" show $pds-assets-path;
+@use "variables/css-variables";
 
 //
 // Mixins and helpers
 //
-@import "helpers/size";
-@import "helpers/color";
-@import "helpers/hover";
-@import "helpers/slant";
-@import "helpers/responsive";
+@use "helpers/size";
+@use "helpers/color";
+@use "helpers/hover";
+@use "helpers/slant";
+@use "helpers/responsive";
 
 

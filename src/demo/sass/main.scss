@@ -8,26 +8,25 @@
 // -------------------
 // PDS
 //
-$pds-assets-path: "/assets";
-@import "../../assets/sass/reset.scss";
-@import "../../assets/sass/main.scss";
+@use "../../assets/sass/reset.scss" with ($pds-assets-path: "/assets");
+@use "../../assets/sass/main.scss" with ($pds-assets-path: "/assets");
 
 // -------------------
 // LOCAL 
 //
 
-@import "variables.scss";
-@import "layout.scss";
-@import "defaults.scss";
+@use "variables.scss";
+@use "layout.scss";
+@use "defaults.scss";
 
 // -------------------
 // Components
 //
 
-@import "components/color-list";
-@import "components/component";
-@import "components/img-list";
-@import "components/icon-list";
+@use "components/color-list";
+@use "components/component";
+@use "components/img-list";
+@use "components/icon-list";
 
 
 

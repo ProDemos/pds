@@ -1,3 +1,7 @@
+@use "../../helpers/responsive";
+@use "../../helpers/size";
+@use "../../variables/variables";
+
 
 // -----------------------------------------------------------------------------
 //  COMPONENT .pds-c-menu
@@ -30,17 +34,17 @@
           content:" ";
           display: inline-block;
           vertical-align: middle;
-          mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
-          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-right.svg);
+          mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-right.svg);
+          -webkit-mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-right.svg);
           background-color:white;
           
-          @include media-until("m") {
-            width:pds-fontsize(l);
-            height:pds-fontsize(l);
+          @include responsive.media-until("m") {
+            width:size.pds-fontsize(l);
+            height:size.pds-fontsize(l);
           }
-          @include media-from("m") {
-            width:pds-fontsize(xl);
-            height:pds-fontsize(xl);
+          @include responsive.media-from("m") {
+            width:size.pds-fontsize(xl);
+            height:size.pds-fontsize(xl);
           }
           
         }
@@ -87,8 +91,8 @@
       &:hover:has(ul),
       &:focus-within:has(ul) {
         & > a:before {
-          mask-image: url(#{$pds-assets-path}/images/icons/chevron-down.svg);
-          -webkit-mask-image: url(#{$pds-assets-path}/images/icons/chevron-down.svg);
+          mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-down.svg);
+          -webkit-mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-down.svg);
         }
       }
 
@@ -105,7 +109,7 @@
       display: inline-block;
       position: relative;
       width: 100%;
-      font-family: $font--fira-sans;
+      font-family: variables.$font--fira-sans;
       font-weight: 100;
       line-height: 1.5;
       text-decoration: none;
@@ -119,12 +123,12 @@
         background-color: rgba(255,255,255, 0.1);
       }
 
-      @include media-until("m") {
-        font-size: pds-fontsize(s);
+      @include responsive.media-until("m") {
+        font-size: size.pds-fontsize(s);
       }
   
-      @include media-from("m") {
-        font-size: pds-fontsize(m);
+      @include responsive.media-from("m") {
+        font-size: size.pds-fontsize(m);
       }
     }
   }
