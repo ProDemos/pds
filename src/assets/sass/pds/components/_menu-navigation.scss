@@ -1,6 +1,7 @@
 @use "../../helpers/responsive";
 @use "../../helpers/size";
 @use "../../variables/variables";
+@use "../../settings";
 
 
 // -----------------------------------------------------------------------------
@@ -34,8 +35,8 @@
           content:" ";
           display: inline-block;
           vertical-align: middle;
-          mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-right.svg);
-          -webkit-mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-right.svg);
+          mask-image: url(#{settings.$pds-assets-path}/images/icons/chevron-right.svg);
+          -webkit-mask-image: url(#{settings.$pds-assets-path}/images/icons/chevron-right.svg);
           background-color:white;
           
           @include responsive.media-until("m") {
@@ -91,8 +92,8 @@
       &:hover:has(ul),
       &:focus-within:has(ul) {
         & > a:before {
-          mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-down.svg);
-          -webkit-mask-image: url(#{variables.$pds-assets-path}/images/icons/chevron-down.svg);
+          mask-image: url(#{settings.$pds-assets-path}/images/icons/chevron-down.svg);
+          -webkit-mask-image: url(#{settings.$pds-assets-path}/images/icons/chevron-down.svg);
         }
       }
 

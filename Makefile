@@ -42,11 +42,11 @@ compile-css:
 		build/assets/sass/reset.scss \
 		build/assets/css/reset.css
 
-#	mkdir -p build/demo/css/
-#	node_modules/.bin/sass \
-#		--style=compressed \
-#		src/demo/sass/main.scss \
-#		build/demo/css/main.css
+	mkdir -p build/demo/css/
+	node_modules/.bin/sass \
+		--style=compressed \
+		src/demo/sass/main.scss \
+		build/demo/css/main.css
 
 compile-html:
 	@echo

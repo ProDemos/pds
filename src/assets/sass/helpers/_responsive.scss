@@ -1,8 +1,8 @@
 @use "sass:map";
-@use "../variables/variables";
+@use "../settings";
 
 
-@mixin pds-media($name, $type: min, $breakpoints: variables.$pds-breakpoints) {
+@mixin pds-media($name, $type: min, $breakpoints: settings.$pds-breakpoints) {
     @if map.has-key($breakpoints, $name) == false {
       @error "There is no breakpoint defined by the name `#{$name}`";
     }
@@ -21,7 +21,7 @@
   
 /* lgc202306 */
   
-@mixin media-until($name, $breakpoints: variables.$pds-breakpoints) {
+@mixin media-until($name, $breakpoints: settings.$pds-breakpoints) {
     @if map.has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";
@@ -34,7 +34,7 @@
 
 
 
-@mixin media-between($min-name, $max-name, $breakpoints: variables.$pds-breakpoints) {
+@mixin media-between($min-name, $max-name, $breakpoints: settings.$pds-breakpoints) {
     @if map.has-key($breakpoints, $min-name) == false {
         @error
             "There is no breakpoint defined by the name `#{$min-name}`";
@@ -55,7 +55,7 @@
 
 
 
-@mixin media-from($name, $breakpoints: variables.$pds-breakpoints) {
+@mixin media-from($name, $breakpoints: settings.$pds-breakpoints) {
     @if map.has-key($breakpoints, $name) == false {
         @error
             "There is no breakpoint defined by the name `#{$name}`";

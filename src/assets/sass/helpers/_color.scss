@@ -1,15 +1,15 @@
 @use "sass:map";
-@use "../variables/variables";
+@use "../settings";
 
 @mixin pds-theme($name) {
-    @each $propname, $propval in map.get(variables.$pds-themes,$name) {
+    @each $propname, $propval in map.get(settings.$pds-themes,$name) {
         --pds-color-#{$propname}: #{$propval};
     }    
 }
 
 @function pds-color($name) {
-    @if map.has-key(variables.$pds-colors, $name) == false {
-        $thememap : map.get(variables.$pds-themes, variables.$pds-deftheme);
+    @if map.has-key(settings.$pds-colors, $name) == false {
+        $thememap : map.get(settings.$pds-themes, settings.$pds-deftheme);
         @if map.has-key($thememap, $name) == false {
             @error  "There is no color or theme property named `#{$name}`";
         }
@@ -17,12 +17,12 @@
     @return var(--pds-color-#{$name});
 }
 
-@function pds-theme-color($theme : variables.$pds-deftheme ,$prop : fill) {
-    @if map.has-key(variables.$pds-themes, $theme) == false {
+@function pds-theme-color($theme : settings.$pds-deftheme ,$prop : fill) {
+    @if map.has-key(settings.$pds-themes, $theme) == false {
         @error
             "There is no theme named `#{$theme}` in `$pds-themes`";
     }
-    $thememap : map.get(variables.$pds-themes, $theme);
+    $thememap : map.get(settings.$pds-themes, $theme);
     @if map.has-key($thememap, $prop) == false {
         @error
             "There is no property named `#{$prop}` in theme `#{$theme}`";

@@ -1,6 +1,7 @@
 @use "../../helpers/hover";
 @use "../../helpers/size";
 @use "../../variables/variables";
+@use "../../settings";
 
 
 // -----------------------------------------------------------------------------
@@ -197,7 +198,7 @@
         
 
         &.valid {
-            background-image: url("#{variables.$pds-assets-path}/images/icons/check-circle-solid-green.svg");
+            background-image: url("#{settings.$pds-assets-path}/images/icons/check-circle-solid-green.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -205,7 +206,7 @@
         }
 
         &.invalid {
-            background-image: url("#{variables.$pds-assets-path}/images/icons/cross-circle-solid-red.svg");
+            background-image: url("#{settings.$pds-assets-path}/images/icons/cross-circle-solid-red.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -234,7 +235,7 @@
         padding: size.pds-spacing(xs) size.pds-spacing(xl) size.pds-spacing(xs) size.pds-spacing(default);
         border: none;
         border-bottom: 2px solid var(--pds-color-transparent);
-        background-image: url("#{variables.$pds-assets-path}/images/icons/chevrons-updown.svg");
+        background-image: url("#{settings.$pds-assets-path}/images/icons/chevrons-updown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;

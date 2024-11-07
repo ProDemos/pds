@@ -1,47 +1,47 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:meta";
-@use "../variables/variables";
+@use "../settings";
 
 @function pds-fontsize($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(variables.$pds-fontsizes, $name) == false {
+		@if map.has-key(settings.$pds-fontsizes, $name) == false {
 			@error  "There is no fontsize named `#{$name}`";
 		}
-		@return map.get(variables.$pds-fontsizes, $name);
+		@return map.get(settings.$pds-fontsizes, $name);
 	} 
-	@if list.nth(variables.$pds-fontsizes, $name) == false {
+	@if list.nth(settings.$pds-fontsizes, $name) == false {
 		@error  "There is no fontsize numbered `#{$name}`";
 	}
-	@return list.nth(map.values(variables.$pds-fontsizes), $name);
+	@return list.nth(map.values(settings.$pds-fontsizes), $name);
 	
 }
 
 @function pds-lineheight($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(variables.$pds-lineheights, $name) == false {
+		@if map.has-key(settings.$pds-lineheights, $name) == false {
 			@error  "There is no lineheight named `#{$name}`";
 		}
-		@return map.get(variables.$pds-lineheights, $name);
+		@return map.get(settings.$pds-lineheights, $name);
 	} 
-	@if list.nth(variables.$pds-lineheights, $name) == false {
+	@if list.nth(settings.$pds-lineheights, $name) == false {
 		@error  "There is no lineheight numbered `#{$name}`";
 	}
-	@return list.nth(map.values(variables.$pds-lineheights), $name);
+	@return list.nth(map.values(settings.$pds-lineheights), $name);
 	
 }
 
 @function pds-spacing($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(variables.$pds-spacings, $name) == false {
+		@if map.has-key(settings.$pds-spacings, $name) == false {
 			@error  "There is no spacing named `#{$name}`";
 		}
-		@return map.get(variables.$pds-spacings, $name);
+		@return map.get(settings.$pds-spacings, $name);
 	} 
-	@if list.nth(variables.$pds-spacings, $name) == false {
+	@if list.nth(settings.$pds-spacings, $name) == false {
 		@error  "There is no spacing numbered `#{$name}`";
 	}
-	@return list.nth(map.values(variables.$pds-spacings), $name);
+	@return list.nth(map.values(settings.$pds-spacings), $name);
 	
 }
 

@@ -1,4 +1,4 @@
-@use "../../variables/variables";
+@use "../../settings";
 
 /*
     pds-t- classes are themes
@@ -16,7 +16,7 @@
 
 // named colors
 
-@each $cname, $cvalue in variables.$pds-colors {
+@each $cname, $cvalue in settings.$pds-colors {
     .pds-m-filled.#{$cname} {
         background-color: var(--pds-color-#{$cname});
     }
@@ -30,7 +30,7 @@
 
 // theme selector
 
-@each $themename, $thememap in variables.$pds-themes {
+@each $themename, $thememap in settings.$pds-themes {
     :root .pds-t-#{$themename} {
         @each $propname, $propval in $thememap {
             --pds-color-#{$propname}: #{$propval};

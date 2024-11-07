@@ -8,8 +8,11 @@
 // -------------------
 // PDS
 //
-@use "../../assets/sass/reset.scss" with ($pds-assets-path: "/assets");
-@use "../../assets/sass/main.scss" with ($pds-assets-path: "/assets");
+@use "../../assets/sass/settings" with (
+    $pds-assets-path: "/assets"
+);
+@use "../../assets/sass/reset.scss";
+@use "../../assets/sass/main.scss";
 
 // -------------------
 // LOCAL 

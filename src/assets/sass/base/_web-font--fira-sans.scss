@@ -1,4 +1,4 @@
-@use "../variables/variables";
+@use "../settings";
 @use "web-font--bree-serif";
 
 /*
@@ -9,7 +9,7 @@
     Web fonts can ben found here: https://gwfh.mranftl.com/fonts/fira-sans?subsets=latin,latin-ext
 */
 
-web-font--bree-serif.$font-path: "#{variables.$pds-assets-path}/fonts/fira-sans/";
+web-font--bree-serif.$font-path: "#{settings.$pds-assets-path}/fonts/fira-sans/";
 
 /** REGULAR **/
 
