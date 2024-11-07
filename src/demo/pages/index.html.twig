@@ -33,8 +33,12 @@
         <ul>
             <li>
                 <b>Include <code>assets/css/main.css</code></b> and optionally <code>assets/css/reset.css</code>
-                in your pages, or alternatively add <code>assets/sass/main.scss</code> and 
-                optionally <code>assets/sass/reset.scss</code> to your workflow.
+                in your html pages, or if you use sass: 
+<xmp>use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds" 
+);
+use "...path-to-pds/sass/reset.scss"; // optional
+use "...path-to-pds/sass/main.scss";</xmp>
             </li>
             <li>
                 <b>The css defines</b> themes (<code>pds-t-{theme}</code>),
@@ -44,16 +48,16 @@
             <li>
                 <b>Including assets/main.css</b> before your own css will not change anything to your design. At least
                 one of the elements on your page should use one of the classes defined in the design system to 
-                actually use the design system. For example, adding the 'corporate' theme 
-                to your body (<code>&lt;body class="pds-t-corporate"&gt;</code>) will change the look of 
+                actually use the design system. For example, adding the 'blue-01' theme 
+                to your body (<code>&lt;body class="pds-t-blue01"&gt;</code>) will change the look of 
                 the page.
                 Including assets/reset.css before your own css will probably change your design a bit, as
                 it defines font-sizes, line-heights, box-sizings and such on a global level. 
             </li>
             <li>
                 <b>Themes</b> can be specified by <code>class="pds-t-{theme}"</code>. Themes will be inherited, so
-                you can start with a <code>&lt;body class="pds-t-corporate"&gt;</code> to have the whole page in the corporate theme.
-                The theme will mainly affect the design of components below it.</li>
+                you can start with a <code>&lt;body class="pds-t-blue01"&gt;</code> to have the whole page in the corporate theme.
+                The theme will mainly affect the design of pds components below it.</li>
             </li>
             <li>
                 <b>Components</b> have a <code>class="pds-c-{component}"</code> and subcomponents may

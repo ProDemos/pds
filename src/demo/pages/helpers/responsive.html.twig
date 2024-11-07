@@ -29,7 +29,7 @@
     
     <hr>
 
-        <code>$breakpoints</code> are defined as a map, like 
+        Breakpoints are defined as a map, like 
 <xmp>
 $pds-breakpoints: (
     none:0, 
@@ -45,14 +45,22 @@ $pds-breakpoints: (
     huge: 1600px,
 );
 </xmp>
-        You can add your own breakpoints by adding entries to the map:
+        You can override these breakpoints, or define your own,
+        when configuring settings.scss:
 <xmp>
-@use "sass:map";
-
-$pds-breakpoints: map.set($pds-breakpoints, phone-small, 375px);
-$pds-breakpoints: map.set($pds-breakpoints, phone, 400px);
-
-
+use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds",
+    $pds-custom-breakpoints: (
+        phone-small: 375px,
+        xs: 400px
+    )
+);
+...
+@include pds-media("phone-small", min) {
+  ul.pas-form-pager {
+    display: flex;
+  }
+}
 </xmp>
     </p>
 

@@ -151,7 +151,7 @@
 .pds-c-input-label {
     margin-bottom: size.pds-spacing(s);
     color: var(--pds-color-black);
-    font-family: settings.$font-sans;
+    font-family: settings.$pds-font-sans;
     font-size: size.pds-fontsize(s);
     font-weight: 500;
 }
@@ -162,7 +162,7 @@
 .pds-c-input {
     outline: none;
     color: var(--pds-color-black);
-    font-family: settings.$font-sans;
+    font-family: settings.$pds-font-sans;
     font-size: size.pds-fontsize(s);
     line-height: size.pds-lineheight(m);
     border-radius: 0;
@@ -284,7 +284,7 @@
     }
     &.checkbox {
         // this is hidden, but only in a 
-        // pdx-c-input-container with a 
+        // pds-c-input-container with a 
         // visible check
     }
     &.transparent {

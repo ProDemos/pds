@@ -25,7 +25,7 @@ h1 {
     
     <hr>
 
-        <code>$pds-fontsizes</code> are defined as a map, like 
+        Font sizes are defined as a map, like 
 <xmp>
 $pds-fontsizes: (
   none: 0,
@@ -41,13 +41,20 @@ $pds-fontsizes: (
   huge: 56px,
 );
 </xmp>
-        You can add your own fontsize by adding entries to the map:
+        You can override these font sizes, or define your own,
+        when configuring settings.scss:
 <xmp>
-@use "sass:map";
-
-$pds-fontsizes: map.set($pds-fontsizes, header-large, 4rem);
-$pds-fontsizes: map.set($pds-fontsizes, footnote, .5rem);
-
+use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds",
+    $pds-custom-fontsizes: (
+        header-large: 4rem,
+        footnote: .5rem
+    )
+);
+...
+h1 {
+    font-size: pds-fontsize(header-large);
+}
 
 </xmp>
     </p>
@@ -70,25 +77,39 @@ h1 {
     
     <hr>
 
-        <code>$pds-lineheights</code> are defined as a map, like 
+        Line heights are defined as a map, like 
 <xmp>
 $pds-lineheights: (
   none: 0,
+  tiny: 1,
+  xxs: 1,
   xs: 1,
   s: 1.25,
   default: 1.5,
   m: 1.75,
+  l: 1.75,
+  xl: 1.75,
+  xxl: 1.75,
+  huge: 1.75
 );
 </xmp>
-        You can add your own lineheight by adding entries to the map:
+        You can override these lineheights, or add your own, when
+        configuring settings.scss:
 <xmp>
-@use "sass:map";
-
-$pds-lineheights: map.set($pds-lineheights, header-large, 1.2);
-$pds-lineheights: map.set($pds-lineheights, footnote, .5);
-
+use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds",
+    $pds-custom-lineheights: (
+        header-large: 1.2,
+        footnote: .5
+    )
+);
+...
+h1 {
+    line-height: pds-lineheight(header-large);
+}
 
 </xmp>
+
     </p>
 
     <h2 >Mixin: pds-slant</h2>

@@ -25,7 +25,7 @@ h1 {
     
     <hr>
 
-        <code>$pds-spacings</code> are defined as a map, like 
+        Spacings are defined as a map, like 
 <xmp>
 $pds-spacings: (
     none: 0,
@@ -41,13 +41,19 @@ $pds-spacings: (
     huge: 64px
 );
 </xmp>
-        You can add your own spacing by adding entries to the map:
+        You can override these spacings, or define your own, when configuring settings.css:
 <xmp>
-@use "sass:map";
-
-$pds-spacings: map.set($pds-spacings, header-large, 4rem);
-$pds-spacings: map.set($pds-spacings, footnote, .5rem);
-
+use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds",
+    $pds-custom-spacings: (
+        default: 20px,
+        gutter: 24px
+    )
+);
+...
+h1 {
+    margin: pds-spacing(default) pds-spacing(gutter);
+}
 
 </xmp>
     </p>

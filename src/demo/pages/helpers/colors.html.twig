@@ -23,18 +23,19 @@
         Changes the current theme css variables to the given theme;
         if <code>var(--pds-color-accfill)</code> would have been
         orange before calling the mixin, it may be blue after calling it.
+        See design/colors for an overview of the available themes.
         <hr>
         Example:
 <xmp>
-    h1 {
-        @include pds-theme(creme01);
-        color:var(--pds-color-stroke-60);
-        background-color:var(--pds-color-fill-60);
-    }
+h1 {
+    @include pds-theme(creme01);
+    color:var(--pds-color-stroke-60);
+    background-color:var(--pds-color-fill-60);
+}
 </xmp>
     
 
-    <h2 >Css variables: pds-color-xxx</h2>
+    <h2>Css variables: pds-color-xxx</h2>
     <p>
         <b><code>pds-color-$name</code></b>
         <dl>
@@ -53,10 +54,10 @@
         <hr>
         Example:
 <xmp>
-    h1 {
-        color:var(--pds-color-stroke);
-        background-color:var(--pds-color-creme-40);
-    }
+h1 {
+    color:var(--pds-color-stroke);
+    background-color:var(--pds-color-creme-40);
+}
 </xmp>
     
         <hr>
@@ -68,12 +69,15 @@ $pds-colors: (
 );
 </xmp>
         You can override these css variables in your own design,
-        or you can add your own colors by adding entries to the map:
+        or you can add your own colors, when configuring settings.css
 <xmp>
-@use "sass:map";
-
-$pds-colors: map.set($pds-colors, jazzberry, #B3116B);
-$pds-colors: map.set($pds-colors, flirt, #B30069);
+use "...path-to-pds/sass/settings.scss" with ( 
+    $pds-assets-path: "...path-to-pds",
+    $pds-custom-colors: (
+        black-80: #444,
+        flirt: #B30069
+    )
+);
 
 ...
 
@@ -82,20 +86,30 @@ p {
 }
 </xmp>
 
-
         <code>$pds-themes</code> is also defined as a map, like 
 <xmp>
 $pds-themes: (
     blue01 : (
         fill: map-get($pds-colors,'blue'),
+        fill-120: map.get($pds-colors,'blue-120'),
+        fill-110: map.get($pds-colors,'blue-120'),
+        fill-80: map.get($pds-colors,'blue-110'),
+        ...
         accfill: map-get($pds-colors,'orange'),
+        accfill-120: map.get($pds-colors,'orange-120'),
+        accfill-110: map.get($pds-colors,'orange-110'),
+        ...
         stroke: map-get($pds-colors,'white'),
         accstroke: map-get($pds-colors,'white') 
+    ),
+    orange01: (
+        ...
     )
+    ...
 )
 </xmp>
         You can override the css variables in your own design,
-        or you can add your own themes by adding entries to the map.
+        or you can add your own themes when configuring settings.scss.
     </p>
 
 

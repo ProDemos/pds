@@ -113,22 +113,22 @@ The reset.css is optional.
 ## Source scss
 
  If you installed a package containing sass, you can import 
- the reset and main scss files. Make sure to override
- `$pds-assets-path` to point to the right root folder
+ the reset and main scss files. Make sure to configure
+ `$pds-assets-path` to point to the right root folder.
 
- ```
- // override the pds assets base
-$pds-assets-path: "@pds";
-
-// import pds
+```SCSS
+@use "@pds/sass/settings.scss" with (
+  $pds-assets-path: "@pds";
+);
 @import "@pds/sass/reset.scss"; // optional
 @import "@pds/sass/main.scss";
 
- ```
+```
 
-There are more variables you can override 
+There are more settings you can configure 
 before including the scss files, like 
-breakpoints and fontsizes. YMMV.
+breakpoints and fontsizes. Read the full 
+documentation on https://pds.prodemos.nl/.
  
 
 # Making changes, new releases

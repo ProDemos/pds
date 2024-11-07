@@ -22,17 +22,17 @@
 
 $pds-assets-path: ".." !default;
 
-// $font-serif and $font-sans defaults
-$font-serif: "Bree Serif", sans-serif !default;
-$font-sans: "Fira Sans", sans-serif !default;
+// $font-serif and $pds-font-sans defaults
+$pds-font-serif: "Bree Serif", sans-serif !default;
+$pds-font-sans: "Fira Sans", sans-serif !default;
 
 // $pds-colors:
 // use var(--pds-color-name) to get these colors,
 // but also, these colors will appear in 
 // modifiers (like .pds-m-filled.red )
 
-$custom-pds-colors: () !default;
-$pds-colors: map.deep-merge(defaults.$pds-colors,$custom-pds-colors);
+$pds-custom-colors: () !default;
+$pds-colors: map.deep-merge(defaults.$pds-colors,$pds-custom-colors);
 
 // $pds-themes:
 // use pds-theme-color($themename,$propname)
@@ -40,33 +40,33 @@ $pds-colors: map.deep-merge(defaults.$pds-colors,$custom-pds-colors);
 // these colors will be appear in themes 
 // (like .pds-t-blue01)
 
-$custom-pds-themes: () !default;
-$pds-themes: map.deep-merge(defaults.$pds-themes,$custom-pds-themes);
+$pds-custom-themes: () !default;
+$pds-themes: map.deep-merge(defaults.$pds-themes,$pds-custom-themes);
 $pds-deftheme: 'blue01' !default;
 
 // $pds-fontsizes:
 // use `pds-fontsize(m)` to get fontsize m
 
-$custom-pds-fontsizes: () !default;
-$pds-fontsizes: map.deep-merge(defaults.$pds-fontsizes,$custom-pds-fontsizes);
+$pds-custom-fontsizes: () !default;
+$pds-fontsizes: map.deep-merge(defaults.$pds-fontsizes,$pds-custom-fontsizes);
 $pds-fontsize: map.get($pds-fontsizes, default) !default;
 
 // $pds-lineheights:
 // use `pds-lineheight(m)` to get lineheight m
 
-$custom-pds-lineheights: () !default;
-$pds-lineheights: map.deep-merge(defaults.$pds-lineheights,$custom-pds-lineheights);
+$pds-custom-lineheights: () !default;
+$pds-lineheights: map.deep-merge(defaults.$pds-lineheights,$pds-custom-lineheights);
 $pds-lineheight: map.get($pds-lineheights, default) !default;
 
 // $pds-spacings:
 // use `pds-spacing(m)` to get spacing m
 
-$custom-pds-spacings: () !default;
-$pds-spacings: map.deep-merge(defaults.$pds-spacings,$custom-pds-spacings);
+$pds-custom-spacings: () !default;
+$pds-spacings: map.deep-merge(defaults.$pds-spacings,$pds-custom-spacings);
 $pds-spacing: map.get($pds-spacings, default) !default;
 
 // $pds-breakpoints:
 // use `pds-media(s,min|max) to get a @media query
 
-$custom-pds-breakpoints: () !default;
-$pds-breakpoints: map.deep-merge(defaults.$pds-breakpoints,$custom-pds-breakpoints);
+$pds-custom-breakpoints: () !default;
+$pds-breakpoints: map.deep-merge(defaults.$pds-breakpoints,$pds-custom-breakpoints);
