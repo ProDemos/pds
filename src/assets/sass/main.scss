@@ -6,11 +6,8 @@
  *
 \* ----------------------------------------------------------------------------- */
 
-
-//
-// Variables, mixins and helpers
-//
-@forward "prepend" show $pds-assets-path;
+// Helpers and css variables
+@use "prepend";
 
 // Fonts
 @use "base/web-font--bree-serif";

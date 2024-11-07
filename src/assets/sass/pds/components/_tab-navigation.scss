@@ -1,6 +1,5 @@
 @use "../../helpers/responsive";
 @use "../../helpers/size";
-@use "../../variables/variables";
 @use "../../settings";
 
 
@@ -55,7 +54,7 @@
                 display: inline-block;
                 padding: size.pds-spacing(xxs) 0 size.pds-spacing(xxs);
                 color: var(--pds-color-black);
-                font-family: variables.$font--fira-sans;
+                font-family: settings.$font-sans;
                 font-size: size.pds-fontsize(xs);
                 font-weight: 500;
                 line-height: 1.5;

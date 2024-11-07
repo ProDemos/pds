@@ -22,6 +22,10 @@
 
 $pds-assets-path: ".." !default;
 
+// $font-serif and $font-sans defaults
+$font-serif: "Bree Serif", sans-serif !default;
+$font-sans: "Fira Sans", sans-serif !default;
+
 // $pds-colors:
 // use var(--pds-color-name) to get these colors,
 // but also, these colors will appear in 

@@ -15,15 +15,14 @@
 @use "../../assets/sass/main.scss";
 
 // -------------------
-// LOCAL 
+// Local layout 
 //
 
-@use "variables.scss";
 @use "layout.scss";
 @use "defaults.scss";
 
 // -------------------
-// Components
+// Local components
 //
 
 @use "components/color-list";

@@ -1,5 +1,4 @@
 @use "../settings";
-@use "../variables/variables";
 
 //
 // 1. The `html` selector is to have a proper base for REM values.
@@ -10,5 +9,5 @@ html,
 body {
     line-height: settings.$pds-lineheight;
     font-size: settings.$pds-fontsize;
-    font-family: variables.$font--fira-sans;
+    font-family: settings.$font-sans;
 }

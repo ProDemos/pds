@@ -1,6 +1,5 @@
 @use "../../helpers/responsive";
 @use "../../helpers/size";
-@use "../../variables/variables";
 @use "../../settings";
 
 
@@ -110,7 +109,7 @@
       display: inline-block;
       position: relative;
       width: 100%;
-      font-family: variables.$font--fira-sans;
+      font-family: settings.$font-sans;
       font-weight: 100;
       line-height: 1.5;
       text-decoration: none;

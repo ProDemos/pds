@@ -1,6 +1,5 @@
 @use "../../helpers/hover";
 @use "../../helpers/size";
-@use "../../variables/variables";
 @use "../../settings";
 
 
@@ -152,7 +151,7 @@
 .pds-c-input-label {
     margin-bottom: size.pds-spacing(s);
     color: var(--pds-color-black);
-    font-family: variables.$font--fira-sans;
+    font-family: settings.$font-sans;
     font-size: size.pds-fontsize(s);
     font-weight: 500;
 }
@@ -163,7 +162,7 @@
 .pds-c-input {
     outline: none;
     color: var(--pds-color-black);
-    font-family: variables.$font--fira-sans;
+    font-family: settings.$font-sans;
     font-size: size.pds-fontsize(s);
     line-height: size.pds-lineheight(m);
     border-radius: 0;
