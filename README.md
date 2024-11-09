@@ -118,7 +118,7 @@ The reset.css is optional.
 
 ```SCSS
 @use "@pds/sass/settings.scss" with (
-  $pds-assets-path: "@pds";
+  $pds-assets-path: "@pds"
 );
 @import "@pds/sass/reset.scss"; // optional
 @import "@pds/sass/main.scss";

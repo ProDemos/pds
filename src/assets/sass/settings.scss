@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "variables/defaults";
 
-/**
+/* ----------------------------------------------------------------------------- *\
  *   PDS Settings
  *
  *  This file must be configured by the containing
@@ -11,9 +11,13 @@
  *       $pds-assets-path: "./node_modules/prodemos/pds/assets"
  *   )
  *
- *   various PDS mixins and functions will then
- *   use these settings with the overriden values.
- */
+ *   after that, use 'pds' to access these settings, as well
+ *   as all mixins and funtions defined in pds: 
+ *
+ *   @use "@pds/pds";
+ *   h1 { font-size: pds.fontsize(l) }
+ *
+\* ----------------------------------------------------------------------------- */
 
 // $pds-assets-path:
 // depends on where the css is generated. in the

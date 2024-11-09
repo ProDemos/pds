@@ -1,5 +1,4 @@
-@use "../../../assets/sass/helpers/color";
-@use "../../../assets/sass/helpers/responsive";
+@use "../../../assets/sass/pds";
 
 
 .demo-colors {
@@ -8,11 +7,11 @@
     grid-gap: 2rem;
     margin-bottom: 1.5rem;
 
-    @include responsive.pds-media(m,min) {
+    @include pds.pds-media(m,min) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @include responsive.pds-media(l,min) {
+    @include pds.pds-media(l,min) {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
@@ -26,7 +25,7 @@
     min-width: 120px;
     text-align: center;
 
-    @include responsive.pds-media(m,min) {
+    @include pds.pds-media(m,min) {
         min-width: 150px;
     }
 }
@@ -66,7 +65,7 @@
 }
 .demo-color-sass {
     padding:1em;
-    background-color:color.pds-color(blue-80);
+    background-color:pds.pds-color(blue-80);
 }
 .demo-theme-html {
     div {
@@ -86,7 +85,7 @@
 }
 .demo-theme-sass {
     padding:1em;
-    @include color.pds-theme(blue01);
+    @include pds.pds-theme(blue01);
     background-color: var(--pds-color-fill);
     border-color: var(--pds-color-accfill-80);
     border-width:3px;

@@ -5,9 +5,9 @@
 
 {% block body_intro %}
     <h1 >Responsive</h1>
-    <h2 >Mixin: pds-media</h2>
+    <h2 >Mixin: pds.pds-media</h2>
     <p>
-        <b><code>pds-media(name,[min|max],[breakpoints])</code></b>
+        <b><code>pds.pds-media(name,[min|max],[breakpoints])</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a breakpoint name, like 'tablet' or 'phone'</dt>
@@ -20,7 +20,9 @@
     <hr>
         Example:
 <xmp>
-@include pds-media("tablet", min) {
+@use "../../assets/sass/pds";
+
+@include pds.pds-media("tablet", min) {
   ul.pas-form-pager {
     display: flex;
   }
@@ -56,7 +58,8 @@ use "...path-to-pds/sass/settings.scss" with (
     )
 );
 ...
-@include pds-media("phone-small", min) {
+@use "../../assets/sass/pds";
+@include pds.pds-media("phone-small", min) {
   ul.pas-form-pager {
     display: flex;
   }

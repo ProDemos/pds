@@ -7,9 +7,9 @@
 
     <h1 >Spacing</h1>
 
-    <h2 >Function: pds-spacing</h2>
+    <h2 >Function: pds.pds-spacing</h2>
     <p>
-        <b><code>pds-spacing(name)</code></b>
+        <b><code>pds.pds-spacing(name)</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a spacing name, like 'huge'</dt>
@@ -18,8 +18,10 @@
     <hr>
         Example:
 <xmp>
+@use "../../assets/sass/pds";
+
 h1 {
-    margin: pds-spacing(huge) pds-spacing(none);
+    margin: pds.pds-spacing(huge) size.pds-spacing(none);
 }
 </xmp>
     
@@ -51,8 +53,10 @@ use "...path-to-pds/sass/settings.scss" with (
     )
 );
 ...
+@use "...path-to-pds/sass/pds";
+
 h1 {
-    margin: pds-spacing(default) pds-spacing(gutter);
+    margin: pds.pds-spacing(default) pds.pds-spacing(gutter);
 }
 
 </xmp>

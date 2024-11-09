@@ -6,8 +6,9 @@
  *
 \* ----------------------------------------------------------------------------- */
 
-// Helpers and css variables
-@use "prepend";
+
+// Css variables
+@use "variables/css-variables";
 
 // Fonts
 @use "base/web-font--bree-serif";

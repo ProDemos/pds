@@ -1,4 +1,4 @@
-@use "../../../assets/sass/helpers/responsive";
+@use "../../../assets/sass/pds";
 
 
 .demo-component {
@@ -7,14 +7,14 @@
     grid-template-columns: 280px minmax(0, 1fr);
     margin-bottom: 80px;
 
-    @include responsive.pds-media(m,min) {
+    @include pds.pds-media(m,min) {
         grid-template-columns: 50% minmax(0, 1fr);
     }
 
     &.demo-component-full {
         grid-template-columns: 280px minmax(0, 1fr);
 
-        @include responsive.pds-media(m,min) {
+        @include pds.pds-media(m,min) {
             grid-template-columns: 400px minmax(0, 1fr);
         }
     }
@@ -54,7 +54,7 @@
     grid-column: 1 / -1;
     margin-bottom: 15px;
 
-    @include responsive.pds-media(l,min) {
+    @include pds.pds-media(l,min) {
         grid-column: 1 / 1;
         position: relative;
         margin-bottom: 80px;
@@ -82,7 +82,7 @@
     grid-column: 1 / -1;
     max-width: 80vw;
 
-    @include responsive.pds-media(m,min) {
+    @include pds.pds-media(m,min) {
         max-width: 50vw;
     }
 }

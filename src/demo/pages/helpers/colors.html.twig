@@ -11,9 +11,9 @@
 {% block body_content %}
 
 
-    <h2 >@mixin: pds-theme</h2>
+    <h2 >@mixin: pds.pds-theme</h2>
     <p>
-        <b><code>pds-theme($name)</code></b>
+        <b><code>pds.pds-theme($name)</code></b>
         <dl>
             <dt><code>$name</code></dt>
             <dd>
@@ -27,8 +27,9 @@
         <hr>
         Example:
 <xmp>
+@use ".../...path-to-pds/sass/pds"
 h1 {
-    @include pds-theme(creme01);
+    @include pds.pds-theme(creme01);
     color:var(--pds-color-stroke-60);
     background-color:var(--pds-color-fill-60);
 }

@@ -1,8 +1,4 @@
-@use "../../assets/sass/helpers/hover";
-@use "../../assets/sass/helpers/responsive";
-@use "../../assets/sass/helpers/size";
-
-
+@use "../../assets/sass/pds";
 
 .page-body {
     hr {
@@ -23,67 +19,67 @@
 
 .content-text {
     h1 {
-        margin-bottom: size.pds-spacing(s);
-        font-size: size.pds-fontsize(xl);
+        margin-bottom: pds.pds-spacing(s);
+        font-size: pds.pds-fontsize(xl);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(xxl);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(xxl);
         }
     }
 
     h2 {
-        margin-bottom: size.pds-spacing(xs);
-        font-size: size.pds-fontsize(l);
+        margin-bottom: pds.pds-spacing(xs);
+        font-size: pds.pds-fontsize(l);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(xl);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(xl);
         }
     }
 
     h3 {
-        margin-bottom: size.pds-spacing(xxs);
-        font-size: size.pds-fontsize(m);
+        margin-bottom: pds.pds-spacing(xxs);
+        font-size: pds.pds-fontsize(m);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(l);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(l);
         }
     }
 
     h4 {
-        margin-bottom: size.pds-spacing(xxs);
-        font-size: size.pds-fontsize(default);
+        margin-bottom: pds.pds-spacing(xxs);
+        font-size: pds.pds-fontsize(default);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(m);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(m);
         }
     }
 
     h5 {
-        margin-bottom: size.pds-spacing(xxs);
-        font-size: size.pds-fontsize(default);
+        margin-bottom: pds.pds-spacing(xxs);
+        font-size: pds.pds-fontsize(default);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(5);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(5);
         }
     }
 
     h6 {
-        margin-bottom: size.pds-spacing(xxs);
-        font-size: size.pds-fontsize(default);
+        margin-bottom: pds.pds-spacing(xxs);
+        font-size: pds.pds-fontsize(default);
 
-        @include responsive.pds-media(l,min) {
-            font-size: size.pds-fontsize(m);
+        @include pds.pds-media(l,min) {
+            font-size: pds.pds-fontsize(m);
         }
     }
 
     p {
-        margin-bottom: size.pds-spacing(m);
-        font-size: size.pds-fontsize(default);
+        margin-bottom: pds.pds-spacing(m);
+        font-size: pds.pds-fontsize(default);
         font-weight: 400;
-        line-height: size.pds-lineheight(m);
+        line-height: pds.pds-lineheight(m);
 
-        @include responsive.pds-media(l,min) {
-            margin-bottom: size.pds-spacing(l);
+        @include pds.pds-media(l,min) {
+            margin-bottom: pds.pds-spacing(l);
         }
     }
 
@@ -104,7 +100,7 @@
         transition: color 0.15s ease-out;
         word-break: break-all;
 
-        @include hover.hover {
+        @include pds.hover {
             color:var(--pds-color-fill-110); 
             text-decoration: underline;
         }
@@ -117,12 +113,12 @@
 
     ul,
     ol {
-        margin: 0 0 size.pds-spacing(default) size.pds-spacing(s);
+        margin: 0 0 pds.pds-spacing(default) pds.pds-spacing(s);
         padding: 0;
     }
 
     li {
-        margin-bottom: size.pds-spacing(tiny);
+        margin-bottom: pds.pds-spacing(tiny);
     }
     
 
