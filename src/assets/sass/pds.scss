@@ -1,0 +1,18 @@
+/* ----------------------------------------------------------------------------- *\
+ *
+ * PDS Namespace: forwards all methods and variables 
+ * for external use.
+ *
+ * When using PDS, this should be your only entrypoint
+ * to variables, functions and mixins; don't directly 
+ * include any other file.
+ *
+\* ----------------------------------------------------------------------------- */
+
+
+@forward "settings";
+@forward "helpers/color";
+@forward "helpers/hover";
+@forward "helpers/responsive";
+@forward "helpers/size";
+@forward "helpers/slant";

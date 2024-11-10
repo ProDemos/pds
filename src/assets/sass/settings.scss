@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "variables/defaults";
+
+/* ----------------------------------------------------------------------------- *\
+ *   PDS Settings
+ *
+ *  This file must be configured by the containing
+ *  host to at least override $assets-path, like 
+ *
+ *   @use "@pds/settings" with (
+ *       $assets-path: "./node_modules/prodemos/pds/assets"
+ *   )
+ *
+ *   after that, use 'pds' to access these settings, as well
+ *   as all mixins and funtions defined in pds: 
+ *
+ *   @use "@pds/pds";
+ *   h1 { font: pds.$font-serif; size: pds.fontsize(l); }
+ *
+\* ----------------------------------------------------------------------------- */
+
+// $assets-path:
+// depends on where the css is generated. in the
+// default package, the demo, the css is generated
+// inside the package, so the paths can be relative
+
+$assets-path: ".." !default;
+
+// $font-serif and $font-sans defaults
+$font-serif: "Bree Serif", sans-serif !default;
+$font-sans: "Fira Sans", sans-serif !default;
+
+// $colors:
+// use var(--pds-color-name) to get these colors,
+// but also, these colors will appear in 
+// modifiers (like .pds-m-filled.red )
+
+$custom-colors: () !default;
+$colors: map.deep-merge(defaults.$colors,$custom-colors);
+
+// $themes:
+// use pds-theme-color($themename,$propname)
+// to get to these values easier, but also,
+// these colors will be appear in themes 
+// (like .pds-t-blue01)
+
+$custom-themes: () !default;
+$themes: map.deep-merge(defaults.$themes,$custom-themes);
+$deftheme: 'blue01' !default;
+
+// $fontsizes:
+// use `pds-fontsize(m)` to get fontsize m
+
+$custom-fontsizes: () !default;
+$fontsizes: map.deep-merge(defaults.$fontsizes,$custom-fontsizes);
+$fontsize: map.get($fontsizes, default) !default;
+
+// $lineheights:
+// use `pds-lineheight(m)` to get lineheight m
+
+$custom-lineheights: () !default;
+$lineheights: map.deep-merge(defaults.$lineheights,$custom-lineheights);
+$lineheight: map.get($lineheights, default) !default;
+
+// $spacings:
+// use `pds-spacing(m)` to get spacing m
+
+$custom-spacings: () !default;
+$spacings: map.deep-merge(defaults.$spacings,$custom-spacings);
+$spacing: map.get($spacings, default) !default;
+
+// $breakpoints:
+// use `pds-media(s,min|max) to get a @media query
+
+$custom-breakpoints: () !default;
+$breakpoints: map.deep-merge(defaults.$breakpoints,$custom-breakpoints);

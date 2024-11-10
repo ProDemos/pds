@@ -1,4 +1,5 @@
-/* stylelint-disable selector-no-type, selector-max-type */
+@use "../settings";
+
 //
 // 1. The `html` selector is to have a proper base for REM values.
 // 2. The `body` is to make sure other CSS files don't override our font-size,
@@ -6,8 +7,7 @@
 //
 html,
 body {
-    line-height: $pds-lineheight;
-    font-size: $pds-fontsize;
-    font-family: $font--fira-sans;
+    line-height: settings.$lineheight;
+    font-size: settings.$fontsize;
+    font-family: settings.$font-sans;
 }
-/* stylelint-enable selector-no-type, selector-max-type */

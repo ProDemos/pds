@@ -7,9 +7,9 @@
 
     <h1 >Spacing</h1>
 
-    <h2 >Function: pds-spacing</h2>
+    <h2 >Function: pds.spacing</h2>
     <p>
-        <b><code>pds-spacing(name)</code></b>
+        <b><code>pds.spacing(name)</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a spacing name, like 'huge'</dt>
@@ -18,16 +18,18 @@
     <hr>
         Example:
 <xmp>
+@use "../../assets/sass/pds";
+
 h1 {
-    margin: pds-spacing(huge) pds-spacing(none);
+    margin: pds.spacing(huge) pds.spacing(none);
 }
 </xmp>
     
     <hr>
 
-        <code>$pds-spacings</code> are defined as a map, like 
+        Spacings are defined as a map, like 
 <xmp>
-$pds-spacings: (
+$spacings: (
     none: 0,
     tiny: 4px,
     xxs: 8px,
@@ -41,13 +43,21 @@ $pds-spacings: (
     huge: 64px
 );
 </xmp>
-        You can add your own spacing by adding entries to the map:
+        You can override these spacings, or define your own, when configuring settings.css:
 <xmp>
-@use "sass:map";
+use "...path-to-pds/sass/settings" with ( 
+    $assets-path: "...path-to-assets",
+    $custom-spacings: (
+        default: 20px,
+        gutter: 24px
+    )
+);
+...
+@use "...path-to-pds/sass/pds";
 
-$pds-spacings: map.set($pds-spacings, header-large, 4rem);
-$pds-spacings: map.set($pds-spacings, footnote, .5rem);
-
+h1 {
+    margin: pds.spacing(default) pds.spacing(gutter);
+}
 
 </xmp>
     </p>

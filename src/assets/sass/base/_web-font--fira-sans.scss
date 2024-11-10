@@ -1,3 +1,5 @@
+@use "../settings";
+
 /*
     Only use woff/woff2, this is covering the browsers we support.
     No need to include the ttf/eot/svg
@@ -6,7 +8,7 @@
     Web fonts can ben found here: https://gwfh.mranftl.com/fonts/fira-sans?subsets=latin,latin-ext
 */
 
-$font-path: "#{$pds-assets-path}/fonts/fira-sans/";
+$font-path: "#{settings.$assets-path}/fonts/fira-sans/";
 
 /** REGULAR **/
 
