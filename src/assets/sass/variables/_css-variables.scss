@@ -1,11 +1,13 @@
-// Transform sass variables to css variables
+@use "sass:map";
+@use "../settings";
 
+// Transform sass variables to css variables
 :root {
-    @each $cname, $cvalue in $pds-colors {
+    @each $cname, $cvalue in settings.$colors {
         //@debug("color "+$cname+"="+$cvalue);
         --pds-color-#{$cname}: #{$cvalue};
     }
-    @each $propname, $propval in map-get($pds-themes,$pds-deftheme) {
+    @each $propname, $propval in map.get(settings.$themes,settings.$deftheme) {
         --pds-color-#{$propname}: #{$propval};
     }
 }

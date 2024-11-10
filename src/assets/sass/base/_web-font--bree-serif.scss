@@ -1,3 +1,5 @@
+@use "../settings";
+
 /*
     Only use woff/woff2, this is covering the browsers we support.
     No need to include the ttf/eot/svg
@@ -6,7 +8,7 @@
     Web fonts can ben found here: https://gwfh.mranftl.com/fonts/bree-serif?subsets=latin
 */
 
-$font-path: "#{$pds-assets-path}/fonts/bree-serif/";
+$font-path: "#{settings.$assets-path}/fonts/bree-serif/";
 
 @font-face {
   font-display: swap;

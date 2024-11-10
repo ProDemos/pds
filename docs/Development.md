@@ -141,7 +141,7 @@ A few notes on the use of the Sass-files when adding styles
 When breakpoints are defined, they can be used inline in the class to target specific behaviour.
 
 Just use:
-```
+```SCSS
 @include pds-media(lg,min) {
     font-size: pds-fontsize(l);
 }
@@ -154,7 +154,7 @@ Colors are defined in `$pds-colors` as a map, and themes are defined in `$pds-th
 these are translated to css vars. You can use the helpers `pds-color` and `pds-theme-color` to find the right color,
 but you should preferably use their css equivalents, eg the below classes are the same:
 
-```
+```SCSS
 .class1 {
     background-color: pds-color(red-80);
     color: pds-theme-color('blue01',stroke); 
@@ -169,7 +169,7 @@ but you should preferably use their css equivalents, eg the below classes are th
 ### Fonts
 
 The fonts are defined by name, which helps in consistency. A scale can be accessed with a helper:
-```
+```SCSS
 .class {
     font-size: pds-fontsize(l);
     line-height: pds-lineheight(m);
@@ -179,9 +179,9 @@ The fonts are defined by name, which helps in consistency. A scale can be access
 ### Scales
 
 Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
-```
+```SCSS
 .class {
-    margin-bottom: pds-spacing(tiny); // second in the array
+    margin-bottom: pds-spacing(tiny); 
 }
 ```
 

@@ -1,5 +1,4 @@
-
-
+@use "../../assets/sass/pds";
 
 .page-body {
     hr {
@@ -20,67 +19,67 @@
 
 .content-text {
     h1 {
-        margin-bottom: pds-spacing(s);
-        font-size: pds-fontsize(xl);
+        margin-bottom: pds.spacing(s);
+        font-size: pds.fontsize(xl);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(xxl);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(xxl);
         }
     }
 
     h2 {
-        margin-bottom: pds-spacing(xs);
-        font-size: pds-fontsize(l);
+        margin-bottom: pds.spacing(xs);
+        font-size: pds.fontsize(l);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(xl);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(xl);
         }
     }
 
     h3 {
-        margin-bottom: pds-spacing(xxs);
-        font-size: pds-fontsize(m);
+        margin-bottom: pds.spacing(xxs);
+        font-size: pds.fontsize(m);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(l);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(l);
         }
     }
 
     h4 {
-        margin-bottom: pds-spacing(xxs);
-        font-size: pds-fontsize(default);
+        margin-bottom: pds.spacing(xxs);
+        font-size: pds.fontsize(default);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(m);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(m);
         }
     }
 
     h5 {
-        margin-bottom: pds-spacing(xxs);
-        font-size: pds-fontsize(default);
+        margin-bottom: pds.spacing(xxs);
+        font-size: pds.fontsize(default);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(5);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(5);
         }
     }
 
     h6 {
-        margin-bottom: pds-spacing(xxs);
-        font-size: pds-fontsize(default);
+        margin-bottom: pds.spacing(xxs);
+        font-size: pds.fontsize(default);
 
-        @include pds-media(l,min) {
-            font-size: pds-fontsize(m);
+        @include pds.media(l,min) {
+            font-size: pds.fontsize(m);
         }
     }
 
     p {
-        margin-bottom: pds-spacing(m);
-        font-size: pds-fontsize(default);
+        margin-bottom: pds.spacing(m);
+        font-size: pds.fontsize(default);
         font-weight: 400;
-        line-height: pds-lineheight(m);
+        line-height: pds.lineheight(m);
 
-        @include pds-media(l,min) {
-            margin-bottom: pds-spacing(l);
+        @include pds.media(l,min) {
+            margin-bottom: pds.spacing(l);
         }
     }
 
@@ -101,7 +100,7 @@
         transition: color 0.15s ease-out;
         word-break: break-all;
 
-        @include hover {
+        @include pds.hover {
             color:var(--pds-color-fill-110); 
             text-decoration: underline;
         }
@@ -114,12 +113,12 @@
 
     ul,
     ol {
-        margin: 0 0 pds-spacing(default) pds-spacing(s);
+        margin: 0 0 pds.spacing(default) pds.spacing(s);
         padding: 0;
     }
 
     li {
-        margin-bottom: pds-spacing(tiny);
+        margin-bottom: pds.spacing(tiny);
     }
     
 

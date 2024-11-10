@@ -1,3 +1,5 @@
+@use "../../../assets/sass/pds";
+
 
 .demo-colors {
     display: grid;
@@ -5,11 +7,11 @@
     grid-gap: 2rem;
     margin-bottom: 1.5rem;
 
-    @include pds-media(m,min) {
+    @include pds.media(m,min) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    @include pds-media(l,min) {
+    @include pds.media(l,min) {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
@@ -23,7 +25,7 @@
     min-width: 120px;
     text-align: center;
 
-    @include pds-media(m,min) {
+    @include pds.media(m,min) {
         min-width: 150px;
     }
 }
@@ -63,7 +65,7 @@
 }
 .demo-color-sass {
     padding:1em;
-    background-color:pds-color(blue-80);
+    background-color:pds.color(blue-80);
 }
 .demo-theme-html {
     div {
@@ -83,7 +85,7 @@
 }
 .demo-theme-sass {
     padding:1em;
-    @include pds-theme(blue01);
+    @include pds.theme(blue01);
     background-color: var(--pds-color-fill);
     border-color: var(--pds-color-accfill-80);
     border-width:3px;
