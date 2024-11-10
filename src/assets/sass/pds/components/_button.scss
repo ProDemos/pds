@@ -16,9 +16,9 @@
 .pds-c-button {
     position: relative;
     display: inline-block;
-    padding: size.pds-spacing(s) size.pds-spacing(default); // 16px 20px
-    font-family: settings.$pds-font-sans;
-    font-size: size.pds-fontsize(m);
+    padding: size.spacing(s) size.spacing(default); // 16px 20px
+    font-family: settings.$font-sans;
+    font-size: size.fontsize(m);
     font-weight: 500;
     line-height: 1.5;
     text-decoration: none;
@@ -109,23 +109,23 @@
 
 
     &.large {
-        padding: size.pds-spacing(s) size.pds-spacing(default); // 16px 20px
-        font-size: size.pds-fontsize(m);
+        padding: size.spacing(s) size.spacing(default); // 16px 20px
+        font-size: size.fontsize(m);
     }
 
 
 
     &.regular {
-        padding: size.pds-spacing(xs) size.pds-spacing(s); // 12px 16px
-        font-size: size.pds-fontsize(default);
+        padding: size.spacing(xs) size.spacing(s); // 12px 16px
+        font-size: size.fontsize(default);
         .pds-c-button-icon { font-size:1.11em; }
     }
 
 
 
     &.small {
-        padding: size.pds-spacing(xxs) size.pds-spacing(xs); // 8px 12px
-        font-size: size.pds-fontsize(s);
+        padding: size.spacing(xxs) size.spacing(xs); // 8px 12px
+        font-size: size.fontsize(s);
         .pds-c-button-icon { font-size:1.25em; }
     }
 
@@ -133,8 +133,8 @@
 
     &.toggle {
         width: 100%;
-        padding: size.pds-spacing(xxs)  size.pds-spacing(xs); // 8px 12px
-        font-size: size.pds-fontsize(s);
+        padding: size.spacing(xxs)  size.spacing(xs); // 8px 12px
+        font-size: size.fontsize(s);
         text-align: center;
         border-style: solid;
         border-width: 2px;
@@ -148,8 +148,8 @@
 
 
     &.transparent {
-        padding: size.pds-spacing(xxs) 0; // 8px 0px
-        font-size: size.pds-fontsize(s);
+        padding: size.spacing(xxs) 0; // 8px 0px
+        font-size: size.fontsize(s);
         .pds-c-button-icon { font-size: 1.625em; }
         .pds-c-button-icon:not(svg).black {
             background-color:black;
@@ -192,11 +192,11 @@
         }
 
         .pds-c-button-label + .pds-c-button-icon  {
-            margin-left: size.pds-spacing(s);
+            margin-left: size.spacing(s);
         }
         
         .pds-c-button-icon + .pds-c-button-label  {
-            margin-left: size.pds-spacing(s);
+            margin-left: size.spacing(s);
         }
         
 
@@ -206,11 +206,11 @@
     &.transparent  {
         .pds-c-button-content {
             .pds-c-button-label + .pds-c-button-icon  {
-                margin-left: size.pds-spacing(xxs);
+                margin-left: size.spacing(xxs);
             }
             
             .pds-c-button-icon + .pds-c-button-label  {
-                margin-left: size.pds-spacing(xxs);
+                margin-left: size.spacing(xxs);
             }
         }
     }

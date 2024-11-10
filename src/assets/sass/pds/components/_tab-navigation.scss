@@ -33,12 +33,12 @@
             border-bottom: 1px solid var(--pds-color-black-20);
 
             @include responsive.media-from(m) {
-                margin: 0 size.pds-spacing(xxs);
+                margin: 0 size.spacing(xxs);
                 border: none;
             }
 
             @include responsive.media-from(l) {
-                margin: 0 size.pds-spacing(s);
+                margin: 0 size.spacing(s);
             }
 
             &:first-child {
@@ -52,10 +52,10 @@
             a, .pds-c-tabs-link {
 
                 display: inline-block;
-                padding: size.pds-spacing(xxs) 0 size.pds-spacing(xxs);
+                padding: size.spacing(xxs) 0 size.spacing(xxs);
                 color: var(--pds-color-black);
-                font-family: settings.$pds-font-sans;
-                font-size: size.pds-fontsize(xs);
+                font-family: settings.$font-sans;
+                font-size: size.fontsize(xs);
                 font-weight: 500;
                 line-height: 1.5;
                 text-decoration: none;
@@ -67,7 +67,7 @@
 
                 @include responsive.media-from(m) {
                     position: relative;
-                    padding: size.pds-spacing(tiny) 0 size.pds-spacing(s);
+                    padding: size.spacing(tiny) 0 size.spacing(s);
                 }
 
                 &::after {
@@ -95,7 +95,7 @@
     .pds-c-tabs-panels {
         
         .pds-c-tabs-panel {
-            padding: size.pds-spacing(s) 0;
+            padding: size.spacing(s) 0;
             display:none;
             &.active {
                 display:block;

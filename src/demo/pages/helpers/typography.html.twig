@@ -7,9 +7,9 @@
 
     <h1 >Typography</h1>
 
-    <h2 >Function: pds.pds-fontsize</h2>
+    <h2 >Function: pds.fontsize</h2>
     <p>
-        <b><code>pds.pds-fontsize(name)</code></b>
+        <b><code>pds.fontsize(name)</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a fontsize name, like 'huge'</dt>
@@ -21,7 +21,7 @@
 @use "..path-to-pds/sass/pds";
 
 h1 {
-    font-size: pds.pds-fontsize(huge);
+    font-size: pds.fontsize(huge);
 }
 </xmp>
     
@@ -29,7 +29,7 @@ h1 {
 
         Font sizes are defined as a map, like 
 <xmp>
-$pds-fontsizes: (
+$fontsizes: (
   none: 0,
   tiny: 8px,
   xxs: 12px,
@@ -47,8 +47,8 @@ $pds-fontsizes: (
         when configuring settings:
 <xmp>
 use "...path-to-pds/sass/settings" with ( 
-    $pds-assets-path: "...path-to-pds",
-    $pds-custom-fontsizes: (
+    $assets-path: "...path-to-assets",
+    $custom-fontsizes: (
         header-large: 4rem,
         footnote: .5rem
     )
@@ -56,15 +56,15 @@ use "...path-to-pds/sass/settings" with (
 ...
 @use "...path-to-pds/sass/pds";
 h1 {
-    font-size: pds.pds-fontsize(header-large);
+    font-size: pds.fontsize(header-large);
 }
 
 </xmp>
     </p>
 
-    <h2 >Function: pds.pds-lineheight</h2>
+    <h2 >Function: pds.lineheight</h2>
     <p>
-        <b><code>pds.pds-lineheight(name)</code></b>
+        <b><code>pds.lineheight(name)</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a lineheight name, like 'default'</dt>
@@ -76,7 +76,7 @@ h1 {
 @use "...path-to-pds/sass/pds";
 
 h1 {
-    line-height: pds.pds-lineheight(default);
+    line-height: pds.lineheight(default);
 }
 </xmp>
     
@@ -84,7 +84,7 @@ h1 {
 
         Line heights are defined as a map, like 
 <xmp>
-$pds-lineheights: (
+$lineheights: (
   none: 0,
   tiny: 1,
   xxs: 1,
@@ -99,11 +99,11 @@ $pds-lineheights: (
 );
 </xmp>
         You can override these lineheights, or add your own, when
-        configuring settings.scss:
+        configuring settings:
 <xmp>
 use "...path-to-pds/sass/settings" with ( 
-    $pds-assets-path: "...path-to-pds",
-    $pds-custom-lineheights: (
+    $assets-path: "...path-to-assets",
+    $custom-lineheights: (
         header-large: 1.2,
         footnote: .5
     )
@@ -112,16 +112,16 @@ use "...path-to-pds/sass/settings" with (
 @use "...path-to-pds/sass/pds";
 
 h1 {
-    line-height: pds.pds-lineheight(header-large);
+    line-height: pds.lineheight(header-large);
 }
 
 </xmp>
 
     </p>
 
-    <h2 >Mixin: pds.pds-slant</h2>
+    <h2 >Mixin: pds.slant</h2>
     <p>
-        <b><code>pds.pds-slant([color], [bottom-left|bottom-right], [size])</code></b>
+        <b><code>pds.slant([color], [bottom-left|bottom-right], [size])</code></b>
         <dl>
             <dt><code>color</code> (default blue)</dt>
             <dd>refers to a color name, like 'blue-40'</dt>
@@ -140,7 +140,7 @@ h1 {
 <xmp>
 @use "...path-to-pds/sass/pds";
 .infobox {
-    @include pds.pds-slant(red)
+    @include pds.slant(red)
 }
 </xmp>
     

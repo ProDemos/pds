@@ -3,45 +3,45 @@
 @use "sass:meta";
 @use "../settings";
 
-@function pds-fontsize($name) {
+@function fontsize($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(settings.$pds-fontsizes, $name) == false {
+		@if map.has-key(settings.$fontsizes, $name) == false {
 			@error  "There is no fontsize named `#{$name}`";
 		}
-		@return map.get(settings.$pds-fontsizes, $name);
+		@return map.get(settings.$fontsizes, $name);
 	} 
-	@if list.nth(settings.$pds-fontsizes, $name) == false {
+	@if list.nth(settings.$fontsizes, $name) == false {
 		@error  "There is no fontsize numbered `#{$name}`";
 	}
-	@return list.nth(map.values(settings.$pds-fontsizes), $name);
+	@return list.nth(map.values(settings.$fontsizes), $name);
 	
 }
 
-@function pds-lineheight($name) {
+@function lineheight($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(settings.$pds-lineheights, $name) == false {
+		@if map.has-key(settings.$lineheights, $name) == false {
 			@error  "There is no lineheight named `#{$name}`";
 		}
-		@return map.get(settings.$pds-lineheights, $name);
+		@return map.get(settings.$lineheights, $name);
 	} 
-	@if list.nth(settings.$pds-lineheights, $name) == false {
+	@if list.nth(settings.$lineheights, $name) == false {
 		@error  "There is no lineheight numbered `#{$name}`";
 	}
-	@return list.nth(map.values(settings.$pds-lineheights), $name);
+	@return list.nth(map.values(settings.$lineheights), $name);
 	
 }
 
-@function pds-spacing($name) {
+@function spacing($name) {
 	@if meta.type-of($name) == string {
-		@if map.has-key(settings.$pds-spacings, $name) == false {
+		@if map.has-key(settings.$spacings, $name) == false {
 			@error  "There is no spacing named `#{$name}`";
 		}
-		@return map.get(settings.$pds-spacings, $name);
+		@return map.get(settings.$spacings, $name);
 	} 
-	@if list.nth(settings.$pds-spacings, $name) == false {
+	@if list.nth(settings.$spacings, $name) == false {
 		@error  "There is no spacing numbered `#{$name}`";
 	}
-	@return list.nth(map.values(settings.$pds-spacings), $name);
+	@return list.nth(map.values(settings.$spacings), $name);
 	
 }
 

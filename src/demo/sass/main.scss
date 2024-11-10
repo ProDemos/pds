@@ -9,10 +9,10 @@
 // PDS
 //
 @use "../../assets/sass/settings" with (
-    $pds-assets-path: "/assets"
+    $assets-path: "/assets"
 );
-@use "../../assets/sass/reset.scss";
-@use "../../assets/sass/main.scss";
+@use "../../assets/sass/reset";
+@use "../../assets/sass/main";
 
 // -------------------
 // Local layout 

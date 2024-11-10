@@ -10,32 +10,6 @@
 
 {% block body_content %}
 
-
-    <h2 >@mixin: pds.pds-theme</h2>
-    <p>
-        <b><code>pds.pds-theme($name)</code></b>
-        <dl>
-            <dt><code>$name</code></dt>
-            <dd>
-                refers to a theme name, like 'red01'.
-            </dd>
-        </dl>
-        Changes the current theme css variables to the given theme;
-        if <code>var(--pds-color-accfill)</code> would have been
-        orange before calling the mixin, it may be blue after calling it.
-        See design/colors for an overview of the available themes.
-        <hr>
-        Example:
-<xmp>
-@use ".../...path-to-pds/sass/pds"
-h1 {
-    @include pds.pds-theme(creme01);
-    color:var(--pds-color-stroke-60);
-    background-color:var(--pds-color-fill-60);
-}
-</xmp>
-    
-
     <h2>Css variables: pds-color-xxx</h2>
     <p>
         <b><code>pds-color-$name</code></b>
@@ -64,7 +38,7 @@ h1 {
         <hr>
         PDS colors are defined as a map, like 
 <xmp>
-$pds-colors: (
+$colors: (
     black-110: #000,
     black-80: #333, 
     ...
@@ -73,9 +47,9 @@ $pds-colors: (
         You can override these css variables in your own design,
         or you can add your own colors, when configuring settings.css
 <xmp>
-use "...path-to-pds/sass/settings.scss" with ( 
-    $pds-assets-path: "...path-to-pds",
-    $pds-custom-colors: (
+use "...path-to-pds/sass/settings" with ( 
+    $assets-path: "...path-to-assets",
+    $custom-colors: (
         black-80: #444,
         flirt: #B30069
     )
@@ -88,21 +62,45 @@ p {
 }
 </xmp>
 
+<h2 >@mixin: pds.theme</h2>
+    <p>
+        <b><code>pds.theme($name)</code></b>
+        <dl>
+            <dt><code>$name</code></dt>
+            <dd>
+                refers to a theme name, like 'red01'.
+            </dd>
+        </dl>
+        Changes the current theme css variables to the given theme;
+        if <code>var(--pds-color-accfill)</code> would have been
+        orange before calling the mixin, it may be blue after calling it.
+        See design/colors for an overview of the available themes.
+        <hr>
+        Example:
+<xmp>
+@use ".../...path-to-pds/sass/pds"
+h1 {
+    @include pds.theme(creme01);
+    color:var(--pds-color-stroke-60);
+    background-color:var(--pds-color-fill-60);
+}
+</xmp>
+
         PDS themes are also defined as a map, like 
 <xmp>
-$pds-themes: (
+$themes: (
     blue01 : (
-        fill: map-get($pds-colors,'blue'),
-        fill-120: map.get($pds-colors,'blue-120'),
-        fill-110: map.get($pds-colors,'blue-120'),
-        fill-80: map.get($pds-colors,'blue-110'),
+        fill: map-get($colors,'blue'),
+        fill-120: map.get($colors,'blue-120'),
+        fill-110: map.get($colors,'blue-120'),
+        fill-80: map.get($colors,'blue-110'),
         ...
-        accfill: map-get($pds-colors,'orange'),
-        accfill-120: map.get($pds-colors,'orange-120'),
-        accfill-110: map.get($pds-colors,'orange-110'),
+        accfill: map-get($colors,'orange'),
+        accfill-120: map.get($colors,'orange-120'),
+        accfill-110: map.get($colors,'orange-110'),
         ...
-        stroke: map-get($pds-colors,'white'),
-        accstroke: map-get($pds-colors,'white') 
+        stroke: map-get($colors,'white'),
+        accstroke: map-get($colors,'white') 
     ),
     orange01: (
         ...
@@ -111,7 +109,7 @@ $pds-themes: (
 )
 </xmp>
         You can override the themes in your own design,
-        or you can add your own, when configuring settings.scss.
+        or you can add your own, when configuring settings.
     </p>
 
 

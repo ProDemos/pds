@@ -5,9 +5,9 @@
 
 {% block body_intro %}
     <h1 >Responsive</h1>
-    <h2 >Mixin: pds.pds-media</h2>
+    <h2 >Mixin: pds.media</h2>
     <p>
-        <b><code>pds.pds-media(name,[min|max],[breakpoints])</code></b>
+        <b><code>pds.media(name,[min|max],[breakpoints])</code></b>
         <dl>
             <dt><code>name</code></dt>
             <dd>refers to a breakpoint name, like 'tablet' or 'phone'</dt>
@@ -22,7 +22,7 @@
 <xmp>
 @use "../../assets/sass/pds";
 
-@include pds.pds-media("tablet", min) {
+@include pds.media("tablet", min) {
   ul.pas-form-pager {
     display: flex;
   }
@@ -33,7 +33,7 @@
 
         Breakpoints are defined as a map, like 
 <xmp>
-$pds-breakpoints: (
+$breakpoints: (
     none:0, 
     tiny: 280px,
     xxs: 320px,
@@ -48,18 +48,18 @@ $pds-breakpoints: (
 );
 </xmp>
         You can override these breakpoints, or define your own,
-        when configuring settings.scss:
+        when configuring settings:
 <xmp>
-use "...path-to-pds/sass/settings.scss" with ( 
-    $pds-assets-path: "...path-to-pds",
-    $pds-custom-breakpoints: (
+use "...path-to-pds/sass/settings" with ( 
+    $assets-path: "...path-to-assets",
+    $custom-breakpoints: (
         phone-small: 375px,
         xs: 400px
     )
 );
 ...
-@use "../../assets/sass/pds";
-@include pds.pds-media("phone-small", min) {
+@use "...path-to-pds/sass/pds";
+@include pds.media("phone-small", min) {
   ul.pas-form-pager {
     display: flex;
   }

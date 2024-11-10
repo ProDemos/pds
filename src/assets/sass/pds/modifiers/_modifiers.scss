@@ -16,7 +16,7 @@
 
 // named colors
 
-@each $cname, $cvalue in settings.$pds-colors {
+@each $cname, $cvalue in settings.$colors {
     .pds-m-filled.#{$cname} {
         background-color: var(--pds-color-#{$cname});
     }
@@ -30,7 +30,7 @@
 
 // theme selector
 
-@each $themename, $thememap in settings.$pds-themes {
+@each $themename, $thememap in settings.$themes {
     :root .pds-t-#{$themename} {
         @each $propname, $propval in $thememap {
             --pds-color-#{$propname}: #{$propval};

@@ -113,15 +113,16 @@ The reset.css is optional.
 ## Source scss
 
  If you installed a package containing sass, you can import 
- the reset and main scss files. Make sure to configure
- `$pds-assets-path` to point to the right root folder.
+ the reset and main scss files. Make sure to copy the assets 
+ (images, fonts etc) to a public folder and configure
+ `$assets-path` to point to that folder first.
 
 ```SCSS
-@use "@pds/sass/settings.scss" with (
-  $pds-assets-path: "@pds"
+@use "@pds/sass/settings" with (
+  $assets-path: "@pds-assets"
 );
-@import "@pds/sass/reset.scss"; // optional
-@import "@pds/sass/main.scss";
+@import "@pds/sass/reset"; // optional
+@import "@pds/sass/main";
 
 ```
 
@@ -130,6 +131,13 @@ before including the scss files, like
 breakpoints and fontsizes. Read the full 
 documentation on https://pds.prodemos.nl/.
  
+To access sass variables, methods and mixins 
+defined in PDS, include the pds namespace
+in any child sccs file:
+```SCSS
+@use "@pds/sass/pds";
+h1 { font-size: pds.fontsize(l); }
+```
 
 # Making changes, new releases
 

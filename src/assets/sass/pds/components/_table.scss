@@ -12,7 +12,7 @@
 
     width: 100%;
     height: auto !important;
-    margin-bottom: size.pds-spacing(m);
+    margin-bottom: size.spacing(m);
     color: var(--pds-color-black);
     border-spacing: 0;
 
@@ -29,8 +29,8 @@
         transition: background-color 0.1s ease-in-out;
 
         th  {
-            padding: size.pds-spacing(xxs) size.pds-spacing(xs);
-            font-size: size.pds-fontsize(xs);
+            padding: size.spacing(xxs) size.spacing(xs);
+            font-size: size.fontsize(xs);
             font-weight: 500;
             text-align: left;
             text-transform: uppercase;
@@ -39,8 +39,8 @@
 
         td  {
 
-            padding: size.pds-spacing(xxs) size.pds-spacing(xs);
-            font-size: size.pds-fontsize(xs);
+            padding: size.spacing(xxs) size.spacing(xs);
+            font-size: size.fontsize(xs);
         }
         
     }
@@ -77,7 +77,7 @@
                     /* Behave  like a "row" */
                     position: relative;
                     display: block;
-                    padding: size.pds-spacing(xxs) size.pds-spacing(xs) size.pds-spacing(xxs) 50%;
+                    padding: size.spacing(xxs) size.spacing(xs) size.spacing(xxs) 50%;
                     border: none;
 
                     &::before {
@@ -85,10 +85,10 @@
                         position: absolute;
 
                         /* Top/left values mimic padding */
-                        top: size.pds-spacing(xxs);
-                        left: size.pds-spacing(xs);
+                        top: size.spacing(xxs);
+                        left: size.spacing(xs);
                         width: 45%;
-                        padding-right: size.pds-spacing(xs);
+                        padding-right: size.spacing(xs);
                         white-space: nowrap;
                         font-weight: 500;
                     }

@@ -32,13 +32,16 @@
 
         <ul>
             <li>
-                <b>Include <code>assets/css/main.css</code></b> and optionally <code>assets/css/reset.css</code>
-                in your html pages, or if you use sass: 
-<xmp>@use "...path-to-pds/sass/settings.scss" with ( 
-    $pds-assets-path: "...path-to-pds" 
+                <b>For plain html:</b> include <code>assets/css/main.css</code> and optionally <code>assets/css/reset.css</code>
+                in your html pages, and you'll be able to access pds css variables and predefined classes in your html.
+            </li>
+            <li>
+                <b>For sass:</b>  Copy the assets (images,fonts,etc) to a public folder and include the following code before your own styles:
+<xmp>@use "...path-to-pds/sass/settings" with ( 
+    $assets-path: "...path-to-assets" 
 );
-@use "...path-to-pds/sass/reset.scss"; // optional
-@use "...path-to-pds/sass/main.scss";</xmp>
+@use "...path-to-pds/sass/reset"; // optional
+@use "...path-to-pds/sass/main";</xmp>
             </li>
             <li>
                 <b>The css defines</b> themes (<code>pds-t-{theme}</code>),
@@ -69,7 +72,12 @@
                 that they only modify the appearance of the immediately contained content. 
                 For example, <code>class="pds-m-colored red"</code> changes the (text) color of the element to red. 
             </li>
-            
+            <li>
+                <b>To access sass variables, methods and mixins</b> defined in PDS, include the pds namespace
+                in any child sccs file:
+<xmp>@use "...path-to-pds/sass/pds";
+h1 { font-size: pds.fontsize(l); }</xmp> 
+            </li>
         </ul>
 
         

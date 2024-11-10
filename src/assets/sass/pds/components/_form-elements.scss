@@ -19,7 +19,7 @@
 
 .pds-c-input-container {
 
-    margin-bottom: size.pds-spacing(s);
+    margin-bottom: size.spacing(s);
 
     // Radiobutton
     &.radio, &:has(input[type=radio]) {
@@ -30,8 +30,8 @@
             &:has(input[type=radio]) {
                 display: block;
                 position: relative;
-                padding: size.pds-spacing(xs) size.pds-spacing(default) size.pds-spacing(xs) size.pds-spacing(xl);
-                margin: size.pds-spacing(xs) auto;
+                padding: size.spacing(xs) size.spacing(default) size.spacing(xs) size.spacing(xl);
+                margin: size.spacing(xs) auto;
                 z-index: 2;
                 cursor: pointer;
                 transition: all 0.25s linear;
@@ -56,10 +56,10 @@
             border: 1px solid var(--pds-color-black-20);
             border-radius: 100%;
             background-color: var(--pds-color-creme);
-            height: size.pds-spacing(default);
-            width: size.pds-spacing(default);
-            top: size.pds-spacing(xs);
-            left: size.pds-spacing(s);
+            height: size.spacing(default);
+            width: size.spacing(default);
+            top: size.spacing(xs);
+            left: size.spacing(s);
             z-index: 5;
             transition: border 0.25s linear;
             cursor: pointer;
@@ -70,8 +70,8 @@
                 position: absolute;
                 content: "";
                 border-radius: 100%;
-                height: size.pds-spacing(xs);
-                width: size.pds-spacing(xs);
+                height: size.spacing(xs);
+                width: size.spacing(xs);
                 top: 3px;
                 left: 3px;
                 margin: auto;
@@ -87,8 +87,8 @@
             &:has(input[type=checkbox]) {
                 display: block;
                 position: relative;
-                padding: size.pds-spacing(xs) size.pds-spacing(default) size.pds-spacing(xs) size.pds-spacing(xl);
-                margin: size.pds-spacing(xs) auto;
+                padding: size.spacing(xs) size.spacing(default) size.spacing(xs) size.spacing(xl);
+                margin: size.spacing(xs) auto;
                 z-index: 2;
                 cursor: pointer;
                 transition: all 0.25s linear;
@@ -114,10 +114,10 @@
             position: absolute;
             border: 1px solid var(--pds-color-black-20);
             background-color: var(--pds-color-creme);
-            height: size.pds-spacing(default);
-            width: size.pds-spacing(default);
-            top: size.pds-spacing(xs);
-            left: size.pds-spacing(s);
+            height: size.spacing(default);
+            width: size.spacing(default);
+            top: size.spacing(xs);
+            left: size.spacing(s);
             z-index: 5;
             transition: border 0.25s linear;
             cursor: pointer;
@@ -127,8 +127,8 @@
                 display: block;
                 position: absolute;
                 content: "";
-                height: size.pds-spacing(xs);
-                width: size.pds-spacing(xs);
+                height: size.spacing(xs);
+                width: size.spacing(xs);
                 top: 3px;
                 left: 3px;
                 margin: auto;
@@ -149,10 +149,10 @@
 
 // The default label styling
 .pds-c-input-label {
-    margin-bottom: size.pds-spacing(s);
+    margin-bottom: size.spacing(s);
     color: var(--pds-color-black);
-    font-family: settings.$pds-font-sans;
-    font-size: size.pds-fontsize(s);
+    font-family: settings.$font-sans;
+    font-size: size.fontsize(s);
     font-weight: 500;
 }
 
@@ -162,9 +162,9 @@
 .pds-c-input {
     outline: none;
     color: var(--pds-color-black);
-    font-family: settings.$pds-font-sans;
-    font-size: size.pds-fontsize(s);
-    line-height: size.pds-lineheight(m);
+    font-family: settings.$font-sans;
+    font-size: size.fontsize(s);
+    line-height: size.lineheight(m);
     border-radius: 0;
     background-color: var(--pds-color-creme);
 
@@ -189,7 +189,7 @@
     &[type=time],
     &.text {
 
-        padding: size.pds-spacing(xs) size.pds-spacing(xl) size.pds-spacing(xxs) size.pds-spacing(default);
+        padding: size.spacing(xs) size.spacing(xl) size.spacing(xxs) size.spacing(default);
         border: none;
         border-bottom: 3px solid var(--pds-color-creme);
         transition: border-bottom-color 150ms ease-in-out;
@@ -197,7 +197,7 @@
         
 
         &.valid {
-            background-image: url("#{settings.$pds-assets-path}/images/icons/check-circle-solid-green.svg");
+            background-image: url("#{settings.$assets-path}/images/icons/check-circle-solid-green.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -205,7 +205,7 @@
         }
 
         &.invalid {
-            background-image: url("#{settings.$pds-assets-path}/images/icons/cross-circle-solid-red.svg");
+            background-image: url("#{settings.$assets-path}/images/icons/cross-circle-solid-red.svg");
             background-position: top 13px right 15px;
             background-repeat: no-repeat;
             background-size: 24px 24px;
@@ -227,14 +227,14 @@
     &[type=number],
     &[type=date],
     &[type=time] {
-        padding-right: size.pds-spacing(default);
+        padding-right: size.spacing(default);
     }
 
     @at-root select#{&}, &.dropdown {
-        padding: size.pds-spacing(xs) size.pds-spacing(xl) size.pds-spacing(xs) size.pds-spacing(default);
+        padding: size.spacing(xs) size.spacing(xl) size.spacing(xs) size.spacing(default);
         border: none;
         border-bottom: 2px solid var(--pds-color-transparent);
-        background-image: url("#{settings.$pds-assets-path}/images/icons/chevrons-updown.svg");
+        background-image: url("#{settings.$assets-path}/images/icons/chevrons-updown.svg");
         background-position: top 13px right 15px;
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -256,8 +256,8 @@
   
     }
     @at-root textarea#{&} {
-        padding: size.pds-spacing(xs) size.pds-spacing(xl) size.pds-spacing(xxs)
-          size.pds-spacing(default);
+        padding: size.spacing(xs) size.spacing(xl) size.spacing(xxs)
+          size.spacing(default);
         border: none;
         border-bottom: 3px solid var(--pds-color-creme);
         transition: border-bottom-color 150ms ease-in-out;
@@ -296,7 +296,7 @@
 // fake input
 span.pds-c-input {
     display:inline-block;
-    padding: 10px size.pds-spacing(xl) 10px size.pds-spacing(default);
+    padding: 10px size.spacing(xl) 10px size.spacing(default);
 }
 
 // ----theming -------
