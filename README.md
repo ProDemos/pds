@@ -104,7 +104,7 @@ Depending on the package you installed, the assets folder may contain any or all
 ## Plain css
 If you installed a compiled package, you
 can include the plain css/javascript into your project
-```
+```HTML
 <link rel="stylesheet" href=".../pds/assets/css/reset.css">
 <link rel="stylesheet" href=".../pds/assets/css/main.css">
 ```
@@ -113,16 +113,17 @@ The reset.css is optional.
 ## Source scss
 
  If you installed a package containing sass, you can import 
- the reset and main scss files. Make sure to copy the assets 
+ the reset and main scss files [^1]. Make sure to copy the assets 
  (images, fonts etc) to a public folder and configure
  `$assets-path` to point to that folder first.
 
+
 ```SCSS
-@use "...pds/sass/settings" with (
-  $assets-path: "@pds-assets"
+@use "pds/settings" with (
+  $assets-path: "../path-to/pds-assets"
 );
-@use "...pds/sass/reset"; // optional
-@use "...pds/sass/main";
+@use "pds/reset"; // optional
+@use "pds/main";
 
 ```
 
@@ -135,7 +136,7 @@ To access sass variables, methods and mixins
 defined in PDS, include the pds namespace
 in any child sccs file:
 ```SCSS
-@use "...pds/sass/pds";
+@use "pds/pds";
 h1 { font-size: pds.fontsize(l); }
 ```
 
@@ -147,3 +148,7 @@ see [docs/Development.md](docs/Development.md).
 See [docs/Distribution.md](docs/Distribution.md)
 on how to create a new release.
 
+[^1]: If you configure `...path-to-pds/assets/sass` to be 
+in your sass `load-path` (cli) or `loadPaths` (js), you can
+use the shortcuts as shown. Otherwise, use full or
+relative paths.

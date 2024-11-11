@@ -44,6 +44,7 @@ compile-css:
 
 	mkdir -p build/demo/css/
 	node_modules/.bin/sass \
+		--load-path src/assets/sass \
 		--style=compressed \
 		src/demo/sass/main.scss \
 		build/demo/css/main.css

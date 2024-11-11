@@ -47,7 +47,7 @@ $colors: (
         You can override these css variables in your own design,
         or you can add your own colors, when configuring settings.css
 <xmp>
-use "...path-to-pds/sass/settings" with ( 
+use "...pds/settings" with ( 
     $assets-path: "...path-to-assets",
     $custom-colors: (
         black-80: #444,
@@ -78,7 +78,7 @@ p {
         <hr>
         Example:
 <xmp>
-@use ".../...path-to-pds/sass/pds"
+@use "...pds/pds"
 h1 {
     @include pds.theme(creme01);
     color:var(--pds-color-stroke-60);

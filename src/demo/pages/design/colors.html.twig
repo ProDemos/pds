@@ -125,8 +125,9 @@
     <hr>
     <h4>Named colors through sass</h4>
 <xmp>
+@use "...pds/pds";
 .demo-color-sass {
-    background-color:pds-color(blue-80);
+    background-color:pds.color(blue-80);
 }
 </xmp>
     <div class="demo-color-sass">BLUE 80</div>
@@ -163,7 +164,8 @@ border-color: var(--pds-color-accfill-80);
     <hr>
     <h4>Theme colors through sass</h4>
 <xmp>
-@include pds-theme(blue01);
+@use "...pds/pds";
+@include pds.theme(blue01);
 background-color: var(--pds-color-fill);
 border-color: var(--pds-color-accfill-80);
 </xmp>

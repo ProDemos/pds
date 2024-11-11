@@ -98,8 +98,8 @@ packages again and attaches them to the release.
 # Expand - adding new elements
 
 To create a new component, say pds-c-foo
-  - write your sass in `src/assets/sass/pds/components/_foo.scss`
-  - add your stylesheet to `src/assets/sass/main.scss`
+  - write your sass in `src/assets/sass/components/_foo.scss`
+  - add your stylesheet to `src/assets/components/_index_.scss`
   - optionally write a demo twig template in `src/assets/twig/components/foo/foo.twig`
   - optionally add a config for that template to `src/demo/config/components/foo.yml`
 

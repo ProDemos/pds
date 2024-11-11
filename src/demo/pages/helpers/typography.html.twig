@@ -18,7 +18,7 @@
     <hr>
         Example:
 <xmp>
-@use "..path-to-pds/sass/pds";
+@use "...pds/pds";
 
 h1 {
     font-size: pds.fontsize(huge);
@@ -46,7 +46,7 @@ $fontsizes: (
         You can override these font sizes, or define your own,
         when configuring settings:
 <xmp>
-use "...path-to-pds/sass/settings" with ( 
+use "...pds/settings" with ( 
     $assets-path: "...path-to-assets",
     $custom-fontsizes: (
         header-large: 4rem,
@@ -54,7 +54,7 @@ use "...path-to-pds/sass/settings" with (
     )
 );
 ...
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 h1 {
     font-size: pds.fontsize(header-large);
 }
@@ -73,7 +73,7 @@ h1 {
     <hr>
         Example:
 <xmp>
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 
 h1 {
     line-height: pds.lineheight(default);
@@ -101,7 +101,7 @@ $lineheights: (
         You can override these lineheights, or add your own, when
         configuring settings:
 <xmp>
-use "...path-to-pds/sass/settings" with ( 
+use "...pds/settings" with ( 
     $assets-path: "...path-to-assets",
     $custom-lineheights: (
         header-large: 1.2,
@@ -109,7 +109,7 @@ use "...path-to-pds/sass/settings" with (
     )
 );
 ...
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 
 h1 {
     line-height: pds.lineheight(header-large);
@@ -138,7 +138,7 @@ h1 {
     <hr>
         Example:
 <xmp>
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 .infobox {
     @include pds.slant(red)
 }
