@@ -35,16 +35,16 @@ compile-css:
 	mkdir -p build/assets/css/
 	node_modules/.bin/sass \
 		--style=compressed \
-		build/assets/sass/main.scss \
+		build/assets/sass/pds/main.scss \
 		build/assets/css/main.css
 	node_modules/.bin/sass \
 		--style=compressed \
-		build/assets/sass/reset.scss \
+		build/assets/sass/pds/reset.scss \
 		build/assets/css/reset.css
 
 	mkdir -p build/demo/css/
 	node_modules/.bin/sass \
-		--load-path src/assets/sass \
+		--load-path build/assets/sass \
 		--style=compressed \
 		src/demo/sass/main.scss \
 		build/demo/css/main.css
