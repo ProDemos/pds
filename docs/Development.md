@@ -136,11 +136,11 @@ and aligns with ProDemos' design.
 
 A few notes on the use of the Sass-files when adding styles
 
-[!IMPORTANT]
-If you are defining a new element *inside PDS*, you can't include `pds/pds` itself, 
-because it would cause a feedback loop: `pds/pds` will provide your
-element for other users. Instead, use `../pds/settings` and `../helpers`
-directly as shown below
+> [!IMPORTANT]
+> If you are defining a new element *inside PDS*, you can't include `pds/pds` itself, 
+> because it would cause a feedback loop: `pds/pds` will provide your
+> element for other users. Instead, use `../pds/settings` and `../helpers`
+> directly as shown below
 
 ### Breakpoints
 
