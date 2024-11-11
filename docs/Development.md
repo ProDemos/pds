@@ -142,8 +142,9 @@ When breakpoints are defined, they can be used inline in the class to target spe
 
 Just use:
 ```SCSS
-@include pds-media(lg,min) {
-    font-size: pds-fontsize(l);
+use "...pds/pds";
+@include pds.media(lg,min) {
+    font-size: pds.fontsize(l);
 }
 ```
 to set another style from breakpoint LG (LarGe, probably something around 1024px)
@@ -155,13 +156,14 @@ these are translated to css vars. You can use the helpers `pds-color` and `pds-t
 but you should preferably use their css equivalents, eg the below classes are the same:
 
 ```SCSS
+use "...pds/pds";
 .class1 {
-    background-color: pds-color(red-80);
-    color: pds-theme-color('blue01',stroke); 
+    background-color: pds.color(red-80);
+    color: pds.theme-color('blue01',stroke); 
 }
 .class2 {
     background-color: var(--pds-color-red-80);
-    @include pds-theme('blue01');
+    @include pds.theme('blue01');
     color: var(--pds-color-stroke);
 }
 ```
@@ -170,9 +172,10 @@ but you should preferably use their css equivalents, eg the below classes are th
 
 The fonts are defined by name, which helps in consistency. A scale can be accessed with a helper:
 ```SCSS
+use "...pds/pds";
 .class {
-    font-size: pds-fontsize(l);
-    line-height: pds-lineheight(m);
+    font-size: pds.fontsize(l);
+    line-height: pds.lineheight(m);
 }
 ```
 
@@ -180,8 +183,9 @@ The fonts are defined by name, which helps in consistency. A scale can be access
 
 Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
 ```SCSS
+use "...pds/pds";
 .class {
-    margin-bottom: pds-spacing(tiny); 
+    margin-bottom: pds.spacing(tiny); 
 }
 ```
 

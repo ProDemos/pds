@@ -118,11 +118,11 @@ The reset.css is optional.
  `$assets-path` to point to that folder first.
 
 ```SCSS
-@use "@pds/sass/settings" with (
+@use "...pds/sass/settings" with (
   $assets-path: "@pds-assets"
 );
-@import "@pds/sass/reset"; // optional
-@import "@pds/sass/main";
+@use "...pds/sass/reset"; // optional
+@use "...pds/sass/main";
 
 ```
 
@@ -135,7 +135,7 @@ To access sass variables, methods and mixins
 defined in PDS, include the pds namespace
 in any child sccs file:
 ```SCSS
-@use "@pds/sass/pds";
+@use "...pds/sass/pds";
 h1 { font-size: pds.fontsize(l); }
 ```
 
