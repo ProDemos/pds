@@ -99,7 +99,7 @@ packages again and attaches them to the release.
 
 To create a new component, say pds-c-foo
   - write your sass in `src/assets/sass/components/_foo.scss`
-  - add your stylesheet to `src/assets/components/_index_.scss`
+  - add your stylesheet to `src/assets/components/_index.scss`
   - optionally write a demo twig template in `src/assets/twig/components/foo/foo.twig`
   - optionally add a config for that template to `src/demo/config/components/foo.yml`
 
@@ -136,56 +136,65 @@ and aligns with ProDemos' design.
 
 A few notes on the use of the Sass-files when adding styles
 
+[!IMPORTANT]
+If you are defining a new element *inside PDS*, you can't include `pds/pds` itself, 
+because it would cause a feedback loop: `pds/pds` will provide your
+element for other users. Instead, use `../pds/settings` and `../helpers`
+directly as shown below
+
 ### Breakpoints
 
-When breakpoints are defined, they can be used inline in the class to target specific behaviour.
+Breakpoints can be used inline in the class to target specific behaviour.
 
 Just use:
 ```SCSS
-use "...pds/pds";
-@include pds.media(lg,min) {
-    font-size: pds.fontsize(l);
+@use "../helpers";
+@include helpers.media(lg,min) {
+    font-size: helpers.fontsize(l);
 }
 ```
 to set another style from breakpoint LG (LarGe, probably something around 1024px)
 
 
 ### Colors
-Colors are defined in `$pds-colors` as a map, and themes are defined in `$pds-themes`. On preprocessing,
-these are translated to css vars. You can use the helpers `pds-color` and `pds-theme-color` to find the right color,
+Colors are defined in `settings.$colors` as a map, and themes are defined in `settings.$themes`. On preprocessing,
+these are translated to css vars. You can use the helpers `helpers.color` and `helpers.theme-color` to find the right color,
 but you should preferably use their css equivalents, eg the below classes are the same:
 
 ```SCSS
-use "...pds/pds";
+@use "../helpers";
 .class1 {
-    background-color: pds.color(red-80);
-    color: pds.theme-color('blue01',stroke); 
+    background-color: helpers.color(red-80);
+    color: helpers.theme-color('blue01',stroke); 
 }
 .class2 {
     background-color: var(--pds-color-red-80);
-    @include pds.theme('blue01');
+    @include helpers.theme('blue01');
     color: var(--pds-color-stroke);
 }
 ```
 
 ### Fonts
 
-The fonts are defined by name, which helps in consistency. A scale can be accessed with a helper:
+Font names, sizes and line-heights can be accessed from settings and helpers:
 ```SCSS
-use "...pds/pds";
+@use "../pds/settings";
+@use "../pds/helpers";
 .class {
-    font-size: pds.fontsize(l);
-    line-height: pds.lineheight(m);
+    font-family: settings.$font-sans;
+    font-size: helpers.fontsize(l);
+    line-height: helpers.lineheight(m);
 }
 ```
 
 ### Scales
 
-Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like an array, so when the font-size scale contains multiple value's, you can access one by:
+Some variables are defined by scales, which helps in consistency for sizings and layout. A scale can be accessed like
+a map, and you can access one by:
 ```SCSS
-use "...pds/pds";
+@use "../helpers";
 .class {
-    margin-bottom: pds.spacing(tiny); 
+    margin-bottom: helpers.spacing(tiny); 
 }
 ```
 
