@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../settings";
+@use "../pds/settings";
 
 
 @mixin media($name, $type: min, $breakpoints: settings.$breakpoints) {

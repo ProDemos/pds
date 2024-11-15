@@ -18,7 +18,7 @@
     <hr>
         Example:
 <xmp>
-@use "../../assets/sass/pds";
+@use "...pds/pds";
 
 h1 {
     margin: pds.spacing(huge) pds.spacing(none);
@@ -45,7 +45,7 @@ $spacings: (
 </xmp>
         You can override these spacings, or define your own, when configuring settings.css:
 <xmp>
-use "...path-to-pds/sass/settings" with ( 
+use "...pds/settings" with ( 
     $assets-path: "...path-to-assets",
     $custom-spacings: (
         default: 20px,
@@ -53,7 +53,7 @@ use "...path-to-pds/sass/settings" with (
     )
 );
 ...
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 
 h1 {
     margin: pds.spacing(default) pds.spacing(gutter);

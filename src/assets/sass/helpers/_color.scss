@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../settings";
+@use "../pds/settings";
 
 @mixin theme($name) {
     @each $propname, $propval in map.get(settings.$themes,$name) {
