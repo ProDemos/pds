@@ -20,7 +20,7 @@
     <hr>
         Example:
 <xmp>
-@use "../../assets/sass/pds";
+@use "...pds/pds";
 
 @include pds.media("tablet", min) {
   ul.pas-form-pager {
@@ -50,7 +50,7 @@ $breakpoints: (
         You can override these breakpoints, or define your own,
         when configuring settings:
 <xmp>
-use "...path-to-pds/sass/settings" with ( 
+use "...pds/settings" with ( 
     $assets-path: "...path-to-assets",
     $custom-breakpoints: (
         phone-small: 375px,
@@ -58,7 +58,7 @@ use "...path-to-pds/sass/settings" with (
     )
 );
 ...
-@use "...path-to-pds/sass/pds";
+@use "...pds/pds";
 @include pds.media("phone-small", min) {
   ul.pas-form-pager {
     display: flex;

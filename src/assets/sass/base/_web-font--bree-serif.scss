@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../pds/settings";
 
 /*
     Only use woff/woff2, this is covering the browsers we support.
@@ -8,7 +8,7 @@
     Web fonts can ben found here: https://gwfh.mranftl.com/fonts/bree-serif?subsets=latin
 */
 
-$font-path: "#{settings.$assets-path}/fonts/bree-serif/";
+$font-path-bree: "#{settings.$assets-path}/fonts/bree-serif/";
 
 @font-face {
   font-display: swap;
@@ -16,8 +16,8 @@ $font-path: "#{settings.$assets-path}/fonts/bree-serif/";
   font-style: normal;
   font-weight: 400;
   src: local("Bree Serif Regular"), local("BreeSerif-Regular"),
-    url("#{$font-path}bree-serif-v9-latin-regular.woff2") format("woff2"),
-    url("#{$font-path}bree-serif-v9-latin-regular.woff") format("woff");
+    url("#{$font-path-bree}bree-serif-v9-latin-regular.woff2") format("woff2"),
+    url("#{$font-path-bree}bree-serif-v9-latin-regular.woff") format("woff");
 }
 
 .bree-serif {

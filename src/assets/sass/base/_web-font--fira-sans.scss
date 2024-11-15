@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../pds/settings";
 
 /*
     Only use woff/woff2, this is covering the browsers we support.
@@ -8,7 +8,7 @@
     Web fonts can ben found here: https://gwfh.mranftl.com/fonts/fira-sans?subsets=latin,latin-ext
 */
 
-$font-path: "#{settings.$assets-path}/fonts/fira-sans/";
+$font-path-fira: "#{settings.$assets-path}/fonts/fira-sans/";
 
 /** REGULAR **/
 
@@ -18,8 +18,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: normal;
   font-weight: 400;
   src: local("Fira Sans Regular"), local("FiraSans-Regular"),
-    url("#{$font-path}fira-sans-v17-latin-regular.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-regular.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-regular.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-regular.woff") format("woff");
 }
 
 @font-face {
@@ -28,8 +28,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: italic;
   font-weight: 400;
   src: local("Fira Sans Italic"), local("FiraSans-Italic"),
-    url("#{$font-path}fira-sans-v17-latin-italic.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-italic.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-italic.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-italic.woff") format("woff");
 }
 
 /** MEDIUM **/
@@ -40,8 +40,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: normal;
   font-weight: 500;
   src: local("Fira Sans Medium"), local("FiraSans-Medium"),
-    url("#{$font-path}fira-sans-v17-latin-500.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-500.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-500.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-500.woff") format("woff");
 }
 
 @font-face {
@@ -50,8 +50,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: italic;
   font-weight: 500;
   src: local("Fira Sans Medium Italic"), local("FiraSans-MediumItalic"),
-    url("#{$font-path}fira-sans-v17-latin-500italic.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-500italic.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-500italic.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-500italic.woff") format("woff");
 }
 
 /** SEMI BOLD **/
@@ -62,8 +62,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: normal;
   font-weight: 600;
   src: local("Fira Sans Semi Bold"), local("FiraSans-SemiBold"),
-    url("#{$font-path}fira-sans-v17-latin-600.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-600.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-600.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-600.woff") format("woff");
 }
 
 @font-face {
@@ -72,8 +72,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: italic;
   font-weight: 600;
   src: local("Fira Sans Semi Bold Italic"), local("FiraSans-SemiBoldItalic"),
-    url("#{$font-path}fira-sans-v17-latin-600italic.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-600italic.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-600italic.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-600italic.woff") format("woff");
 }
 
 /** BOLD **/
@@ -84,8 +84,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: normal;
   font-weight: 700;
   src: local("Fira Sans Bold"), local("FiraSans-Bold"),
-    url("#{$font-path}fira-sans-v17-latin-700.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-700.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-700.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-700.woff") format("woff");
 }
 
 @font-face {
@@ -94,8 +94,8 @@ $font-path: "#{settings.$assets-path}/fonts/fira-sans/";
   font-style: italic;
   font-weight: 700;
   src: local("Fira Sans Bold Italic"), local("FiraSans-BoldItalic"),
-    url("#{$font-path}fira-sans-v17-latin-700italic.woff2") format("woff2"),
-    url("#{$font-path}fira-sans-v17-latin-700italic.woff") format("woff");
+    url("#{$font-path-fira}fira-sans-v17-latin-700italic.woff2") format("woff2"),
+    url("#{$font-path-fira}fira-sans-v17-latin-700italic.woff") format("woff");
 }
 
 .fira-sans,
