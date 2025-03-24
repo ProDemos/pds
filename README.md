@@ -112,10 +112,11 @@ The reset.css is optional.
 
 ## Source scss
 
- If you installed a package containing sass, you can import 
- the reset and main scss files [^1]. Make sure to copy the assets 
- (images, fonts etc) to a public folder and configure
- `$assets-path` to point to that folder first.
+ If you installed a package containing sass, you can use 
+ the settings, reset and main scss files in your main scss [^1]. 
+ Make sure to copy the assets (images, fonts etc) to a public 
+ folder and configure `$assets-path` to point to that folder first.
+
 
 
 ```SCSS
@@ -127,11 +128,6 @@ The reset.css is optional.
 
 ```
 
-There are more settings you can configure 
-before including the scss files, like 
-breakpoints and fontsizes. Read the full 
-documentation on https://pds.prodemos.nl/.
- 
 To access sass variables, methods and mixins 
 defined in PDS, include the pds namespace
 in any child sccs file:
@@ -139,6 +135,11 @@ in any child sccs file:
 @use "pds/pds";
 h1 { font-size: pds.fontsize(l); }
 ```
+
+
+There are more settings you can configure 
+in the settings file, like breakpoints and fontsizes. 
+Read the full documentation on https://pds.prodemos.nl/.
 
 # Making changes, new releases
 

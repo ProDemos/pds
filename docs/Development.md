@@ -179,7 +179,7 @@ but you should preferably use their css equivalents, eg the below classes are th
 Font names, sizes and line-heights can be accessed from settings and helpers:
 ```SCSS
 @use "../pds/settings";
-@use "../pds/helpers";
+@use "../helpers";
 .class {
     font-family: settings.$font-sans;
     font-size: helpers.fontsize(l);
