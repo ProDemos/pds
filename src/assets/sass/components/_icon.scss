@@ -249,6 +249,14 @@ i.pds-c-button-icon {
         mask-image: url(#{settings.$assets-path}/images/icons/spinner.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/spinner.svg);
     }
+    &.social-bluesky	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-bluesky.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-bluesky.svg);
+    }
+    &.social-email	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-email.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-email.svg);
+    }
     &.social-facebook	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-facebook.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-facebook.svg);
@@ -261,13 +269,25 @@ i.pds-c-button-icon {
         mask-image: url(#{settings.$assets-path}/images/icons/social-linkedin.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-linkedin.svg);
     }
+    &.social-mastodon	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-mastodon.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-mastodon.svg);
+    }
     &.social-twitter	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-twitter.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-twitter.svg);
     }
+    &.social-x	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-x.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-x.svg);
+    }
     &.social-youtube	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-youtube.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-youtube.svg);
+    }
+    &.social-youtube2	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-youtube2.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-youtube2.svg);
     }
     &.user-lgc	{ // lgc202306
         mask-image: url(#{settings.$assets-path}/images/icons/user-lgc.svg);
