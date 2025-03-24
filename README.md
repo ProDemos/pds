@@ -118,6 +118,7 @@ The reset.css is optional.
  folder and configure `$assets-path` to point to that folder first.
 
 
+
 ```SCSS
 @use "pds/settings" with (
   $assets-path: "../path-to/pds-assets"
