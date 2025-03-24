@@ -249,6 +249,10 @@ i.pds-c-button-icon {
         mask-image: url(#{settings.$assets-path}/images/icons/spinner.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/spinner.svg);
     }
+    &.social-bluesky	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-bluesky.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-bluesky.svg);
+    }
     &.social-email	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-email.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-email.svg);
@@ -264,6 +268,10 @@ i.pds-c-button-icon {
     &.social-linkedin	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-linkedin.svg);
         -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-linkedin.svg);
+    }
+    &.social-mastodon	{
+        mask-image: url(#{settings.$assets-path}/images/icons/social-mastodon.svg);
+        -webkit-mask-image: url(#{settings.$assets-path}/images/icons/social-mastodon.svg);
     }
     &.social-twitter	{
         mask-image: url(#{settings.$assets-path}/images/icons/social-twitter.svg);
