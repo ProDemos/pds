@@ -27,11 +27,7 @@ Use a sass `load-path` for the PDS scss so you don't have to type
 full paths in your `@use` statements:
 
 ```bash
-sass \
-  --load-path path-to-pds/assets/sass \
-  --style=compressed \
-  input.scss \
-  output.css
+sass --load-path path-to/pds-assets/sass input.scss output.css
 ```
 
 Write the config in a **global stylesheet**
