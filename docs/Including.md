@@ -35,6 +35,9 @@ Write the config in a **global stylesheet**
 ```scss
 @use "pds/settings" with (
   $assets-path: "path-to/pds-assets",
+  $custom-colors: (
+    'black': #4a4a4a  
+  ),
   $custom-breakpoints: (
     phablet: 560px,
   )
@@ -51,7 +54,7 @@ include the pds namespace in any child sccs file:
 @use "pds/pds";
 @debug pds.$assets-path;
 @include pds.media(phablet,max) {
-    color:red;
+    color:var(--pds-color-black);// #4a4a4a
 }
 ```
 
