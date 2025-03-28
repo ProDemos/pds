@@ -28,10 +28,10 @@ full paths in your `@use` statements:
 
 ```bash
 sass \
-		--load-path path-to-pds/assets/sass \
-		--style=compressed \
-		input.scss \
-		output.css
+  --load-path path-to-pds/assets/sass \
+  --style=compressed \
+  input.scss \
+  output.css
 ```
 
 Write the config in a **global stylesheet**
