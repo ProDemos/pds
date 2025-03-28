@@ -36,12 +36,16 @@
                 in your html pages, and you'll be able to access pds css variables and predefined classes in your html.
             </li>
             <li>
-                <b>For sass:</b>  Copy the assets (images,fonts,etc) to a public folder and include the following code before your own styles:
-<xmp>@use "...path-to-pds/sass/settings" with ( 
+                <b>For sass:</b>  Copy the assets (images,fonts,etc) to a public folder and include the 
+                following code before your own styles:
+<xmp>@use "pds/settings" with ( 
     $assets-path: "...path-to-assets" 
 );
-@use "...path-to-pds/sass/reset"; // optional
-@use "...path-to-pds/sass/main";</xmp>
+@use "pds/reset"; // optional
+@use "pds/main";</xmp>
+                Then in each stylesheet, include 
+<xmp>@use "pds/pds";</xmp>
+                For more detailed example, view the github docs.
             </li>
             <li>
                 <b>The css defines</b> themes (<code>pds-t-{theme}</code>),

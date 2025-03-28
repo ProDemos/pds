@@ -136,6 +136,8 @@ in any child sccs file:
 h1 { font-size: pds.fontsize(l); }
 ```
 
+For more detailed examples of how to include PDS,
+see [docs/Including.md](docs/Including.md). 
 
 There are more settings you can configure 
 in the settings file, like breakpoints and fontsizes. 
